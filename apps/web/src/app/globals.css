@@ -1,0 +1,97 @@
+@import '../design-system/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-canvas font-sans text-ink antialiased;
+    font-size: var(--text-body);
+    line-height: 1.5;
+    letter-spacing: var(--tracking-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans text-ink;
+  }
+
+  h1 {
+    font-size: var(--text-display-md);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: var(--tracking-display-md);
+  }
+
+  h2 {
+    font-size: var(--text-headline);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-headline);
+  }
+
+  h3 {
+    font-size: var(--text-card-title);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: var(--tracking-card-title);
+  }
+
+  h4 {
+    font-size: var(--text-body);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: var(--text-display-lg);
+      line-height: 1.1;
+      letter-spacing: var(--tracking-display-lg);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: var(--text-display-xl);
+      line-height: 1.05;
+      letter-spacing: var(--tracking-display-xl);
+    }
+  }
+}
+
+@layer utilities {
+  .container-content {
+    @apply mx-auto w-full;
+    max-width: var(--max-width);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  @media (min-width: 768px) {
+    .container-content {
+      padding-left: var(--spacing-xl);
+      padding-right: var(--spacing-xl);
+    }
+  }
+
+  .panel-lift {
+    border: 1px solid var(--color-hairline);
+    box-shadow: var(--panel-edge);
+  }
+
+  .focus-ring {
+    @apply outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-focus/50;
+  }
+}

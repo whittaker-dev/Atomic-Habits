@@ -1,0 +1,126 @@
+/**
+ * Dark theme · Spotify Green accent · Linear structure (see /DESIGN.md).
+ */
+:root {
+  /* Brand — Spotify Green */
+  --color-primary: #1ed760;
+  --color-primary-hover: #1db954;
+  --color-primary-focus: #169c46;
+  --color-on-primary: #000000;
+
+  /* Surface ladder (Spotify charcoal steps) */
+  --color-canvas: #121212;
+  --color-surface-1: #181818;
+  --color-surface-2: #1f1f1f;
+  --color-surface-3: #252525;
+  --color-surface-4: #272727;
+
+  /* Borders */
+  --color-hairline: #333333;
+  --color-hairline-strong: #4d4d4d;
+  --color-hairline-tertiary: #2a2a2a;
+
+  /* Inverse (rare light CTAs) */
+  --color-inverse-canvas: #eeeeee;
+  --color-inverse-surface-1: #ffffff;
+  --color-inverse-surface-2: #f5f5f5;
+  --color-inverse-ink: #121212;
+
+  /* Text */
+  --color-ink: #ffffff;
+  --color-ink-muted: #cbcbcb;
+  --color-ink-subtle: #b3b3b3;
+  --color-ink-tertiary: #7c7c7c;
+
+  /* Semantic */
+  --color-semantic-success: #1ed760;
+  --color-semantic-warning: #ffa42b;
+  --color-semantic-error: #f3727f;
+  --color-semantic-info: #539df5;
+  --color-semantic-overlay: rgba(0, 0, 0, 0.72);
+
+  /* Spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 96px;
+  --spacing-section-lg: 96px;
+  --spacing-hero: 120px;
+
+  /* Radius */
+  --rounded-xs: 4px;
+  --rounded-sm: 6px;
+  --rounded-md: 8px;
+  --rounded-lg: 12px;
+  --rounded-xl: 16px;
+  --rounded-xxl: 24px;
+  --rounded-pill: 9999px;
+  --rounded-full: 9999px;
+
+  /* Layout */
+  --max-width: 1280px;
+  --nav-height: 56px;
+
+  /* Typography */
+  --text-display-xl: 80px;
+  --text-display-lg: 56px;
+  --text-display-md: 40px;
+  --text-headline: 28px;
+  --text-card-title: 22px;
+  --text-subhead: 20px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-body-sm: 14px;
+  --text-caption: 12px;
+  --text-button: 14px;
+  --text-eyebrow: 13px;
+  --text-mono: 13px;
+
+  /* Legacy aliases */
+  --text-heading-1: var(--text-display-xl);
+  --text-heading-2: var(--text-display-lg);
+  --text-heading-3: var(--text-headline);
+  --text-heading-4: var(--text-card-title);
+  --text-body-md: var(--text-body);
+  --text-subtitle: var(--text-body-lg);
+  --text-caption-bold: var(--text-caption);
+  --text-section-title: var(--text-headline);
+
+  /* Letter spacing */
+  --tracking-display-xl: -3px;
+  --tracking-display-lg: -1.8px;
+  --tracking-display-md: -1px;
+  --tracking-headline: -0.6px;
+  --tracking-card-title: -0.4px;
+  --tracking-body: -0.05px;
+  --tracking-eyebrow: 0.4px;
+
+  /* Panel edge — subtle lift on dark charcoal */
+  --panel-edge: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+
+  /* shadcn bridge */
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
+  --card: var(--color-surface-1);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-surface-2);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-primary);
+  --primary-foreground: var(--color-on-primary);
+  --secondary: var(--color-surface-1);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-surface-2);
+  --muted-foreground: var(--color-ink-subtle);
+  --accent: var(--color-surface-2);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-semantic-error);
+  --destructive-foreground: var(--color-ink);
+  --border: var(--color-hairline);
+  --input: var(--color-hairline-strong);
+  --ring: var(--color-primary);
+  --radius: var(--rounded-md);
+}
