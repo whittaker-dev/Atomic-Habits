@@ -2,6 +2,7 @@
   "name": "atomic-habits",
   "private": true,
   "scripts": {
+    "prepare": "husky",
     "dev": "pnpm run --parallel dev",
     "dev:web": "pnpm --filter @atomic-habits/web dev",
     "dev:api": "pnpm --filter @atomic-habits/api dev",
@@ -16,6 +17,8 @@
     "@eslint/js": "^9.28.0",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.0"
@@ -23,6 +26,14 @@
   "packageManager": "pnpm@10.11.0",
   "engines": {
     "node": ">=20"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "apps/web/**/*.{ts,tsx}": "pnpm --filter @atomic-habits/web exec next lint --fix --file",
+    "*.{json,md,yml,yaml,css}": "prettier --write"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

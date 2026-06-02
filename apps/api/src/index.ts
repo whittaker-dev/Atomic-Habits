@@ -2,11 +2,11 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
-import type { HealthResponse } from '@atomic-habits/shared';
 import { errorHandler, notFoundHandler } from './middleware/error.js';
 import { checkPostgres } from './lib/prisma.js';
 import { checkRedis } from './lib/redis.js';
 import { startNotificationWorkerStub } from './lib/queue.js';
+import { HealthResponse } from '@atomic-habits/shared';
 
 const app = express();
 const port = Number(process.env.API_PORT ?? 4000);
