@@ -1,24 +1,27 @@
-import { DM_Sans, JetBrains_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 
-/** SpotifyMixUI substitute */
-export const fontSans = DM_Sans({
+export const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-sans',
   display: 'swap',
+  variable: '--font-sans',
 });
 
-/** Linear Mono substitute — code in product screenshots */
-export const fontMono = JetBrains_Mono({
+export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
-  variable: '--font-mono',
   display: 'swap',
+  variable: '--font-mono',
 });
 
-export const fonts = [fontSans, fontMono];
+export const fontSans = inter;
+export const fontMono = jetbrainsMono;
 
-/** @deprecated use fontSans */
-export const fontDisplay = fontSans;
-/** @deprecated use fontSans */
-export const fontBody = fontSans;
+export const fonts = [inter, jetbrainsMono];
+
+/** @deprecated use inter */
+export const fontDisplay = inter;
+/** @deprecated use inter */
+export const fontBody = inter;
+/** @deprecated use jetbrainsMono */
+export const jetBrainsMono = jetbrainsMono;

@@ -13,7 +13,6 @@ export function createContactSchema(t: TFunction) {
       .string()
       .trim()
       .min(1, t('validation.messageRequired'))
-      .min(10, t('validation.messageMin'))
       .max(2000, t('validation.messageMax')),
   });
 }

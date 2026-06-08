@@ -15,7 +15,7 @@ export function SectionShell({
 }) {
   return (
     <section id={id} className={cn('scroll-mt-24 border-t border-hairline py-section', className)}>
-      <h2 className="font-sans text-headline font-semibold">{title}</h2>
+      <h2 className="font-sans text-headline font-bold">{title}</h2>
       {description && (
         <p className="mt-sm max-w-2xl font-sans text-body-sm text-ink-subtle">{description}</p>
       )}
@@ -24,9 +24,20 @@ export function SectionShell({
   );
 }
 
-export function SubLabel({ children, className }: { children: React.ReactNode; className?: string }) {
+export function SubLabel({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <p className={cn("mb-sm font-sans text-caption font-medium uppercase tracking-[0.4px] text-ink-tertiary", className)}>
+    <p
+      className={cn(
+        'mb-sm font-sans text-caption font-medium uppercase tracking-[0.4px] text-ink-tertiary',
+        className,
+      )}
+    >
       {children}
     </p>
   );

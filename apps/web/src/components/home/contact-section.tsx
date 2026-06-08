@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/design-system/components/button';
 import { TextInput } from '@/design-system/components/input';
 import { createContactSchema, type ContactFormValues } from '@/lib/contact-schema';
+import { submitContactForm } from '@/lib/contact-api';
 import { cn } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -51,7 +52,9 @@ function FieldError({ id, message }: { id?: string; message?: string }) {
 }
 
 function ContactForm() {
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>(
+    'idle',
+  );
   const { t } = useTranslation();
 
   const contactSchema = useMemo(() => createContactSchema(t), [t]);
@@ -67,11 +70,15 @@ function ContactForm() {
     mode: 'onBlur',
   });
 
-  const onSubmit = handleSubmit(async () => {
+  const onSubmit = handleSubmit(async (values) => {
     setSubmitStatus('submitting');
-    await new Promise((resolve) => window.setTimeout(resolve, 1400));
-    setSubmitStatus('success');
-    reset();
+    try {
+      await submitContactForm(values);
+      setSubmitStatus('success');
+      reset();
+    } catch {
+      setSubmitStatus('error');
+    }
   });
 
   return (
@@ -146,6 +153,17 @@ function ContactForm() {
         </motion.p>
       )}
 
+      {submitStatus === 'error' && (
+        <motion.p
+          initial={{ opacity: 0, x: -8 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="font-sans text-body-sm text-error"
+          role="alert"
+        >
+          {t('contact.error')}
+        </motion.p>
+      )}
+
       <motion.div {...ctaMotion} className="flex flex-wrap gap-md">
         <Button type="submit" disabled={submitStatus === 'submitting'}>
           {submitStatus === 'submitting'
@@ -196,8 +214,8 @@ export function ContactSection() {
     >
       <div className="container-content">
         <div data-contact-reveal className="text-center">
-          <p className="font-sans text-headline font-semibold text-primary">{t('contact.label')}</p>
-          <h2 className="mt-md font-sans text-display-md font-semibold md:text-display-lg lg:text-display-xl">
+          <p className="font-sans text-headline font-bold text-primary">{t('contact.label')}</p>
+          <h2 className="mt-md font-sans text-display-md font-bold md:text-display-lg lg:text-display-xl">
             {t('contact.title')}
           </h2>
           <p className="mx-auto mt-lg max-w-2xl font-sans text-body-lg text-ink-muted">

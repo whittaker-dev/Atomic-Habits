@@ -53,10 +53,8 @@ export function FeatureCardYellowBold({
 }) {
   return (
     <div className={cn(cardBase, 'bg-surface-1 p-xxl', className)} {...props}>
-      <h2 className="font-sans text-headline font-semibold">{title}</h2>
-      {description && (
-        <p className="mt-md font-sans text-body-lg text-ink-muted">{description}</p>
-      )}
+      <h2 className="font-sans text-headline font-bold">{title}</h2>
+      {description && <p className="mt-md font-sans text-body-lg text-ink-muted">{description}</p>}
       {action && <div className="mt-lg">{action}</div>}
     </div>
   );
@@ -69,16 +67,8 @@ export function WorkspaceMockupCard({
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & { title?: string }) {
   return (
-    <div
-      className={cn(
-        'panel-lift rounded-xl bg-surface-1 p-lg text-ink',
-        className,
-      )}
-      {...props}
-    >
-      {title && (
-        <p className="mb-md font-sans text-body-sm text-ink-subtle">{title}</p>
-      )}
+    <div className={cn('panel-lift rounded-xl bg-surface-1 p-lg text-ink', className)} {...props}>
+      {title && <p className="mb-md font-sans text-body-sm text-ink-subtle">{title}</p>}
       {children}
     </div>
   );
@@ -115,7 +105,7 @@ export function PricingTierCard({
       {...props}
     >
       <p className="font-sans text-body-sm font-medium text-ink-subtle">{name}</p>
-      <p className="mt-sm font-sans text-headline font-semibold">{price}</p>
+      <p className="mt-sm font-sans text-headline font-bold">{price}</p>
       <ul className="mt-lg space-y-sm font-sans text-body-sm text-ink-subtle">
         {features.map((f) => (
           <li key={f}>{f}</li>
@@ -160,10 +150,8 @@ export function CtaBanner({
 }) {
   return (
     <div className={cn(cardBase, 'bg-surface-1 p-xxl text-center', className)} {...props}>
-      <h2 className="font-sans text-headline font-semibold">{title}</h2>
-      {description && (
-        <p className="mt-md font-sans text-body-lg text-ink-muted">{description}</p>
-      )}
+      <h2 className="font-sans text-headline font-bold">{title}</h2>
+      {description && <p className="mt-md font-sans text-body-lg text-ink-muted">{description}</p>}
       {action && <div className="mt-lg flex justify-center">{action}</div>}
     </div>
   );
@@ -191,21 +179,16 @@ export function HeroBandDark({
 }) {
   return (
     <section
-      className={cn(
-        'bg-canvas px-md pb-section pt-hero text-center md:px-lg',
-        className,
-      )}
+      className={cn('bg-canvas px-md pb-section pt-hero text-center md:px-lg', className)}
       {...props}
     >
       <div className="container-content">
         {eyebrow && <p className="mb-md font-sans text-eyebrow text-ink-muted">{eyebrow}</p>}
-        <h1 className="mx-auto max-w-4xl font-sans text-display-md font-semibold md:text-display-lg lg:text-display-xl">
+        <h1 className="mx-auto max-w-4xl font-sans text-display-md font-bold md:text-display-lg lg:text-display-xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="mx-auto mt-lg max-w-xl font-sans text-body-lg text-ink-muted">
-            {subtitle}
-          </p>
+          <p className="mx-auto mt-lg max-w-xl font-sans text-body-lg text-ink-muted">{subtitle}</p>
         )}
         {actions && (
           <div className="mt-xl flex flex-wrap items-center justify-center gap-md">{actions}</div>

@@ -164,22 +164,22 @@ export function TypographySection() {
       description={t('designSystem.typography.description')}
     >
       <div className="panel-lift rounded-lg bg-surface-1 p-lg">
-        <p className="font-sans text-display-xl font-semibold">
+        <p className="font-sans text-display-xl font-bold">
           {t('designSystem.typography.displayXl')}
         </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">80px · 600 · -3px tracking</p>
 
-        <p className="mt-lg font-sans text-display-lg font-semibold">
+        <p className="mt-lg font-sans text-display-lg font-bold">
           {t('designSystem.typography.displayLg')}
         </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">56px · 600 · -1.8px tracking</p>
 
-        <p className="mt-lg font-sans text-display-md font-semibold">
+        <p className="mt-lg font-sans text-display-md font-bold">
           {t('designSystem.typography.displayMd')}
         </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">40px · 600 · -1px tracking</p>
 
-        <p className="mt-lg font-sans text-headline font-semibold">
+        <p className="mt-lg font-sans text-headline font-bold">
           {t('designSystem.typography.headline')}
         </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">28px · 600 · -0.6px</p>
@@ -603,7 +603,7 @@ export function ResponsiveSection() {
 
       <SubLabel className="mt-4">{t('designSystem.responsive.displayScale')}</SubLabel>
       <div className="mt-md panel-lift rounded-lg bg-surface-1 p-lg">
-        <p className="font-sans text-display-md font-semibold md:text-display-lg lg:text-display-xl">
+        <p className="font-sans text-display-md font-bold md:text-display-lg lg:text-display-xl">
           {t('designSystem.responsive.responsiveDisplay')}
         </p>
         <p className="mt-sm font-sans text-caption text-ink-subtle">

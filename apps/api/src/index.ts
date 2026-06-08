@@ -1,4 +1,6 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
@@ -6,7 +8,11 @@ import { errorHandler, notFoundHandler } from './middleware/error.js';
 import { checkPostgres } from './lib/prisma.js';
 import { checkRedis } from './lib/redis.js';
 import { startNotificationWorkerStub } from './lib/queue.js';
+import contactRouter from './routes/contact.js';
 import { HealthResponse } from '@atomic-habits/shared';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 
 const app = express();
 const port = Number(process.env.API_PORT ?? 4000);
@@ -20,6 +26,8 @@ app.get('/health', async (_req, res) => {
   const body: HealthResponse = { status: 'ok', postgres, redis: redisOk };
   res.json(body);
 });
+
+app.use('/contact', contactRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

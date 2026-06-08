@@ -4,17 +4,17 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TopNav } from '@/components/top-nav';
 import { Button } from '@/design-system/components/button';
-import { SuccessBadge } from '@/design-system/components/badges';
-import { WorkspaceMockupCard } from '@/design-system/components/cards';
-import { ProgressBar } from '@/design-system/components/input';
+import { AssistantsSection } from './assistants-section';
 import { AnimatedFeatureCard } from './animated-feature-card';
+import { HeroMissionsCard } from './hero-missions-card';
 import { ScrollReveal } from './scroll-reveal';
 import { ContactSection } from './contact-section';
+import { HomeFooter } from './home-footer';
+import { SectionHeader } from './section-header';
 import { TiltMockup } from './tilt-mockup';
 
 const HeroScene = dynamic(() => import('./hero-scene').then((m) => ({ default: m.HeroScene })), {
@@ -32,7 +32,7 @@ function SplitTitle({ text }: { text: string }) {
     <>
       {text.split(' ').map((word, i) => (
         <span key={i} className="hero-word inline-block overflow-hidden align-bottom">
-          <span className="hero-word-inner inline-block">{word}</span>
+          <span className="hero-word-inner inline-block font-bold">{word}</span>
           {i < text.split(' ').length - 1 ? '\u00a0' : null}
         </span>
       ))}
@@ -95,7 +95,7 @@ export function AnimatedHome() {
               {t('home.hero.eyebrow')}
             </p>
             <h1
-              className="mx-auto max-w-4xl font-sans text-display-md font-semibold [perspective:1000px] md:text-display-lg lg:text-display-xl"
+              className="mx-auto max-w-4xl font-sans text-display-md font-bold [perspective:1000px] md:text-display-lg lg:text-display-xl"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <SplitTitle text={t('home.hero.title')} />
@@ -114,191 +114,103 @@ export function AnimatedHome() {
 
             <div className="mt-section flex justify-center">
               <TiltMockup className="w-full max-w-lg">
-                <WorkspaceMockupCard title={t('home.mockup.title')}>
-                  <div className="space-y-md text-left">
-                    <div className="flex items-center justify-between border-b border-hairline pb-sm">
-                      <span className="font-sans text-body-sm font-medium">
-                        {t('home.mockup.missions')}
-                      </span>
-                      <motion.div
-                        animate={{ scale: [1, 1.06, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        <SuccessBadge>{t('home.mockup.streak')}</SuccessBadge>
-                      </motion.div>
-                    </div>
-                    <div className="space-y-xs font-sans text-body-sm text-ink-subtle">
-                      <motion.p
-                        className="flex justify-between text-ink"
-                        initial={{ opacity: 0, x: -12 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.9 }}
-                      >
-                        <span>{t('home.mockup.missionEnglish')}</span>
-                        <span className="font-mono text-caption text-primary">
-                          {t('home.mockup.xp')}
-                        </span>
-                      </motion.p>
-                      <motion.p
-                        initial={{ opacity: 0, x: -12 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.05 }}
-                      >
-                        {t('home.mockup.missionExercise')}
-                      </motion.p>
-                      <p className="text-ink-tertiary line-through">
-                        {t('home.mockup.missionTicket')}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="mb-xs font-sans text-caption text-ink-subtle">
-                        {t('home.mockup.level')}
-                      </p>
-                      <motion.div
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ delay: 1.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        style={{ transformOrigin: 'left' }}
-                      >
-                        <ProgressBar value={68} />
-                      </motion.div>
-                    </div>
-                  </div>
-                </WorkspaceMockupCard>
+                <HeroMissionsCard />
               </TiltMockup>
             </div>
           </div>
         </section>
 
-        <ScrollReveal className="py-section">
-          <div className="container-content">
-            <h2 data-reveal className="text-center">
-              {t('home.features.title')}
-            </h2>
-            <p
-              data-reveal
-              className="mx-auto mt-md max-w-2xl text-center font-sans text-body-lg text-ink-muted"
-            >
-              {t('home.features.subtitle')}
-            </p>
+        <ScrollReveal className="relative py-section">
+          <div
+            className="pointer-events-none absolute inset-x-0 top-1/2 h-[480px] -translate-y-1/2 bg-gradient-to-b from-primary/5 via-transparent to-primary/5"
+            aria-hidden
+          />
+          <div className="container-content relative">
+            <SectionHeader
+              eyebrow={t('home.features.eyebrow')}
+              title={t('home.features.title')}
+              subtitle={t('home.features.subtitle')}
+            />
             <div className="mt-xl grid gap-lg md:grid-cols-3">
               <AnimatedFeatureCard
                 index={0}
                 tint="surface-1"
+                icon="english"
                 title={t('home.features.english.title')}
                 description={t('home.features.english.description')}
+                badge={t('home.features.english.badge')}
               />
               <AnimatedFeatureCard
                 index={1}
                 tint="surface-2"
+                icon="exercise"
                 title={t('home.features.exercise.title')}
                 description={t('home.features.exercise.description')}
+                badge={t('home.features.exercise.badge')}
               />
               <AnimatedFeatureCard
                 index={2}
                 tint="surface-1"
+                icon="deepWork"
                 title={t('home.features.deepWork.title')}
                 description={t('home.features.deepWork.description')}
+                badge={t('home.features.deepWork.badge')}
               />
             </div>
           </div>
         </ScrollReveal>
 
-        <section className="py-section">
-          <div className="container-content">
-            <motion.div
-              data-reveal
-              className="panel-lift relative overflow-hidden rounded-lg bg-surface-1 p-xxl"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div
-                className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl"
-                animate={{ x: [0, 24, 0], y: [0, -16, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-              />
-              <h2 className="relative font-sans text-headline font-semibold">
-                {t('home.assistants.title')}
-              </h2>
-              <p className="relative mt-md font-sans text-body-lg text-ink-muted">
-                {t('home.assistants.description')}
-              </p>
-              <div className="relative mt-lg">
-                <Link href="/design-system">
-                  <motion.span {...ctaMotion} className="inline-block">
-                    <Button variant="secondary">{t('common.actions.exploreFeatures')}</Button>
-                  </motion.span>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <AssistantsSection />
 
-        <ScrollReveal className="py-section" stagger={0.12}>
-          <div className="container-content">
-            <h2 data-reveal className="text-center">
-              {t('home.together.title')}
-            </h2>
-            <div className="mt-xl grid gap-lg md:grid-cols-3">
+        <ScrollReveal className="relative py-section" stagger={0.14}>
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+            aria-hidden
+          />
+          <div className="container-content relative">
+            <SectionHeader
+              eyebrow={t('home.together.eyebrow')}
+              title={t('home.together.title')}
+              subtitle={t('home.together.subtitle')}
+            />
+            <div className="mt-xl grid gap-lg lg:grid-cols-2">
               <AnimatedFeatureCard
                 index={0}
-                tint="surface-1"
+                tint="surface-2"
+                icon="heatmap"
+                featured
+                preview="heatmap"
                 title={t('home.together.heatmap.title')}
                 description={t('home.together.heatmap.description')}
+                badge={t('home.together.heatmap.badge')}
               />
-              <AnimatedFeatureCard
-                index={1}
-                tint="surface-2"
-                title={t('home.together.xp.title')}
-                description={t('home.together.xp.description')}
-              />
-              <AnimatedFeatureCard
-                index={2}
-                tint="surface-1"
-                title={t('home.together.reports.title')}
-                description={t('home.together.reports.description')}
-              />
+              <div className="grid gap-lg">
+                <AnimatedFeatureCard
+                  index={1}
+                  tint="surface-1"
+                  icon="xp"
+                  preview="xp"
+                  title={t('home.together.xp.title')}
+                  description={t('home.together.xp.description')}
+                  badge={t('home.together.xp.badge')}
+                />
+                <AnimatedFeatureCard
+                  index={2}
+                  tint="surface-1"
+                  icon="reports"
+                  preview="reports"
+                  title={t('home.together.reports.title')}
+                  description={t('home.together.reports.description')}
+                  badge={t('home.together.reports.badge')}
+                />
+              </div>
             </div>
           </div>
         </ScrollReveal>
 
         <ContactSection />
 
-        <motion.section
-          className="border-t border-hairline py-section"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="container-content grid gap-lg md:grid-cols-4">
-            <div>
-              <p className="font-sans text-caption font-medium text-ink">
-                {t('common.footer.product')}
-              </p>
-              <p className="mt-sm font-sans text-caption text-ink-subtle">
-                {t('common.footer.missions')}
-              </p>
-              <p className="font-sans text-caption text-ink-subtle">{t('common.footer.streaks')}</p>
-            </div>
-            <div>
-              <p className="font-sans text-caption font-medium text-ink">
-                {t('common.footer.resources')}
-              </p>
-              <Link
-                href="/design-system"
-                className="mt-sm block font-sans text-caption text-ink-subtle hover:text-ink"
-              >
-                {t('common.footer.designSystem')}
-              </Link>
-            </div>
-          </div>
-          <p className="container-content mt-xl font-sans text-caption text-ink-subtle">
-            {t('common.footer.copyright')}
-          </p>
-        </motion.section>
+        <HomeFooter />
       </main>
     </>
   );

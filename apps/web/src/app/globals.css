@@ -24,33 +24,29 @@
   h2,
   h3,
   h4 {
-    @apply font-sans text-ink;
+    @apply font-sans font-bold text-ink;
   }
 
   h1 {
     font-size: var(--text-display-md);
-    font-weight: 600;
     line-height: 1.15;
     letter-spacing: var(--tracking-display-md);
   }
 
   h2 {
     font-size: var(--text-headline);
-    font-weight: 600;
     line-height: 1.2;
     letter-spacing: var(--tracking-headline);
   }
 
   h3 {
     font-size: var(--text-card-title);
-    font-weight: 500;
     line-height: 1.25;
     letter-spacing: var(--tracking-card-title);
   }
 
   h4 {
     font-size: var(--text-body);
-    font-weight: 500;
     line-height: 1.5;
   }
 

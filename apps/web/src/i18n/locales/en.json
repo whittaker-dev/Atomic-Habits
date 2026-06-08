@@ -25,9 +25,15 @@
       "product": "Product",
       "missions": "Missions",
       "streaks": "Streaks",
+      "xp": "XP & levels",
       "resources": "Resources",
       "designSystem": "Design system",
-      "copyright": "© Atomic Habits"
+      "company": "Company",
+      "about": "About",
+      "privacy": "Privacy",
+      "tagline": "Build habits that stick — one mission, one streak, one level at a time.",
+      "builtWith": "Made for daily momentum",
+      "copyright": "© {{year}} Atomic Habits"
     },
     "language": {
       "en": "English",
@@ -57,42 +63,87 @@
       "missionEnglish": "Learn 10 English words",
       "missionExercise": "Exercise 20 mins",
       "missionTicket": "Finish ticket TRY-44",
-      "xp": "+20 XP",
-      "level": "Level 7"
+      "xpEnglish": "+25 XP",
+      "xpExercise": "+15 XP",
+      "xpTicket": "+25 XP",
+      "level": "Level 7",
+      "complete": "{{count}}/{{total}} complete today",
+      "progress": "{{current}} / {{max}} XP",
+      "dayComplete": "Perfect day!",
+      "dayCompleteHint": "All missions done"
     },
     "features": {
+      "eyebrow": "Daily missions",
       "title": "Keep work moving 24/7",
       "subtitle": "Daily missions across categories — one workspace for your growth.",
       "english": {
         "title": "Learn English",
-        "description": "Daily vocabulary + mini quiz. +25 XP."
+        "description": "Daily vocabulary drills and a mini quiz to keep your streak alive.",
+        "badge": "+25 XP"
       },
       "exercise": {
         "title": "Exercise",
-        "description": "20 min workout check-in. +15 XP."
+        "description": "Log a 20-minute workout check-in and earn progress toward your goals.",
+        "badge": "+15 XP"
       },
       "deepWork": {
         "title": "Deep work",
-        "description": "Finish a ticket or coding session. +25 XP."
+        "description": "Finish a ticket or coding session and stack meaningful wins.",
+        "badge": "+25 XP"
       }
     },
     "assistants": {
+      "eyebrow": "AI assistants",
       "title": "Ask your on-demand assistants",
-      "description": "Daily English challenges powered by your streak data — come back every day."
+      "description": "Daily English challenges powered by your streak data — coaches that know your habits and nudge you at the right time.",
+      "cta": "Meet your assistants",
+      "chatTitle": "English Coach",
+      "chatSubtitle": "Powered by your streak",
+      "chatUser": "Quiz me on today's 10 words",
+      "chatReply": "Great! Let's start: what does \"resilient\" mean in your own words?",
+      "chatTyping": "Coach is typing",
+      "highlights": {
+        "english": "Vocabulary quizzes tailored to your level",
+        "work": "Break down tickets into doable daily steps",
+        "fitness": "Quick workout prompts when streak is at risk"
+      },
+      "english": {
+        "name": "English Coach",
+        "role": "Vocabulary & quizzes",
+        "prompt": "Quiz me on today's 10 words",
+        "status": "Online"
+      },
+      "work": {
+        "name": "Deep Work Buddy",
+        "role": "Focus & tickets",
+        "prompt": "Help me finish TRY-44 today",
+        "status": "Ready"
+      },
+      "fitness": {
+        "name": "Fitness Nudge",
+        "role": "Workout check-ins",
+        "prompt": "Give me a 20-min routine",
+        "status": "Online"
+      }
     },
     "together": {
+      "eyebrow": "One workspace",
       "title": "Bring all your work together",
+      "subtitle": "Streaks, XP, and reports in one place — see how far you've come at a glance.",
       "heatmap": {
         "title": "Heatmap",
-        "description": "See your consistency at a glance."
+        "description": "See your consistency at a glance — every green square is a day you showed up.",
+        "badge": "365 days"
       },
       "xp": {
         "title": "XP & levels",
-        "description": "Gamification that keeps you going."
+        "description": "Gamification that keeps you going — level up as habits compound.",
+        "badge": "Level 7"
       },
       "reports": {
         "title": "Weekly reports",
-        "description": "82% consistency — reflect and improve."
+        "description": "82% consistency last week — reflect, adjust, and improve.",
+        "badge": "82%"
       }
     }
   },
@@ -110,7 +161,8 @@
       "email": "you@example.com",
       "message": "Tell us what you're building…"
     },
-    "success": "Message sent! We'll be in touch soon."
+    "success": "Message sent! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again."
   },
   "validation": {
     "nameRequired": "Name is required",

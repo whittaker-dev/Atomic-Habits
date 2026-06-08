@@ -25,9 +25,15 @@
       "product": "Sản phẩm",
       "missions": "Nhiệm vụ",
       "streaks": "Chuỗi streak",
+      "xp": "XP & cấp độ",
       "resources": "Tài nguyên",
       "designSystem": "Hệ thống thiết kế",
-      "copyright": "© Atomic Habits"
+      "company": "Công ty",
+      "about": "Giới thiệu",
+      "privacy": "Quyền riêng tư",
+      "tagline": "Xây thói quen bền vững — từng nhiệm vụ, từng streak, từng cấp độ.",
+      "builtWith": "Tạo ra cho động lực mỗi ngày",
+      "copyright": "© {{year}} Atomic Habits"
     },
     "language": {
       "en": "English",
@@ -57,42 +63,87 @@
       "missionEnglish": "Học 10 từ tiếng Anh",
       "missionExercise": "Tập thể dục 20 phút",
       "missionTicket": "Hoàn thành ticket TRY-44",
-      "xp": "+20 XP",
-      "level": "Cấp 7"
+      "xpEnglish": "+25 XP",
+      "xpExercise": "+15 XP",
+      "xpTicket": "+25 XP",
+      "level": "Cấp 7",
+      "complete": "{{count}}/{{total}} hoàn thành hôm nay",
+      "progress": "{{current}} / {{max}} XP",
+      "dayComplete": "Hoàn thành ngày!",
+      "dayCompleteHint": "Đã xong mọi nhiệm vụ"
     },
     "features": {
+      "eyebrow": "Nhiệm vụ hàng ngày",
       "title": "Giữ động lực 24/7",
       "subtitle": "Nhiệm vụ hàng ngày theo danh mục — một không gian cho sự phát triển của bạn.",
       "english": {
         "title": "Học tiếng Anh",
-        "description": "Từ vựng hàng ngày + quiz nhỏ. +25 XP."
+        "description": "Luyện từ vựng và quiz nhỏ mỗi ngày để duy trì streak.",
+        "badge": "+25 XP"
       },
       "exercise": {
         "title": "Tập thể dục",
-        "description": "Check-in tập 20 phút. +15 XP."
+        "description": "Check-in tập 20 phút và tích lũy tiến độ về phía mục tiêu.",
+        "badge": "+15 XP"
       },
       "deepWork": {
         "title": "Deep work",
-        "description": "Hoàn thành ticket hoặc phiên code. +25 XP."
+        "description": "Hoàn thành ticket hoặc phiên code và ghi nhận chiến thắng có ý nghĩa.",
+        "badge": "+25 XP"
       }
     },
     "assistants": {
+      "eyebrow": "Trợ lý AI",
       "title": "Trợ lý theo yêu cầu",
-      "description": "Thử thách tiếng Anh hàng ngày dựa trên dữ liệu streak — quay lại mỗi ngày."
+      "description": "Thử thách tiếng Anh hàng ngày dựa trên dữ liệu streak — huấn luyện viên hiểu thói quen và nhắc đúng lúc.",
+      "cta": "Gặp trợ lý của bạn",
+      "chatTitle": "English Coach",
+      "chatSubtitle": "Dựa trên streak của bạn",
+      "chatUser": "Quiz 10 từ hôm nay cho tôi",
+      "chatReply": "Tuyệt! Bắt đầu nhé: \"resilient\" nghĩa là gì theo cách hiểu của bạn?",
+      "chatTyping": "Coach đang nhập",
+      "highlights": {
+        "english": "Quiz từ vựng theo trình độ của bạn",
+        "work": "Chia ticket thành bước nhỏ mỗi ngày",
+        "fitness": "Gợi ý tập nhanh khi streak sắp mất"
+      },
+      "english": {
+        "name": "English Coach",
+        "role": "Từ vựng & quiz",
+        "prompt": "Quiz 10 từ hôm nay",
+        "status": "Online"
+      },
+      "work": {
+        "name": "Deep Work Buddy",
+        "role": "Tập trung & ticket",
+        "prompt": "Giúp tôi xong TRY-44 hôm nay",
+        "status": "Sẵn sàng"
+      },
+      "fitness": {
+        "name": "Fitness Nudge",
+        "role": "Check-in tập luyện",
+        "prompt": "Cho tôi lịch tập 20 phút",
+        "status": "Online"
+      }
     },
     "together": {
+      "eyebrow": "Một không gian",
       "title": "Gom mọi thứ vào một nơi",
+      "subtitle": "Streak, XP và báo cáo ở một nơi — nhìn thấy hành trình của bạn trong nháy mắt.",
       "heatmap": {
         "title": "Heatmap",
-        "description": "Xem mức độ nhất quán trong nháy mắt."
+        "description": "Xem mức độ nhất quán — mỗi ô xanh là một ngày bạn đã xuất hiện.",
+        "badge": "365 ngày"
       },
       "xp": {
         "title": "XP & cấp độ",
-        "description": "Gamification giúp bạn tiếp tục."
+        "description": "Gamification giúp bạn tiếp tục — lên cấp khi thói quen tích lũy.",
+        "badge": "Cấp 7"
       },
       "reports": {
         "title": "Báo cáo tuần",
-        "description": "82% nhất quán — suy ngẫm và cải thiện."
+        "description": "82% nhất quán tuần trước — suy ngẫm, điều chỉnh và cải thiện.",
+        "badge": "82%"
       }
     }
   },
@@ -110,7 +161,8 @@
       "email": "ban@example.com",
       "message": "Kể cho chúng tôi bạn đang xây dựng gì…"
     },
-    "success": "Đã gửi tin nhắn! Chúng tôi sẽ liên hệ sớm."
+    "success": "Đã gửi tin nhắn! Chúng tôi sẽ liên hệ sớm.",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại."
   },
   "validation": {
     "nameRequired": "Vui lòng nhập tên",
