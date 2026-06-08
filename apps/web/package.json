@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 4001",
-    "build": "pnpm --filter @atomic-habits/shared build && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
@@ -15,6 +15,7 @@
     "@hookform/resolvers": "^5.4.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
+    "axios": "^1.17.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
     "gsap": "^3.15.0",
@@ -24,6 +25,7 @@
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.78.0",
     "react-i18next": "^17.0.8",
+    "swr": "^2.4.1",
     "tailwind-merge": "^3.3.0",
     "three": "^0.184.0",
     "zod": "^4.4.3"

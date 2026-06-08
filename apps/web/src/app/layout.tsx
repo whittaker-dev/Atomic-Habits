@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { I18nProvider } from '@/components/i18n-provider';
+import { SWRProvider } from '@/components/swr-provider';
 import { inter, jetbrainsMono } from '@/design-system/fonts';
 import './globals.css';
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
-        <I18nProvider>{children}</I18nProvider>
+        <SWRProvider>
+          <I18nProvider>{children}</I18nProvider>
+        </SWRProvider>
       </body>
     </html>
   );

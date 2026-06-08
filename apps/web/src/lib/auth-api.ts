@@ -1,86 +1,55 @@
 import type { AuthMeResponse, AuthUser, RegisterResponse } from '@atomic-habits/shared';
-import { getApiUrl } from './api-url';
-
-async function parseErrorMessage(res: Response): Promise<string> {
-  try {
-    const body = (await res.json()) as { message?: string };
-    return body.message ?? 'Request failed';
-  } catch {
-    return 'Request failed';
-  }
-}
+import { isAxiosError } from 'axios';
+import { apiClient, getErrorMessage } from './api-client';
 
 export async function registerWithEmail(
   email: string,
   password: string,
 ): Promise<RegisterResponse> {
-  const res = await fetch(getApiUrl('/auth/register'), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify({ email, password }),
-  });
-
-  if (!res.ok) {
-    throw new Error(await parseErrorMessage(res));
+  try {
+    const { data } = await apiClient.post<RegisterResponse>('/auth/register', { email, password });
+    return data;
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
-
-  return res.json() as Promise<RegisterResponse>;
 }
 
 export async function verifyRegistration(email: string, code: string): Promise<AuthUser> {
-  const res = await fetch(getApiUrl('/auth/register/verify'), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify({ email, code }),
-  });
-
-  if (!res.ok) {
-    throw new Error(await parseErrorMessage(res));
+  try {
+    const { data } = await apiClient.post<{ user: AuthUser }>('/auth/register/verify', {
+      email,
+      code,
+    });
+    return data.user;
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
-
-  const body = (await res.json()) as { user: AuthUser };
-  return body.user;
 }
 
 export async function resendRegistrationCode(email: string): Promise<void> {
-  const res = await fetch(getApiUrl('/auth/register/resend'), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify({ email }),
-  });
-
-  if (!res.ok) {
-    throw new Error(await parseErrorMessage(res));
+  try {
+    await apiClient.post('/auth/register/resend', { email });
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
 }
 
 export async function logout(): Promise<void> {
-  const res = await fetch(getApiUrl('/auth/logout'), {
-    method: 'POST',
-    credentials: 'include',
-  });
-
-  if (!res.ok) {
-    throw new Error(await parseErrorMessage(res));
+  try {
+    await apiClient.post('/auth/logout');
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
 }
 
 export async function fetchCurrentUser(): Promise<AuthUser | null> {
-  const res = await fetch(getApiUrl('/auth/me'), {
-    credentials: 'include',
-  });
-
-  if (res.status === 401) {
-    return null;
+  try {
+    const { data } = await apiClient.get<AuthMeResponse>('/auth/me');
+    return data.user;
+  } catch (error) {
+    if (isAxiosError(error) && error.response?.status === 401) {
+      return null;
+    }
+    throw new Error(getErrorMessage(error));
   }
-
-  if (!res.ok) {
-    throw new Error(await parseErrorMessage(res));
-  }
-
-  const body = (await res.json()) as AuthMeResponse;
-  return body.user;
 }
