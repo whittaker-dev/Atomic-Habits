@@ -9,6 +9,8 @@ import { checkPostgres } from './lib/prisma.js';
 import { checkRedis } from './lib/redis.js';
 import { startNotificationWorkerStub } from './lib/queue.js';
 import contactRouter from './routes/contact.js';
+import authRouter from './routes/auth.js';
+import { sessionMiddleware } from './lib/session.js';
 import { HealthResponse } from '@atomic-habits/shared';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -20,6 +22,7 @@ const port = Number(process.env.API_PORT ?? 4000);
 app.use(helmet());
 app.use(cors({ origin: process.env.WEB_ORIGIN ?? 'http://localhost:4001', credentials: true }));
 app.use(express.json());
+app.use(sessionMiddleware());
 
 app.get('/health', async (_req, res) => {
   const [postgres, redisOk] = await Promise.all([checkPostgres(), checkRedis()]);
@@ -28,6 +31,7 @@ app.get('/health', async (_req, res) => {
 });
 
 app.use('/contact', contactRouter);
+app.use('/auth', authRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

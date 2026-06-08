@@ -28,7 +28,7 @@ import {
   CodeSnippetCard,
   CodeWindowCard,
 } from './cards';
-import { ProgressBar, SearchPill, TextInput } from './input';
+import { PasswordInput, ProgressBar, SearchPill, TextInput } from './input';
 
 export {
   Button,
@@ -58,6 +58,7 @@ export {
   CalloutCardCoral,
   CodeSnippetCard,
   CodeWindowCard,
+  PasswordInput,
   ProgressBar,
   SearchPill,
   TextInput,
@@ -76,6 +77,7 @@ export const components = {
   FeatureCard,
   FeatureCardYellowBold,
   PricingTierCard,
+  PasswordInput,
   TextInput,
   SearchPill,
   ProgressBar,
