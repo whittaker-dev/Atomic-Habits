@@ -38,10 +38,14 @@ export function TopNav() {
           </nav>
 
           <div className="flex items-center gap-md">
-            <Button variant="secondary" className="hidden sm:inline-flex">
-              {t('common.actions.signIn')}
-            </Button>
-            <Button>{t('common.actions.getStarted')}</Button>
+            <Link href="/login">
+              <Button variant="secondary" className="hidden sm:inline-flex">
+                {t('common.actions.signIn')}
+              </Button>
+            </Link>
+            <Link href="/register">
+              <Button>{t('common.actions.getStarted')}</Button>
+            </Link>
             <LanguageModal />
           </div>
         </div>

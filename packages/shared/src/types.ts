@@ -42,6 +42,20 @@ export interface DashboardSummary {
   missions: Mission[];
 }
 
+export interface AuthUser {
+  id: string;
+  email: string;
+  emailVerifiedAt: string | null;
+}
+
+export interface RegisterResponse {
+  pending: true;
+}
+
+export interface AuthMeResponse {
+  user: AuthUser;
+}
+
 export interface HealthResponse {
   status: 'ok';
   postgres: boolean;

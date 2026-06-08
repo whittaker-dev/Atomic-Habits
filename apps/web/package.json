@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@atomic-habits/shared": "workspace:*",
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.4.0",
     "@react-three/drei": "^10.7.7",

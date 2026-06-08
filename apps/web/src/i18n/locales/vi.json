@@ -19,7 +19,9 @@
       "sending": "Đang gửi…",
       "upgrade": "Nâng cấp",
       "contactSales": "Liên hệ bán hàng",
-      "backHome": "← Về trang chủ"
+      "backHome": "← Về trang chủ",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu"
     },
     "footer": {
       "product": "Sản phẩm",
@@ -171,7 +173,52 @@
     "emailInvalid": "Nhập địa chỉ email hợp lệ",
     "messageRequired": "Vui lòng nhập tin nhắn",
     "messageMin": "Tin nhắn tối thiểu 10 ký tự",
-    "messageMax": "Tin nhắn tối đa 2000 ký tự"
+    "messageMax": "Tin nhắn tối đa 2000 ký tự",
+    "passwordMin": "Mật khẩu tối thiểu 8 ký tự",
+    "confirmPasswordRequired": "Vui lòng xác nhận mật khẩu",
+    "passwordMismatch": "Mật khẩu không khớp",
+    "otpInvalid": "Nhập mã 6 chữ số"
+  },
+  "register": {
+    "title": "Tạo tài khoản",
+    "subtitle": "Đăng ký bằng email và mật khẩu để bắt đầu theo dõi nhiệm vụ.",
+    "fields": {
+      "email": "Email",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu"
+    },
+    "placeholders": {
+      "email": "ban@example.com",
+      "password": "Tối thiểu 8 ký tự",
+      "confirmPassword": "Nhập lại mật khẩu"
+    },
+    "actions": {
+      "continue": "Tiếp tục",
+      "creating": "Đang tạo tài khoản…",
+      "verify": "Xác minh email",
+      "verifying": "Đang xác minh…"
+    },
+    "verify": {
+      "title": "Kiểm tra email",
+      "subtitle": "Chúng tôi đã gửi mã 6 chữ số tới {{email}}.",
+      "resend": "Gửi lại mã",
+      "resendCountdown": "Gửi lại sau {{seconds}} giây",
+      "back": "← Dùng email khác"
+    },
+    "signInPrompt": "Đã có tài khoản?",
+    "errors": {
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại.",
+      "emailExists": "Email này đã được đăng ký. Vui lòng đăng nhập.",
+      "verifyFailed": "Mã không hợp lệ hoặc đã hết hạn. Vui lòng thử lại."
+    }
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "welcome": "Chào mừng trở lại, {{email}}. Các nhiệm vụ mặc định của bạn đã sẵn sàng.",
+    "actions": {
+      "logout": "Đăng xuất",
+      "loggingOut": "Đang đăng xuất…"
+    }
   },
   "designSystem": {
     "eyebrow": "Hệ thống thiết kế",

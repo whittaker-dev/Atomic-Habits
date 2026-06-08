@@ -1,9 +1,8 @@
 import type { ContactFormValues } from './contact-schema';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
+import { getApiUrl } from './api-url';
 
 export async function submitContactForm(values: ContactFormValues): Promise<void> {
-  const res = await fetch(`${API_URL}/contact`, {
+  const res = await fetch(getApiUrl('/contact'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(values),

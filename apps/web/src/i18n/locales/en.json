@@ -19,7 +19,9 @@
       "sending": "Sending…",
       "upgrade": "Upgrade",
       "contactSales": "Contact sales",
-      "backHome": "← Back home"
+      "backHome": "← Back home",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password"
     },
     "footer": {
       "product": "Product",
@@ -171,7 +173,52 @@
     "emailInvalid": "Enter a valid email address",
     "messageRequired": "Message is required",
     "messageMin": "Message must be at least 10 characters",
-    "messageMax": "Message must be 2000 characters or less"
+    "messageMax": "Message must be 2000 characters or less",
+    "passwordMin": "Password must be at least 8 characters",
+    "confirmPasswordRequired": "Please confirm your password",
+    "passwordMismatch": "Passwords do not match",
+    "otpInvalid": "Enter the 6-digit code"
+  },
+  "register": {
+    "title": "Create your account",
+    "subtitle": "Sign up with email and password to start tracking missions.",
+    "fields": {
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password"
+    },
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "At least 8 characters",
+      "confirmPassword": "Re-enter your password"
+    },
+    "actions": {
+      "continue": "Continue",
+      "creating": "Creating account…",
+      "verify": "Verify email",
+      "verifying": "Verifying…"
+    },
+    "verify": {
+      "title": "Check your email",
+      "subtitle": "We sent a 6-digit code to {{email}}.",
+      "resend": "Resend code",
+      "resendCountdown": "Resend available in {{seconds}}s",
+      "back": "← Use a different email"
+    },
+    "signInPrompt": "Already have an account?",
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "emailExists": "An account with this email already exists. Sign in instead.",
+      "verifyFailed": "Invalid or expired code. Please try again."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {{email}}. Your default missions are ready.",
+    "actions": {
+      "logout": "Log out",
+      "loggingOut": "Logging out…"
+    }
   },
   "designSystem": {
     "eyebrow": "Design system",
