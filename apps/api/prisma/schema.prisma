@@ -24,8 +24,6 @@ model User {
   @@map("users")
 }
 
-/// System-wide category lookup (english, fitness, coding, …).
-/// Missions reference this table — not a free-text string.
 model MissionCategory {
   id             String   @id @default(uuid())
   slug           String   @unique

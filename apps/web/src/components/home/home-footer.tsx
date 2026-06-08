@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { AppLogo } from '@/components/brand/app-logo';
 import { Button } from '@/design-system/components/button';
 
 const linkMotion = {
@@ -45,15 +46,7 @@ export function HomeFooter() {
       <div className="container-content relative py-section">
         <div className="grid gap-xl lg:grid-cols-12 lg:gap-lg">
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-flex items-center gap-sm">
-              <span
-                aria-hidden
-                className="flex h-9 w-9 items-center justify-center rounded-md bg-primary font-sans text-body-sm font-bold text-on-primary"
-              >
-                A
-              </span>
-              <span className="font-sans text-body font-bold text-ink">{t('common.appName')}</span>
-            </Link>
+            <AppLogo size="lg" />
             <p className="mt-md max-w-sm font-sans text-body-sm leading-relaxed text-ink-muted">
               {t('common.footer.tagline')}
             </p>
