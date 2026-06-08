@@ -1,0 +1,14 @@
+---
+description: Format and verify changes before finishing agent tasks
+alwaysApply: true
+---
+
+# CI checks before completing work
+
+When you create or edit code in this repo:
+
+1. Run `pnpm prettier --write` on every file you touched.
+2. Run `pnpm check` and fix any failures before responding.
+3. Do not commit unless the user explicitly asks.
+
+Prettier config (`.prettierrc`): semicolons, single quotes, trailing commas, print width 100.
