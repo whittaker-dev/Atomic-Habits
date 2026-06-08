@@ -78,9 +78,7 @@ export function PillTab({
       className={cn(
         'min-h-9 rounded-pill px-[14px] py-1.5 font-sans text-body-sm transition-colors',
         'focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-focus/50',
-        active
-          ? 'bg-surface-2 font-medium text-ink'
-          : 'bg-canvas text-ink-subtle hover:text-ink',
+        active ? 'bg-surface-2 font-medium text-ink' : 'bg-canvas text-ink-subtle hover:text-ink',
         className,
       )}
       {...props}

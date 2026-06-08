@@ -25,12 +25,8 @@ const variants = {
     'hover:bg-inverse-surface-1 active:bg-inverse-surface-2',
   ),
   ghost: cn(base, 'rounded-md bg-transparent px-[14px] py-xs text-ink-subtle hover:text-ink'),
-  link: cn(
-    'inline font-sans text-button font-medium text-primary hover:text-primary-hover',
-  ),
-  'text-link': cn(
-    'inline font-sans text-body-sm text-ink-subtle hover:text-ink',
-  ),
+  link: cn('inline font-sans text-button font-medium text-primary hover:text-primary-hover'),
+  'text-link': cn('inline font-sans text-body-sm text-ink-subtle hover:text-ink'),
   /* Legacy aliases */
   dark: cn(base, 'panel-lift rounded-md bg-surface-1 px-[14px] py-xs text-ink hover:bg-surface-2'),
   'on-dark': cn(
@@ -41,12 +37,18 @@ const variants = {
     base,
     'panel-lift rounded-md bg-surface-1 px-[14px] py-xs text-ink hover:bg-surface-2',
   ),
-  'pill-dark': cn(base, 'panel-lift rounded-md bg-surface-1 px-[14px] py-xs text-ink hover:bg-surface-2'),
+  'pill-dark': cn(
+    base,
+    'panel-lift rounded-md bg-surface-1 px-[14px] py-xs text-ink hover:bg-surface-2',
+  ),
   'pill-outlined': cn(
     base,
     'panel-lift rounded-md bg-surface-1 px-[14px] py-xs text-ink hover:bg-surface-2',
   ),
-  'pill-dark-lg': cn(base, 'panel-lift rounded-md bg-surface-1 px-[14px] py-xs text-ink hover:bg-surface-2'),
+  'pill-dark-lg': cn(
+    base,
+    'panel-lift rounded-md bg-surface-1 px-[14px] py-xs text-ink hover:bg-surface-2',
+  ),
   'pill-light': cn(
     base,
     'rounded-md bg-inverse-canvas px-[14px] py-xs text-inverse-ink hover:bg-inverse-surface-1',
