@@ -1,0 +1,279 @@
+{
+  "common": {
+    "appName": "Atomic Habits",
+    "meta": {
+      "title": "Atomic Habits — Hệ điều hành phát triển cá nhân",
+      "description": "Nhiệm vụ hàng ngày, chuỗi streak và tiến độ rõ ràng cho hành trình tự cải thiện."
+    },
+    "actions": {
+      "getStarted": "Bắt đầu",
+      "getStartedFree": "Bắt đầu miễn phí",
+      "signIn": "Đăng nhập",
+      "requestDemo": "Yêu cầu demo",
+      "exploreFeatures": "Khám phá tính năng",
+      "learnMore": "Tìm hiểu thêm",
+      "submit": "Gửi",
+      "cancel": "Hủy",
+      "clear": "Xóa",
+      "sendMessage": "Gửi tin nhắn",
+      "sending": "Đang gửi…",
+      "upgrade": "Nâng cấp",
+      "contactSales": "Liên hệ bán hàng",
+      "backHome": "← Về trang chủ"
+    },
+    "footer": {
+      "product": "Sản phẩm",
+      "missions": "Nhiệm vụ",
+      "streaks": "Chuỗi streak",
+      "resources": "Tài nguyên",
+      "designSystem": "Hệ thống thiết kế",
+      "copyright": "© Atomic Habits"
+    },
+    "language": {
+      "en": "English",
+      "vi": "Tiếng Việt",
+      "label": "Ngôn ngữ",
+      "modalTitle": "Chọn ngôn ngữ",
+      "modalDescription": "Chọn ngôn ngữ bạn muốn dùng trên trang."
+    }
+  },
+  "nav": {
+    "promo": "Atomic Habits — không gian phát triển cá nhân của bạn.",
+    "seeDesignSystem": "Xem hệ thống thiết kế →",
+    "home": "Trang chủ",
+    "contact": "Liên hệ",
+    "designSystem": "Hệ thống thiết kế"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Hệ điều hành phát triển cá nhân",
+      "title": "Gặp gỡ chuỗi streak hàng ngày.",
+      "subtitle": "Theo dõi nhiệm vụ, tích lũy XP và duy trì thói quen — tiếng Anh, thể dục, lập trình và hơn thế nữa."
+    },
+    "mockup": {
+      "title": "Trụ sở hôm nay",
+      "missions": "Nhiệm vụ hôm nay",
+      "streak": "Streak 28 ngày",
+      "missionEnglish": "Học 10 từ tiếng Anh",
+      "missionExercise": "Tập thể dục 20 phút",
+      "missionTicket": "Hoàn thành ticket TRY-44",
+      "xp": "+20 XP",
+      "level": "Cấp 7"
+    },
+    "features": {
+      "title": "Giữ động lực 24/7",
+      "subtitle": "Nhiệm vụ hàng ngày theo danh mục — một không gian cho sự phát triển của bạn.",
+      "english": {
+        "title": "Học tiếng Anh",
+        "description": "Từ vựng hàng ngày + quiz nhỏ. +25 XP."
+      },
+      "exercise": {
+        "title": "Tập thể dục",
+        "description": "Check-in tập 20 phút. +15 XP."
+      },
+      "deepWork": {
+        "title": "Deep work",
+        "description": "Hoàn thành ticket hoặc phiên code. +25 XP."
+      }
+    },
+    "assistants": {
+      "title": "Trợ lý theo yêu cầu",
+      "description": "Thử thách tiếng Anh hàng ngày dựa trên dữ liệu streak — quay lại mỗi ngày."
+    },
+    "together": {
+      "title": "Gom mọi thứ vào một nơi",
+      "heatmap": {
+        "title": "Heatmap",
+        "description": "Xem mức độ nhất quán trong nháy mắt."
+      },
+      "xp": {
+        "title": "XP & cấp độ",
+        "description": "Gamification giúp bạn tiếp tục."
+      },
+      "reports": {
+        "title": "Báo cáo tuần",
+        "description": "82% nhất quán — suy ngẫm và cải thiện."
+      }
+    }
+  },
+  "contact": {
+    "label": "Liên hệ",
+    "title": "Chào bạn — chúng tôi luôn lắng nghe",
+    "subtitle": "Câu hỏi, phản hồi hay ý tưởng hợp tác? Gửi tin nhắn và chúng tôi sẽ phản hồi sớm.",
+    "fields": {
+      "name": "Tên",
+      "email": "Email",
+      "message": "Tin nhắn"
+    },
+    "placeholders": {
+      "name": "Tên của bạn",
+      "email": "ban@example.com",
+      "message": "Kể cho chúng tôi bạn đang xây dựng gì…"
+    },
+    "success": "Đã gửi tin nhắn! Chúng tôi sẽ liên hệ sớm."
+  },
+  "validation": {
+    "nameRequired": "Vui lòng nhập tên",
+    "nameMax": "Tên tối đa 100 ký tự",
+    "emailRequired": "Vui lòng nhập email",
+    "emailInvalid": "Nhập địa chỉ email hợp lệ",
+    "messageRequired": "Vui lòng nhập tin nhắn",
+    "messageMin": "Tin nhắn tối thiểu 10 ký tự",
+    "messageMax": "Tin nhắn tối đa 2000 ký tự"
+  },
+  "designSystem": {
+    "eyebrow": "Hệ thống thiết kế",
+    "title": "Giao diện tối · Spotify Green",
+    "intro": "Triển khai tham chiếu cho <code>DESIGN.md</code>. Bảng màu Spotify trong <code>src/design-system/tokens/</code>.",
+    "nav": {
+      "onThisPage": "Trên trang này",
+      "palette": "Bảng màu",
+      "typography": "Kiểu chữ",
+      "buttons": "Nút",
+      "cards": "Thẻ",
+      "forms": "Form",
+      "spacing": "Khoảng cách",
+      "elevation": "Độ nổi",
+      "responsive": "Responsive"
+    },
+    "palette": {
+      "title": "Bảng màu",
+      "description": "Spotify Green trên nền than. Tên token theo DESIGN.md.",
+      "brand": "Thương hiệu",
+      "surfaceLadder": "Thang surface",
+      "text": "Chữ",
+      "semantic": "Ngữ nghĩa",
+      "borders": "Viền"
+    },
+    "typography": {
+      "title": "Kiểu chữ",
+      "description": "DM Sans (thay SpotifyMixUI). Tracking âm trên cỡ display theo DESIGN.md.",
+      "displayXl": "Display XL",
+      "displayLg": "Display LG",
+      "displayMd": "Display MD",
+      "headline": "Headline",
+      "cardTitle": "Tiêu đề thẻ",
+      "subhead": "Subhead — đoạn dẫn",
+      "bodyLg": "Body LG — mô tả hero",
+      "body": "Body — đoạn văn mặc định",
+      "bodySm": "Body SM — cột footer",
+      "caption": "Caption — meta, trạng thái",
+      "buttonLabel": "Nhãn nút",
+      "eyebrow": "Eyebrow taxonomy",
+      "monoSample": "const streak = await getStreak();",
+      "monoNote": "13px mono · ảnh chụp sản phẩm"
+    },
+    "buttons": {
+      "title": "Nút",
+      "description": "Góc 8px (rounded-md). Pill chỉ dùng cho tab giá.",
+      "primarySecondary": "Primary & secondary",
+      "states": "Trạng thái",
+      "hover": "Hover",
+      "pressed": "Nhấn",
+      "disabled": "Vô hiệu",
+      "ghost": "Ghost",
+      "linkEmphasis": "Link nhấn mạnh",
+      "pricingTabs": "Tab giá (pill)",
+      "statusBadges": "Badge trạng thái",
+      "tag": "Tag"
+    },
+    "cards": {
+      "title": "Thẻ",
+      "description": "Thang surface + viền hairline. Panel ảnh sản phẩm dùng rounded-xl.",
+      "surfaceLevels": "Cấp surface",
+      "featureCard": "feature-card",
+      "featureDesc1": "surface-1 · rounded-lg · 24px pad",
+      "surface2Title": "surface-2 lift",
+      "surface2Desc": "Nổi bật / hover",
+      "surface3Desc": "Độ sâu sub-nav",
+      "surface4Desc": "Lift sâu nhất",
+      "pricingPlans": "Gói giá",
+      "free": "Miễn phí",
+      "pro": "Pro",
+      "team": "Team",
+      "featureMissions": "5 nhiệm vụ",
+      "featureStreak": "Theo dõi streak",
+      "featureReports": "Báo cáo cơ bản",
+      "featureUnlimited": "Nhiệm vụ không giới hạn",
+      "featureEnglishAi": "AI tiếng Anh",
+      "featureWeeklyReports": "Báo cáo tuần",
+      "featurePriority": "Hỗ trợ ưu tiên",
+      "featureEverythingPro": "Mọi thứ trong Pro",
+      "featureShared": "Nhiệm vụ chia sẻ",
+      "featureAdmin": "Bảng quản trị",
+      "screenshotTitle": "Ảnh sản phẩm · testimonial · CTA",
+      "mockupTitle": "product-screenshot-card",
+      "mockupMissions": "Nhiệm vụ hôm nay",
+      "mockupEnglish": "☐ Học 10 từ tiếng Anh",
+      "mockupExercise": "☐ Tập thể dục 20 phút",
+      "mockupTicket": "☑ Hoàn thành ticket TRY-44",
+      "testimonialQuote": "Hệ thống streak giúp tôi quay lại mỗi ngày.",
+      "testimonialAuthor": "Alex Chen",
+      "testimonialRole": "Kỹ sư phần mềm",
+      "ctaTitle": "cta-banner",
+      "ctaDescription": "Panel kết thúc gần cuối trang.",
+      "highlightTitle": "Phần nổi bật",
+      "highlightDescription": "Callout nhấn mạnh trên surface-1.",
+      "cardBase": "CardBase — container chung"
+    },
+    "forms": {
+      "title": "Form",
+      "description": "Input surface-1, góc 8px, vòng focus primary 50% opacity.",
+      "email": "Email",
+      "name": "Tên",
+      "search": "Tìm kiếm",
+      "searchPlaceholder": "Tìm nhiệm vụ...",
+      "focusState": "Trạng thái focus",
+      "focusedInput": "Input đang focus",
+      "progress": "Tiến độ",
+      "progressCaption": "Cấp 7 · 68% tới Cấp 8"
+    },
+    "spacing": {
+      "title": "Khoảng cách",
+      "description": "Đơn vị cơ sở 4px. Khoảng section dùng spacing.section (96px).",
+      "borderRadius": "Bo góc",
+      "layout": "Bố cục",
+      "layoutMaxWidth": "max-width: 1280px",
+      "layoutNavHeight": "nav-height: 56px",
+      "layoutCardPadding": "card padding: lg (24px) · testimonial: xl (32px) · cta: xxl (48px)"
+    },
+    "elevation": {
+      "title": "Độ nổi",
+      "description": "Chiều sâu qua thang surface + viền hairline. Không drop shadow trên nền tối.",
+      "level": "Cấp {{level}} — {{label}}",
+      "flat": "Phẳng",
+      "flatDesc": "Canvas — hero, footer",
+      "charcoal": "Charcoal lift",
+      "charcoalDesc": "surface-1 + hairline",
+      "surface2": "Surface-2 lift",
+      "surface2Desc": "Giá nổi bật, hover",
+      "surface3": "Surface-3",
+      "surface3Desc": "Sub-nav, dropdown",
+      "focusRing": "Vòng focus",
+      "focusRingDesc": "2px primary-focus @ 50%",
+      "panelEdge": "Viền panel:"
+    },
+    "responsive": {
+      "title": "Responsive",
+      "description": "Lưới thẻ thu 3 → 2 → 1. Cỡ display thu nhỏ trên mobile.",
+      "breakpoint": "Breakpoint",
+      "width": "Chiều rộng",
+      "cardGrid": "Lưới thẻ",
+      "mobile": "Mobile",
+      "tablet": "Tablet",
+      "desktop": "Desktop",
+      "desktopXl": "Desktop XL",
+      "colsUp": "{{cols}}-up",
+      "liveGrid": "Lưới trực tiếp — đổi kích thước viewport",
+      "column": "Cột {{n}}",
+      "columnNote": "1 col · md:2 · lg:3",
+      "displayScale": "Thang display",
+      "responsiveDisplay": "Display responsive",
+      "displaySizes": "40px → 56px (md) → 80px (lg)",
+      "touchTargets": "Vùng chạm",
+      "ctaHeight": "CTA: tối thiểu 40px",
+      "tabHeight": "Tab giá: tối thiểu 36px (44px trên touch)",
+      "inputHeight": "Input form: tối thiểu 44px trên touch"
+    }
+  }
+}

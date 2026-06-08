@@ -12,7 +12,7 @@ const app = express();
 const port = Number(process.env.API_PORT ?? 4000);
 
 app.use(helmet());
-app.use(cors({ origin: process.env.WEB_ORIGIN ?? 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: process.env.WEB_ORIGIN ?? 'http://localhost:4001', credentials: true }));
 app.use(express.json());
 
 app.get('/health', async (_req, res) => {

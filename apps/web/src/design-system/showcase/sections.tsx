@@ -1,10 +1,8 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
 import { Button, TextLink } from '@/design-system/components/button';
-import {
-  BadgeTag,
-  PillTab,
-  StatusBadge,
-  SuccessBadge,
-} from '@/design-system/components/badges';
+import { BadgeTag, PillTab, StatusBadge, SuccessBadge } from '@/design-system/components/badges';
 import {
   CardBase,
   CtaBanner,
@@ -21,42 +19,46 @@ import { spacing } from '@/design-system/tokens/spacing';
 import { SectionShell, SubLabel } from './section-shell';
 
 const NAV_SECTIONS = [
-  { id: 'palette', label: 'Palette' },
-  { id: 'typography', label: 'Typography' },
-  { id: 'buttons', label: 'Buttons' },
-  { id: 'cards', label: 'Cards' },
-  { id: 'forms', label: 'Forms' },
-  { id: 'spacing', label: 'Spacing' },
-  { id: 'elevation', label: 'Elevation' },
-  { id: 'responsive', label: 'Responsive' },
+  { id: 'palette', labelKey: 'designSystem.nav.palette' },
+  { id: 'typography', labelKey: 'designSystem.nav.typography' },
+  { id: 'buttons', labelKey: 'designSystem.nav.buttons' },
+  { id: 'cards', labelKey: 'designSystem.nav.cards' },
+  { id: 'forms', labelKey: 'designSystem.nav.forms' },
+  { id: 'spacing', labelKey: 'designSystem.nav.spacing' },
+  { id: 'elevation', labelKey: 'designSystem.nav.elevation' },
+  { id: 'responsive', labelKey: 'designSystem.nav.responsive' },
 ] as const;
 
 export function ShowcaseNav() {
+  const { t } = useTranslation();
+
   return (
     <>
       <nav className="sticky top-20 hidden w-44 shrink-0 lg:block">
-        <p className="mb-sm font-sans text-caption font-medium text-ink-tertiary">On this page</p>
+        <p className="mb-sm font-sans text-caption font-medium text-ink-tertiary">
+          {t('designSystem.nav.onThisPage')}
+        </p>
         <ul className="space-y-xs">
-          {NAV_SECTIONS.map(({ id, label }) => (
+          {NAV_SECTIONS.map(({ id, labelKey }) => (
             <li key={id}>
               <a
                 href={`#${id}`}
                 className="block rounded-sm px-xs py-xxs font-sans text-body-sm text-ink-subtle transition-colors hover:bg-surface-1 hover:text-ink"
               >
-                {label}
+                {t(labelKey)}
               </a>
             </li>
           ))}
         </ul>
       </nav>
       <nav className="mb-lg flex gap-xs overflow-x-auto pb-xs lg:hidden">
-        {NAV_SECTIONS.map(({ id, label }) => (
+        {NAV_SECTIONS.map(({ id, labelKey }) => (
           <a
             key={id}
             href={`#${id}`}
             className="shrink-0 rounded-pill bg-surface-1 px-sm py-xxs font-sans text-caption text-ink-subtle hover:text-ink"
           >
-            {label}
+            {t(labelKey)}
           </a>
         ))}
       </nav>
@@ -67,7 +69,10 @@ export function ShowcaseNav() {
 function Swatch({ name, hex, className }: { name: string; hex: string; className?: string }) {
   return (
     <div className="panel-lift overflow-hidden rounded-lg bg-surface-1">
-      <div className={className ?? 'h-16 bg-canvas'} style={className ? undefined : { backgroundColor: hex }} />
+      <div
+        className={className ?? 'h-16 bg-canvas'}
+        style={className ? undefined : { backgroundColor: hex }}
+      />
       <div className="p-sm">
         <p className="font-sans text-body-sm font-medium text-ink">{name}</p>
         <p className="font-mono text-mono text-ink-subtle">{hex}</p>
@@ -77,6 +82,8 @@ function Swatch({ name, hex, className }: { name: string; hex: string; className
 }
 
 export function PaletteSection() {
+  const { t } = useTranslation();
+
   const brand = [
     { name: 'primary', hex: colors.primary },
     { name: 'primary-hover', hex: colors.primaryHover },
@@ -106,38 +113,38 @@ export function PaletteSection() {
   return (
     <SectionShell
       id="palette"
-      title="Palette"
-      description="Spotify Green on charcoal surfaces. Token names follow DESIGN.md."
+      title={t('designSystem.palette.title')}
+      description={t('designSystem.palette.description')}
     >
-      <SubLabel>Brand</SubLabel>
+      <SubLabel>{t('designSystem.palette.brand')}</SubLabel>
       <div className="grid grid-cols-2 gap-md sm:grid-cols-4">
         {brand.map((c) => (
           <Swatch key={c.name} name={c.name} hex={c.hex} />
         ))}
       </div>
 
-      <SubLabel>Surface ladder</SubLabel>
+      <SubLabel>{t('designSystem.palette.surfaceLadder')}</SubLabel>
       <div className="mt-md grid grid-cols-2 gap-md sm:grid-cols-3 lg:grid-cols-5">
         {surfaces.map((c) => (
           <Swatch key={c.name} name={c.name} hex={c.hex} />
         ))}
       </div>
 
-      <SubLabel>Text</SubLabel>
+      <SubLabel>{t('designSystem.palette.text')}</SubLabel>
       <div className="mt-md grid grid-cols-2 gap-md sm:grid-cols-4">
         {text.map((c) => (
           <Swatch key={c.name} name={c.name} hex={c.hex} />
         ))}
       </div>
 
-      <SubLabel>Semantic</SubLabel>
+      <SubLabel>{t('designSystem.palette.semantic')}</SubLabel>
       <div className="mt-md grid grid-cols-2 gap-md sm:grid-cols-4">
         {semantic.map((c) => (
           <Swatch key={c.name} name={c.name} hex={c.hex} />
         ))}
       </div>
 
-      <SubLabel>Borders</SubLabel>
+      <SubLabel>{t('designSystem.palette.borders')}</SubLabel>
       <div className="mt-md grid grid-cols-3 gap-md">
         <Swatch name="hairline" hex={colors.hairline} />
         <Swatch name="hairline-strong" hex={colors.hairlineStrong} />
@@ -148,168 +155,221 @@ export function PaletteSection() {
 }
 
 export function TypographySection() {
+  const { t } = useTranslation();
+
   return (
     <SectionShell
       id="typography"
-      title="Typography"
-      description="DM Sans (SpotifyMixUI substitute). Negative tracking on display sizes per DESIGN.md."
+      title={t('designSystem.typography.title')}
+      description={t('designSystem.typography.description')}
     >
       <div className="panel-lift rounded-lg bg-surface-1 p-lg">
-        <p className="font-sans text-display-xl font-semibold">Display XL</p>
+        <p className="font-sans text-display-xl font-semibold">
+          {t('designSystem.typography.displayXl')}
+        </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">80px · 600 · -3px tracking</p>
 
-        <p className="mt-lg font-sans text-display-lg font-semibold">Display LG</p>
+        <p className="mt-lg font-sans text-display-lg font-semibold">
+          {t('designSystem.typography.displayLg')}
+        </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">56px · 600 · -1.8px tracking</p>
 
-        <p className="mt-lg font-sans text-display-md font-semibold">Display MD</p>
+        <p className="mt-lg font-sans text-display-md font-semibold">
+          {t('designSystem.typography.displayMd')}
+        </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">40px · 600 · -1px tracking</p>
 
-        <p className="mt-lg font-sans text-headline font-semibold">Headline</p>
+        <p className="mt-lg font-sans text-headline font-semibold">
+          {t('designSystem.typography.headline')}
+        </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">28px · 600 · -0.6px</p>
 
-        <p className="mt-lg font-sans text-card-title">Card title</p>
+        <p className="mt-lg font-sans text-card-title">{t('designSystem.typography.cardTitle')}</p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">22px · 500 · -0.4px</p>
 
-        <p className="mt-lg font-sans text-subhead">Subhead — lead paragraphs</p>
+        <p className="mt-lg font-sans text-subhead">{t('designSystem.typography.subhead')}</p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">20px · 400 · -0.2px</p>
 
-        <p className="mt-lg font-sans text-body-lg">Body LG — hero subhead</p>
+        <p className="mt-lg font-sans text-body-lg">{t('designSystem.typography.bodyLg')}</p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">18px · 400 · -0.1px</p>
 
-        <p className="mt-lg font-sans text-body">Body — default paragraph text</p>
+        <p className="mt-lg font-sans text-body">{t('designSystem.typography.body')}</p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">16px · 400 · -0.05px</p>
 
-        <p className="mt-lg font-sans text-body-sm">Body SM — footer columns</p>
+        <p className="mt-lg font-sans text-body-sm">{t('designSystem.typography.bodySm')}</p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">14px · 400</p>
 
-        <p className="mt-lg font-sans text-caption">Caption — meta, status</p>
+        <p className="mt-lg font-sans text-caption">{t('designSystem.typography.caption')}</p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">12px · 400</p>
 
-        <p className="mt-lg font-sans text-button font-medium">Button label</p>
+        <p className="mt-lg font-sans text-button font-medium">
+          {t('designSystem.typography.buttonLabel')}
+        </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">14px · 500</p>
 
-        <p className="mt-lg font-sans text-eyebrow text-ink-muted">Eyebrow taxonomy</p>
+        <p className="mt-lg font-sans text-eyebrow text-ink-muted">
+          {t('designSystem.typography.eyebrow')}
+        </p>
         <p className="mt-xs font-mono text-mono text-ink-subtle">13px · 500 · +0.4px tracking</p>
 
-        <p className="mt-lg font-mono text-mono">const streak = await getStreak();</p>
-        <p className="mt-xs font-mono text-mono text-ink-subtle">13px mono · product screenshots</p>
+        <p className="mt-lg font-mono text-mono">{t('designSystem.typography.monoSample')}</p>
+        <p className="mt-xs font-mono text-mono text-ink-subtle">
+          {t('designSystem.typography.monoNote')}
+        </p>
       </div>
     </SectionShell>
   );
 }
 
 export function ButtonsSection() {
+  const { t } = useTranslation();
+
   return (
     <SectionShell
       id="buttons"
-      title="Buttons"
-      description="8px corners (rounded-md). Pills reserved for pricing tabs only."
+      title={t('designSystem.buttons.title')}
+      description={t('designSystem.buttons.description')}
     >
-      <SubLabel>Primary & secondary</SubLabel>
+      <SubLabel>{t('designSystem.buttons.primarySecondary')}</SubLabel>
       <div className="flex flex-wrap items-center gap-md">
         <Button>button-primary</Button>
         <Button variant="secondary">button-secondary</Button>
         <Button variant="tertiary">button-tertiary</Button>
         <Button variant="inverse">button-inverse</Button>
-        <Button variant="ghost">Ghost</Button>
-        <TextLink href="#">Link emphasis</TextLink>
+        <Button variant="ghost">{t('designSystem.buttons.ghost')}</Button>
+        <TextLink href="#">{t('designSystem.buttons.linkEmphasis')}</TextLink>
       </div>
 
-      <SubLabel>States</SubLabel>
+      <SubLabel>{t('designSystem.buttons.states')}</SubLabel>
       <div className="mt-md flex flex-wrap items-center gap-md">
-        <Button className="bg-primary-hover">Hover</Button>
-        <Button className="bg-primary-focus">Pressed</Button>
-        <Button disabled>Disabled</Button>
+        <Button className="bg-primary-hover">{t('designSystem.buttons.hover')}</Button>
+        <Button className="bg-primary-focus">{t('designSystem.buttons.pressed')}</Button>
+        <Button disabled>{t('designSystem.buttons.disabled')}</Button>
       </div>
 
-      <SubLabel>Pricing tabs (pill)</SubLabel>
+      <SubLabel>{t('designSystem.buttons.pricingTabs')}</SubLabel>
       <div className="mt-md flex flex-wrap items-center gap-md">
         <PillTab>pricing-tab-default</PillTab>
         <PillTab active>pricing-tab-selected</PillTab>
       </div>
 
-      <SubLabel>Status badges</SubLabel>
+      <SubLabel>{t('designSystem.buttons.statusBadges')}</SubLabel>
       <div className="mt-md flex flex-wrap items-center gap-md">
         <StatusBadge>status-badge</StatusBadge>
         <SuccessBadge>semantic-success</SuccessBadge>
-        <BadgeTag variant="default">Tag</BadgeTag>
+        <BadgeTag variant="default">{t('designSystem.buttons.tag')}</BadgeTag>
       </div>
     </SectionShell>
   );
 }
 
 export function CardsSection() {
+  const { t } = useTranslation();
+
   return (
     <SectionShell
       id="cards"
-      title="Cards"
-      description="Surface ladder + hairline borders. Product screenshot panels use rounded-xl."
+      title={t('designSystem.cards.title')}
+      description={t('designSystem.cards.description')}
     >
-      <SubLabel>Surface levels</SubLabel>
+      <SubLabel>{t('designSystem.cards.surfaceLevels')}</SubLabel>
       <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-4">
-        <FeatureCard tint="surface-1" title="feature-card" description="surface-1 · rounded-lg · 24px pad" />
-        <FeatureCard tint="surface-2" title="surface-2 lift" description="Featured / hover state" />
-        <FeatureCard tint="surface-3" title="surface-3" description="Sub-nav depth" />
-        <FeatureCard tint="surface-4" title="surface-4" description="Deepest lift" />
+        <FeatureCard
+          tint="surface-1"
+          title={t('designSystem.cards.featureCard')}
+          description={t('designSystem.cards.featureDesc1')}
+        />
+        <FeatureCard
+          tint="surface-2"
+          title={t('designSystem.cards.surface2Title')}
+          description={t('designSystem.cards.surface2Desc')}
+        />
+        <FeatureCard
+          tint="surface-3"
+          title="surface-3"
+          description={t('designSystem.cards.surface3Desc')}
+        />
+        <FeatureCard
+          tint="surface-4"
+          title="surface-4"
+          description={t('designSystem.cards.surface4Desc')}
+        />
       </div>
 
-      <SubLabel>Pricing plans</SubLabel>
+      <SubLabel>{t('designSystem.cards.pricingPlans')}</SubLabel>
       <div className="mt-md grid gap-lg md:grid-cols-3">
         <PricingTierCard
-          name="Free"
+          name={t('designSystem.cards.free')}
           price="$0"
-          features={['5 missions', 'Streak tracking', 'Basic reports']}
-          action={<Button variant="secondary">Get started</Button>}
+          features={[
+            t('designSystem.cards.featureMissions'),
+            t('designSystem.cards.featureStreak'),
+            t('designSystem.cards.featureReports'),
+          ]}
+          action={<Button variant="secondary">{t('common.actions.getStarted')}</Button>}
         />
         <PricingTierCard
           featured
-          name="Pro"
+          name={t('designSystem.cards.pro')}
           price="$12"
-          features={['Unlimited missions', 'English AI', 'Weekly reports', 'Priority support']}
-          action={<Button>Upgrade</Button>}
+          features={[
+            t('designSystem.cards.featureUnlimited'),
+            t('designSystem.cards.featureEnglishAi'),
+            t('designSystem.cards.featureWeeklyReports'),
+            t('designSystem.cards.featurePriority'),
+          ]}
+          action={<Button>{t('common.actions.upgrade')}</Button>}
         />
         <PricingTierCard
-          name="Team"
+          name={t('designSystem.cards.team')}
           price="$29"
-          features={['Everything in Pro', 'Shared missions', 'Admin dashboard']}
-          action={<Button variant="secondary">Contact sales</Button>}
+          features={[
+            t('designSystem.cards.featureEverythingPro'),
+            t('designSystem.cards.featureShared'),
+            t('designSystem.cards.featureAdmin'),
+          ]}
+          action={<Button variant="secondary">{t('common.actions.contactSales')}</Button>}
         />
       </div>
 
-      <SubLabel>Product screenshot · testimonial · CTA</SubLabel>
+      <SubLabel>{t('designSystem.cards.screenshotTitle')}</SubLabel>
       <div className="mt-md space-y-lg">
-        <WorkspaceMockupCard title="product-screenshot-card">
+        <WorkspaceMockupCard title={t('designSystem.cards.mockupTitle')}>
           <div className="rounded-md bg-surface-2 p-md">
-            <p className="font-sans text-body-sm font-medium text-ink">Today&apos;s missions</p>
+            <p className="font-sans text-body-sm font-medium text-ink">
+              {t('designSystem.cards.mockupMissions')}
+            </p>
             <ul className="mt-sm space-y-xs font-sans text-body-sm text-ink-subtle">
-              <li className="text-ink">☐ Learn 10 English words</li>
-              <li>☐ Exercise 20 mins</li>
-              <li className="text-primary">☑ Finish ticket TRY-44</li>
+              <li className="text-ink">{t('designSystem.cards.mockupEnglish')}</li>
+              <li>{t('designSystem.cards.mockupExercise')}</li>
+              <li className="text-primary">{t('designSystem.cards.mockupTicket')}</li>
             </ul>
           </div>
         </WorkspaceMockupCard>
 
         <div className="grid gap-lg md:grid-cols-2">
           <TestimonialCard
-            quote="The streak system keeps me coming back every single day."
-            author="Alex Chen"
-            role="Software engineer"
+            quote={t('designSystem.cards.testimonialQuote')}
+            author={t('designSystem.cards.testimonialAuthor')}
+            role={t('designSystem.cards.testimonialRole')}
           />
           <CtaBanner
-            title="cta-banner"
-            description="Closing panel near page bottom."
-            action={<Button>Get started free</Button>}
+            title={t('designSystem.cards.ctaTitle')}
+            description={t('designSystem.cards.ctaDescription')}
+            action={<Button>{t('common.actions.getStartedFree')}</Button>}
           />
         </div>
 
         <FeatureCardYellowBold
-          title="Highlighted section"
-          description="High-emphasis callout on surface-1."
-          action={<Button variant="secondary">Learn more</Button>}
+          title={t('designSystem.cards.highlightTitle')}
+          description={t('designSystem.cards.highlightDescription')}
+          action={<Button variant="secondary">{t('common.actions.learnMore')}</Button>}
         />
 
         <CardBase>
-          <p className="font-sans text-body-sm text-ink-subtle">CardBase — generic container</p>
+          <p className="font-sans text-body-sm text-ink-subtle">
+            {t('designSystem.cards.cardBase')}
+          </p>
         </CardBase>
       </div>
     </SectionShell>
@@ -317,55 +377,61 @@ export function CardsSection() {
 }
 
 export function FormsSection() {
+  const { t } = useTranslation();
+
   return (
     <SectionShell
       id="forms"
-      title="Forms"
-      description="surface-1 inputs, 8px radius, primary focus ring at 50% opacity."
+      title={t('designSystem.forms.title')}
+      description={t('designSystem.forms.description')}
     >
       <div className="grid max-w-lg gap-lg">
         <div>
           <label htmlFor="ds-email" className="mb-xs block font-sans text-body-sm text-ink-muted">
-            Email
+            {t('designSystem.forms.email')}
           </label>
-          <TextInput id="ds-email" placeholder="you@example.com" type="email" />
+          <TextInput id="ds-email" placeholder={t('contact.placeholders.email')} type="email" />
         </div>
 
         <div>
           <label htmlFor="ds-name" className="mb-xs block font-sans text-body-sm text-ink-muted">
-            Name
+            {t('designSystem.forms.name')}
           </label>
-          <TextInput id="ds-name" placeholder="Your name" />
+          <TextInput id="ds-name" placeholder={t('contact.placeholders.name')} />
         </div>
 
         <div>
           <label htmlFor="ds-search" className="mb-xs block font-sans text-body-sm text-ink-muted">
-            Search
+            {t('designSystem.forms.search')}
           </label>
-          <SearchPill id="ds-search" placeholder="Search missions..." />
+          <SearchPill id="ds-search" placeholder={t('designSystem.forms.searchPlaceholder')} />
         </div>
 
         <div>
           <label htmlFor="ds-focused" className="mb-xs block font-sans text-body-sm text-ink-muted">
-            Focus state
+            {t('designSystem.forms.focusState')}
           </label>
           <TextInput
             id="ds-focused"
-            defaultValue="Focused input"
+            defaultValue={t('designSystem.forms.focusedInput')}
             className="outline outline-2 outline-primary-focus/50"
           />
         </div>
 
         <div>
-          <p className="mb-xs font-sans text-body-sm text-ink-muted">Progress</p>
+          <p className="mb-xs font-sans text-body-sm text-ink-muted">
+            {t('designSystem.forms.progress')}
+          </p>
           <ProgressBar value={68} />
-          <p className="mt-xs font-sans text-caption text-ink-tertiary">Level 7 · 68% to Level 8</p>
+          <p className="mt-xs font-sans text-caption text-ink-tertiary">
+            {t('designSystem.forms.progressCaption')}
+          </p>
         </div>
 
         <div className="flex flex-wrap gap-md">
-          <Button type="submit">Submit</Button>
+          <Button type="submit">{t('common.actions.submit')}</Button>
           <Button variant="secondary" type="button">
-            Cancel
+            {t('common.actions.cancel')}
           </Button>
         </div>
       </div>
@@ -374,13 +440,14 @@ export function FormsSection() {
 }
 
 export function SpacingSection() {
+  const { t } = useTranslation();
   const tokens = Object.entries(spacing) as [keyof typeof spacing, string][];
 
   return (
     <SectionShell
       id="spacing"
-      title="Spacing"
-      description="4px base unit. Section gaps use spacing.section (96px)."
+      title={t('designSystem.spacing.title')}
+      description={t('designSystem.spacing.description')}
     >
       <div className="space-y-md">
         {tokens.map(([token, value]) => (
@@ -392,155 +459,163 @@ export function SpacingSection() {
         ))}
       </div>
 
-      <SubLabel>Border radius</SubLabel>
+      <SubLabel>{t('designSystem.spacing.borderRadius')}</SubLabel>
       <div className="mt-md grid grid-cols-2 gap-md sm:grid-cols-4">
         {(Object.entries(rounded) as [keyof typeof rounded, string][]).map(([token, value]) => (
           <div key={token} className="panel-lift rounded-lg bg-surface-1 p-md text-center">
-            <div
-              className="mx-auto mb-sm h-12 w-12 bg-surface-3"
-              style={{ borderRadius: value }}
-            />
+            <div className="mx-auto mb-sm h-12 w-12 bg-surface-3" style={{ borderRadius: value }} />
             <p className="font-sans text-body-sm text-ink">{token}</p>
             <p className="font-mono text-mono text-ink-subtle">{value}</p>
           </div>
         ))}
       </div>
 
-      <SubLabel>Layout</SubLabel>
+      <SubLabel>{t('designSystem.spacing.layout')}</SubLabel>
       <div className="mt-md panel-lift rounded-lg bg-surface-1 p-lg font-mono text-mono text-body-sm text-ink-subtle">
-        <p>max-width: 1280px</p>
-        <p>nav-height: 56px</p>
-        <p>card padding: lg (24px) · testimonial: xl (32px) · cta: xxl (48px)</p>
+        <p>{t('designSystem.spacing.layoutMaxWidth')}</p>
+        <p>{t('designSystem.spacing.layoutNavHeight')}</p>
+        <p>{t('designSystem.spacing.layoutCardPadding')}</p>
       </div>
     </SectionShell>
   );
 }
 
 export function ElevationSection() {
+  const { t } = useTranslation();
+
   const levels = [
     {
       level: 0,
-      label: 'Flat',
-      desc: 'Canvas — hero text, footer',
+      labelKey: 'designSystem.elevation.flat',
+      descKey: 'designSystem.elevation.flatDesc',
       className: 'bg-canvas',
-      border: false,
     },
     {
       level: 1,
-      label: 'Charcoal lift',
-      desc: 'surface-1 + hairline',
+      labelKey: 'designSystem.elevation.charcoal',
+      descKey: 'designSystem.elevation.charcoalDesc',
       className: 'panel-lift bg-surface-1',
-      border: true,
     },
     {
       level: 2,
-      label: 'Surface-2 lift',
-      desc: 'Featured pricing, hover',
+      labelKey: 'designSystem.elevation.surface2',
+      descKey: 'designSystem.elevation.surface2Desc',
       className: 'panel-lift border border-hairline-strong bg-surface-2',
-      border: true,
     },
     {
       level: 3,
-      label: 'Surface-3',
-      desc: 'Sub-nav, dropdowns',
+      labelKey: 'designSystem.elevation.surface3',
+      descKey: 'designSystem.elevation.surface3Desc',
       className: 'bg-surface-3',
-      border: false,
     },
     {
       level: 4,
-      label: 'Focus ring',
-      desc: '2px primary-focus @ 50%',
+      labelKey: 'designSystem.elevation.focusRing',
+      descKey: 'designSystem.elevation.focusRingDesc',
       className: 'panel-lift bg-surface-1 outline outline-2 outline-primary-focus/50',
-      border: true,
     },
   ];
 
   return (
     <SectionShell
       id="elevation"
-      title="Elevation"
-      description="Depth via surface ladder + hairline borders. No drop shadows on dark."
+      title={t('designSystem.elevation.title')}
+      description={t('designSystem.elevation.description')}
     >
       <div className="grid gap-md md:grid-cols-2 lg:grid-cols-3">
-        {levels.map(({ level, label, desc, className }) => (
+        {levels.map(({ level, labelKey, descKey, className }) => (
           <div key={level} className={`rounded-lg p-lg ${className}`}>
             <p className="font-sans text-body-sm font-medium text-ink">
-              Level {level} — {label}
+              {t('designSystem.elevation.level', { level, label: t(labelKey) })}
             </p>
-            <p className="mt-xs font-sans text-caption text-ink-subtle">{desc}</p>
+            <p className="mt-xs font-sans text-caption text-ink-subtle">{t(descKey)}</p>
           </div>
         ))}
       </div>
       <p className="mt-lg font-sans text-body-sm text-ink-subtle">
-        Panel edge highlight:{' '}
-        <code className="rounded-sm bg-surface-1 px-1 font-mono text-mono">inset 0 1px 0 rgba(255,255,255,0.06)</code>
+        {t('designSystem.elevation.panelEdge')}{' '}
+        <code className="rounded-sm bg-surface-1 px-1 font-mono text-mono">
+          inset 0 1px 0 rgba(255,255,255,0.06)
+        </code>
       </p>
     </SectionShell>
   );
 }
 
-const BREAKPOINTS = [
-  { name: 'Mobile', width: '< 768px', cols: 1 },
-  { name: 'Tablet', width: '768–1023px', cols: 2 },
-  { name: 'Desktop', width: '1024–1279px', cols: 3 },
-  { name: 'Desktop XL', width: '≥ 1280px', cols: 3 },
-];
+const BREAKPOINT_KEYS = [
+  { nameKey: 'designSystem.responsive.mobile', width: '< 768px', cols: 1 },
+  { nameKey: 'designSystem.responsive.tablet', width: '768–1023px', cols: 2 },
+  { nameKey: 'designSystem.responsive.desktop', width: '1024–1279px', cols: 3 },
+  { nameKey: 'designSystem.responsive.desktopXl', width: '≥ 1280px', cols: 3 },
+] as const;
 
 export function ResponsiveSection() {
+  const { t } = useTranslation();
+
   return (
     <SectionShell
       id="responsive"
-      title="Responsive"
-      description="Card grids collapse 3 → 2 → 1. Display type scales down on mobile."
+      title={t('designSystem.responsive.title')}
+      description={t('designSystem.responsive.description')}
     >
       <div className="overflow-x-auto">
         <table className="w-full min-w-[480px] text-left">
           <thead>
             <tr className="border-b border-hairline">
-              <th className="py-sm font-sans text-body-sm font-medium text-ink">Breakpoint</th>
-              <th className="py-sm font-sans text-body-sm font-medium text-ink">Width</th>
-              <th className="py-sm font-sans text-body-sm font-medium text-ink">Card grid</th>
+              <th className="py-sm font-sans text-body-sm font-medium text-ink">
+                {t('designSystem.responsive.breakpoint')}
+              </th>
+              <th className="py-sm font-sans text-body-sm font-medium text-ink">
+                {t('designSystem.responsive.width')}
+              </th>
+              <th className="py-sm font-sans text-body-sm font-medium text-ink">
+                {t('designSystem.responsive.cardGrid')}
+              </th>
             </tr>
           </thead>
           <tbody>
-            {BREAKPOINTS.map((bp) => (
-              <tr key={bp.name} className="border-b border-hairline-tertiary">
-                <td className="py-sm font-sans text-body-sm text-ink">{bp.name}</td>
+            {BREAKPOINT_KEYS.map((bp) => (
+              <tr key={bp.nameKey} className="border-b border-hairline-tertiary">
+                <td className="py-sm font-sans text-body-sm text-ink">{t(bp.nameKey)}</td>
                 <td className="py-sm font-mono text-mono text-ink-subtle">{bp.width}</td>
-                <td className="py-sm font-sans text-body-sm text-ink-subtle">{bp.cols}-up</td>
+                <td className="py-sm font-sans text-body-sm text-ink-subtle">
+                  {t('designSystem.responsive.colsUp', { cols: bp.cols })}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <SubLabel className="mt-4">Live grid — resize viewport</SubLabel>
+      <SubLabel className="mt-4">{t('designSystem.responsive.liveGrid')}</SubLabel>
       <div className="mt-md grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-3">
         {[1, 2, 3].map((n) => (
           <div key={n} className="panel-lift rounded-lg bg-surface-1 p-lg text-center">
-            <p className="font-sans text-body-sm text-ink">Column {n}</p>
+            <p className="font-sans text-body-sm text-ink">
+              {t('designSystem.responsive.column', { n })}
+            </p>
             <p className="mt-xs font-sans text-caption text-ink-subtle">
-              1 col · md:2 · lg:3
+              {t('designSystem.responsive.columnNote')}
             </p>
           </div>
         ))}
       </div>
 
-      <SubLabel className="mt-4">Display scale</SubLabel>
+      <SubLabel className="mt-4">{t('designSystem.responsive.displayScale')}</SubLabel>
       <div className="mt-md panel-lift rounded-lg bg-surface-1 p-lg">
         <p className="font-sans text-display-md font-semibold md:text-display-lg lg:text-display-xl">
-          Responsive display
+          {t('designSystem.responsive.responsiveDisplay')}
         </p>
         <p className="mt-sm font-sans text-caption text-ink-subtle">
-          40px → 56px (md) → 80px (lg)
+          {t('designSystem.responsive.displaySizes')}
         </p>
       </div>
 
-      <SubLabel className="mt-4">Touch targets</SubLabel>
+      <SubLabel className="mt-4">{t('designSystem.responsive.touchTargets')}</SubLabel>
       <ul className="mt-md space-y-xs font-sans text-body-sm text-ink-subtle">
-        <li>CTAs: min 40px height</li>
-        <li>Pricing tabs: min 36px (44px on touch)</li>
-        <li>Form inputs: min 44px on touch</li>
+        <li>{t('designSystem.responsive.ctaHeight')}</li>
+        <li>{t('designSystem.responsive.tabHeight')}</li>
+        <li>{t('designSystem.responsive.inputHeight')}</li>
       </ul>
     </SectionShell>
   );

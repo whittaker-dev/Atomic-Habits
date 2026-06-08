@@ -46,8 +46,8 @@ pnpm format:check
 pnpm build
 ```
 
-- Web: http://localhost:3000
-- Design system showcase: http://localhost:3000/design-system
+- Web: http://localhost:4001
+- Design system showcase: http://localhost:4001/design-system
 - API health: http://localhost:4000/health
 
 ## Project structure
@@ -68,7 +68,7 @@ Notion-inspired: white canvas, navy hero band, purple primary CTA, pastel featur
 - **Tokens:** `apps/web/src/design-system/tokens/`
 - **Components:** `apps/web/src/design-system/components/`
 - **Font:** Inter (Notion Sans substitute)
-- **Showcase:** http://localhost:3000/design-system
+- **Showcase:** http://localhost:4001/design-system
 
 ## Docs
 

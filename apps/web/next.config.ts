@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@atomic-habits/shared'],
   outputFileTracingRoot: path.join(__dirname, '../..'),
 };
 

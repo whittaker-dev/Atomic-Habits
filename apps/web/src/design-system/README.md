@@ -6,14 +6,14 @@
 
 ## Colors
 
-| Token       | Value     | Role                 |
-| ----------- | --------- | -------------------- |
-| `canvas`    | `#121212` | Page background      |
-| `surface-1` | `#181818` | Cards, panels        |
-| `surface-2` | `#1f1f1f` | Featured / hover     |
-| `primary`   | `#1ed760` | CTA, brand mark      |
-| `ink`       | `#ffffff` | Primary text         |
-| `ink-subtle`| `#b3b3b3` | Secondary text       |
+| Token        | Value     | Role             |
+| ------------ | --------- | ---------------- |
+| `canvas`     | `#121212` | Page background  |
+| `surface-1`  | `#181818` | Cards, panels    |
+| `surface-2`  | `#1f1f1f` | Featured / hover |
+| `primary`    | `#1ed760` | CTA, brand mark  |
+| `ink`        | `#ffffff` | Primary text     |
+| `ink-subtle` | `#b3b3b3` | Secondary text   |
 
 ## Structure (from DESIGN.md)
 
@@ -28,4 +28,4 @@
 
 ## Showcase
 
-`pnpm dev:web` → http://localhost:3000/design-system
+`pnpm dev:web` → http://localhost:4001/design-system

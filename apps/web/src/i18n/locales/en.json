@@ -1,0 +1,279 @@
+{
+  "common": {
+    "appName": "Atomic Habits",
+    "meta": {
+      "title": "Atomic Habits — Personal Growth OS",
+      "description": "Daily missions, streaks, and visible progress for self-improvement."
+    },
+    "actions": {
+      "getStarted": "Get started",
+      "getStartedFree": "Get started free",
+      "signIn": "Sign in",
+      "requestDemo": "Request a demo",
+      "exploreFeatures": "Explore features",
+      "learnMore": "Learn more",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "clear": "Clear",
+      "sendMessage": "Send message",
+      "sending": "Sending…",
+      "upgrade": "Upgrade",
+      "contactSales": "Contact sales",
+      "backHome": "← Back home"
+    },
+    "footer": {
+      "product": "Product",
+      "missions": "Missions",
+      "streaks": "Streaks",
+      "resources": "Resources",
+      "designSystem": "Design system",
+      "copyright": "© Atomic Habits"
+    },
+    "language": {
+      "en": "English",
+      "vi": "Tiếng Việt",
+      "label": "Language",
+      "modalTitle": "Choose language",
+      "modalDescription": "Select your preferred language for the site."
+    }
+  },
+  "nav": {
+    "promo": "Atomic Habits — your personal growth workspace.",
+    "seeDesignSystem": "See design system →",
+    "home": "Home",
+    "contact": "Contact",
+    "designSystem": "Design system"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Personal Growth OS",
+      "title": "Meet your daily streak.",
+      "subtitle": "Track missions, level up with XP, and keep your habits alive — English, fitness, coding, and more."
+    },
+    "mockup": {
+      "title": "Today's HQ",
+      "missions": "Today's missions",
+      "streak": "28-day streak",
+      "missionEnglish": "Learn 10 English words",
+      "missionExercise": "Exercise 20 mins",
+      "missionTicket": "Finish ticket TRY-44",
+      "xp": "+20 XP",
+      "level": "Level 7"
+    },
+    "features": {
+      "title": "Keep work moving 24/7",
+      "subtitle": "Daily missions across categories — one workspace for your growth.",
+      "english": {
+        "title": "Learn English",
+        "description": "Daily vocabulary + mini quiz. +25 XP."
+      },
+      "exercise": {
+        "title": "Exercise",
+        "description": "20 min workout check-in. +15 XP."
+      },
+      "deepWork": {
+        "title": "Deep work",
+        "description": "Finish a ticket or coding session. +25 XP."
+      }
+    },
+    "assistants": {
+      "title": "Ask your on-demand assistants",
+      "description": "Daily English challenges powered by your streak data — come back every day."
+    },
+    "together": {
+      "title": "Bring all your work together",
+      "heatmap": {
+        "title": "Heatmap",
+        "description": "See your consistency at a glance."
+      },
+      "xp": {
+        "title": "XP & levels",
+        "description": "Gamification that keeps you going."
+      },
+      "reports": {
+        "title": "Weekly reports",
+        "description": "82% consistency — reflect and improve."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Say hello — we're listening",
+    "subtitle": "Questions, feedback, or partnership ideas? \n\n Send us a message and we'll get back to you.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "you@example.com",
+      "message": "Tell us what you're building…"
+    },
+    "success": "Message sent! We'll be in touch soon."
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "nameMax": "Name must be 100 characters or less",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email address",
+    "messageRequired": "Message is required",
+    "messageMin": "Message must be at least 10 characters",
+    "messageMax": "Message must be 2000 characters or less"
+  },
+  "designSystem": {
+    "eyebrow": "Design system",
+    "title": "Dark theme · Spotify Green",
+    "intro": "Reference implementation for <code>DESIGN.md</code>. Spotify palette in <code>src/design-system/tokens/</code>.",
+    "nav": {
+      "onThisPage": "On this page",
+      "palette": "Palette",
+      "typography": "Typography",
+      "buttons": "Buttons",
+      "cards": "Cards",
+      "forms": "Forms",
+      "spacing": "Spacing",
+      "elevation": "Elevation",
+      "responsive": "Responsive"
+    },
+    "palette": {
+      "title": "Palette",
+      "description": "Spotify Green on charcoal surfaces. Token names follow DESIGN.md.",
+      "brand": "Brand",
+      "surfaceLadder": "Surface ladder",
+      "text": "Text",
+      "semantic": "Semantic",
+      "borders": "Borders"
+    },
+    "typography": {
+      "title": "Typography",
+      "description": "DM Sans (SpotifyMixUI substitute). Negative tracking on display sizes per DESIGN.md.",
+      "displayXl": "Display XL",
+      "displayLg": "Display LG",
+      "displayMd": "Display MD",
+      "headline": "Headline",
+      "cardTitle": "Card title",
+      "subhead": "Subhead — lead paragraphs",
+      "bodyLg": "Body LG — hero subhead",
+      "body": "Body — default paragraph text",
+      "bodySm": "Body SM — footer columns",
+      "caption": "Caption — meta, status",
+      "buttonLabel": "Button label",
+      "eyebrow": "Eyebrow taxonomy",
+      "monoSample": "const streak = await getStreak();",
+      "monoNote": "13px mono · product screenshots"
+    },
+    "buttons": {
+      "title": "Buttons",
+      "description": "8px corners (rounded-md). Pills reserved for pricing tabs only.",
+      "primarySecondary": "Primary & secondary",
+      "states": "States",
+      "hover": "Hover",
+      "pressed": "Pressed",
+      "disabled": "Disabled",
+      "ghost": "Ghost",
+      "linkEmphasis": "Link emphasis",
+      "pricingTabs": "Pricing tabs (pill)",
+      "statusBadges": "Status badges",
+      "tag": "Tag"
+    },
+    "cards": {
+      "title": "Cards",
+      "description": "Surface ladder + hairline borders. Product screenshot panels use rounded-xl.",
+      "surfaceLevels": "Surface levels",
+      "featureCard": "feature-card",
+      "featureDesc1": "surface-1 · rounded-lg · 24px pad",
+      "surface2Title": "surface-2 lift",
+      "surface2Desc": "Featured / hover state",
+      "surface3Desc": "Sub-nav depth",
+      "surface4Desc": "Deepest lift",
+      "pricingPlans": "Pricing plans",
+      "free": "Free",
+      "pro": "Pro",
+      "team": "Team",
+      "featureMissions": "5 missions",
+      "featureStreak": "Streak tracking",
+      "featureReports": "Basic reports",
+      "featureUnlimited": "Unlimited missions",
+      "featureEnglishAi": "English AI",
+      "featureWeeklyReports": "Weekly reports",
+      "featurePriority": "Priority support",
+      "featureEverythingPro": "Everything in Pro",
+      "featureShared": "Shared missions",
+      "featureAdmin": "Admin dashboard",
+      "screenshotTitle": "Product screenshot · testimonial · CTA",
+      "mockupTitle": "product-screenshot-card",
+      "mockupMissions": "Today's missions",
+      "mockupEnglish": "☐ Learn 10 English words",
+      "mockupExercise": "☐ Exercise 20 mins",
+      "mockupTicket": "☑ Finish ticket TRY-44",
+      "testimonialQuote": "The streak system keeps me coming back every single day.",
+      "testimonialAuthor": "Alex Chen",
+      "testimonialRole": "Software engineer",
+      "ctaTitle": "cta-banner",
+      "ctaDescription": "Closing panel near page bottom.",
+      "highlightTitle": "Highlighted section",
+      "highlightDescription": "High-emphasis callout on surface-1.",
+      "cardBase": "CardBase — generic container"
+    },
+    "forms": {
+      "title": "Forms",
+      "description": "surface-1 inputs, 8px radius, primary focus ring at 50% opacity.",
+      "email": "Email",
+      "name": "Name",
+      "search": "Search",
+      "searchPlaceholder": "Search missions...",
+      "focusState": "Focus state",
+      "focusedInput": "Focused input",
+      "progress": "Progress",
+      "progressCaption": "Level 7 · 68% to Level 8"
+    },
+    "spacing": {
+      "title": "Spacing",
+      "description": "4px base unit. Section gaps use spacing.section (96px).",
+      "borderRadius": "Border radius",
+      "layout": "Layout",
+      "layoutMaxWidth": "max-width: 1280px",
+      "layoutNavHeight": "nav-height: 56px",
+      "layoutCardPadding": "card padding: lg (24px) · testimonial: xl (32px) · cta: xxl (48px)"
+    },
+    "elevation": {
+      "title": "Elevation",
+      "description": "Depth via surface ladder + hairline borders. No drop shadows on dark.",
+      "level": "Level {{level}} — {{label}}",
+      "flat": "Flat",
+      "flatDesc": "Canvas — hero text, footer",
+      "charcoal": "Charcoal lift",
+      "charcoalDesc": "surface-1 + hairline",
+      "surface2": "Surface-2 lift",
+      "surface2Desc": "Featured pricing, hover",
+      "surface3": "Surface-3",
+      "surface3Desc": "Sub-nav, dropdowns",
+      "focusRing": "Focus ring",
+      "focusRingDesc": "2px primary-focus @ 50%",
+      "panelEdge": "Panel edge highlight:"
+    },
+    "responsive": {
+      "title": "Responsive",
+      "description": "Card grids collapse 3 → 2 → 1. Display type scales down on mobile.",
+      "breakpoint": "Breakpoint",
+      "width": "Width",
+      "cardGrid": "Card grid",
+      "mobile": "Mobile",
+      "tablet": "Tablet",
+      "desktop": "Desktop",
+      "desktopXl": "Desktop XL",
+      "colsUp": "{{cols}}-up",
+      "liveGrid": "Live grid — resize viewport",
+      "column": "Column {{n}}",
+      "columnNote": "1 col · md:2 · lg:3",
+      "displayScale": "Display scale",
+      "responsiveDisplay": "Responsive display",
+      "displaySizes": "40px → 56px (md) → 80px (lg)",
+      "touchTargets": "Touch targets",
+      "ctaHeight": "CTAs: min 40px height",
+      "tabHeight": "Pricing tabs: min 36px (44px on touch)",
+      "inputHeight": "Form inputs: min 44px on touch"
+    }
+  }
+}
