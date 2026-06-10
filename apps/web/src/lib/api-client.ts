@@ -16,8 +16,8 @@ apiClient.interceptors.request.use((config) => {
 export function getErrorMessage(error: unknown): string {
   if (isAxiosError(error)) {
     const message = error.response?.data?.message;
-    if (typeof message === 'string') {
-      return message;
+    if (typeof message === 'string' && message.trim()) {
+      return message.trim();
     }
   }
   return 'Request failed';

@@ -15,6 +15,10 @@ import { HttpStatus } from '../responses/http-status.js';
 import { apiError } from '../schemas/parse.js';
 import mailer from './mailer/index.js';
 import {
+  buildLoginVerificationMailHtml,
+  buildLoginVerificationMailText,
+} from './mailer/template/login-verification.js';
+import {
   buildSignupVerificationMailHtml,
   buildSignupVerificationMailText,
 } from './mailer/template/signup-verification.js';
@@ -92,33 +96,79 @@ export const otpService = {
     email: string,
     code: string,
   ): Promise<{ user: User; otp: EmailOtp } | null> {
+    return verifyOtpForPurpose(email, code, 'signup', (user) => !user.emailVerifiedAt);
+  },
+
+  async createAndSendLoginOtp(user: User): Promise<void> {
+    await assertSendRateLimit(user.email);
+    await assertResendCooldown(user.email);
+
+    const code = generateOtpCode();
+    const expiresAt = new Date(Date.now() + OTP_EXPIRY_MINUTES * 60 * 1000);
+
+    await emailOtpRepository.replaceForUser(user.id, 'login', {
+      codeHash: hashOtpCode(code),
+      expiresAt,
+    });
+
+    await mailer.sendMail({
+      to: user.email,
+      subject: 'Your sign-in code for Atomic Habits',
+      text: buildLoginVerificationMailText({ code, expiresMinutes: OTP_EXPIRY_MINUTES }),
+      message: buildLoginVerificationMailHtml({ code, expiresMinutes: OTP_EXPIRY_MINUTES }),
+    });
+
+    await markResendCooldown(user.email);
+  },
+
+  async resendLoginOtp(email: string): Promise<void> {
     const normalized = normalizeEmail(email);
     const user = await userRepository.findByEmail(normalized);
-    if (!user || user.emailVerifiedAt) {
-      return null;
+
+    if (!user?.emailVerifiedAt) {
+      return;
     }
 
-    const otp = await emailOtpRepository.findLatestByUserAndPurpose(user.id, 'signup');
-    if (!otp) {
-      return null;
-    }
+    await otpService.createAndSendLoginOtp(user);
+  },
 
-    if (otp.expiresAt.getTime() < Date.now()) {
-      await emailOtpRepository.deleteById(otp.id);
-      return null;
-    }
-
-    if (otp.attempts >= OTP_MAX_VERIFY_ATTEMPTS) {
-      await emailOtpRepository.deleteById(otp.id);
-      return null;
-    }
-
-    if (!verifyOtpCode(code, otp.codeHash)) {
-      await emailOtpRepository.incrementAttempts(otp.id);
-      return null;
-    }
-
-    await emailOtpRepository.deleteById(otp.id);
-    return { user, otp };
+  async verifyLoginOtp(email: string, code: string): Promise<{ user: User; otp: EmailOtp } | null> {
+    return verifyOtpForPurpose(email, code, 'login', (user) => !!user.emailVerifiedAt);
   },
 };
+
+async function verifyOtpForPurpose(
+  email: string,
+  code: string,
+  purpose: OtpPurpose,
+  isEligible: (user: User) => boolean,
+): Promise<{ user: User; otp: EmailOtp } | null> {
+  const normalized = normalizeEmail(email);
+  const user = await userRepository.findByEmail(normalized);
+  if (!user || !isEligible(user)) {
+    return null;
+  }
+
+  const otp = await emailOtpRepository.findLatestByUserAndPurpose(user.id, purpose);
+  if (!otp) {
+    return null;
+  }
+
+  if (otp.expiresAt.getTime() < Date.now()) {
+    await emailOtpRepository.deleteById(otp.id);
+    return null;
+  }
+
+  if (otp.attempts >= OTP_MAX_VERIFY_ATTEMPTS) {
+    await emailOtpRepository.deleteById(otp.id);
+    return null;
+  }
+
+  if (!verifyOtpCode(code, otp.codeHash)) {
+    await emailOtpRepository.incrementAttempts(otp.id);
+    return null;
+  }
+
+  await emailOtpRepository.deleteById(otp.id);
+  return { user, otp };
+}

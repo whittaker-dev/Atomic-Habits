@@ -9,6 +9,7 @@
       "getStarted": "Get started",
       "getStartedFree": "Get started free",
       "signIn": "Sign in",
+      "signUp": "Sign up",
       "requestDemo": "Request a demo",
       "exploreFeatures": "Explore features",
       "learnMore": "Learn more",
@@ -175,6 +176,7 @@
     "messageMin": "Message must be at least 10 characters",
     "messageMax": "Message must be 2000 characters or less",
     "passwordMin": "Password must be at least 8 characters",
+    "passwordRequired": "Password is required",
     "confirmPasswordRequired": "Please confirm your password",
     "passwordMismatch": "Passwords do not match",
     "otpInvalid": "Enter the 6-digit code"
@@ -209,6 +211,38 @@
     "errors": {
       "generic": "Something went wrong. Please try again.",
       "emailExists": "An account with this email already exists. Sign in instead.",
+      "verifyFailed": "Invalid or expired code. Please try again."
+    }
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Sign in with your email and password.",
+    "fields": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "Your password"
+    },
+    "actions": {
+      "continue": "Continue",
+      "signingIn": "Signing in…",
+      "verify": "Verify and sign in",
+      "verifying": "Verifying…"
+    },
+    "verify": {
+      "title": "Check your email",
+      "subtitle": "We sent a 6-digit sign-in code to {{email}}.",
+      "resend": "Resend code",
+      "resendCountdown": "Resend available in {{seconds}}s",
+      "back": "← Use a different account"
+    },
+    "signUpPrompt": "Don't have an account?",
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "invalidCredentials": "Invalid email or password.",
+      "emailNotVerified": "Please verify your email to continue.",
       "verifyFailed": "Invalid or expired code. Please try again."
     }
   },
