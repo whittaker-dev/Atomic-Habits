@@ -9,6 +9,7 @@
       "getStarted": "Bắt đầu",
       "getStartedFree": "Bắt đầu miễn phí",
       "signIn": "Đăng nhập",
+      "signUp": "Đăng ký",
       "requestDemo": "Yêu cầu demo",
       "exploreFeatures": "Khám phá tính năng",
       "learnMore": "Tìm hiểu thêm",
@@ -175,6 +176,7 @@
     "messageMin": "Tin nhắn tối thiểu 10 ký tự",
     "messageMax": "Tin nhắn tối đa 2000 ký tự",
     "passwordMin": "Mật khẩu tối thiểu 8 ký tự",
+    "passwordRequired": "Vui lòng nhập mật khẩu",
     "confirmPasswordRequired": "Vui lòng xác nhận mật khẩu",
     "passwordMismatch": "Mật khẩu không khớp",
     "otpInvalid": "Nhập mã 6 chữ số"
@@ -209,6 +211,38 @@
     "errors": {
       "generic": "Đã xảy ra lỗi. Vui lòng thử lại.",
       "emailExists": "Email này đã được đăng ký. Vui lòng đăng nhập.",
+      "verifyFailed": "Mã không hợp lệ hoặc đã hết hạn. Vui lòng thử lại."
+    }
+  },
+  "login": {
+    "title": "Chào mừng trở lại",
+    "subtitle": "Đăng nhập bằng email và mật khẩu.",
+    "fields": {
+      "email": "Email",
+      "password": "Mật khẩu"
+    },
+    "placeholders": {
+      "email": "ban@example.com",
+      "password": "Mật khẩu của bạn"
+    },
+    "actions": {
+      "continue": "Tiếp tục",
+      "signingIn": "Đang đăng nhập…",
+      "verify": "Xác minh và đăng nhập",
+      "verifying": "Đang xác minh…"
+    },
+    "verify": {
+      "title": "Kiểm tra email",
+      "subtitle": "Chúng tôi đã gửi mã đăng nhập 6 chữ số tới {{email}}.",
+      "resend": "Gửi lại mã",
+      "resendCountdown": "Gửi lại sau {{seconds}} giây",
+      "back": "← Dùng tài khoản khác"
+    },
+    "signUpPrompt": "Chưa có tài khoản?",
+    "errors": {
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại.",
+      "invalidCredentials": "Email hoặc mật khẩu không đúng.",
+      "emailNotVerified": "Vui lòng xác minh email để tiếp tục.",
       "verifyFailed": "Mã không hợp lệ hoặc đã hết hạn. Vui lòng thử lại."
     }
   },

@@ -6,6 +6,9 @@ const authRouter: Router = Router();
 authRouter.post('/register', authHandler.register);
 authRouter.post('/register/verify', authHandler.verifyRegistration);
 authRouter.post('/register/resend', authHandler.resendRegistrationCode);
+authRouter.post('/login', authHandler.login);
+authRouter.post('/login/verify', authHandler.verifyLogin);
+authRouter.post('/login/resend', authHandler.resendLoginCode);
 authRouter.post('/logout', authHandler.logout);
 authRouter.get('/me', authHandler.me);
 

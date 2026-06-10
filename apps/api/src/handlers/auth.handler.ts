@@ -11,6 +11,9 @@ import {
 } from '../responses/auth.js';
 import {
   apiError,
+  loginBodySchema,
+  loginResendBodySchema,
+  loginVerifyBodySchema,
   parseBody,
   registerBodySchema,
   registerResendBodySchema,
@@ -52,6 +55,41 @@ export async function resendRegistrationCode(
     const body = parseBody(registerResendBodySchema, req.body);
     await authService.resendRegistrationCode(body.email);
     res.status(AuthRouteStatus.registerResend.success).json(resendOkResponse());
+  } catch (error) {
+    next(error);
+  }
+}
+
+export async function login(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const body = parseBody(loginBodySchema, req.body);
+    await authService.login(body.email, body.password);
+    res.status(AuthRouteStatus.login.success).json(registerPendingResponse());
+  } catch (error) {
+    next(error);
+  }
+}
+
+export async function verifyLogin(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const body = parseBody(loginVerifyBodySchema, req.body);
+    const user = await authService.verifyLogin(body.email, body.code);
+    setSessionUser(req as SessionRequest, user.id);
+    res.status(AuthRouteStatus.loginVerify.success).json(verifySuccessResponse(user));
+  } catch (error) {
+    next(error);
+  }
+}
+
+export async function resendLoginCode(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> {
+  try {
+    const body = parseBody(loginResendBodySchema, req.body);
+    await authService.resendLoginCode(body.email);
+    res.status(AuthRouteStatus.loginResend.success).json(resendOkResponse());
   } catch (error) {
     next(error);
   }

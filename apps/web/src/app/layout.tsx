@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { I18nProvider } from '@/components/i18n-provider';
 import { SWRProvider } from '@/components/swr-provider';
+import { ToastProvider } from '@/components/toast/toast-provider';
 import { inter, jetbrainsMono } from '@/design-system/fonts';
 import './globals.css';
 
@@ -18,7 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
         <SWRProvider>
-          <I18nProvider>{children}</I18nProvider>
+          <I18nProvider>
+            <ToastProvider>{children}</ToastProvider>
+          </I18nProvider>
         </SWRProvider>
       </body>
     </html>

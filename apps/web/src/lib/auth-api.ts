@@ -34,6 +34,35 @@ export async function resendRegistrationCode(email: string): Promise<void> {
   }
 }
 
+export async function loginWithEmail(email: string, password: string): Promise<RegisterResponse> {
+  try {
+    const { data } = await apiClient.post<RegisterResponse>('/auth/login', { email, password });
+    return data;
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
+  }
+}
+
+export async function verifyLogin(email: string, code: string): Promise<AuthUser> {
+  try {
+    const { data } = await apiClient.post<{ user: AuthUser }>('/auth/login/verify', {
+      email,
+      code,
+    });
+    return data.user;
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
+  }
+}
+
+export async function resendLoginCode(email: string): Promise<void> {
+  try {
+    await apiClient.post('/auth/login/resend', { email });
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
+  }
+}
+
 export async function logout(): Promise<void> {
   try {
     await apiClient.post('/auth/logout');
