@@ -75,6 +75,7 @@ export function LoginForm() {
       setIsSubmitting(true);
       try {
         await loginWithEmail(values.email, values.password);
+        router.refresh();
         router.push('/dashboard');
       } catch (error) {
         const message = getLoginErrorMessage(error, t);

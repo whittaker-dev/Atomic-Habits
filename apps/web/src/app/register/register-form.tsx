@@ -99,6 +99,7 @@ export function RegisterForm() {
     setIsSubmitting(true);
     try {
       await verifyRegistration(email, values.code);
+      router.refresh();
       router.push('/dashboard');
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : t('register.errors.verifyFailed'));
