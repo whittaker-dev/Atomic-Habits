@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import mailer from '../services/mailer/index.js';
+import { enqueueMailJob } from '../lib/queue.js';
 import { buildContactMailHtml, buildContactMailText } from '../services/mailer/template/contact.js';
 import type { ApiError } from '../middleware/error.js';
 
@@ -48,7 +48,7 @@ contactRouter.post('/', async (req, res, next) => {
       throw err;
     }
 
-    await mailer.sendMail({
+    await enqueueMailJob({
       to,
       subject: `[Atomic Habits] Contact from ${payload.name}`,
       text: buildContactMailText(payload),

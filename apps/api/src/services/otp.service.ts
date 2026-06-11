@@ -13,7 +13,7 @@ import { emailOtpRepository } from '../repositories/email-otp.repository.js';
 import { userRepository } from '../repositories/user.repository.js';
 import { HttpStatus } from '../responses/http-status.js';
 import { apiError } from '../schemas/parse.js';
-import mailer from './mailer/index.js';
+import { enqueueMailJob } from '../lib/queue.js';
 import {
   buildLoginVerificationMailHtml,
   buildLoginVerificationMailText,
@@ -71,7 +71,7 @@ export const otpService = {
       expiresAt,
     });
 
-    await mailer.sendMail({
+    await enqueueMailJob({
       to: user.email,
       subject: 'Verify your Atomic Habits account',
       text: buildSignupVerificationMailText({ code, expiresMinutes: OTP_EXPIRY_MINUTES }),
@@ -111,7 +111,7 @@ export const otpService = {
       expiresAt,
     });
 
-    await mailer.sendMail({
+    await enqueueMailJob({
       to: user.email,
       subject: 'Your sign-in code for Atomic Habits',
       text: buildLoginVerificationMailText({ code, expiresMinutes: OTP_EXPIRY_MINUTES }),
