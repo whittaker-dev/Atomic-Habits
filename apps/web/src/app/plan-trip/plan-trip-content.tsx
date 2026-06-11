@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useToast } from '@/components/toast/toast-provider';
 import { BadgeTag, Eyebrow, StatusBadge } from '@/design-system/components/badges';
@@ -28,6 +29,14 @@ import { usePlanTrip } from './use-plan-trip';
 
 const SECTIONS = ['members', 'transport', 'villa', 'itinerary'] as const;
 type SectionId = (typeof SECTIONS)[number];
+const TAB_PARAM = 'tab';
+
+function parseSectionParam(value: string | null): SectionId {
+  if (value && (SECTIONS as readonly string[]).includes(value)) {
+    return value as SectionId;
+  }
+  return 'members';
+}
 
 type DeleteTarget =
   | { kind: 'member'; member: TripMember }
@@ -238,8 +247,28 @@ function TransportIconView({ icon }: { icon: TransportIcon }) {
 export function PlanTripContent() {
   const { t } = useTranslation();
   const toast = useToast();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-  const [activeSection, setActiveSection] = useState<SectionId>('members');
+  const activeSection = useMemo(
+    () => parseSectionParam(searchParams.get(TAB_PARAM)),
+    [searchParams],
+  );
+
+  const setActiveSection = useCallback(
+    (section: SectionId) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (section === 'members') {
+        params.delete(TAB_PARAM);
+      } else {
+        params.set(TAB_PARAM, section);
+      }
+      const query = params.toString();
+      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    },
+    [pathname, router, searchParams],
+  );
   const [tripInfoModalOpen, setTripInfoModalOpen] = useState(false);
   const [memberModalOpen, setMemberModalOpen] = useState(false);
   const [memberModalMode, setMemberModalMode] = useState<'add' | 'edit'>('add');
