@@ -1,0 +1,53 @@
+/**
+ * Light theme scoped to /plan-trip only.
+ * Overrides design tokens so existing components adapt automatically.
+ */
+.trip-light {
+  --color-canvas: #f4f7f4;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #f0f3f0;
+  --color-surface-3: #e6ebe6;
+  --color-surface-4: #dce3dc;
+
+  --color-hairline: #dde5dd;
+  --color-hairline-strong: #c4cfc4;
+  --color-hairline-tertiary: #eef2ee;
+
+  --color-ink: #121212;
+  --color-ink-muted: #3a3a3a;
+  --color-ink-subtle: #5a5a5a;
+  --color-ink-tertiary: #8a8a8a;
+
+  --color-inverse-canvas: #1a1a1a;
+  --color-inverse-surface-1: #242424;
+  --color-inverse-surface-2: #2e2e2e;
+  --color-inverse-ink: #ffffff;
+
+  --color-semantic-overlay: rgba(18, 28, 18, 0.4);
+
+  --panel-edge: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.06);
+
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
+  --card: var(--color-surface-1);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-surface-1);
+  --popover-foreground: var(--color-ink);
+  --secondary: var(--color-surface-2);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-surface-2);
+  --muted-foreground: var(--color-ink-subtle);
+  --accent: var(--color-surface-2);
+  --accent-foreground: var(--color-ink);
+  --destructive-foreground: var(--color-ink);
+  --border: var(--color-hairline);
+  --input: var(--color-hairline-strong);
+
+  color: var(--color-ink);
+  background-color: var(--color-canvas);
+}
+
+.trip-light .trip-hero {
+  background-color: var(--color-canvas);
+  background-image: linear-gradient(180deg, #e3f3e8 0%, transparent 72%);
+}
