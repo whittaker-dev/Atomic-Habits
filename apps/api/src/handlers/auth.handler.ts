@@ -63,8 +63,9 @@ export async function resendRegistrationCode(
 export async function login(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const body = parseBody(loginBodySchema, req.body);
-    await authService.login(body.email, body.password);
-    res.status(AuthRouteStatus.login.success).json(registerPendingResponse());
+    const user = await authService.login(body.email, body.password);
+    setSessionUser(req as SessionRequest, user.id);
+    res.status(AuthRouteStatus.login.success).json(verifySuccessResponse(user));
   } catch (error) {
     next(error);
   }
