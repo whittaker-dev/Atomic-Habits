@@ -7,7 +7,7 @@ import helmet from 'helmet';
 import { errorHandler, notFoundHandler } from './middleware/error.js';
 import { checkPostgres } from './lib/prisma.js';
 import { checkRedis } from './lib/redis.js';
-import { startNotificationWorkerStub } from './lib/queue.js';
+import { startMailWorker } from './lib/queue.js';
 import contactRouter from './routes/contact.js';
 import authRouter from './routes/auth.js';
 import { sessionMiddleware } from './lib/session.js';
@@ -36,7 +36,7 @@ app.use('/auth', authRouter);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-startNotificationWorkerStub().catch(console.error);
+startMailWorker().catch(console.error);
 
 app.listen(port, () => {
   console.log(`[api] listening on http://localhost:${port}`);
