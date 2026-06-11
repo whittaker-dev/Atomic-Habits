@@ -12,13 +12,13 @@ import { useCurrentUser } from '@/lib/use-auth';
 export function DashboardShell() {
   const { t } = useTranslation();
   const router = useRouter();
-  const { data: user, error, isLoading } = useCurrentUser();
+  const { data: user, error, isLoading, mutate } = useCurrentUser();
   const [loggingOut, setLoggingOut] = useState(false);
 
   useEffect(() => {
     if (isLoading) return;
     if (!user || error) {
-      router.replace('/register');
+      router.replace('/login');
     }
   }, [user, error, isLoading, router]);
 
@@ -26,7 +26,9 @@ export function DashboardShell() {
     setLoggingOut(true);
     try {
       await logout();
-      router.replace('/');
+      await mutate(null, false);
+      router.refresh();
+      router.replace('/login');
     } catch {
       setLoggingOut(false);
     }
