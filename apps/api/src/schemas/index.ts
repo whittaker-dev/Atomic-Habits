@@ -13,4 +13,9 @@ export {
   type RegisterVerifyBody,
 } from './auth.js';
 export { emailField, otpCodeField, passwordField } from './common.js';
+export {
+  planTripSlugParamSchema,
+  planTripUpsertBodySchema,
+  type PlanTripUpsertBodyInput,
+} from './plan-trip.js';
 export { apiError, parseBody } from './parse.js';

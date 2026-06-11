@@ -84,3 +84,20 @@ model MissionCompletion {
   @@index([userId, completedDate])
   @@map("mission_completions")
 }
+
+model PlanTrip {
+  id            String   @id @default(uuid())
+  slug          String   @unique
+  name          String
+  description   String   @default("")
+  eyebrow       String   @default("")
+  datesLabel    String   @default("") @map("dates_label")
+  members       Json     @default("[]")
+  transport     Json     @default("[]")
+  accommodation Json     @default("{}")
+  itinerary     Json     @default("{\"days\": []}")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@map("plan_trips")
+}

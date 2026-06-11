@@ -51,7 +51,8 @@
     "seeDesignSystem": "See design system →",
     "home": "Home",
     "contact": "Contact",
-    "designSystem": "Design system"
+    "designSystem": "Design system",
+    "planTrip": "Plan a trip"
   },
   "home": {
     "hero": {
@@ -407,6 +408,303 @@
       "ctaHeight": "CTAs: min 40px height",
       "tabHeight": "Pricing tabs: min 36px (44px on touch)",
       "inputHeight": "Form inputs: min 44px on touch"
+    }
+  },
+  "planTrip": {
+    "header": {
+      "title": "Vũng Tàu Trip"
+    },
+    "hero": {
+      "eyebrow": "Beach getaway · Friends & family",
+      "title": "Vũng Tàu Trip Plan",
+      "subtitle": "Everything in one place — who's coming, how we get there, where we stay, and what we'll eat along the way.",
+      "dates": "Sun 3 May PM – Tue 5 May AM 2026"
+    },
+    "trip": {
+      "editButton": "Edit trip",
+      "editTitle": "Trip details",
+      "editHint": "Name, description, and dates — saved on the server so everyone can stay in sync.",
+      "save": "Save",
+      "toastSaved": "Trip details updated",
+      "saving": "Saving…",
+      "saveError": "Could not save: {{message}}",
+      "noDates": "No dates yet",
+      "fields": {
+        "name": "Trip name",
+        "description": "Description",
+        "eyebrow": "Eyebrow label",
+        "dates": "Dates"
+      }
+    },
+    "nav": {
+      "label": "Trip sections",
+      "members": "Members",
+      "transport": "Transport",
+      "villa": "Stay",
+      "itinerary": "Itinerary"
+    },
+    "members": {
+      "title": "Trip members",
+      "description": "Add everyone joining the trip. Data is saved on the server so the whole group can stay in sync.",
+      "count": "{{count}} member",
+      "count_plural": "{{count}} members",
+      "count_one": "{{count}} member",
+      "count_other": "{{count}} members",
+      "loading": "Loading members…",
+      "crewBadge": "Crew",
+      "add": "Add member",
+      "addFirst": "Add the first member",
+      "addTitle": "Add a trip member",
+      "editTitle": "Edit member",
+      "edit": "Edit",
+      "delete": "Remove",
+      "save": "Save member",
+      "formHint": "Only the name is required. Add a role or phone number so others know who to contact.",
+      "emptyTitle": "No members yet",
+      "emptyDescription": "Start by adding the people joining this trip. You can edit or remove anyone anytime.",
+      "confirmDelete": "Remove {{name}} from the trip list?",
+      "toastAdded": "{{name}} added to the trip",
+      "toastUpdated": "{{name}} updated",
+      "toastRemoved": "{{name}} removed from the trip",
+      "fields": {
+        "name": "Full name",
+        "role": "Role",
+        "phone": "Phone number",
+        "note": "Note"
+      },
+      "placeholders": {
+        "name": "e.g. Minh Nguyen",
+        "role": "e.g. Driver, Trip lead",
+        "phone": "e.g. 0901 234 567",
+        "note": "e.g. Vegetarian, arrives late"
+      }
+    },
+    "edit": {
+      "button": "Edit",
+      "save": "Save changes",
+      "fields": {
+        "title": "Title",
+        "description": "Short description",
+        "details": "Details (one item per line)"
+      },
+      "placeholders": {
+        "details": "One point per line…"
+      }
+    },
+    "transport": {
+      "title": "Transportation",
+      "description": "How the group gets to Vũng Tàu and moves around during the trip.",
+      "add": "Add transport",
+      "addFirst": "Add first transport",
+      "addTitle": "Add transport",
+      "editItemTitle": "Edit transport",
+      "editHint": "Update one transport option. Each line in details becomes a bullet point.",
+      "delete": "Remove",
+      "empty": "No transport options yet.",
+      "toastAdded": "Transport added",
+      "toastSaved": "Transport saved",
+      "toastRemoved": "Removed {{name}}",
+      "confirmDelete": "Remove {{name}} from transport list?",
+      "fields": {
+        "icon": "Vehicle type"
+      },
+      "icons": {
+        "car": "Car",
+        "ferry": "Ferry / boat"
+      },
+      "car": {
+        "title": "Private cars",
+        "description": "Main option for the group — flexible timing and room for luggage.",
+        "details": [
+          "2 cars · 7 seats each · meet Sun 3 May at 3:00 PM",
+          "Take CT01 highway → HCM–Long Thành–Dầu Giây → Ba Ria–Vung Tau",
+          "~2 hours drive · tolls ~150,000 VND per car",
+          "Parking available at the villa"
+        ]
+      },
+      "ferry": {
+        "title": "Cat Lai ferry (backup)",
+        "description": "Alternative route if highway traffic is heavy — scenic but slower.",
+        "details": [
+          "Cat Lai ferry → Nhon Trach → Vũng Tàu coastal road",
+          "Ferry runs 24/7 · ~15 min wait · ~30,000 VND per car",
+          "Good for motorbikes or smaller groups",
+          "Add 45–60 min compared to highway route"
+        ]
+      }
+    },
+    "villa": {
+      "title": "Accommodation",
+      "description": "Where the group stays — check-in, contact, and amenities.",
+      "editTitle": "Edit accommodation",
+      "editHint": "Update stay details. Amenities: one item per line.",
+      "toastSaved": "Accommodation info saved",
+      "galleryTitle": "Photos",
+      "galleryAlt": "Photo {{index}}",
+      "noImages": "No photos yet. Add image links in Edit.",
+      "fields": {
+        "eyebrow": "Eyebrow label",
+        "name": "Place name",
+        "address": "Address",
+        "images": "Photos (one URL per line)",
+        "notes": "Notes"
+      },
+      "placeholders": {
+        "images": "https://… or Google Drive link (one image per line)"
+      },
+      "eyebrow": "Where we stay",
+      "name": "Ocean Breeze Villa — Back Beach",
+      "address": "18 Tran Phu, Ward 1, Vũng Tàu, Ba Ria–Vung Tau",
+      "checkIn": "Check-in",
+      "checkInTime": "Sun 3 May 2026 · afternoon, ~5:30 PM",
+      "checkOut": "Check-out",
+      "checkOutTime": "Tue 5 May 2026 · morning, by 11:00 AM",
+      "contact": "Host contact",
+      "contactInfo": "Ms. Lan · 0903 456 789 · WhatsApp preferred",
+      "amenitiesLabel": "Amenities",
+      "amenities": [
+        "4 bedrooms · sleeps 12",
+        "Private pool",
+        "BBQ area",
+        "Full kitchen",
+        "Beach 5 min walk",
+        "Free Wi-Fi",
+        "Parking for 3 cars"
+      ],
+      "notes": "Bring your own towels for the beach. Quiet hours after 10 PM. Pool gate has a child lock — keep closed when not in use."
+    },
+    "itinerary": {
+      "title": "Timetable",
+      "description": "Day-by-day plan — where to go, what to do, and where to eat.",
+      "addDay": "Add day",
+      "addDayTitle": "Add new day",
+      "editDayTitle": "Edit day schedule",
+      "editDayHint": "Edit one day's schedule. Pick hour and minute from the lists.",
+      "deleteDay": "Delete day",
+      "toastDayAdded": "Day added",
+      "toastDaySaved": "Day schedule saved",
+      "toastDayRemoved": "Removed {{name}}",
+      "confirmDeleteDay": "Remove {{name}} from the itinerary?",
+      "addEntry": "Add item",
+      "removeEntry": "Remove item",
+      "placeholders": {
+        "dayLabel": "e.g. Day 1 — Sun 3 May"
+      },
+      "fields": {
+        "dayLabel": "Day label",
+        "hour": "Hour",
+        "minute": "Minute",
+        "time": "Time",
+        "type": "Type",
+        "title": "Activity",
+        "location": "Location",
+        "meal": "Food (optional)"
+      },
+      "types": {
+        "activity": "Activity",
+        "meal": "Meal",
+        "travel": "Travel"
+      },
+      "days": [
+        {
+          "label": "Day 1 — Sun 3 May (afternoon)",
+          "entries": [
+            {
+              "time": "15:00",
+              "title": "Depart Ho Chi Minh City",
+              "location": "Meeting point (TBA)",
+              "type": "travel"
+            },
+            {
+              "time": "17:30",
+              "title": "Arrive & check in",
+              "location": "Ocean Breeze Villa",
+              "type": "activity"
+            },
+            {
+              "time": "18:30",
+              "title": "Dinner",
+              "location": "Night market near Bai Truoc",
+              "meal": "Seafood skewers, banh khot",
+              "type": "meal"
+            },
+            {
+              "time": "20:00",
+              "title": "Evening beach walk",
+              "location": "Bai Truoc",
+              "type": "activity"
+            }
+          ]
+        },
+        {
+          "label": "Day 2 — Mon 4 May",
+          "entries": [
+            {
+              "time": "08:00",
+              "title": "Breakfast at villa",
+              "location": "Ocean Breeze Villa",
+              "meal": "Bread, eggs, fruit — cook together",
+              "type": "meal"
+            },
+            {
+              "time": "09:30",
+              "title": "Christ the King statue",
+              "location": "Nui Nho (Small Mountain)",
+              "type": "activity"
+            },
+            {
+              "time": "12:00",
+              "title": "Lunch",
+              "location": "Banh Khot Goc Vuong",
+              "meal": "Banh khot, nem nuong",
+              "type": "meal"
+            },
+            {
+              "time": "14:30",
+              "title": "Pool & rest",
+              "location": "Villa",
+              "type": "activity"
+            },
+            {
+              "time": "17:00",
+              "title": "Front Beach walk",
+              "location": "Bai Truoc promenade",
+              "type": "activity"
+            },
+            {
+              "time": "19:00",
+              "title": "BBQ dinner",
+              "location": "Villa garden",
+              "meal": "Grilled seafood & veggies — group potluck",
+              "type": "meal"
+            }
+          ]
+        },
+        {
+          "label": "Day 3 — Tue 5 May (morning)",
+          "entries": [
+            {
+              "time": "07:30",
+              "title": "Morning coffee",
+              "location": "Bai Sau beachfront",
+              "meal": "Ca phe sua da",
+              "type": "meal"
+            },
+            {
+              "time": "09:00",
+              "title": "Check out & pack",
+              "location": "Ocean Breeze Villa",
+              "type": "activity"
+            },
+            {
+              "time": "09:30",
+              "title": "Return to Ho Chi Minh City",
+              "location": "CT01 highway",
+              "type": "travel"
+            }
+          ]
+        }
+      ]
     }
   }
 }

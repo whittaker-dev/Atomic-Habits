@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { defaultPlanTripSeed } from './plan-trip-seed.data.js';
 
 const prisma = new PrismaClient();
 
@@ -63,6 +64,21 @@ async function main() {
     });
   }
   console.log(`Seeded ${SYSTEM_CATEGORIES.length} mission categories`);
+
+  const { slug, ...tripData } = defaultPlanTripSeed;
+  const existingTrip = await prisma.planTrip.findUnique({ where: { slug } });
+
+  if (!existingTrip) {
+    await prisma.planTrip.create({
+      data: {
+        slug,
+        ...tripData,
+      },
+    });
+    console.log(`Seeded default plan trip (${slug})`);
+  } else {
+    console.log(`Plan trip (${slug}) already exists — skipped`);
+  }
 }
 
 main()

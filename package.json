@@ -11,7 +11,8 @@
     "typecheck": "pnpm run -r typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm typecheck && pnpm lint && pnpm format:check"
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check",
+    "db:deploy": "pnpm --filter @atomic-habits/api db:migrate:deploy && pnpm --filter @atomic-habits/api db:seed"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",

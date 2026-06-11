@@ -51,7 +51,8 @@
     "seeDesignSystem": "Xem hệ thống thiết kế →",
     "home": "Trang chủ",
     "contact": "Liên hệ",
-    "designSystem": "Hệ thống thiết kế"
+    "designSystem": "Hệ thống thiết kế",
+    "planTrip": "Kế hoạch chuyến đi"
   },
   "home": {
     "hero": {
@@ -407,6 +408,303 @@
       "ctaHeight": "CTA: tối thiểu 40px",
       "tabHeight": "Tab giá: tối thiểu 36px (44px trên touch)",
       "inputHeight": "Input form: tối thiểu 44px trên touch"
+    }
+  },
+  "planTrip": {
+    "header": {
+      "title": "Chuyến Vũng Tàu"
+    },
+    "hero": {
+      "eyebrow": "Đi biển · Bạn bè & gia đình",
+      "title": "Kế hoạch chuyến Vũng Tàu",
+      "subtitle": "Mọi thứ ở một nơi — ai đi, đi bằng gì, ở đâu và ăn gì trên đường.",
+      "dates": "Chiều CN 3/5 – Sáng T3 5/5/2026"
+    },
+    "trip": {
+      "editButton": "Sửa chuyến đi",
+      "editTitle": "Thông tin chuyến đi",
+      "editHint": "Tên, mô tả và ngày đi — dữ liệu được lưu trên server để cả nhóm cùng xem.",
+      "save": "Lưu",
+      "toastSaved": "Đã cập nhật thông tin chuyến đi",
+      "saving": "Đang lưu…",
+      "saveError": "Không lưu được: {{message}}",
+      "noDates": "Chưa có ngày đi",
+      "fields": {
+        "name": "Tên chuyến đi",
+        "description": "Mô tả",
+        "eyebrow": "Nhãn phụ",
+        "dates": "Ngày đi"
+      }
+    },
+    "nav": {
+      "label": "Các mục chuyến đi",
+      "members": "Thành viên",
+      "transport": "Di chuyển",
+      "villa": "Chỗ ở",
+      "itinerary": "Lịch trình"
+    },
+    "members": {
+      "title": "Thành viên",
+      "description": "Thêm mọi người tham gia chuyến đi. Dữ liệu được lưu trên server để cả nhóm cùng xem và cập nhật.",
+      "count": "{{count}} thành viên",
+      "count_plural": "{{count}} thành viên",
+      "count_one": "{{count}} thành viên",
+      "count_other": "{{count}} thành viên",
+      "loading": "Đang tải thành viên…",
+      "crewBadge": "Đồng đội",
+      "add": "Thêm thành viên",
+      "addFirst": "Thêm thành viên đầu tiên",
+      "addTitle": "Thêm thành viên",
+      "editTitle": "Sửa thành viên",
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "save": "Lưu",
+      "formHint": "Chỉ cần điền tên. Thêm vai trò hoặc số điện thoại để mọi người biết liên hệ ai.",
+      "emptyTitle": "Chưa có thành viên",
+      "emptyDescription": "Bắt đầu bằng cách thêm người tham gia chuyến đi. Bạn có thể sửa hoặc xóa bất cứ lúc nào.",
+      "confirmDelete": "Xóa {{name}} khỏi danh sách?",
+      "toastAdded": "Đã thêm {{name}}",
+      "toastUpdated": "Đã cập nhật {{name}}",
+      "toastRemoved": "Đã xóa {{name}}",
+      "fields": {
+        "name": "Họ và tên",
+        "role": "Vai trò",
+        "phone": "Số điện thoại",
+        "note": "Ghi chú"
+      },
+      "placeholders": {
+        "name": "VD: Nguyễn Văn Minh",
+        "role": "VD: Tài xế, Trưởng nhóm",
+        "phone": "VD: 0901 234 567",
+        "note": "VD: Ăn chay, đến muộn"
+      }
+    },
+    "edit": {
+      "button": "Sửa",
+      "save": "Lưu thay đổi",
+      "fields": {
+        "title": "Tiêu đề",
+        "description": "Mô tả ngắn",
+        "details": "Chi tiết (mỗi dòng một mục)"
+      },
+      "placeholders": {
+        "details": "Mỗi dòng một ý…"
+      }
+    },
+    "transport": {
+      "title": "Phương tiện di chuyển",
+      "description": "Cách cả nhóm đến Vũng Tàu và di chuyển trong chuyến đi.",
+      "add": "Thêm phương tiện",
+      "addFirst": "Thêm phương tiện đầu tiên",
+      "addTitle": "Thêm phương tiện",
+      "editItemTitle": "Sửa phương tiện",
+      "editHint": "Cập nhật từng phương tiện. Mỗi dòng trong chi tiết là một gạch đầu dòng.",
+      "delete": "Xóa",
+      "empty": "Chưa có phương tiện nào.",
+      "toastAdded": "Đã thêm phương tiện",
+      "toastSaved": "Đã lưu phương tiện",
+      "toastRemoved": "Đã xóa {{name}}",
+      "confirmDelete": "Xóa {{name}} khỏi danh sách di chuyển?",
+      "fields": {
+        "icon": "Loại phương tiện"
+      },
+      "icons": {
+        "car": "Xe",
+        "ferry": "Phà / tàu"
+      },
+      "car": {
+        "title": "Xe riêng",
+        "description": "Phương án chính — linh hoạt giờ giấc và chỗ để hành lý.",
+        "details": [
+          "2 xe · 7 chỗ mỗi xe · hẹn tập trung chiều CN 3/5 lúc 15:00",
+          "Đi cao tốc CT01 → HCM–Long Thành–Dầu Giây → QL51",
+          "~2 giờ · phí cao tốc ~150.000đ/xe",
+          "Villa có chỗ đậu xe"
+        ]
+      },
+      "ferry": {
+        "title": "Phà Cát Lái (dự phòng)",
+        "description": "Tuyến thay thế khi cao tốc kẹt — đẹp nhưng lâu hơn.",
+        "details": [
+          "Phà Cát Lái → Nhơn Trạch → đường ven biển Vũng Tàu",
+          "Phà chạy 24/7 · chờ ~15 phút · ~30.000đ/xe",
+          "Phù hợp xe máy hoặc nhóm nhỏ",
+          "Thêm 45–60 phút so với đi cao tốc"
+        ]
+      }
+    },
+    "villa": {
+      "title": "Chỗ ở",
+      "description": "Nơi lưu trú của cả nhóm — giờ nhận phòng, liên hệ và tiện ích.",
+      "editTitle": "Sửa chỗ ở",
+      "editHint": "Cập nhật thông tin nơi lưu trú. Tiện ích: mỗi dòng một mục.",
+      "toastSaved": "Đã lưu thông tin chỗ ở",
+      "galleryTitle": "Hình ảnh",
+      "galleryAlt": "Ảnh {{index}}",
+      "noImages": "Chưa có hình ảnh. Thêm link ảnh trong phần Sửa.",
+      "fields": {
+        "eyebrow": "Nhãn phụ",
+        "name": "Tên chỗ ở",
+        "address": "Địa chỉ",
+        "images": "Hình ảnh (mỗi dòng một link)",
+        "notes": "Lưu ý"
+      },
+      "placeholders": {
+        "images": "https://… hoặc link Google Drive (mỗi dòng một ảnh)"
+      },
+      "eyebrow": "Nơi lưu trú",
+      "name": "Ocean Breeze Villa — Bãi Sau",
+      "address": "18 Trần Phú, Phường 1, Vũng Tàu, Bà Rịa–Vũng Tàu",
+      "checkIn": "Nhận phòng",
+      "checkInTime": "CN 3/5/2026 · chiều, dự kiến ~17:30",
+      "checkOut": "Trả phòng",
+      "checkOutTime": "T3 5/5/2026 · sáng, trước 11:00",
+      "contact": "Liên hệ chủ nhà",
+      "contactInfo": "Chị Lan · 0903 456 789 · Ưu tiên Zalo/WhatsApp",
+      "amenitiesLabel": "Tiện ích",
+      "amenities": [
+        "4 phòng ngủ · ngủ tối đa 12 người",
+        "Hồ bơi riêng",
+        "Khu BBQ",
+        "Bếp đầy đủ",
+        "Biển cách 5 phút đi bộ",
+        "Wi-Fi miễn phí",
+        "Đậu được 3 xe"
+      ],
+      "notes": "Mang khăn tắm đi biển. Giữ im lặng sau 22:00. Cổng hồ bơi có khóa an toàn trẻ em — đóng khi không dùng."
+    },
+    "itinerary": {
+      "title": "Lịch trình",
+      "description": "Kế hoạch từng ngày — đi đâu, làm gì và ăn gì.",
+      "addDay": "Thêm ngày",
+      "addDayTitle": "Thêm ngày mới",
+      "editDayTitle": "Sửa lịch trình ngày",
+      "editDayHint": "Chỉnh lịch trình cho một ngày. Chọn giờ và phút từ danh sách.",
+      "deleteDay": "Xóa ngày",
+      "toastDayAdded": "Đã thêm ngày mới",
+      "toastDaySaved": "Đã lưu lịch trình ngày",
+      "toastDayRemoved": "Đã xóa {{name}}",
+      "confirmDeleteDay": "Xóa {{name}} khỏi lịch trình?",
+      "addEntry": "Thêm mục",
+      "removeEntry": "Xóa mục",
+      "placeholders": {
+        "dayLabel": "VD: Ngày 1 — CN 3/5"
+      },
+      "fields": {
+        "dayLabel": "Tên ngày",
+        "hour": "Giờ",
+        "minute": "Phút",
+        "time": "Giờ",
+        "type": "Loại",
+        "title": "Hoạt động",
+        "location": "Địa điểm",
+        "meal": "Ăn uống (tuỳ chọn)"
+      },
+      "types": {
+        "activity": "Hoạt động",
+        "meal": "Ăn uống",
+        "travel": "Di chuyển"
+      },
+      "days": [
+        {
+          "label": "Ngày 1 — CN 3/5 (chiều)",
+          "entries": [
+            {
+              "time": "15:00",
+              "title": "Khởi hành từ TP.HCM",
+              "location": "Điểm tập trung (thông báo sau)",
+              "type": "travel"
+            },
+            {
+              "time": "17:30",
+              "title": "Đến nơi & nhận phòng",
+              "location": "Ocean Breeze Villa",
+              "type": "activity"
+            },
+            {
+              "time": "18:30",
+              "title": "Ăn tối",
+              "location": "Chợ đêm gần Bãi Trước",
+              "meal": "Hải sản xiên, bánh khọt",
+              "type": "meal"
+            },
+            {
+              "time": "20:00",
+              "title": "Dạo biển tối",
+              "location": "Bãi Trước",
+              "type": "activity"
+            }
+          ]
+        },
+        {
+          "label": "Ngày 2 — T2 4/5",
+          "entries": [
+            {
+              "time": "08:00",
+              "title": "Ăn sáng tại villa",
+              "location": "Ocean Breeze Villa",
+              "meal": "Bánh mì, trứng, trái cây — nấu chung",
+              "type": "meal"
+            },
+            {
+              "time": "09:30",
+              "title": "Tượng Chúa Kitô",
+              "location": "Núi Nhỏ",
+              "type": "activity"
+            },
+            {
+              "time": "12:00",
+              "title": "Ăn trưa",
+              "location": "Bánh Khọt Gốc Vườn",
+              "meal": "Bánh khọt, nem nướng",
+              "type": "meal"
+            },
+            {
+              "time": "14:30",
+              "title": "Bơi & nghỉ ngơi",
+              "location": "Villa",
+              "type": "activity"
+            },
+            {
+              "time": "17:00",
+              "title": "Dạo Bãi Trước",
+              "location": "Bãi Trước",
+              "type": "activity"
+            },
+            {
+              "time": "19:00",
+              "title": "BBQ tối",
+              "location": "Sân villa",
+              "meal": "Hải sản & rau nướng — potluck cả nhóm",
+              "type": "meal"
+            }
+          ]
+        },
+        {
+          "label": "Ngày 3 — T3 5/5 (sáng)",
+          "entries": [
+            {
+              "time": "07:30",
+              "title": "Cà phê sáng",
+              "location": "Bãi Sau",
+              "meal": "Cà phê sữa đá",
+              "type": "meal"
+            },
+            {
+              "time": "09:00",
+              "title": "Trả phòng & thu dọn",
+              "location": "Ocean Breeze Villa",
+              "type": "activity"
+            },
+            {
+              "time": "09:30",
+              "title": "Về TP.HCM",
+              "location": "Cao tốc CT01",
+              "type": "travel"
+            }
+          ]
+        }
+      ]
     }
   }
 }
