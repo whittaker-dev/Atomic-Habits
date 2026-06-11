@@ -7,7 +7,7 @@ import helmet from 'helmet';
 import { errorHandler, notFoundHandler } from './middleware/error.js';
 import { checkPostgres } from './lib/prisma.js';
 import { checkRedis } from './lib/redis.js';
-import { startMailWorker } from './lib/queue.js';
+import { startNotificationWorker } from './lib/queue.js';
 import contactRouter from './routes/contact.js';
 import authRouter from './routes/auth.js';
 import planTripRouter from './routes/plan-trip.js';
@@ -39,7 +39,7 @@ app.use('/plan-trips', planTripRouter);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-startMailWorker().catch(console.error);
+startNotificationWorker().catch(console.error);
 
 app.listen(port, () => {
   console.log(`[api] listening on http://localhost:${port}`);
