@@ -42,7 +42,7 @@ export const authService = {
     await otpService.resendSignupOtp(email);
   },
 
-  async login(email: string, password: string): Promise<void> {
+  async login(email: string, password: string): Promise<User> {
     const normalized = normalizeEmail(email);
     const user = await userRepository.findByEmail(normalized);
 
@@ -59,7 +59,7 @@ export const authService = {
       throw apiError(AuthMessages.EMAIL_NOT_VERIFIED, AuthRouteStatus.login.emailNotVerified);
     }
 
-    await otpService.createAndSendLoginOtp(user);
+    return user;
   },
 
   async verifyLogin(email: string, code: string): Promise<User> {

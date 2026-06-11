@@ -34,10 +34,10 @@ export async function resendRegistrationCode(email: string): Promise<void> {
   }
 }
 
-export async function loginWithEmail(email: string, password: string): Promise<RegisterResponse> {
+export async function loginWithEmail(email: string, password: string): Promise<AuthUser> {
   try {
-    const { data } = await apiClient.post<RegisterResponse>('/auth/login', { email, password });
-    return data;
+    const { data } = await apiClient.post<{ user: AuthUser }>('/auth/login', { email, password });
+    return data.user;
   } catch (error) {
     throw new Error(getErrorMessage(error));
   }
