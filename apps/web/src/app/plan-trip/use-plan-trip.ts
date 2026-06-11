@@ -6,7 +6,8 @@ import {
   type PlanTripUpsertBody,
 } from '@atomic-habits/shared';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { fetchPlanTrip, savePlanTrip } from '@/lib/plan-trip-api';
+import useSWR from 'swr';
+import { fetchPlanTrip, planTripKey, savePlanTrip } from '@/lib/plan-trip-api';
 import type {
   AccommodationPlanData,
   ItineraryDayData,
@@ -114,6 +115,23 @@ function toUpsertBody(
   };
 }
 
+function serializeRecord(record: PlanTripRecord) {
+  return JSON.stringify(
+    toUpsertBody(
+      {
+        name: record.name,
+        description: record.description,
+        eyebrow: record.eyebrow,
+        datesLabel: record.datesLabel,
+      },
+      record.members,
+      record.transport,
+      record.accommodation,
+      record.itinerary,
+    ),
+  );
+}
+
 type UsePlanTripOptions = {
   slug?: string;
   defaults: TripMeta & TripPlanData;
@@ -141,6 +159,13 @@ export function usePlanTrip({ slug = DEFAULT_PLAN_TRIP_SLUG, defaults }: UsePlan
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSavedRef = useRef('');
   const saveVersionRef = useRef(0);
+  const bootstrappedRef = useRef(false);
+
+  const {
+    data: remote,
+    error: loadError,
+    isLoading,
+  } = useSWR(planTripKey(slug), () => fetchPlanTrip(slug), { revalidateOnFocus: true });
 
   const applyRecord = useCallback((record: PlanTripRecord) => {
     setMeta({
@@ -156,80 +181,64 @@ export function usePlanTrip({ slug = DEFAULT_PLAN_TRIP_SLUG, defaults }: UsePlan
   }, []);
 
   useEffect(() => {
-    let cancelled = false;
+    if (isLoading || remote === undefined) return;
 
-    async function load() {
-      try {
-        const remote = await fetchPlanTrip(slug);
-
-        if (cancelled) return;
-
-        if (remote) {
-          skipSaveRef.current = true;
-          applyRecord(remote);
-          lastSavedRef.current = JSON.stringify(
-            toUpsertBody(
-              {
-                name: remote.name,
-                description: remote.description,
-                eyebrow: remote.eyebrow,
-                datesLabel: remote.datesLabel,
-              },
-              remote.members,
-              remote.transport,
-              remote.accommodation,
-              remote.itinerary,
-            ),
-          );
-          setHydrated(true);
-          return;
-        }
-
-        const legacy = readLegacyLocalStorage();
-        const initialMeta: TripMeta = {
-          name: defaults.name ?? '',
-          description: defaults.description ?? '',
-          eyebrow: defaults.eyebrow ?? '',
-          datesLabel: defaults.datesLabel ?? '',
-        };
-        const initialMembers = legacy?.members ?? [];
-        const initialTransport = normalizeTransportItems(legacy?.transport ?? defaults.transport);
-        const initialAccommodation = legacy?.accommodation ?? defaults.accommodation;
-        const initialItinerary = createItineraryIds(legacy?.itinerary ?? defaults.itinerary);
-
-        setMeta(initialMeta);
-        setMembers(initialMembers);
-        setTransport(initialTransport);
-        setAccommodation(initialAccommodation);
-        setItinerary(initialItinerary);
-        setHydrated(true);
-
-        if (legacy) {
-          const legacyBody = toUpsertBody(
-            initialMeta,
-            initialMembers,
-            initialTransport,
-            initialAccommodation,
-            initialItinerary,
-          );
-          await savePlanTrip(slug, legacyBody);
-          lastSavedRef.current = JSON.stringify(legacyBody);
-          clearLegacyLocalStorage();
-        }
-      } catch (error) {
-        if (cancelled) return;
-        setSaveError(error instanceof Error ? error.message : 'Failed to load trip');
-        setHydrated(true);
-      }
+    if (remote) {
+      skipSaveRef.current = true;
+      applyRecord(remote);
+      lastSavedRef.current = serializeRecord(remote);
+      setHydrated(true);
+      setSaveError(null);
+      return;
     }
 
-    void load();
+    if (bootstrappedRef.current) return;
+    bootstrappedRef.current = true;
 
-    return () => {
-      cancelled = true;
+    const legacy = readLegacyLocalStorage();
+    const initialMeta: TripMeta = {
+      name: defaults.name ?? '',
+      description: defaults.description ?? '',
+      eyebrow: defaults.eyebrow ?? '',
+      datesLabel: defaults.datesLabel ?? '',
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slug]);
+    const initialMembers = legacy?.members ?? [];
+    const initialTransport = normalizeTransportItems(legacy?.transport ?? defaults.transport);
+    const initialAccommodation = legacy?.accommodation ?? defaults.accommodation;
+    const initialItinerary = createItineraryIds(legacy?.itinerary ?? defaults.itinerary);
+
+    setMeta(initialMeta);
+    setMembers(initialMembers);
+    setTransport(initialTransport);
+    setAccommodation(initialAccommodation);
+    setItinerary(initialItinerary);
+    setHydrated(true);
+
+    if (!legacy) return;
+
+    const legacyBody = toUpsertBody(
+      initialMeta,
+      initialMembers,
+      initialTransport,
+      initialAccommodation,
+      initialItinerary,
+    );
+
+    void savePlanTrip(slug, legacyBody)
+      .then(() => {
+        lastSavedRef.current = JSON.stringify(legacyBody);
+        clearLegacyLocalStorage();
+      })
+      .catch((error: Error) => {
+        setSaveError(error.message);
+      });
+  }, [remote, isLoading, slug, defaults, applyRecord]);
+
+  useEffect(() => {
+    if (!loadError) return;
+    setSaveError(loadError instanceof Error ? loadError.message : 'Failed to load trip');
+    setHydrated(true);
+  }, [loadError]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -274,7 +283,7 @@ export function usePlanTrip({ slug = DEFAULT_PLAN_TRIP_SLUG, defaults }: UsePlan
         clearTimeout(saveTimerRef.current);
       }
     };
-  }, [meta, members, transport, accommodation, itinerary, hydrated, slug, applyRecord]);
+  }, [meta, members, transport, accommodation, itinerary, hydrated, slug]);
 
   const updateMeta = useCallback((data: TripMeta) => {
     setMeta(data);

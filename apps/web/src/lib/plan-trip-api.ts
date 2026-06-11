@@ -4,6 +4,8 @@ import { apiClient, getErrorMessage } from './api-client';
 
 type PlanTripResponse = { trip: PlanTripRecord };
 
+export const planTripKey = (slug: string) => ['plan-trip', slug] as const;
+
 export async function fetchPlanTrip(slug: string): Promise<PlanTripRecord | null> {
   try {
     const { data } = await apiClient.get<PlanTripResponse>(`/plan-trips/${slug}`);
