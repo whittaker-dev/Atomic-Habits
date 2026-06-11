@@ -13,6 +13,7 @@ import { ItineraryDayEditModal } from './itinerary-day-edit-modal';
 import { MemberCard } from './member-card';
 import { MemberFormModal } from './member-form-modal';
 import { TransportItemEditModal } from './transport-item-edit-modal';
+import { TripConfirmModal } from './trip-confirm-modal';
 import { TripInfoEditModal } from './trip-info-edit-modal';
 import { DEFAULT_ACCOMMODATION_IMAGES } from './trip-defaults';
 import { TripHeader } from './trip-header';
@@ -27,6 +28,11 @@ import { usePlanTrip } from './use-plan-trip';
 
 const SECTIONS = ['members', 'transport', 'villa', 'itinerary'] as const;
 type SectionId = (typeof SECTIONS)[number];
+
+type DeleteTarget =
+  | { kind: 'member'; member: TripMember }
+  | { kind: 'transport'; item: TransportItemData }
+  | { kind: 'day'; day: ItineraryDayData };
 
 function UsersIcon({ className }: { className?: string }) {
   return (
@@ -173,7 +179,7 @@ function SectionHeading({
   action?: React.ReactNode;
 }) {
   return (
-    <div className="mb-lg flex flex-col gap-md sm:flex-row sm:items-start sm:justify-between">
+    <div className="mb-md flex flex-col gap-sm sm:mb-lg sm:gap-md sm:flex-row sm:items-start sm:justify-between">
       <div>
         <h2 className="font-sans text-headline font-bold">{title}</h2>
         <p className="mt-sm max-w-2xl font-sans text-body-sm text-ink-subtle">{description}</p>
@@ -195,7 +201,7 @@ function SectionSwitch({
   const { t } = useTranslation();
 
   return (
-    <div className="container-content py-md">
+    <div className="container-content py-xs sm:py-md">
       <div
         className="panel-lift mx-auto flex max-w-2xl gap-0.5 overflow-x-auto rounded-pill bg-surface-1 p-1"
         role="tablist"
@@ -245,6 +251,7 @@ export function PlanTripContent() {
   const [itineraryDayModalOpen, setItineraryDayModalOpen] = useState(false);
   const [itineraryDayModalMode, setItineraryDayModalMode] = useState<'add' | 'edit'>('add');
   const [editingDay, setEditingDay] = useState<ItineraryDayData | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
 
   const planDefaults = useMemo((): TripPlanData & {
     name: string;
@@ -387,10 +394,7 @@ export function PlanTripContent() {
   };
 
   const handleDeleteTransport = (item: TransportItemData) => {
-    const confirmed = window.confirm(t('planTrip.transport.confirmDelete', { name: item.title }));
-    if (!confirmed) return;
-    deleteTransportItem(item.id);
-    toast.info(t('planTrip.transport.toastRemoved', { name: item.title }));
+    setDeleteTarget({ kind: 'transport', item });
   };
 
   const handleAccommodationSubmit = (data: typeof accommodation) => {
@@ -423,17 +427,54 @@ export function PlanTripContent() {
   };
 
   const handleDeleteDay = (day: ItineraryDayData) => {
-    const confirmed = window.confirm(t('planTrip.itinerary.confirmDeleteDay', { name: day.label }));
-    if (!confirmed) return;
-    deleteItineraryDay(day.id);
-    toast.info(t('planTrip.itinerary.toastDayRemoved', { name: day.label }));
+    setDeleteTarget({ kind: 'day', day });
   };
 
   const handleDeleteMember = (member: TripMember) => {
-    const confirmed = window.confirm(t('planTrip.members.confirmDelete', { name: member.name }));
-    if (!confirmed) return;
-    deleteMember(member.id);
-    toast.info(t('planTrip.members.toastRemoved', { name: member.name }));
+    setDeleteTarget({ kind: 'member', member });
+  };
+
+  const deleteItemName = useMemo(() => {
+    if (!deleteTarget) return '';
+    switch (deleteTarget.kind) {
+      case 'member':
+        return deleteTarget.member.name;
+      case 'transport':
+        return deleteTarget.item.title;
+      case 'day':
+        return deleteTarget.day.label;
+    }
+  }, [deleteTarget]);
+
+  const deleteConfirmHint = useMemo(() => {
+    if (!deleteTarget) return '';
+    switch (deleteTarget.kind) {
+      case 'member':
+        return t('planTrip.confirm.memberHint');
+      case 'transport':
+        return t('planTrip.confirm.transportHint');
+      case 'day':
+        return t('planTrip.confirm.dayHint');
+    }
+  }, [deleteTarget, t]);
+
+  const handleConfirmDelete = () => {
+    if (!deleteTarget) return;
+
+    switch (deleteTarget.kind) {
+      case 'member':
+        deleteMember(deleteTarget.member.id);
+        toast.info(t('planTrip.members.toastRemoved', { name: deleteTarget.member.name }));
+        break;
+      case 'transport':
+        deleteTransportItem(deleteTarget.item.id);
+        toast.info(t('planTrip.transport.toastRemoved', { name: deleteTarget.item.title }));
+        break;
+      case 'day':
+        deleteItineraryDay(deleteTarget.day.id);
+        toast.info(t('planTrip.itinerary.toastDayRemoved', { name: deleteTarget.day.label }));
+        break;
+    }
   };
 
   const entryTypeStyles = {
@@ -465,7 +506,7 @@ export function PlanTripContent() {
           title={meta.name}
           subtitle={meta.description}
           actions={
-            <div className="flex flex-wrap items-center gap-sm">
+            <div className="flex flex-wrap items-center justify-center gap-sm sm:gap-md">
               <StatusBadge className="px-md py-xs text-body-sm">
                 {meta.datesLabel || t('planTrip.trip.noDates')}
               </StatusBadge>
@@ -478,14 +519,14 @@ export function PlanTripContent() {
 
         <SectionSwitch active={activeSection} onChange={setActiveSection} labels={sectionLabels} />
 
-        <div className="container-content pb-section" role="tabpanel">
+        <div className="container-content pb-md pt-xs sm:pb-section sm:pt-0" role="tabpanel">
           {activeSection === 'members' && (
             <section>
               <SectionHeading
                 title={t('planTrip.members.title')}
                 description={t('planTrip.members.description')}
               />
-              <div className="mb-lg flex flex-col gap-md sm:flex-row sm:items-center sm:justify-between">
+              <div className="mb-md flex flex-col gap-sm sm:mb-lg sm:flex-row sm:items-center sm:justify-between sm:gap-md">
                 <div className="flex items-center gap-sm">
                   <IconBadge>
                     <UsersIcon />
@@ -500,13 +541,13 @@ export function PlanTripContent() {
               </div>
 
               {!hydrated ? (
-                <CardBase className="text-center">
+                <CardBase className="p-md text-center">
                   <p className="font-sans text-body-sm text-ink-subtle">
                     {t('planTrip.members.loading')}
                   </p>
                 </CardBase>
               ) : members.length === 0 ? (
-                <CardBase className="flex flex-col items-center py-xxl text-center">
+                <CardBase className="flex flex-col items-center p-md py-xl text-center sm:py-xxl">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-surface-2 text-ink-muted">
                     <UsersIcon className="h-8 w-8" />
                   </div>
@@ -521,7 +562,7 @@ export function PlanTripContent() {
                   </Button>
                 </CardBase>
               ) : (
-                <div className="grid gap-xl sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-2 gap-sm sm:gap-lg lg:grid-cols-3">
                   {members.map((member, index) => (
                     <MemberCard
                       key={member.id}
@@ -547,7 +588,7 @@ export function PlanTripContent() {
                 action={<Button onClick={openAddTransport}>{t('planTrip.transport.add')}</Button>}
               />
               {transport.length === 0 ? (
-                <CardBase className="text-center">
+                <CardBase className="p-md text-center">
                   <p className="font-sans text-body-sm text-ink-subtle">
                     {t('planTrip.transport.empty')}
                   </p>
@@ -556,9 +597,9 @@ export function PlanTripContent() {
                   </Button>
                 </CardBase>
               ) : (
-                <div className="grid gap-lg md:grid-cols-2">
+                <div className="grid gap-md md:grid-cols-2 md:gap-lg">
                   {transport.map((method) => (
-                    <CardBase key={method.id} className="flex flex-col">
+                    <CardBase key={method.id} className="flex flex-col p-md">
                       <div className="flex items-start justify-between gap-sm">
                         <IconBadge>
                           <TransportIconView icon={method.icon} />
@@ -606,20 +647,20 @@ export function PlanTripContent() {
                   </Button>
                 }
               />
-              <div className="mb-lg">
-                <h3 className="mb-md font-sans text-card-title">
+              <div className="mb-sm sm:mb-lg">
+                <h3 className="mb-xs font-sans text-card-title sm:mb-md">
                   {t('planTrip.villa.galleryTitle')}
                 </h3>
                 <AccommodationGallery images={accommodation.images} name={accommodation.name} />
               </div>
 
               <CardBase className="overflow-hidden p-0">
-                <div className="bg-gradient-to-br from-primary/10 via-surface-1 to-surface-2 p-xl">
-                  <div className="flex items-start gap-md">
-                    <IconBadge>
-                      <HomeIcon />
-                    </IconBadge>
-                    <div>
+                <div className="bg-gradient-to-br from-primary/10 via-surface-1 to-surface-2 p-md">
+                  <div className="flex items-start gap-sm sm:gap-md">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-surface-2 text-primary sm:h-11 sm:w-11">
+                      <HomeIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+                    </div>
+                    <div className="min-w-0">
                       <Eyebrow>{accommodation.eyebrow}</Eyebrow>
                       <h3 className="mt-xs font-sans text-headline">{accommodation.name}</h3>
                       <p className="mt-sm flex items-start gap-sm font-sans text-body-sm text-ink-subtle">
@@ -630,7 +671,7 @@ export function PlanTripContent() {
                   </div>
                 </div>
 
-                <div className="grid gap-lg p-xl md:grid-cols-2">
+                <div className="grid grid-cols-2 gap-xs p-md sm:gap-lg md:grid-cols-2">
                   <div>
                     <p className="font-sans text-caption font-medium uppercase tracking-wide text-ink-tertiary">
                       {t('planTrip.villa.checkIn')}
@@ -647,23 +688,23 @@ export function PlanTripContent() {
                       {accommodation.checkOutTime}
                     </p>
                   </div>
-                  <div className="md:col-span-2">
+                  <div className="col-span-2">
                     <p className="font-sans text-caption font-medium uppercase tracking-wide text-ink-tertiary">
                       {t('planTrip.villa.contact')}
                     </p>
                     <p className="mt-xs font-sans text-body">{accommodation.contactInfo}</p>
                   </div>
-                  <div className="md:col-span-2">
+                  <div className="col-span-2">
                     <p className="mb-sm font-sans text-caption font-medium uppercase tracking-wide text-ink-tertiary">
                       {t('planTrip.villa.amenitiesLabel')}
                     </p>
-                    <div className="flex flex-wrap gap-sm">
+                    <div className="flex flex-wrap gap-1 sm:gap-sm">
                       {accommodation.amenities.map((amenity) => (
                         <BadgeTag key={amenity}>{amenity}</BadgeTag>
                       ))}
                     </div>
                   </div>
-                  <div className="md:col-span-2 rounded-md border border-hairline bg-surface-2/50 p-md">
+                  <div className="col-span-2 rounded-md border border-hairline bg-surface-2/50 p-md">
                     <p className="font-sans text-body-sm text-ink-subtle">{accommodation.notes}</p>
                   </div>
                 </div>
@@ -681,15 +722,15 @@ export function PlanTripContent() {
               <div className="space-y-xl">
                 {itinerary.days.map((day) => (
                   <div key={day.id}>
-                    <div className="mb-lg flex flex-wrap items-center justify-between gap-md">
-                      <div className="flex min-w-0 flex-1 items-center gap-md">
+                    <div className="mb-lg space-y-md">
+                      <div className="flex items-center gap-md">
                         <div className="h-px flex-1 bg-hairline" />
-                        <h3 className="shrink-0 font-sans text-card-title text-primary">
+                        <h3 className="px-sm text-center font-sans text-card-title text-primary">
                           {day.label}
                         </h3>
                         <div className="h-px flex-1 bg-hairline" />
                       </div>
-                      <div className="flex gap-sm">
+                      <div className="flex flex-wrap justify-center gap-sm sm:justify-end">
                         <Button variant="secondary" onClick={() => openEditDay(day)}>
                           {t('planTrip.edit.button')}
                         </Button>
@@ -817,6 +858,14 @@ export function PlanTripContent() {
           updateMeta(data);
           toast.success(t('planTrip.trip.toastSaved'));
         }}
+      />
+
+      <TripConfirmModal
+        open={deleteTarget !== null}
+        itemName={deleteItemName}
+        hint={deleteConfirmHint}
+        onClose={() => setDeleteTarget(null)}
+        onConfirm={handleConfirmDelete}
       />
     </>
   );

@@ -436,6 +436,13 @@
         "dates": "Ngày đi"
       }
     },
+    "confirm": {
+      "title": "Xác nhận xóa",
+      "delete": "Xóa",
+      "memberHint": "Thành viên này sẽ bị xóa khỏi danh sách chuyến đi.",
+      "transportHint": "Phương tiện này sẽ bị xóa khỏi kế hoạch di chuyển.",
+      "dayHint": "Toàn bộ lịch trình của ngày này sẽ bị xóa."
+    },
     "nav": {
       "label": "Các mục chuyến đi",
       "members": "Thành viên",

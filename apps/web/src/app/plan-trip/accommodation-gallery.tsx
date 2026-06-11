@@ -27,8 +27,8 @@ export function AccommodationGallery({ images, name }: AccommodationGalleryProps
   const activeImage = validImages[safeIndex]!;
 
   return (
-    <div className="space-y-md">
-      <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-hairline bg-surface-2">
+    <div className="space-y-sm sm:space-y-md">
+      <div className="relative aspect-[5/3] overflow-hidden rounded-lg border border-hairline bg-surface-2 sm:aspect-[16/10]">
         <Image
           src={activeImage}
           alt={`${name} — ${t('planTrip.villa.galleryAlt', { index: activeIndex + 1 })}`}
@@ -40,7 +40,7 @@ export function AccommodationGallery({ images, name }: AccommodationGalleryProps
       </div>
 
       {validImages.length > 1 && (
-        <div className="flex gap-sm overflow-x-auto pb-xs">
+        <div className="flex gap-1.5 overflow-x-auto pb-0.5 sm:gap-sm sm:pb-xs">
           {validImages.map((image, index) => (
             <button
               key={`${image}-${index}`}
@@ -48,7 +48,7 @@ export function AccommodationGallery({ images, name }: AccommodationGalleryProps
               onClick={() => setActiveIndex(index)}
               aria-label={t('planTrip.villa.galleryAlt', { index: index + 1 })}
               className={cn(
-                'relative h-16 w-24 shrink-0 overflow-hidden rounded-md border transition-colors',
+                'relative h-12 w-[4.25rem] shrink-0 overflow-hidden rounded-md border transition-colors sm:h-16 sm:w-24',
                 activeIndex === index
                   ? 'border-primary ring-2 ring-primary/30'
                   : 'border-hairline hover:border-hairline-strong',

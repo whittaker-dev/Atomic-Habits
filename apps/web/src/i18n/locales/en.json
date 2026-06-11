@@ -436,6 +436,13 @@
         "dates": "Dates"
       }
     },
+    "confirm": {
+      "title": "Confirm delete",
+      "delete": "Delete",
+      "memberHint": "This member will be removed from the trip list.",
+      "transportHint": "This transport item will be removed from the plan.",
+      "dayHint": "The entire schedule for this day will be removed."
+    },
     "nav": {
       "label": "Trip sections",
       "members": "Members",

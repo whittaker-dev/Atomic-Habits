@@ -28,8 +28,8 @@ function PencilIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
-      width="15"
-      height="15"
+      width="13"
+      height="13"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -48,8 +48,8 @@ function TrashIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
-      width="15"
-      height="15"
+      width="13"
+      height="13"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -87,20 +87,24 @@ export function MemberCard({
   const gradient = BANNER_GRADIENTS[hashName(member.name) % BANNER_GRADIENTS.length];
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-hairline/80 bg-surface-1 shadow-[0_8px_30px_rgba(30,215,96,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_16px_40px_rgba(30,215,96,0.16)]">
-      <div className={cn('relative h-28 bg-gradient-to-br px-lg pt-lg', gradient)}>
-        <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/20 blur-2xl" />
-        <div className="pointer-events-none absolute -bottom-10 left-1/3 h-20 w-20 rounded-full bg-white/15 blur-xl" />
+    <article className="group relative overflow-hidden rounded-xl border border-hairline/80 bg-surface-1 shadow-[0_4px_16px_rgba(30,215,96,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_8px_24px_rgba(30,215,96,0.12)] sm:rounded-2xl">
+      <div
+        className={cn(
+          'relative h-14 bg-gradient-to-br px-xs pt-xs sm:h-20 sm:px-md sm:pt-md md:h-24 md:px-lg md:pt-lg',
+          gradient,
+        )}
+      >
+        <div className="pointer-events-none absolute -right-4 -top-4 h-14 w-14 rounded-full bg-white/20 blur-xl sm:h-20 sm:w-20" />
 
-        <div className="relative flex items-start justify-between">
-          <span className="rounded-pill bg-black/15 px-sm py-0.5 font-sans text-caption font-medium text-white/95 backdrop-blur-sm">
-            {crewLabel} #{index + 1}
+        <div className="relative flex items-start justify-between gap-1">
+          <span className="max-w-[calc(100%-3.5rem)] truncate rounded-pill bg-black/15 px-sm py-0.5 font-sans text-caption font-medium text-white/95 backdrop-blur-sm">
+            #{index + 1}
           </span>
-          <div className="flex gap-1 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
+          <div className="flex shrink-0 gap-0.5 opacity-100 sm:opacity-0 sm:group-hover:opacity-100">
             <button
               type="button"
               onClick={onEdit}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-ink-subtle shadow-sm transition-colors hover:bg-white hover:text-ink"
+              className="flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-ink-subtle shadow-sm transition-colors hover:bg-white hover:text-ink sm:h-7 sm:w-7"
               aria-label={editLabel}
             >
               <PencilIcon />
@@ -108,7 +112,7 @@ export function MemberCard({
             <button
               type="button"
               onClick={onDelete}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-ink-subtle shadow-sm transition-colors hover:bg-white hover:text-error"
+              className="flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-ink-subtle shadow-sm transition-colors hover:bg-white hover:text-error sm:h-7 sm:w-7"
               aria-label={deleteLabel}
             >
               <TrashIcon />
@@ -117,32 +121,35 @@ export function MemberCard({
         </div>
       </div>
 
-      <div className="relative px-lg pb-lg">
+      <div className="relative px-xs pb-xs sm:px-md sm:pb-md md:px-lg md:pb-lg">
         <div
-          className="absolute -top-10 left-lg flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-emerald-400 font-sans text-headline font-bold text-on-primary shadow-[0_8px_24px_rgba(30,215,96,0.35)] ring-4 ring-surface-1"
+          className="absolute -top-5 left-sm flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-emerald-400 font-sans text-body font-bold text-on-primary shadow-[0_4px_12px_rgba(30,215,96,0.3)] ring-2 ring-surface-1 sm:-top-7 sm:left-md sm:h-12 sm:w-12 sm:rounded-2xl md:-top-8 md:h-14 md:w-14 md:text-headline md:ring-4"
           aria-hidden
         >
           {getInitials(member.name)}
         </div>
 
-        <div className="pt-12">
-          <h3 className="truncate font-sans text-headline font-bold tracking-tight">
+        <div className="pt-6 sm:pt-8 md:pt-10">
+          <h3 className="truncate font-sans text-body font-bold tracking-tight md:text-headline">
             {member.name}
           </h3>
           {member.role ? (
-            <BadgeTag variant="success" className="mt-sm bg-primary/10 text-primary">
+            <BadgeTag
+              variant="success"
+              className="mt-sm max-w-full truncate bg-primary/10 text-primary"
+            >
               {member.role}
             </BadgeTag>
           ) : (
-            <p className="mt-sm font-sans text-caption text-ink-tertiary">{crewLabel}</p>
+            <p className="mt-sm truncate font-sans text-caption text-ink-tertiary">{crewLabel}</p>
           )}
         </div>
 
         {(member.phone || member.note) && (
-          <div className="mt-lg space-y-sm rounded-xl border border-hairline/80 bg-surface-2/50 p-md">
+          <div className="mt-sm space-y-1 rounded-lg border border-hairline/80 bg-surface-2/50 p-2 sm:mt-md sm:space-y-sm sm:rounded-xl sm:p-md">
             {member.phone && (
               <p className="flex items-center gap-sm font-sans text-body-sm text-ink">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <svg
                     width="14"
                     height="14"
@@ -159,8 +166,8 @@ export function MemberCard({
               </p>
             )}
             {member.note && (
-              <p className="flex items-start gap-sm font-sans text-body-sm text-ink-subtle">
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface-3 text-caption">
+              <p className="line-clamp-2 flex items-start gap-sm font-sans text-body-sm text-ink-subtle">
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-surface-3 text-caption">
                   ✦
                 </span>
                 <span>{member.note}</span>
