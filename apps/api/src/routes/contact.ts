@@ -40,7 +40,7 @@ function validateContactBody(body: ContactBody) {
 contactRouter.post('/', async (req, res, next) => {
   try {
     const payload = validateContactBody(req.body as ContactBody);
-    const to = process.env.CONTACT_MAIL_TO ?? process.env.USER_MAIL;
+    const to = process.env.CONTACT_MAIL_TO;
 
     if (!to) {
       const err: ApiError = new Error('Contact recipient is not configured');
