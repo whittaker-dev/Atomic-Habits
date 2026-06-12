@@ -10,6 +10,8 @@ import { checkRedis } from './lib/redis.js';
 import { startNotificationWorker } from './lib/queue.js';
 import contactRouter from './routes/contact.js';
 import authRouter from './routes/auth.js';
+import dashboardRouter from './routes/dashboard.js';
+import missionsRouter from './routes/missions.js';
 import planTripRouter from './routes/plan-trip.js';
 import { sessionMiddleware } from './lib/session.js';
 import { HealthResponse } from '@atomic-habits/shared';
@@ -34,6 +36,8 @@ app.get('/health', async (_req, res) => {
 
 app.use('/contact', contactRouter);
 app.use('/auth', authRouter);
+app.use('/dashboard', dashboardRouter);
+app.use('/missions', missionsRouter);
 app.use('/plan-trips', planTripRouter);
 
 app.use(notFoundHandler);

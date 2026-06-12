@@ -24,4 +24,11 @@ export const userRepository = {
       data: { emailVerifiedAt: new Date() },
     });
   },
+
+  updateGamification(
+    id: string,
+    data: { totalXp: number; level: number; currentStreak: number; bestStreak: number },
+  ): Promise<User> {
+    return prisma.user.update({ where: { id }, data });
+  },
 };
