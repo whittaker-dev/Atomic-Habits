@@ -47,6 +47,13 @@ const SYSTEM_CATEGORIES = [
     defaultXpReward: 15,
     sortOrder: 7,
   },
+  {
+    slug: 'custom',
+    nameKey: 'categories.custom',
+    icon: 'plus',
+    defaultXpReward: 15,
+    sortOrder: 8,
+  },
 ] as const;
 
 async function main() {

@@ -9,19 +9,21 @@ datasource db {
 }
 
 model User {
-  id              String              @id @default(uuid())
-  email           String              @unique
-  passwordHash    String              @map("password_hash")
-  emailVerifiedAt DateTime?           @map("email_verified_at")
-  timezone        String              @default("UTC")
-  totalXp         Int                 @default(0) @map("total_xp")
-  level           Int                 @default(1)
-  currentStreak   Int                 @default(0) @map("current_streak")
-  bestStreak      Int                 @default(0) @map("best_streak")
-  createdAt       DateTime            @default(now()) @map("created_at")
-  emailOtps       EmailOtp[]
-  completions     MissionCompletion[]
-  missions        Mission[]
+  id                  String               @id @default(uuid())
+  email               String               @unique
+  passwordHash        String               @map("password_hash")
+  emailVerifiedAt     DateTime?            @map("email_verified_at")
+  timezone            String               @default("UTC")
+  totalXp             Int                  @default(0) @map("total_xp")
+  level               Int                  @default(1)
+  currentStreak       Int                  @default(0) @map("current_streak")
+  bestStreak          Int                  @default(0) @map("best_streak")
+  createdAt           DateTime             @default(now()) @map("created_at")
+  emailOtps           EmailOtp[]
+  completions         MissionCompletion[]
+  missions            Mission[]
+  kanbanTasks         KanbanTask[]
+  englishSubmissions  EnglishSubmission[]
 
   @@map("users")
 }
@@ -64,7 +66,7 @@ model Mission {
   isActive    Boolean             @default(true) @map("is_active")
   createdAt   DateTime            @default(now()) @map("created_at")
   completions MissionCompletion[]
-  category    MissionCategory     @relation(fields: [categoryId], references: [id])
+  category    MissionCategory     @relation(fields: [categoryId], references: [id], onDelete: Restrict)
   user        User                @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, categoryId])
@@ -83,6 +85,59 @@ model MissionCompletion {
   @@unique([userId, missionId, completedDate])
   @@index([userId, completedDate])
   @@map("mission_completions")
+}
+
+enum KanbanColumn {
+  todo
+  in_progress
+  done
+}
+
+model KanbanTask {
+  id        String       @id @default(uuid())
+  userId    String       @map("user_id")
+  title     String
+  column    KanbanColumn @default(todo)
+  sortOrder Int          @default(0) @map("sort_order")
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, column, sortOrder])
+  @@map("kanban_tasks")
+}
+
+enum EnglishChallengeType {
+  vocabulary
+  quiz
+  phrase
+}
+
+model EnglishChallenge {
+  id          String               @id @default(uuid())
+  date        DateTime             @unique @db.Date
+  type        EnglishChallengeType
+  content     Json
+  createdAt   DateTime             @default(now()) @map("created_at")
+  submissions EnglishSubmission[]
+
+  @@map("english_challenges")
+}
+
+model EnglishSubmission {
+  id          String           @id @default(uuid())
+  userId      String           @map("user_id")
+  challengeId String           @map("challenge_id")
+  answers     Json
+  score       Int
+  xpAwarded   Int              @default(0) @map("xp_awarded")
+  submittedAt DateTime         @default(now()) @map("submitted_at")
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge   EnglishChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, challengeId])
+  @@index([userId, submittedAt])
+  @@map("english_submissions")
 }
 
 model PlanTrip {
