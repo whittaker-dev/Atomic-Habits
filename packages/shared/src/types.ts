@@ -5,7 +5,8 @@ export type MissionCategorySlug =
   | 'reading'
   | 'coding'
   | 'meditation'
-  | 'wellness';
+  | 'wellness'
+  | 'custom';
 
 export interface MissionCategory {
   id: string;
@@ -33,6 +34,42 @@ export interface Mission {
   category: MissionCategory;
   xpReward: number;
   completedToday: boolean;
+}
+
+export interface MissionCompletion {
+  id: string;
+  userId: string;
+  missionId: string;
+  completedDate: string;
+}
+
+export type KanbanColumn = 'todo' | 'in_progress' | 'done';
+
+export interface KanbanTask {
+  id: string;
+  userId: string;
+  title: string;
+  column: KanbanColumn;
+  sortOrder: number;
+}
+
+export type EnglishChallengeType = 'vocabulary' | 'quiz' | 'phrase';
+
+export interface EnglishChallenge {
+  id: string;
+  date: string;
+  type: EnglishChallengeType;
+  content: Record<string, unknown>;
+}
+
+export interface EnglishSubmission {
+  id: string;
+  userId: string;
+  challengeId: string;
+  answers: Record<string, unknown>;
+  score: number;
+  xpAwarded: number;
+  submittedAt: string;
 }
 
 export interface DashboardSummary {

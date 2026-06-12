@@ -29,6 +29,16 @@ PostgreSQL schema for **Personal Growth OS** (missions, streaks, XP, kanban, Eng
 - id, userId, missionId, completedDate (DATE in user TZ)
 - **UNIQUE** (userId, missionId, completedDate)
 
+### KanbanTask
+
+- id, userId, title, column (todo|in_progress|done), sortOrder
+- Separate from daily missions; user-owned self-growth board
+
+### EnglishChallenge / EnglishSubmission
+
+- **EnglishChallenge:** one row per calendar date (global content), type + JSON content
+- **EnglishSubmission:** user answers per challenge; **UNIQUE** (userId, challengeId)
+
 ---
 
 ## Why category is a separate table
@@ -45,8 +55,10 @@ PostgreSQL schema for **Personal Growth OS** (missions, streaks, XP, kanban, Eng
 
 ## Acceptance criteria
 
-- [ ] Prisma migration applied
-- [ ] `mission_categories` seeded with system categories
-- [ ] Missions use `category_id` FK (not string)
-- [ ] Cascade delete user → missions; **Restrict** delete category if missions exist
-- [ ] Index on (userId, completedDate) for heatmap queries
+- [x] Prisma migration applied
+- [x] `mission_categories` seeded with system categories
+- [x] Missions use `category_id` FK (not string)
+- [x] Cascade delete user → missions; **Restrict** delete category if missions exist
+- [x] Index on (userId, completedDate) for heatmap queries
+- [x] Kanban tasks table with column enum + user FK
+- [x] English challenge + submission tables with daily uniqueness
