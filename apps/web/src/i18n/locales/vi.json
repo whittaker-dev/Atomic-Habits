@@ -250,6 +250,20 @@
   "dashboard": {
     "title": "Bảng điều khiển",
     "welcome": "Chào mừng trở lại, {{email}}. Các nhiệm vụ mặc định của bạn đã sẵn sàng.",
+    "eyebrow": "Trung tâm hôm nay",
+    "missionsTitle": "Nhiệm vụ hôm nay",
+    "streak": "Chuỗi {{count}} ngày",
+    "streakEmpty": "Bắt đầu chuỗi ngày của bạn",
+    "complete": "{{count}}/{{total}} hoàn thành hôm nay",
+    "level": "Cấp {{level}}",
+    "progress": "{{current}} / {{max}} XP",
+    "xpReward": "+{{xp}} XP",
+    "dayComplete": "Ngày hoàn hảo!",
+    "dayCompleteHint": "Đã hoàn thành tất cả nhiệm vụ",
+    "loading": "Đang tải nhiệm vụ…",
+    "error": "Không thể tải bảng điều khiển. Vui lòng thử lại.",
+    "retry": "Thử lại",
+    "empty": "Chưa có nhiệm vụ.",
     "actions": {
       "logout": "Đăng xuất",
       "loggingOut": "Đang đăng xuất…"

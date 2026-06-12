@@ -250,6 +250,20 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Welcome back, {{email}}. Your default missions are ready.",
+    "eyebrow": "Today's HQ",
+    "missionsTitle": "Today's missions",
+    "streak": "{{count}}-day streak",
+    "streakEmpty": "Start your streak today",
+    "complete": "{{count}}/{{total}} complete today",
+    "level": "Level {{level}}",
+    "progress": "{{current}} / {{max}} XP",
+    "xpReward": "+{{xp}} XP",
+    "dayComplete": "Perfect day!",
+    "dayCompleteHint": "All missions done",
+    "loading": "Loading missions…",
+    "error": "Could not load dashboard. Please try again.",
+    "retry": "Try again",
+    "empty": "No missions yet.",
     "actions": {
       "logout": "Log out",
       "loggingOut": "Logging out…"

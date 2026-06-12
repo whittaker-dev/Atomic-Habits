@@ -8,6 +8,7 @@ import { AppLogo } from '@/components/brand/app-logo';
 import { Button } from '@/design-system/components/button';
 import { logout } from '@/lib/auth-api';
 import { useCurrentUser } from '@/lib/use-auth';
+import { MissionsCard } from './missions-card';
 
 export function DashboardShell() {
   const { t } = useTranslation();
@@ -37,7 +38,7 @@ export function DashboardShell() {
   if (isLoading) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-canvas">
-        <p className="font-sans text-body text-ink-muted">{t('register.actions.verifying')}</p>
+        <p className="font-sans text-body text-ink-muted">{t('dashboard.loading')}</p>
       </main>
     );
   }
@@ -61,12 +62,7 @@ export function DashboardShell() {
           </div>
         </div>
 
-        <div className="panel-lift rounded-lg bg-surface-1 p-lg md:p-xl">
-          <h1 className="font-sans text-display-md font-bold">{t('dashboard.title')}</h1>
-          <p className="mt-sm font-sans text-body text-ink-muted">
-            {t('dashboard.welcome', { email: user.email })}
-          </p>
-        </div>
+        <MissionsCard />
       </div>
     </main>
   );

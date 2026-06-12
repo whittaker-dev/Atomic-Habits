@@ -50,6 +50,44 @@ pnpm build
 - Design system showcase: http://localhost:4001/design-system
 - API health: http://localhost:4000/health
 
+## API endpoints
+
+| Method | Path                     | Auth | Description                                      |
+| ------ | ------------------------ | ---- | ------------------------------------------------ |
+| GET    | `/health`                | No   | Postgres + Redis connectivity                    |
+| GET    | `/dashboard`             | Yes  | Today's missions, streak, XP, completion summary |
+| POST   | `/missions/:id/complete` | Yes  | Mark mission done today (+XP, streak)            |
+
+### `GET /dashboard`
+
+Requires session cookie (401 without).
+
+```json
+{
+  "streak": { "current": 28, "best": 30 },
+  "xp": { "total": 3140, "level": 7, "progress": 49 },
+  "today": { "completed": 1, "total": 3 },
+  "missions": [
+    {
+      "id": "...",
+      "title": "Learn 10 English words",
+      "categoryId": "...",
+      "category": {
+        "id": "...",
+        "slug": "english",
+        "nameKey": "...",
+        "defaultXpReward": 25,
+        "sortOrder": 1
+      },
+      "xpReward": 25,
+      "completedToday": false
+    }
+  ]
+}
+```
+
+Cached in Redis (`cache:dashboard:{userId}`, TTL 60s). Invalidate on mission completion.
+
 ## Project structure
 
 ```

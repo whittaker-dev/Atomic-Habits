@@ -13,6 +13,7 @@ export type {
   PlanTripUpsertBody,
 } from './plan-trip.js';
 export { REDIS_KEYS, REDIS_TTL } from './redis.js';
+export { levelFromXp, progressInLevel, xpForLevel, xpInCurrentLevel } from './xp.js';
 export type { ActivityEvent, ActivityEventType } from './redis.js';
 export type {
   AuthMeResponse,
