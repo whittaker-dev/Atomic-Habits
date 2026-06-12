@@ -13,7 +13,7 @@ import { dashboardService } from './dashboard.service.js';
 const DEFAULT_MISSIONS = [
   { categorySlug: 'english', title: 'Learn 10 English words', sortOrder: 1 },
   { categorySlug: 'fitness', title: 'Exercise 20 mins', sortOrder: 2 },
-  { categorySlug: 'work', title: 'Finish one work task', sortOrder: 3 },
+  { categorySlug: 'coding', title: 'Coding session', sortOrder: 3 },
 ] as const;
 
 export const missionService = {
@@ -27,21 +27,25 @@ export const missionService = {
     const categories = await missionRepository.findCategoriesBySlugs([...slugs]);
     const categoryBySlug = new Map(categories.map((c) => [c.slug, c]));
 
-    await missionRepository.createMany(
-      DEFAULT_MISSIONS.flatMap((mission) => {
-        const category = categoryBySlug.get(mission.categorySlug);
-        if (!category) return [];
-        return [
-          {
-            userId,
-            categoryId: category.id,
-            title: mission.title,
-            xpReward: category.defaultXpReward,
-            sortOrder: mission.sortOrder,
-          },
-        ];
-      }),
-    );
+    const missionsToCreate = DEFAULT_MISSIONS.flatMap((mission) => {
+      const category = categoryBySlug.get(mission.categorySlug);
+      if (!category) return [];
+      return [
+        {
+          userId,
+          categoryId: category.id,
+          title: mission.title,
+          xpReward: category.defaultXpReward,
+          sortOrder: mission.sortOrder,
+        },
+      ];
+    });
+
+    if (missionsToCreate.length !== DEFAULT_MISSIONS.length) {
+      throw new Error('Missing mission categories required for default signup missions');
+    }
+
+    await missionRepository.createMany(missionsToCreate);
   },
 
   async completeMission(userId: string, missionId: string) {
