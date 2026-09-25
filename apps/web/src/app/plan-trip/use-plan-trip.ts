@@ -2,6 +2,7 @@
 
 import {
   DEFAULT_PLAN_TRIP_SLUG,
+  type PlanTripDayPart,
   type PlanTripRecord,
   type PlanTripUpsertBody,
 } from '@atomic-habits/shared';
@@ -26,6 +27,10 @@ export type TripMeta = {
   description: string;
   eyebrow: string;
   datesLabel: string;
+  startDate: string | null;
+  endDate: string | null;
+  startDayPart: PlanTripDayPart | null;
+  endDayPart: PlanTripDayPart | null;
 };
 
 function createId() {
@@ -108,6 +113,10 @@ function toUpsertBody(
     description: meta.description,
     eyebrow: meta.eyebrow,
     datesLabel: meta.datesLabel,
+    startDate: meta.startDate,
+    endDate: meta.endDate,
+    startDayPart: meta.startDayPart,
+    endDayPart: meta.endDayPart,
     members,
     transport,
     accommodation,
@@ -123,6 +132,10 @@ function serializeRecord(record: PlanTripRecord) {
         description: record.description,
         eyebrow: record.eyebrow,
         datesLabel: record.datesLabel,
+        startDate: record.startDate,
+        endDate: record.endDate,
+        startDayPart: record.startDayPart,
+        endDayPart: record.endDayPart,
       },
       record.members,
       record.transport,
@@ -143,6 +156,10 @@ export function usePlanTrip({ slug = DEFAULT_PLAN_TRIP_SLUG, defaults }: UsePlan
     description: defaults.description ?? '',
     eyebrow: defaults.eyebrow ?? '',
     datesLabel: defaults.datesLabel ?? '',
+    startDate: defaults.startDate,
+    endDate: defaults.endDate,
+    startDayPart: defaults.startDayPart,
+    endDayPart: defaults.endDayPart,
   });
   const [members, setMembers] = useState<TripMember[]>([]);
   const [transport, setTransport] = useState<TransportItemData[]>(
@@ -173,6 +190,10 @@ export function usePlanTrip({ slug = DEFAULT_PLAN_TRIP_SLUG, defaults }: UsePlan
       description: record.description,
       eyebrow: record.eyebrow,
       datesLabel: record.datesLabel,
+      startDate: record.startDate,
+      endDate: record.endDate,
+      startDayPart: record.startDayPart,
+      endDayPart: record.endDayPart,
     });
     setMembers(record.members);
     setTransport(normalizeTransportItems(record.transport));
@@ -201,6 +222,10 @@ export function usePlanTrip({ slug = DEFAULT_PLAN_TRIP_SLUG, defaults }: UsePlan
       description: defaults.description ?? '',
       eyebrow: defaults.eyebrow ?? '',
       datesLabel: defaults.datesLabel ?? '',
+      startDate: defaults.startDate,
+      endDate: defaults.endDate,
+      startDayPart: defaults.startDayPart,
+      endDayPart: defaults.endDayPart,
     };
     const initialMembers = legacy?.members ?? [];
     const initialTransport = normalizeTransportItems(legacy?.transport ?? defaults.transport);

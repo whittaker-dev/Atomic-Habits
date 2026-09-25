@@ -431,8 +431,7 @@
     "hero": {
       "eyebrow": "Đi biển · Bạn bè & gia đình",
       "title": "Kế hoạch chuyến Vũng Tàu",
-      "subtitle": "Mọi thứ ở một nơi — ai đi, đi bằng gì, ở đâu và ăn gì trên đường.",
-      "dates": "Chiều CN 3/5 – Sáng T3 5/5/2026"
+      "subtitle": "Mọi thứ ở một nơi — ai đi, đi bằng gì, ở đâu và ăn gì trên đường."
     },
     "trip": {
       "editButton": "Sửa chuyến đi",
@@ -448,7 +447,21 @@
         "description": "Mô tả",
         "eyebrow": "Nhãn phụ",
         "dates": "Ngày đi"
-      }
+      },
+      "datesPicker": {
+        "placeholder": "Chọn ngày đi và ngày về",
+        "leave": "Đi",
+        "return": "Về",
+        "pickReturn": "Chọn tiếp ngày về",
+        "clear": "Xoá",
+        "done": "Xong"
+      },
+      "dayParts": {
+        "morning": "Sáng",
+        "afternoon": "Chiều",
+        "evening": "Tối"
+      },
+      "dateWithPart": "{{part}} {{date}}"
     },
     "confirm": {
       "title": "Xác nhận xóa",

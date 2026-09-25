@@ -2,6 +2,7 @@ export { AuthErrorCode } from './auth-errors.js';
 export { DEFAULT_PLAN_TRIP_SLUG } from './plan-trip.js';
 export type {
   PlanTripAccommodation,
+  PlanTripDayPart,
   PlanTripItinerary,
   PlanTripItineraryDay,
   PlanTripItineraryEntry,

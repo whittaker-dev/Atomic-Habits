@@ -13,7 +13,11 @@ export const defaultPlanTripSeed: PlanTripUpsertBody & { slug: string } = {
   name: 'Kế hoạch chuyến Vũng Tàu',
   description: 'Mọi thứ ở một nơi — ai đi, đi bằng gì, ở đâu và ăn gì trên đường.',
   eyebrow: 'Đi biển · Bạn bè & gia đình',
-  datesLabel: 'Chiều CN 3/5 – Sáng T3 5/5/2026',
+  datesLabel: '',
+  startDate: '2026-05-03',
+  endDate: '2026-05-05',
+  startDayPart: 'afternoon',
+  endDayPart: 'morning',
   members: [],
   transport: [
     {

@@ -51,12 +51,20 @@ export type PlanTripItinerary = {
   days: PlanTripItineraryDay[];
 };
 
+export type PlanTripDayPart = 'morning' | 'afternoon' | 'evening';
+
 export type PlanTripRecord = {
   slug: string;
   name: string;
   description: string;
   eyebrow: string;
+  /** Free-text dates from before the date picker; shown only when startDate is null. */
   datesLabel: string;
+  /** Calendar dates as YYYY-MM-DD — no time zone, so every viewer sees the same day. */
+  startDate: string | null;
+  endDate: string | null;
+  startDayPart: PlanTripDayPart | null;
+  endDayPart: PlanTripDayPart | null;
   members: PlanTripMember[];
   transport: PlanTripTransportItem[];
   accommodation: PlanTripAccommodation;

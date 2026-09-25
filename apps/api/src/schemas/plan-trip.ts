@@ -43,18 +43,34 @@ const planTripItineraryDaySchema = z.object({
   entries: z.array(planTripItineraryEntrySchema).max(50).default([]),
 });
 
-export const planTripUpsertBodySchema = z.object({
-  name: z.string().min(1).max(200),
-  description: z.string().max(1000).default(''),
-  eyebrow: z.string().max(120).default(''),
-  datesLabel: z.string().max(200).default(''),
-  members: z.array(planTripMemberSchema).max(100).default([]),
-  transport: z.array(planTripTransportItemSchema).max(30).default([]),
-  accommodation: planTripAccommodationSchema,
-  itinerary: z.object({
-    days: z.array(planTripItineraryDaySchema).max(30).default([]),
-  }),
-});
+const planTripDayPartSchema = z.enum(['morning', 'afternoon', 'evening']);
+
+export const planTripUpsertBodySchema = z
+  .object({
+    name: z.string().min(1).max(200),
+    description: z.string().max(1000).default(''),
+    eyebrow: z.string().max(120).default(''),
+    datesLabel: z.string().max(200).default(''),
+    startDate: z.iso.date().nullable().default(null),
+    endDate: z.iso.date().nullable().default(null),
+    startDayPart: planTripDayPartSchema.nullable().default(null),
+    endDayPart: planTripDayPartSchema.nullable().default(null),
+    members: z.array(planTripMemberSchema).max(100).default([]),
+    transport: z.array(planTripTransportItemSchema).max(30).default([]),
+    accommodation: planTripAccommodationSchema,
+    itinerary: z.object({
+      days: z.array(planTripItineraryDaySchema).max(30).default([]),
+    }),
+  })
+  .refine((body) => (body.startDate === null) === (body.endDate === null), {
+    message: 'startDate and endDate must be set together',
+    path: ['endDate'],
+  })
+  // YYYY-MM-DD strings compare correctly as plain strings.
+  .refine((body) => !body.startDate || !body.endDate || body.endDate >= body.startDate, {
+    message: 'endDate must not be before startDate',
+    path: ['endDate'],
+  });
 
 export type PlanTripUpsertBodyInput = z.infer<typeof planTripUpsertBodySchema>;
 

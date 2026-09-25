@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/design-system/components/button';
 import { TextInput } from '@/design-system/components/input';
 import { TripAnimatedModal } from './trip-animated-modal';
+import { TripDatesPicker } from './trip-dates-picker';
 import type { TripMeta } from './use-plan-trip';
 
 type TripInfoEditModalProps = {
@@ -54,12 +55,18 @@ export function TripInfoEditModal({ open, initial, onClose, onSubmit }: TripInfo
       name,
       description: form.description.trim(),
       eyebrow: form.eyebrow.trim(),
-      datesLabel: form.datesLabel.trim(),
+      // Picked dates replace the legacy free-text label; without them, keep it as it was.
+      datesLabel: form.startDate ? '' : form.datesLabel.trim(),
+      startDate: form.startDate,
+      endDate: form.endDate,
+      startDayPart: form.startDayPart,
+      endDayPart: form.endDayPart,
     });
     onClose();
   };
 
   const formId = 'trip-info-form';
+  const datesLabelId = 'trip-info-dates-label';
 
   return (
     <TripAnimatedModal
@@ -114,15 +121,18 @@ export function TripInfoEditModal({ open, initial, onClose, onSubmit }: TripInfo
           />
         </label>
 
-        <label className="block">
-          <span className="mb-xs block font-sans text-body-sm font-medium">
+        {/* Not a <label>: it would forward clicks on the calendar's empty space to the trigger. */}
+        <div>
+          <span id={datesLabelId} className="mb-xs block font-sans text-body-sm font-medium">
             {t('planTrip.trip.fields.dates')}
           </span>
-          <TextInput
-            value={form.datesLabel}
-            onChange={(event) => setForm((prev) => ({ ...prev, datesLabel: event.target.value }))}
+          <TripDatesPicker
+            value={form}
+            fallbackLabel={form.datesLabel}
+            labelledBy={datesLabelId}
+            onChange={(dates) => setForm((prev) => ({ ...prev, ...dates }))}
           />
-        </label>
+        </div>
       </form>
     </TripAnimatedModal>
   );

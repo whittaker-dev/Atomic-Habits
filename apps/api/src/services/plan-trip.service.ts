@@ -1,6 +1,10 @@
-import type { PlanTripRecord, PlanTripUpsertBody } from '@atomic-habits/shared';
+import type { PlanTripDayPart, PlanTripRecord, PlanTripUpsertBody } from '@atomic-habits/shared';
 import { planTripRepository } from '../repositories/plan-trip.repository.js';
 import { apiError } from '../schemas/parse.js';
+
+function toDateString(value: Date | null): string | null {
+  return value ? value.toISOString().slice(0, 10) : null;
+}
 
 function toRecord(
   slug: string,
@@ -9,6 +13,10 @@ function toRecord(
     description: string;
     eyebrow: string;
     datesLabel: string;
+    startDate: Date | null;
+    endDate: Date | null;
+    startDayPart: PlanTripDayPart | null;
+    endDayPart: PlanTripDayPart | null;
     members: unknown;
     transport: unknown;
     accommodation: unknown;
@@ -21,6 +29,10 @@ function toRecord(
     description: row.description,
     eyebrow: row.eyebrow,
     datesLabel: row.datesLabel,
+    startDate: toDateString(row.startDate),
+    endDate: toDateString(row.endDate),
+    startDayPart: row.startDayPart,
+    endDayPart: row.endDayPart,
     members: row.members as PlanTripRecord['members'],
     transport: row.transport as PlanTripRecord['transport'],
     accommodation: row.accommodation as PlanTripRecord['accommodation'],

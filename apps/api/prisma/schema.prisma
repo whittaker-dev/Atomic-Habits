@@ -9,21 +9,21 @@ datasource db {
 }
 
 model User {
-  id                  String               @id @default(uuid())
-  email               String               @unique
-  passwordHash        String               @map("password_hash")
-  emailVerifiedAt     DateTime?            @map("email_verified_at")
-  timezone            String               @default("UTC")
-  totalXp             Int                  @default(0) @map("total_xp")
-  level               Int                  @default(1)
-  currentStreak       Int                  @default(0) @map("current_streak")
-  bestStreak          Int                  @default(0) @map("best_streak")
-  createdAt           DateTime             @default(now()) @map("created_at")
-  emailOtps           EmailOtp[]
-  completions         MissionCompletion[]
-  missions            Mission[]
-  kanbanTasks         KanbanTask[]
-  englishSubmissions  EnglishSubmission[]
+  id                 String              @id @default(uuid())
+  email              String              @unique
+  passwordHash       String              @map("password_hash")
+  emailVerifiedAt    DateTime?           @map("email_verified_at")
+  timezone           String              @default("UTC")
+  totalXp            Int                 @default(0) @map("total_xp")
+  level              Int                 @default(1)
+  currentStreak      Int                 @default(0) @map("current_streak")
+  bestStreak         Int                 @default(0) @map("best_streak")
+  createdAt          DateTime            @default(now()) @map("created_at")
+  emailOtps          EmailOtp[]
+  completions        MissionCompletion[]
+  missions           Mission[]
+  kanbanTasks        KanbanTask[]
+  englishSubmissions EnglishSubmission[]
 
   @@map("users")
 }
@@ -140,19 +140,29 @@ model EnglishSubmission {
   @@map("english_submissions")
 }
 
+enum PlanTripDayPart {
+  morning
+  afternoon
+  evening
+}
+
 model PlanTrip {
-  id            String   @id @default(uuid())
-  slug          String   @unique
+  id            String           @id @default(uuid())
+  slug          String           @unique
   name          String
-  description   String   @default("")
-  eyebrow       String   @default("")
-  datesLabel    String   @default("") @map("dates_label")
-  members       Json     @default("[]")
-  transport     Json     @default("[]")
-  accommodation Json     @default("{}")
-  itinerary     Json     @default("{\"days\": []}")
-  createdAt     DateTime @default(now()) @map("created_at")
-  updatedAt     DateTime @updatedAt @map("updated_at")
+  description   String           @default("")
+  eyebrow       String           @default("")
+  datesLabel    String           @default("") @map("dates_label")
+  startDate     DateTime?        @map("start_date") @db.Date
+  endDate       DateTime?        @map("end_date") @db.Date
+  startDayPart  PlanTripDayPart? @map("start_day_part")
+  endDayPart    PlanTripDayPart? @map("end_day_part")
+  members       Json             @default("[]")
+  transport     Json             @default("[]")
+  accommodation Json             @default("{}")
+  itinerary     Json             @default("{\"days\": []}")
+  createdAt     DateTime         @default(now()) @map("created_at")
+  updatedAt     DateTime         @updatedAt @map("updated_at")
 
   @@map("plan_trips")
 }

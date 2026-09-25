@@ -15,6 +15,7 @@ import { MemberCard } from './member-card';
 import { MemberFormModal } from './member-form-modal';
 import { TransportItemEditModal } from './transport-item-edit-modal';
 import { TripConfirmModal } from './trip-confirm-modal';
+import { tripDatesText } from './trip-dates';
 import { TripInfoEditModal } from './trip-info-edit-modal';
 import { DEFAULT_ACCOMMODATION_IMAGES } from './trip-defaults';
 import { TripHeader } from './trip-header';
@@ -25,7 +26,7 @@ import type {
   TripMember,
   TripPlanData,
 } from './trip-plan-types';
-import { usePlanTrip } from './use-plan-trip';
+import { usePlanTrip, type TripMeta } from './use-plan-trip';
 
 const SECTIONS = ['members', 'transport', 'villa', 'itinerary'] as const;
 type SectionId = (typeof SECTIONS)[number];
@@ -245,7 +246,7 @@ function TransportIconView({ icon }: { icon: TransportIcon }) {
 }
 
 export function PlanTripContent() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const toast = useToast();
   const router = useRouter();
   const pathname = usePathname();
@@ -282,12 +283,7 @@ export function PlanTripContent() {
   const [editingDay, setEditingDay] = useState<ItineraryDayData | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
 
-  const planDefaults = useMemo((): TripPlanData & {
-    name: string;
-    description: string;
-    eyebrow: string;
-    datesLabel: string;
-  } => {
+  const planDefaults = useMemo((): TripPlanData & TripMeta => {
     const days = t('planTrip.itinerary.days', { returnObjects: true }) as Array<{
       label: string;
       entries: Array<{
@@ -303,7 +299,11 @@ export function PlanTripContent() {
       name: t('planTrip.hero.title'),
       description: t('planTrip.hero.subtitle'),
       eyebrow: t('planTrip.hero.eyebrow'),
-      datesLabel: t('planTrip.hero.dates'),
+      datesLabel: '',
+      startDate: '2026-05-03',
+      endDate: '2026-05-05',
+      startDayPart: 'afternoon',
+      endDayPart: 'morning',
       transport: [
         {
           id: 'default-car',
@@ -365,6 +365,7 @@ export function PlanTripContent() {
     updateItineraryDay,
     deleteItineraryDay,
   } = usePlanTrip({ defaults: planDefaults });
+  const datesText = tripDatesText(meta, i18n.language, t);
 
   const sectionLabels = useMemo(
     () =>
@@ -516,7 +517,7 @@ export function PlanTripContent() {
     <>
       <TripHeader
         title={meta.name}
-        datesLabel={meta.datesLabel}
+        datesLabel={datesText}
         saving={saving}
         onEditTrip={() => setTripInfoModalOpen(true)}
       />
@@ -536,9 +537,7 @@ export function PlanTripContent() {
           subtitle={meta.description}
           actions={
             <div className="flex flex-wrap items-center justify-center gap-sm sm:gap-md">
-              <StatusBadge className="px-md py-xs text-body-sm">
-                {meta.datesLabel || t('planTrip.trip.noDates')}
-              </StatusBadge>
+              <StatusBadge className="px-md py-xs text-body-sm">{datesText}</StatusBadge>
               <Button variant="secondary" onClick={() => setTripInfoModalOpen(true)}>
                 {t('planTrip.trip.editButton')}
               </Button>

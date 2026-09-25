@@ -72,7 +72,7 @@ async function main() {
   }
   console.log(`Seeded ${SYSTEM_CATEGORIES.length} mission categories`);
 
-  const { slug, ...tripData } = defaultPlanTripSeed;
+  const { slug, startDate, endDate, ...tripData } = defaultPlanTripSeed;
   const existingTrip = await prisma.planTrip.findUnique({ where: { slug } });
 
   if (!existingTrip) {
@@ -80,6 +80,9 @@ async function main() {
       data: {
         slug,
         ...tripData,
+        // Prisma rejects a bare YYYY-MM-DD for a DATE column; it needs a full timestamp.
+        startDate: startDate ? new Date(`${startDate}T00:00:00.000Z`) : null,
+        endDate: endDate ? new Date(`${endDate}T00:00:00.000Z`) : null,
       },
     });
     console.log(`Seeded default plan trip (${slug})`);

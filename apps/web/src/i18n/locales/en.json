@@ -431,8 +431,7 @@
     "hero": {
       "eyebrow": "Beach getaway · Friends & family",
       "title": "Vũng Tàu Trip Plan",
-      "subtitle": "Everything in one place — who's coming, how we get there, where we stay, and what we'll eat along the way.",
-      "dates": "Sun 3 May PM – Tue 5 May AM 2026"
+      "subtitle": "Everything in one place — who's coming, how we get there, where we stay, and what we'll eat along the way."
     },
     "trip": {
       "editButton": "Edit trip",
@@ -448,7 +447,21 @@
         "description": "Description",
         "eyebrow": "Eyebrow label",
         "dates": "Dates"
-      }
+      },
+      "datesPicker": {
+        "placeholder": "Pick travel dates",
+        "leave": "Leave",
+        "return": "Return",
+        "pickReturn": "Now pick the return day",
+        "clear": "Clear",
+        "done": "Done"
+      },
+      "dayParts": {
+        "morning": "Morning",
+        "afternoon": "Afternoon",
+        "evening": "Evening"
+      },
+      "dateWithPart": "{{date}} · {{part}}"
     },
     "confirm": {
       "title": "Confirm delete",
