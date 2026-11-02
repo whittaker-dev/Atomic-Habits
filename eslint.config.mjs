@@ -10,6 +10,8 @@ export default tseslint.config(
       '**/.next/**',
       '**/pnpm-lock.yaml',
       'apps/web/**',
+      // Rise Core is a separate Node/Remotion project with its own lint setup
+      'risecore/**',
     ],
   },
   eslint.configs.recommended,

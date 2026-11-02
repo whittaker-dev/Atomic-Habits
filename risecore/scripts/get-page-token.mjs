@@ -23,15 +23,25 @@ const pages = await graph('GET', '/me/accounts', {
   access_token: long.access_token,
 });
 
-if (!pages.data?.length) {
-  console.error('❌ Không thấy Page nào. Kiểm tra lại: token có đủ quyền pages_show_list và bạn đã chọn Page khi cấp quyền chưa?');
-  process.exit(1);
-}
-
-const page =
+let page =
   pages.data.find((p) => (p.username || '').toLowerCase() === handle) ||
   pages.data.find((p) => p.name.toLowerCase().replace(/\s+/g, '') === handle) ||
   (pages.data.length === 1 ? pages.data[0] : null);
+
+// Page quản lý qua Business portfolio có thể không hiện trong /me/accounts dù tài khoản vẫn
+// lấy được Page token, nên thử tra thẳng theo handle trước khi báo lỗi.
+if (!page && handle) {
+  const byHandle = await graph('GET', `/${handle}`, {
+    fields: 'id,name,username,access_token',
+    access_token: long.access_token,
+  }).catch(() => null);
+  if (byHandle?.access_token) page = byHandle;
+}
+
+if (!page && !pages.data.length) {
+  console.error('❌ Không thấy Page nào. Kiểm tra lại: token có đủ quyền pages_show_list và bạn đã chọn Page khi cấp quyền chưa?');
+  process.exit(1);
+}
 
 if (!page) {
   console.log('Có nhiều Page, chưa khớp FB_PAGE_HANDLE. Danh sách:');
@@ -40,7 +50,8 @@ if (!page) {
   process.exit(1);
 }
 
-if (!page.tasks?.includes('CREATE_CONTENT')) {
+// Page tra theo handle không kèm danh sách tasks, nên chỉ kiểm tra khi có
+if (page.tasks && !page.tasks.includes('CREATE_CONTENT')) {
   console.warn('⚠️ Tài khoản của bạn không có quyền CREATE_CONTENT trên Page này, có thể không đăng được Reels.');
 }
 

@@ -3,3 +3,5 @@ node_modules/
 dist/
 pnpm-lock.yaml
 .linear/
+risecore/
+.github/workflows/risecore-post-reel.yml
