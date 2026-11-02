@@ -1,0 +1,57 @@
+name: Rise Core Day · Đăng Reel lên Facebook
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # 12:00 UTC = 19:00 giờ Việt Nam, mỗi ngày
+  workflow_dispatch:
+    inputs:
+      state:
+        description: 'DRAFT (lưu nháp) hoặc PUBLISHED (đăng ngay)'
+        required: true
+        default: 'DRAFT'
+        type: choice
+        options: [DRAFT, PUBLISHED]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: risecore-post-reel
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    # Repo public: vào Settings → Environments → facebook → bật "Required reviewers"
+    # nếu muốn mỗi lần đăng phải bấm Approve trên GitHub. Không bật thì chạy bình thường.
+    environment: facebook
+    defaults:
+      run:
+        working-directory: risecore # toàn bộ flow nằm trong thư mục này
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Cài ffprobe (kiểm tra thời lượng video)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Viết caption bằng Claude và đăng Reel
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5-5' }}
+          FB_VIDEO_STATE: ${{ inputs.state || vars.FB_VIDEO_STATE || 'DRAFT' }}
+        run: node scripts/run-next.mjs
+
+      - name: Lưu lịch sử đăng
+        run: |
+          git config user.name "risecore-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A posted.json queue
+          git diff --cached --quiet || git commit -m "risecore: đã đăng $(date -u +%F)"
+          git pull --rebase --autostash
+          git push

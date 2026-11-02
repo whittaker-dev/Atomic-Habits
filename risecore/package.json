@@ -1,0 +1,14 @@
+{
+  "name": "risecore-autopost",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tự viết caption bằng Claude và đăng Reels lên Facebook Page Rise Core Day",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "token": "node scripts/get-page-token.mjs",
+    "caption": "node scripts/write-caption.mjs",
+    "post": "node scripts/post-reel.mjs",
+    "next": "node scripts/run-next.mjs"
+  }
+}
