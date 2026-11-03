@@ -1,0 +1,118 @@
+{
+  "id": "2026-11-04-how-are-you",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Hi Tí! How are you?",
+      "file": "voice/2026-11-04-how-are-you/00.mp3",
+      "duration": 1.393197
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "Um... I'm fine, thank you. And you?",
+      "file": "voice/2026-11-04-how-are-you/01.mp3",
+      "duration": 2.647075
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "Ten years of English, and that's the only answer I know!",
+      "file": "voice/2026-11-04-how-are-you/02.mp3",
+      "duration": 3.157914
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Try this one. I'm good, thanks!",
+      "file": "voice/2026-11-04-how-are-you/03.mp3",
+      "duration": 1.904036
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "I'm good, thanks!",
+      "file": "voice/2026-11-04-how-are-you/04.mp3",
+      "duration": 1.439637
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Or this one. Not bad! How about you?",
+      "file": "voice/2026-11-04-how-are-you/05.mp3",
+      "duration": 3.018594
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "Not bad! How about you?",
+      "file": "voice/2026-11-04-how-are-you/06.mp3",
+      "duration": 1.950476
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Busy day? Pretty busy, but good!",
+      "file": "voice/2026-11-04-how-are-you/07.mp3",
+      "duration": 2.321995
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "Pretty busy, but good!",
+      "file": "voice/2026-11-04-how-are-you/08.mp3",
+      "duration": 1.578957
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "Quiz time! You just got a raise. Someone asks, how are you? A or B?",
+      "file": "voice/2026-11-04-how-are-you/09.mp3",
+      "duration": 5.01551
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Never been better!",
+      "file": "voice/2026-11-04-how-are-you/10.mp3",
+      "duration": 1.114558
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "The answer is A! Things couldn't be better!",
+      "file": "voice/2026-11-04-how-are-you/11.mp3",
+      "duration": 2.879274
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "ti",
+      "say": "Your turn! How are you today? Tell us in the comments!",
+      "file": "voice/2026-11-04-how-are-you/12.mp3",
+      "duration": 3.808073
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you on Monday, Wednesday and Friday!",
+      "file": "voice/2026-11-04-how-are-you/13.mp3",
+      "duration": 2.043356
+    }
+  ]
+}
