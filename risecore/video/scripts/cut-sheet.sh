@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # Cắt bảng sticker 3 cột x 4 hàng (nền xanh #00FF00) thành 12 PNG nền trong suốt.
-# Dùng:  scripts/cut-sheet.sh characters/source/com-sheet.webp com
+# Dùng:  scripts/cut-sheet.sh characters/source/com-sheet.webp com [despill]
 # Ra:    public/characters/<tên>/<biểu cảm>.png — mọi ô cùng kích thước để đổi biểu cảm không bị nhảy vị trí.
+# Thêm "despill" khi nhân vật KHÔNG mặc đồ xanh lá: xoá viền xanh hắt lên tóc (hình 3D không có viền trắng
+# nên viền xanh rất lộ). Nhân vật có đồ xanh thì bỏ qua, vì despill sẽ làm đen phần đồ đó.
 set -euo pipefail
 
 sheet="$1"
 name="$2"
+key="colorkey=0x00FF00:0.2:0.1"
+[[ "${3:-}" == despill ]] && key="colorkey=0x00FF00:0.26:0.14,despill=type=green:mix=0.7:expand=0.1"
 out="public/characters/$name"
 # Thứ tự 12 ô theo prompt trong characters/PROMPTS.md
 poses=(wave talk cheer embarrassed wow think thumbs point laugh confused announce clap)
@@ -22,7 +26,7 @@ for i in "${!poses[@]}"; do
   # Ngưỡng colorkey hẹp (0.2) và không dùng despill: nhân vật có thể mặc đồ xanh lá (khăn, áo đấu),
   # ngưỡng rộng hơn hoặc despill sẽ xoá/làm đen luôn phần đó.
   ffmpeg -v error -y -i "$sheet" \
-    -vf "crop=$((cw - 8)):$((ch - 8)):$((col * cw + 4)):$((row * ch + 4)),format=rgba,colorkey=0x00FF00:0.2:0.1" \
+    -vf "crop=$((cw - 8)):$((ch - 8)):$((col * cw + 4)):$((row * ch + 4)),format=rgba,$key" \
     -frames:v 1 "$out/${poses[$i]}.png"
 done
 echo "✅ ${#poses[@]} biểu cảm → $out"

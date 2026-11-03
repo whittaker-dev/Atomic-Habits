@@ -5,10 +5,11 @@ import type {Pose, Speaker, Timeline} from './timeline';
 
 // Nhân vật là ảnh sticker (public/characters/<ai>/<biểu cảm>.png, cắt bằng scripts/cut-sheet.sh).
 // Mọi ảnh cùng khung nên đổi biểu cảm không làm nhân vật nhảy chỗ.
-const W = 560;
+// Mỗi ô có lề trống 2 bên nên 2 ảnh được phép chồng nhẹ vào nhau ở giữa
+const W = 640;
 const H = Math.round((W * 305) / 410); // tỉ lệ 1 ô sau khi cắt
-const BOTTOM = 1372; // ngay trên khung phụ đề (y 1380)
-const CENTER: Record<Speaker, number> = {com: 280, mia: 800};
+const BOTTOM = 1410; // lấn xuống dưới khung phụ đề (y 1380) để khung che đường cắt ngang thắt lưng
+const CENTER: Record<Speaker, number> = {com: 270, mia: 810};
 
 type State = {pose: Pose; since: number; talking: boolean};
 

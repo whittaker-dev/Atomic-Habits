@@ -66,14 +66,18 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   trong video, lời thoại hay caption; kêu gọi chỉ nói "Follow để học bài tiếp theo".
 - Trình độ mới bắt đầu (trẻ em + người lớn mất gốc), sau này tăng dần. ~45–60 giây/bài.
 - **Lời thoại 100% tiếng Anh**, phụ đề tiếng Việt (màu vàng) dưới từng câu. Coach Tạ và Tí không xuất hiện.
-- Nhân vật là **ảnh sticker vẽ bằng AI** (kiểu chibi tô màu, viền trắng), KHÔNG vẽ bằng SVG:
+- Nhân vật là **ảnh hoạt hình 3D kiểu Pixar, nửa người, vẽ bằng AI** (người dùng không muốn kiểu sticker
+  viền trắng, cũng không vẽ bằng SVG). Mặt Cơm giống bộ sticker gốc của người dùng.
   - **Cơm** — nhân vật chính (tóc đen, kính đen, áo thun đen, đồng hồ), lặp lại câu mẫu. Giọng Liam.
-  - **Mia** — cô gái khăn turban xanh hoa, kính râm, khuyên vàng, áo đấu sọc xanh; nói câu mẫu. Giọng Jessica.
-    Áo đấu trong bảng hiện tại **có logo Nike** → nên vẽ lại bỏ logo trước khi đăng công khai.
+  - **Mia** — cô gái tóc nâu búi rối, mắt nâu to, khuyên bạc, áo thun trắng; nói câu mẫu. Giọng Jessica.
   - Bảng gốc: `video/characters/source/<ai>-sheet.webp` (3×4 ô, nền #00FF00). Prompt: `video/characters/PROMPTS.md`
-    (người dùng vẽ bằng ChatGPT). Cắt: `cd video && scripts/cut-sheet.sh characters/source/<ai>-sheet.webp <ai>`
-    → `public/characters/<ai>/<pose>.png`. 12 pose theo thứ tự ô: wave talk cheer embarrassed wow think thumbs point
-    laugh confused announce clap. Không có pose "đứng yên" (AI vẽ ô đó thành vẫy tay).
+    (người dùng vẽ bằng ChatGPT). Cắt: `cd video && scripts/cut-sheet.sh characters/source/<ai>-sheet.webp <ai> despill`
+    (`despill` xoá viền xanh trên tóc; bỏ nếu nhân vật mặc đồ xanh lá) → `public/characters/<ai>/<pose>.png`.
+    12 pose theo thứ tự ô: wave talk cheer embarrassed wow think thumbs point laugh confused announce clap.
+    Không có pose "đứng yên" (AI vẽ ô đó thành vẫy tay).
+  - Ảnh bị cắt ngang thắt lưng; khung phụ đề luôn hiện và đè lên đáy nhân vật để che đường cắt.
+  - Bối cảnh: quán cà phê xoá phông vẽ bằng code (`src/english/CafeBackground.tsx`: hình khối + blur + lớp phủ
+    tối phía trên cho chữ dễ đọc). Có thể thay bằng ảnh AI (prompt ở PROMPTS.md mục 3) nếu người dùng gửi.
   - Mỗi câu trong kịch bản có `pose` (người nói) và `listen` (người nghe); lúc đếm ngược cả 2 tự chuyển `think`.
 - Cấu trúc: hook (tình huống quen) → 3 câu mẫu (Mia nói, Cơm lặp) → đố vui A/B đếm ngược 3s → kêu gọi bình luận bằng tiếng Anh.
 - Mỗi bài là 1 file kịch bản `video/public/lessons/<ngày>-<slug>.json` (scenes: hook/phrase/quiz/cta, mỗi câu có

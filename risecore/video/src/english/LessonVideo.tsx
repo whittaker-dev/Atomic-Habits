@@ -2,9 +2,9 @@ import React from 'react';
 import {AbsoluteFill, CalculateMetadataFunction, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Audio} from '@remotion/media';
 import '../fonts';
-import {Background} from '../components/Background';
 import {FONT} from '../fonts';
 import {C, clamp} from '../theme';
+import {CafeBackground} from './CafeBackground';
 import {CtaCard, HookCard, PhraseCard, QuizCard} from './cards';
 import {Stickers} from './Stickers';
 import {buildTimeline, Lesson, Manifest, TimedLine, TimedScene, Timeline} from './timeline';
@@ -43,31 +43,37 @@ const SceneCard: React.FC<{s: TimedScene; phraseIndex: number; phraseCount: numb
 const speaking = (timeline: Timeline, frame: number) =>
   timeline.scenes.flatMap((s) => s.lines).find((l) => frame >= l.from && frame < l.from + l.dur);
 
+// Khung phụ đề luôn hiện và nền đặc: ảnh nhân vật bị cắt ngang ở thắt lưng, khung này che đường cắt
+// (nhân vật như đứng sau quầy). Giữa 2 câu thì khung trống chứ không biến mất.
 const Subtitle: React.FC<{timeline: Timeline}> = ({timeline}) => {
   const frame = useCurrentFrame();
   const line = speaking(timeline, frame);
-  if (!line) return null;
-  const color = line.speaker === 'com' ? C.blue : C.mint;
+  const color = line ? (line.speaker === 'com' ? C.blue : C.mint) : 'rgba(255,255,255,0.15)';
   return (
     <div
       style={{
         position: 'absolute',
-        left: 80,
-        right: 80,
+        left: 60,
+        right: 60,
         top: 1380,
+        minHeight: 190,
         padding: '20px 32px',
         borderRadius: 28,
-        background: 'rgba(14,18,32,0.88)',
+        background: '#141A2E',
         border: `4px solid ${color}`,
+        boxShadow: '0 -12px 40px rgba(0,0,0,0.35)',
         fontFamily: FONT,
         color: C.white,
         textAlign: 'center',
-        opacity: interpolate(frame, [line.from, line.from + 5], [0, 1], clamp),
       }}
     >
-      <div style={{fontWeight: 800, fontSize: 34, color}}>{line.speaker === 'com' ? 'Cơm' : 'Mia'}</div>
-      <div style={{fontWeight: 800, fontSize: 48, lineHeight: 1.25}}>{line.say}</div>
-      {line.vi ? <div style={{marginTop: 8, fontWeight: 700, fontSize: 40, lineHeight: 1.3, color: C.yellow}}>{line.vi}</div> : null}
+      {line ? (
+        <div style={{opacity: interpolate(frame, [line.from, line.from + 5], [0, 1], clamp)}}>
+          <div style={{fontWeight: 800, fontSize: 34, color}}>{line.speaker === 'com' ? 'Cơm' : 'Mia'}</div>
+          <div style={{fontWeight: 800, fontSize: 48, lineHeight: 1.25}}>{line.say}</div>
+          {line.vi ? <div style={{marginTop: 8, fontWeight: 700, fontSize: 40, lineHeight: 1.3, color: C.yellow}}>{line.vi}</div> : null}
+        </div>
+      ) : null}
     </div>
   );
 };
@@ -80,7 +86,7 @@ export const LessonVideo: React.FC<LessonProps> = ({lesson, timeline}) => {
   const reveal = quiz?.lines[1];
   return (
     <AbsoluteFill>
-      <Background a={C.mint} b={C.blue} />
+      <CafeBackground />
       <div
         style={{
           position: 'absolute',
