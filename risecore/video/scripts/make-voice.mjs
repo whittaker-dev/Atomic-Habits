@@ -21,13 +21,13 @@ const manifestPath = path.join(outDir, 'manifest.json');
 fs.mkdirSync(outDir, {recursive: true});
 
 const provider = process.env.ELEVENLABS_API_KEY ? 'elevenlabs' : 'macos';
-// Mặc định là giọng premade (gói Free gọi API được; giọng trong Voice Library thì không): Tí = Liam, Mia = Jessica
+// Mặc định là giọng premade (gói Free gọi API được; giọng trong Voice Library thì không): Cơm = Liam, Mia = Jessica
 const VOICES = {
   elevenlabs: {
-    ti: process.env.ELEVENLABS_VOICE_TI || 'TX3LPaxmHKxFdv7VOQHJ',
+    com: process.env.ELEVENLABS_VOICE_COM || 'TX3LPaxmHKxFdv7VOQHJ',
     mia: process.env.ELEVENLABS_VOICE_MIA || 'cgSgspJ2msm6clMCkdW9',
   },
-  macos: {ti: 'Daniel', mia: 'Samantha'},
+  macos: {com: 'Daniel', mia: 'Samantha'},
 };
 const voices = VOICES[provider];
 
@@ -64,7 +64,7 @@ for (const [i, line] of lines.entries()) {
   const prev = old.lines[i];
   const same = prev && prev.provider === provider && prev.voice === voice && prev.say === line.say;
   if (same && fs.existsSync(path.join('public', prev.file))) {
-    out.push(prev);
+    out.push({...prev, speaker: line.speaker});
     continue;
   }
   console.log(`🎙️  ${i} [${line.speaker}] ${line.say}`);

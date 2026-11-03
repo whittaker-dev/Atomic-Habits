@@ -1,6 +1,13 @@
-export type Speaker = 'ti' | 'mia';
-/** `say` là câu tiếng Anh được đọc, `vi` là phụ đề tiếng Việt hiện bên dưới */
-export type Line = {speaker: Speaker; say: string; vi?: string; pauseBefore?: number};
+export type Speaker = 'com' | 'mia';
+// Thứ tự giống 12 ô trong bảng sticker (characters/PROMPTS.md, scripts/cut-sheet.sh)
+export type Pose = 'wave' | 'talk' | 'cheer' | 'embarrassed' | 'wow' | 'think' | 'thumbs' | 'point' | 'laugh' | 'confused' | 'announce' | 'clap';
+
+/**
+ * `say` là câu tiếng Anh được đọc, `vi` là phụ đề tiếng Việt hiện bên dưới.
+ * `pose` là biểu cảm người nói (mặc định talk), `listen` là biểu cảm người còn lại (mặc định thumbs).
+ * Không có tư thế đứng yên: ảnh AI vẽ ô "đứng yên" thành vẫy tay, nên người nghe luôn có biểu cảm cụ thể.
+ */
+export type Line = {speaker: Speaker; say: string; vi?: string; pauseBefore?: number; pose?: Pose; listen?: Pose};
 
 type Base = {lines: Line[]};
 export type Scene =

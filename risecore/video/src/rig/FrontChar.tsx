@@ -17,18 +17,14 @@ type Dims = {
   legW: number;
 };
 
-type Who = 'coach' | 'ti' | 'mia';
-
-const D: Record<Who, Dims> = {
+const D: Record<'coach' | 'ti', Dims> = {
   coach: {shW: 94, hipW: 50, shY: -440, hipY: -255, headY: -530, R: 68, upper: 108, fore: 100, armW: 38, foreW: 31, legW: 46},
   ti: {shW: 70, hipW: 44, shY: -425, hipY: -250, headY: -512, R: 66, upper: 98, fore: 92, armW: 27, foreW: 23, legW: 36},
-  mia: {shW: 64, hipW: 44, shY: -430, hipY: -252, headY: -516, R: 64, upper: 98, fore: 92, armW: 24, foreW: 21, legW: 33},
 };
 
 const COL = {
   coach: {skin: '#D99A6C', shade: '#B87C52', top: '#FF4D4D', topDark: '#C93636', shorts: '#20253D', hair: '#18181C', shoe: '#F4F4F4'},
   ti: {skin: '#F2C29B', shade: '#D9A47D', top: '#3DA5FF', topDark: '#2B7FCC', shorts: '#3A3560', hair: '#3B2A20', shoe: '#FF8A3D'},
-  mia: {skin: '#F6D2B8', shade: '#DDB094', top: '#2EE6A6', topDark: '#1FAF7E', shorts: '#2B3A67', hair: '#E2A93B', shoe: '#FFFFFF'},
 };
 
 const Limb: React.FC<{a: V; b: V; w: number; c: string}> = ({a, b, w, c}) => (
@@ -36,7 +32,7 @@ const Limb: React.FC<{a: V; b: V; w: number; c: string}> = ({a, b, w, c}) => (
 );
 
 export const FrontChar: React.FC<{
-  who: Who;
+  who: 'coach' | 'ti';
   x: number;
   y: number;
   s?: number;
@@ -101,14 +97,6 @@ export const FrontChar: React.FC<{
         />
         <rect x={-R - 3} y={hy - R * 0.62} width={R * 2 + 6} height={20} rx={10} fill="#FFD23F" />
       </g>
-    ) : who === 'mia' ? (
-      <g>
-        <path
-          d={`M ${-R - 6} ${hy + 10} Q ${-R - 8} ${hy - R - 16} 0 ${hy - R - 14} Q ${R + 8} ${hy - R - 16} ${R + 6} ${hy + 10} Q ${R * 0.75} ${hy - R * 0.35} ${R * 0.15} ${hy - R * 0.55} Q ${-R * 0.3} ${hy - R * 0.2} ${-R * 0.75} ${hy - R * 0.4} Q ${-R - 2} ${hy - R * 0.1} ${-R - 6} ${hy + 10} Z`}
-          fill={c.hair}
-        />
-        <circle cx={R * 0.62} cy={hy - R * 0.86} r={13} fill="#FF4D8A" />
-      </g>
     ) : (
       <path
         d={`M ${-R - 4} ${hy + 2} L ${-R - 10} ${hy - R * 0.7} L ${-R * 0.6} ${hy - R - 18} L ${-R * 0.3} ${hy - R - 4} L 0 ${hy - R - 26} L ${R * 0.25} ${hy - R - 6} L ${R * 0.65} ${hy - R - 20} L ${R + 8} ${hy - R * 0.6} L ${R + 4} ${hy + 2} Q ${R * 0.6} ${hy - R * 0.45} ${R * 0.1} ${hy - R * 0.35} L ${-R * 0.15} ${hy - R * 0.55} L ${-R * 0.45} ${hy - R * 0.32} Q ${-R * 0.8} ${hy - R * 0.4} ${-R - 4} ${hy + 2} Z`}
@@ -143,17 +131,11 @@ export const FrontChar: React.FC<{
         <path d={`M -22 ${d.shY - 8} Q 0 ${d.shY + 18} 22 ${d.shY - 8}`} fill={c.shade} />
       )}
       {/* head */}
-      {who === 'mia' ? (
-        <path
-          d={`M ${R * 0.7} ${hy - R * 0.75} Q ${R * 1.9} ${hy - R * 0.6} ${R * 1.45} ${hy + R * 0.9} Q ${R * 1.2} ${hy + R * 0.3} ${R * 0.85} ${hy - R * 0.1} Z`}
-          fill={c.hair}
-        />
-      ) : null}
       <circle cx={-R} cy={hy + 4} r={13} fill={c.shade} />
       <circle cx={R} cy={hy + 4} r={13} fill={c.shade} />
       <circle cx={0} cy={hy} r={R} fill={c.skin} />
       {hair}
-      {who !== 'coach' ? (
+      {who === 'ti' ? (
         <g opacity={0.45}>
           <circle cx={-R * 0.58} cy={hy + R * 0.3} r={11} fill="#FF7A9A" />
           <circle cx={R * 0.58} cy={hy + R * 0.3} r={11} fill="#FF7A9A" />
@@ -177,7 +159,7 @@ export const FrontChar: React.FC<{
         return (
           <g key={i}>
             <Limb a={sh} b={arm.elbow} w={d.armW} c={c.skin} />
-            {who !== 'coach' ? <Limb a={sh} b={lerpV(sh, arm.elbow, 0.42)} w={d.armW + 12} c={c.top} /> : null}
+            {who === 'ti' ? <Limb a={sh} b={lerpV(sh, arm.elbow, 0.42)} w={d.armW + 12} c={c.top} /> : null}
             <Limb a={arm.elbow} b={arm.hand} w={d.foreW} c={c.skin} />
             <circle cx={arm.hand.x} cy={arm.hand.y} r={d.foreW * 0.72} fill={c.skin} />
           </g>

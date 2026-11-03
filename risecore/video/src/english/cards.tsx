@@ -157,12 +157,12 @@ export const QuizCard: React.FC<CardProps<'quiz'>> = ({scene, lines}) => {
         })}
       </div>
       {counting ? (
-        // Đặt vào khoảng trống giữa Tí và Mia (tâm x=540, y≈1000) để không đè câu hỏi
+        // Đặt vào khoảng trống giữa card và nhân vật (tâm x=540, y≈820) để không đè câu hỏi
         <div
           style={{
             position: 'absolute',
             left: 540 - 80 - 90,
-            top: 1000 - 210 - 90,
+            top: 820 - 210 - 90,
             width: 180,
             height: 180,
             borderRadius: '50%',
@@ -211,7 +211,7 @@ export const CtaCard: React.FC<CardProps<'cta'>> = ({scene}) => {
           opacity: interpolate(frame, [16, 26], [0, 1], clamp),
         }}
       >
-        Follow · bài mới thứ 2-4-6
+        Follow để học bài tiếp theo
       </div>
     </div>
   );

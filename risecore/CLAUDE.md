@@ -61,15 +61,25 @@ ffmpeg -i out/video.mp4 -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -r 30
 Kèm `../queue/<tên>.json` (brief: title, characters, content[], fallbackCaption) — xem `queue/ngay-tap-nguc.json`.
 Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đăng theo thứ tự tên.
 
-## Series "Tiếng Anh mỗi ngày" (đang làm, 2–3 video/tuần, đăng chung Page Rise Core)
+## Series "Tiếng Anh mỗi ngày" (đang làm, đăng chung Page Rise Core)
+- **Không có lịch cố định**: người dùng tự đăng khi rảnh. KHÔNG nhắc ngày/lịch đăng (vd "thứ 2-4-6")
+  trong video, lời thoại hay caption; kêu gọi chỉ nói "Follow để học bài tiếp theo".
 - Trình độ mới bắt đầu (trẻ em + người lớn mất gốc), sau này tăng dần. ~45–60 giây/bài.
-- **Lời thoại 100% tiếng Anh**, phụ đề tiếng Việt (màu vàng) dưới từng câu. Nhân vật: **Mia** (bạn nước ngoài,
-  tóc vàng đuôi ngựa, áo mint — nói câu mẫu) và **Tí** (lặp lại câu mẫu). Coach Tạ không xuất hiện.
-- Cấu trúc: hook (tình huống quen) → 3 câu mẫu (Mia nói, Tí lặp) → đố vui A/B đếm ngược 3s → kêu gọi bình luận bằng tiếng Anh.
+- **Lời thoại 100% tiếng Anh**, phụ đề tiếng Việt (màu vàng) dưới từng câu. Coach Tạ và Tí không xuất hiện.
+- Nhân vật là **ảnh sticker vẽ bằng AI** (kiểu chibi tô màu, viền trắng), KHÔNG vẽ bằng SVG:
+  - **Cơm** — nhân vật chính (tóc đen, kính đen, áo thun đen, đồng hồ), lặp lại câu mẫu. Giọng Liam.
+  - **Mia** — cô gái khăn turban xanh hoa, kính râm, khuyên vàng, áo đấu sọc xanh; nói câu mẫu. Giọng Jessica.
+    Áo đấu trong bảng hiện tại **có logo Nike** → nên vẽ lại bỏ logo trước khi đăng công khai.
+  - Bảng gốc: `video/characters/source/<ai>-sheet.webp` (3×4 ô, nền #00FF00). Prompt: `video/characters/PROMPTS.md`
+    (người dùng vẽ bằng ChatGPT). Cắt: `cd video && scripts/cut-sheet.sh characters/source/<ai>-sheet.webp <ai>`
+    → `public/characters/<ai>/<pose>.png`. 12 pose theo thứ tự ô: wave talk cheer embarrassed wow think thumbs point
+    laugh confused announce clap. Không có pose "đứng yên" (AI vẽ ô đó thành vẫy tay).
+  - Mỗi câu trong kịch bản có `pose` (người nói) và `listen` (người nghe); lúc đếm ngược cả 2 tự chuyển `think`.
+- Cấu trúc: hook (tình huống quen) → 3 câu mẫu (Mia nói, Cơm lặp) → đố vui A/B đếm ngược 3s → kêu gọi bình luận bằng tiếng Anh.
 - Mỗi bài là 1 file kịch bản `video/public/lessons/<ngày>-<slug>.json` (scenes: hook/phrase/quiz/cta, mỗi câu có
   `speaker`, `say` tiếng Anh, `vi` phụ đề, `pauseBefore` giây). Code dựng hình ở `video/src/english/`,
   composition đăng ký trong `Root.tsx` (folder `TiengAnh`), độ dài tự tính theo giọng đọc.
-- Giọng đọc: `cd video && node scripts/make-voice.mjs <id>` → ElevenLabs, Tí = Liam, Mia = Jessica (giọng premade).
+- Giọng đọc: `cd video && node scripts/make-voice.mjs <id>` → ElevenLabs, Cơm = Liam, Mia = Jessica (giọng premade).
   Key `ELEVENLABS_API_KEY` ở `risecore/.env`. Gói Free: 10.000 ký tự/tháng, **không gọi API được giọng Voice Library**,
   không có giấy phép thương mại (nâng Starter khi Page kiếm tiền). Câu đã tạo được dùng lại, sửa câu nào thì chỉ tạo lại câu đó.
 - Sau khi tạo giọng: cho ElevenLabs speech-to-text nghe lại từng câu để chắc đọc đúng kịch bản, rồi render.

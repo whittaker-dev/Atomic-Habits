@@ -9,9 +9,9 @@
       "title": "How are you?",
       "subtitle": "Đừng chỉ nói \"I'm fine, thank you\"",
       "lines": [
-        {"speaker": "mia", "say": "Hi Tí! How are you?", "vi": "Chào Tí! Bạn khỏe không?"},
-        {"speaker": "ti", "say": "Um... I'm fine, thank you. And you?", "vi": "Ờm... Mình khỏe, cảm ơn. Còn bạn?"},
-        {"speaker": "ti", "say": "Ten years of English, and that's the only answer I know!", "vi": "Học tiếng Anh mười năm mà mình chỉ biết đúng câu này!"}
+        {"speaker": "mia", "say": "Hi Cơm! How are you?", "vi": "Chào Cơm! Bạn khỏe không?", "pose": "wave", "listen": "cheer"},
+        {"speaker": "com", "say": "Um... I'm fine, thank you. And you?", "vi": "Ờm... Mình khỏe, cảm ơn. Còn bạn?", "pose": "embarrassed", "listen": "think"},
+        {"speaker": "com", "say": "Ten years of English, and that's the only answer I know!", "vi": "Học tiếng Anh mười năm mà mình chỉ biết đúng câu này!", "pose": "embarrassed", "listen": "laugh"}
       ]
     },
     {
@@ -20,8 +20,8 @@
       "vi": "Mình ổn, cảm ơn nha!",
       "note": "Câu trả lời phổ biến nhất",
       "lines": [
-        {"speaker": "mia", "say": "Try this one. I'm good, thanks!", "vi": "Thử câu này nè. Mình ổn, cảm ơn nha!"},
-        {"speaker": "ti", "say": "I'm good, thanks!", "vi": "Mình ổn, cảm ơn nha!"}
+        {"speaker": "mia", "say": "Try this one. I'm good, thanks!", "vi": "Thử câu này nè. Mình ổn, cảm ơn nha!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "I'm good, thanks!", "vi": "Mình ổn, cảm ơn nha!", "pose": "thumbs", "listen": "clap"}
       ]
     },
     {
@@ -30,8 +30,8 @@
       "vi": "Cũng ổn! Còn bạn thì sao?",
       "note": "Khi mọi thứ bình thường",
       "lines": [
-        {"speaker": "mia", "say": "Or this one. Not bad! How about you?", "vi": "Hoặc câu này. Cũng ổn! Còn bạn thì sao?"},
-        {"speaker": "ti", "say": "Not bad! How about you?", "vi": "Cũng ổn! Còn bạn thì sao?"}
+        {"speaker": "mia", "say": "Or this one. Not bad! How about you?", "vi": "Hoặc câu này. Cũng ổn! Còn bạn thì sao?", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Not bad! How about you?", "vi": "Cũng ổn! Còn bạn thì sao?", "pose": "talk", "listen": "thumbs"}
       ]
     },
     {
@@ -40,19 +40,22 @@
       "vi": "Hơi bận, nhưng vẫn ổn!",
       "note": "Khi bạn đang bận rộn",
       "lines": [
-        {"speaker": "mia", "say": "Busy day? Pretty busy, but good!", "vi": "Ngày bận rộn? Hơi bận, nhưng vẫn ổn!"},
-        {"speaker": "ti", "say": "Pretty busy, but good!", "vi": "Hơi bận, nhưng vẫn ổn!"}
+        {"speaker": "mia", "say": "Busy day? Pretty busy, but good!", "vi": "Ngày bận rộn? Hơi bận, nhưng vẫn ổn!", "pose": "talk", "listen": "wow"},
+        {"speaker": "com", "say": "Pretty busy, but good!", "vi": "Hơi bận, nhưng vẫn ổn!", "pose": "laugh", "listen": "clap"}
       ]
     },
     {
       "type": "quiz",
       "question": "Bạn vừa được tăng lương. Có người hỏi \"How are you?\"",
-      "options": ["Never been better!", "Not bad."],
+      "options": [
+        "Never been better!",
+        "Not bad."
+      ],
       "answer": 0,
       "lines": [
-        {"speaker": "ti", "say": "Quiz time! You just got a raise. Someone asks, how are you? A or B?", "vi": "Đố bạn! Bạn vừa được tăng lương. Có người hỏi How are you? Chọn A hay B?"},
-        {"speaker": "mia", "say": "Never been better!", "vi": "Chưa bao giờ tốt hơn thế!", "pauseBefore": 3},
-        {"speaker": "ti", "say": "The answer is A! Things couldn't be better!", "vi": "Đáp án A! Mọi thứ không thể tốt hơn!"}
+        {"speaker": "com", "say": "Quiz time! You just got a raise. Someone asks, how are you? A or B?", "vi": "Đố bạn! Bạn vừa được tăng lương. Có người hỏi How are you? Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Never been better!", "vi": "Chưa bao giờ tốt hơn thế!", "pauseBefore": 3, "pose": "clap", "listen": "wow"},
+        {"speaker": "com", "say": "The answer is A! Things couldn't be better!", "vi": "Đáp án A! Mọi thứ không thể tốt hơn!", "pose": "thumbs", "listen": "clap"}
       ]
     },
     {
@@ -60,10 +63,10 @@
       "title": "Đến lượt bạn!",
       "subtitle": "Hôm nay bạn thế nào? Trả lời bằng tiếng Anh nhé",
       "lines": [
-        {"speaker": "ti", "say": "Your turn! How are you today? Tell us in the comments!", "vi": "Đến lượt bạn! Hôm nay bạn thế nào? Bình luận cho tụi mình nha!"},
-        {"speaker": "mia", "say": "See you on Monday, Wednesday and Friday!", "vi": "Hẹn gặp bạn vào thứ 2, 4, 6 nha!"}
+        {"speaker": "com", "say": "Your turn! How are you today? Tell us in the comments!", "vi": "Đến lượt bạn! Hôm nay bạn thế nào? Bình luận cho tụi mình nha!", "pose": "point", "listen": "clap"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
       ]
     }
   ],
-  "fallbackCaption": "Ai hỏi \"How are you?\" là chỉ biết \"I'm fine, thank you, and you?\" 😅\n\n✅ I'm good, thanks! — Mình ổn, cảm ơn nha\n✅ Not bad! How about you? — Cũng ổn! Còn bạn?\n✅ Pretty busy, but good! — Hơi bận nhưng vẫn ổn\n🎉 Never been better! — Chưa bao giờ tốt hơn thế!\n\n💬 Hôm nay bạn thế nào? Trả lời bằng tiếng Anh dưới bình luận nha!\n📌 Follow để học tiếp vào thứ 2-4-6\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+  "fallbackCaption": "Ai hỏi \"How are you?\" là chỉ biết \"I'm fine, thank you, and you?\" 😅\n\n✅ I'm good, thanks! — Mình ổn, cảm ơn nha\n✅ Not bad! How about you? — Cũng ổn! Còn bạn?\n✅ Pretty busy, but good! — Hơi bận nhưng vẫn ổn\n🎉 Never been better! — Chưa bao giờ tốt hơn thế!\n\n💬 Hôm nay bạn thế nào? Trả lời bằng tiếng Anh dưới bình luận nha!\n📌 Follow để học bài tiếp theo nha\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
 }
