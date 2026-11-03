@@ -1,0 +1,496 @@
+{
+  "id": "bai-13-tired",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Let's go dancing tonight!",
+      "file": "voice/bai-13-tired/00.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "go",
+          "start": 0.267,
+          "end": 0.348
+        },
+        {
+          "w": "dancing",
+          "start": 0.406,
+          "end": 0.743
+        },
+        {
+          "w": "tonight!",
+          "start": 0.789,
+          "end": 1.486
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm tired.",
+      "file": "voice/bai-13-tired/01.mp3",
+      "duration": 0.975238,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "tired.",
+          "start": 0.232,
+          "end": 0.975
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "You say that every single day!",
+      "file": "voice/bai-13-tired/02.mp3",
+      "duration": 1.625397,
+      "words": [
+        {
+          "w": "You",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "say",
+          "start": 0.232,
+          "end": 0.337
+        },
+        {
+          "w": "that",
+          "start": 0.372,
+          "end": 0.488
+        },
+        {
+          "w": "every",
+          "start": 0.534,
+          "end": 0.708
+        },
+        {
+          "w": "single",
+          "start": 0.743,
+          "end": 0.998
+        },
+        {
+          "w": "day!",
+          "start": 1.033,
+          "end": 1.625
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Super tired? I'm exhausted.",
+      "file": "voice/bai-13-tired/03.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "Super",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "w": "tired?",
+          "start": 0.36,
+          "end": 0.836
+        },
+        {
+          "w": "I'm",
+          "start": 1.045,
+          "end": 1.196
+        },
+        {
+          "w": "exhausted.",
+          "start": 1.242,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm exhausted.",
+      "file": "voice/bai-13-tired/04.mp3",
+      "duration": 1.114558,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "exhausted.",
+          "start": 0.244,
+          "end": 1.115
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Short and casual. I'm beat.",
+      "file": "voice/bai-13-tired/05.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Short",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "and",
+          "start": 0.313,
+          "end": 0.383
+        },
+        {
+          "w": "casual.",
+          "start": 0.43,
+          "end": 1.033
+        },
+        {
+          "w": "I'm",
+          "start": 1.184,
+          "end": 1.324
+        },
+        {
+          "w": "beat.",
+          "start": 1.358,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm beat.",
+      "file": "voice/bai-13-tired/06.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "beat.",
+          "start": 0.279,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Can't keep your eyes open? I need a nap.",
+      "file": "voice/bai-13-tired/07.mp3",
+      "duration": 2.554195,
+      "words": [
+        {
+          "w": "Can't",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "keep",
+          "start": 0.279,
+          "end": 0.406
+        },
+        {
+          "w": "your",
+          "start": 0.441,
+          "end": 0.546
+        },
+        {
+          "w": "eyes",
+          "start": 0.592,
+          "end": 0.731
+        },
+        {
+          "w": "open?",
+          "start": 0.778,
+          "end": 1.219
+        },
+        {
+          "w": "I",
+          "start": 1.544,
+          "end": 1.602
+        },
+        {
+          "w": "need",
+          "start": 1.683,
+          "end": 1.834
+        },
+        {
+          "w": "a",
+          "start": 1.869,
+          "end": 1.892
+        },
+        {
+          "w": "nap.",
+          "start": 1.95,
+          "end": 2.554
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I need a nap.",
+      "file": "voice/bai-13-tired/08.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.104
+        },
+        {
+          "w": "need",
+          "start": 0.163,
+          "end": 0.313
+        },
+        {
+          "w": "a",
+          "start": 0.348,
+          "end": 0.372
+        },
+        {
+          "w": "nap.",
+          "start": 0.43,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! You worked twelve hours straight. A or B?",
+      "file": "voice/bai-13-tired/09.mp3",
+      "duration": 3.947392,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "time!",
+          "start": 0.383,
+          "end": 0.766
+        },
+        {
+          "w": "You",
+          "start": 1.091,
+          "end": 1.219
+        },
+        {
+          "w": "worked",
+          "start": 1.277,
+          "end": 1.498
+        },
+        {
+          "w": "twelve",
+          "start": 1.544,
+          "end": 1.858
+        },
+        {
+          "w": "hours",
+          "start": 1.892,
+          "end": 2.159
+        },
+        {
+          "w": "straight.",
+          "start": 2.194,
+          "end": 2.67
+        },
+        {
+          "w": "A",
+          "start": 3.053,
+          "end": 3.204
+        },
+        {
+          "w": "or",
+          "start": 3.286,
+          "end": 3.355
+        },
+        {
+          "w": "B?",
+          "start": 3.425,
+          "end": 3.947
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "I'm exhausted.",
+      "file": "voice/bai-13-tired/10.mp3",
+      "duration": 1.114558,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "exhausted.",
+          "start": 0.232,
+          "end": 1.115
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "A! Twelve hours? Go to bed!",
+      "file": "voice/bai-13-tired/11.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "A!",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "Twelve",
+          "start": 0.522,
+          "end": 0.813
+        },
+        {
+          "w": "hours?",
+          "start": 0.836,
+          "end": 1.265
+        },
+        {
+          "w": "Go",
+          "start": 1.509,
+          "end": 1.637
+        },
+        {
+          "w": "to",
+          "start": 1.683,
+          "end": 1.741
+        },
+        {
+          "w": "bed!",
+          "start": 1.788,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "How tired are you today? Tell us below!",
+      "file": "voice/bai-13-tired/12.mp3",
+      "duration": 2.461315,
+      "words": [
+        {
+          "w": "How",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "tired",
+          "start": 0.267,
+          "end": 0.58
+        },
+        {
+          "w": "are",
+          "start": 0.604,
+          "end": 0.685
+        },
+        {
+          "w": "you",
+          "start": 0.708,
+          "end": 0.789
+        },
+        {
+          "w": "today?",
+          "start": 0.836,
+          "end": 1.254
+        },
+        {
+          "w": "Tell",
+          "start": 1.428,
+          "end": 1.625
+        },
+        {
+          "w": "us",
+          "start": 1.672,
+          "end": 1.741
+        },
+        {
+          "w": "below!",
+          "start": 1.8,
+          "end": 2.461
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-13-tired/13.mp3",
+      "duration": 1.578957,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "you",
+          "start": 0.244,
+          "end": 0.325
+        },
+        {
+          "w": "in",
+          "start": 0.383,
+          "end": 0.441
+        },
+        {
+          "w": "the",
+          "start": 0.476,
+          "end": 0.546
+        },
+        {
+          "w": "next",
+          "start": 0.592,
+          "end": 0.801
+        },
+        {
+          "w": "lesson!",
+          "start": 0.859,
+          "end": 1.579
+        }
+      ]
+    }
+  ]
+}

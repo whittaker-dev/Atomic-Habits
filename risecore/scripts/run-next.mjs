@@ -1,9 +1,10 @@
 // Lấy video kế tiếp trong queue/ chưa đăng -> viết caption -> đăng -> ghi log vào posted.json.
 import fs from 'node:fs';
 import path from 'node:path';
-import {loadEnv} from './lib.mjs';
+import {loadEnv, sidecar} from './lib.mjs';
 import {writeCaption} from './write-caption.mjs';
 import {postReel} from './post-reel.mjs';
+import {setThumbnail} from './set-thumbnail.mjs';
 
 loadEnv();
 const LOG = 'posted.json';
@@ -26,12 +27,15 @@ try {
   console.log(`▶️  Video kế tiếp: ${next}`);
   const caption = await writeCaption(next);
   const r = await postReel(next, {caption});
+  const cover = sidecar(next, '.cover.jpg');
+  if (!r.dryRun && fs.existsSync(cover)) await setThumbnail(r.videoId, cover);
   if (!r.dryRun) {
     posted.push({file: next, videoId: r.videoId, state: r.state, link: r.link, at: new Date().toISOString()});
     fs.writeFileSync(LOG, JSON.stringify(posted, null, 2) + '\n');
     // Xóa file video đã đăng để repo không phình to (brief + caption vẫn giữ lại)
     if (process.env.KEEP_POSTED_VIDEOS !== '1') {
       fs.unlinkSync(next);
+      if (fs.existsSync(cover)) fs.unlinkSync(cover);
       console.log(`🧹 Đã xóa ${next} khỏi hàng đợi`);
     }
   }

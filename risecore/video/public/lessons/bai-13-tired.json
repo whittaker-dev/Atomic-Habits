@@ -1,0 +1,73 @@
+{
+  "id": "bai-13-tired",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 13,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "I'm tired...",
+      "subtitle": "Đừng chỉ nói \"I'm tired\"",
+      "cliche": "I'm tired.",
+      "lines": [
+        {"speaker": "mia", "say": "Let's go dancing tonight!", "vi": "Tối nay đi nhảy đi!", "pose": "cheer", "listen": "embarrassed"},
+        {"speaker": "com", "say": "I'm tired.", "vi": "Mình mệt.", "pose": "embarrassed", "listen": "confused"},
+        {"speaker": "mia", "say": "You say that every single day!", "vi": "Ngày nào bạn cũng nói câu đó!", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'm exhausted.",
+      "vi": "Mình kiệt sức rồi.",
+      "note": "Mệt rã rời",
+      "lines": [
+        {"speaker": "mia", "say": "Super tired? I'm exhausted.", "vi": "Mệt cực kỳ? Mình kiệt sức rồi.", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "I'm exhausted.", "vi": "Mình kiệt sức rồi.", "pose": "embarrassed", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'm beat.",
+      "vi": "Mình mệt nhừ.",
+      "note": "Ngắn gọn, thân mật",
+      "lines": [
+        {"speaker": "mia", "say": "Short and casual. I'm beat.", "vi": "Ngắn gọn, thân mật. Mình mệt nhừ.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "I'm beat.", "vi": "Mình mệt nhừ.", "pose": "think", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I need a nap.",
+      "vi": "Mình cần chợp mắt chút.",
+      "note": "Buồn ngủ, cần nghỉ",
+      "lines": [
+        {"speaker": "mia", "say": "Can't keep your eyes open? I need a nap.", "vi": "Mắt díp lại rồi? Mình cần chợp mắt chút.", "pose": "laugh", "listen": "wow"},
+        {"speaker": "com", "say": "I need a nap.", "vi": "Mình cần chợp mắt chút.", "pose": "embarrassed", "listen": "laugh", "burst": "Zzz..."}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Làm việc 12 tiếng liền. Bạn nói?",
+      "options": [
+        "I'm exhausted.",
+        "I'm fine!"
+      ],
+      "answer": 0,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! You worked twelve hours straight. A or B?", "vi": "Đố bạn! Làm việc 12 tiếng liền. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "I'm exhausted.", "vi": "Mình kiệt sức rồi.", "pose": "embarrassed", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "A! Twelve hours? Go to bed!", "vi": "Đáp án A! 12 tiếng hả? Đi ngủ ngay!", "pose": "laugh", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Hôm nay bạn mệt cỡ nào?",
+      "lines": [
+        {"speaker": "com", "say": "How tired are you today? Tell us below!", "vi": "Hôm nay bạn mệt cỡ nào? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Mệt rã rời mà chỉ biết nói \"I'm tired\"? 😴\n\n✅ I'm exhausted. — Mình kiệt sức rồi.\n✅ I'm beat. — Mình mệt nhừ.\n✅ I need a nap. — Mình cần chợp mắt chút.\n\n🧠 Làm việc 12 tiếng liền thì nói sao?\n💬 Hôm nay bạn mệt cỡ nào? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

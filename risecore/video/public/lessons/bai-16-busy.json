@@ -1,0 +1,73 @@
+{
+  "id": "bai-16-busy",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 16,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "I'm busy!",
+      "subtitle": "Đừng chỉ nói \"I'm busy\"",
+      "cliche": "I'm busy.",
+      "lines": [
+        {"speaker": "mia", "say": "Cơm! Come play games with me!", "vi": "Cơm! Ra chơi game với mình đi!", "pose": "cheer", "listen": "think"},
+        {"speaker": "com", "say": "I'm busy.", "vi": "Mình bận.", "pose": "think", "listen": "confused"},
+        {"speaker": "mia", "say": "Busy? You're watching cat videos!", "vi": "Bận hả? Bạn đang xem video mèo mà!", "pose": "point", "listen": "embarrassed", "burst": "Caught!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'm swamped.",
+      "vi": "Mình ngập việc luôn.",
+      "note": "Bận tối mắt",
+      "lines": [
+        {"speaker": "mia", "say": "Way too busy? I'm swamped.", "vi": "Bận quá trời? Mình ngập việc luôn.", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "I'm swamped.", "vi": "Mình ngập việc luôn.", "pose": "embarrassed", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I have a lot on my plate.",
+      "vi": "Mình đang nhiều việc lắm.",
+      "note": "Cách nói rất tự nhiên",
+      "lines": [
+        {"speaker": "mia", "say": "Sounds natural. I have a lot on my plate.", "vi": "Nghe rất tự nhiên. Mình đang nhiều việc lắm.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "I have a lot on my plate.", "vi": "Mình đang nhiều việc lắm.", "pose": "think", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Can we talk later?",
+      "vi": "Mình nói chuyện sau nha?",
+      "note": "Từ chối khéo",
+      "lines": [
+        {"speaker": "mia", "say": "Want to be polite? Can we talk later?", "vi": "Muốn lịch sự? Mình nói chuyện sau nha?", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Can we talk later?", "vi": "Mình nói chuyện sau nha?", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Đồng nghiệp rủ tám chuyện lúc bạn chạy deadline. Bạn nói?",
+      "options": [
+        "Go away!",
+        "Can we talk later?"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! A coworker wants to chat, but you're on a deadline. A or B?", "vi": "Đố bạn! Đồng nghiệp rủ tám mà bạn đang chạy deadline. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Can we talk later?", "vi": "Mình nói chuyện sau nha?", "pose": "thumbs", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Polite, not rude!", "vi": "Đáp án B! Lịch sự, không phũ!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Tuần này bạn có “swamped” không?",
+      "lines": [
+        {"speaker": "com", "say": "Are you swamped this week? Tell us below!", "vi": "Tuần này bạn có ngập việc không? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Bận tối mắt mà chỉ biết nói \"I'm busy\"? 😵\n\n✅ I'm swamped. — Mình ngập việc luôn.\n✅ I have a lot on my plate. — Mình đang nhiều việc lắm.\n✅ Can we talk later? — Mình nói chuyện sau nha?\n\n🧠 Đang chạy deadline mà bị rủ tám, nói sao cho khéo?\n💬 Tuần này bạn có \"swamped\" không? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

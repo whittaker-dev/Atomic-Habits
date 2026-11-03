@@ -1,0 +1,73 @@
+{
+  "id": "bai-19-delicious",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 19,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Delicious!",
+      "subtitle": "Đừng chỉ khen \"Delicious\"",
+      "cliche": "It's delicious.",
+      "lines": [
+        {"speaker": "mia", "say": "Try my noodle soup, Cơm!", "vi": "Ăn thử bát mì của mình nè Cơm!", "pose": "announce", "listen": "wow"},
+        {"speaker": "com", "say": "It's delicious.", "vi": "Ngon.", "pose": "thumbs", "listen": "confused"},
+        {"speaker": "mia", "say": "Just delicious? I cooked for three hours!", "vi": "Ngon thôi á? Mình nấu cả ba tiếng đó!", "pose": "point", "listen": "embarrassed", "burst": "Hmm?"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "This is so good!",
+      "vi": "Ngon quá trời!",
+      "note": "Khen tự nhiên nhất",
+      "lines": [
+        {"speaker": "mia", "say": "Easy upgrade. This is so good!", "vi": "Nâng cấp dễ nè. Ngon quá trời!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "This is so good!", "vi": "Ngon quá trời!", "pose": "cheer", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "It melts in my mouth!",
+      "vi": "Tan ngay trong miệng!",
+      "note": "Đồ ăn mềm, béo",
+      "lines": [
+        {"speaker": "mia", "say": "Soft and rich? It melts in my mouth!", "vi": "Mềm và béo? Tan ngay trong miệng!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "It melts in my mouth!", "vi": "Tan ngay trong miệng!", "pose": "wow", "listen": "laugh", "burst": "Yum!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Can I have seconds?",
+      "vi": "Cho mình thêm bát nữa nha?",
+      "note": "Khen bằng hành động",
+      "lines": [
+        {"speaker": "mia", "say": "The best compliment. Can I have seconds?", "vi": "Lời khen đỉnh nhất. Cho mình thêm bát nữa nha?", "pose": "laugh", "listen": "think"},
+        {"speaker": "com", "say": "Can I have seconds?", "vi": "Cho mình thêm bát nữa nha?", "pose": "laugh", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Mẹ nấu món bạn thích nhất. Bạn nói?",
+      "options": [
+        "It's okay.",
+        "Can I have seconds?"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! Mom cooks your favorite dish. A or B?", "vi": "Đố bạn! Mẹ nấu món bạn thích nhất. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Can I have seconds?", "vi": "Cho con thêm bát nữa nha?", "pose": "laugh", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! The best compliment for any cook!", "vi": "Đáp án B! Lời khen tuyệt nhất cho người nấu!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Món nào làm bạn muốn ăn thêm bát nữa?",
+      "lines": [
+        {"speaker": "com", "say": "What food makes you want seconds? Tell us below!", "vi": "Món gì làm bạn muốn ăn thêm bát nữa? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Ăn ngon mà chỉ biết khen \"Delicious\"? 😋\n\n✅ This is so good! — Ngon quá trời!\n✅ It melts in my mouth! — Tan ngay trong miệng!\n✅ Can I have seconds? — Cho mình thêm bát nữa nha?\n\n🧠 Mẹ nấu món bạn thích nhất thì khen sao?\n💬 Món nào làm bạn muốn ăn thêm bát nữa? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

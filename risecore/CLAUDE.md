@@ -89,7 +89,11 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Khung video (LessonVideo) có sẵn "action": phụ đề karaoke theo từng từ, người nói to lên/người nghe tối đi,
   nhảy khi đổi sang cheer/clap/wow/laugh, rung màn hình khi có pose `wow`, chữ nổ trên đầu, card trượt + whoosh.
 - **Làm 1 bài trọn gói**: `cd video && scripts/build-lesson.sh <id> <composition>` (giọng → render → chuẩn hoá →
-  `queue/<id>.mp4` + brief + caption), rồi `cd .. && node scripts/run-next.mjs` để tải lên Nháp.
+  `queue/<id>.mp4` + `<id>.cover.jpg` + brief + caption), rồi `cd .. && node scripts/run-next.mjs` để tải lên Nháp.
+- **Ảnh bìa** (`src/english/LessonCover.tsx`, Still `TiengAnh-Cover`): Facebook mặc định lấy khung hình đầu làm ảnh
+  preview (chỉ có nền trống), nên mỗi bài có ảnh bìa riêng — "Đừng chỉ nói" + câu nhàm bị gạch + 2 nhân vật.
+  `run-next.mjs` tự gắn sau khi upload; gắn tay cho video đã có: `node scripts/set-thumbnail.mjs <video_id> <ảnh.jpg>`
+  (Graph `POST /{video_id}/thumbnails`, `is_preferred=true`).
 - Giọng đọc (`scripts/make-voice.mjs`): ElevenLabs with-timestamps (lấy mốc từng chữ cho karaoke), Cơm = Liam,
   Mia = Jessica (giọng premade). Mỗi câu mới được speech-to-text nghe lại, lệch thì in ⚠️ — đọc từng cảnh báo:
   tên "Cơm" → "Com/come", "A!/B!" → "Hey/Be", số → chữ số là bình thường; sai nghĩa (vd "won" → "want") thì sửa câu.
@@ -97,8 +101,9 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   **không gọi API được giọng Voice Library**, không có giấy phép thương mại (nâng Starter khi Page kiếm tiền).
   Câu đã tạo được dùng lại, sửa câu nào thì chỉ tạo lại câu đó.
 - Đã làm: bài 1–11 (How are you, Thank you, You're welcome, Sorry, Order coffee, Compliments, Say no, What?,
-  Yes, Really?, Goodbye) — tất cả đã lên mục Nháp 2026-11-03, người dùng tự đăng dần. Bài 12 trở đi: chủ đề mới,
-  không lặp lại các câu trên.
+  Yes, Really?, Goodbye) và bài 12–21 (Hungry, Tired, I don't know, Wait, Busy, Help, Good luck, Delicious,
+  Happy, Hurry up) — tất cả đã lên mục Nháp 2026-11-03 kèm ảnh bìa, người dùng tự đăng dần.
+  Bài 22 trở đi: chủ đề mới, không lặp lại các câu trên. ElevenLabs tháng 11 gần hết ký tự (reset 2026-12-03).
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
@@ -124,7 +129,7 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Nếu làm nội dung cho trẻ em: kênh/page riêng, chỉ vận động vui chơi, không tập tạ, không ăn kiêng.
 
 ## Việc tiếp theo (người dùng đã đồng ý hướng đi)
-0. Ưu tiên: series **Tiếng Anh mỗi ngày** (bài 1–11 đã lên Nháp 2026-11-03). Bài sau theo cùng khung.
+0. Ưu tiên: series **Tiếng Anh mỗi ngày** (bài 1–21 đã lên Nháp 2026-11-03). Bài sau theo cùng khung.
    TikTok: người dùng đã tạo app (loại "Other") và để `TIKTOK_CLIENT_KEY`/`TIKTOK_CLIENT_SECRET` trong `risecore/.env`,
    nhưng tạm gác — làm Facebook Reels trước. Khi làm: Content Posting API, quyền `video.upload` (đẩy vào nháp TikTok).
 1. (Series gym tạm dừng) Video **Ngày tập lưng** (cùng cấu trúc, cùng nhân vật).

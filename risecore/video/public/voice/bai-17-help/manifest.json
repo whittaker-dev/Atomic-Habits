@@ -1,0 +1,591 @@
+{
+  "id": "bai-17-help",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Whoa! That's a lot of boxes!",
+      "file": "voice/bai-17-help/00.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Whoa!",
+          "start": 0,
+          "end": 0.395
+        },
+        {
+          "w": "That's",
+          "start": 0.476,
+          "end": 0.662
+        },
+        {
+          "w": "a",
+          "start": 0.697,
+          "end": 0.72
+        },
+        {
+          "w": "lot",
+          "start": 0.766,
+          "end": 0.882
+        },
+        {
+          "w": "of",
+          "start": 0.917,
+          "end": 0.964
+        },
+        {
+          "w": "boxes!",
+          "start": 0.998,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Help me!",
+      "file": "voice/bai-17-help/01.mp3",
+      "duration": 0.789478,
+      "words": [
+        {
+          "w": "Help",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "me!",
+          "start": 0.36,
+          "end": 0.789
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Sure! But there's a nicer way to ask.",
+      "file": "voice/bai-17-help/02.mp3",
+      "duration": 2.414875,
+      "words": [
+        {
+          "w": "Sure!",
+          "start": 0,
+          "end": 0.453
+        },
+        {
+          "w": "But",
+          "start": 0.697,
+          "end": 0.824
+        },
+        {
+          "w": "there's",
+          "start": 0.848,
+          "end": 1.033
+        },
+        {
+          "w": "a",
+          "start": 1.057,
+          "end": 1.08
+        },
+        {
+          "w": "nicer",
+          "start": 1.126,
+          "end": 1.37
+        },
+        {
+          "w": "way",
+          "start": 1.416,
+          "end": 1.509
+        },
+        {
+          "w": "to",
+          "start": 1.556,
+          "end": 1.602
+        },
+        {
+          "w": "ask.",
+          "start": 1.672,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Heavy stuff? Can you give me a hand?",
+      "file": "voice/bai-17-help/03.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "Heavy",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "stuff?",
+          "start": 0.337,
+          "end": 0.801
+        },
+        {
+          "w": "Can",
+          "start": 1.126,
+          "end": 1.254
+        },
+        {
+          "w": "you",
+          "start": 1.3,
+          "end": 1.37
+        },
+        {
+          "w": "give",
+          "start": 1.393,
+          "end": 1.498
+        },
+        {
+          "w": "me",
+          "start": 1.521,
+          "end": 1.591
+        },
+        {
+          "w": "a",
+          "start": 1.637,
+          "end": 1.66
+        },
+        {
+          "w": "hand?",
+          "start": 1.707,
+          "end": 2.276
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Can you give me a hand?",
+      "file": "voice/bai-17-help/04.mp3",
+      "duration": 1.439637,
+      "words": [
+        {
+          "w": "Can",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "you",
+          "start": 0.255,
+          "end": 0.337
+        },
+        {
+          "w": "give",
+          "start": 0.395,
+          "end": 0.534
+        },
+        {
+          "w": "me",
+          "start": 0.58,
+          "end": 0.662
+        },
+        {
+          "w": "a",
+          "start": 0.708,
+          "end": 0.743
+        },
+        {
+          "w": "hand?",
+          "start": 0.801,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "More polite. Could you do me a favor?",
+      "file": "voice/bai-17-help/05.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "More",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "polite.",
+          "start": 0.255,
+          "end": 0.685
+        },
+        {
+          "w": "Could",
+          "start": 0.859,
+          "end": 1.033
+        },
+        {
+          "w": "you",
+          "start": 1.057,
+          "end": 1.126
+        },
+        {
+          "w": "do",
+          "start": 1.161,
+          "end": 1.219
+        },
+        {
+          "w": "me",
+          "start": 1.277,
+          "end": 1.358
+        },
+        {
+          "w": "a",
+          "start": 1.405,
+          "end": 1.428
+        },
+        {
+          "w": "favor?",
+          "start": 1.474,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Could you do me a favor?",
+      "file": "voice/bai-17-help/06.mp3",
+      "duration": 1.393197,
+      "words": [
+        {
+          "w": "Could",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "you",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "w": "do",
+          "start": 0.372,
+          "end": 0.453
+        },
+        {
+          "w": "me",
+          "start": 0.511,
+          "end": 0.592
+        },
+        {
+          "w": "a",
+          "start": 0.639,
+          "end": 0.673
+        },
+        {
+          "w": "favor?",
+          "start": 0.72,
+          "end": 1.393
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Can't solve a problem? I'm stuck.",
+      "file": "voice/bai-17-help/07.mp3",
+      "duration": 2.507755,
+      "words": [
+        {
+          "w": "Can't",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "solve",
+          "start": 0.313,
+          "end": 0.534
+        },
+        {
+          "w": "a",
+          "start": 0.557,
+          "end": 0.58
+        },
+        {
+          "w": "problem?",
+          "start": 0.627,
+          "end": 1.173
+        },
+        {
+          "w": "I'm",
+          "start": 1.614,
+          "end": 1.765
+        },
+        {
+          "w": "stuck.",
+          "start": 1.823,
+          "end": 2.508
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm stuck.",
+      "file": "voice/bai-17-help/08.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "stuck.",
+          "start": 0.244,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! You need help from a coworker. A or B?",
+      "file": "voice/bai-17-help/09.mp3",
+      "duration": 3.297234,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "time!",
+          "start": 0.36,
+          "end": 0.697
+        },
+        {
+          "w": "You",
+          "start": 1.022,
+          "end": 1.126
+        },
+        {
+          "w": "need",
+          "start": 1.161,
+          "end": 1.3
+        },
+        {
+          "w": "help",
+          "start": 1.335,
+          "end": 1.463
+        },
+        {
+          "w": "from",
+          "start": 1.498,
+          "end": 1.602
+        },
+        {
+          "w": "a",
+          "start": 1.649,
+          "end": 1.672
+        },
+        {
+          "w": "coworker.",
+          "start": 1.73,
+          "end": 2.345
+        },
+        {
+          "w": "A",
+          "start": 2.461,
+          "end": 2.577
+        },
+        {
+          "w": "or",
+          "start": 2.659,
+          "end": 2.728
+        },
+        {
+          "w": "B?",
+          "start": 2.786,
+          "end": 3.297
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Could you do me a favor?",
+      "file": "voice/bai-17-help/10.mp3",
+      "duration": 1.346757,
+      "words": [
+        {
+          "w": "Could",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "you",
+          "start": 0.232,
+          "end": 0.302
+        },
+        {
+          "w": "do",
+          "start": 0.337,
+          "end": 0.406
+        },
+        {
+          "w": "me",
+          "start": 0.464,
+          "end": 0.546
+        },
+        {
+          "w": "a",
+          "start": 0.592,
+          "end": 0.615
+        },
+        {
+          "w": "favor?",
+          "start": 0.662,
+          "end": 1.347
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! Polite and friendly!",
+      "file": "voice/bai-17-help/11.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "Polite",
+          "start": 0.348,
+          "end": 0.697
+        },
+        {
+          "w": "and",
+          "start": 0.731,
+          "end": 0.836
+        },
+        {
+          "w": "friendly!",
+          "start": 0.917,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "What do you need help with today? Tell us below!",
+      "file": "voice/bai-17-help/12.mp3",
+      "duration": 2.507755,
+      "words": [
+        {
+          "w": "What",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "do",
+          "start": 0.197,
+          "end": 0.244
+        },
+        {
+          "w": "you",
+          "start": 0.279,
+          "end": 0.348
+        },
+        {
+          "w": "need",
+          "start": 0.406,
+          "end": 0.569
+        },
+        {
+          "w": "help",
+          "start": 0.615,
+          "end": 0.755
+        },
+        {
+          "w": "with",
+          "start": 0.789,
+          "end": 0.917
+        },
+        {
+          "w": "today?",
+          "start": 0.952,
+          "end": 1.3
+        },
+        {
+          "w": "Tell",
+          "start": 1.416,
+          "end": 1.614
+        },
+        {
+          "w": "us",
+          "start": 1.672,
+          "end": 1.753
+        },
+        {
+          "w": "below!",
+          "start": 1.811,
+          "end": 2.508
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-17-help/13.mp3",
+      "duration": 1.439637,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "you",
+          "start": 0.232,
+          "end": 0.302
+        },
+        {
+          "w": "in",
+          "start": 0.348,
+          "end": 0.406
+        },
+        {
+          "w": "the",
+          "start": 0.43,
+          "end": 0.499
+        },
+        {
+          "w": "next",
+          "start": 0.522,
+          "end": 0.708
+        },
+        {
+          "w": "lesson!",
+          "start": 0.755,
+          "end": 1.44
+        }
+      ]
+    }
+  ]
+}

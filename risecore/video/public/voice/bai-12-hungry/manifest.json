@@ -1,0 +1,561 @@
+{
+  "id": "bai-12-hungry",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Whoa! What was that noise?",
+      "file": "voice/bai-12-hungry/00.mp3",
+      "duration": 1.625397,
+      "words": [
+        {
+          "w": "Whoa!",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "w": "What",
+          "start": 0.476,
+          "end": 0.627
+        },
+        {
+          "w": "was",
+          "start": 0.65,
+          "end": 0.731
+        },
+        {
+          "w": "that",
+          "start": 0.766,
+          "end": 0.882
+        },
+        {
+          "w": "noise?",
+          "start": 0.929,
+          "end": 1.625
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm hungry.",
+      "file": "voice/bai-12-hungry/01.mp3",
+      "duration": 0.975238,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "hungry.",
+          "start": 0.232,
+          "end": 0.975
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "You sound like a hungry bear! Say it better!",
+      "file": "voice/bai-12-hungry/02.mp3",
+      "duration": 2.507755,
+      "words": [
+        {
+          "w": "You",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "w": "sound",
+          "start": 0.197,
+          "end": 0.36
+        },
+        {
+          "w": "like",
+          "start": 0.395,
+          "end": 0.511
+        },
+        {
+          "w": "a",
+          "start": 0.534,
+          "end": 0.557
+        },
+        {
+          "w": "hungry",
+          "start": 0.592,
+          "end": 0.848
+        },
+        {
+          "w": "bear!",
+          "start": 0.906,
+          "end": 1.3
+        },
+        {
+          "w": "Say",
+          "start": 1.509,
+          "end": 1.707
+        },
+        {
+          "w": "it",
+          "start": 1.753,
+          "end": 1.811
+        },
+        {
+          "w": "better!",
+          "start": 1.858,
+          "end": 2.508
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Really hungry? I'm starving!",
+      "file": "voice/bai-12-hungry/03.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "Really",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "hungry?",
+          "start": 0.337,
+          "end": 0.72
+        },
+        {
+          "w": "I'm",
+          "start": 0.766,
+          "end": 0.917
+        },
+        {
+          "w": "starving!",
+          "start": 0.964,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm starving!",
+      "file": "voice/bai-12-hungry/04.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "starving!",
+          "start": 0.255,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Hear that sound? My stomach is growling.",
+      "file": "voice/bai-12-hungry/05.mp3",
+      "duration": 2.461315,
+      "words": [
+        {
+          "w": "Hear",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "that",
+          "start": 0.267,
+          "end": 0.383
+        },
+        {
+          "w": "sound?",
+          "start": 0.441,
+          "end": 0.882
+        },
+        {
+          "w": "My",
+          "start": 1.126,
+          "end": 1.242
+        },
+        {
+          "w": "stomach",
+          "start": 1.289,
+          "end": 1.579
+        },
+        {
+          "w": "is",
+          "start": 1.614,
+          "end": 1.672
+        },
+        {
+          "w": "growling.",
+          "start": 1.718,
+          "end": 2.461
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "My stomach is growling.",
+      "file": "voice/bai-12-hungry/06.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "My",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "stomach",
+          "start": 0.209,
+          "end": 0.499
+        },
+        {
+          "w": "is",
+          "start": 0.546,
+          "end": 0.615
+        },
+        {
+          "w": "growling.",
+          "start": 0.685,
+          "end": 1.486
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "The funny one. I could eat a horse!",
+      "file": "voice/bai-12-hungry/07.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "The",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "w": "funny",
+          "start": 0.197,
+          "end": 0.43
+        },
+        {
+          "w": "one.",
+          "start": 0.488,
+          "end": 0.731
+        },
+        {
+          "w": "I",
+          "start": 0.882,
+          "end": 0.94
+        },
+        {
+          "w": "could",
+          "start": 1.01,
+          "end": 1.138
+        },
+        {
+          "w": "eat",
+          "start": 1.161,
+          "end": 1.265
+        },
+        {
+          "w": "a",
+          "start": 1.3,
+          "end": 1.335
+        },
+        {
+          "w": "horse!",
+          "start": 1.393,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I could eat a horse!",
+      "file": "voice/bai-12-hungry/08.mp3",
+      "duration": 1.300317,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.093
+        },
+        {
+          "w": "could",
+          "start": 0.163,
+          "end": 0.313
+        },
+        {
+          "w": "eat",
+          "start": 0.348,
+          "end": 0.464
+        },
+        {
+          "w": "a",
+          "start": 0.499,
+          "end": 0.534
+        },
+        {
+          "w": "horse!",
+          "start": 0.592,
+          "end": 1.3
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! You ran for two hours with no lunch. A or B?",
+      "file": "voice/bai-12-hungry/09.mp3",
+      "duration": 4.040272,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "w": "time!",
+          "start": 0.372,
+          "end": 0.743
+        },
+        {
+          "w": "You",
+          "start": 1.068,
+          "end": 1.184
+        },
+        {
+          "w": "ran",
+          "start": 1.265,
+          "end": 1.405
+        },
+        {
+          "w": "for",
+          "start": 1.463,
+          "end": 1.567
+        },
+        {
+          "w": "two",
+          "start": 1.614,
+          "end": 1.753
+        },
+        {
+          "w": "hours",
+          "start": 1.811,
+          "end": 2.067
+        },
+        {
+          "w": "with",
+          "start": 2.113,
+          "end": 2.229
+        },
+        {
+          "w": "no",
+          "start": 2.287,
+          "end": 2.403
+        },
+        {
+          "w": "lunch.",
+          "start": 2.485,
+          "end": 2.902
+        },
+        {
+          "w": "A",
+          "start": 3.146,
+          "end": 3.297
+        },
+        {
+          "w": "or",
+          "start": 3.367,
+          "end": 3.437
+        },
+        {
+          "w": "B?",
+          "start": 3.483,
+          "end": 4.04
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "I'm starving!",
+      "file": "voice/bai-12-hungry/10.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "starving!",
+          "start": 0.209,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! You need a big meal!",
+      "file": "voice/bai-12-hungry/11.mp3",
+      "duration": 1.996916,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.395
+        },
+        {
+          "w": "You",
+          "start": 0.464,
+          "end": 0.604
+        },
+        {
+          "w": "need",
+          "start": 0.685,
+          "end": 0.871
+        },
+        {
+          "w": "a",
+          "start": 0.917,
+          "end": 0.952
+        },
+        {
+          "w": "big",
+          "start": 1.045,
+          "end": 1.265
+        },
+        {
+          "w": "meal!",
+          "start": 1.347,
+          "end": 1.997
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "What do you eat when you're starving? Tell us below!",
+      "file": "voice/bai-12-hungry/12.mp3",
+      "duration": 2.786395,
+      "words": [
+        {
+          "w": "What",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "do",
+          "start": 0.232,
+          "end": 0.302
+        },
+        {
+          "w": "you",
+          "start": 0.36,
+          "end": 0.441
+        },
+        {
+          "w": "eat",
+          "start": 0.511,
+          "end": 0.639
+        },
+        {
+          "w": "when",
+          "start": 0.662,
+          "end": 0.766
+        },
+        {
+          "w": "you're",
+          "start": 0.789,
+          "end": 0.952
+        },
+        {
+          "w": "starving?",
+          "start": 0.987,
+          "end": 1.509
+        },
+        {
+          "w": "Tell",
+          "start": 1.788,
+          "end": 1.974
+        },
+        {
+          "w": "us",
+          "start": 2.032,
+          "end": 2.113
+        },
+        {
+          "w": "below!",
+          "start": 2.159,
+          "end": 2.786
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-12-hungry/13.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "you",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "w": "in",
+          "start": 0.348,
+          "end": 0.406
+        },
+        {
+          "w": "the",
+          "start": 0.43,
+          "end": 0.499
+        },
+        {
+          "w": "next",
+          "start": 0.534,
+          "end": 0.72
+        },
+        {
+          "w": "lesson!",
+          "start": 0.766,
+          "end": 1.486
+        }
+      ]
+    }
+  ]
+}

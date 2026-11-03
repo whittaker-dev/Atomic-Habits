@@ -1,0 +1,73 @@
+{
+  "id": "bai-17-help",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 17,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Help me!",
+      "subtitle": "Đừng chỉ nói \"Help me\"",
+      "cliche": "Help me!",
+      "lines": [
+        {"speaker": "mia", "say": "Whoa! That's a lot of boxes!", "vi": "Ui! Nhiều thùng quá vậy!", "pose": "wow", "listen": "embarrassed"},
+        {"speaker": "com", "say": "Help me!", "vi": "Giúp mình với!", "pose": "embarrassed", "listen": "laugh"},
+        {"speaker": "mia", "say": "Sure! But there's a nicer way to ask.", "vi": "Được thôi! Nhưng có cách nhờ hay hơn nè.", "pose": "laugh", "listen": "think"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Can you give me a hand?",
+      "vi": "Phụ mình một tay được không?",
+      "note": "Nhờ việc tay chân",
+      "lines": [
+        {"speaker": "mia", "say": "Heavy stuff? Can you give me a hand?", "vi": "Đồ nặng hả? Phụ mình một tay được không?", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Can you give me a hand?", "vi": "Phụ mình một tay được không?", "pose": "talk", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Could you do me a favor?",
+      "vi": "Giúp mình một việc nhé?",
+      "note": "Nhờ vả lịch sự",
+      "lines": [
+        {"speaker": "mia", "say": "More polite. Could you do me a favor?", "vi": "Lịch sự hơn. Giúp mình một việc nhé?", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Could you do me a favor?", "vi": "Giúp mình một việc nhé?", "pose": "talk", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'm stuck.",
+      "vi": "Mình bí rồi.",
+      "note": "Khi gặp chỗ khó",
+      "lines": [
+        {"speaker": "mia", "say": "Can't solve a problem? I'm stuck.", "vi": "Giải không ra? Mình bí rồi.", "pose": "laugh", "listen": "think"},
+        {"speaker": "com", "say": "I'm stuck.", "vi": "Mình bí rồi.", "pose": "confused", "listen": "laugh", "burst": "Ugh!"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Bạn cần đồng nghiệp xem giúp file. Bạn nói?",
+      "options": [
+        "Help me!",
+        "Could you do me a favor?"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! You need help from a coworker. A or B?", "vi": "Đố bạn! Bạn cần đồng nghiệp giúp. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Could you do me a favor?", "vi": "Giúp mình một việc nhé?", "pose": "talk", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Polite and friendly!", "vi": "Đáp án B! Lịch sự và thân thiện!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Hôm nay bạn cần ai giúp gì?",
+      "lines": [
+        {"speaker": "com", "say": "What do you need help with today? Tell us below!", "vi": "Hôm nay bạn cần giúp chuyện gì? Kể nghe với!", "pose": "point", "listen": "clap"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Cần nhờ ai mà chỉ biết la \"Help me!\"? 🙈\n\n✅ Can you give me a hand? — Phụ mình một tay được không?\n✅ Could you do me a favor? — Giúp mình một việc nhé?\n✅ I'm stuck. — Mình bí rồi.\n\n🧠 Cần đồng nghiệp xem giúp file, nhờ sao cho lịch sự?\n💬 Hôm nay bạn cần giúp chuyện gì? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

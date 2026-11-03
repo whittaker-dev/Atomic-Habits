@@ -14,6 +14,8 @@ npx remotion render "$comp" "out/$id.mp4" --log=error
 # Chuẩn hoá giống quy ước trong risecore/CLAUDE.md (yuv420p, GOP đóng 2s, AAC 48kHz)
 ffmpeg -v error -y -i "out/$id.mp4" -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -r 30 -g 60 -keyint_min 60 \
   -sc_threshold 0 -flags +cgop -c:a aac -b:a 160k -ar 48000 -ac 2 -movflags +faststart "$queue.mp4"
+# Ảnh bìa — run-next.mjs gắn vào video sau khi upload (khung đầu của video chỉ có nền trống)
+npx remotion still TiengAnh-Cover "$queue.cover.jpg" --props="{\"lessonId\":\"$id\"}" --image-format=jpeg --jpeg-quality=90 --log=error
 
 # Brief + caption lấy từ chính file kịch bản (caption đã viết sẵn, không cần ANTHROPIC_API_KEY)
 node --input-type=module -e "

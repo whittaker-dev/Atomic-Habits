@@ -1,0 +1,546 @@
+{
+  "id": "bai-20-happy",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Cơm, you got the job!",
+      "file": "voice/bai-20-happy/00.mp3",
+      "duration": 1.346757,
+      "words": [
+        {
+          "w": "Cơm,",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "w": "you",
+          "start": 0.337,
+          "end": 0.406
+        },
+        {
+          "w": "got",
+          "start": 0.464,
+          "end": 0.569
+        },
+        {
+          "w": "the",
+          "start": 0.604,
+          "end": 0.673
+        },
+        {
+          "w": "job!",
+          "start": 0.72,
+          "end": 1.347
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm happy.",
+      "file": "voice/bai-20-happy/01.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "happy.",
+          "start": 0.244,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "You look like you're at the dentist!",
+      "file": "voice/bai-20-happy/02.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "You",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "w": "look",
+          "start": 0.209,
+          "end": 0.348
+        },
+        {
+          "w": "like",
+          "start": 0.395,
+          "end": 0.522
+        },
+        {
+          "w": "you're",
+          "start": 0.546,
+          "end": 0.697
+        },
+        {
+          "w": "at",
+          "start": 0.72,
+          "end": 0.778
+        },
+        {
+          "w": "the",
+          "start": 0.813,
+          "end": 0.882
+        },
+        {
+          "w": "dentist!",
+          "start": 0.94,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Can't wait? I'm so excited!",
+      "file": "voice/bai-20-happy/03.mp3",
+      "duration": 1.764717,
+      "words": [
+        {
+          "w": "Can't",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "wait?",
+          "start": 0.313,
+          "end": 0.627
+        },
+        {
+          "w": "I'm",
+          "start": 0.697,
+          "end": 0.836
+        },
+        {
+          "w": "so",
+          "start": 0.882,
+          "end": 0.975
+        },
+        {
+          "w": "excited!",
+          "start": 1.033,
+          "end": 1.765
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm so excited!",
+      "file": "voice/bai-20-happy/04.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "so",
+          "start": 0.267,
+          "end": 0.453
+        },
+        {
+          "w": "excited!",
+          "start": 0.522,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Super happy? I'm over the moon!",
+      "file": "voice/bai-20-happy/05.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Super",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "w": "happy?",
+          "start": 0.348,
+          "end": 0.778
+        },
+        {
+          "w": "I'm",
+          "start": 0.859,
+          "end": 0.998
+        },
+        {
+          "w": "over",
+          "start": 1.045,
+          "end": 1.184
+        },
+        {
+          "w": "the",
+          "start": 1.219,
+          "end": 1.289
+        },
+        {
+          "w": "moon!",
+          "start": 1.324,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm over the moon!",
+      "file": "voice/bai-20-happy/06.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "over",
+          "start": 0.232,
+          "end": 0.395
+        },
+        {
+          "w": "the",
+          "start": 0.441,
+          "end": 0.511
+        },
+        {
+          "w": "moon!",
+          "start": 0.546,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Got a nice surprise? This made my day!",
+      "file": "voice/bai-20-happy/07.mp3",
+      "duration": 2.554195,
+      "words": [
+        {
+          "w": "Got",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "a",
+          "start": 0.232,
+          "end": 0.255
+        },
+        {
+          "w": "nice",
+          "start": 0.302,
+          "end": 0.464
+        },
+        {
+          "w": "surprise?",
+          "start": 0.488,
+          "end": 1.103
+        },
+        {
+          "w": "This",
+          "start": 1.428,
+          "end": 1.614
+        },
+        {
+          "w": "made",
+          "start": 1.66,
+          "end": 1.8
+        },
+        {
+          "w": "my",
+          "start": 1.834,
+          "end": 1.904
+        },
+        {
+          "w": "day!",
+          "start": 1.962,
+          "end": 2.554
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "This made my day!",
+      "file": "voice/bai-20-happy/08.mp3",
+      "duration": 1.300317,
+      "words": [
+        {
+          "w": "This",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "made",
+          "start": 0.29,
+          "end": 0.476
+        },
+        {
+          "w": "my",
+          "start": 0.522,
+          "end": 0.65
+        },
+        {
+          "w": "day!",
+          "start": 0.731,
+          "end": 1.3
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! A friend surprises you with a gift. A or B?",
+      "file": "voice/bai-20-happy/09.mp3",
+      "duration": 4.226032,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "time!",
+          "start": 0.383,
+          "end": 0.801
+        },
+        {
+          "w": "A",
+          "start": 1.045,
+          "end": 1.115
+        },
+        {
+          "w": "friend",
+          "start": 1.184,
+          "end": 1.382
+        },
+        {
+          "w": "surprises",
+          "start": 1.428,
+          "end": 1.881
+        },
+        {
+          "w": "you",
+          "start": 1.927,
+          "end": 1.997
+        },
+        {
+          "w": "with",
+          "start": 2.043,
+          "end": 2.159
+        },
+        {
+          "w": "a",
+          "start": 2.194,
+          "end": 2.229
+        },
+        {
+          "w": "gift.",
+          "start": 2.276,
+          "end": 2.728
+        },
+        {
+          "w": "A",
+          "start": 3.053,
+          "end": 3.262
+        },
+        {
+          "w": "or",
+          "start": 3.437,
+          "end": 3.587
+        },
+        {
+          "w": "B?",
+          "start": 3.646,
+          "end": 4.226
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "This made my day!",
+      "file": "voice/bai-20-happy/10.mp3",
+      "duration": 1.207438,
+      "words": [
+        {
+          "w": "This",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "made",
+          "start": 0.267,
+          "end": 0.43
+        },
+        {
+          "w": "my",
+          "start": 0.464,
+          "end": 0.557
+        },
+        {
+          "w": "day!",
+          "start": 0.615,
+          "end": 1.207
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "A! Your friend will love that!",
+      "file": "voice/bai-20-happy/11.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "A!",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "Your",
+          "start": 0.627,
+          "end": 0.824
+        },
+        {
+          "w": "friend",
+          "start": 0.906,
+          "end": 1.138
+        },
+        {
+          "w": "will",
+          "start": 1.184,
+          "end": 1.347
+        },
+        {
+          "w": "love",
+          "start": 1.416,
+          "end": 1.625
+        },
+        {
+          "w": "that!",
+          "start": 1.66,
+          "end": 2.276
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "What made your day today? Tell us below!",
+      "file": "voice/bai-20-happy/12.mp3",
+      "duration": 2.832834,
+      "words": [
+        {
+          "w": "What",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "made",
+          "start": 0.29,
+          "end": 0.476
+        },
+        {
+          "w": "your",
+          "start": 0.511,
+          "end": 0.627
+        },
+        {
+          "w": "day",
+          "start": 0.673,
+          "end": 0.813
+        },
+        {
+          "w": "today?",
+          "start": 0.871,
+          "end": 1.358
+        },
+        {
+          "w": "Tell",
+          "start": 1.741,
+          "end": 1.95
+        },
+        {
+          "w": "us",
+          "start": 2.02,
+          "end": 2.101
+        },
+        {
+          "w": "below!",
+          "start": 2.159,
+          "end": 2.833
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-20-happy/13.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "you",
+          "start": 0.255,
+          "end": 0.325
+        },
+        {
+          "w": "in",
+          "start": 0.36,
+          "end": 0.406
+        },
+        {
+          "w": "the",
+          "start": 0.441,
+          "end": 0.511
+        },
+        {
+          "w": "next",
+          "start": 0.534,
+          "end": 0.731
+        },
+        {
+          "w": "lesson!",
+          "start": 0.778,
+          "end": 1.486
+        }
+      ]
+    }
+  ]
+}

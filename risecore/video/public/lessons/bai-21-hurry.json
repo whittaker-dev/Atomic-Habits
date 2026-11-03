@@ -1,0 +1,73 @@
+{
+  "id": "bai-21-hurry",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 21,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Hurry up!",
+      "subtitle": "Đừng chỉ nói \"Hurry up\"",
+      "cliche": "Hurry up!",
+      "lines": [
+        {"speaker": "mia", "say": "Wait, I need to fix my hair!", "vi": "Khoan, mình phải chỉnh tóc đã!", "pose": "embarrassed", "listen": "think"},
+        {"speaker": "com", "say": "Hurry up!", "vi": "Nhanh lên!", "pose": "point", "listen": "embarrassed"},
+        {"speaker": "mia", "say": "So bossy! Say it nicer, please!", "vi": "Hách dịch quá! Nói nhẹ nhàng hơn đi!", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "We're running late!",
+      "vi": "Mình trễ rồi đó!",
+      "note": "Nhắc khéo là đang trễ",
+      "lines": [
+        {"speaker": "mia", "say": "Try this. We're running late!", "vi": "Thử câu này. Mình trễ rồi đó!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "We're running late!", "vi": "Mình trễ rồi đó!", "pose": "wow", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Let's get moving!",
+      "vi": "Mình đi thôi nào!",
+      "note": "Rủ cùng đi nhanh",
+      "lines": [
+        {"speaker": "mia", "say": "Sounds like a team. Let's get moving!", "vi": "Nghe như cùng một đội. Mình đi thôi nào!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Let's get moving!", "vi": "Mình đi thôi nào!", "pose": "cheer", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Chop chop!",
+      "vi": "Nhanh nhanh lên!",
+      "note": "Vui vui, thân mật",
+      "lines": [
+        {"speaker": "mia", "say": "Fun and playful. Chop chop!", "vi": "Vui vui, thân mật. Nhanh nhanh lên!", "pose": "laugh", "listen": "wow"},
+        {"speaker": "com", "say": "Chop chop!", "vi": "Nhanh nhanh lên!", "pose": "clap", "listen": "laugh", "burst": "Go go!"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Sếp đang chờ bạn và đồng nghiệp vào họp. Bạn nói?",
+      "options": [
+        "Hurry up, now!",
+        "We're running late!"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! Your boss is waiting for you and a coworker. A or B?", "vi": "Đố bạn! Sếp đang chờ bạn và đồng nghiệp. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "We're running late!", "vi": "Mình trễ rồi đó!", "pose": "wow", "listen": "think", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Clear, but still polite!", "vi": "Đáp án B! Rõ ràng mà vẫn lịch sự!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Bạn hay đi trễ hay hay phải chờ?",
+      "lines": [
+        {"speaker": "com", "say": "Are you always late or always waiting? Tell us below!", "vi": "Bạn hay đi trễ hay hay phải chờ người khác? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Giục bạn bè mà chỉ biết hét \"Hurry up!\"? 🏃\n\n✅ We're running late! — Mình trễ rồi đó!\n✅ Let's get moving! — Mình đi thôi nào!\n✅ Chop chop! — Nhanh nhanh lên!\n\n🧠 Sếp đang chờ họp, giục đồng nghiệp sao cho khéo?\n💬 Bạn hay đi trễ hay hay phải chờ? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

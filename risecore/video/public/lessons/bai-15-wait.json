@@ -1,0 +1,73 @@
+{
+  "id": "bai-15-wait",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 15,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Wait!",
+      "subtitle": "Đừng chỉ nói \"Wait\"",
+      "cliche": "Wait!",
+      "lines": [
+        {"speaker": "mia", "say": "Come on, the bus is leaving!", "vi": "Nhanh lên, xe buýt chạy rồi kìa!", "pose": "point", "listen": "wow"},
+        {"speaker": "com", "say": "Wait!", "vi": "Chờ đã!", "pose": "wow", "listen": "laugh"},
+        {"speaker": "mia", "say": "That's all you've got? Try something cooler!", "vi": "Có vậy thôi hả? Thử câu nào ngầu hơn đi!", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Hang on!",
+      "vi": "Đợi chút!",
+      "note": "Thân mật, hằng ngày",
+      "lines": [
+        {"speaker": "mia", "say": "Easy one. Hang on!", "vi": "Câu dễ nè. Đợi chút!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Hang on!", "vi": "Đợi chút!", "pose": "point", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Just a sec!",
+      "vi": "Một giây thôi!",
+      "note": "Nhanh gọn",
+      "lines": [
+        {"speaker": "mia", "say": "Need a moment? Just a sec!", "vi": "Cần chút thời gian? Một giây thôi!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Just a sec!", "vi": "Một giây thôi!", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Hold your horses!",
+      "vi": "Từ từ đã nào!",
+      "note": "Khi ai đó vội quá",
+      "lines": [
+        {"speaker": "mia", "say": "Someone in a rush? Hold your horses!", "vi": "Ai đó vội quá? Từ từ đã nào!", "pose": "laugh", "listen": "wow"},
+        {"speaker": "com", "say": "Hold your horses!", "vi": "Từ từ đã nào!", "pose": "wow", "listen": "laugh", "burst": "Whoa!"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Bạn đang buộc dây giày, bạn bè giục đi. Bạn nói?",
+      "options": [
+        "Just a sec!",
+        "Stop!"
+      ],
+      "answer": 0,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! You're tying your shoes and your friend can't wait. A or B?", "vi": "Đố bạn! Đang buộc dây giày mà bạn giục đi. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Just a sec!", "vi": "Một giây thôi!", "pose": "thumbs", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "A! Quick and friendly!", "vi": "Đáp án A! Nhanh gọn và thân thiện!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Ai hay bắt bạn chờ nhất?",
+      "lines": [
+        {"speaker": "com", "say": "Who always makes you wait? Tag them below!", "vi": "Ai hay bắt bạn chờ nhất? Tag họ vào nha!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Muốn ai đó chờ mà chỉ biết hét \"Wait!\"? 😅\n\n✅ Hang on! — Đợi chút!\n✅ Just a sec! — Một giây thôi!\n✅ Hold your horses! — Từ từ đã nào!\n\n🧠 Đang buộc dây giày mà bạn giục đi, nói sao?\n💬 Ai hay bắt bạn chờ nhất? Tag họ vào nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

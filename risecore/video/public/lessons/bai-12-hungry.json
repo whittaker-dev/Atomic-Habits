@@ -1,0 +1,73 @@
+{
+  "id": "bai-12-hungry",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 12,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "I'm hungry!",
+      "subtitle": "Đừng chỉ nói \"I'm hungry\"",
+      "cliche": "I'm hungry.",
+      "lines": [
+        {"speaker": "mia", "say": "Whoa! What was that noise?", "vi": "Ơ! Tiếng gì vậy?", "pose": "wow", "listen": "embarrassed", "burst": "Grrr!"},
+        {"speaker": "com", "say": "I'm hungry.", "vi": "Mình đói.", "pose": "embarrassed", "listen": "laugh"},
+        {"speaker": "mia", "say": "You sound like a hungry bear! Say it better!", "vi": "Nghe như con gấu đói! Nói cho hay hơn đi!", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'm starving!",
+      "vi": "Đói muốn xỉu luôn!",
+      "note": "Đói cực kỳ",
+      "lines": [
+        {"speaker": "mia", "say": "Really hungry? I'm starving!", "vi": "Đói thật sự? Đói muốn xỉu luôn!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "I'm starving!", "vi": "Đói muốn xỉu luôn!", "pose": "wow", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "My stomach is growling.",
+      "vi": "Bụng mình kêu rồi nè.",
+      "note": "Tả cái bụng đói",
+      "lines": [
+        {"speaker": "mia", "say": "Hear that sound? My stomach is growling.", "vi": "Nghe tiếng đó không? Bụng mình kêu rồi nè.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "My stomach is growling.", "vi": "Bụng mình kêu rồi nè.", "pose": "embarrassed", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I could eat a horse!",
+      "vi": "Đói ăn hết cả con ngựa!",
+      "note": "Nói quá cho vui",
+      "lines": [
+        {"speaker": "mia", "say": "The funny one. I could eat a horse!", "vi": "Câu vui nhất nè. Đói ăn hết cả con ngựa!", "pose": "laugh", "listen": "wow"},
+        {"speaker": "com", "say": "I could eat a horse!", "vi": "Đói ăn hết cả con ngựa!", "pose": "cheer", "listen": "laugh", "burst": "Yum!"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Chạy bộ 2 tiếng, chưa ăn trưa. Bạn nói?",
+      "options": [
+        "I'm a little hungry.",
+        "I'm starving!"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! You ran for two hours with no lunch. A or B?", "vi": "Đố bạn! Chạy bộ 2 tiếng mà chưa ăn trưa. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "I'm starving!", "vi": "Đói muốn xỉu luôn!", "pose": "wow", "listen": "laugh", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! You need a big meal!", "vi": "Đáp án B! Bạn cần một bữa thật to!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Lúc đói bạn thèm món gì nhất?",
+      "lines": [
+        {"speaker": "com", "say": "What do you eat when you're starving? Tell us below!", "vi": "Lúc đói meo bạn thèm ăn gì? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Đói meo mà chỉ biết nói \"I'm hungry\"? 😋\n\n✅ I'm starving! — Đói muốn xỉu luôn!\n✅ My stomach is growling. — Bụng mình kêu rồi nè.\n✅ I could eat a horse! — Đói ăn hết cả con ngựa!\n\n🧠 Chạy bộ 2 tiếng chưa ăn trưa thì nói sao?\n💬 Lúc đói bạn thèm món gì nhất? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

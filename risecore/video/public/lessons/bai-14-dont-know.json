@@ -1,0 +1,73 @@
+{
+  "id": "bai-14-dont-know",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 14,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "I don't know!",
+      "subtitle": "Đừng chỉ nói \"I don't know\"",
+      "cliche": "I don't know.",
+      "lines": [
+        {"speaker": "mia", "say": "Cơm! Where did my cake go?", "vi": "Cơm! Bánh kem của mình đâu rồi?", "pose": "confused", "listen": "embarrassed"},
+        {"speaker": "com", "say": "I don't know.", "vi": "Mình không biết.", "pose": "embarrassed", "listen": "point"},
+        {"speaker": "mia", "say": "You have cream on your face!", "vi": "Mặt bạn dính kem kìa!", "pose": "point", "listen": "embarrassed", "burst": "Busted!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "No idea!",
+      "vi": "Chịu, không biết!",
+      "note": "Ngắn, thân mật",
+      "lines": [
+        {"speaker": "mia", "say": "Quick and casual. No idea!", "vi": "Nhanh, thân mật. Chịu, không biết!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "No idea!", "vi": "Chịu, không biết!", "pose": "confused", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Beats me!",
+      "vi": "Hỏi khó quá, chịu!",
+      "note": "Kiểu bạn bè",
+      "lines": [
+        {"speaker": "mia", "say": "With friends, say this. Beats me!", "vi": "Với bạn bè, nói vầy nè. Hỏi khó quá, chịu!", "pose": "laugh", "listen": "think"},
+        {"speaker": "com", "say": "Beats me!", "vi": "Hỏi khó quá, chịu!", "pose": "think", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Let me check.",
+      "vi": "Để mình xem thử.",
+      "note": "Lịch sự, ở chỗ làm",
+      "lines": [
+        {"speaker": "mia", "say": "At work, try this. Let me check.", "vi": "Ở chỗ làm, thử câu này. Để mình xem thử.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Let me check.", "vi": "Để mình xem thử.", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Khách hỏi điều bạn chưa chắc. Bạn nói?",
+      "options": [
+        "Beats me!",
+        "Let me check."
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! A customer asks something you don't know. A or B?", "vi": "Đố bạn! Khách hỏi điều bạn chưa biết. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Let me check.", "vi": "Để mình xem thử.", "pose": "thumbs", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Polite and helpful!", "vi": "Đáp án B! Lịch sự và chu đáo!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Bạn hay nói câu nào khi không biết?",
+      "lines": [
+        {"speaker": "com", "say": "Which one will you use? Comment below!", "vi": "Bạn sẽ dùng câu nào? Bình luận nha!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Bị hỏi khó là chỉ biết \"I don't know\"? 🤷\n\n✅ No idea! — Chịu, không biết!\n✅ Beats me! — Hỏi khó quá, chịu!\n✅ Let me check. — Để mình xem thử.\n\n🧠 Khách hỏi điều bạn chưa chắc, nên đáp sao?\n💬 Bạn hay nói câu nào khi không biết? Bình luận nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

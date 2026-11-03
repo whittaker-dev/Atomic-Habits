@@ -1,4 +1,4 @@
-import {Composition, Folder} from 'remotion';
+import {Composition, Folder, Still} from 'remotion';
 import {GymVideo, TOTAL} from './GymVideo';
 import {Hook} from './scenes/Hook';
 import {Overview} from './scenes/Overview';
@@ -12,6 +12,7 @@ import {Nutrition} from './scenes/Nutrition';
 import {Cta} from './scenes/Cta';
 import {calculateLessonMetadata, LessonVideo} from './english/LessonVideo';
 import {LESSONS} from './english/lessons';
+import {calculateCoverMetadata, LessonCover} from './english/LessonCover';
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -43,6 +44,15 @@ export const RemotionRoot: React.FC = () => (
           calculateMetadata={calculateLessonMetadata}
         />
       ))}
+      {/* Ảnh bìa: npx remotion still TiengAnh-Cover out/x.jpg --props='{"lessonId":"bai-02-thank-you"}' */}
+      <Still
+        id="TiengAnh-Cover"
+        component={LessonCover}
+        width={1080}
+        height={1920}
+        defaultProps={{lessonId: LESSONS[0].id}}
+        calculateMetadata={calculateCoverMetadata}
+      />
     </Folder>
   </>
 );
