@@ -1,0 +1,73 @@
+{
+  "id": "bai-04-sorry",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 4,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Sorry!",
+      "subtitle": "Đừng chỉ nói \"Sorry\"",
+      "cliche": "Sorry, sorry, sorry!",
+      "lines": [
+        {"speaker": "mia", "say": "Ouch! You stepped on my foot!", "vi": "Á! Bạn giẫm lên chân mình!", "pose": "wow", "listen": "embarrassed", "burst": "Ouch!"},
+        {"speaker": "com", "say": "Sorry, sorry, sorry!", "vi": "Xin lỗi, xin lỗi, xin lỗi!", "pose": "embarrassed", "listen": "confused"},
+        {"speaker": "mia", "say": "Ha! There are better ways to say sorry.", "vi": "Ha! Có nhiều cách xin lỗi hay hơn đó.", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "My bad!",
+      "vi": "Lỗi của mình!",
+      "note": "Lỗi nhỏ, nói vui",
+      "lines": [
+        {"speaker": "mia", "say": "Small mistake? My bad!", "vi": "Lỗi nhỏ thôi? Lỗi của mình!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "My bad!", "vi": "Lỗi của mình!", "pose": "embarrassed", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'm so sorry about that.",
+      "vi": "Mình thật sự xin lỗi nha.",
+      "note": "Khi lỗi lớn hơn",
+      "lines": [
+        {"speaker": "mia", "say": "Bigger mistake? I'm so sorry about that.", "vi": "Lỗi lớn hơn? Mình thật sự xin lỗi nha.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "I'm so sorry about that.", "vi": "Mình thật sự xin lỗi nha.", "pose": "talk", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Excuse me!",
+      "vi": "Xin lỗi, cho mình qua!",
+      "note": "Khi xin đi qua, làm phiền",
+      "lines": [
+        {"speaker": "mia", "say": "Need to get past someone? Excuse me!", "vi": "Cần đi ngang qua ai đó? Xin lỗi, cho mình qua!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Excuse me!", "vi": "Xin lỗi, cho mình qua!", "pose": "wave", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Bạn muốn đi qua một đám đông. Bạn nói?",
+      "options": [
+        "Excuse me!",
+        "My bad!"
+      ],
+      "answer": 0,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! You need to get through a crowd. A or B?", "vi": "Đố bạn! Bạn cần đi qua đám đông. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Excuse me!", "vi": "Xin lỗi, cho mình qua!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "A! Excuse me, coming through!", "vi": "Đáp án A! Xin lỗi, cho mình qua với!", "pose": "thumbs", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Lần gần nhất bạn nói “My bad” là khi nào?",
+      "lines": [
+        {"speaker": "com", "say": "When did you last say my bad? Tell us below!", "vi": "Lần gần nhất bạn nói My bad là khi nào? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Lỡ làm gì cũng chỉ biết \"Sorry, sorry, sorry\"? 😅\n\n✅ My bad! — Lỗi của mình!\n✅ I'm so sorry about that. — Mình thật sự xin lỗi nha.\n✅ Excuse me! — Xin lỗi, cho mình qua!\n\n🧠 Muốn đi qua đám đông thì nói gì?\n💬 Lần gần nhất bạn nói \"My bad\" là khi nào? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

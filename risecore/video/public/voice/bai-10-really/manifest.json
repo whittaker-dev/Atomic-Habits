@@ -1,0 +1,516 @@
+{
+  "id": "bai-10-really",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Guess what? I won a free trip to Japan!",
+      "file": "voice/bai-10-really/00.mp3",
+      "duration": 2.182676,
+      "words": [
+        {
+          "w": "Guess",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "w": "what?",
+          "start": 0.279,
+          "end": 0.557
+        },
+        {
+          "w": "I",
+          "start": 0.604,
+          "end": 0.65
+        },
+        {
+          "w": "won",
+          "start": 0.731,
+          "end": 0.836
+        },
+        {
+          "w": "a",
+          "start": 0.882,
+          "end": 0.906
+        },
+        {
+          "w": "free",
+          "start": 0.952,
+          "end": 1.115
+        },
+        {
+          "w": "trip",
+          "start": 1.149,
+          "end": 1.324
+        },
+        {
+          "w": "to",
+          "start": 1.37,
+          "end": 1.428
+        },
+        {
+          "w": "Japan!",
+          "start": 1.486,
+          "end": 2.183
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Really?",
+      "file": "voice/bai-10-really/01.mp3",
+      "duration": 0.743039,
+      "words": [
+        {
+          "w": "Really?",
+          "start": 0,
+          "end": 0.743
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "That's it? More excitement, please!",
+      "file": "voice/bai-10-really/02.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "That's",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "it?",
+          "start": 0.337,
+          "end": 0.569
+        },
+        {
+          "w": "More",
+          "start": 0.952,
+          "end": 1.138
+        },
+        {
+          "w": "excitement,",
+          "start": 1.173,
+          "end": 1.579
+        },
+        {
+          "w": "please!",
+          "start": 1.602,
+          "end": 2.276
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Try this. No way!",
+      "file": "voice/bai-10-really/03.mp3",
+      "duration": 1.207438,
+      "words": [
+        {
+          "w": "Try",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "this.",
+          "start": 0.29,
+          "end": 0.453
+        },
+        {
+          "w": "No",
+          "start": 0.488,
+          "end": 0.58
+        },
+        {
+          "w": "way!",
+          "start": 0.639,
+          "end": 1.207
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "No way!",
+      "file": "voice/bai-10-really/04.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "No",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "way!",
+          "start": 0.279,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Can't believe it? Are you serious?",
+      "file": "voice/bai-10-really/05.mp3",
+      "duration": 2.182676,
+      "words": [
+        {
+          "w": "Can't",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "w": "believe",
+          "start": 0.279,
+          "end": 0.58
+        },
+        {
+          "w": "it?",
+          "start": 0.627,
+          "end": 0.894
+        },
+        {
+          "w": "Are",
+          "start": 1.219,
+          "end": 1.358
+        },
+        {
+          "w": "you",
+          "start": 1.393,
+          "end": 1.463
+        },
+        {
+          "w": "serious?",
+          "start": 1.521,
+          "end": 2.183
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Are you serious?",
+      "file": "voice/bai-10-really/06.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "Are",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "you",
+          "start": 0.209,
+          "end": 0.302
+        },
+        {
+          "w": "serious?",
+          "start": 0.383,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Happy for a friend? That's awesome!",
+      "file": "voice/bai-10-really/07.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "Happy",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "for",
+          "start": 0.348,
+          "end": 0.453
+        },
+        {
+          "w": "a",
+          "start": 0.499,
+          "end": 0.522
+        },
+        {
+          "w": "friend?",
+          "start": 0.569,
+          "end": 0.998
+        },
+        {
+          "w": "That's",
+          "start": 1.324,
+          "end": 1.567
+        },
+        {
+          "w": "awesome!",
+          "start": 1.602,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "That's awesome!",
+      "file": "voice/bai-10-really/08.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "That's",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "awesome!",
+          "start": 0.36,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! Your best friend is getting married. A or B?",
+      "file": "voice/bai-10-really/09.mp3",
+      "duration": 3.297234,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "time!",
+          "start": 0.348,
+          "end": 0.697
+        },
+        {
+          "w": "Your",
+          "start": 1.022,
+          "end": 1.161
+        },
+        {
+          "w": "best",
+          "start": 1.196,
+          "end": 1.358
+        },
+        {
+          "w": "friend",
+          "start": 1.393,
+          "end": 1.556
+        },
+        {
+          "w": "is",
+          "start": 1.591,
+          "end": 1.649
+        },
+        {
+          "w": "getting",
+          "start": 1.683,
+          "end": 1.881
+        },
+        {
+          "w": "married.",
+          "start": 1.916,
+          "end": 2.31
+        },
+        {
+          "w": "A",
+          "start": 2.461,
+          "end": 2.577
+        },
+        {
+          "w": "or",
+          "start": 2.635,
+          "end": 2.705
+        },
+        {
+          "w": "B?",
+          "start": 2.763,
+          "end": 3.297
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "No way! That's awesome!",
+      "file": "voice/bai-10-really/10.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "No",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "way!",
+          "start": 0.232,
+          "end": 0.464
+        },
+        {
+          "w": "That's",
+          "start": 0.488,
+          "end": 0.673
+        },
+        {
+          "w": "awesome!",
+          "start": 0.72,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! Show them you're excited!",
+      "file": "voice/bai-10-really/11.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.383
+        },
+        {
+          "w": "Show",
+          "start": 0.464,
+          "end": 0.662
+        },
+        {
+          "w": "them",
+          "start": 0.72,
+          "end": 0.836
+        },
+        {
+          "w": "you're",
+          "start": 0.882,
+          "end": 1.057
+        },
+        {
+          "w": "excited!",
+          "start": 1.091,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "What made you say no way recently? Tell us below!",
+      "file": "voice/bai-10-really/12.mp3",
+      "duration": 3.993832,
+      "words": [
+        {
+          "w": "What",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "made",
+          "start": 0.325,
+          "end": 0.511
+        },
+        {
+          "w": "you",
+          "start": 0.546,
+          "end": 0.627
+        },
+        {
+          "w": "say",
+          "start": 0.697,
+          "end": 0.906
+        },
+        {
+          "w": "no",
+          "start": 1.022,
+          "end": 1.219
+        },
+        {
+          "w": "way",
+          "start": 1.335,
+          "end": 1.544
+        },
+        {
+          "w": "recently?",
+          "start": 1.637,
+          "end": 2.299
+        },
+        {
+          "w": "Tell",
+          "start": 2.81,
+          "end": 3.042
+        },
+        {
+          "w": "us",
+          "start": 3.111,
+          "end": 3.204
+        },
+        {
+          "w": "below!",
+          "start": 3.262,
+          "end": 3.994
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-10-really/13.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "you",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "w": "in",
+          "start": 0.348,
+          "end": 0.406
+        },
+        {
+          "w": "the",
+          "start": 0.43,
+          "end": 0.499
+        },
+        {
+          "w": "next",
+          "start": 0.522,
+          "end": 0.72
+        },
+        {
+          "w": "lesson!",
+          "start": 0.766,
+          "end": 1.486
+        }
+      ]
+    }
+  ]
+}

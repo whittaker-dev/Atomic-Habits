@@ -1,0 +1,73 @@
+{
+  "id": "bai-03-youre-welcome",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 3,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "You're welcome?",
+      "subtitle": "Đừng chỉ nói \"You're welcome\"",
+      "cliche": "You're welcome.",
+      "lines": [
+        {"speaker": "mia", "say": "Thanks for the coffee, Cơm!", "vi": "Cảm ơn ly cà phê nha Cơm!", "pose": "cheer", "listen": "thumbs"},
+        {"speaker": "com", "say": "You're welcome.", "vi": "Không có chi.", "pose": "thumbs", "listen": "think"},
+        {"speaker": "mia", "say": "So formal! Let's try something more fun.", "vi": "Nghiêm túc quá! Thử câu nào vui hơn đi.", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "No problem!",
+      "vi": "Không có gì đâu!",
+      "note": "Thân mật, dùng hằng ngày",
+      "lines": [
+        {"speaker": "mia", "say": "Easy one. No problem!", "vi": "Câu dễ nè. Không có gì đâu!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "No problem!", "vi": "Không có gì đâu!", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Anytime!",
+      "vi": "Lúc nào cũng được!",
+      "note": "Sẵn sàng giúp lần sau",
+      "lines": [
+        {"speaker": "mia", "say": "Want to sound friendly? Anytime!", "vi": "Muốn nghe thân thiện? Lúc nào cũng được!", "pose": "talk", "listen": "wow"},
+        {"speaker": "com", "say": "Anytime!", "vi": "Lúc nào cũng được!", "pose": "cheer", "listen": "laugh", "burst": "Nice!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "My pleasure!",
+      "vi": "Rất vui được giúp!",
+      "note": "Lịch sự, hợp chỗ làm",
+      "lines": [
+        {"speaker": "mia", "say": "At work, try this. My pleasure!", "vi": "Ở chỗ làm, thử câu này. Rất vui được giúp!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "My pleasure!", "vi": "Rất vui được giúp!", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Sếp cảm ơn vì bạn làm thêm giờ. Bạn đáp?",
+      "options": [
+        "No worries, bro!",
+        "My pleasure!"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! Your boss says thank you. A or B?", "vi": "Đố bạn! Sếp cảm ơn bạn. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "My pleasure!", "vi": "Rất vui được giúp!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Polite and professional!", "vi": "Đáp án B! Lịch sự và chuyên nghiệp!", "pose": "thumbs", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Bạn hay đáp lời cảm ơn thế nào?",
+      "lines": [
+        {"speaker": "com", "say": "Which one do you use the most? Comment below!", "vi": "Bạn hay dùng câu nào nhất? Bình luận nha!", "pose": "point", "listen": "clap"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Ai cảm ơn cũng chỉ đáp \"You're welcome\"? 😅\n\n✅ No problem! — Không có gì đâu!\n✅ Anytime! — Lúc nào cũng được!\n✅ My pleasure! — Rất vui được giúp!\n\n🧠 Sếp cảm ơn bạn, nên đáp sao cho chuẩn?\n💬 Bạn hay dùng câu nào nhất? Bình luận nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

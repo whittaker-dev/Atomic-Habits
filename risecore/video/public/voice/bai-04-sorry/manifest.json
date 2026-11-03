@@ -1,0 +1,541 @@
+{
+  "id": "bai-04-sorry",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Ouch! You stepped on my foot!",
+      "file": "voice/bai-04-sorry/00.mp3",
+      "duration": 1.625397,
+      "words": [
+        {
+          "w": "Ouch!",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "You",
+          "start": 0.325,
+          "end": 0.406
+        },
+        {
+          "w": "stepped",
+          "start": 0.464,
+          "end": 0.708
+        },
+        {
+          "w": "on",
+          "start": 0.731,
+          "end": 0.789
+        },
+        {
+          "w": "my",
+          "start": 0.836,
+          "end": 0.917
+        },
+        {
+          "w": "foot!",
+          "start": 0.987,
+          "end": 1.625
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Sorry, sorry, sorry!",
+      "file": "voice/bai-04-sorry/01.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "Sorry,",
+          "start": 0,
+          "end": 0.476
+        },
+        {
+          "w": "sorry,",
+          "start": 0.522,
+          "end": 0.917
+        },
+        {
+          "w": "sorry!",
+          "start": 0.952,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Ha! There are better ways to say sorry.",
+      "file": "voice/bai-04-sorry/02.mp3",
+      "duration": 2.461315,
+      "words": [
+        {
+          "w": "Ha!",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "There",
+          "start": 0.65,
+          "end": 0.824
+        },
+        {
+          "w": "are",
+          "start": 0.859,
+          "end": 0.952
+        },
+        {
+          "w": "better",
+          "start": 0.987,
+          "end": 1.173
+        },
+        {
+          "w": "ways",
+          "start": 1.219,
+          "end": 1.405
+        },
+        {
+          "w": "to",
+          "start": 1.451,
+          "end": 1.509
+        },
+        {
+          "w": "say",
+          "start": 1.567,
+          "end": 1.695
+        },
+        {
+          "w": "sorry.",
+          "start": 1.753,
+          "end": 2.461
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Small mistake? My bad!",
+      "file": "voice/bai-04-sorry/03.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Small",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "mistake?",
+          "start": 0.325,
+          "end": 0.824
+        },
+        {
+          "w": "My",
+          "start": 0.998,
+          "end": 1.126
+        },
+        {
+          "w": "bad!",
+          "start": 1.184,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "My bad!",
+      "file": "voice/bai-04-sorry/04.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "My",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "bad!",
+          "start": 0.325,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Bigger mistake? I'm so sorry about that.",
+      "file": "voice/bai-04-sorry/05.mp3",
+      "duration": 2.414875,
+      "words": [
+        {
+          "w": "Bigger",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "mistake?",
+          "start": 0.337,
+          "end": 0.894
+        },
+        {
+          "w": "I'm",
+          "start": 0.987,
+          "end": 1.126
+        },
+        {
+          "w": "so",
+          "start": 1.184,
+          "end": 1.277
+        },
+        {
+          "w": "sorry",
+          "start": 1.347,
+          "end": 1.602
+        },
+        {
+          "w": "about",
+          "start": 1.649,
+          "end": 1.834
+        },
+        {
+          "w": "that.",
+          "start": 1.869,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm so sorry about that.",
+      "file": "voice/bai-04-sorry/06.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "so",
+          "start": 0.267,
+          "end": 0.441
+        },
+        {
+          "w": "sorry",
+          "start": 0.522,
+          "end": 0.789
+        },
+        {
+          "w": "about",
+          "start": 0.824,
+          "end": 1.045
+        },
+        {
+          "w": "that.",
+          "start": 1.08,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Need to get past someone? Excuse me!",
+      "file": "voice/bai-04-sorry/07.mp3",
+      "duration": 2.182676,
+      "words": [
+        {
+          "w": "Need",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "to",
+          "start": 0.232,
+          "end": 0.279
+        },
+        {
+          "w": "get",
+          "start": 0.313,
+          "end": 0.395
+        },
+        {
+          "w": "past",
+          "start": 0.43,
+          "end": 0.627
+        },
+        {
+          "w": "someone?",
+          "start": 0.65,
+          "end": 1.08
+        },
+        {
+          "w": "Excuse",
+          "start": 1.254,
+          "end": 1.637
+        },
+        {
+          "w": "me!",
+          "start": 1.672,
+          "end": 2.183
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Excuse me!",
+      "file": "voice/bai-04-sorry/08.mp3",
+      "duration": 1.068118,
+      "words": [
+        {
+          "w": "Excuse",
+          "start": 0,
+          "end": 0.499
+        },
+        {
+          "w": "me!",
+          "start": 0.546,
+          "end": 1.068
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! You need to get through a crowd. A or B?",
+      "file": "voice/bai-04-sorry/09.mp3",
+      "duration": 3.947392,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "time!",
+          "start": 0.36,
+          "end": 0.731
+        },
+        {
+          "w": "You",
+          "start": 0.94,
+          "end": 1.068
+        },
+        {
+          "w": "need",
+          "start": 1.115,
+          "end": 1.265
+        },
+        {
+          "w": "to",
+          "start": 1.3,
+          "end": 1.347
+        },
+        {
+          "w": "get",
+          "start": 1.405,
+          "end": 1.521
+        },
+        {
+          "w": "through",
+          "start": 1.556,
+          "end": 1.765
+        },
+        {
+          "w": "a",
+          "start": 1.8,
+          "end": 1.834
+        },
+        {
+          "w": "crowd.",
+          "start": 1.881,
+          "end": 2.403
+        },
+        {
+          "w": "A",
+          "start": 2.844,
+          "end": 3.019
+        },
+        {
+          "w": "or",
+          "start": 3.135,
+          "end": 3.262
+        },
+        {
+          "w": "B?",
+          "start": 3.332,
+          "end": 3.947
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Excuse me!",
+      "file": "voice/bai-04-sorry/10.mp3",
+      "duration": 0.975238,
+      "words": [
+        {
+          "w": "Excuse",
+          "start": 0,
+          "end": 0.43
+        },
+        {
+          "w": "me!",
+          "start": 0.464,
+          "end": 0.975
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "A! Excuse me, coming through!",
+      "file": "voice/bai-04-sorry/11.mp3",
+      "duration": 2.089796,
+      "words": [
+        {
+          "w": "A!",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "Excuse",
+          "start": 0.488,
+          "end": 0.917
+        },
+        {
+          "w": "me,",
+          "start": 0.952,
+          "end": 1.138
+        },
+        {
+          "w": "coming",
+          "start": 1.207,
+          "end": 1.451
+        },
+        {
+          "w": "through!",
+          "start": 1.486,
+          "end": 2.09
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "When did you last say my bad? Tell us below!",
+      "file": "voice/bai-04-sorry/12.mp3",
+      "duration": 2.786395,
+      "words": [
+        {
+          "w": "When",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "did",
+          "start": 0.232,
+          "end": 0.337
+        },
+        {
+          "w": "you",
+          "start": 0.36,
+          "end": 0.441
+        },
+        {
+          "w": "last",
+          "start": 0.499,
+          "end": 0.697
+        },
+        {
+          "w": "say",
+          "start": 0.731,
+          "end": 0.859
+        },
+        {
+          "w": "my",
+          "start": 0.917,
+          "end": 1.01
+        },
+        {
+          "w": "bad?",
+          "start": 1.08,
+          "end": 1.451
+        },
+        {
+          "w": "Tell",
+          "start": 1.776,
+          "end": 1.974
+        },
+        {
+          "w": "us",
+          "start": 2.032,
+          "end": 2.113
+        },
+        {
+          "w": "below!",
+          "start": 2.171,
+          "end": 2.786
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-04-sorry/13.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "you",
+          "start": 0.255,
+          "end": 0.325
+        },
+        {
+          "w": "in",
+          "start": 0.372,
+          "end": 0.43
+        },
+        {
+          "w": "the",
+          "start": 0.464,
+          "end": 0.534
+        },
+        {
+          "w": "next",
+          "start": 0.569,
+          "end": 0.766
+        },
+        {
+          "w": "lesson!",
+          "start": 0.813,
+          "end": 1.486
+        }
+      ]
+    }
+  ]
+}

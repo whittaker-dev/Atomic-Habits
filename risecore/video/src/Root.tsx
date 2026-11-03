@@ -11,6 +11,7 @@ import {Mistake} from './scenes/Mistake';
 import {Nutrition} from './scenes/Nutrition';
 import {Cta} from './scenes/Cta';
 import {calculateLessonMetadata, LessonVideo} from './english/LessonVideo';
+import {LESSONS} from './english/lessons';
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -29,16 +30,19 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="NgayTapNguc" component={GymVideo} width={1080} height={1920} fps={30} durationInFrames={TOTAL} />
     <Folder name="TiengAnh">
       {/* durationInFrames thật do calculateLessonMetadata tính từ độ dài giọng đọc */}
-      <Composition
-        id="TiengAnh-01-HowAreYou"
-        component={LessonVideo}
-        width={1080}
-        height={1920}
-        fps={30}
-        durationInFrames={300}
-        defaultProps={{lessonId: '2026-11-04-how-are-you'}}
-        calculateMetadata={calculateLessonMetadata}
-      />
+      {LESSONS.map((l) => (
+        <Composition
+          key={l.id}
+          id={l.composition}
+          component={LessonVideo}
+          width={1080}
+          height={1920}
+          fps={30}
+          durationInFrames={300}
+          defaultProps={{lessonId: l.id}}
+          calculateMetadata={calculateLessonMetadata}
+        />
+      ))}
     </Folder>
   </>
 );

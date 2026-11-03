@@ -82,13 +82,23 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
     tối phía trên cho chữ dễ đọc). Có thể thay bằng ảnh AI (prompt ở PROMPTS.md mục 3) nếu người dùng gửi.
   - Mỗi câu trong kịch bản có `pose` (người nói) và `listen` (người nghe); lúc đếm ngược cả 2 tự chuyển `think`.
 - Cấu trúc: hook (tình huống quen) → 3 câu mẫu (Mia nói, Cơm lặp) → đố vui A/B đếm ngược 3s → kêu gọi bình luận bằng tiếng Anh.
-- Mỗi bài là 1 file kịch bản `video/public/lessons/<ngày>-<slug>.json` (scenes: hook/phrase/quiz/cta, mỗi câu có
-  `speaker`, `say` tiếng Anh, `vi` phụ đề, `pauseBefore` giây). Code dựng hình ở `video/src/english/`,
-  composition đăng ký trong `Root.tsx` (folder `TiengAnh`), độ dài tự tính theo giọng đọc.
-- Giọng đọc: `cd video && node scripts/make-voice.mjs <id>` → ElevenLabs, Cơm = Liam, Mia = Jessica (giọng premade).
-  Key `ELEVENLABS_API_KEY` ở `risecore/.env`. Gói Free: 10.000 ký tự/tháng, **không gọi API được giọng Voice Library**,
-  không có giấy phép thương mại (nâng Starter khi Page kiếm tiền). Câu đã tạo được dùng lại, sửa câu nào thì chỉ tạo lại câu đó.
-- Sau khi tạo giọng: cho ElevenLabs speech-to-text nghe lại từng câu để chắc đọc đúng kịch bản, rồi render.
+- Mỗi bài là 1 file kịch bản `video/public/lessons/bai-NN-<slug>.json` (scenes: hook/phrase/quiz/cta; hook có
+  `cliche` = câu "quốc dân" bị gạch; mỗi câu có `speaker`, `say` tiếng Anh, `vi` phụ đề, `pose`/`listen`,
+  `burst` chữ nổ tuỳ chọn, `pauseBefore` giây). Đăng ký bài trong `video/src/english/lessons.ts` → composition
+  `TiengAnh-NN-<Ten>` tự có trong Root (folder `TiengAnh`), độ dài tự tính theo giọng đọc.
+- Khung video (LessonVideo) có sẵn "action": phụ đề karaoke theo từng từ, người nói to lên/người nghe tối đi,
+  nhảy khi đổi sang cheer/clap/wow/laugh, rung màn hình khi có pose `wow`, chữ nổ trên đầu, card trượt + whoosh.
+- **Làm 1 bài trọn gói**: `cd video && scripts/build-lesson.sh <id> <composition>` (giọng → render → chuẩn hoá →
+  `queue/<id>.mp4` + brief + caption), rồi `cd .. && node scripts/run-next.mjs` để tải lên Nháp.
+- Giọng đọc (`scripts/make-voice.mjs`): ElevenLabs with-timestamps (lấy mốc từng chữ cho karaoke), Cơm = Liam,
+  Mia = Jessica (giọng premade). Mỗi câu mới được speech-to-text nghe lại, lệch thì in ⚠️ — đọc từng cảnh báo:
+  tên "Cơm" → "Com/come", "A!/B!" → "Hey/Be", số → chữ số là bình thường; sai nghĩa (vd "won" → "want") thì sửa câu.
+  Key `ELEVENLABS_API_KEY` ở `risecore/.env`. Gói Free: 10.000 ký tự/tháng (bài ~350–470 ký tự),
+  **không gọi API được giọng Voice Library**, không có giấy phép thương mại (nâng Starter khi Page kiếm tiền).
+  Câu đã tạo được dùng lại, sửa câu nào thì chỉ tạo lại câu đó.
+- Đã làm: bài 1–11 (How are you, Thank you, You're welcome, Sorry, Order coffee, Compliments, Say no, What?,
+  Yes, Really?, Goodbye) — tất cả đã lên mục Nháp 2026-11-03, người dùng tự đăng dần. Bài 12 trở đi: chủ đề mới,
+  không lặp lại các câu trên.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
@@ -114,7 +124,9 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Nếu làm nội dung cho trẻ em: kênh/page riêng, chỉ vận động vui chơi, không tập tạ, không ăn kiêng.
 
 ## Việc tiếp theo (người dùng đã đồng ý hướng đi)
-0. Ưu tiên: series **Tiếng Anh mỗi ngày** (bài 1 "How are you?" đã lên Nháp 2026-11-03). Bài sau theo cùng khung.
+0. Ưu tiên: series **Tiếng Anh mỗi ngày** (bài 1–11 đã lên Nháp 2026-11-03). Bài sau theo cùng khung.
+   TikTok: người dùng đã tạo app (loại "Other") và để `TIKTOK_CLIENT_KEY`/`TIKTOK_CLIENT_SECRET` trong `risecore/.env`,
+   nhưng tạm gác — làm Facebook Reels trước. Khi làm: Content Posting API, quyền `video.upload` (đẩy vào nháp TikTok).
 1. (Series gym tạm dừng) Video **Ngày tập lưng** (cùng cấu trúc, cùng nhân vật).
 2. Series gym tiếp: chân, vai, tay, + video ăn uống xen kẽ.
 3. Nâng cấp: chuyển video thành template nhận JSON (props + `calculateMetadata`) để GitHub Actions

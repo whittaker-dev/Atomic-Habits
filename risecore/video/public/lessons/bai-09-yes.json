@@ -1,0 +1,73 @@
+{
+  "id": "bai-09-yes",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 9,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Yes!",
+      "subtitle": "Đừng chỉ nói \"Yes\"",
+      "cliche": "Yes.",
+      "lines": [
+        {"speaker": "mia", "say": "Pizza party tonight?", "vi": "Tối nay tiệc pizza nha?", "pose": "cheer", "listen": "wow"},
+        {"speaker": "com", "say": "Yes.", "vi": "Có.", "pose": "thumbs", "listen": "confused"},
+        {"speaker": "mia", "say": "Where's the energy, Cơm?", "vi": "Nhiệt tình lên chứ Cơm!", "pose": "point", "listen": "embarrassed", "burst": "Hmm?"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Sounds good!",
+      "vi": "Nghe ổn đó!",
+      "note": "Đồng ý nhẹ nhàng",
+      "lines": [
+        {"speaker": "mia", "say": "Start with this. Sounds good!", "vi": "Bắt đầu với câu này. Nghe ổn đó!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Sounds good!", "vi": "Nghe ổn đó!", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Count me in!",
+      "vi": "Tính mình một suất!",
+      "note": "Khi muốn tham gia",
+      "lines": [
+        {"speaker": "mia", "say": "Want to join? Count me in!", "vi": "Muốn tham gia? Tính mình một suất!", "pose": "talk", "listen": "wow"},
+        {"speaker": "com", "say": "Count me in!", "vi": "Tính mình một suất!", "pose": "cheer", "listen": "laugh", "burst": "Yeah!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Absolutely!",
+      "vi": "Chắc chắn rồi!",
+      "note": "Đồng ý 100%",
+      "lines": [
+        {"speaker": "mia", "say": "One hundred percent yes? Absolutely!", "vi": "Đồng ý trăm phần trăm? Chắc chắn rồi!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Absolutely!", "vi": "Chắc chắn rồi!", "pose": "clap", "listen": "cheer"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Bạn bè rủ đi xem concert thần tượng. Bạn nói?",
+      "options": [
+        "Count me in!",
+        "Yes."
+      ],
+      "answer": 0,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! Friends invite you to a concert. A or B?", "vi": "Đố bạn! Bạn bè rủ đi xem concert. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Count me in!", "vi": "Tính mình một suất!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "A! Now that's the energy!", "vi": "Đáp án A! Phải nhiệt tình vậy chứ!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Bạn sẽ “Count me in” cho kèo nào?",
+      "lines": [
+        {"speaker": "com", "say": "What would you say count me in to? Comment below!", "vi": "Kèo nào bạn sẽ nói Count me in? Bình luận nha!", "pose": "point", "listen": "cheer"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Ai rủ gì cũng chỉ đáp \"Yes\"? 😴\n\n✅ Sounds good! — Nghe ổn đó!\n✅ Count me in! — Tính mình một suất!\n✅ Absolutely! — Chắc chắn rồi!\n\n🧠 Bạn bè rủ đi concert, đáp sao cho nhiệt tình?\n💬 Kèo nào bạn sẽ nói \"Count me in\"? Bình luận nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

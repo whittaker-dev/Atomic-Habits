@@ -1,0 +1,73 @@
+{
+  "id": "bai-05-order-coffee",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 5,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Order coffee",
+      "subtitle": "Đừng gọi \"Give me coffee\"",
+      "cliche": "Give me coffee.",
+      "lines": [
+        {"speaker": "mia", "say": "Hi there! What can I get for you?", "vi": "Chào bạn! Bạn muốn dùng gì?", "pose": "wave", "listen": "think"},
+        {"speaker": "com", "say": "Give me coffee.", "vi": "Đưa tôi cà phê.", "pose": "talk", "listen": "wow"},
+        {"speaker": "mia", "say": "Whoa, a bit rude! Let's fix that.", "vi": "Ơ, hơi cộc nha! Sửa lại nè.", "pose": "confused", "listen": "embarrassed", "burst": "Whoa!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Can I get a latte, please?",
+      "vi": "Cho mình một ly latte nhé?",
+      "note": "Gọi món lịch sự",
+      "lines": [
+        {"speaker": "mia", "say": "Say it like this. Can I get a latte, please?", "vi": "Nói thế này nè. Cho mình một ly latte nhé?", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Can I get a latte, please?", "vi": "Cho mình một ly latte nhé?", "pose": "talk", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "For here or to go?",
+      "vi": "Uống ở đây hay mang đi?",
+      "note": "Câu nhân viên hay hỏi",
+      "lines": [
+        {"speaker": "mia", "say": "I might ask you. For here or to go?", "vi": "Mình có thể hỏi bạn. Uống ở đây hay mang đi?", "pose": "point", "listen": "think"},
+        {"speaker": "com", "say": "To go, please!", "vi": "Mang đi nhé!", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "That's all, thanks!",
+      "vi": "Vậy thôi, cảm ơn nha!",
+      "note": "Khi gọi xong",
+      "lines": [
+        {"speaker": "mia", "say": "Anything else?", "vi": "Bạn cần gì thêm không?", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "That's all, thanks!", "vi": "Vậy thôi, cảm ơn nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Nhân viên hỏi “For here or to go?” mà bạn muốn mang về.",
+      "options": [
+        "To go, please!",
+        "For here, please!"
+      ],
+      "answer": 0,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! You want to take it home. A or B?", "vi": "Đố bạn! Bạn muốn mang về. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "To go, please!", "vi": "Mang đi nhé!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "A! To go means take it with you!", "vi": "Đáp án A! To go là mang đi!", "pose": "thumbs", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Gọi món bạn thích nhất bằng tiếng Anh nhé!",
+      "lines": [
+        {"speaker": "com", "say": "What's your favorite drink? Order it in the comments!", "vi": "Bạn thích uống gì? Gọi món bằng tiếng Anh dưới bình luận nha!", "pose": "point", "listen": "cheer"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Vào quán chỉ biết nói \"Give me coffee\"? ☕😅\n\n✅ Can I get a latte, please? — Cho mình một ly latte nhé?\n✅ For here or to go? — Uống ở đây hay mang đi?\n✅ That's all, thanks! — Vậy thôi, cảm ơn nha!\n\n🧠 Nhân viên hỏi \"For here or to go?\" — bạn muốn mang về thì nói gì?\n💬 Gọi món bạn thích nhất bằng tiếng Anh dưới bình luận nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

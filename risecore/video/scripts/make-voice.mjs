@@ -31,10 +31,29 @@ const VOICES = {
 };
 const voices = VOICES[provider];
 
+/** Ghép mốc thời gian từng ký tự thành từng từ, dùng cho phụ đề karaoke. */
+function toWords(a) {
+  const words = [];
+  let cur = null;
+  a.characters.forEach((ch, i) => {
+    if (/\s/.test(ch)) {
+      if (cur) words.push(cur);
+      cur = null;
+      return;
+    }
+    cur ??= {w: '', start: Math.round(a.character_start_times_seconds[i] * 1000) / 1000, end: 0};
+    cur.w += ch;
+    cur.end = Math.round(a.character_end_times_seconds[i] * 1000) / 1000;
+  });
+  if (cur) words.push(cur);
+  return words;
+}
+
+// Dùng endpoint with-timestamps (cùng giá với endpoint thường) để có mốc thời gian từng chữ
 async function elevenlabs(text, voice, file) {
-  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voice}?output_format=mp3_44100_128`, {
+  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voice}/with-timestamps?output_format=mp3_44100_128`, {
     method: 'POST',
-    headers: {'xi-api-key': process.env.ELEVENLABS_API_KEY, 'Content-Type': 'application/json', Accept: 'audio/mpeg'},
+    headers: {'xi-api-key': process.env.ELEVENLABS_API_KEY, 'Content-Type': 'application/json'},
     body: JSON.stringify({
       text,
       model_id: process.env.ELEVENLABS_MODEL || 'eleven_multilingual_v2',
@@ -42,8 +61,31 @@ async function elevenlabs(text, voice, file) {
     }),
   });
   if (!res.ok) throw new Error(`ElevenLabs lỗi ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+  const j = await res.json();
+  fs.writeFileSync(file, Buffer.from(j.audio_base64, 'base64'));
+  return toWords(j.alignment);
 }
+
+/** Cho ElevenLabs speech-to-text nghe lại để bắt câu đọc sai/nuốt chữ. Chỉ in cảnh báo, không chặn. */
+async function transcribe(file) {
+  const fd = new FormData();
+  fd.append('model_id', 'scribe_v1');
+  fd.append('language_code', 'eng');
+  fd.append('file', new Blob([fs.readFileSync(file)], {type: 'audio/mpeg'}), path.basename(file));
+  const res = await fetch('https://api.elevenlabs.io/v1/speech-to-text', {method: 'POST', headers: {'xi-api-key': process.env.ELEVENLABS_API_KEY}, body: fd});
+  return res.ok ? (await res.json()).text : `(không nghe lại được: ${res.status})`;
+}
+
+// So sánh bỏ dấu câu, đổi số thành chữ đơn giản; tên riêng tiếng Việt (Cơm) được bỏ dấu
+const norm = (s) =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/\b10\b/g, 'ten')
+    .replace(/[^a-z' ]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 
 function macos(text, voice, file) {
   execFileSync('say', ['-v', voice, '--file-format=WAVE', '--data-format=LEI16@44100', '-o', file, text]);
@@ -68,9 +110,15 @@ for (const [i, line] of lines.entries()) {
     continue;
   }
   console.log(`🎙️  ${i} [${line.speaker}] ${line.say}`);
-  if (provider === 'elevenlabs') await elevenlabs(line.say, voice, file);
-  else macos(line.say, voice, file);
-  out.push({provider, voice, speaker: line.speaker, say: line.say, file: path.relative('public', file), duration: duration(file)});
+  let words;
+  if (provider === 'elevenlabs') {
+    words = await elevenlabs(line.say, voice, file);
+    const heard = await transcribe(file);
+    if (norm(heard) !== norm(line.say)) console.log(`   ⚠️  nghe lại thành: "${heard}" — kiểm tra câu này`);
+  } else {
+    macos(line.say, voice, file);
+  }
+  out.push({provider, voice, speaker: line.speaker, say: line.say, file: path.relative('public', file), duration: duration(file), words});
 }
 
 // Xoá file thừa của lần tạo trước (bài bị bớt câu hoặc đổi định dạng)

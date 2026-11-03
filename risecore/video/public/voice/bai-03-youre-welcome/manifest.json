@@ -1,0 +1,471 @@
+{
+  "id": "bai-03-youre-welcome",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Thanks for the coffee, Cơm!",
+      "file": "voice/bai-03-youre-welcome/00.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "Thanks",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "for",
+          "start": 0.302,
+          "end": 0.383
+        },
+        {
+          "w": "the",
+          "start": 0.418,
+          "end": 0.488
+        },
+        {
+          "w": "coffee,",
+          "start": 0.522,
+          "end": 0.824
+        },
+        {
+          "w": "Cơm!",
+          "start": 0.848,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "You're welcome.",
+      "file": "voice/bai-03-youre-welcome/01.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "You're",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "welcome.",
+          "start": 0.29,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "So formal! Let's try something more fun.",
+      "file": "voice/bai-03-youre-welcome/02.mp3",
+      "duration": 2.414875,
+      "words": [
+        {
+          "w": "So",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "formal!",
+          "start": 0.267,
+          "end": 0.708
+        },
+        {
+          "w": "Let's",
+          "start": 0.824,
+          "end": 1.045
+        },
+        {
+          "w": "try",
+          "start": 1.08,
+          "end": 1.231
+        },
+        {
+          "w": "something",
+          "start": 1.289,
+          "end": 1.556
+        },
+        {
+          "w": "more",
+          "start": 1.591,
+          "end": 1.741
+        },
+        {
+          "w": "fun.",
+          "start": 1.776,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Easy one. No problem!",
+      "file": "voice/bai-03-youre-welcome/03.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "Easy",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "one.",
+          "start": 0.372,
+          "end": 0.627
+        },
+        {
+          "w": "No",
+          "start": 0.801,
+          "end": 0.929
+        },
+        {
+          "w": "problem!",
+          "start": 0.975,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "No problem!",
+      "file": "voice/bai-03-youre-welcome/04.mp3",
+      "duration": 0.975238,
+      "words": [
+        {
+          "w": "No",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "problem!",
+          "start": 0.244,
+          "end": 0.975
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Want to sound friendly? Anytime!",
+      "file": "voice/bai-03-youre-welcome/05.mp3",
+      "duration": 2.368435,
+      "words": [
+        {
+          "w": "Want",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "to",
+          "start": 0.244,
+          "end": 0.29
+        },
+        {
+          "w": "sound",
+          "start": 0.325,
+          "end": 0.488
+        },
+        {
+          "w": "friendly?",
+          "start": 0.534,
+          "end": 1.045
+        },
+        {
+          "w": "Anytime!",
+          "start": 1.556,
+          "end": 2.368
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Anytime!",
+      "file": "voice/bai-03-youre-welcome/06.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Anytime!",
+          "start": 0,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "At work, try this. My pleasure!",
+      "file": "voice/bai-03-youre-welcome/07.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "At",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "w": "work,",
+          "start": 0.197,
+          "end": 0.43
+        },
+        {
+          "w": "try",
+          "start": 0.453,
+          "end": 0.627
+        },
+        {
+          "w": "this.",
+          "start": 0.685,
+          "end": 1.045
+        },
+        {
+          "w": "My",
+          "start": 1.161,
+          "end": 1.277
+        },
+        {
+          "w": "pleasure!",
+          "start": 1.335,
+          "end": 2.043
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "My pleasure!",
+      "file": "voice/bai-03-youre-welcome/08.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "My",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "pleasure!",
+          "start": 0.302,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! Your boss says thank you. A or B?",
+      "file": "voice/bai-03-youre-welcome/09.mp3",
+      "duration": 3.622313,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "w": "time!",
+          "start": 0.406,
+          "end": 0.778
+        },
+        {
+          "w": "Your",
+          "start": 1.103,
+          "end": 1.254
+        },
+        {
+          "w": "boss",
+          "start": 1.3,
+          "end": 1.509
+        },
+        {
+          "w": "says",
+          "start": 1.544,
+          "end": 1.718
+        },
+        {
+          "w": "thank",
+          "start": 1.765,
+          "end": 1.974
+        },
+        {
+          "w": "you.",
+          "start": 2.032,
+          "end": 2.299
+        },
+        {
+          "w": "A",
+          "start": 2.543,
+          "end": 2.752
+        },
+        {
+          "w": "or",
+          "start": 2.844,
+          "end": 2.961
+        },
+        {
+          "w": "B?",
+          "start": 3.03,
+          "end": 3.622
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "My pleasure!",
+      "file": "voice/bai-03-youre-welcome/10.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "My",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "pleasure!",
+          "start": 0.244,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! Polite and professional!",
+      "file": "voice/bai-03-youre-welcome/11.mp3",
+      "duration": 2.229116,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.395
+        },
+        {
+          "w": "Polite",
+          "start": 0.673,
+          "end": 1.045
+        },
+        {
+          "w": "and",
+          "start": 1.091,
+          "end": 1.242
+        },
+        {
+          "w": "professional!",
+          "start": 1.3,
+          "end": 2.229
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Which one do you use the most? Comment below!",
+      "file": "voice/bai-03-youre-welcome/12.mp3",
+      "duration": 2.972154,
+      "words": [
+        {
+          "w": "Which",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "one",
+          "start": 0.29,
+          "end": 0.395
+        },
+        {
+          "w": "do",
+          "start": 0.418,
+          "end": 0.476
+        },
+        {
+          "w": "you",
+          "start": 0.522,
+          "end": 0.592
+        },
+        {
+          "w": "use",
+          "start": 0.662,
+          "end": 0.859
+        },
+        {
+          "w": "the",
+          "start": 0.894,
+          "end": 0.964
+        },
+        {
+          "w": "most?",
+          "start": 1.01,
+          "end": 1.451
+        },
+        {
+          "w": "Comment",
+          "start": 1.892,
+          "end": 2.252
+        },
+        {
+          "w": "below!",
+          "start": 2.287,
+          "end": 2.972
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-03-youre-welcome/13.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "you",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "w": "in",
+          "start": 0.348,
+          "end": 0.406
+        },
+        {
+          "w": "the",
+          "start": 0.43,
+          "end": 0.499
+        },
+        {
+          "w": "next",
+          "start": 0.534,
+          "end": 0.731
+        },
+        {
+          "w": "lesson!",
+          "start": 0.778,
+          "end": 1.533
+        }
+      ]
+    }
+  ]
+}

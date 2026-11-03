@@ -1,0 +1,501 @@
+{
+  "id": "bai-11-goodbye",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "I have to go now. Bye, Cơm!",
+      "file": "voice/bai-11-goodbye/00.mp3",
+      "duration": 1.764717,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.093
+        },
+        {
+          "w": "have",
+          "start": 0.174,
+          "end": 0.29
+        },
+        {
+          "w": "to",
+          "start": 0.313,
+          "end": 0.36
+        },
+        {
+          "w": "go",
+          "start": 0.406,
+          "end": 0.488
+        },
+        {
+          "w": "now.",
+          "start": 0.557,
+          "end": 0.836
+        },
+        {
+          "w": "Bye,",
+          "start": 0.952,
+          "end": 1.138
+        },
+        {
+          "w": "Cơm!",
+          "start": 1.161,
+          "end": 1.765
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Goodbye.",
+      "file": "voice/bai-11-goodbye/01.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Goodbye.",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "So serious! Like we'll never meet again!",
+      "file": "voice/bai-11-goodbye/02.mp3",
+      "duration": 2.368435,
+      "words": [
+        {
+          "w": "So",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "serious!",
+          "start": 0.29,
+          "end": 0.813
+        },
+        {
+          "w": "Like",
+          "start": 0.929,
+          "end": 1.103
+        },
+        {
+          "w": "we'll",
+          "start": 1.126,
+          "end": 1.254
+        },
+        {
+          "w": "never",
+          "start": 1.3,
+          "end": 1.474
+        },
+        {
+          "w": "meet",
+          "start": 1.521,
+          "end": 1.66
+        },
+        {
+          "w": "again!",
+          "start": 1.695,
+          "end": 2.368
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Try this. See you later!",
+      "file": "voice/bai-11-goodbye/03.mp3",
+      "duration": 1.578957,
+      "words": [
+        {
+          "w": "Try",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "this.",
+          "start": 0.267,
+          "end": 0.58
+        },
+        {
+          "w": "See",
+          "start": 0.697,
+          "end": 0.871
+        },
+        {
+          "w": "you",
+          "start": 0.894,
+          "end": 0.964
+        },
+        {
+          "w": "later!",
+          "start": 0.998,
+          "end": 1.579
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "See you later!",
+      "file": "voice/bai-11-goodbye/04.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "you",
+          "start": 0.232,
+          "end": 0.302
+        },
+        {
+          "w": "later!",
+          "start": 0.337,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Want to sound warm? Take care!",
+      "file": "voice/bai-11-goodbye/05.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "Want",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "to",
+          "start": 0.232,
+          "end": 0.279
+        },
+        {
+          "w": "sound",
+          "start": 0.313,
+          "end": 0.488
+        },
+        {
+          "w": "warm?",
+          "start": 0.522,
+          "end": 0.929
+        },
+        {
+          "w": "Take",
+          "start": 1.533,
+          "end": 1.741
+        },
+        {
+          "w": "care!",
+          "start": 1.776,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Take care!",
+      "file": "voice/bai-11-goodbye/06.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Take",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "care!",
+          "start": 0.325,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Super casual. Catch you later!",
+      "file": "voice/bai-11-goodbye/07.mp3",
+      "duration": 2.089796,
+      "words": [
+        {
+          "w": "Super",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "casual.",
+          "start": 0.36,
+          "end": 0.882
+        },
+        {
+          "w": "Catch",
+          "start": 1.057,
+          "end": 1.3
+        },
+        {
+          "w": "you",
+          "start": 1.324,
+          "end": 1.393
+        },
+        {
+          "w": "later!",
+          "start": 1.44,
+          "end": 2.09
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Catch you later!",
+      "file": "voice/bai-11-goodbye/08.mp3",
+      "duration": 1.114558,
+      "words": [
+        {
+          "w": "Catch",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "you",
+          "start": 0.337,
+          "end": 0.418
+        },
+        {
+          "w": "later!",
+          "start": 0.476,
+          "end": 1.115
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! Saying bye to coworkers after work. A or B?",
+      "file": "voice/bai-11-goodbye/09.mp3",
+      "duration": 4.272472,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "time!",
+          "start": 0.383,
+          "end": 0.766
+        },
+        {
+          "w": "Saying",
+          "start": 0.94,
+          "end": 1.219
+        },
+        {
+          "w": "bye",
+          "start": 1.277,
+          "end": 1.428
+        },
+        {
+          "w": "to",
+          "start": 1.451,
+          "end": 1.498
+        },
+        {
+          "w": "coworkers",
+          "start": 1.556,
+          "end": 2.032
+        },
+        {
+          "w": "after",
+          "start": 2.078,
+          "end": 2.287
+        },
+        {
+          "w": "work.",
+          "start": 2.345,
+          "end": 2.74
+        },
+        {
+          "w": "A",
+          "start": 3.344,
+          "end": 3.495
+        },
+        {
+          "w": "or",
+          "start": 3.576,
+          "end": 3.669
+        },
+        {
+          "w": "B?",
+          "start": 3.727,
+          "end": 4.272
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Take care!",
+      "file": "voice/bai-11-goodbye/10.mp3",
+      "duration": 0.650159,
+      "words": [
+        {
+          "w": "Take",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "care!",
+          "start": 0.29,
+          "end": 0.65
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "A! Warm and friendly!",
+      "file": "voice/bai-11-goodbye/11.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "A!",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "Warm",
+          "start": 0.708,
+          "end": 1.022
+        },
+        {
+          "w": "and",
+          "start": 1.068,
+          "end": 1.161
+        },
+        {
+          "w": "friendly!",
+          "start": 1.219,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "How do you say bye to friends? Comment below!",
+      "file": "voice/bai-11-goodbye/12.mp3",
+      "duration": 3.297234,
+      "words": [
+        {
+          "w": "How",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "do",
+          "start": 0.209,
+          "end": 0.267
+        },
+        {
+          "w": "you",
+          "start": 0.302,
+          "end": 0.372
+        },
+        {
+          "w": "say",
+          "start": 0.418,
+          "end": 0.58
+        },
+        {
+          "w": "bye",
+          "start": 0.65,
+          "end": 0.859
+        },
+        {
+          "w": "to",
+          "start": 0.882,
+          "end": 0.94
+        },
+        {
+          "w": "friends?",
+          "start": 0.998,
+          "end": 1.544
+        },
+        {
+          "w": "Comment",
+          "start": 2.241,
+          "end": 2.589
+        },
+        {
+          "w": "below!",
+          "start": 2.624,
+          "end": 3.297
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-11-goodbye/13.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "you",
+          "start": 0.255,
+          "end": 0.325
+        },
+        {
+          "w": "in",
+          "start": 0.372,
+          "end": 0.43
+        },
+        {
+          "w": "the",
+          "start": 0.464,
+          "end": 0.534
+        },
+        {
+          "w": "next",
+          "start": 0.557,
+          "end": 0.743
+        },
+        {
+          "w": "lesson!",
+          "start": 0.801,
+          "end": 1.486
+        }
+      ]
+    }
+  ]
+}

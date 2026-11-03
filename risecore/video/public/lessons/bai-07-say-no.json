@@ -1,0 +1,73 @@
+{
+  "id": "bai-07-say-no",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 7,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Say no nicely",
+      "subtitle": "Đừng chỉ nói \"No\"",
+      "cliche": "No.",
+      "lines": [
+        {"speaker": "mia", "say": "Let's go jogging at five a.m.!", "vi": "Mai đi chạy bộ lúc 5 giờ sáng nha!", "pose": "cheer", "listen": "wow"},
+        {"speaker": "com", "say": "No.", "vi": "Không.", "pose": "confused", "listen": "wow"},
+        {"speaker": "mia", "say": "Ouch! That's a bit cold!", "vi": "Ui! Nghe phũ quá à!", "pose": "wow", "listen": "embarrassed", "burst": "Ouch!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'd love to, but I can't.",
+      "vi": "Mình rất muốn, nhưng không được rồi.",
+      "note": "Từ chối nhẹ nhàng",
+      "lines": [
+        {"speaker": "mia", "say": "Be kind. I'd love to, but I can't.", "vi": "Nhẹ nhàng thôi. Mình rất muốn, nhưng không được rồi.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "I'd love to, but I can't.", "vi": "Mình rất muốn, nhưng không được rồi.", "pose": "embarrassed", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Maybe next time!",
+      "vi": "Để lần sau nha!",
+      "note": "Hẹn dịp khác",
+      "lines": [
+        {"speaker": "mia", "say": "Then add this. Maybe next time!", "vi": "Rồi thêm câu này. Để lần sau nha!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Maybe next time!", "vi": "Để lần sau nha!", "pose": "wave", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I'll pass, thanks.",
+      "vi": "Mình xin kiếu, cảm ơn nha.",
+      "note": "Ngắn gọn, thân mật",
+      "lines": [
+        {"speaker": "mia", "say": "Short and friendly. I'll pass, thanks.", "vi": "Ngắn gọn mà thân thiện. Mình xin kiếu, cảm ơn nha.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "I'll pass, thanks.", "vi": "Mình xin kiếu, cảm ơn nha.", "pose": "laugh", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Đồng nghiệp rủ đi ăn tối nhưng bạn bận. Bạn nói?",
+      "options": [
+        "No.",
+        "Maybe next time!"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! A coworker invites you to dinner, but you're busy. A or B?", "vi": "Đố bạn! Đồng nghiệp rủ đi ăn tối mà bạn bận. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Maybe next time!", "vi": "Để lần sau nha!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Polite, and you're still friends!", "vi": "Đáp án B! Lịch sự mà vẫn giữ tình bạn!", "pose": "thumbs", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Bạn hay từ chối kiểu nào?",
+      "lines": [
+        {"speaker": "com", "say": "How do you say no? Tell us in English!", "vi": "Bạn hay từ chối thế nào? Bình luận bằng tiếng Anh nha!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Bị rủ đi đâu cũng chỉ biết nói \"No\"? 😅\n\n✅ I'd love to, but I can't. — Mình rất muốn, nhưng không được rồi.\n✅ Maybe next time! — Để lần sau nha!\n✅ I'll pass, thanks. — Mình xin kiếu, cảm ơn nha.\n\n🧠 Đồng nghiệp rủ đi ăn mà bạn bận, nói sao cho khéo?\n💬 Bạn hay từ chối kiểu nào? Bình luận bằng tiếng Anh nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "bai-11-goodbye",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 11,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Goodbye!",
+      "subtitle": "Đừng chỉ nói \"Goodbye\"",
+      "cliche": "Goodbye.",
+      "lines": [
+        {"speaker": "mia", "say": "I have to go now. Bye, Cơm!", "vi": "Mình phải đi rồi. Tạm biệt nha Cơm!", "pose": "wave", "listen": "think"},
+        {"speaker": "com", "say": "Goodbye.", "vi": "Vĩnh biệt.", "pose": "wave", "listen": "confused"},
+        {"speaker": "mia", "say": "So serious! Like we'll never meet again!", "vi": "Nghiêm trọng vậy! Như không bao giờ gặp lại á!", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "See you later!",
+      "vi": "Gặp lại sau nha!",
+      "note": "Thân mật, hằng ngày",
+      "lines": [
+        {"speaker": "mia", "say": "Try this. See you later!", "vi": "Thử câu này. Gặp lại sau nha!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "See you later!", "vi": "Gặp lại sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Take care!",
+      "vi": "Giữ gìn sức khỏe nha!",
+      "note": "Ấm áp, quan tâm",
+      "lines": [
+        {"speaker": "mia", "say": "Want to sound warm? Take care!", "vi": "Muốn nghe ấm áp? Giữ gìn sức khỏe nha!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Take care!", "vi": "Giữ gìn sức khỏe nha!", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Catch you later!",
+      "vi": "Hẹn gặp lại nhé!",
+      "note": "Kiểu bạn bè, rất tự nhiên",
+      "lines": [
+        {"speaker": "mia", "say": "Super casual. Catch you later!", "vi": "Siêu thân mật. Hẹn gặp lại nhé!", "pose": "laugh", "listen": "wow"},
+        {"speaker": "com", "say": "Catch you later!", "vi": "Hẹn gặp lại nhé!", "pose": "cheer", "listen": "laugh", "burst": "Cool!"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Tan làm, bạn chào đồng nghiệp. Bạn nói?",
+      "options": [
+        "Take care!",
+        "Goodbye forever."
+      ],
+      "answer": 0,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! Saying bye to coworkers after work. A or B?", "vi": "Đố bạn! Tan làm chào đồng nghiệp. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Take care!", "vi": "Giữ gìn sức khỏe nha!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "A! Warm and friendly!", "vi": "Đáp án A! Ấm áp và thân thiện!", "pose": "thumbs", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Bạn hay chào tạm biệt thế nào?",
+      "lines": [
+        {"speaker": "com", "say": "How do you say bye to friends? Comment below!", "vi": "Bạn hay chào tạm biệt bạn bè thế nào? Bình luận nha!", "pose": "point", "listen": "cheer"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Chào tạm biệt mà nói \"Goodbye\" nghe như vĩnh biệt 😅\n\n✅ See you later! — Gặp lại sau nha!\n✅ Take care! — Giữ gìn sức khỏe nha!\n✅ Catch you later! — Hẹn gặp lại nhé!\n\n🧠 Tan làm chào đồng nghiệp thì nói gì?\n💬 Bạn hay chào tạm biệt thế nào? Bình luận nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

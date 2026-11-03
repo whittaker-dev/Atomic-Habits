@@ -1,0 +1,586 @@
+{
+  "id": "bai-05-order-coffee",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Hi there! What can I get for you?",
+      "file": "voice/bai-05-order-coffee/00.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Hi",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "there!",
+          "start": 0.232,
+          "end": 0.546
+        },
+        {
+          "w": "What",
+          "start": 0.673,
+          "end": 0.824
+        },
+        {
+          "w": "can",
+          "start": 0.859,
+          "end": 0.952
+        },
+        {
+          "w": "I",
+          "start": 0.987,
+          "end": 1.01
+        },
+        {
+          "w": "get",
+          "start": 1.057,
+          "end": 1.161
+        },
+        {
+          "w": "for",
+          "start": 1.196,
+          "end": 1.289
+        },
+        {
+          "w": "you?",
+          "start": 1.335,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Give me coffee.",
+      "file": "voice/bai-05-order-coffee/01.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "Give",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "me",
+          "start": 0.232,
+          "end": 0.313
+        },
+        {
+          "w": "coffee.",
+          "start": 0.372,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Whoa, a bit rude! Let's fix that.",
+      "file": "voice/bai-05-order-coffee/02.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "Whoa,",
+          "start": 0,
+          "end": 0.383
+        },
+        {
+          "w": "a",
+          "start": 0.453,
+          "end": 0.522
+        },
+        {
+          "w": "bit",
+          "start": 0.58,
+          "end": 0.708
+        },
+        {
+          "w": "rude!",
+          "start": 0.755,
+          "end": 1.138
+        },
+        {
+          "w": "Let's",
+          "start": 1.289,
+          "end": 1.498
+        },
+        {
+          "w": "fix",
+          "start": 1.544,
+          "end": 1.707
+        },
+        {
+          "w": "that.",
+          "start": 1.765,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Say it like this. Can I get a latte, please?",
+      "file": "voice/bai-05-order-coffee/03.mp3",
+      "duration": 2.461315,
+      "words": [
+        {
+          "w": "Say",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "it",
+          "start": 0.232,
+          "end": 0.29
+        },
+        {
+          "w": "like",
+          "start": 0.325,
+          "end": 0.453
+        },
+        {
+          "w": "this.",
+          "start": 0.488,
+          "end": 0.917
+        },
+        {
+          "w": "Can",
+          "start": 1.033,
+          "end": 1.173
+        },
+        {
+          "w": "I",
+          "start": 1.219,
+          "end": 1.242
+        },
+        {
+          "w": "get",
+          "start": 1.277,
+          "end": 1.37
+        },
+        {
+          "w": "a",
+          "start": 1.405,
+          "end": 1.428
+        },
+        {
+          "w": "latte,",
+          "start": 1.474,
+          "end": 1.765
+        },
+        {
+          "w": "please?",
+          "start": 1.788,
+          "end": 2.461
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Can I get a latte, please?",
+      "file": "voice/bai-05-order-coffee/04.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "Can",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "I",
+          "start": 0.244,
+          "end": 0.267
+        },
+        {
+          "w": "get",
+          "start": 0.337,
+          "end": 0.453
+        },
+        {
+          "w": "a",
+          "start": 0.499,
+          "end": 0.522
+        },
+        {
+          "w": "latte,",
+          "start": 0.58,
+          "end": 0.964
+        },
+        {
+          "w": "please?",
+          "start": 0.998,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "I might ask you. For here or to go?",
+      "file": "voice/bai-05-order-coffee/05.mp3",
+      "duration": 2.554195,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.081
+        },
+        {
+          "w": "might",
+          "start": 0.163,
+          "end": 0.337
+        },
+        {
+          "w": "ask",
+          "start": 0.372,
+          "end": 0.546
+        },
+        {
+          "w": "you.",
+          "start": 0.604,
+          "end": 0.964
+        },
+        {
+          "w": "For",
+          "start": 1.405,
+          "end": 1.556
+        },
+        {
+          "w": "here",
+          "start": 1.602,
+          "end": 1.753
+        },
+        {
+          "w": "or",
+          "start": 1.776,
+          "end": 1.823
+        },
+        {
+          "w": "to",
+          "start": 1.869,
+          "end": 1.927
+        },
+        {
+          "w": "go?",
+          "start": 1.985,
+          "end": 2.554
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "To go, please!",
+      "file": "voice/bai-05-order-coffee/06.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "To",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "go,",
+          "start": 0.221,
+          "end": 0.441
+        },
+        {
+          "w": "please!",
+          "start": 0.476,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Anything else?",
+      "file": "voice/bai-05-order-coffee/07.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "Anything",
+          "start": 0,
+          "end": 0.348
+        },
+        {
+          "w": "else?",
+          "start": 0.395,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "That's all, thanks!",
+      "file": "voice/bai-05-order-coffee/08.mp3",
+      "duration": 1.207438,
+      "words": [
+        {
+          "w": "That's",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "all,",
+          "start": 0.325,
+          "end": 0.499
+        },
+        {
+          "w": "thanks!",
+          "start": 0.522,
+          "end": 1.207
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Quiz time! You want to take it home. A or B?",
+      "file": "voice/bai-05-order-coffee/09.mp3",
+      "duration": 3.111474,
+      "words": [
+        {
+          "w": "Quiz",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "time!",
+          "start": 0.36,
+          "end": 0.673
+        },
+        {
+          "w": "You",
+          "start": 0.789,
+          "end": 0.906
+        },
+        {
+          "w": "want",
+          "start": 0.952,
+          "end": 1.068
+        },
+        {
+          "w": "to",
+          "start": 1.091,
+          "end": 1.138
+        },
+        {
+          "w": "take",
+          "start": 1.173,
+          "end": 1.324
+        },
+        {
+          "w": "it",
+          "start": 1.358,
+          "end": 1.416
+        },
+        {
+          "w": "home.",
+          "start": 1.463,
+          "end": 1.765
+        },
+        {
+          "w": "A",
+          "start": 2.09,
+          "end": 2.264
+        },
+        {
+          "w": "or",
+          "start": 2.38,
+          "end": 2.508
+        },
+        {
+          "w": "B?",
+          "start": 2.566,
+          "end": 3.111
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "To go, please!",
+      "file": "voice/bai-05-order-coffee/10.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "To",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "w": "go,",
+          "start": 0.186,
+          "end": 0.325
+        },
+        {
+          "w": "please!",
+          "start": 0.348,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "A! To go means take it with you!",
+      "file": "voice/bai-05-order-coffee/11.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "A!",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "To",
+          "start": 0.267,
+          "end": 0.372
+        },
+        {
+          "w": "go",
+          "start": 0.43,
+          "end": 0.534
+        },
+        {
+          "w": "means",
+          "start": 0.592,
+          "end": 0.789
+        },
+        {
+          "w": "take",
+          "start": 0.836,
+          "end": 1.01
+        },
+        {
+          "w": "it",
+          "start": 1.033,
+          "end": 1.091
+        },
+        {
+          "w": "with",
+          "start": 1.126,
+          "end": 1.277
+        },
+        {
+          "w": "you!",
+          "start": 1.335,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "What's your favorite drink? Order it in the comments!",
+      "file": "voice/bai-05-order-coffee/12.mp3",
+      "duration": 2.739955,
+      "words": [
+        {
+          "w": "What's",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "your",
+          "start": 0.302,
+          "end": 0.418
+        },
+        {
+          "w": "favorite",
+          "start": 0.464,
+          "end": 0.766
+        },
+        {
+          "w": "drink?",
+          "start": 0.789,
+          "end": 1.115
+        },
+        {
+          "w": "Order",
+          "start": 1.324,
+          "end": 1.591
+        },
+        {
+          "w": "it",
+          "start": 1.637,
+          "end": 1.695
+        },
+        {
+          "w": "in",
+          "start": 1.73,
+          "end": 1.788
+        },
+        {
+          "w": "the",
+          "start": 1.823,
+          "end": 1.892
+        },
+        {
+          "w": "comments!",
+          "start": 1.939,
+          "end": 2.74
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "See you in the next lesson!",
+      "file": "voice/bai-05-order-coffee/13.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "See",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "you",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "w": "in",
+          "start": 0.348,
+          "end": 0.406
+        },
+        {
+          "w": "the",
+          "start": 0.441,
+          "end": 0.511
+        },
+        {
+          "w": "next",
+          "start": 0.546,
+          "end": 0.743
+        },
+        {
+          "w": "lesson!",
+          "start": 0.789,
+          "end": 1.486
+        }
+      ]
+    }
+  ]
+}

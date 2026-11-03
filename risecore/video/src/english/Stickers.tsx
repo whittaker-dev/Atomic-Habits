@@ -9,7 +9,9 @@ import type {Pose, Speaker, Timeline} from './timeline';
 const W = 640;
 const H = Math.round((W * 305) / 410); // tỉ lệ 1 ô sau khi cắt
 const BOTTOM = 1410; // lấn xuống dưới khung phụ đề (y 1380) để khung che đường cắt ngang thắt lưng
-const CENTER: Record<Speaker, number> = {com: 270, mia: 810};
+export const CENTER: Record<Speaker, number> = {com: 270, mia: 810};
+/** Mép trên của ảnh nhân vật — chữ "nổ" đặt ngay trên đầu */
+export const STICKER_TOP = BOTTOM - H;
 
 type State = {pose: Pose; since: number; talking: boolean};
 
@@ -28,11 +30,18 @@ function stateAt(timeline: Timeline, frame: number, who: Speaker, fps: number): 
   return {pose, since: last.from, talking};
 }
 
+// Biểu cảm vui/bất ngờ thì nhân vật bật nhảy lên một cái khi vừa đổi biểu cảm
+const HOP: Pose[] = ['cheer', 'clap', 'wow', 'laugh'];
+
 const Sticker: React.FC<{who: Speaker; timeline: Timeline}> = ({who, timeline}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const {pose, since, talking} = stateAt(timeline, frame, who, fps);
+  const other = stateAt(timeline, frame, who === 'com' ? 'mia' : 'com', fps);
   const side = who === 'com' ? -1 : 1;
+  const hop = HOP.includes(pose) ? -48 * Math.sin(Math.PI * interpolate(frame, [since, since + 12], [0, 1], clamp)) : 0;
+  // Người đang nói to lên chút, người đang nghe nhỏ lại + tối đi để mắt người xem đi theo người nói
+  const focus = talking ? interpolate(frame, [since, since + 8], [1, 1.05], clamp) : other.talking ? 0.96 : 1;
   return (
     <Img
       src={staticFile(`characters/${who}/${pose}.png`)}
@@ -43,9 +52,10 @@ const Sticker: React.FC<{who: Speaker; timeline: Timeline}> = ({who, timeline}) 
         left: CENTER[who] - W / 2,
         top: BOTTOM - H,
         transformOrigin: '50% 100%',
+        filter: `brightness(${other.talking && !talking ? 0.82 : 1})`,
         // vào cảnh từ 2 bên, nảy nhẹ mỗi lần đổi biểu cảm, nhún khi đang nói
-        translate: `${interpolate(frame, [0, 16], [side * 600, 0], {...clamp, easing: Easing.bezier(0.16, 1, 0.3, 1)})}px ${talking ? -10 * Math.abs(Math.sin(frame * 0.45)) : 0}px`,
-        scale: `${interpolate(frame, [since, since + 8], [0.9, 1], {...clamp, easing: Easing.bezier(0.34, 1.56, 0.64, 1)}) * (1 + 0.012 * Math.sin(frame / 12))}`,
+        translate: `${interpolate(frame, [0, 16], [side * 600, 0], {...clamp, easing: Easing.bezier(0.16, 1, 0.3, 1)})}px ${(talking ? -10 * Math.abs(Math.sin(frame * 0.45)) : 0) + hop}px`,
+        scale: `${interpolate(frame, [since, since + 8], [0.9, 1], {...clamp, easing: Easing.bezier(0.34, 1.56, 0.64, 1)}) * focus * (1 + 0.012 * Math.sin(frame / 12))}`,
         rotate: `${talking ? 1.5 * Math.sin(frame * 0.2) : 0}deg`,
       }}
     />

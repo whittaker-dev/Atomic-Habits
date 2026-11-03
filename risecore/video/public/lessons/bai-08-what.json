@@ -1,0 +1,73 @@
+{
+  "id": "bai-08-what",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 8,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "What?",
+      "subtitle": "Đừng chỉ hỏi \"What?\"",
+      "cliche": "What?",
+      "lines": [
+        {"speaker": "mia", "say": "The weather is so nice, let's go out!", "vi": "Trời đẹp quá, đi chơi đi!", "pose": "talk", "listen": "confused"},
+        {"speaker": "com", "say": "What?", "vi": "Hả?", "pose": "confused", "listen": "wow", "burst": "???"},
+        {"speaker": "mia", "say": "Just what? That sounds a little rude.", "vi": "Chỉ What thôi á? Nghe hơi cộc đó.", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Sorry, could you say that again?",
+      "vi": "Xin lỗi, bạn nói lại được không?",
+      "note": "Lịch sự nhất",
+      "lines": [
+        {"speaker": "mia", "say": "The polite way. Sorry, could you say that again?", "vi": "Cách lịch sự nè. Xin lỗi, bạn nói lại được không?", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Sorry, could you say that again?", "vi": "Xin lỗi, bạn nói lại được không?", "pose": "talk", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Could you speak more slowly?",
+      "vi": "Bạn nói chậm hơn chút được không?",
+      "note": "Khi người ta nói nhanh",
+      "lines": [
+        {"speaker": "mia", "say": "Too fast? Could you speak more slowly?", "vi": "Nói nhanh quá? Bạn nói chậm hơn chút được không?", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Could you speak more slowly?", "vi": "Bạn nói chậm hơn chút được không?", "pose": "embarrassed", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "What do you mean?",
+      "vi": "Ý bạn là sao?",
+      "note": "Nghe rồi nhưng chưa hiểu",
+      "lines": [
+        {"speaker": "mia", "say": "Heard it, but didn't get it? What do you mean?", "vi": "Nghe rồi mà chưa hiểu? Ý bạn là sao?", "pose": "talk", "listen": "confused"},
+        {"speaker": "com", "say": "What do you mean?", "vi": "Ý bạn là sao?", "pose": "confused", "listen": "think"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Người nước ngoài nói quá nhanh. Bạn nói?",
+      "options": [
+        "What?",
+        "Could you speak more slowly?"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! Someone talks way too fast. A or B?", "vi": "Đố bạn! Có người nói quá nhanh. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "Could you speak more slowly?", "vi": "Bạn nói chậm hơn chút được không?", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Polite, and it really works!", "vi": "Đáp án B! Lịch sự mà hiệu quả!", "pose": "thumbs", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Bạn từng nghe không kịp người nước ngoài chưa?",
+      "lines": [
+        {"speaker": "com", "say": "Has this ever happened to you? Tell us below!", "vi": "Bạn từng bị vậy chưa? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Nghe không kịp là buột miệng \"What?\" 😅\n\n✅ Sorry, could you say that again? — Xin lỗi, bạn nói lại được không?\n✅ Could you speak more slowly? — Bạn nói chậm hơn chút được không?\n✅ What do you mean? — Ý bạn là sao?\n\n🧠 Người nước ngoài nói nhanh quá thì nói gì cho lịch sự?\n💬 Bạn từng nghe không kịp chưa? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

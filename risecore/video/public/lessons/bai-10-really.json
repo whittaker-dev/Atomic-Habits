@@ -1,0 +1,73 @@
+{
+  "id": "bai-10-really",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 10,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Really?",
+      "subtitle": "Đừng chỉ nói \"Really?\"",
+      "cliche": "Really?",
+      "lines": [
+        {"speaker": "mia", "say": "Guess what? I won a free trip to Japan!", "vi": "Đoán xem? Mình trúng chuyến du lịch Nhật miễn phí!", "pose": "cheer", "listen": "wow"},
+        {"speaker": "com", "say": "Really?", "vi": "Thật hả?", "pose": "think", "listen": "cheer"},
+        {"speaker": "mia", "say": "That's it? More excitement, please!", "vi": "Vậy thôi á? Bất ngờ hơn nữa đi chứ!", "pose": "laugh", "listen": "embarrassed"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "No way!",
+      "vi": "Không thể nào!",
+      "note": "Bất ngờ, phấn khích",
+      "lines": [
+        {"speaker": "mia", "say": "Try this. No way!", "vi": "Thử câu này. Không thể nào!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "No way!", "vi": "Không thể nào!", "pose": "wow", "listen": "laugh", "burst": "WOW!"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Are you serious?",
+      "vi": "Bạn nói thật đó hả?",
+      "note": "Không tin nổi",
+      "lines": [
+        {"speaker": "mia", "say": "Can't believe it? Are you serious?", "vi": "Không tin nổi? Bạn nói thật đó hả?", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "Are you serious?", "vi": "Bạn nói thật đó hả?", "pose": "wow", "listen": "laugh"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "That's awesome!",
+      "vi": "Tuyệt vời quá!",
+      "note": "Mừng cho người khác",
+      "lines": [
+        {"speaker": "mia", "say": "Happy for a friend? That's awesome!", "vi": "Mừng cho bạn bè? Tuyệt vời quá!", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "That's awesome!", "vi": "Tuyệt vời quá!", "pose": "cheer", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Bạn thân báo tin sắp cưới. Bạn nói?",
+      "options": [
+        "Really?",
+        "No way! That's awesome!"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! Your best friend is getting married. A or B?", "vi": "Đố bạn! Bạn thân sắp cưới. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "No way! That's awesome!", "vi": "Không thể nào! Tuyệt vời quá!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Show them you're excited!", "vi": "Đáp án B! Cho họ thấy bạn vui thật sự!", "pose": "cheer", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Gần đây chuyện gì làm bạn “No way!”?",
+      "lines": [
+        {"speaker": "com", "say": "What made you say no way recently? Tell us below!", "vi": "Gần đây chuyện gì làm bạn thốt lên No way? Kể nghe với!", "pose": "point", "listen": "laugh"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Nghe tin sốc mà chỉ biết \"Really?\" 😐\n\n✅ No way! — Không thể nào!\n✅ Are you serious? — Bạn nói thật đó hả?\n✅ That's awesome! — Tuyệt vời quá!\n\n🧠 Bạn thân báo sắp cưới, phản ứng sao cho chuẩn?\n💬 Gần đây chuyện gì làm bạn \"No way!\"? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

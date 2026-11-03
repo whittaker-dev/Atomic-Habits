@@ -47,7 +47,7 @@ export const HookCard: React.FC<CardProps<'hook'>> = ({scene, lines}) => {
       </Interactive.Div>
       <div style={{position: 'relative', marginTop: 60, opacity: interpolate(frame, [fine, fine + 8], [0, 1], clamp)}}>
         <div style={{background: C.card, borderRadius: 28, padding: '22px 36px', fontWeight: 800, fontSize: 54, color: C.muted}}>
-          I'm fine, thank you. And you?
+          {scene.cliche}
         </div>
         <div
           style={{

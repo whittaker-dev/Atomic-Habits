@@ -1,0 +1,73 @@
+{
+  "id": "bai-02-thank-you",
+  "series": "Tiếng Anh mỗi ngày",
+  "number": 2,
+  "level": "Mới bắt đầu",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Thank you!",
+      "subtitle": "Đừng chỉ nói \"Thank you\"",
+      "cliche": "Thank you.",
+      "lines": [
+        {"speaker": "mia", "say": "Here! I fixed your laptop!", "vi": "Nè! Mình sửa xong laptop cho bạn rồi!", "pose": "cheer", "listen": "wow"},
+        {"speaker": "com", "say": "Thank you.", "vi": "Cảm ơn.", "pose": "thumbs", "listen": "confused"},
+        {"speaker": "mia", "say": "Just thank you? I saved your whole day!", "vi": "Chỉ cảm ơn thôi á? Mình cứu cả ngày của bạn đó!", "pose": "point", "listen": "embarrassed", "burst": "Hmm?"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "Thanks a lot!",
+      "vi": "Cảm ơn nhiều nha!",
+      "note": "Thân mật, hằng ngày",
+      "lines": [
+        {"speaker": "mia", "say": "Easy upgrade. Thanks a lot!", "vi": "Nâng cấp dễ nè. Cảm ơn nhiều nha!", "pose": "announce", "listen": "think"},
+        {"speaker": "com", "say": "Thanks a lot!", "vi": "Cảm ơn nhiều nha!", "pose": "thumbs", "listen": "clap"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "I really appreciate it.",
+      "vi": "Mình thật sự biết ơn.",
+      "note": "Trân trọng, lịch sự",
+      "lines": [
+        {"speaker": "mia", "say": "More serious? I really appreciate it.", "vi": "Trang trọng hơn? Mình thật sự biết ơn.", "pose": "talk", "listen": "think"},
+        {"speaker": "com", "say": "I really appreciate it.", "vi": "Mình thật sự biết ơn.", "pose": "talk", "listen": "thumbs"}
+      ]
+    },
+    {
+      "type": "phrase",
+      "en": "You're a lifesaver!",
+      "vi": "Bạn đúng là cứu tinh!",
+      "note": "Khi ai đó cứu bạn",
+      "lines": [
+        {"speaker": "mia", "say": "And my favorite. You're a lifesaver!", "vi": "Và câu mình thích nhất. Bạn đúng là cứu tinh!", "pose": "laugh", "listen": "wow"},
+        {"speaker": "com", "say": "You're a lifesaver!", "vi": "Bạn đúng là cứu tinh!", "pose": "cheer", "listen": "clap", "burst": "Hero!"}
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Đồng nghiệp làm hộ bạn deadline gấp. Bạn nói?",
+      "options": [
+        "Thank you.",
+        "You're a lifesaver!"
+      ],
+      "answer": 1,
+      "lines": [
+        {"speaker": "com", "say": "Quiz time! A coworker saves your deadline. A or B?", "vi": "Đố bạn! Đồng nghiệp cứu deadline của bạn. Chọn A hay B?", "pose": "point", "listen": "think"},
+        {"speaker": "mia", "say": "You're a lifesaver!", "vi": "Bạn đúng là cứu tinh!", "pose": "clap", "listen": "wow", "pauseBefore": 3},
+        {"speaker": "com", "say": "B! Way more fun than thank you!", "vi": "Đáp án B! Vui hơn hẳn chữ thank you!", "pose": "thumbs", "listen": "clap", "burst": "Correct!"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Đến lượt bạn!",
+      "subtitle": "Gần đây ai là “lifesaver” của bạn?",
+      "lines": [
+        {"speaker": "com", "say": "Who was your lifesaver this week? Tell us below!", "vi": "Tuần này ai là cứu tinh của bạn? Kể nghe với!", "pose": "point", "listen": "clap"},
+        {"speaker": "mia", "say": "See you in the next lesson!", "vi": "Hẹn gặp bạn ở bài sau nha!", "pose": "wave", "listen": "cheer"}
+      ]
+    }
+  ],
+  "fallbackCaption": "Ai giúp mình cũng chỉ biết nói \"Thank you\"? 😅\n\n✅ Thanks a lot! — Cảm ơn nhiều nha!\n✅ I really appreciate it. — Mình thật sự biết ơn.\n✅ You're a lifesaver! — Bạn đúng là cứu tinh!\n\n🧠 Đồng nghiệp làm hộ deadline gấp, bạn nói gì?\n💬 Tuần này ai là \"lifesaver\" của bạn? Kể nghe nha!\n📌 Follow để học bài tiếp theo\n\n#tienganh #hoctienganh #tienganhgiaotiep #englishforkids #learnenglish #risecoreday"
+}

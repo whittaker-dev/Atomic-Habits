@@ -8,6 +8,7 @@
       "type": "hook",
       "title": "How are you?",
       "subtitle": "Đừng chỉ nói \"I'm fine, thank you\"",
+      "cliche": "I'm fine, thank you. And you?",
       "lines": [
         {"speaker": "mia", "say": "Hi Cơm! How are you?", "vi": "Chào Cơm! Bạn khỏe không?", "pose": "wave", "listen": "cheer"},
         {"speaker": "com", "say": "Um... I'm fine, thank you. And you?", "vi": "Ờm... Mình khỏe, cảm ơn. Còn bạn?", "pose": "embarrassed", "listen": "think"},

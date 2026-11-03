@@ -6,20 +6,24 @@ export type Pose = 'wave' | 'talk' | 'cheer' | 'embarrassed' | 'wow' | 'think' |
  * `say` là câu tiếng Anh được đọc, `vi` là phụ đề tiếng Việt hiện bên dưới.
  * `pose` là biểu cảm người nói (mặc định talk), `listen` là biểu cảm người còn lại (mặc định thumbs).
  * Không có tư thế đứng yên: ảnh AI vẽ ô "đứng yên" thành vẫy tay, nên người nghe luôn có biểu cảm cụ thể.
+ * `burst` là chữ "nổ" cạnh người nói khi câu bắt đầu (vd "WOW!", "Correct!").
  */
-export type Line = {speaker: Speaker; say: string; vi?: string; pauseBefore?: number; pose?: Pose; listen?: Pose};
+export type Line = {speaker: Speaker; say: string; vi?: string; pauseBefore?: number; pose?: Pose; listen?: Pose; burst?: string};
 
 type Base = {lines: Line[]};
 export type Scene =
-  | (Base & {type: 'hook'; title: string; subtitle: string})
+  // `cliche` là câu "quốc dân" hiện ra ở câu thứ 2 và bị gạch ở câu thứ 3
+  | (Base & {type: 'hook'; title: string; subtitle: string; cliche: string})
   | (Base & {type: 'phrase'; en: string; vi: string; note: string})
   | (Base & {type: 'quiz'; question: string; options: string[]; answer: number})
   | (Base & {type: 'cta'; title: string; subtitle: string});
 
 export type Lesson = {id: string; series: string; number: number; level: string; scenes: Scene[]};
-export type Manifest = {id: string; provider: string; lines: {file: string; duration: number; speaker: Speaker; say: string}[]};
+/** Mốc thời gian từng từ (giây, tính từ đầu file giọng), có khi tạo bằng ElevenLabs with-timestamps */
+export type Word = {w: string; start: number; end: number};
+export type Manifest = {id: string; provider: string; lines: {file: string; duration: number; speaker: Speaker; say: string; words?: Word[]}[]};
 
-export type TimedLine = Line & {file: string; from: number; dur: number};
+export type TimedLine = Line & {file: string; from: number; dur: number; words?: Word[]};
 export type TimedScene = {scene: Scene; from: number; dur: number; lines: TimedLine[]};
 export type Timeline = {scenes: TimedScene[]; total: number};
 
@@ -41,7 +45,7 @@ export function buildTimeline(lesson: Lesson, manifest: Manifest, fps: number): 
     const lines = scene.lines.map((line) => {
       const m = manifest.lines[k++];
       cursor += Math.round((line.pauseBefore ?? 0) * fps);
-      const timed = {...line, file: m.file, from: cursor, dur: Math.ceil(m.duration * fps)};
+      const timed = {...line, file: m.file, from: cursor, dur: Math.ceil(m.duration * fps), words: m.words};
       cursor += timed.dur + GAP;
       return timed;
     });
