@@ -20,6 +20,8 @@ risecore/
 ## Skill cần cài cho Claude Code
 - Remotion Agent Skills: `npx skills add remotion-dev/skills` (chạy trong `risecore/video/`).
   Làm theo các skill đó khi viết code Remotion (interpolate inline, `Interactive.*`, không dùng CSS animation…).
+- Người dùng cho phép thêm các gói `@remotion/*` mà skill Remotion cần, không cần hỏi lại
+  (`npx remotion add <gói>` để đúng version với project).
 
 ## Quy ước video (giữ đồng nhất cả series)
 - 1080×1920, 30fps, 60–90 giây (Reels tối đa 90s). Cảnh ghép bằng `TransitionSeries`, chuyển cảnh 12 frame.
