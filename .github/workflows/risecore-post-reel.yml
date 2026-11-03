@@ -1,8 +1,8 @@
 name: Rise Core Day · Đăng Reel lên Facebook
 
 on:
-  schedule:
-    - cron: '0 12 * * *' # 12:00 UTC = 19:00 giờ Việt Nam, mỗi ngày
+  # Không chạy theo lịch: video làm xong được tải lên mục Nháp ngay từ máy (scripts/run-next.mjs),
+  # người dùng tự bấm đăng. Workflow này chỉ để chạy tay khi cần đăng từ GitHub.
   workflow_dispatch:
     inputs:
       state:

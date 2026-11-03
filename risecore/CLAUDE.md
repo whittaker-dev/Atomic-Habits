@@ -61,10 +61,29 @@ ffmpeg -i out/video.mp4 -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -r 30
 Kèm `../queue/<tên>.json` (brief: title, characters, content[], fallbackCaption) — xem `queue/ngay-tap-nguc.json`.
 Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đăng theo thứ tự tên.
 
+## Series "Tiếng Anh mỗi ngày" (đang làm, 2–3 video/tuần, đăng chung Page Rise Core)
+- Trình độ mới bắt đầu (trẻ em + người lớn mất gốc), sau này tăng dần. ~45–60 giây/bài.
+- **Lời thoại 100% tiếng Anh**, phụ đề tiếng Việt (màu vàng) dưới từng câu. Nhân vật: **Mia** (bạn nước ngoài,
+  tóc vàng đuôi ngựa, áo mint — nói câu mẫu) và **Tí** (lặp lại câu mẫu). Coach Tạ không xuất hiện.
+- Cấu trúc: hook (tình huống quen) → 3 câu mẫu (Mia nói, Tí lặp) → đố vui A/B đếm ngược 3s → kêu gọi bình luận bằng tiếng Anh.
+- Mỗi bài là 1 file kịch bản `video/public/lessons/<ngày>-<slug>.json` (scenes: hook/phrase/quiz/cta, mỗi câu có
+  `speaker`, `say` tiếng Anh, `vi` phụ đề, `pauseBefore` giây). Code dựng hình ở `video/src/english/`,
+  composition đăng ký trong `Root.tsx` (folder `TiengAnh`), độ dài tự tính theo giọng đọc.
+- Giọng đọc: `cd video && node scripts/make-voice.mjs <id>` → ElevenLabs, Tí = Liam, Mia = Jessica (giọng premade).
+  Key `ELEVENLABS_API_KEY` ở `risecore/.env`. Gói Free: 10.000 ký tự/tháng, **không gọi API được giọng Voice Library**,
+  không có giấy phép thương mại (nâng Starter khi Page kiếm tiền). Câu đã tạo được dùng lại, sửa câu nào thì chỉ tạo lại câu đó.
+- Sau khi tạo giọng: cho ElevenLabs speech-to-text nghe lại từng câu để chắc đọc đúng kịch bản, rồi render.
+
 ## Flow đăng Facebook (đã xong)
-- Workflow `.github/workflows/risecore-post-reel.yml`: 19:00 giờ VN mỗi ngày + bấm tay (DRAFT/PUBLISHED).
-- `scripts/run-next.mjs`: lấy video kế tiếp → `write-caption.mjs` (Claude API, model trong `CLAUDE_MODEL`)
+- **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
+  trong `risecore/` (dùng `FB_PAGE_ID`/`FB_PAGE_TOKEN` trong `risecore/.env`). Người dùng tự bấm đăng trong
+  Meta Business Suite → Nội dung → Bản nháp. Không commit mp4 (script xoá mp4 sau khi đăng), chỉ commit brief, caption, `posted.json`.
+- Workflow `.github/workflows/risecore-post-reel.yml`: **không chạy theo lịch**, chỉ bấm tay (DRAFT/PUBLISHED) khi cần đăng từ GitHub.
+- `scripts/run-next.mjs`: lấy video kế tiếp → `write-caption.mjs` (Claude API, model trong `CLAUDE_MODEL`;
+  không có key thì dùng `<tên>.caption.txt` hoặc `fallbackCaption` trong brief)
   → `post-reel.mjs` (Reels API 3 bước: start → rupload → finish) → ghi `posted.json` → xoá mp4 đã đăng.
+- Page Rise Core (id 644865365381501) thuộc Business portfolio nên không hiện trong `/me/accounts`;
+  `get-page-token.mjs` tự tra theo handle `FB_PAGE_HANDLE`.
 - Mặc định `FB_VIDEO_STATE=DRAFT` (nháp trong Meta Business Suite để người dùng duyệt). Luôn gửi `is_ai_generated=true`.
 - Secrets trên GitHub: `FB_PAGE_ID`, `FB_PAGE_TOKEN`, `ANTHROPIC_API_KEY`. Lấy token: `scripts/get-page-token.mjs`.
 - App Meta ID: 983371887652377. Graph API v26.0.
@@ -79,8 +98,9 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Nếu làm nội dung cho trẻ em: kênh/page riêng, chỉ vận động vui chơi, không tập tạ, không ăn kiêng.
 
 ## Việc tiếp theo (người dùng đã đồng ý hướng đi)
-1. Làm video **Ngày tập lưng** (cùng cấu trúc, cùng nhân vật) → bỏ vào `queue/`.
-2. Series tiếp: chân, vai, tay, + video ăn uống xen kẽ.
+0. Ưu tiên: series **Tiếng Anh mỗi ngày** (bài 1 "How are you?" đã lên Nháp 2026-11-03). Bài sau theo cùng khung.
+1. (Series gym tạm dừng) Video **Ngày tập lưng** (cùng cấu trúc, cùng nhân vật).
+2. Series gym tiếp: chân, vai, tay, + video ăn uống xen kẽ.
 3. Nâng cấp: chuyển video thành template nhận JSON (props + `calculateMetadata`) để GitHub Actions
    tự viết kịch bản bằng Claude → render → đăng (giữ chế độ DRAFT để duyệt).
 4. Có thể thêm TikTok sau (Content Posting API; app chưa audit thì bài bị ép riêng tư → nên dùng chế độ đẩy vào nháp).
