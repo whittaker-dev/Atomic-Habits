@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {clamp} from '../theme';
-import type {Pose, Speaker, Timeline} from './timeline';
+import type {Base, Pose, Speaker, Timeline} from './timeline';
 
 // Nhân vật là ảnh sticker (public/characters/<ai>/<biểu cảm>.png, cắt bằng scripts/cut-sheet.sh).
 // Mọi ảnh cùng khung nên đổi biểu cảm không làm nhân vật nhảy chỗ.
@@ -16,7 +16,7 @@ export const STICKER_TOP = BOTTOM - H;
 type State = {pose: Pose; since: number; talking: boolean};
 
 /** Biểu cảm của 1 nhân vật tại 1 khung hình: giữ biểu cảm của câu gần nhất cho tới câu sau. */
-function stateAt(timeline: Timeline, frame: number, who: Speaker, fps: number): State {
+function stateAt(timeline: Timeline<Base>, frame: number, who: Speaker, fps: number): State {
   const lines = timeline.scenes.flatMap((s) => s.lines);
   // Lúc đếm ngược trước khi ra đáp án thì cả 2 cùng suy nghĩ
   const pause = lines.find((l) => l.pauseBefore && frame >= l.from - l.pauseBefore * fps && frame < l.from);
@@ -33,7 +33,7 @@ function stateAt(timeline: Timeline, frame: number, who: Speaker, fps: number): 
 // Biểu cảm vui/bất ngờ thì nhân vật bật nhảy lên một cái khi vừa đổi biểu cảm
 const HOP: Pose[] = ['cheer', 'clap', 'wow', 'laugh'];
 
-const Sticker: React.FC<{who: Speaker; timeline: Timeline}> = ({who, timeline}) => {
+const Sticker: React.FC<{who: Speaker; timeline: Timeline<Base>}> = ({who, timeline}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const {pose, since, talking} = stateAt(timeline, frame, who, fps);
@@ -62,7 +62,7 @@ const Sticker: React.FC<{who: Speaker; timeline: Timeline}> = ({who, timeline}) 
   );
 };
 
-export const Stickers: React.FC<{timeline: Timeline}> = ({timeline}) => (
+export const Stickers: React.FC<{timeline: Timeline<Base>}> = ({timeline}) => (
   <AbsoluteFill>
     <Sticker who="com" timeline={timeline} />
     <Sticker who="mia" timeline={timeline} />

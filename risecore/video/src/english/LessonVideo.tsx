@@ -7,7 +7,7 @@ import {C, clamp} from '../theme';
 import {CafeBackground} from './CafeBackground';
 import {CtaCard, HookCard, PhraseCard, QuizCard} from './cards';
 import {CENTER, STICKER_TOP, Stickers} from './Stickers';
-import {buildTimeline, Lesson, Manifest, TimedLine, TimedScene, Timeline} from './timeline';
+import {Base, buildTimeline, Lesson, Manifest, TimedLine, TimedScene, Timeline} from './timeline';
 
 export type LessonProps = {lessonId: string; lesson?: Lesson; timeline?: Timeline};
 
@@ -25,7 +25,7 @@ export const calculateLessonMetadata: CalculateMetadataFunction<LessonProps> = a
 };
 
 const relative = (s: TimedScene): TimedLine[] => s.lines.map((l) => ({...l, from: l.from - s.from}));
-const allLines = (timeline: Timeline) => timeline.scenes.flatMap((s) => s.lines);
+const allLines = (timeline: Timeline<Base>) => timeline.scenes.flatMap((s) => s.lines);
 
 const SceneCard: React.FC<{s: TimedScene; phraseIndex: number; phraseCount: number}> = ({s, phraseIndex, phraseCount}) => {
   const lines = relative(s);
@@ -57,7 +57,7 @@ const CardEnter: React.FC<{skip: boolean; children: React.ReactNode}> = ({skip, 
   );
 };
 
-const speaking = (timeline: Timeline, frame: number) => allLines(timeline).find((l) => frame >= l.from && frame < l.from + l.dur);
+const speaking = (timeline: Timeline<Base>, frame: number) => allLines(timeline).find((l) => frame >= l.from && frame < l.from + l.dur);
 
 /** Câu tiếng Anh dạng karaoke: từ đang đọc sáng vàng, từ chưa đọc mờ. Không có mốc thời gian thì hiện cả câu. */
 const Karaoke: React.FC<{line: TimedLine}> = ({line}) => {
@@ -91,7 +91,7 @@ const Karaoke: React.FC<{line: TimedLine}> = ({line}) => {
 
 // Khung phụ đề luôn hiện và nền đặc: ảnh nhân vật bị cắt ngang ở thắt lưng, khung này che đường cắt
 // (nhân vật như đứng sau quầy). Giữa 2 câu thì khung trống chứ không biến mất.
-const Subtitle: React.FC<{timeline: Timeline}> = ({timeline}) => {
+export const Subtitle: React.FC<{timeline: Timeline<Base>}> = ({timeline}) => {
   const frame = useCurrentFrame();
   const line = speaking(timeline, frame);
   const color = line ? (line.speaker === 'com' ? C.blue : C.mint) : 'rgba(255,255,255,0.15)';

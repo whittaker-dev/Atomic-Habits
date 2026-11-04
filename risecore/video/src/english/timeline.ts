@@ -10,7 +10,7 @@ export type Pose = 'wave' | 'talk' | 'cheer' | 'embarrassed' | 'wow' | 'think' |
  */
 export type Line = {speaker: Speaker; say: string; vi?: string; pauseBefore?: number; pose?: Pose; listen?: Pose; burst?: string};
 
-type Base = {lines: Line[]};
+export type Base = {lines: Line[]};
 export type Scene =
   // `cliche` là câu "quốc dân" hiện ra ở câu thứ 2 và bị gạch ở câu thứ 3
   | (Base & {type: 'hook'; title: string; subtitle: string; cliche: string})
@@ -24,8 +24,9 @@ export type Word = {w: string; start: number; end: number};
 export type Manifest = {id: string; provider: string; lines: {file: string; duration: number; speaker: Speaker; say: string; words?: Word[]}[]};
 
 export type TimedLine = Line & {file: string; from: number; dur: number; words?: Word[]};
-export type TimedScene = {scene: Scene; from: number; dur: number; lines: TimedLine[]};
-export type Timeline = {scenes: TimedScene[]; total: number};
+// Tham số S cho phép loại video khác (vd video đoán từ) dùng chung cách tính mốc thời gian
+export type TimedScene<S extends Base = Scene> = {scene: S; from: number; dur: number; lines: TimedLine[]};
+export type Timeline<S extends Base = Scene> = {scenes: TimedScene<S>[]; total: number};
 
 const LEAD = 10; // khung hình trống trước câu đầu tiên
 const GAP = 8; // nghỉ giữa 2 câu
@@ -33,7 +34,7 @@ const TAIL = 14; // giữ cảnh thêm một chút sau câu cuối
 const END = 30;
 
 /** Mọi mốc thời gian lấy từ độ dài file giọng đọc, nên đổi giọng hay sửa câu thì video tự dài/ngắn theo. */
-export function buildTimeline(lesson: Lesson, manifest: Manifest, fps: number): Timeline {
+export function buildTimeline<S extends Base>(lesson: {id: string; scenes: S[]}, manifest: Manifest, fps: number): Timeline<S> {
   const all = lesson.scenes.flatMap((s) => s.lines);
   if (manifest.lines.length !== all.length || all.some((l, i) => manifest.lines[i].say !== l.say)) {
     throw new Error(`Giọng đọc của ${lesson.id} đã cũ, chạy lại: node scripts/make-voice.mjs ${lesson.id}`);

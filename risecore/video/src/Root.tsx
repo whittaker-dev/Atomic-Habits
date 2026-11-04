@@ -13,6 +13,7 @@ import {Cta} from './scenes/Cta';
 import {calculateLessonMetadata, LessonVideo} from './english/LessonVideo';
 import {LESSONS} from './english/lessons';
 import {calculateCoverMetadata, LessonCover} from './english/LessonCover';
+import {calculateWordQuizCoverMetadata, calculateWordQuizMetadata, WordQuizCover, WordQuizVideo} from './english/WordQuizVideo';
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -52,6 +53,27 @@ export const RemotionRoot: React.FC = () => (
         height={1920}
         defaultProps={{lessonId: LESSONS[0].id}}
         calculateMetadata={calculateCoverMetadata}
+      />
+    </Folder>
+    <Folder name="DoanTu">
+      <Composition
+        id="DoanTu-01-School"
+        component={WordQuizVideo}
+        width={1080}
+        height={1920}
+        fps={30}
+        durationInFrames={300}
+        defaultProps={{quizId: 'doan-tu-01-school'}}
+        calculateMetadata={calculateWordQuizMetadata}
+      />
+      {/* Ảnh bìa: npx remotion still DoanTu-Cover out/x.jpg --props='{"quizId":"doan-tu-01-school"}' */}
+      <Still
+        id="DoanTu-Cover"
+        component={WordQuizCover}
+        width={1080}
+        height={1920}
+        defaultProps={{quizId: 'doan-tu-01-school'}}
+        calculateMetadata={calculateWordQuizCoverMetadata}
       />
     </Folder>
   </>

@@ -1,0 +1,54 @@
+{
+  "id": "doan-tu-01-school",
+  "series": "Đoán từ tiếng Anh",
+  "number": 1,
+  "topic": "Đi học",
+  "scenes": [
+    {
+      "type": "intro",
+      "lines": [
+        {"speaker": "mia", "say": "Let's play a game! Can you guess the English word?", "vi": "Chơi trò này nhé! Bạn đoán được từ tiếng Anh không?", "pose": "wave", "listen": "cheer"},
+        {"speaker": "com", "say": "Five seconds each. Go!", "vi": "Mỗi từ 5 giây. Bắt đầu!", "pose": "announce", "listen": "clap"}
+      ]
+    },
+    {"type": "word", "vi": "Quyển sách", "en": "Book", "icon": "book", "lines": [
+      {"speaker": "mia", "say": "Book!", "pauseBefore": 5, "pose": "announce", "listen": "wow"},
+      {"speaker": "com", "say": "Book!", "pose": "cheer", "listen": "clap"}
+    ]},
+    {"type": "word", "vi": "Bút chì", "en": "Pencil", "icon": "pencil", "lines": [
+      {"speaker": "mia", "say": "Pencil!", "pauseBefore": 5, "pose": "point", "listen": "laugh"},
+      {"speaker": "com", "say": "Pencil!", "pose": "thumbs", "listen": "clap"}
+    ]},
+    {"type": "word", "vi": "Giáo viên", "en": "Teacher", "icon": "teacher", "lines": [
+      {"speaker": "mia", "say": "Teacher!", "pauseBefore": 5, "pose": "announce", "listen": "wow"},
+      {"speaker": "com", "say": "Teacher!", "pose": "cheer", "listen": "thumbs"}
+    ]},
+    {"type": "word", "vi": "Thước kẻ", "en": "Ruler", "icon": "ruler", "lines": [
+      {"speaker": "mia", "say": "Ruler!", "pauseBefore": 5, "pose": "point", "listen": "embarrassed"},
+      {"speaker": "com", "say": "Ruler!", "pose": "laugh", "listen": "clap"}
+    ]},
+    {"type": "word", "vi": "Cục tẩy", "en": "Eraser", "icon": "eraser", "lines": [
+      {"speaker": "mia", "say": "Eraser!", "pauseBefore": 5, "pose": "announce", "listen": "confused"},
+      {"speaker": "com", "say": "Eraser!", "pose": "wow", "listen": "laugh"}
+    ]},
+    {"type": "word", "vi": "Ba lô", "en": "Backpack", "icon": "backpack", "lines": [
+      {"speaker": "mia", "say": "Backpack!", "pauseBefore": 5, "pose": "point", "listen": "wow"},
+      {"speaker": "com", "say": "Backpack!", "pose": "thumbs", "listen": "clap"}
+    ]},
+    {"type": "word", "vi": "Lớp học", "en": "Classroom", "icon": "classroom", "lines": [
+      {"speaker": "mia", "say": "Classroom!", "pauseBefore": 5, "pose": "announce", "listen": "cheer"},
+      {"speaker": "com", "say": "Classroom!", "pose": "cheer", "listen": "clap"}
+    ]},
+    {"type": "word", "vi": "Bài tập về nhà", "en": "Homework", "icon": "homework", "lines": [
+      {"speaker": "mia", "say": "Homework!", "pauseBefore": 5, "pose": "laugh", "listen": "embarrassed"},
+      {"speaker": "com", "say": "Homework!", "pose": "embarrassed", "listen": "laugh"}
+    ]},
+    {
+      "type": "outro",
+      "lines": [
+        {"speaker": "mia", "say": "How many did you get? Comment your score!", "vi": "Bạn đúng mấy từ? Bình luận số điểm nhé!", "pose": "point", "listen": "think"},
+        {"speaker": "com", "say": "Follow for the next game!", "vi": "Follow để chơi tiếp nhé!", "pose": "wave", "listen": "wave"}
+      ]
+    }
+  ]
+}

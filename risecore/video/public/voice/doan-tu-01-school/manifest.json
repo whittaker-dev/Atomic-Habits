@@ -1,0 +1,421 @@
+{
+  "id": "doan-tu-01-school",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Let's play a game! Can you guess the English word?",
+      "file": "voice/doan-tu-01-school/00.mp3",
+      "duration": 2.693515,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "w": "play",
+          "start": 0.267,
+          "end": 0.418
+        },
+        {
+          "w": "a",
+          "start": 0.453,
+          "end": 0.476
+        },
+        {
+          "w": "game!",
+          "start": 0.522,
+          "end": 0.917
+        },
+        {
+          "w": "Can",
+          "start": 1.3,
+          "end": 1.428
+        },
+        {
+          "w": "you",
+          "start": 1.463,
+          "end": 1.533
+        },
+        {
+          "w": "guess",
+          "start": 1.556,
+          "end": 1.718
+        },
+        {
+          "w": "the",
+          "start": 1.753,
+          "end": 1.823
+        },
+        {
+          "w": "English",
+          "start": 1.869,
+          "end": 2.101
+        },
+        {
+          "w": "word?",
+          "start": 2.136,
+          "end": 2.694
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Five seconds each. Go!",
+      "file": "voice/doan-tu-01-school/01.mp3",
+      "duration": 1.764717,
+      "words": [
+        {
+          "w": "Five",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "seconds",
+          "start": 0.325,
+          "end": 0.639
+        },
+        {
+          "w": "each.",
+          "start": 0.697,
+          "end": 0.998
+        },
+        {
+          "w": "Go!",
+          "start": 1.173,
+          "end": 1.765
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Book!",
+      "file": "voice/doan-tu-01-school/02.mp3",
+      "duration": 0.696599,
+      "words": [
+        {
+          "w": "Book!",
+          "start": 0,
+          "end": 0.697
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Book!",
+      "file": "voice/doan-tu-01-school/03.mp3",
+      "duration": 0.696599,
+      "words": [
+        {
+          "w": "Book!",
+          "start": 0,
+          "end": 0.697
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Pencil!",
+      "file": "voice/doan-tu-01-school/04.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Pencil!",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Pencil!",
+      "file": "voice/doan-tu-01-school/05.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Pencil!",
+          "start": 0,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Teacher!",
+      "file": "voice/doan-tu-01-school/06.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Teacher!",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Teacher!",
+      "file": "voice/doan-tu-01-school/07.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "Teacher!",
+          "start": 0,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Ruler!",
+      "file": "voice/doan-tu-01-school/08.mp3",
+      "duration": 0.696599,
+      "words": [
+        {
+          "w": "Ruler!",
+          "start": 0,
+          "end": 0.697
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Ruler!",
+      "file": "voice/doan-tu-01-school/09.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Ruler!",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Eraser!",
+      "file": "voice/doan-tu-01-school/10.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Eraser!",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Eraser!",
+      "file": "voice/doan-tu-01-school/11.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Eraser!",
+          "start": 0,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Backpack!",
+      "file": "voice/doan-tu-01-school/12.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Backpack!",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Backpack!",
+      "file": "voice/doan-tu-01-school/13.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Backpack!",
+          "start": 0,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Classroom!",
+      "file": "voice/doan-tu-01-school/14.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Classroom!",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Classroom!",
+      "file": "voice/doan-tu-01-school/15.mp3",
+      "duration": 1.068118,
+      "words": [
+        {
+          "w": "Classroom!",
+          "start": 0,
+          "end": 1.068
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Homework!",
+      "file": "voice/doan-tu-01-school/16.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Homework!",
+          "start": 0,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Homework!",
+      "file": "voice/doan-tu-01-school/17.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Homework!",
+          "start": 0,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "How many did you get? Comment your score!",
+      "file": "voice/doan-tu-01-school/18.mp3",
+      "duration": 2.647075,
+      "words": [
+        {
+          "w": "How",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "w": "many",
+          "start": 0.197,
+          "end": 0.337
+        },
+        {
+          "w": "did",
+          "start": 0.383,
+          "end": 0.488
+        },
+        {
+          "w": "you",
+          "start": 0.522,
+          "end": 0.592
+        },
+        {
+          "w": "get?",
+          "start": 0.639,
+          "end": 0.987
+        },
+        {
+          "w": "Comment",
+          "start": 1.498,
+          "end": 1.834
+        },
+        {
+          "w": "your",
+          "start": 1.869,
+          "end": 1.974
+        },
+        {
+          "w": "score!",
+          "start": 2.009,
+          "end": 2.647
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Follow for the next game!",
+      "file": "voice/doan-tu-01-school/19.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "Follow",
+          "start": 0,
+          "end": 0.348
+        },
+        {
+          "w": "for",
+          "start": 0.406,
+          "end": 0.499
+        },
+        {
+          "w": "the",
+          "start": 0.534,
+          "end": 0.604
+        },
+        {
+          "w": "next",
+          "start": 0.639,
+          "end": 0.836
+        },
+        {
+          "w": "game!",
+          "start": 0.894,
+          "end": 1.533
+        }
+      ]
+    }
+  ]
+}

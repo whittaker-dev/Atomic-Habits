@@ -102,11 +102,26 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   Câu đã tạo được dùng lại, sửa câu nào thì chỉ tạo lại câu đó.
 - Đã làm: bài 1–11 (How are you, Thank you, You're welcome, Sorry, Order coffee, Compliments, Say no, What?,
   Yes, Really?, Goodbye) và bài 12–21 (Hungry, Tired, I don't know, Wait, Busy, Help, Good luck, Delicious,
-  Happy, Hurry up) — tất cả đã lên mục Nháp 2026-11-03 kèm ảnh bìa. Bài 1–2 đã đăng; bài 3–14 đã hẹn giờ
-  (T2-T4-T6 lúc 19:00 VN, 4/11 → 30/11). **Đợt 2**: bài 15–21 còn ở Nháp, hẹn tiếp từ ~20/11 (Facebook chỉ cho hẹn
-  trước ≤29 ngày), nối lịch T2-T4-T6 từ T4 2/12: `node scripts/schedule-draft.mjs bai-15=2026-12-02 …`.
+  Happy, Hurry up) — tất cả đã lên mục Nháp 2026-11-03 kèm ảnh bìa. Bài 1–2 đã đăng; bài 3–15 đã hẹn giờ
+  (T2-T4-T6 lúc 19:00 VN, 4/11 → 2/12). **Đợt 2**: bài 16–21 còn ở Nháp, hẹn được từ 18/11 (Facebook chỉ cho hẹn
+  trước ≤29 ngày): `node scripts/schedule-draft.mjs bai-16=2026-12-04 bai-17=2026-12-07 bai-18=2026-12-09 bai-19=2026-12-11 bai-20=2026-12-14 bai-21=2026-12-16`.
   Hẹn giờ chỉ đổi ngày đăng, caption và ảnh bìa giữ nguyên. Lịch này chỉ ở Facebook — vẫn KHÔNG nhắc lịch trong video/caption.
   Bài 22 trở đi: chủ đề mới, không lặp lại các câu trên. ElevenLabs tháng 11 gần hết ký tự (reset 2026-12-03).
+
+## Series "Đoán từ tiếng Anh" (người dùng đã duyệt khung 2026-11-04)
+- Mỗi clip 1 chủ đề (bắt đầu: Đi học), 8 từ xếp dễ → khó, ~74 giây. Cùng Cơm, Mia, nền quán cà phê, khung phụ đề.
+- Mỗi từ: chữ tiếng Việt to ở trên + hình SVG trong vòng đếm ngược 5 giây (tích tắc mỗi giây) + ô trống theo số chữ cái,
+  còn 2 giây thì lộ chữ đầu → "ding", lật ô ra đáp án, Mia đọc từ, Cơm lặp lại. Lúc đếm ngược 2 nhân vật tự "think".
+- Mở đầu: Mia mời chơi; kết: bảng ôn cả 8 từ (hình + EN + VN), hỏi "Bạn đúng mấy từ?" + follow.
+- Kịch bản `video/public/lessons/doan-tu-NN-<chủ đề>.json` (cảnh intro → word… → outro; mỗi word có `vi`, `en`, `icon`,
+  câu đầu `pauseBefore: 5`). Khung: `src/english/WordQuizVideo.tsx` (dùng chung buildTimeline/Stickers/Subtitle với bài học).
+  Hình minh hoạ nằm trong `ICONS` của file đó — chủ đề mới thì vẽ thêm icon. Composition `DoanTu-NN-<Ten>` (folder `DoanTu`).
+- Giọng: `node scripts/make-voice.mjs doan-tu-NN-<chủ đề>` (~270 ký tự/clip). Ảnh bìa: Still `DoanTu-Cover`
+  ("Bạn đoán được mấy từ?" + 4 hình đầu có dấu ?). `build-lesson.sh` chưa hỗ trợ loại này (đọc cảnh `hook`) nên làm tay:
+  render → chuẩn hoá ffmpeg như trên → `queue/<id>.mp4` + `.cover.jpg` + brief `.json` + `.caption.txt` → `run-next.mjs`.
+  Caption KHÔNG ghi đáp án (lộ trò chơi), chỉ hook + chủ đề + kêu gọi bình luận số từ đúng.
+- Clip 1 (Đi học: Book, Pencil, Teacher, Ruler, Eraser, Backpack, Classroom, Homework) đã lên Nháp 2026-11-04
+  (video_id 1819687389162882) kèm ảnh bìa.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
