@@ -102,7 +102,10 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   Câu đã tạo được dùng lại, sửa câu nào thì chỉ tạo lại câu đó.
 - Đã làm: bài 1–11 (How are you, Thank you, You're welcome, Sorry, Order coffee, Compliments, Say no, What?,
   Yes, Really?, Goodbye) và bài 12–21 (Hungry, Tired, I don't know, Wait, Busy, Help, Good luck, Delicious,
-  Happy, Hurry up) — tất cả đã lên mục Nháp 2026-11-03 kèm ảnh bìa, người dùng tự đăng dần.
+  Happy, Hurry up) — tất cả đã lên mục Nháp 2026-11-03 kèm ảnh bìa. Bài 1–2 đã đăng; bài 3–14 đã hẹn giờ
+  (T2-T4-T6 lúc 19:00 VN, 4/11 → 30/11). **Đợt 2**: bài 15–21 còn ở Nháp, hẹn tiếp từ ~20/11 (Facebook chỉ cho hẹn
+  trước ≤29 ngày), nối lịch T2-T4-T6 từ T4 2/12: `node scripts/schedule-draft.mjs bai-15=2026-12-02 …`.
+  Hẹn giờ chỉ đổi ngày đăng, caption và ảnh bìa giữ nguyên. Lịch này chỉ ở Facebook — vẫn KHÔNG nhắc lịch trong video/caption.
   Bài 22 trở đi: chủ đề mới, không lặp lại các câu trên. ElevenLabs tháng 11 gần hết ký tự (reset 2026-12-03).
 
 ## Flow đăng Facebook (đã xong)
