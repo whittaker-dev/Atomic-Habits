@@ -584,3 +584,16 @@ Linear's depth is carried by surface ladder + hairline borders. The brand resist
 - Light mode is not documented because the marketing site does not ship a light theme.
 - Linear's actual product UI uses a richer color-tag palette (red, orange, yellow, green, blue, purple) for issue priorities and project labels — those colors live in the in-product surfaces shown in mockups.
 - The custom display, text, and mono families are proprietary; an open-source substitute is acceptable.
+
+## Games area (`/games` and in-game)
+
+The games area deliberately leaves the app's dark editorial system (owner's decision, see `apps/web/PRODUCT.md`) for the games' own bright, playful world. It follows the familiar game-storefront layout at the craft level of a polished console store: featured game up top, a library of game cards, a cast strip.
+
+- **Ground and light:** cool light ground `#eef4fb`, white cards; chosen because invited friends mostly open links on phones in daylight. Never cream or paper tones.
+- **Palette (game world):** ink `#1d2147` (text, outlines), ink-soft `#4a5180` (secondary text), sky `#4cc3f0` → sky-deep `#2a8fd6` (hero sky, focus rings, icons), sun `#ffd23f` (primary action only), coral `#ff6b6b` (bomb, danger), grass `#7cc95a` with a two-tone checker as the stage floor. Defined as `--gx-*` variables on the page root in `games-home.tsx`; the in-game palette lives in `src/games/bong-bong-bum/palette.ts`.
+- **Type:** Baloo 2 (display, titles, buttons) and Nunito (body), both with full Vietnamese coverage, loaded once from `src/components/games/game-fonts.ts`. Game titles use the in-game logo treatment: sun fill, 4px ink stroke with `paint-order: stroke fill`, solid ink drop of 6px.
+- **Shape and depth:** large radii (cards 1.5rem, hero 2rem, buttons pill), soft offset shadows tinted from ink (`0 14px 30px -20px rgba(29,33,71,.55)`); no hard offset block shadows on the hub (those belong only inside the game's chunky UI).
+- **Signature:** character art standing on the checkered grass floor under a cloud sky, the same stage used on game cover cards. Character PNGs come from each game's `cast` list in `games-catalog.ts`.
+- **Icons:** authored inline SVG, 2.2px rounded stroke; no emoji.
+- **Motion:** one moment: hero characters rise in with an expo ease-out, then idle-bob; disabled under `prefers-reduced-motion`.
+- **Browser surfaces:** selection in sun/ink, cast-strip scrollbar in sky, focus rings 4px sky with ground offset.

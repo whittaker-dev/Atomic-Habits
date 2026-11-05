@@ -740,5 +740,59 @@
         }
       ]
     }
+  },
+  "games": {
+    "eyebrow": "Trò chơi",
+    "title": "Trò chơi",
+    "subtitle": "Game chạy ngay trên trình duyệt — không cần cài, không cần tài khoản. Tiến độ lưu trên máy của bạn.",
+    "play": "Chơi ngay",
+    "soon": "Sắp ra mắt",
+    "empty": "Sẽ có thêm game mới.",
+    "backHome": "Trang chủ",
+    "featured": "Nổi bật",
+    "library": "Thư viện",
+    "howToPlay": "Cách chơi",
+    "keyboard": "Bàn phím & chuột",
+    "touch": "Cảm ứng",
+    "playableCount": "{{count}} game chơi được",
+    "filters": {
+      "all": "Tất cả",
+      "playable": "Chơi được",
+      "soon": "Sắp ra mắt"
+    },
+    "footer": "Mọi game đều chạy hoàn toàn trên trình duyệt.",
+    "bongBongBum": {
+      "title": "Bomb Arena",
+      "genre": "Party arena đặt bóng nổ",
+      "description": "Đặt bóng nổ trên lưới, phá khối, nhặt vật phẩm và nhốt đối thủ trong bong bóng. Đấu bot, 2 người cùng máy hoặc mời bạn qua link.",
+      "tags": ["Tối đa 6 người", "Mời bạn qua link", "Đấu bot"],
+      "controls": [
+        {
+          "keys": "W A S D",
+          "label": "Di chuyển (người 1)"
+        },
+        {
+          "keys": "Space",
+          "label": "Đặt bóng (người 1)"
+        },
+        {
+          "keys": "↑ ← ↓ →",
+          "label": "Di chuyển (người 2)"
+        },
+        {
+          "keys": "Enter",
+          "label": "Đặt bóng (người 2)"
+        }
+      ],
+      "features": {
+        "players": "Tối đa {{count}} người",
+        "invite": "Mời bằng link, mã phòng hoặc QR",
+        "cast": "{{count}} nhân vật",
+        "maps": "{{count}} bản đồ"
+      }
+    },
+    "meetCast": "Gặp dàn nhân vật",
+    "castCount": "{{count}} nhân vật — mỗi người một cá tính.",
+    "backToApp": "Về Atomic Habits"
   }
 }

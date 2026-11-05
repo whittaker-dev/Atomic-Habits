@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "baloo 2",
+        "createdAt": "2026-11-04T09:56:57.997Z",
+        "reason": "Claude: game-specific typeface for Bong Bóng Bùm's own identity, same pattern as Ki Clash's Tiny5/VT323; not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "nunito",
+        "createdAt": "2026-11-04T09:56:58.012Z",
+        "reason": "Claude: game-specific typeface for Bong Bóng Bùm's own identity, same pattern as Ki Clash's Tiny5/VT323; not used in app UI"
+      }
+    ]
+  }
+}

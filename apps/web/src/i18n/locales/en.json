@@ -740,5 +740,59 @@
         }
       ]
     }
+  },
+  "games": {
+    "eyebrow": "Games",
+    "title": "Games",
+    "subtitle": "Browser games that start instantly — no install, no account. Progress stays on your device.",
+    "play": "Play now",
+    "soon": "Coming soon",
+    "empty": "More games are on the way.",
+    "backHome": "Home",
+    "featured": "Featured",
+    "library": "Library",
+    "howToPlay": "How to play",
+    "keyboard": "Keyboard & mouse",
+    "touch": "Touch",
+    "playableCount": "{{count}} playable",
+    "filters": {
+      "all": "All",
+      "playable": "Playable",
+      "soon": "Coming soon"
+    },
+    "footer": "Games run entirely in your browser.",
+    "bongBongBum": {
+      "title": "Bomb Arena",
+      "genre": "Grid bomb party arena",
+      "description": "Drop bubble bombs on a grid, blast blocks, grab power-ups and trap rivals in bubbles. Play bots, 2 players on one device, or invite friends by link.",
+      "tags": ["Up to 6 players", "Invite by link", "Bots"],
+      "controls": [
+        {
+          "keys": "W A S D",
+          "label": "Move (player 1)"
+        },
+        {
+          "keys": "Space",
+          "label": "Drop bomb (player 1)"
+        },
+        {
+          "keys": "↑ ← ↓ →",
+          "label": "Move (player 2)"
+        },
+        {
+          "keys": "Enter",
+          "label": "Drop bomb (player 2)"
+        }
+      ],
+      "features": {
+        "players": "Up to {{count}} players",
+        "invite": "Invite by link, room code or QR",
+        "cast": "{{count}} characters",
+        "maps": "{{count}} maps"
+      }
+    },
+    "meetCast": "Meet the cast",
+    "castCount": "{{count}} characters, each with their own style.",
+    "backToApp": "Back to Atomic Habits"
   }
 }
