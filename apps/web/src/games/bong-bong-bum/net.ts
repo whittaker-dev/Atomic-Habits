@@ -3,8 +3,9 @@ import type { Difficulty } from './bot';
 import type { Input, Match, Standing } from './engine';
 import type { ThemeId } from './map';
 
-// Lớp mạng duy nhất của game: mọi chỗ đụng tới PeerJS đều nằm ở đây, nên đổi cách truyền
-// (máy chủ riêng, WebSocket…) chỉ phải sửa file này.
+// Lớp mạng duy nhất của các game: mọi chỗ đụng tới PeerJS đều nằm ở đây, nên đổi cách truyền
+// (máy chủ riêng, WebSocket…) chỉ phải sửa file này. Bomb Arena dùng kiểu tin nhắn và tiền tố mặc định;
+// game khác (Sơn Lãnh Địa) truyền tiền tố và kiểu tin nhắn của riêng nó vào hostRoom/joinRoom.
 // Máy môi giới miễn phí mặc định của PeerJS chỉ dùng để bắt tay; sau đó dữ liệu trận đi thẳng
 // giữa các máy qua WebRTC. Dữ liệu gửi đi chỉ có tên hiển thị, nhân vật và phím bấm.
 
@@ -19,7 +20,7 @@ export const CODE_LENGTH = 6;
  * giành lại đúng id cũ. Khách tìm phòng bằng cách thử mọi lượt cùng lúc, lượt nào mở được là lượt đúng.
  */
 export const MAX_EPOCH = 12;
-const peerId = (code: string, epoch: number) => `${PREFIX}${code}-${epoch}`;
+const peerId = (code: string, epoch: number, prefix: string) => `${prefix}${code}-${epoch}`;
 export const PROTOCOL = 1;
 
 export const normalizeCode = (raw: string) =>
@@ -35,8 +36,8 @@ const newCode = () =>
     () => CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)],
   ).join('');
 
-export function roomLink(code: string): string {
-  return `${window.location.origin}/games/bong-bong-bum?room=${code}`;
+export function roomLink(code: string, path = '/games/bong-bong-bum'): string {
+  return `${window.location.origin}${path}?room=${code}`;
 }
 
 /** Mỗi tab có một mã riêng (không phải dữ liệu cá nhân) để chủ phòng nhận ra người vào lại sau khi rớt mạng. */
@@ -165,21 +166,24 @@ async function createPeer(id?: string): Promise<Peer> {
 // Chủ phòng
 // ---------------------------------------------------------------------------
 
-export type HostEvents = {
-  onJoin: (connId: string, hello: Extract<ToHost, { t: 'hello' }>) => void;
-  onMessage: (connId: string, msg: ToHost) => void;
+/** Mọi tin nhắn đều có trường `t` cho biết loại. */
+type Msg = { t: string };
+
+export type HostEvents<In extends Msg = ToHost> = {
+  onJoin: (connId: string, hello: Extract<In, { t: 'hello' }>) => void;
+  onMessage: (connId: string, msg: In) => void;
   onLeave: (connId: string) => void;
   onError: (e: NetError) => void;
 };
 
-export type HostRoom = {
+export type HostRoom<Out extends Msg = ToClient> = {
   code: string;
   /** Lượt hiện tại của phòng; lưu lại để lần tải trang sau mở lượt kế tiếp. */
   epoch: number;
-  send: (connId: string, msg: ToClient) => void;
-  broadcast: (msg: ToClient) => void;
+  send: (connId: string, msg: Out) => void;
+  broadcast: (msg: Out) => void;
   /** Ngắt một người (vd: phòng đầy) sau khi gửi lý do. */
-  kick: (connId: string, msg: ToClient) => void;
+  kick: (connId: string, msg: Out) => void;
   /** Đóng lặng lẽ một kết nối cũ (cùng tab đã nối lại bằng kết nối mới). */
   drop: (connId: string) => void;
   close: () => void;
@@ -195,10 +199,11 @@ export type HostRoom = {
  * Mở phòng. `reclaim`: phòng cũ cần mở lại sau khi chủ phòng tải lại trang — giữ nguyên mã,
  * mở ở lượt kế tiếp (xem MAX_EPOCH).
  */
-export async function hostRoom(
-  events: HostEvents,
+export async function hostRoom<In extends Msg = ToHost, Out extends Msg = ToClient>(
+  events: HostEvents<In>,
   reclaim?: { code: string; epoch: number },
-): Promise<HostRoom> {
+  prefix = PREFIX,
+): Promise<HostRoom<Out>> {
   let peer: Peer | null = null;
   let code = '';
   let epoch = 0;
@@ -206,7 +211,7 @@ export async function hostRoom(
     code = reclaim.code;
     for (epoch = reclaim.epoch + 1; epoch < MAX_EPOCH && !peer; epoch++) {
       try {
-        peer = await createPeer(peerId(code, epoch));
+        peer = await createPeer(peerId(code, epoch, prefix));
       } catch (err) {
         const type = (err as { type?: string }).type ?? '';
         if (type !== 'unavailable-id') throw mapPeerError(type);
@@ -219,7 +224,7 @@ export async function hostRoom(
     for (let attempt = 0; attempt < 4 && !peer; attempt++) {
       code = newCode();
       try {
-        peer = await createPeer(peerId(code, 0));
+        peer = await createPeer(peerId(code, 0, prefix));
       } catch (err) {
         const type = (err as { type?: string }).type ?? '';
         if (type !== 'unavailable-id') throw mapPeerError(type);
@@ -232,8 +237,8 @@ export async function hostRoom(
   peer.on('connection', (conn) => {
     conn.on('open', () => conns.set(conn.connectionId, conn));
     conn.on('data', (raw) => {
-      const msg = raw as ToHost;
-      if (msg?.t === 'hello') events.onJoin(conn.connectionId, msg);
+      const msg = raw as In;
+      if (msg?.t === 'hello') events.onJoin(conn.connectionId, msg as Extract<In, { t: 'hello' }>);
       else if (msg?.t) events.onMessage(conn.connectionId, msg);
     });
     const gone = () => {
@@ -250,7 +255,7 @@ export async function hostRoom(
       events.onError('broker');
   });
 
-  const send = (id: string, msg: ToClient) => {
+  const send = (id: string, msg: Out) => {
     const c = conns.get(id);
     if (c?.open) void c.send(msg);
   };
@@ -270,7 +275,7 @@ export async function hostRoom(
       c?.close();
     },
     close: () => {
-      conns.forEach((c) => c.open && void c.send({ t: 'closed' } satisfies ToClient));
+      conns.forEach((c) => c.open && void c.send({ t: 'closed' } satisfies Msg));
       setTimeout(() => peer?.destroy(), 200);
     },
     release: () => peer?.destroy(),
@@ -281,14 +286,19 @@ export async function hostRoom(
 // Khách
 // ---------------------------------------------------------------------------
 
-export type ClientEvents = { onMessage: (msg: ToClient) => void; onClose: (e: NetError) => void };
-export type ClientRoom = { send: (msg: ToHost) => void; close: () => void };
+export type ClientEvents<Out extends Msg = ToClient> = {
+  onMessage: (msg: Out) => void;
+  onClose: (e: NetError) => void;
+};
+export type ClientRoom<In extends Msg = ToHost> = { send: (msg: In) => void; close: () => void };
 
-export async function joinRoom(
+export async function joinRoom<In extends Msg = ToHost, Out extends Msg = ToClient>(
   code: string,
-  hello: Extract<ToHost, { t: 'hello' }>,
-  events: ClientEvents,
-): Promise<ClientRoom> {
+  // NoInfer: kiểu tin nhắn lấy từ tham số kiểu (hoặc mặc định), không suy ra từ riêng tin 'hello'.
+  hello: NoInfer<Extract<In, { t: 'hello' }>>,
+  events: ClientEvents<Out>,
+  prefix = PREFIX,
+): Promise<ClientRoom<In>> {
   let peer: Peer;
   try {
     peer = await createPeer();
@@ -299,7 +309,7 @@ export async function joinRoom(
   // thì im lặng (máy môi giới còn giữ id), lượt đang mở thì nối được — lấy cái nối được đầu tiên.
   const conn = await new Promise<DataConnection>((resolve, reject) => {
     const tries = Array.from({ length: MAX_EPOCH }, (_, e) =>
-      peer.connect(peerId(code, e), { reliable: true, serialization: 'json' }),
+      peer.connect(peerId(code, e, prefix), { reliable: true, serialization: 'json' }),
     );
     const missing = new Set<number>();
     let done = false;
@@ -322,7 +332,7 @@ export async function joinRoom(
     const onError = (err: { type: string; message?: string }) => {
       if (err.type !== 'peer-unavailable') return finish(() => reject(mapPeerError(err.type)));
       // "Could not connect to peer <id>": đếm lượt không tồn tại; tất cả đều không có thì phòng không tồn tại.
-      const hit = tries.findIndex((_, e) => err.message?.endsWith(peerId(code, e)));
+      const hit = tries.findIndex((_, e) => err.message?.endsWith(peerId(code, e, prefix)));
       if (hit >= 0) missing.add(hit);
       if (missing.size >= MAX_EPOCH) finish(() => reject('notFound' satisfies NetError));
     };
@@ -335,7 +345,7 @@ export async function joinRoom(
   let closedByUs = false;
   let reason: NetError = 'lost';
   conn.on('data', (raw) => {
-    const msg = raw as ToClient;
+    const msg = raw as Out;
     if (msg?.t === 'closed') reason = 'hostLeft';
     if (msg?.t) events.onMessage(msg);
   });

@@ -791,6 +791,30 @@
         "maps": "{{count}} bản đồ"
       }
     },
+    "sonLanhDia": {
+      "title": "Sơn Lãnh Địa",
+      "genre": "Party game sơn sàn 3D",
+      "description": "Chạy tới đâu sơn tới đó, bắn bóng sơn cho đối thủ đứng hình. Hết 2 phút, phe phủ nhiều sàn nhất thắng. Đấu bot, 2 người cùng máy hoặc mời bạn qua link.",
+      "tags": ["Tối đa 6 người", "Mời bạn qua link", "Sân 3D"],
+      "controls": [
+        {
+          "keys": "W A S D",
+          "label": "Di chuyển (người 1)"
+        },
+        {
+          "keys": "Space",
+          "label": "Bắn sơn (người 1)"
+        },
+        {
+          "keys": "↑ ← ↓ →",
+          "label": "Di chuyển (người 2)"
+        },
+        {
+          "keys": "Enter",
+          "label": "Bắn sơn (người 2)"
+        }
+      ]
+    },
     "meetCast": "Gặp dàn nhân vật",
     "castCount": "{{count}} nhân vật — mỗi người một cá tính.",
     "backToApp": "Về Atomic Habits"

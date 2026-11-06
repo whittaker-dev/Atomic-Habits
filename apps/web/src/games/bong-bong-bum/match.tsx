@@ -124,7 +124,7 @@ function setupMatch(cfg: MatchConfig): Match {
  * Nhịp ~60 lần/giây không bị dừng khi tab ẩn: hẹn giờ trong Web Worker không bị trình duyệt bóp
  * như hẹn giờ ở luồng chính. Không tạo được worker thì lùi về setInterval (vẫn chạy, chỉ chậm hơn khi ẩn).
  */
-function startTicker(onTick: () => void): () => void {
+export function startTicker(onTick: () => void): () => void {
   try {
     const src = 'setInterval(() => postMessage(0), 1000 / 60);';
     const url = URL.createObjectURL(new Blob([src], { type: 'text/javascript' }));
@@ -266,7 +266,7 @@ const fmt = (t: number) =>
   `${Math.floor(Math.ceil(t) / 60)}:${String(Math.ceil(t) % 60).padStart(2, '0')}`;
 
 /** Cần điều khiển 4 hướng: chạm và kéo trong vòng tròn, hướng theo góc so với tâm. */
-function Joystick({ onDir }: { onDir: (d: Dir | null) => void }) {
+export function Joystick({ onDir }: { onDir: (d: Dir | null) => void }) {
   const [knob, setKnob] = useState<[number, number]>([0, 0]);
   const active = useRef<number | null>(null);
   const update = (e: ReactPointerEvent<HTMLDivElement>) => {

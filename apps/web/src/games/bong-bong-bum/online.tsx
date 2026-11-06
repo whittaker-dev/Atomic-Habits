@@ -882,7 +882,7 @@ export function OnlineRoom({
 }
 
 /** Mã QR của link phòng: quét bằng camera điện thoại là mở thẳng phòng. Bấm vào để phóng to. */
-function RoomQr({ link }: { link: string }) {
+export function RoomQr({ link }: { link: string }) {
   const [src, setSrc] = useState<string | null>(null);
   const [big, setBig] = useState(false);
   useEffect(() => {

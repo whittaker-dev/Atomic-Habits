@@ -29,4 +29,12 @@ export const GAMES: GameEntry[] = [
       ids: ['emberlark', 'frostline', 'voltrook'],
     },
   },
+  {
+    id: 'sonLanhDia',
+    href: '/games/son-lanh-dia',
+    status: 'playable',
+    cover: ['#ffd6ec', '#7fd8f7'],
+    banner: '/games/son-lanh-dia/banner.jpg',
+    cast: { base: '/games/son-lanh-dia/characters', ids: ['mochi', 'bin', 'kem'] },
+  },
 ];

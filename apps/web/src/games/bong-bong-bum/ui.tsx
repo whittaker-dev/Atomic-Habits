@@ -274,7 +274,16 @@ export function HelpDialog({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function SettingsDialog({ onClose }: { onClose: () => void }) {
+export function SettingsDialog({
+  onClose,
+  actionLabel = 'Đặt bóng / dùng kim',
+  actionButton = 'Bùm',
+}: {
+  onClose: () => void;
+  /** Tên phím hành động và nút cảm ứng — game khác dùng chung hộp cài đặt này thì đổi lại. */
+  actionLabel?: string;
+  actionButton?: string;
+}) {
   const [vol, setVol] = useState<Volume>(DEFAULT_VOLUME);
   useEffect(() => setVol(loadVolume()), []);
   const change = (k: keyof Volume, v: number) => {
@@ -319,7 +328,7 @@ export function SettingsDialog({ onClose }: { onClose: () => void }) {
           <span>Người 2</span>
           {[
             ['Di chuyển', 'W A S D', '↑ ← ↓ →'],
-            ['Đặt bóng / dùng kim', 'Space', 'Enter'],
+            [actionLabel, 'Space', 'Enter'],
             ['Tạm dừng', 'Esc', 'Esc'],
           ].map(([a, p1, p2]) => (
             <div key={a} className="contents">
@@ -331,7 +340,7 @@ export function SettingsDialog({ onClose }: { onClose: () => void }) {
         </div>
         <p className="mt-3 text-sm font-bold text-slate-600">
           Chơi một mình thì dùng được cả phím mũi tên + Enter. Trên điện thoại có cần điều khiển và
-          nút Bùm.
+          nút {actionButton}.
         </p>
         <div className="mt-5 flex justify-end">
           <Btn tone="sun" onClick={onClose}>

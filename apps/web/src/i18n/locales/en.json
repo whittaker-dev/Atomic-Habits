@@ -791,6 +791,30 @@
         "maps": "{{count}} maps"
       }
     },
+    "sonLanhDia": {
+      "title": "Paint Turf",
+      "genre": "3D floor-painting party game",
+      "description": "Paint the floor wherever you run and splat rivals to freeze them. After 2 minutes, the side covering the most floor wins. Play bots, 2 players on one device, or invite friends by link.",
+      "tags": ["Up to 6 players", "Invite by link", "3D arena"],
+      "controls": [
+        {
+          "keys": "W A S D",
+          "label": "Move (player 1)"
+        },
+        {
+          "keys": "Space",
+          "label": "Shoot paint (player 1)"
+        },
+        {
+          "keys": "↑ ← ↓ →",
+          "label": "Move (player 2)"
+        },
+        {
+          "keys": "Enter",
+          "label": "Shoot paint (player 2)"
+        }
+      ]
+    },
     "meetCast": "Meet the cast",
     "castCount": "{{count}} characters, each with their own style.",
     "backToApp": "Back to Atomic Habits"
