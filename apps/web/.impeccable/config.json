@@ -14,6 +14,18 @@
         "value": "nunito",
         "createdAt": "2026-11-04T09:56:58.012Z",
         "reason": "Claude: game-specific typeface for Bong Bóng Bùm's own identity, same pattern as Ki Clash's Tiny5/VT323; not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "lalezar",
+        "createdAt": "2026-11-06T07:32:45.811Z",
+        "reason": "Vẽ Đoán's own game typeface (user-chosen Hội Chợ Lô Tô world); not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "be vietnam pro",
+        "createdAt": "2026-11-06T07:32:45.826Z",
+        "reason": "Vẽ Đoán's own game body face; not used in app UI"
       }
     ]
   }

@@ -1,0 +1,97 @@
+<!doctype html>
+<!--
+  Banner thẻ game Vẽ Đoán ở trang /games (public/games/ve-doan/banner.jpg).
+  Dựng bằng chính màu, chữ và chi tiết của game (biển đèn, bảng vẽ khung đỏ, vé lô tô), không dùng ảnh tạo bằng AI.
+  Xuất lại sau khi sửa:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+      --window-size=1280,720 --virtual-time-budget=4000 --screenshot=banner.png banner.html
+    sips -s format jpeg -s formatOptions 88 banner.png --out ../../public/games/ve-doan/banner.jpg
+-->
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&family=Be+Vietnam+Pro:wght@700&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; }
+      body {
+        background: radial-gradient(110% 70% at 50% -10%, #2b2060 0%, #1b1440 70%);
+        font-family: 'Be Vietnam Pro', sans-serif;
+        color: #fff3c4;
+        position: relative;
+      }
+      .wire {
+        position: absolute; left: 0; right: 0; top: 34px; height: 24px;
+        background:
+          radial-gradient(circle, #fff3c4 0 4px, rgba(255, 201, 60, 0.55) 5px, transparent 9px) 0 0 / 32px 24px repeat-x,
+          linear-gradient(to bottom, transparent 11.5px, #4a3d80 11.5px, #4a3d80 12.5px, transparent 12.5px);
+      }
+      .sign {
+        position: absolute; left: 70px; top: 190px; width: 580px;
+        background: #d7263d; border-radius: 30px; padding: 26px;
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+      }
+      /* Viền đèn: mỗi ô nền bằng đúng bề dày viền và có một bóng ở giữa, nên bốn cạnh đều có đèn. */
+      .sign::before {
+        content: ''; position: absolute; inset: 2px; border-radius: 28px; padding: 22px;
+        background: radial-gradient(circle at 11px 11px, #fff3c4 0 3.4px, transparent 4.6px) 0 0 / 22px 22px round;
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor; mask-composite: exclude;
+        filter: drop-shadow(0 0 4px rgba(255, 201, 60, 0.9));
+      }
+      .face {
+        position: relative; background: #8f1427; border-radius: 14px; text-align: center;
+        padding: 30px 20px 26px; box-shadow: inset 0 3px 14px rgba(0, 0, 0, 0.35);
+      }
+      h1 {
+        font: 400 124px/0.9 'Lalezar', sans-serif; white-space: nowrap; color: #ffc93c; padding-top: 18px;
+        text-shadow: 0 5px 0 #5a0c1a, 0 0 34px rgba(255, 201, 60, 0.45);
+      }
+      .face p { font-size: 26px; margin-top: 6px; }
+      .board {
+        position: absolute; right: 70px; top: 120px; width: 470px;
+        background: #d7263d; border-radius: 22px; padding: 9px; transform: rotate(3deg);
+        box-shadow: 0 0 0 3px #ffc93c, 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+      }
+      .board svg { display: block; width: 100%; aspect-ratio: 4 / 3; background: #fffdf6; border-radius: 14px; }
+      .ticket { position: absolute; right: 118px; top: 520px; display: flex; gap: 26px; transform: rotate(-2deg); }
+      .word { display: flex; gap: 4px; }
+      .sq {
+        width: 42px; height: 56px; background: #fff8e6; border: 1px solid #c9b88f; border-radius: 5px;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: inset 0 -4px 0 rgba(42, 31, 61, 0.07), 0 8px 16px -8px rgba(0, 0, 0, 0.6);
+      }
+      .tok {
+        width: 38px; height: 38px; border-radius: 50%; background: #ffc93c; color: #2a1f3d;
+        font: 400 30px/1 'Lalezar', sans-serif; padding-top: 6px; text-align: center;
+        box-shadow: inset 0 -3px 0 #b8841a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wire"></div>
+    <div class="sign">
+      <div class="face">
+        <h1>Vẽ Đoán</h1>
+        <p>Một người vẽ, cả phòng đoán.</p>
+      </div>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 320 240" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M100 92 L92 40 L134 72 C150 66 170 66 186 72 L228 40 L220 92 C236 112 236 150 214 172 C186 196 134 196 106 172 C84 150 84 112 100 92Z" fill="#ffd9a8" stroke="#2a1f3d" stroke-width="6" />
+        <circle cx="132" cy="118" r="8" fill="#2a1f3d" />
+        <circle cx="188" cy="118" r="8" fill="#2a1f3d" />
+        <path d="M152 140 L160 148 L168 140 M160 148 C156 160 146 162 140 156 M160 148 C164 160 174 162 180 156" stroke="#2a1f3d" stroke-width="4" />
+        <path d="M60 132 L124 142 M62 156 L124 152 M260 132 L196 142 M258 156 L196 152" stroke="#2a1f3d" stroke-width="3" />
+        <path d="M150 210 C170 200 200 214 230 204" stroke="#d7263d" stroke-width="5" />
+      </svg>
+    </div>
+    <div class="ticket">
+      <div class="word"><i class="sq"></i><i class="sq"></i><i class="sq"></i></div>
+      <div class="word"><i class="sq"><span class="tok">M</span></i><i class="sq"></i><i class="sq"></i></div>
+    </div>
+  </body>
+</html>

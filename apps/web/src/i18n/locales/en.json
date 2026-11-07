@@ -815,6 +815,12 @@
         }
       ]
     },
+    "veDoan": {
+      "title": "Draw & Guess",
+      "genre": "Drawing and guessing party game",
+      "description": "One player draws a secret word with a finger while everyone else types guesses. The faster you guess, the more points you get. Everyone plays on their own phone; invite friends by link or room code.",
+      "tags": ["2–8 players", "Invite by link", "Vietnamese word packs"]
+    },
     "meetCast": "Meet the cast",
     "castCount": "{{count}} characters, each with their own style.",
     "backToApp": "Back to Atomic Habits"

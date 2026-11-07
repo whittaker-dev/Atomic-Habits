@@ -172,15 +172,17 @@ const LINEUP: { left: number; size: number; cast: number; delay: number }[] = [
 ];
 
 function Stage({ game, height }: { game: GameEntry; height: number }) {
+  const cast = game.cast;
+  if (!cast) return null;
   return (
     <div className="relative w-full" style={{ height }} aria-hidden>
       {LINEUP.map((spot) => {
-        const id = game.cast.ids[spot.cast % game.cast.ids.length]!;
+        const id = cast.ids[spot.cast % cast.ids.length]!;
         return (
           // eslint-disable-next-line @next/next/no-img-element -- PNG nhân vật cỡ sẵn, đặt theo chiều cao; tối ưu ảnh của Next không giúp thêm
           <img
             key={id}
-            src={`${game.cast.base}/${id}.png`}
+            src={`${cast.base}/${id}.png`}
             alt=""
             className="gx-bob absolute -translate-x-1/2 select-none drop-shadow-[0_10px_8px_rgba(29,33,71,0.25)]"
             style={{

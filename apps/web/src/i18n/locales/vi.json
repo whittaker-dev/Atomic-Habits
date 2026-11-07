@@ -815,6 +815,12 @@
         }
       ]
     },
+    "veDoan": {
+      "title": "Vẽ Đoán",
+      "genre": "Party game vẽ và đoán chữ",
+      "description": "Một người vẽ từ bí mật bằng ngón tay, cả phòng gõ câu đoán. Đoán ra càng nhanh càng nhiều điểm. Mỗi người chơi trên điện thoại của mình, mời bạn qua link hoặc mã phòng.",
+      "tags": ["2–8 người", "Mời bạn qua link", "Bộ từ tiếng Việt"]
+    },
     "meetCast": "Gặp dàn nhân vật",
     "castCount": "{{count}} nhân vật — mỗi người một cá tính.",
     "backToApp": "Về Atomic Habits"

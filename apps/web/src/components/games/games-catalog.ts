@@ -12,9 +12,10 @@ export type GameEntry = {
   banner: string;
   /**
    * Nhân vật đứng trên sân khấu đầu trang. Dùng bản ảnh nét cao (512px, thư mục hd/) vì ở đây
-   * nhân vật hiện to — ảnh 256px trong game phóng lên sẽ mờ.
+   * nhân vật hiện to — ảnh 256px trong game phóng lên sẽ mờ. Game không có nhân vật (Vẽ Đoán)
+   * thì bỏ trống; chỉ game đứng đầu danh sách mới lên sân khấu.
    */
-  cast: { base: string; ids: string[] };
+  cast?: { base: string; ids: string[] };
 };
 
 export const GAMES: GameEntry[] = [
@@ -36,5 +37,13 @@ export const GAMES: GameEntry[] = [
     cover: ['#ffd6ec', '#7fd8f7'],
     banner: '/games/son-lanh-dia/banner.jpg',
     cast: { base: '/games/son-lanh-dia/characters', ids: ['mochi', 'bin', 'kem'] },
+  },
+  {
+    id: 'veDoan',
+    href: '/games/ve-doan',
+    status: 'playable',
+    cover: ['#2b2060', '#1b1440'],
+    // Dựng từ art-source/ve-doan/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
+    banner: '/games/ve-doan/banner.jpg',
   },
 ];
