@@ -1,4 +1,4 @@
-// Hẹn giờ đăng cho Reel đang nằm ở mục Nháp. Giờ đăng cố định 19:00 giờ VN (12:00 UTC).
+// Hẹn giờ đăng cho Reel đang nằm ở mục Nháp. Giờ đăng cố định 07:00 sáng giờ VN (00:00 UTC cùng ngày).
 // Dùng:  node scripts/schedule-draft.mjs bai-15=2026-12-02 bai-16=2026-12-04 …   (tên file trong posted.json = ngày)
 // Facebook chỉ nhận lịch cách hiện tại 10 phút – 29 ngày. Gọi lại bước finish của /video_reels với
 // video_state=SCHEDULED trên video đã là nháp thì lỗi code 6000, nên phải POST thẳng vào /{video_id}.
@@ -19,7 +19,7 @@ for (const arg of args) {
   const [prefix, day] = arg.split('=');
   const entry = posted.find((p) => p.file.startsWith(`queue/${prefix}`));
   if (!entry) throw new Error(`Không thấy ${prefix} trong posted.json`);
-  const ts = Math.floor(new Date(`${day}T12:00:00Z`).getTime() / 1000);
+  const ts = Math.floor(new Date(`${day}T00:00:00Z`).getTime() / 1000);
   const now = Date.now() / 1000;
   if (!ts || ts < now + 600 || ts > now + 29 * 86400) throw new Error(`${arg}: ngày phải cách hiện tại từ 10 phút đến 29 ngày`);
 
