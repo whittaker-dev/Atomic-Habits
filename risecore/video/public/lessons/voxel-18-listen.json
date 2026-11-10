@@ -1,0 +1,240 @@
+{
+  "id": "voxel-18-listen",
+  "series": "Tiếng Anh 3D",
+  "number": 18,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“I listen music”",
+    "sub": "Thiếu một chữ nhỏ xíu"
+  },
+  "caption": "“I listen music” — thiếu đúng 1 chữ mà sai luôn cả câu! 🎧\n\n❌ I listen music — Thiếu chữ “to”\n✅ I listen to music — Mình nghe nhạc\n✅ Put on some music — Mở nhạc lên đi\n✅ I love this song — Mình mê bài này\n\n🧠 Đố nhanh: I listen to music hay I listen music? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *I listen music*",
+      "card": {
+        "kind": "wrong",
+        "text": "I listen music",
+        "sub": "Thiếu chữ “to”"
+      },
+      "keywords": [
+        "listen",
+        "music"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"I listen music\"!",
+          "vi": "Đừng nói “I listen music” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "You forgot a tiny word!",
+          "vi": "Bạn quên một chữ nhỏ xíu!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *listen to*",
+      "card": {
+        "kind": "rule",
+        "text": "listen ___ music",
+        "sub": "Luôn có “to” trước thứ bạn nghe"
+      },
+      "keywords": [
+        "listen",
+        "to"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Always say listen to something.",
+          "vi": "Luôn nói “listen to” + thứ bạn nghe.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *listen to*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I listen to music",
+        "sub": "Mình nghe nhạc"
+      },
+      "keywords": [
+        "listen",
+        "to"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I listen to music.",
+          "vi": "Bước 1: Mình nghe nhạc.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I listen to music!",
+          "vi": "Mình nghe nhạc.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *put on*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Put on some music",
+        "sub": "Mở nhạc lên đi"
+      },
+      "keywords": [
+        "put",
+        "on"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Put on some music.",
+          "vi": "Bước 2: Mở nhạc lên đi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Put on some music!",
+          "vi": "Mở nhạc lên đi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *this song*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I love this song",
+        "sub": "Mình mê bài này"
+      },
+      "keywords": [
+        "song",
+        "sing"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I love this song!",
+          "vi": "Bước 3: Mình mê bài này!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Listen to me sing!",
+          "vi": "Nghe mình hát nè!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Please don't!",
+          "vi": "Xin đừng!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Trên đường đi học",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "listening",
+        "songs",
+        "speaker"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "What are you listening to?",
+          "vi": "Bạn đang nghe gì vậy?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Some old love songs.",
+          "vi": "Mấy bài tình ca cũ.",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "Put it on speaker!",
+          "vi": "Mở loa ngoài đi!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "I listen to music",
+          "I listen music"
+        ],
+        "answer": 0
+      },
+      "keywords": [
+        "listen",
+        "to"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "A! I listen to music.",
+          "vi": "Đáp án A!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

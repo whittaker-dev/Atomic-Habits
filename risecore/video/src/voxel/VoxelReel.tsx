@@ -12,6 +12,7 @@ import {World} from './Voxel3D';
 const YELLOW = '#FFD60A';
 const RED = '#FF4D5E';
 const MINT = '#2EE6A6';
+const SKY = '#7FD8FF';
 const PANEL = 'rgba(12,16,42,0.9)';
 // Bố cục dọc: nhãn trên cùng → thẻ (phía trên đầu nhân vật) → nhân vật → phụ đề ở khoảng giữa-dưới
 const CHIP_TOP = 110;
@@ -164,6 +165,8 @@ const Card: React.FC<{s: TimedVoxelScene}> = ({s}) => {
   const lastWord = lastLine.words?.[lastLine.words.length - 1];
   const crossAt = lastWord ? lastLine.from + Math.round(lastWord.start * fps) : lastLine.from + 10;
 
+  if (kind === 'quiz') return <QuizCard s={s} enter={enter} />;
+
   if (kind === 'cta') {
     return (
       <div style={{position: 'absolute', top: CARD_TOP + 10, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22}}>
@@ -210,7 +213,7 @@ const Card: React.FC<{s: TimedVoxelScene}> = ({s}) => {
       }}
     >
       <div style={{position: 'relative', display: 'flex', alignItems: 'center', gap: 24}}>
-        <Typed text={text} range={range} size={cardFontSize(text)} color={kind === 'wrong' ? '#FFFFFF' : kind === 'rule' ? '#FFFFFF' : MINT} />
+        <Typed text={text} range={range} size={cardFontSize(text)} color={kind === 'wrong' ? '#FFFFFF' : kind === 'rule' ? '#FFFFFF' : kind === 'practice' ? SKY : MINT} />
         {kind === 'wrong' ? (
           <div
             style={{
@@ -230,7 +233,7 @@ const Card: React.FC<{s: TimedVoxelScene}> = ({s}) => {
           </Stamp>
         ) : null}
       </div>
-      <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: kind === 'phrase' ? '#C9D4FF' : '#FF9AA5'}}>{sub}</div>
+      <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: kind === 'phrase' || kind === 'practice' ? '#C9D4FF' : '#FF9AA5'}}>{sub}</div>
       {kind === 'wrong' ? (
         <Stamp at={range[1] + 14} color={RED} style={{right: 40, top: -36, fontSize: 92, border: `8px solid ${RED}`, borderRadius: 20, padding: '0 22px', background: 'rgba(12,16,42,0.95)'}}>
           SAI!
@@ -240,6 +243,101 @@ const Card: React.FC<{s: TimedVoxelScene}> = ({s}) => {
         <Stamp at={crossAt} color={RED} style={{right: 44, top: -40, fontSize: 120}}>
           ✗
         </Stamp>
+      ) : null}
+    </div>
+  );
+};
+
+/** Đếm ngược của cảnh quiz: từ lúc câu hỏi đọc xong tới lúc câu trả lời bắt đầu (`pauseBefore` của câu trả lời) */
+export function quizTiming(s: TimedVoxelScene): {start: number; reveal: number} {
+  const [q, a] = s.lines;
+  return {start: q.from + q.dur, reveal: a.from};
+}
+
+const QuizCard: React.FC<{s: TimedVoxelScene; enter: number}> = ({s, enter}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const {text, sub, options = [], answer = 0} = s.scene.card;
+  const {start, reveal} = quizTiming(s);
+  const shown = frame >= reveal;
+  const left = Math.ceil((reveal - frame) / fps);
+  // Số đếm nảy lên mỗi lần đổi số (đổi ở các mốc reveal − n giây)
+  const beat = spring({frame: left * fps - (reveal - frame), fps, config: {damping: 10, stiffness: 240}});
+  const longest = Math.max(...options.map((o) => o.length));
+  const size = Math.min(58, Math.floor(1150 / longest));
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: CARD_TOP,
+        left: 80,
+        right: 80,
+        padding: '22px 40px 24px',
+        transform: `translateY(${(1 - enter) * -60}px) scale(${0.9 + 0.1 * enter})`,
+        opacity: enter,
+        borderRadius: 40,
+        background: PANEL,
+        border: '3px solid rgba(255,255,255,0.12)',
+        boxShadow: '0 24px 60px rgba(0,0,0,0.45)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12,
+        fontFamily: FONT,
+        fontWeight: 900,
+      }}
+    >
+      <div style={{fontSize: 46, color: '#FFFFFF', textAlign: 'center'}}>{text}</div>
+      {options.map((o, i) => {
+        const right = i === answer;
+        const k = shown ? spring({frame: frame - reveal, fps, config: {damping: 12, stiffness: 200}}) : 0;
+        return (
+          <div
+            key={i}
+            style={{
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 24,
+              padding: '8px 22px',
+              borderRadius: 24,
+              background: right && shown ? `rgba(46,230,166,${0.22 * k})` : 'rgba(255,255,255,0.07)',
+              border: `3px solid ${right && shown ? MINT : 'rgba(255,255,255,0.1)'}`,
+              opacity: !right && shown ? 1 - 0.45 * k : 1,
+              transform: `scale(${right && shown ? 1 + 0.04 * k : 1})`,
+            }}
+          >
+            <div style={{width: 72, height: 72, flexShrink: 0, borderRadius: 36, background: right && shown ? MINT : YELLOW, color: '#0B0F2A', fontSize: 46, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              {right && shown ? '✓' : String.fromCharCode(65 + i)}
+            </div>
+            <div style={{position: 'relative', fontSize: size, color: '#FFFFFF', whiteSpace: 'nowrap'}}>
+              {o}
+              {!right && shown ? <div style={{position: 'absolute', left: -6, top: '52%', height: 10, borderRadius: 5, background: RED, width: `${k * 104}%`}} /> : null}
+            </div>
+          </div>
+        );
+      })}
+      <div style={{fontWeight: 700, fontSize: 38, color: '#C9D4FF', textAlign: 'center'}}>{sub}</div>
+      {frame >= start && !shown ? (
+        <div
+          style={{
+            position: 'absolute',
+            right: 26,
+            top: -54,
+            width: 120,
+            height: 120,
+            borderRadius: 60,
+            background: YELLOW,
+            color: '#0B0F2A',
+            fontSize: 78,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 10px 0 #C9A500, 0 20px 40px rgba(0,0,0,0.45)',
+            transform: `scale(${0.8 + 0.2 * beat})`,
+          }}
+        >
+          {left}
+        </div>
       ) : null}
     </div>
   );
@@ -428,6 +526,22 @@ export const VoxelReel: React.FC<VoxelProps> = ({timeline}) => {
             )),
             <Sequence key={`h${hit}`} name={s.scene.card.kind === 'wrong' ? 'Stamp' : 'Check'} from={hit} durationInFrames={20}>
               <Audio src={staticFile(s.scene.card.kind === 'wrong' ? 'audio/stamp.wav' : 'audio/pop.wav')} volume={0.5} />
+            </Sequence>,
+          ];
+        })}
+      {timeline.scenes
+        .filter((s) => s.scene.card.kind === 'quiz')
+        .flatMap((s) => {
+          const {start, reveal} = quizTiming(s);
+          const ticks = [3, 2, 1].map((n) => reveal - n * fps).filter((t) => t >= start - 1);
+          return [
+            ...ticks.map((t) => (
+              <Sequence key={`c${t}`} name="Countdown tick" from={t} durationInFrames={6}>
+                <Audio src={staticFile('audio/tick.wav')} volume={0.6} />
+              </Sequence>
+            )),
+            <Sequence key={`r${reveal}`} name="Quiz answer" from={reveal} durationInFrames={40}>
+              <Audio src={staticFile('audio/ding.wav')} volume={0.45} />
             </Sequence>,
           ];
         })}

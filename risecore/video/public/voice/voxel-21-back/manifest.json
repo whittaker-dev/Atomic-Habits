@@ -1,0 +1,506 @@
+{
+  "id": "voxel-21-back",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"return back\"!",
+      "file": "voice/voxel-21-back/00.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "saying",
+          "start": 0.395,
+          "end": 0.673
+        },
+        {
+          "w": "\"return",
+          "start": 0.743,
+          "end": 1.138
+        },
+        {
+          "w": "back\"!",
+          "start": 1.207,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "That's saying back twice!",
+      "file": "voice/voxel-21-back/01.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "That's",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "saying",
+          "start": 0.279,
+          "end": 0.499
+        },
+        {
+          "w": "back",
+          "start": 0.546,
+          "end": 0.697
+        },
+        {
+          "w": "twice!",
+          "start": 0.743,
+          "end": 1.486
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Return already means go back.",
+      "file": "voice/voxel-21-back/02.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "Return",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "w": "already",
+          "start": 0.383,
+          "end": 0.662
+        },
+        {
+          "w": "means",
+          "start": 0.708,
+          "end": 0.917
+        },
+        {
+          "w": "go",
+          "start": 0.964,
+          "end": 1.057
+        },
+        {
+          "w": "back.",
+          "start": 1.103,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: I'll return tomorrow.",
+      "file": "voice/voxel-21-back/03.mp3",
+      "duration": 2.368435,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "one:",
+          "start": 0.372,
+          "end": 0.685
+        },
+        {
+          "w": "I'll",
+          "start": 1.01,
+          "end": 1.184
+        },
+        {
+          "w": "return",
+          "start": 1.231,
+          "end": 1.498
+        },
+        {
+          "w": "tomorrow.",
+          "start": 1.556,
+          "end": 2.368
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'll return tomorrow!",
+      "file": "voice/voxel-21-back/04.mp3",
+      "duration": 1.393197,
+      "words": [
+        {
+          "w": "I'll",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "return",
+          "start": 0.279,
+          "end": 0.592
+        },
+        {
+          "w": "tomorrow!",
+          "start": 0.65,
+          "end": 1.393
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: Come back soon.",
+      "file": "voice/voxel-21-back/05.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.348,
+          "end": 0.801
+        },
+        {
+          "w": "Come",
+          "start": 1.242,
+          "end": 1.428
+        },
+        {
+          "w": "back",
+          "start": 1.451,
+          "end": 1.614
+        },
+        {
+          "w": "soon.",
+          "start": 1.672,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Come back soon!",
+      "file": "voice/voxel-21-back/06.mp3",
+      "duration": 1.114558,
+      "words": [
+        {
+          "w": "Come",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "back",
+          "start": 0.255,
+          "end": 0.453
+        },
+        {
+          "w": "soon!",
+          "start": 0.522,
+          "end": 1.115
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: Let's head back!",
+      "file": "voice/voxel-21-back/07.mp3",
+      "duration": 2.182676,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "three:",
+          "start": 0.337,
+          "end": 0.755
+        },
+        {
+          "w": "Let's",
+          "start": 1.138,
+          "end": 1.347
+        },
+        {
+          "w": "head",
+          "start": 1.37,
+          "end": 1.486
+        },
+        {
+          "w": "back!",
+          "start": 1.533,
+          "end": 2.183
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Head back... to the fridge!",
+      "file": "voice/voxel-21-back/08.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "Head",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "back...",
+          "start": 0.325,
+          "end": 0.662
+        },
+        {
+          "w": "to",
+          "start": 0.697,
+          "end": 0.813
+        },
+        {
+          "w": "the",
+          "start": 0.859,
+          "end": 0.929
+        },
+        {
+          "w": "fridge!",
+          "start": 0.975,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Always food!",
+      "file": "voice/voxel-21-back/09.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "Always",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "food!",
+          "start": 0.383,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "It's getting dark.",
+      "file": "voice/voxel-21-back/10.mp3",
+      "duration": 1.114558,
+      "words": [
+        {
+          "w": "It's",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "getting",
+          "start": 0.232,
+          "end": 0.453
+        },
+        {
+          "w": "dark.",
+          "start": 0.499,
+          "end": 1.115
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Let's head back home.",
+      "file": "voice/voxel-21-back/11.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "head",
+          "start": 0.29,
+          "end": 0.418
+        },
+        {
+          "w": "back",
+          "start": 0.476,
+          "end": 0.65
+        },
+        {
+          "w": "home.",
+          "start": 0.708,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Let's come back next week!",
+      "file": "voice/voxel-21-back/12.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "w": "come",
+          "start": 0.279,
+          "end": 0.406
+        },
+        {
+          "w": "back",
+          "start": 0.441,
+          "end": 0.592
+        },
+        {
+          "w": "next",
+          "start": 0.65,
+          "end": 0.848
+        },
+        {
+          "w": "week!",
+          "start": 0.894,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Quick quiz! A or B?",
+      "file": "voice/voxel-21-back/13.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Quick",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "quiz!",
+          "start": 0.313,
+          "end": 0.801
+        },
+        {
+          "w": "A",
+          "start": 0.975,
+          "end": 1.068
+        },
+        {
+          "w": "or",
+          "start": 1.138,
+          "end": 1.219
+        },
+        {
+          "w": "B?",
+          "start": 1.277,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! I'll come back soon.",
+      "file": "voice/voxel-21-back/14.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.372
+        },
+        {
+          "w": "I'll",
+          "start": 0.464,
+          "end": 0.627
+        },
+        {
+          "w": "come",
+          "start": 0.673,
+          "end": 0.801
+        },
+        {
+          "w": "back",
+          "start": 0.836,
+          "end": 1.01
+        },
+        {
+          "w": "soon.",
+          "start": 1.068,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-21-back/15.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.43
+        },
+        {
+          "w": "one,",
+          "start": 0.511,
+          "end": 0.824
+        },
+        {
+          "w": "two,",
+          "start": 0.848,
+          "end": 1.149
+        },
+        {
+          "w": "or",
+          "start": 1.196,
+          "end": 1.3
+        },
+        {
+          "w": "three!",
+          "start": 1.358,
+          "end": 2.043
+        }
+      ]
+    }
+  ]
+}

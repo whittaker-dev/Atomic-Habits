@@ -1,0 +1,237 @@
+{
+  "id": "voxel-17-info",
+  "series": "Tiếng Anh 3D",
+  "number": 17,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“informations”",
+    "sub": "Thông tin có đếm được không?"
+  },
+  "caption": "“Informations” — thêm chữ “s” là sai ngay nha! 📌\n\n❌ informations — Không có “s” đâu\n✅ some information — Vài thông tin\n✅ Any info? — Có tin gì không?\n✅ Send me the details — Gửi mình chi tiết nha\n\n🧠 Đố nhanh: some informations hay some information? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *informations*",
+      "card": {
+        "kind": "wrong",
+        "text": "informations",
+        "sub": "Không có “s” đâu"
+      },
+      "keywords": [
+        "informations",
+        "information"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"informations\"!",
+          "vi": "Đừng nói “informations” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "You can't count information!",
+          "vi": "Information không đếm được!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *không đếm được*",
+      "card": {
+        "kind": "rule",
+        "text": "an information ✗",
+        "sub": "Không có “an”, không thêm “s”"
+      },
+      "keywords": [
+        "uncountable",
+        "water"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "It's uncountable, like water.",
+          "vi": "Nó không đếm được, giống như nước.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *some information*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "some information",
+        "sub": "Vài thông tin"
+      },
+      "keywords": [
+        "information"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I need some information.",
+          "vi": "Bước 1: Mình cần vài thông tin.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I need some information!",
+          "vi": "Mình cần vài thông tin.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *info*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Any info?",
+        "sub": "Có tin gì không?"
+      },
+      "keywords": [
+        "info"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Any info?",
+          "vi": "Bước 2: Có tin gì không?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Any info?",
+          "vi": "Có tin gì không?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *the details*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Send me the details",
+        "sub": "Gửi mình chi tiết nha"
+      },
+      "keywords": [
+        "details",
+        "info",
+        "hungry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Send me the details!",
+          "vi": "Bước 3: Gửi mình chi tiết nha!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Here's my info: I'm hungry.",
+          "vi": "Thông tin của mình: mình đói.",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Not useful!",
+          "vi": "Vô dụng ghê!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Hỏi về lớp học",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "information"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Can I get some information?",
+          "vi": "Cho mình xin ít thông tin nhé?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "mia",
+          "say": "Sure! What do you need?",
+          "vi": "Được chứ! Bạn cần gì?",
+          "shot": "close"
+        },
+        {
+          "speaker": "com",
+          "say": "The price, please.",
+          "vi": "Cho mình hỏi giá ạ.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "some informations",
+          "some information"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "information",
+        "informations"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! some information.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "id": "voxel-19-cheap",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"The price is cheap\"!",
+      "file": "voice/voxel-19-cheap/00.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "w": "saying",
+          "start": 0.406,
+          "end": 0.708
+        },
+        {
+          "w": "\"The",
+          "start": 0.824,
+          "end": 1.068
+        },
+        {
+          "w": "price",
+          "start": 1.126,
+          "end": 1.451
+        },
+        {
+          "w": "is",
+          "start": 1.486,
+          "end": 1.567
+        },
+        {
+          "w": "cheap\"!",
+          "start": 1.637,
+          "end": 2.276
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Close, but not quite!",
+      "file": "voice/voxel-19-cheap/01.mp3",
+      "duration": 1.346757,
+      "words": [
+        {
+          "w": "Close,",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "w": "but",
+          "start": 0.383,
+          "end": 0.499
+        },
+        {
+          "w": "not",
+          "start": 0.534,
+          "end": 0.673
+        },
+        {
+          "w": "quite!",
+          "start": 0.731,
+          "end": 1.347
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Things are cheap. Prices are low.",
+      "file": "voice/voxel-19-cheap/02.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "Things",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "are",
+          "start": 0.29,
+          "end": 0.383
+        },
+        {
+          "w": "cheap.",
+          "start": 0.418,
+          "end": 0.72
+        },
+        {
+          "w": "Prices",
+          "start": 0.755,
+          "end": 1.126
+        },
+        {
+          "w": "are",
+          "start": 1.161,
+          "end": 1.265
+        },
+        {
+          "w": "low.",
+          "start": 1.3,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: It's so cheap.",
+      "file": "voice/voxel-19-cheap/03.mp3",
+      "duration": 2.089796,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "one:",
+          "start": 0.395,
+          "end": 0.731
+        },
+        {
+          "w": "It's",
+          "start": 0.975,
+          "end": 1.184
+        },
+        {
+          "w": "so",
+          "start": 1.219,
+          "end": 1.382
+        },
+        {
+          "w": "cheap.",
+          "start": 1.451,
+          "end": 2.09
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "It's so cheap!",
+      "file": "voice/voxel-19-cheap/04.mp3",
+      "duration": 1.346757,
+      "words": [
+        {
+          "w": "It's",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "so",
+          "start": 0.29,
+          "end": 0.557
+        },
+        {
+          "w": "cheap!",
+          "start": 0.65,
+          "end": 1.347
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: That's a good price.",
+      "file": "voice/voxel-19-cheap/05.mp3",
+      "duration": 2.461315,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "two:",
+          "start": 0.337,
+          "end": 0.72
+        },
+        {
+          "w": "That's",
+          "start": 1.231,
+          "end": 1.474
+        },
+        {
+          "w": "a",
+          "start": 1.498,
+          "end": 1.533
+        },
+        {
+          "w": "good",
+          "start": 1.567,
+          "end": 1.707
+        },
+        {
+          "w": "price.",
+          "start": 1.753,
+          "end": 2.461
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "That's a good price!",
+      "file": "voice/voxel-19-cheap/06.mp3",
+      "duration": 1.300317,
+      "words": [
+        {
+          "w": "That's",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "a",
+          "start": 0.29,
+          "end": 0.313
+        },
+        {
+          "w": "good",
+          "start": 0.36,
+          "end": 0.499
+        },
+        {
+          "w": "price!",
+          "start": 0.546,
+          "end": 1.3
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: What a great deal!",
+      "file": "voice/voxel-19-cheap/07.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "three:",
+          "start": 0.325,
+          "end": 0.731
+        },
+        {
+          "w": "What",
+          "start": 1.057,
+          "end": 1.242
+        },
+        {
+          "w": "a",
+          "start": 1.277,
+          "end": 1.3
+        },
+        {
+          "w": "great",
+          "start": 1.347,
+          "end": 1.544
+        },
+        {
+          "w": "deal!",
+          "start": 1.591,
+          "end": 2.276
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "So buy me one!",
+      "file": "voice/voxel-19-cheap/08.mp3",
+      "duration": 1.207438,
+      "words": [
+        {
+          "w": "So",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "buy",
+          "start": 0.255,
+          "end": 0.418
+        },
+        {
+          "w": "me",
+          "start": 0.488,
+          "end": 0.569
+        },
+        {
+          "w": "one!",
+          "start": 0.65,
+          "end": 1.207
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "No way!",
+      "file": "voice/voxel-19-cheap/09.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "No",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "way!",
+          "start": 0.232,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "This shirt is only five dollars.",
+      "file": "voice/voxel-19-cheap/10.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "This",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "shirt",
+          "start": 0.221,
+          "end": 0.406
+        },
+        {
+          "w": "is",
+          "start": 0.441,
+          "end": 0.511
+        },
+        {
+          "w": "only",
+          "start": 0.546,
+          "end": 0.708
+        },
+        {
+          "w": "five",
+          "start": 0.778,
+          "end": 0.987
+        },
+        {
+          "w": "dollars.",
+          "start": 1.022,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "That's so cheap!",
+      "file": "voice/voxel-19-cheap/11.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "That's",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "so",
+          "start": 0.313,
+          "end": 0.476
+        },
+        {
+          "w": "cheap!",
+          "start": 0.569,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "What a great deal!",
+      "file": "voice/voxel-19-cheap/12.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "What",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "a",
+          "start": 0.209,
+          "end": 0.244
+        },
+        {
+          "w": "great",
+          "start": 0.279,
+          "end": 0.453
+        },
+        {
+          "w": "deal!",
+          "start": 0.499,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Quick quiz! A or B?",
+      "file": "voice/voxel-19-cheap/13.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Quick",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "quiz!",
+          "start": 0.313,
+          "end": 0.778
+        },
+        {
+          "w": "A",
+          "start": 0.929,
+          "end": 1.022
+        },
+        {
+          "w": "or",
+          "start": 1.149,
+          "end": 1.254
+        },
+        {
+          "w": "B?",
+          "start": 1.312,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "A! The price is low.",
+      "file": "voice/voxel-19-cheap/14.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "A!",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "The",
+          "start": 0.569,
+          "end": 0.685
+        },
+        {
+          "w": "price",
+          "start": 0.731,
+          "end": 0.987
+        },
+        {
+          "w": "is",
+          "start": 1.022,
+          "end": 1.091
+        },
+        {
+          "w": "low.",
+          "start": 1.173,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-19-cheap/15.mp3",
+      "duration": 1.996916,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.348
+        },
+        {
+          "w": "one,",
+          "start": 0.418,
+          "end": 0.708
+        },
+        {
+          "w": "two,",
+          "start": 0.778,
+          "end": 1.103
+        },
+        {
+          "w": "or",
+          "start": 1.138,
+          "end": 1.254
+        },
+        {
+          "w": "three!",
+          "start": 1.312,
+          "end": 1.997
+        }
+      ]
+    }
+  ]
+}

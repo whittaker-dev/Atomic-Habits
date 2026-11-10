@@ -1,0 +1,238 @@
+{
+  "id": "voxel-14-fun",
+  "series": "Tiếng Anh 3D",
+  "number": 14,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“The party was funny”",
+    "sub": "Vui mà nói funny là toang"
+  },
+  "caption": "Đi tiệc về mà nói “The party was funny” là người ta tưởng tiệc… hài lắm đó 😂\n\n❌ The party was funny — = Bữa tiệc buồn cười\n✅ It was fun — Vui lắm\n✅ It was so much fun — Vui cực kỳ\n✅ It was a blast — Vui banh nóc\n\n🧠 Đố nhanh: It was fun hay It was funny? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *The party was funny*",
+      "card": {
+        "kind": "wrong",
+        "text": "The party was funny",
+        "sub": "= Bữa tiệc buồn cười"
+      },
+      "keywords": [
+        "funny",
+        "party"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"The party was funny\"!",
+          "vi": "Đừng nói “The party was funny” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Funny means it made you laugh!",
+          "vi": "Funny là làm bạn bật cười!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "VÌ SAO · *fun* ≠ *funny*",
+      "card": {
+        "kind": "rule",
+        "text": "fun ≠ funny",
+        "sub": "fun: vui · funny: buồn cười"
+      },
+      "keywords": [
+        "fun",
+        "funny",
+        "laugh"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Fun is a good time. Funny makes you laugh.",
+          "vi": "Fun là vui vẻ. Funny là gây cười.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *fun*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "It was fun",
+        "sub": "Vui lắm"
+      },
+      "keywords": [
+        "fun"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: It was fun.",
+          "vi": "Bước 1: Vui lắm.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "It was fun!",
+          "vi": "Vui lắm.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *so much fun*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "It was so much fun",
+        "sub": "Vui cực kỳ"
+      },
+      "keywords": [
+        "fun"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: It was so much fun.",
+          "vi": "Bước 2: Vui cực kỳ.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "It was so much fun!",
+          "vi": "Vui cực kỳ.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *a blast*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "It was a blast",
+        "sub": "Vui banh nóc"
+      },
+      "keywords": [
+        "blast",
+        "funny",
+        "dancing"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: It was a blast!",
+          "vi": "Bước 3: Vui banh nóc!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "And your dancing was funny!",
+          "vi": "Còn bạn nhảy thì buồn cười!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Excuse me?!",
+          "vi": "Gì cơ?!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Hỏi chuyện cuối tuần",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "party",
+        "blast"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "How was the party?",
+          "vi": "Bữa tiệc sao rồi?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "mia",
+          "say": "It was a blast!",
+          "vi": "Vui banh nóc!",
+          "shot": "close"
+        },
+        {
+          "speaker": "com",
+          "say": "Nice! Next time, invite me.",
+          "vi": "Hay! Lần sau rủ mình nha.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Tiệc vui, nói sao?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "It was fun",
+          "It was funny"
+        ],
+        "answer": 0
+      },
+      "keywords": [
+        "fun"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "A! It was fun.",
+          "vi": "Đáp án A!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

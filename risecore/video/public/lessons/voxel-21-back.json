@@ -1,0 +1,240 @@
+{
+  "id": "voxel-21-back",
+  "series": "Tiếng Anh 3D",
+  "number": 21,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“return back”",
+    "sub": "Quay lại mà nói 2 lần"
+  },
+  "caption": "“Return back” — quay lại… quay lại? Thừa rồi nha! 🔁\n\n❌ return back — “return” đã là “quay lại”\n✅ I'll return tomorrow — Mai mình quay lại\n✅ Come back soon — Sớm quay lại nha\n✅ Let's head back — Mình về thôi\n\n🧠 Đố nhanh: I'll return back soon hay I'll come back soon? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *return back*",
+      "card": {
+        "kind": "wrong",
+        "text": "return back",
+        "sub": "“return” đã là “quay lại”"
+      },
+      "keywords": [
+        "return",
+        "back"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"return back\"!",
+          "vi": "Đừng nói “return back” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "That's saying back twice!",
+          "vi": "Nói vậy là “quay lại” hai lần!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *return* = go back",
+      "card": {
+        "kind": "rule",
+        "text": "return back ✗",
+        "sub": "Thêm “back” là thừa"
+      },
+      "keywords": [
+        "return",
+        "back"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Return already means go back.",
+          "vi": "Return đã có nghĩa là quay lại rồi.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *return*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I'll return tomorrow",
+        "sub": "Mai mình quay lại"
+      },
+      "keywords": [
+        "return"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I'll return tomorrow.",
+          "vi": "Bước 1: Mai mình quay lại.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I'll return tomorrow!",
+          "vi": "Mai mình quay lại.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *come back*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Come back soon",
+        "sub": "Sớm quay lại nha"
+      },
+      "keywords": [
+        "come",
+        "back"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Come back soon.",
+          "vi": "Bước 2: Sớm quay lại nha.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Come back soon!",
+          "vi": "Sớm quay lại nha.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *head back*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's head back",
+        "sub": "Mình về thôi"
+      },
+      "keywords": [
+        "head",
+        "back",
+        "fridge"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Let's head back!",
+          "vi": "Bước 3: Mình về thôi!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Head back... to the fridge!",
+          "vi": "Về... tủ lạnh thôi!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Always food!",
+          "vi": "Lúc nào cũng ăn!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Đi dã ngoại về",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "head",
+        "back",
+        "come"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "It's getting dark.",
+          "vi": "Trời tối rồi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Let's head back home.",
+          "vi": "Mình về nhà thôi.",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "Let's come back next week!",
+          "vi": "Tuần sau quay lại nha!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "I'll return back soon",
+          "I'll come back soon"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "come",
+        "back"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! I'll come back soon.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

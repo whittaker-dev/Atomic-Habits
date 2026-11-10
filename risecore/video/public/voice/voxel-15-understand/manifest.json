@@ -1,0 +1,486 @@
+{
+  "id": "voxel-15-understand",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"I am understand\"!",
+      "file": "voice/voxel-15-understand/00.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "saying",
+          "start": 0.383,
+          "end": 0.65
+        },
+        {
+          "w": "\"I",
+          "start": 0.72,
+          "end": 0.813
+        },
+        {
+          "w": "am",
+          "start": 0.964,
+          "end": 1.207
+        },
+        {
+          "w": "understand\"!",
+          "start": 1.289,
+          "end": 2.276
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "One verb is enough!",
+      "file": "voice/voxel-15-understand/01.mp3",
+      "duration": 1.207438,
+      "words": [
+        {
+          "w": "One",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "verb",
+          "start": 0.197,
+          "end": 0.395
+        },
+        {
+          "w": "is",
+          "start": 0.441,
+          "end": 0.511
+        },
+        {
+          "w": "enough!",
+          "start": 0.569,
+          "end": 1.207
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Understand is already a verb.",
+      "file": "voice/voxel-15-understand/02.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "Understand",
+          "start": 0,
+          "end": 0.511
+        },
+        {
+          "w": "is",
+          "start": 0.557,
+          "end": 0.627
+        },
+        {
+          "w": "already",
+          "start": 0.685,
+          "end": 0.94
+        },
+        {
+          "w": "a",
+          "start": 0.987,
+          "end": 1.01
+        },
+        {
+          "w": "verb.",
+          "start": 1.057,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: I understand.",
+      "file": "voice/voxel-15-understand/03.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "one:",
+          "start": 0.395,
+          "end": 0.743
+        },
+        {
+          "w": "I",
+          "start": 0.917,
+          "end": 0.987
+        },
+        {
+          "w": "understand.",
+          "start": 1.103,
+          "end": 2.043
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I understand!",
+      "file": "voice/voxel-15-understand/04.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.116
+        },
+        {
+          "w": "understand!",
+          "start": 0.197,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: Got it.",
+      "file": "voice/voxel-15-understand/05.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "two:",
+          "start": 0.406,
+          "end": 0.824
+        },
+        {
+          "w": "Got",
+          "start": 1.207,
+          "end": 1.451
+        },
+        {
+          "w": "it.",
+          "start": 1.498,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Got it!",
+      "file": "voice/voxel-15-understand/06.mp3",
+      "duration": 0.743039,
+      "words": [
+        {
+          "w": "Got",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "it!",
+          "start": 0.337,
+          "end": 0.743
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: That makes sense!",
+      "file": "voice/voxel-15-understand/07.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "three:",
+          "start": 0.325,
+          "end": 0.708
+        },
+        {
+          "w": "That",
+          "start": 0.952,
+          "end": 1.115
+        },
+        {
+          "w": "makes",
+          "start": 1.149,
+          "end": 1.312
+        },
+        {
+          "w": "sense!",
+          "start": 1.335,
+          "end": 2.043
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Wait... what did you say?",
+      "file": "voice/voxel-15-understand/08.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "Wait...",
+          "start": 0,
+          "end": 0.395
+        },
+        {
+          "w": "what",
+          "start": 0.604,
+          "end": 0.743
+        },
+        {
+          "w": "did",
+          "start": 0.766,
+          "end": 0.859
+        },
+        {
+          "w": "you",
+          "start": 0.906,
+          "end": 0.987
+        },
+        {
+          "w": "say?",
+          "start": 1.045,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "You didn't get it!",
+      "file": "voice/voxel-15-understand/09.mp3",
+      "duration": 1.068118,
+      "words": [
+        {
+          "w": "You",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "w": "didn't",
+          "start": 0.197,
+          "end": 0.395
+        },
+        {
+          "w": "get",
+          "start": 0.43,
+          "end": 0.569
+        },
+        {
+          "w": "it!",
+          "start": 0.627,
+          "end": 1.068
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Turn left, then go straight.",
+      "file": "voice/voxel-15-understand/10.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "Turn",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "left,",
+          "start": 0.325,
+          "end": 0.546
+        },
+        {
+          "w": "then",
+          "start": 0.569,
+          "end": 0.697
+        },
+        {
+          "w": "go",
+          "start": 0.755,
+          "end": 0.859
+        },
+        {
+          "w": "straight.",
+          "start": 0.906,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Got it. Left, then straight.",
+      "file": "voice/voxel-15-understand/11.mp3",
+      "duration": 2.414875,
+      "words": [
+        {
+          "w": "Got",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "it.",
+          "start": 0.302,
+          "end": 0.522
+        },
+        {
+          "w": "Left,",
+          "start": 0.848,
+          "end": 1.277
+        },
+        {
+          "w": "then",
+          "start": 1.405,
+          "end": 1.602
+        },
+        {
+          "w": "straight.",
+          "start": 1.683,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Perfect!",
+      "file": "voice/voxel-15-understand/12.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Perfect!",
+          "start": 0,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Quick quiz! A or B?",
+      "file": "voice/voxel-15-understand/13.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Quick",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "quiz!",
+          "start": 0.302,
+          "end": 0.801
+        },
+        {
+          "w": "A",
+          "start": 0.975,
+          "end": 1.091
+        },
+        {
+          "w": "or",
+          "start": 1.126,
+          "end": 1.242
+        },
+        {
+          "w": "B?",
+          "start": 1.324,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! I understand.",
+      "file": "voice/voxel-15-understand/14.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.488
+        },
+        {
+          "w": "I",
+          "start": 0.871,
+          "end": 0.929
+        },
+        {
+          "w": "understand.",
+          "start": 1.01,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-15-understand/15.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.395
+        },
+        {
+          "w": "one,",
+          "start": 0.476,
+          "end": 0.789
+        },
+        {
+          "w": "two,",
+          "start": 0.813,
+          "end": 1.138
+        },
+        {
+          "w": "or",
+          "start": 1.184,
+          "end": 1.324
+        },
+        {
+          "w": "three!",
+          "start": 1.405,
+          "end": 2.043
+        }
+      ]
+    }
+  ]
+}

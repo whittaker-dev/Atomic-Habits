@@ -1,0 +1,237 @@
+{
+  "id": "voxel-13-same",
+  "series": "Tiếng Anh 3D",
+  "number": 13,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Same same”",
+    "sub": "Muốn nói “mình cũng vậy”?"
+  },
+  "caption": "“Same same” nghe dễ thương mà… bồi lắm nha! 🙈\n\n❌ Same same — Nghe kiểu nói bồi\n✅ Me too — Mình cũng vậy\n✅ Same here — Mình cũng thế\n✅ I feel the same way — Mình cũng thấy y vậy\n\n🧠 Đố nhanh: Same same hay Same here? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *Same same*",
+      "card": {
+        "kind": "wrong",
+        "text": "Same same",
+        "sub": "Nghe kiểu nói bồi"
+      },
+      "keywords": [
+        "same"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"Same same\"!",
+          "vi": "Đừng nói “Same same” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Natives don't really say that!",
+          "vi": "Người bản xứ không nói vậy đâu!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "VÌ SAO · *same same* = bồi",
+      "card": {
+        "kind": "rule",
+        "text": "same same ✗",
+        "sub": "Muốn nói “mình cũng vậy” thì sao?"
+      },
+      "keywords": [
+        "natural"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Try these natural ones instead.",
+          "vi": "Thử mấy câu tự nhiên này nha.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *me too*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Me too",
+        "sub": "Mình cũng vậy"
+      },
+      "keywords": [
+        "too"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Me too.",
+          "vi": "Bước 1: Mình cũng vậy.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Me too!",
+          "vi": "Mình cũng vậy.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *same here*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Same here",
+        "sub": "Mình cũng thế"
+      },
+      "keywords": [
+        "same",
+        "here"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Same here.",
+          "vi": "Bước 2: Mình cũng thế.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Same here!",
+          "vi": "Mình cũng thế.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *feel the same*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I feel the same way",
+        "sub": "Mình cũng thấy y vậy"
+      },
+      "keywords": [
+        "same",
+        "different"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I feel the same way!",
+          "vi": "Bước 3: Mình cũng thấy y vậy!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Same same... but different!",
+          "vi": "Giống giống... mà khác khác!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Oh no, stop!",
+          "vi": "Thôi đủ rồi!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Than mệt sau giờ học",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "same",
+        "here",
+        "tired"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "I'm so tired today.",
+          "vi": "Hôm nay mình mệt quá.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Same here. Long day!",
+          "vi": "Mình cũng thế. Ngày dài ghê!",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "Let's get bubble tea.",
+          "vi": "Đi uống trà sữa đi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào tự nhiên?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "Same same",
+          "Same here"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "same",
+        "here"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! Same here.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

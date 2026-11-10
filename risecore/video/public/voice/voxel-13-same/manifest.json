@@ -1,0 +1,491 @@
+{
+  "id": "voxel-13-same",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"Same same\"!",
+      "file": "voice/voxel-13-same/00.mp3",
+      "duration": 1.996916,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "w": "saying",
+          "start": 0.43,
+          "end": 0.708
+        },
+        {
+          "w": "\"Same",
+          "start": 0.789,
+          "end": 1.219
+        },
+        {
+          "w": "same\"!",
+          "start": 1.265,
+          "end": 1.997
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Natives don't really say that!",
+      "file": "voice/voxel-13-same/01.mp3",
+      "duration": 1.671837,
+      "words": [
+        {
+          "w": "Natives",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "w": "don't",
+          "start": 0.383,
+          "end": 0.534
+        },
+        {
+          "w": "really",
+          "start": 0.569,
+          "end": 0.801
+        },
+        {
+          "w": "say",
+          "start": 0.859,
+          "end": 1.045
+        },
+        {
+          "w": "that!",
+          "start": 1.103,
+          "end": 1.672
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Try these natural ones instead.",
+      "file": "voice/voxel-13-same/02.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Try",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "these",
+          "start": 0.29,
+          "end": 0.441
+        },
+        {
+          "w": "natural",
+          "start": 0.476,
+          "end": 0.766
+        },
+        {
+          "w": "ones",
+          "start": 0.824,
+          "end": 0.998
+        },
+        {
+          "w": "instead.",
+          "start": 1.045,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: Me too.",
+      "file": "voice/voxel-13-same/03.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "one:",
+          "start": 0.36,
+          "end": 0.72
+        },
+        {
+          "w": "Me",
+          "start": 1.045,
+          "end": 1.196
+        },
+        {
+          "w": "too.",
+          "start": 1.242,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Me too!",
+      "file": "voice/voxel-13-same/04.mp3",
+      "duration": 0.835918,
+      "words": [
+        {
+          "w": "Me",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "too!",
+          "start": 0.267,
+          "end": 0.836
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: Same here.",
+      "file": "voice/voxel-13-same/05.mp3",
+      "duration": 1.625397,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.348,
+          "end": 0.662
+        },
+        {
+          "w": "Same",
+          "start": 0.743,
+          "end": 0.987
+        },
+        {
+          "w": "here.",
+          "start": 1.033,
+          "end": 1.625
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Same here!",
+      "file": "voice/voxel-13-same/06.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "Same",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "here!",
+          "start": 0.348,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: I feel the same way!",
+      "file": "voice/voxel-13-same/07.mp3",
+      "duration": 2.414875,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "three:",
+          "start": 0.337,
+          "end": 0.789
+        },
+        {
+          "w": "I",
+          "start": 1.068,
+          "end": 1.126
+        },
+        {
+          "w": "feel",
+          "start": 1.242,
+          "end": 1.405
+        },
+        {
+          "w": "the",
+          "start": 1.44,
+          "end": 1.509
+        },
+        {
+          "w": "same",
+          "start": 1.544,
+          "end": 1.73
+        },
+        {
+          "w": "way!",
+          "start": 1.776,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Same same... but different!",
+      "file": "voice/voxel-13-same/08.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "Same",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "w": "same...",
+          "start": 0.36,
+          "end": 0.848
+        },
+        {
+          "w": "but",
+          "start": 1.173,
+          "end": 1.335
+        },
+        {
+          "w": "different!",
+          "start": 1.382,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Oh no, stop!",
+      "file": "voice/voxel-13-same/09.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "Oh",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "no,",
+          "start": 0.209,
+          "end": 0.36
+        },
+        {
+          "w": "stop!",
+          "start": 0.395,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "I'm so tired today.",
+      "file": "voice/voxel-13-same/10.mp3",
+      "duration": 1.346757,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "so",
+          "start": 0.232,
+          "end": 0.337
+        },
+        {
+          "w": "tired",
+          "start": 0.395,
+          "end": 0.697
+        },
+        {
+          "w": "today.",
+          "start": 0.731,
+          "end": 1.347
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Same here. Long day!",
+      "file": "voice/voxel-13-same/11.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "Same",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "here.",
+          "start": 0.372,
+          "end": 0.708
+        },
+        {
+          "w": "Long",
+          "start": 0.917,
+          "end": 1.196
+        },
+        {
+          "w": "day!",
+          "start": 1.265,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Let's get bubble tea.",
+      "file": "voice/voxel-13-same/12.mp3",
+      "duration": 1.300317,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "w": "get",
+          "start": 0.279,
+          "end": 0.395
+        },
+        {
+          "w": "bubble",
+          "start": 0.441,
+          "end": 0.685
+        },
+        {
+          "w": "tea.",
+          "start": 0.72,
+          "end": 1.3
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Quick quiz! A or B?",
+      "file": "voice/voxel-13-same/13.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "Quick",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "quiz!",
+          "start": 0.29,
+          "end": 0.685
+        },
+        {
+          "w": "A",
+          "start": 0.72,
+          "end": 0.778
+        },
+        {
+          "w": "or",
+          "start": 0.859,
+          "end": 0.94
+        },
+        {
+          "w": "B?",
+          "start": 1.01,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! Same here.",
+      "file": "voice/voxel-13-same/14.mp3",
+      "duration": 1.439637,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.383
+        },
+        {
+          "w": "Same",
+          "start": 0.534,
+          "end": 0.824
+        },
+        {
+          "w": "here.",
+          "start": 0.859,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-13-same/15.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.406
+        },
+        {
+          "w": "one,",
+          "start": 0.488,
+          "end": 0.766
+        },
+        {
+          "w": "two,",
+          "start": 0.789,
+          "end": 1.057
+        },
+        {
+          "w": "or",
+          "start": 1.103,
+          "end": 1.219
+        },
+        {
+          "w": "three!",
+          "start": 1.289,
+          "end": 1.95
+        }
+      ]
+    }
+  ]
+}

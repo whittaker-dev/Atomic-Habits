@@ -2,9 +2,19 @@ import {Line, Manifest, Timeline, TimedLine, TimedScene, buildTimeline} from '..
 
 /** `shot`: cận mặt người nói hay toàn cảnh 2 người. `mood` đổi mắt/lông mày/tay của cả hai nhân vật trong câu đó. */
 export type VoxelLine = Line & {shot: 'close' | 'wide'; mood?: 'serious' | 'happy'};
-export type CardKind = 'wrong' | 'rule' | 'phrase' | 'cta';
-/** `chip` là nhãn trên cùng, phần trong *…* tô vàng. `keywords` là các từ tô vàng trong phụ đề. */
-export type VoxelScene = {chip: string; step?: number; card: {kind: CardKind; text: string; sub: string}; keywords: string[]; lines: VoxelLine[]};
+export type CardKind = 'wrong' | 'rule' | 'phrase' | 'practice' | 'quiz' | 'cta';
+/**
+ * `chip` là nhãn trên cùng, phần trong *…* tô vàng. `keywords` là các từ tô vàng trong phụ đề.
+ * Thẻ `quiz` có `options` (A, B…) và `answer` (vị trí đáp án đúng); cảnh quiz gồm câu hỏi rồi câu trả lời có
+ * `pauseBefore` — khoảng nghỉ đó là lúc đếm ngược.
+ */
+export type VoxelScene = {
+  chip: string;
+  step?: number;
+  card: {kind: CardKind; text: string; sub: string; options?: string[]; answer?: number};
+  keywords: string[];
+  lines: VoxelLine[];
+};
 /** `cover`: chữ trên ảnh bìa — `kicker` (nhãn đỏ), `title` (to, vàng), `sub` */
 export type VoxelReelData = {id: string; series: string; number: number; cover: {kicker: string; title: string; sub: string}; scenes: VoxelScene[]};
 

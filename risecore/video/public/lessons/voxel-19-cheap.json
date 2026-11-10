@@ -1,0 +1,236 @@
+{
+  "id": "voxel-19-cheap",
+  "series": "Tiếng Anh 3D",
+  "number": 19,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“The price is cheap”",
+    "sub": "Giá thì “thấp”, không “rẻ”"
+  },
+  "caption": "Rẻ thì nói “cheap”… nhưng “price” thì không “cheap” được đâu nha! 🛍️\n\n❌ The price is cheap — Giá thì “thấp”, không “rẻ”\n✅ It's so cheap — Rẻ quá trời\n✅ That's a good price — Giá hời đó\n✅ What a great deal — Mua được hời ghê\n\n🧠 Đố nhanh: The price is low hay The price is cheap? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *The price is cheap*",
+      "card": {
+        "kind": "wrong",
+        "text": "The price is cheap",
+        "sub": "Giá thì “thấp”, không “rẻ”"
+      },
+      "keywords": [
+        "cheap",
+        "price"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"The price is cheap\"!",
+          "vi": "Đừng nói “The price is cheap” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Close, but not quite!",
+          "vi": "Gần đúng, nhưng chưa chuẩn!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *low price*",
+      "card": {
+        "kind": "rule",
+        "text": "cheap price ✗",
+        "sub": "Đồ: cheap · Giá: low"
+      },
+      "keywords": [
+        "cheap",
+        "low"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Things are cheap. Prices are low.",
+          "vi": "Đồ thì rẻ. Giá thì thấp.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *cheap*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "It's so cheap",
+        "sub": "Rẻ quá trời"
+      },
+      "keywords": [
+        "cheap"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: It's so cheap.",
+          "vi": "Bước 1: Rẻ quá trời.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "It's so cheap!",
+          "vi": "Rẻ quá trời.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *good price*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "That's a good price",
+        "sub": "Giá hời đó"
+      },
+      "keywords": [
+        "price"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: That's a good price.",
+          "vi": "Bước 2: Giá hời đó.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "That's a good price!",
+          "vi": "Giá hời đó.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *great deal*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "What a great deal",
+        "sub": "Mua được hời ghê"
+      },
+      "keywords": [
+        "deal"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: What a great deal!",
+          "vi": "Bước 3: Mua được hời ghê!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "So buy me one!",
+          "vi": "Vậy mua cho mình một cái!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "No way!",
+          "vi": "Còn lâu!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Đi chợ đêm",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "cheap",
+        "deal"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "This shirt is only five dollars.",
+          "vi": "Áo này chỉ 5 đô.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "That's so cheap!",
+          "vi": "Rẻ quá trời!",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "What a great deal!",
+          "vi": "Hời ghê!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "The price is low",
+          "The price is cheap"
+        ],
+        "answer": 0
+      },
+      "keywords": [
+        "low",
+        "price"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "A! The price is low.",
+          "vi": "Đáp án A!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

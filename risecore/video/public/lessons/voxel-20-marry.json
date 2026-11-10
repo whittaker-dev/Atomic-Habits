@@ -1,0 +1,235 @@
+{
+  "id": "voxel-20-marry",
+  "series": "Tiếng Anh 3D",
+  "number": 20,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“marry with her”",
+    "sub": "Cưới ai thì không cần “with”"
+  },
+  "caption": "Cưới ai thì “marry” thẳng người đó, đừng thêm “with” nha! 💍\n\n❌ marry with her — Thừa chữ “with”\n✅ He wants to marry her — Anh ấy muốn cưới cô ấy\n✅ We got married — Tụi mình cưới rồi\n✅ They tied the knot — Họ nên duyên rồi\n\n🧠 Đố nhanh: She married with him hay She married him? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *marry with her*",
+      "card": {
+        "kind": "wrong",
+        "text": "marry with her",
+        "sub": "Thừa chữ “with”"
+      },
+      "keywords": [
+        "marry",
+        "with"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"marry with her\"!",
+          "vi": "Đừng nói “marry with her” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "You marry someone, not with someone!",
+          "vi": "Cưới một người, chứ không “with” ai cả!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *marry* + người",
+      "card": {
+        "kind": "rule",
+        "text": "marry with ✗",
+        "sub": "marry + người, không cần “with”"
+      },
+      "keywords": [
+        "marry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Marry someone. Nothing in between.",
+          "vi": "Marry + người, không chen gì vào giữa.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *marry her*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "He wants to marry her",
+        "sub": "Anh ấy muốn cưới cô ấy"
+      },
+      "keywords": [
+        "marry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: He wants to marry her.",
+          "vi": "Bước 1: Anh ấy muốn cưới cô ấy.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "He wants to marry her!",
+          "vi": "Anh ấy muốn cưới cô ấy.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *get married*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "We got married",
+        "sub": "Tụi mình cưới rồi"
+      },
+      "keywords": [
+        "married"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: We got married.",
+          "vi": "Bước 2: Tụi mình cưới rồi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "We got married!",
+          "vi": "Tụi mình cưới rồi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *tie the knot*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "They tied the knot",
+        "sub": "Họ nên duyên rồi"
+      },
+      "keywords": [
+        "knot",
+        "marry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: They tied the knot!",
+          "vi": "Bước 3: Họ nên duyên rồi!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "So... will you marry me?",
+          "vi": "Vậy... lấy mình nhé?",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Buy me milk tea first!",
+          "vi": "Mua trà sữa cho mình trước đã!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Khoe tin vui",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "married",
+        "marry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "My sister got married!",
+          "vi": "Chị mình cưới rồi!",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Congrats! Who did she marry?",
+          "vi": "Chúc mừng! Chị cưới ai vậy?",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "Her best friend!",
+          "vi": "Bạn thân của chị ấy!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "She married with him",
+          "She married him"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "married"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! She married him.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

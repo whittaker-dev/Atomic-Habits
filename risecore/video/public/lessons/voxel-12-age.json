@@ -1,0 +1,240 @@
+{
+  "id": "voxel-12-age",
+  "series": "Tiếng Anh 3D",
+  "number": 12,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“I have 20 years old”",
+    "sub": "Nói tuổi sao cho đúng?"
+  },
+  "caption": "Nói “I have 20 years old” là sai từ gốc luôn đó! 😅\n\n❌ I have 20 years old — Tuổi đâu phải đồ để “có”\n✅ I'm twenty — Mình 20 tuổi\n✅ I just turned twenty — Mình vừa tròn 20\n✅ I'm in my twenties — Mình ngoài 20 rồi\n\n🧠 Đố nhanh: I have twenty years old hay I'm twenty years old? Xem tới cuối để biết đáp án!\n💬 Bạn bao nhiêu tuổi? Viết bằng tiếng Anh dưới bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *I have 20 years old*",
+      "card": {
+        "kind": "wrong",
+        "text": "I have 20 years old",
+        "sub": "Tuổi đâu phải đồ để “có”"
+      },
+      "keywords": [
+        "years",
+        "old"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"I have 20 years old\"!",
+          "vi": "Đừng nói “I have 20 years old” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "You don't have years. You are twenty!",
+          "vi": "Tuổi không để “có”, mà là “là”!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *be* + tuổi",
+      "card": {
+        "kind": "rule",
+        "text": "I have + tuổi ✗",
+        "sub": "Nói tuổi thì dùng am / is / are"
+      },
+      "keywords": [
+        "age"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Use am, is, or are for age.",
+          "vi": "Nói tuổi thì dùng am, is, are.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *I'm twenty*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm twenty",
+        "sub": "Mình 20 tuổi"
+      },
+      "keywords": [
+        "twenty"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I'm twenty.",
+          "vi": "Bước 1: Mình 20 tuổi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I'm twenty!",
+          "vi": "Mình 20 tuổi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *just turned*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I just turned twenty",
+        "sub": "Mình vừa tròn 20"
+      },
+      "keywords": [
+        "turned",
+        "twenty"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I just turned twenty.",
+          "vi": "Bước 2: Mình vừa tròn 20.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I just turned twenty!",
+          "vi": "Mình vừa tròn 20.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *in my twenties*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm in my twenties",
+        "sub": "Mình ngoài 20 rồi"
+      },
+      "keywords": [
+        "twenties",
+        "eighteen",
+        "forever"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I'm in my twenties!",
+          "vi": "Bước 3: Mình ngoài 20 rồi!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "And I'm... eighteen forever!",
+          "vi": "Còn mình... mãi mười tám!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Nice try!",
+          "vi": "Cố lắm đó!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Làm quen bạn mới",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "old",
+        "turned",
+        "twenty",
+        "twenties"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "How old are you?",
+          "vi": "Bạn bao nhiêu tuổi?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I just turned twenty. You?",
+          "vi": "Mình vừa tròn 20. Còn bạn?",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "I'm in my twenties too!",
+          "vi": "Mình cũng ngoài 20!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "I have twenty years old",
+          "I'm twenty years old"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "twenty",
+        "old"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! I'm twenty years old.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "I'm ___ ?",
+        "sub": "Viết tuổi bạn bằng tiếng Anh"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "How old are you? Comment below!",
+          "vi": "Bạn bao nhiêu tuổi? Bình luận nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

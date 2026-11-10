@@ -128,10 +128,14 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   sân khấu đêm có lưới phát sáng + đốm bokeh. Không phải video AI: mọi chuyển động tính từ số khung hình.
 - Nội dung: 1 mẹo/lỗi sai tiếng Anh. Hook 3 giây đầu (nêu lỗi), giải thích ngắn, Mia đọc các bước "Step one…", Cơm lặp lại,
   có twist hài, kết bằng kêu gọi bình luận (hộp vàng + pháo giấy). Câu 3–10 từ.
+- **Từ clip 12 là bản dài (~38–42 giây, ~370 ký tự kịch bản, thực tế ElevenLabs trừ ~400/clip)**: thêm cảnh `practice` (Cơm và Mia dùng câu đúng trong 1 tình huống,
+  thẻ ghi tình huống) và `quiz` (Mia hỏi "Quick quiz! A or B?", thẻ có `options` + `answer`, câu trả lời của Cơm có
+  `pauseBefore: 3` — khoảng nghỉ đó là đồng hồ đếm 3-2-1 có tích tắc, rồi gạch đáp án sai, ✓ đáp án đúng).
+  Kịch bản bản dài sinh bằng hàm `reel()` trong 1 script Python tạm (cấu trúc cố định: wrong → rule → 3 step → practice → quiz → cta).
 - Máy quay cắt theo từng câu (`shot`: `close` cận mặt người nói / `wide` toàn cảnh), đẩy chậm vào trong mỗi cảnh.
   Miệng mở theo mốc từng chữ của ElevenLabs. Phụ đề EN hiện từng chữ (từ khoá vàng) + dòng tiếng Việt bên dưới.
   Nhãn trên cùng (`chip`, phần *…* tô vàng) + vạch tiến độ các bước. Thẻ: `wrong` (gạch + dấu SAI!), `rule` (dấu ✗),
-  `phrase` (đánh chữ đúng lúc đọc + dấu ✓), `cta`. `mood`: `serious` (lông mày/mắt | |) hoặc `happy` (mắt ^ ^, giơ tay).
+  `phrase` (đánh chữ đúng lúc đọc + dấu ✓), `practice`, `quiz`, `cta`. `mood`: `serious` (lông mày/mắt | |) hoặc `happy` (mắt ^ ^, giơ tay).
 - Kịch bản `video/public/lessons/voxel-NN-<chủ đề>.json`. Code: `src/voxel/` (data.ts, Voxel3D.tsx = thế giới/nhân vật/máy quay,
   VoxelReel.tsx = chữ/thẻ/âm thanh). Composition `Voxel-NN-<Ten>` (folder `Voxel3D`).
 - **Render phải có `--gl=angle`** (Chrome headless mới có WebGL): `npx remotion render Voxel-01-VeryLike out/x.mp4 --gl=angle`
@@ -148,6 +152,9 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Clip 2–11 đã lên Nháp 2026-11-10 kèm ảnh bìa, chưa hẹn giờ: I'm boring/bored, I'm agree, open the light, make a photo,
   go to home, repeat again, borrow me, discuss about, explain me, go to play (id trong `posted.json`). Lần tải đầu của
   clip 9 lỗi nhưng vẫn tạo ra bản nháp trùng (đã xoá 2026-11-10): `run-next.mjs` báo lỗi chưa chắc là Facebook không nhận.
+- Clip 12–21 (bản dài) đã lên Nháp 2026-11-10 kèm ảnh bìa, chưa hẹn giờ: I have 20 years old, same same, the party was funny,
+  I am understand, nice to meet you (gặp lại), informations, listen music, the price is cheap, marry with, return back.
+  ElevenLabs sau đợt này còn ~2.900 ký tự (reset 2026-12-10) — đủ ~7 clip bản dài.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`

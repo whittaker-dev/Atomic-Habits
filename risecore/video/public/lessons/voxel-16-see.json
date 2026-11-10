@@ -1,0 +1,239 @@
+{
+  "id": "voxel-16-see",
+  "series": "Tiếng Anh 3D",
+  "number": 16,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Nice to meet you”",
+    "sub": "Khi gặp lại người quen"
+  },
+  "caption": "Gặp lại người quen mà nói “Nice to meet you” là hơi… quên người ta rồi đó 😅\n\n❌ Nice to meet you — Khi gặp lại người quen\n✅ Nice to see you — Vui được gặp bạn\n✅ Good to see you again — Gặp lại bạn vui ghê\n✅ Long time no see — Lâu rồi không gặp\n\n🧠 Đố nhanh: Nice to meet you again hay Nice to see you again? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *Nice to meet you*",
+      "card": {
+        "kind": "wrong",
+        "text": "Nice to meet you",
+        "sub": "Khi gặp lại người quen"
+      },
+      "keywords": [
+        "meet"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"Nice to meet you\"!",
+          "vi": "Đừng nói “Nice to meet you” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "We met last week, remember?",
+          "vi": "Tuần trước mình gặp rồi mà, nhớ không?",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *meet* = lần đầu",
+      "card": {
+        "kind": "rule",
+        "text": "meet lần 2 ✗",
+        "sub": "Gặp lại thì dùng “see”"
+      },
+      "keywords": [
+        "meet",
+        "first"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Meet is only for the first time.",
+          "vi": "“Meet” chỉ dùng cho lần gặp đầu.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *see*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Nice to see you",
+        "sub": "Vui được gặp bạn"
+      },
+      "keywords": [
+        "see"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Nice to see you.",
+          "vi": "Bước 1: Vui được gặp bạn.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Nice to see you!",
+          "vi": "Vui được gặp bạn.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *again*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Good to see you again",
+        "sub": "Gặp lại bạn vui ghê"
+      },
+      "keywords": [
+        "see",
+        "again"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Good to see you again.",
+          "vi": "Bước 2: Gặp lại bạn vui ghê.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Good to see you again!",
+          "vi": "Gặp lại bạn vui ghê.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *long time*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Long time no see",
+        "sub": "Lâu rồi không gặp"
+      },
+      "keywords": [
+        "long",
+        "time",
+        "yesterday"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Long time no see!",
+          "vi": "Bước 3: Lâu rồi không gặp!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Long time? It was yesterday!",
+          "vi": "Lâu gì? Mới hôm qua mà!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "It felt like forever!",
+          "vi": "Mà thấy lâu lắm luôn!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Gặp lại ở quán cà phê",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "see",
+        "long",
+        "time"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Hey! Long time no see!",
+          "vi": "Ê! Lâu rồi không gặp!",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Hey! Nice to see you!",
+          "vi": "Chào! Vui được gặp bạn!",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "How have you been?",
+          "vi": "Dạo này sao rồi?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Gặp lại bạn cũ?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "Nice to meet you again",
+          "Nice to see you again"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "see",
+        "meet"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! Nice to see you again.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

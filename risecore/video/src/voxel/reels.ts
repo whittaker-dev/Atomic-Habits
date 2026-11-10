@@ -12,4 +12,15 @@ export const REELS: {id: string; composition: string}[] = [
   {id: 'voxel-09-discuss', composition: 'Voxel-09-Discuss'},
   {id: 'voxel-10-explain', composition: 'Voxel-10-Explain'},
   {id: 'voxel-11-hangout', composition: 'Voxel-11-HangOut'},
+  // Từ 12: bản dài ~50 giây, thêm cảnh thực hành + đố nhanh A/B
+  {id: 'voxel-12-age', composition: 'Voxel-12-Age'},
+  {id: 'voxel-13-same', composition: 'Voxel-13-Same'},
+  {id: 'voxel-14-fun', composition: 'Voxel-14-Fun'},
+  {id: 'voxel-15-understand', composition: 'Voxel-15-Understand'},
+  {id: 'voxel-16-see', composition: 'Voxel-16-See'},
+  {id: 'voxel-17-info', composition: 'Voxel-17-Info'},
+  {id: 'voxel-18-listen', composition: 'Voxel-18-Listen'},
+  {id: 'voxel-19-cheap', composition: 'Voxel-19-Cheap'},
+  {id: 'voxel-20-marry', composition: 'Voxel-20-Marry'},
+  {id: 'voxel-21-back', composition: 'Voxel-21-Back'},
 ];

@@ -1,0 +1,556 @@
+{
+  "id": "voxel-20-marry",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"marry with her\"!",
+      "file": "voice/voxel-20-marry/00.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "saying",
+          "start": 0.383,
+          "end": 0.639
+        },
+        {
+          "w": "\"marry",
+          "start": 0.697,
+          "end": 1.022
+        },
+        {
+          "w": "with",
+          "start": 1.08,
+          "end": 1.242
+        },
+        {
+          "w": "her\"!",
+          "start": 1.289,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "You marry someone, not with someone!",
+      "file": "voice/voxel-20-marry/01.mp3",
+      "duration": 2.089796,
+      "words": [
+        {
+          "w": "You",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "marry",
+          "start": 0.255,
+          "end": 0.499
+        },
+        {
+          "w": "someone,",
+          "start": 0.569,
+          "end": 0.906
+        },
+        {
+          "w": "not",
+          "start": 0.94,
+          "end": 1.091
+        },
+        {
+          "w": "with",
+          "start": 1.126,
+          "end": 1.242
+        },
+        {
+          "w": "someone!",
+          "start": 1.277,
+          "end": 2.09
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Marry someone. Nothing in between.",
+      "file": "voice/voxel-20-marry/02.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Marry",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "someone.",
+          "start": 0.348,
+          "end": 0.766
+        },
+        {
+          "w": "Nothing",
+          "start": 0.894,
+          "end": 1.161
+        },
+        {
+          "w": "in",
+          "start": 1.207,
+          "end": 1.254
+        },
+        {
+          "w": "between.",
+          "start": 1.289,
+          "end": 2.043
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: He wants to marry her.",
+      "file": "voice/voxel-20-marry/03.mp3",
+      "duration": 2.600635,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "one:",
+          "start": 0.418,
+          "end": 0.778
+        },
+        {
+          "w": "He",
+          "start": 1.161,
+          "end": 1.277
+        },
+        {
+          "w": "wants",
+          "start": 1.335,
+          "end": 1.556
+        },
+        {
+          "w": "to",
+          "start": 1.602,
+          "end": 1.66
+        },
+        {
+          "w": "marry",
+          "start": 1.718,
+          "end": 1.95
+        },
+        {
+          "w": "her.",
+          "start": 2.02,
+          "end": 2.601
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "He wants to marry her!",
+      "file": "voice/voxel-20-marry/04.mp3",
+      "duration": 1.439637,
+      "words": [
+        {
+          "w": "He",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "w": "wants",
+          "start": 0.209,
+          "end": 0.406
+        },
+        {
+          "w": "to",
+          "start": 0.453,
+          "end": 0.522
+        },
+        {
+          "w": "marry",
+          "start": 0.592,
+          "end": 0.859
+        },
+        {
+          "w": "her!",
+          "start": 0.929,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: We got married.",
+      "file": "voice/voxel-20-marry/05.mp3",
+      "duration": 2.229116,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.348,
+          "end": 0.766
+        },
+        {
+          "w": "We",
+          "start": 1.207,
+          "end": 1.324
+        },
+        {
+          "w": "got",
+          "start": 1.382,
+          "end": 1.509
+        },
+        {
+          "w": "married.",
+          "start": 1.556,
+          "end": 2.229
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "We got married!",
+      "file": "voice/voxel-20-marry/06.mp3",
+      "duration": 1.207438,
+      "words": [
+        {
+          "w": "We",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "w": "got",
+          "start": 0.29,
+          "end": 0.511
+        },
+        {
+          "w": "married!",
+          "start": 0.569,
+          "end": 1.207
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: They tied the knot!",
+      "file": "voice/voxel-20-marry/07.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "three:",
+          "start": 0.313,
+          "end": 0.755
+        },
+        {
+          "w": "They",
+          "start": 1.08,
+          "end": 1.242
+        },
+        {
+          "w": "tied",
+          "start": 1.3,
+          "end": 1.509
+        },
+        {
+          "w": "the",
+          "start": 1.544,
+          "end": 1.614
+        },
+        {
+          "w": "knot!",
+          "start": 1.649,
+          "end": 2.276
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "So... will you marry me?",
+      "file": "voice/voxel-20-marry/08.mp3",
+      "duration": 1.764717,
+      "words": [
+        {
+          "w": "So...",
+          "start": 0,
+          "end": 0.43
+        },
+        {
+          "w": "will",
+          "start": 0.708,
+          "end": 0.882
+        },
+        {
+          "w": "you",
+          "start": 0.917,
+          "end": 0.987
+        },
+        {
+          "w": "marry",
+          "start": 1.022,
+          "end": 1.242
+        },
+        {
+          "w": "me?",
+          "start": 1.289,
+          "end": 1.765
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Buy me milk tea first!",
+      "file": "voice/voxel-20-marry/09.mp3",
+      "duration": 1.439637,
+      "words": [
+        {
+          "w": "Buy",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "me",
+          "start": 0.232,
+          "end": 0.302
+        },
+        {
+          "w": "milk",
+          "start": 0.348,
+          "end": 0.511
+        },
+        {
+          "w": "tea",
+          "start": 0.546,
+          "end": 0.662
+        },
+        {
+          "w": "first!",
+          "start": 0.72,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "My sister got married!",
+      "file": "voice/voxel-20-marry/10.mp3",
+      "duration": 1.439637,
+      "words": [
+        {
+          "w": "My",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "sister",
+          "start": 0.221,
+          "end": 0.476
+        },
+        {
+          "w": "got",
+          "start": 0.522,
+          "end": 0.65
+        },
+        {
+          "w": "married!",
+          "start": 0.697,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Congrats! Who did she marry?",
+      "file": "voice/voxel-20-marry/11.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Congrats!",
+          "start": 0,
+          "end": 0.697
+        },
+        {
+          "w": "Who",
+          "start": 0.848,
+          "end": 1.01
+        },
+        {
+          "w": "did",
+          "start": 1.045,
+          "end": 1.161
+        },
+        {
+          "w": "she",
+          "start": 1.196,
+          "end": 1.3
+        },
+        {
+          "w": "marry?",
+          "start": 1.358,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Her best friend!",
+      "file": "voice/voxel-20-marry/12.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "Her",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "best",
+          "start": 0.221,
+          "end": 0.395
+        },
+        {
+          "w": "friend!",
+          "start": 0.441,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Quick quiz! A or B?",
+      "file": "voice/voxel-20-marry/13.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "Quick",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "quiz!",
+          "start": 0.302,
+          "end": 0.755
+        },
+        {
+          "w": "A",
+          "start": 0.836,
+          "end": 0.952
+        },
+        {
+          "w": "or",
+          "start": 0.998,
+          "end": 1.068
+        },
+        {
+          "w": "B?",
+          "start": 1.138,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! She married him.",
+      "file": "voice/voxel-20-marry/14.mp3",
+      "duration": 1.393197,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "w": "She",
+          "start": 0.348,
+          "end": 0.488
+        },
+        {
+          "w": "married",
+          "start": 0.557,
+          "end": 0.882
+        },
+        {
+          "w": "him.",
+          "start": 0.929,
+          "end": 1.393
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-20-marry/15.mp3",
+      "duration": 2.089796,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.395
+        },
+        {
+          "w": "one,",
+          "start": 0.476,
+          "end": 0.766
+        },
+        {
+          "w": "two,",
+          "start": 0.789,
+          "end": 1.115
+        },
+        {
+          "w": "or",
+          "start": 1.149,
+          "end": 1.265
+        },
+        {
+          "w": "three!",
+          "start": 1.347,
+          "end": 2.09
+        }
+      ]
+    }
+  ]
+}

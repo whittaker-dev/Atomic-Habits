@@ -1,0 +1,236 @@
+{
+  "id": "voxel-15-understand",
+  "series": "Tiếng Anh 3D",
+  "number": 15,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“I am understand”",
+    "sub": "3 cách nói “hiểu rồi”"
+  },
+  "caption": "“I am understand” — câu sai mà gần như ai mới học cũng từng nói! 🙈\n\n❌ I am understand — Thừa chữ “am”\n✅ I understand — Mình hiểu rồi\n✅ Got it — Hiểu rồi nha\n✅ That makes sense — Nghe hợp lý đó\n\n🧠 Đố nhanh: I am understand hay I understand? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *I am understand*",
+      "card": {
+        "kind": "wrong",
+        "text": "I am understand",
+        "sub": "Thừa chữ “am”"
+      },
+      "keywords": [
+        "understand"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"I am understand\"!",
+          "vi": "Đừng nói “I am understand” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "One verb is enough!",
+          "vi": "Một động từ là đủ rồi!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *understand* là động từ",
+      "card": {
+        "kind": "rule",
+        "text": "am + understand ✗",
+        "sub": "Bỏ “am” đi là đúng"
+      },
+      "keywords": [
+        "understand",
+        "verb"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Understand is already a verb.",
+          "vi": "“Understand” vốn đã là động từ.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *I understand*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I understand",
+        "sub": "Mình hiểu rồi"
+      },
+      "keywords": [
+        "understand"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I understand.",
+          "vi": "Bước 1: Mình hiểu rồi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I understand!",
+          "vi": "Mình hiểu rồi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *got it*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Got it",
+        "sub": "Hiểu rồi nha"
+      },
+      "keywords": [
+        "got",
+        "it"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Got it.",
+          "vi": "Bước 2: Hiểu rồi nha.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Got it!",
+          "vi": "Hiểu rồi nha.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *makes sense*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "That makes sense",
+        "sub": "Nghe hợp lý đó"
+      },
+      "keywords": [
+        "sense",
+        "get"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: That makes sense!",
+          "vi": "Bước 3: Nghe hợp lý đó!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Wait... what did you say?",
+          "vi": "Khoan... bạn nói gì cơ?",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "You didn't get it!",
+          "vi": "Bạn chẳng hiểu gì cả!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Hỏi đường",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "got",
+        "it"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Turn left, then go straight.",
+          "vi": "Rẽ trái rồi đi thẳng.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Got it. Left, then straight.",
+          "vi": "Hiểu rồi. Trái, rồi thẳng.",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "Perfect!",
+          "vi": "Chuẩn luôn!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "I am understand",
+          "I understand"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "understand"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! I understand.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

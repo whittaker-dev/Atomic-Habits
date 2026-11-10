@@ -1,0 +1,561 @@
+{
+  "id": "voxel-12-age",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"I have 20 years old\"!",
+      "file": "voice/voxel-12-age/00.mp3",
+      "duration": 2.229116,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "saying",
+          "start": 0.36,
+          "end": 0.592
+        },
+        {
+          "w": "\"I",
+          "start": 0.639,
+          "end": 0.708
+        },
+        {
+          "w": "have",
+          "start": 0.824,
+          "end": 0.987
+        },
+        {
+          "w": "20",
+          "start": 1.033,
+          "end": 1.3
+        },
+        {
+          "w": "years",
+          "start": 1.358,
+          "end": 1.567
+        },
+        {
+          "w": "old\"!",
+          "start": 1.625,
+          "end": 2.229
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "You don't have years. You are twenty!",
+      "file": "voice/voxel-12-age/01.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "You",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "don't",
+          "start": 0.197,
+          "end": 0.348
+        },
+        {
+          "w": "have",
+          "start": 0.383,
+          "end": 0.522
+        },
+        {
+          "w": "years.",
+          "start": 0.569,
+          "end": 0.94
+        },
+        {
+          "w": "You",
+          "start": 0.987,
+          "end": 1.068
+        },
+        {
+          "w": "are",
+          "start": 1.115,
+          "end": 1.219
+        },
+        {
+          "w": "twenty!",
+          "start": 1.254,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Use am, is, or are for age.",
+      "file": "voice/voxel-12-age/02.mp3",
+      "duration": 2.414875,
+      "words": [
+        {
+          "w": "Use",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "am,",
+          "start": 0.325,
+          "end": 0.72
+        },
+        {
+          "w": "is,",
+          "start": 0.778,
+          "end": 1.103
+        },
+        {
+          "w": "or",
+          "start": 1.161,
+          "end": 1.312
+        },
+        {
+          "w": "are",
+          "start": 1.393,
+          "end": 1.637
+        },
+        {
+          "w": "for",
+          "start": 1.695,
+          "end": 1.846
+        },
+        {
+          "w": "age.",
+          "start": 1.916,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: I'm twenty.",
+      "file": "voice/voxel-12-age/03.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "one:",
+          "start": 0.372,
+          "end": 0.662
+        },
+        {
+          "w": "I'm",
+          "start": 0.987,
+          "end": 1.161
+        },
+        {
+          "w": "twenty.",
+          "start": 1.219,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm twenty!",
+      "file": "voice/voxel-12-age/04.mp3",
+      "duration": 1.068118,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "twenty!",
+          "start": 0.267,
+          "end": 1.068
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: I just turned twenty.",
+      "file": "voice/voxel-12-age/05.mp3",
+      "duration": 2.368435,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "two:",
+          "start": 0.372,
+          "end": 0.813
+        },
+        {
+          "w": "I",
+          "start": 1.091,
+          "end": 1.149
+        },
+        {
+          "w": "just",
+          "start": 1.265,
+          "end": 1.405
+        },
+        {
+          "w": "turned",
+          "start": 1.428,
+          "end": 1.625
+        },
+        {
+          "w": "twenty.",
+          "start": 1.649,
+          "end": 2.368
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I just turned twenty!",
+      "file": "voice/voxel-12-age/06.mp3",
+      "duration": 1.346757,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.093
+        },
+        {
+          "w": "just",
+          "start": 0.174,
+          "end": 0.337
+        },
+        {
+          "w": "turned",
+          "start": 0.372,
+          "end": 0.627
+        },
+        {
+          "w": "twenty!",
+          "start": 0.662,
+          "end": 1.347
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: I'm in my twenties!",
+      "file": "voice/voxel-12-age/07.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "three:",
+          "start": 0.348,
+          "end": 0.789
+        },
+        {
+          "w": "I'm",
+          "start": 1.068,
+          "end": 1.219
+        },
+        {
+          "w": "in",
+          "start": 1.254,
+          "end": 1.312
+        },
+        {
+          "w": "my",
+          "start": 1.358,
+          "end": 1.428
+        },
+        {
+          "w": "twenties!",
+          "start": 1.486,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "And I'm... eighteen forever!",
+      "file": "voice/voxel-12-age/08.mp3",
+      "duration": 2.554195,
+      "words": [
+        {
+          "w": "And",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "I'm...",
+          "start": 0.267,
+          "end": 0.592
+        },
+        {
+          "w": "eighteen",
+          "start": 1.289,
+          "end": 1.73
+        },
+        {
+          "w": "forever!",
+          "start": 1.8,
+          "end": 2.554
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Nice try!",
+      "file": "voice/voxel-12-age/09.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Nice",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "try!",
+          "start": 0.325,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "How old are you?",
+      "file": "voice/voxel-12-age/10.mp3",
+      "duration": 1.114558,
+      "words": [
+        {
+          "w": "How",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "old",
+          "start": 0.255,
+          "end": 0.383
+        },
+        {
+          "w": "are",
+          "start": 0.418,
+          "end": 0.511
+        },
+        {
+          "w": "you?",
+          "start": 0.557,
+          "end": 1.115
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I just turned twenty. You?",
+      "file": "voice/voxel-12-age/11.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.093
+        },
+        {
+          "w": "just",
+          "start": 0.174,
+          "end": 0.302
+        },
+        {
+          "w": "turned",
+          "start": 0.325,
+          "end": 0.534
+        },
+        {
+          "w": "twenty.",
+          "start": 0.557,
+          "end": 0.998
+        },
+        {
+          "w": "You?",
+          "start": 1.242,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "I'm in my twenties too!",
+      "file": "voice/voxel-12-age/12.mp3",
+      "duration": 1.439637,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "in",
+          "start": 0.232,
+          "end": 0.29
+        },
+        {
+          "w": "my",
+          "start": 0.337,
+          "end": 0.418
+        },
+        {
+          "w": "twenties",
+          "start": 0.476,
+          "end": 0.836
+        },
+        {
+          "w": "too!",
+          "start": 0.906,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Quick quiz! A or B?",
+      "file": "voice/voxel-12-age/13.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "Quick",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "quiz!",
+          "start": 0.302,
+          "end": 0.813
+        },
+        {
+          "w": "A",
+          "start": 0.894,
+          "end": 1.068
+        },
+        {
+          "w": "or",
+          "start": 1.184,
+          "end": 1.3
+        },
+        {
+          "w": "B?",
+          "start": 1.347,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "B! I'm twenty years old.",
+      "file": "voice/voxel-12-age/14.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "B!",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "I'm",
+          "start": 0.279,
+          "end": 0.395
+        },
+        {
+          "w": "twenty",
+          "start": 0.453,
+          "end": 0.708
+        },
+        {
+          "w": "years",
+          "start": 0.743,
+          "end": 0.952
+        },
+        {
+          "w": "old.",
+          "start": 1.022,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "How old are you? Comment below!",
+      "file": "voice/voxel-12-age/15.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "How",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "old",
+          "start": 0.279,
+          "end": 0.43
+        },
+        {
+          "w": "are",
+          "start": 0.464,
+          "end": 0.569
+        },
+        {
+          "w": "you?",
+          "start": 0.604,
+          "end": 0.848
+        },
+        {
+          "w": "Comment",
+          "start": 1.231,
+          "end": 1.614
+        },
+        {
+          "w": "below!",
+          "start": 1.649,
+          "end": 2.322
+        }
+      ]
+    }
+  ]
+}
