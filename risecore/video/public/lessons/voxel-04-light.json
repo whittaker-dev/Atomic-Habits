@@ -1,0 +1,175 @@
+{
+  "id": "voxel-04-light",
+  "series": "Tiếng Anh 3D",
+  "number": 4,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Open the light”",
+    "sub": "Bật, tắt đèn nói sao cho đúng?"
+  },
+  "caption": "Nói “open the light” thì đèn… mở cửa kiểu gì? 💡\n\n❌ Open the light — Đèn đâu có cửa để mở!\n✅ Turn on the light — Bật đèn lên\n✅ Turn off the TV — Tắt TV đi\n✅ Switch it off — Tắt nó đi\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *Open the light*",
+      "card": {
+        "kind": "wrong",
+        "text": "Open the light",
+        "sub": "Đèn đâu có cửa để mở!"
+      },
+      "keywords": [
+        "open",
+        "light"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"Open the light\"!",
+          "vi": "Đừng nói “Open the light” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Lights don't have doors!",
+          "vi": "Đèn đâu có cửa mà mở!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *turn on / off*",
+      "card": {
+        "kind": "rule",
+        "text": "open + light ✗",
+        "sub": "Đồ dùng điện: turn on / turn off"
+      },
+      "keywords": [
+        "turn",
+        "on",
+        "off"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "For lights, use turn on and turn off.",
+          "vi": "Với đèn, dùng “turn on” và “turn off”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *turn on*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Turn on the light",
+        "sub": "Bật đèn lên"
+      },
+      "keywords": [
+        "turn",
+        "on"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Turn on the light.",
+          "vi": "Bước 1: Bật đèn lên.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Turn on the light!",
+          "vi": "Bật đèn lên.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *turn off*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Turn off the TV",
+        "sub": "Tắt TV đi"
+      },
+      "keywords": [
+        "turn",
+        "off"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Turn off the TV.",
+          "vi": "Bước 2: Tắt TV đi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Turn off the TV!",
+          "vi": "Tắt TV đi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *switch off*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Switch it off",
+        "sub": "Tắt nó đi"
+      },
+      "keywords": [
+        "switch",
+        "off",
+        "brain"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Switch it off!",
+          "vi": "Bước 3: Tắt nó đi!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Okay, switching off... my brain!",
+          "vi": "Được, tắt luôn... não!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Not again!",
+          "vi": "Lại nữa rồi!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

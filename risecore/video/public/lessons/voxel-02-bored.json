@@ -1,0 +1,171 @@
+{
+  "id": "voxel-02-bored",
+  "series": "Tiếng Anh 3D",
+  "number": 2,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“I'm boring”",
+    "sub": "Nếu ý bạn là đang chán"
+  },
+  "caption": "Chán mà nói “I'm boring” là tự nhận mình nhạt đó! 😅\n\n❌ I'm boring — = Mình là người nhạt nhẽo\n✅ I'm bored — Mình đang chán\n✅ I have nothing to do — Mình chẳng có gì làm\n✅ I'm bored to death — Mình chán muốn xỉu\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *I'm boring*",
+      "card": {
+        "kind": "wrong",
+        "text": "I'm boring",
+        "sub": "= Mình là người nhạt nhẽo"
+      },
+      "keywords": [
+        "boring"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"I'm boring\"!",
+          "vi": "Đừng nói “I'm boring” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "That means you're a boring person!",
+          "vi": "Câu đó nghĩa là bạn là người nhạt nhẽo!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "VÌ SAO · *-ed* = cảm thấy",
+      "card": {
+        "kind": "rule",
+        "text": "bored ≠ boring",
+        "sub": "-ed: bạn thấy chán · -ing: bạn gây chán"
+      },
+      "keywords": [
+        "bored",
+        "boring"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Bored is how you feel. Boring is what you are.",
+          "vi": "Bored là bạn thấy chán. Boring là bạn gây chán.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *bored*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm bored",
+        "sub": "Mình đang chán"
+      },
+      "keywords": [
+        "bored"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I'm bored.",
+          "vi": "Bước 1: Mình đang chán.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I'm bored!",
+          "vi": "Mình đang chán.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *nothing to do*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I have nothing to do",
+        "sub": "Mình chẳng có gì làm"
+      },
+      "keywords": [
+        "nothing"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I have nothing to do.",
+          "vi": "Bước 2: Mình chẳng có gì làm.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I have nothing to do!",
+          "vi": "Mình chẳng có gì làm.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *bored to death*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm bored to death",
+        "sub": "Mình chán muốn xỉu"
+      },
+      "keywords": [
+        "bored",
+        "death",
+        "boring"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I'm bored to death!",
+          "vi": "Bước 3: Mình chán muốn xỉu!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "And you're... a little boring.",
+          "vi": "Còn bạn thì... hơi nhạt.",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Hey! So rude!",
+          "vi": "Ê! Bất lịch sự!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

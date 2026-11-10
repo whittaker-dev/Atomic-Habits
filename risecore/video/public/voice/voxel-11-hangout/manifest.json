@@ -1,0 +1,386 @@
+{
+  "id": "voxel-11-hangout",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"go to play\"!",
+      "file": "voice/voxel-11-hangout/00.mp3",
+      "duration": 2.089796,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.348
+        },
+        {
+          "w": "saying",
+          "start": 0.406,
+          "end": 0.673
+        },
+        {
+          "w": "\"go",
+          "start": 0.789,
+          "end": 1.173
+        },
+        {
+          "w": "to",
+          "start": 1.242,
+          "end": 1.3
+        },
+        {
+          "w": "play\"!",
+          "start": 1.358,
+          "end": 2.09
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "That sounds like kids at recess!",
+      "file": "voice/voxel-11-hangout/01.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "That",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "sounds",
+          "start": 0.232,
+          "end": 0.441
+        },
+        {
+          "w": "like",
+          "start": 0.464,
+          "end": 0.58
+        },
+        {
+          "w": "kids",
+          "start": 0.615,
+          "end": 0.801
+        },
+        {
+          "w": "at",
+          "start": 0.836,
+          "end": 0.894
+        },
+        {
+          "w": "recess!",
+          "start": 0.94,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Adults don't play. They hang out.",
+      "file": "voice/voxel-11-hangout/02.mp3",
+      "duration": 2.461315,
+      "words": [
+        {
+          "w": "Adults",
+          "start": 0,
+          "end": 0.406
+        },
+        {
+          "w": "don't",
+          "start": 0.441,
+          "end": 0.615
+        },
+        {
+          "w": "play.",
+          "start": 0.65,
+          "end": 1.068
+        },
+        {
+          "w": "They",
+          "start": 1.509,
+          "end": 1.66
+        },
+        {
+          "w": "hang",
+          "start": 1.707,
+          "end": 1.834
+        },
+        {
+          "w": "out.",
+          "start": 1.916,
+          "end": 2.461
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: Let's hang out.",
+      "file": "voice/voxel-11-hangout/03.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "one:",
+          "start": 0.36,
+          "end": 0.65
+        },
+        {
+          "w": "Let's",
+          "start": 0.894,
+          "end": 1.103
+        },
+        {
+          "w": "hang",
+          "start": 1.138,
+          "end": 1.277
+        },
+        {
+          "w": "out.",
+          "start": 1.347,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Let's hang out!",
+      "file": "voice/voxel-11-hangout/04.mp3",
+      "duration": 1.021678,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "hang",
+          "start": 0.313,
+          "end": 0.476
+        },
+        {
+          "w": "out!",
+          "start": 0.557,
+          "end": 1.022
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: Are you going out tonight?",
+      "file": "voice/voxel-11-hangout/05.mp3",
+      "duration": 2.600635,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.348,
+          "end": 0.731
+        },
+        {
+          "w": "Are",
+          "start": 1.242,
+          "end": 1.382
+        },
+        {
+          "w": "you",
+          "start": 1.416,
+          "end": 1.486
+        },
+        {
+          "w": "going",
+          "start": 1.521,
+          "end": 1.718
+        },
+        {
+          "w": "out",
+          "start": 1.753,
+          "end": 1.881
+        },
+        {
+          "w": "tonight?",
+          "start": 1.916,
+          "end": 2.601
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Are you going out tonight?",
+      "file": "voice/voxel-11-hangout/06.mp3",
+      "duration": 1.393197,
+      "words": [
+        {
+          "w": "Are",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "you",
+          "start": 0.197,
+          "end": 0.267
+        },
+        {
+          "w": "going",
+          "start": 0.325,
+          "end": 0.522
+        },
+        {
+          "w": "out",
+          "start": 0.569,
+          "end": 0.685
+        },
+        {
+          "w": "tonight?",
+          "start": 0.72,
+          "end": 1.393
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: Let's grab a coffee!",
+      "file": "voice/voxel-11-hangout/07.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "three:",
+          "start": 0.325,
+          "end": 0.708
+        },
+        {
+          "w": "Let's",
+          "start": 0.882,
+          "end": 1.08
+        },
+        {
+          "w": "grab",
+          "start": 1.103,
+          "end": 1.254
+        },
+        {
+          "w": "a",
+          "start": 1.3,
+          "end": 1.324
+        },
+        {
+          "w": "coffee!",
+          "start": 1.358,
+          "end": 2.043
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Yes! You're paying, right?",
+      "file": "voice/voxel-11-hangout/08.mp3",
+      "duration": 1.764717,
+      "words": [
+        {
+          "w": "Yes!",
+          "start": 0,
+          "end": 0.476
+        },
+        {
+          "w": "You're",
+          "start": 0.627,
+          "end": 0.836
+        },
+        {
+          "w": "paying,",
+          "start": 0.859,
+          "end": 1.161
+        },
+        {
+          "w": "right?",
+          "start": 1.196,
+          "end": 1.765
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Nice try!",
+      "file": "voice/voxel-11-hangout/09.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "Nice",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "try!",
+          "start": 0.302,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-11-hangout/10.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.418
+        },
+        {
+          "w": "one,",
+          "start": 0.488,
+          "end": 0.789
+        },
+        {
+          "w": "two,",
+          "start": 0.824,
+          "end": 1.173
+        },
+        {
+          "w": "or",
+          "start": 1.196,
+          "end": 1.3
+        },
+        {
+          "w": "three!",
+          "start": 1.358,
+          "end": 2.043
+        }
+      ]
+    }
+  ]
+}

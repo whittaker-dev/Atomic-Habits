@@ -1,0 +1,170 @@
+{
+  "id": "voxel-08-lend",
+  "series": "Tiếng Anh 3D",
+  "number": 8,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Borrow me”",
+    "sub": "Mượn đồ nói sao cho đúng?"
+  },
+  "caption": "“Borrow me your pen” — câu này sai ở đâu? ✏️\n\n❌ borrow me your pen — Nhầm “borrow” và “lend”\n✅ Can you lend me a pen? — Cho mình mượn cây bút nha?\n✅ Can I borrow your pen? — Mình mượn bút bạn nha?\n✅ Mind if I use it? — Mình dùng chút được không?\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *borrow me your pen*",
+      "card": {
+        "kind": "wrong",
+        "text": "borrow me your pen",
+        "sub": "Nhầm “borrow” và “lend”"
+      },
+      "keywords": [
+        "borrow"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"borrow me your pen\"!",
+          "vi": "Đừng nói “borrow me your pen” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Borrow and lend are different!",
+          "vi": "“Borrow” và “lend” khác nhau đó!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *borrow* vs *lend*",
+      "card": {
+        "kind": "rule",
+        "text": "borrow ≠ lend",
+        "sub": "borrow: mượn · lend: cho mượn"
+      },
+      "keywords": [
+        "borrow",
+        "lend"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "You borrow from me. I lend to you.",
+          "vi": "Bạn mượn từ mình. Mình cho bạn mượn.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *lend*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Can you lend me a pen?",
+        "sub": "Cho mình mượn cây bút nha?"
+      },
+      "keywords": [
+        "lend"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Can you lend me a pen?",
+          "vi": "Bước 1: Cho mình mượn cây bút nha?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Can you lend me a pen?",
+          "vi": "Cho mình mượn cây bút nha?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *borrow*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Can I borrow your pen?",
+        "sub": "Mình mượn bút bạn nha?"
+      },
+      "keywords": [
+        "borrow"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Can I borrow your pen?",
+          "vi": "Bước 2: Mình mượn bút bạn nha?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Can I borrow your pen?",
+          "vi": "Mình mượn bút bạn nha?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *mind if*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Mind if I use it?",
+        "sub": "Mình dùng chút được không?"
+      },
+      "keywords": [
+        "mind",
+        "lunch"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Mind if I use it?",
+          "vi": "Bước 3: Mình dùng chút được không?",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Great! Can I borrow your lunch?",
+          "vi": "Tuyệt! Mình mượn luôn bữa trưa nha?",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Absolutely not!",
+          "vi": "Không đời nào!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

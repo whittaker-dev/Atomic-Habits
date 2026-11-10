@@ -1,0 +1,173 @@
+{
+  "id": "voxel-09-discuss",
+  "series": "Tiếng Anh 3D",
+  "number": 9,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Discuss about”",
+    "sub": "Bàn bạc nói sao cho chuẩn?"
+  },
+  "caption": "Đi họp mà nói “discuss about” là thừa một chữ rồi! 💼\n\n❌ discuss about — Thừa chữ “about”\n✅ Let's discuss it — Mình bàn chuyện này nhé\n✅ Let's talk about it — Mình nói về chuyện này nhé\n✅ Let's go over it — Mình xem lại cùng nhau nhé\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *discuss about*",
+      "card": {
+        "kind": "wrong",
+        "text": "discuss about",
+        "sub": "Thừa chữ “about”"
+      },
+      "keywords": [
+        "discuss",
+        "about"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"discuss about\"!",
+          "vi": "Đừng nói “discuss about” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Discuss doesn't need about!",
+          "vi": "“Discuss” không cần “about” đâu!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *discuss* + điều gì",
+      "card": {
+        "kind": "rule",
+        "text": "discuss + about ✗",
+        "sub": "discuss the plan · talk about the plan"
+      },
+      "keywords": [
+        "discuss",
+        "talk"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Discuss the plan. Talk about the plan.",
+          "vi": "“Discuss the plan”. “Talk about the plan”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *discuss*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's discuss it",
+        "sub": "Mình bàn chuyện này nhé"
+      },
+      "keywords": [
+        "discuss"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Let's discuss it.",
+          "vi": "Bước 1: Mình bàn chuyện này nhé.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Let's discuss it!",
+          "vi": "Mình bàn chuyện này nhé.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *talk about*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's talk about it",
+        "sub": "Mình nói về chuyện này nhé"
+      },
+      "keywords": [
+        "talk",
+        "about"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Let's talk about it.",
+          "vi": "Bước 2: Mình nói về chuyện này nhé.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Let's talk about it!",
+          "vi": "Mình nói về chuyện này nhé.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *go over*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's go over it",
+        "sub": "Mình xem lại cùng nhau nhé"
+      },
+      "keywords": [
+        "go",
+        "over",
+        "lunch"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Let's go over it!",
+          "vi": "Bước 3: Mình xem lại cùng nhau nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Over lunch? Great idea!",
+          "vi": "Vừa ăn trưa vừa bàn? Ý hay!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "You and food!",
+          "vi": "Bạn chỉ nghĩ tới ăn!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

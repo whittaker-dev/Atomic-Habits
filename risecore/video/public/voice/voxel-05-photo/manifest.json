@@ -1,0 +1,381 @@
+{
+  "id": "voxel-05-photo",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"make a photo\"!",
+      "file": "voice/voxel-05-photo/00.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "saying",
+          "start": 0.383,
+          "end": 0.639
+        },
+        {
+          "w": "\"make",
+          "start": 0.673,
+          "end": 0.882
+        },
+        {
+          "w": "a",
+          "start": 0.917,
+          "end": 0.94
+        },
+        {
+          "w": "photo\"!",
+          "start": 0.987,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "We take photos. We don't make them!",
+      "file": "voice/voxel-05-photo/01.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "We",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "take",
+          "start": 0.232,
+          "end": 0.441
+        },
+        {
+          "w": "photos.",
+          "start": 0.464,
+          "end": 0.94
+        },
+        {
+          "w": "We",
+          "start": 0.987,
+          "end": 1.068
+        },
+        {
+          "w": "don't",
+          "start": 1.115,
+          "end": 1.265
+        },
+        {
+          "w": "make",
+          "start": 1.3,
+          "end": 1.486
+        },
+        {
+          "w": "them!",
+          "start": 1.533,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Always use take with photos.",
+      "file": "voice/voxel-05-photo/02.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "Always",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "use",
+          "start": 0.383,
+          "end": 0.546
+        },
+        {
+          "w": "take",
+          "start": 0.58,
+          "end": 0.789
+        },
+        {
+          "w": "with",
+          "start": 0.813,
+          "end": 0.929
+        },
+        {
+          "w": "photos.",
+          "start": 0.952,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: Take a photo.",
+      "file": "voice/voxel-05-photo/03.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "one:",
+          "start": 0.406,
+          "end": 0.743
+        },
+        {
+          "w": "Take",
+          "start": 1.068,
+          "end": 1.3
+        },
+        {
+          "w": "a",
+          "start": 1.324,
+          "end": 1.358
+        },
+        {
+          "w": "photo.",
+          "start": 1.382,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Take a photo!",
+      "file": "voice/voxel-05-photo/04.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "Take",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "a",
+          "start": 0.302,
+          "end": 0.325
+        },
+        {
+          "w": "photo!",
+          "start": 0.372,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: Take a selfie.",
+      "file": "voice/voxel-05-photo/05.mp3",
+      "duration": 2.182676,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.36,
+          "end": 0.766
+        },
+        {
+          "w": "Take",
+          "start": 1.091,
+          "end": 1.312
+        },
+        {
+          "w": "a",
+          "start": 1.335,
+          "end": 1.37
+        },
+        {
+          "w": "selfie.",
+          "start": 1.416,
+          "end": 2.183
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Take a selfie!",
+      "file": "voice/voxel-05-photo/06.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "Take",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "a",
+          "start": 0.325,
+          "end": 0.348
+        },
+        {
+          "w": "selfie!",
+          "start": 0.395,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: Snap a pic!",
+      "file": "voice/voxel-05-photo/07.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "three:",
+          "start": 0.325,
+          "end": 0.72
+        },
+        {
+          "w": "Snap",
+          "start": 1.045,
+          "end": 1.324
+        },
+        {
+          "w": "a",
+          "start": 1.382,
+          "end": 1.405
+        },
+        {
+          "w": "pic!",
+          "start": 1.44,
+          "end": 2.043
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Wait! Let me fix my glasses!",
+      "file": "voice/voxel-05-photo/08.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "Wait!",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "Let",
+          "start": 0.36,
+          "end": 0.476
+        },
+        {
+          "w": "me",
+          "start": 0.499,
+          "end": 0.557
+        },
+        {
+          "w": "fix",
+          "start": 0.604,
+          "end": 0.766
+        },
+        {
+          "w": "my",
+          "start": 0.824,
+          "end": 0.894
+        },
+        {
+          "w": "glasses!",
+          "start": 0.952,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Too late. Got it!",
+      "file": "voice/voxel-05-photo/09.mp3",
+      "duration": 1.393197,
+      "words": [
+        {
+          "w": "Too",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "late.",
+          "start": 0.255,
+          "end": 0.511
+        },
+        {
+          "w": "Got",
+          "start": 0.662,
+          "end": 0.894
+        },
+        {
+          "w": "it!",
+          "start": 0.94,
+          "end": 1.393
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-05-photo/10.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.348
+        },
+        {
+          "w": "one,",
+          "start": 0.418,
+          "end": 0.743
+        },
+        {
+          "w": "two,",
+          "start": 0.836,
+          "end": 1.242
+        },
+        {
+          "w": "or",
+          "start": 1.312,
+          "end": 1.474
+        },
+        {
+          "w": "three!",
+          "start": 1.544,
+          "end": 2.136
+        }
+      ]
+    }
+  ]
+}

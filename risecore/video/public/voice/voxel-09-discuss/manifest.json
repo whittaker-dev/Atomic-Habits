@@ -1,0 +1,371 @@
+{
+  "id": "voxel-09-discuss",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"discuss about\"!",
+      "file": "voice/voxel-09-discuss/00.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "saying",
+          "start": 0.383,
+          "end": 0.604
+        },
+        {
+          "w": "\"discuss",
+          "start": 0.627,
+          "end": 1.115
+        },
+        {
+          "w": "about\"!",
+          "start": 1.161,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Discuss doesn't need about!",
+      "file": "voice/voxel-09-discuss/01.mp3",
+      "duration": 1.486077,
+      "words": [
+        {
+          "w": "Discuss",
+          "start": 0,
+          "end": 0.406
+        },
+        {
+          "w": "doesn't",
+          "start": 0.43,
+          "end": 0.662
+        },
+        {
+          "w": "need",
+          "start": 0.685,
+          "end": 0.836
+        },
+        {
+          "w": "about!",
+          "start": 0.871,
+          "end": 1.486
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Discuss the plan. Talk about the plan.",
+      "file": "voice/voxel-09-discuss/02.mp3",
+      "duration": 2.647075,
+      "words": [
+        {
+          "w": "Discuss",
+          "start": 0,
+          "end": 0.406
+        },
+        {
+          "w": "the",
+          "start": 0.453,
+          "end": 0.522
+        },
+        {
+          "w": "plan.",
+          "start": 0.546,
+          "end": 1.01
+        },
+        {
+          "w": "Talk",
+          "start": 1.393,
+          "end": 1.649
+        },
+        {
+          "w": "about",
+          "start": 1.695,
+          "end": 1.869
+        },
+        {
+          "w": "the",
+          "start": 1.904,
+          "end": 1.974
+        },
+        {
+          "w": "plan.",
+          "start": 2.009,
+          "end": 2.647
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: Let's discuss it.",
+      "file": "voice/voxel-09-discuss/03.mp3",
+      "duration": 2.414875,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "one:",
+          "start": 0.372,
+          "end": 0.766
+        },
+        {
+          "w": "Let's",
+          "start": 1.207,
+          "end": 1.451
+        },
+        {
+          "w": "discuss",
+          "start": 1.509,
+          "end": 1.892
+        },
+        {
+          "w": "it.",
+          "start": 1.95,
+          "end": 2.415
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Let's discuss it!",
+      "file": "voice/voxel-09-discuss/04.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "discuss",
+          "start": 0.302,
+          "end": 0.708
+        },
+        {
+          "w": "it!",
+          "start": 0.755,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: Let's talk about it.",
+      "file": "voice/voxel-09-discuss/05.mp3",
+      "duration": 2.554195,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.348,
+          "end": 0.824
+        },
+        {
+          "w": "Let's",
+          "start": 1.335,
+          "end": 1.567
+        },
+        {
+          "w": "talk",
+          "start": 1.614,
+          "end": 1.8
+        },
+        {
+          "w": "about",
+          "start": 1.846,
+          "end": 2.055
+        },
+        {
+          "w": "it.",
+          "start": 2.101,
+          "end": 2.554
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Let's talk about it!",
+      "file": "voice/voxel-09-discuss/06.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "Let's",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "talk",
+          "start": 0.313,
+          "end": 0.557
+        },
+        {
+          "w": "about",
+          "start": 0.604,
+          "end": 0.848
+        },
+        {
+          "w": "it!",
+          "start": 0.882,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: Let's go over it!",
+      "file": "voice/voxel-09-discuss/07.mp3",
+      "duration": 1.996916,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "three:",
+          "start": 0.337,
+          "end": 0.72
+        },
+        {
+          "w": "Let's",
+          "start": 0.894,
+          "end": 1.115
+        },
+        {
+          "w": "go",
+          "start": 1.161,
+          "end": 1.242
+        },
+        {
+          "w": "over",
+          "start": 1.312,
+          "end": 1.509
+        },
+        {
+          "w": "it!",
+          "start": 1.579,
+          "end": 1.997
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Over lunch? Great idea!",
+      "file": "voice/voxel-09-discuss/08.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Over",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "w": "lunch?",
+          "start": 0.29,
+          "end": 0.697
+        },
+        {
+          "w": "Great",
+          "start": 1.022,
+          "end": 1.254
+        },
+        {
+          "w": "idea!",
+          "start": 1.289,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "You and food!",
+      "file": "voice/voxel-09-discuss/09.mp3",
+      "duration": 0.975238,
+      "words": [
+        {
+          "w": "You",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "and",
+          "start": 0.221,
+          "end": 0.302
+        },
+        {
+          "w": "food!",
+          "start": 0.348,
+          "end": 0.975
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-09-discuss/10.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.395
+        },
+        {
+          "w": "one,",
+          "start": 0.464,
+          "end": 0.685
+        },
+        {
+          "w": "two,",
+          "start": 0.708,
+          "end": 0.952
+        },
+        {
+          "w": "or",
+          "start": 0.987,
+          "end": 1.08
+        },
+        {
+          "w": "three!",
+          "start": 1.138,
+          "end": 1.811
+        }
+      ]
+    }
+  ]
+}

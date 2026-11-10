@@ -1,0 +1,174 @@
+{
+  "id": "voxel-10-explain",
+  "series": "Tiếng Anh 3D",
+  "number": 10,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Explain me”",
+    "sub": "Nhờ giải thích sao cho đúng?"
+  },
+  "caption": "“Explain me” nghe như bạn là bài học vậy đó! 😂\n\n❌ explain me — Thiếu chữ “to”\n✅ Can you explain it to me? — Giải thích cho mình nhé?\n✅ Walk me through it — Chỉ mình từng bước nha\n✅ Can you break it down? — Nói dễ hiểu hơn được không?\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *explain me*",
+      "card": {
+        "kind": "wrong",
+        "text": "explain me",
+        "sub": "Thiếu chữ “to”"
+      },
+      "keywords": [
+        "explain",
+        "me"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"explain me\"!",
+          "vi": "Đừng nói “explain me” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "It sounds like you're the lesson!",
+          "vi": "Nghe như bạn là bài học vậy!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · explain *to* me",
+      "card": {
+        "kind": "rule",
+        "text": "explain + me ✗",
+        "sub": "Giải thích điều gì “cho” ai: explain it to me"
+      },
+      "keywords": [
+        "explain",
+        "to"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Explain something to someone.",
+          "vi": "Giải thích điều gì “cho” ai đó.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *explain it to me*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Can you explain it to me?",
+        "sub": "Giải thích cho mình nhé?"
+      },
+      "keywords": [
+        "explain",
+        "to"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Can you explain it to me?",
+          "vi": "Bước 1: Giải thích cho mình nhé?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Can you explain it to me?",
+          "vi": "Giải thích cho mình nhé?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *walk me through*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Walk me through it",
+        "sub": "Chỉ mình từng bước nha"
+      },
+      "keywords": [
+        "walk",
+        "through"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Walk me through it.",
+          "vi": "Bước 2: Chỉ mình từng bước nha.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Walk me through it!",
+          "vi": "Chỉ mình từng bước nha.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *break it down*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Can you break it down?",
+        "sub": "Nói dễ hiểu hơn được không?"
+      },
+      "keywords": [
+        "break",
+        "down",
+        "dance"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Can you break it down?",
+          "vi": "Bước 3: Nói dễ hiểu hơn được không?",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Break it down? Let's dance!",
+          "vi": "Break it down? Nhảy thôi!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Not that kind!",
+          "vi": "Không phải kiểu đó!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

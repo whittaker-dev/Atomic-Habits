@@ -1,0 +1,346 @@
+{
+  "id": "voxel-03-agree",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"I'm agree\"!",
+      "file": "voice/voxel-03-agree/00.mp3",
+      "duration": 1.857596,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "w": "saying",
+          "start": 0.406,
+          "end": 0.708
+        },
+        {
+          "w": "\"I'm",
+          "start": 0.801,
+          "end": 1.057
+        },
+        {
+          "w": "agree\"!",
+          "start": 1.103,
+          "end": 1.858
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Oops! So many people say that.",
+      "file": "voice/voxel-03-agree/01.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "Oops!",
+          "start": 0,
+          "end": 0.488
+        },
+        {
+          "w": "So",
+          "start": 0.929,
+          "end": 1.057
+        },
+        {
+          "w": "many",
+          "start": 1.103,
+          "end": 1.242
+        },
+        {
+          "w": "people",
+          "start": 1.289,
+          "end": 1.533
+        },
+        {
+          "w": "say",
+          "start": 1.567,
+          "end": 1.718
+        },
+        {
+          "w": "that.",
+          "start": 1.765,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Agree is a verb. No am needed.",
+      "file": "voice/voxel-03-agree/02.mp3",
+      "duration": 2.368435,
+      "words": [
+        {
+          "w": "Agree",
+          "start": 0,
+          "end": 0.372
+        },
+        {
+          "w": "is",
+          "start": 0.406,
+          "end": 0.488
+        },
+        {
+          "w": "a",
+          "start": 0.534,
+          "end": 0.569
+        },
+        {
+          "w": "verb.",
+          "start": 0.615,
+          "end": 1.045
+        },
+        {
+          "w": "No",
+          "start": 1.289,
+          "end": 1.428
+        },
+        {
+          "w": "am",
+          "start": 1.498,
+          "end": 1.637
+        },
+        {
+          "w": "needed.",
+          "start": 1.707,
+          "end": 2.368
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: I agree.",
+      "file": "voice/voxel-03-agree/03.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "one:",
+          "start": 0.36,
+          "end": 0.673
+        },
+        {
+          "w": "I",
+          "start": 0.998,
+          "end": 1.068
+        },
+        {
+          "w": "agree.",
+          "start": 1.161,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I agree!",
+      "file": "voice/voxel-03-agree/04.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.104
+        },
+        {
+          "w": "agree!",
+          "start": 0.186,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: Totally!",
+      "file": "voice/voxel-03-agree/05.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.348,
+          "end": 0.743
+        },
+        {
+          "w": "Totally!",
+          "start": 1.254,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Totally!",
+      "file": "voice/voxel-03-agree/06.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "Totally!",
+          "start": 0,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: You're so right!",
+      "file": "voice/voxel-03-agree/07.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "three:",
+          "start": 0.325,
+          "end": 0.743
+        },
+        {
+          "w": "You're",
+          "start": 0.917,
+          "end": 1.126
+        },
+        {
+          "w": "so",
+          "start": 1.161,
+          "end": 1.265
+        },
+        {
+          "w": "right!",
+          "start": 1.335,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I agree... that I'm hungry!",
+      "file": "voice/voxel-03-agree/08.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.104
+        },
+        {
+          "w": "agree...",
+          "start": 0.197,
+          "end": 0.685
+        },
+        {
+          "w": "that",
+          "start": 0.859,
+          "end": 1.022
+        },
+        {
+          "w": "I'm",
+          "start": 1.057,
+          "end": 1.173
+        },
+        {
+          "w": "hungry!",
+          "start": 1.219,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Of course you are!",
+      "file": "voice/voxel-03-agree/09.mp3",
+      "duration": 1.160998,
+      "words": [
+        {
+          "w": "Of",
+          "start": 0,
+          "end": 0.116
+        },
+        {
+          "w": "course",
+          "start": 0.174,
+          "end": 0.406
+        },
+        {
+          "w": "you",
+          "start": 0.441,
+          "end": 0.522
+        },
+        {
+          "w": "are!",
+          "start": 0.592,
+          "end": 1.161
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-03-agree/10.mp3",
+      "duration": 2.043356,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.406
+        },
+        {
+          "w": "one,",
+          "start": 0.476,
+          "end": 0.766
+        },
+        {
+          "w": "two,",
+          "start": 0.789,
+          "end": 1.115
+        },
+        {
+          "w": "or",
+          "start": 1.149,
+          "end": 1.265
+        },
+        {
+          "w": "three!",
+          "start": 1.335,
+          "end": 2.043
+        }
+      ]
+    }
+  ]
+}

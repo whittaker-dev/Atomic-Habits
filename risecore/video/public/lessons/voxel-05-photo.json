@@ -1,0 +1,173 @@
+{
+  "id": "voxel-05-photo",
+  "series": "Tiếng Anh 3D",
+  "number": 5,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Make a photo”",
+    "sub": "Chụp ảnh tiếng Anh là gì?"
+  },
+  "caption": "“Make a photo” là lỗi rất nhiều người Việt mắc! 📸\n\n❌ make a photo — Sai động từ\n✅ Take a photo — Chụp một tấm ảnh\n✅ Take a selfie — Chụp ảnh tự sướng\n✅ Snap a pic — Chụp nhanh một tấm\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *make a photo*",
+      "card": {
+        "kind": "wrong",
+        "text": "make a photo",
+        "sub": "Sai động từ"
+      },
+      "keywords": [
+        "make",
+        "photo"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"make a photo\"!",
+          "vi": "Đừng nói “make a photo” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "We take photos. We don't make them!",
+          "vi": "Mình “take” ảnh, không “make” ảnh!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *take* a photo",
+      "card": {
+        "kind": "rule",
+        "text": "make + photo ✗",
+        "sub": "Chụp ảnh: luôn dùng “take”"
+      },
+      "keywords": [
+        "take",
+        "photos"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Always use take with photos.",
+          "vi": "Chụp ảnh thì luôn dùng “take”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *take a photo*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Take a photo",
+        "sub": "Chụp một tấm ảnh"
+      },
+      "keywords": [
+        "take",
+        "photo"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Take a photo.",
+          "vi": "Bước 1: Chụp một tấm ảnh.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Take a photo!",
+          "vi": "Chụp một tấm ảnh.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *selfie*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Take a selfie",
+        "sub": "Chụp ảnh tự sướng"
+      },
+      "keywords": [
+        "selfie"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Take a selfie.",
+          "vi": "Bước 2: Chụp ảnh tự sướng.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Take a selfie!",
+          "vi": "Chụp ảnh tự sướng.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *snap a pic*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Snap a pic",
+        "sub": "Chụp nhanh một tấm"
+      },
+      "keywords": [
+        "snap",
+        "pic",
+        "glasses"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Snap a pic!",
+          "vi": "Bước 3: Chụp nhanh một tấm!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Wait! Let me fix my glasses!",
+          "vi": "Khoan! Để mình chỉnh kính đã!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Too late. Got it!",
+          "vi": "Trễ rồi. Chụp xong!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

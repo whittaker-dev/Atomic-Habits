@@ -1,0 +1,173 @@
+{
+  "id": "voxel-06-home",
+  "series": "Tiếng Anh 3D",
+  "number": 6,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Go to home”",
+    "sub": "Về nhà nói sao cho đúng?"
+  },
+  "caption": "“Go to home” nghe quen không? Sai đó nha! 🏠\n\n❌ go to home — Thừa chữ “to”\n✅ Let's go home — Về nhà thôi\n✅ I'm heading home — Mình đang về nhà\n✅ Let's call it a day — Hôm nay vậy là đủ rồi\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *go to home*",
+      "card": {
+        "kind": "wrong",
+        "text": "go to home",
+        "sub": "Thừa chữ “to”"
+      },
+      "keywords": [
+        "home"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"go to home\"!",
+          "vi": "Đừng nói “go to home” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Home doesn't need to!",
+          "vi": "“Home” không cần “to” đâu!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *home* không cần *to*",
+      "card": {
+        "kind": "rule",
+        "text": "go to + home ✗",
+        "sub": "go home · go to school · go to work"
+      },
+      "keywords": [
+        "home",
+        "school",
+        "work"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Go to school, go to work, but go home.",
+          "vi": "Go to school, go to work, nhưng go home.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *go home*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's go home",
+        "sub": "Về nhà thôi"
+      },
+      "keywords": [
+        "home"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Let's go home.",
+          "vi": "Bước 1: Về nhà thôi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Let's go home!",
+          "vi": "Về nhà thôi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *heading home*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm heading home",
+        "sub": "Mình đang về nhà"
+      },
+      "keywords": [
+        "heading",
+        "home"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I'm heading home.",
+          "vi": "Bước 2: Mình đang về nhà.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I'm heading home!",
+          "vi": "Mình đang về nhà.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *call it a day*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's call it a day",
+        "sub": "Hôm nay vậy là đủ rồi"
+      },
+      "keywords": [
+        "call",
+        "day",
+        "bye"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Let's call it a day!",
+          "vi": "Bước 3: Hôm nay vậy là đủ rồi!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Best sentence ever. Bye!",
+          "vi": "Câu hay nhất luôn. Bye!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "We just got here!",
+          "vi": "Mình mới tới mà!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

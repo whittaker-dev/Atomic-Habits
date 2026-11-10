@@ -1,0 +1,174 @@
+{
+  "id": "voxel-11-hangout",
+  "series": "Tiếng Anh 3D",
+  "number": 11,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Go to play”",
+    "sub": "“Đi chơi” tiếng Anh là gì?"
+  },
+  "caption": "Rủ bạn đi chơi mà nói “go to play” là nghe như trẻ con đó! ☕\n\n❌ go to play — Nghe như trẻ con đi chơi\n✅ Let's hang out — Đi chơi đi\n✅ Are you going out tonight? — Tối nay bạn có đi chơi không?\n✅ Let's grab a coffee — Đi cà phê đi\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *go to play*",
+      "card": {
+        "kind": "wrong",
+        "text": "go to play",
+        "sub": "Nghe như trẻ con đi chơi"
+      },
+      "keywords": [
+        "play"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"go to play\"!",
+          "vi": "Đừng nói “go to play” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "That sounds like kids at recess!",
+          "vi": "Nghe như trẻ con ra chơi vậy!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "VÌ SAO · người lớn không *play*",
+      "card": {
+        "kind": "rule",
+        "text": "adults + play ✗",
+        "sub": "Người lớn đi chơi: hang out, go out"
+      },
+      "keywords": [
+        "play",
+        "hang",
+        "out"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Adults don't play. They hang out.",
+          "vi": "Người lớn không “play”. Họ “hang out”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *hang out*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's hang out",
+        "sub": "Đi chơi đi"
+      },
+      "keywords": [
+        "hang",
+        "out"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Let's hang out.",
+          "vi": "Bước 1: Đi chơi đi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Let's hang out!",
+          "vi": "Đi chơi đi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *going out*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Are you going out tonight?",
+        "sub": "Tối nay bạn có đi chơi không?"
+      },
+      "keywords": [
+        "going",
+        "out"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Are you going out tonight?",
+          "vi": "Bước 2: Tối nay bạn có đi chơi không?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Are you going out tonight?",
+          "vi": "Tối nay bạn có đi chơi không?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *grab a coffee*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's grab a coffee",
+        "sub": "Đi cà phê đi"
+      },
+      "keywords": [
+        "grab",
+        "coffee",
+        "paying"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Let's grab a coffee!",
+          "vi": "Bước 3: Đi cà phê đi!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Yes! You're paying, right?",
+          "vi": "Ok! Bạn bao đúng không?",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Nice try!",
+          "vi": "Mơ đi!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

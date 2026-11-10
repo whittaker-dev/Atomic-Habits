@@ -1,0 +1,401 @@
+{
+  "id": "voxel-02-bored",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"I'm boring\"!",
+      "file": "voice/voxel-02-bored/00.mp3",
+      "duration": 1.811156,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "w": "saying",
+          "start": 0.383,
+          "end": 0.65
+        },
+        {
+          "w": "\"I'm",
+          "start": 0.731,
+          "end": 0.94
+        },
+        {
+          "w": "boring\"!",
+          "start": 1.01,
+          "end": 1.811
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "That means you're a boring person!",
+      "file": "voice/voxel-02-bored/01.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "That",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "means",
+          "start": 0.232,
+          "end": 0.43
+        },
+        {
+          "w": "you're",
+          "start": 0.453,
+          "end": 0.615
+        },
+        {
+          "w": "a",
+          "start": 0.639,
+          "end": 0.662
+        },
+        {
+          "w": "boring",
+          "start": 0.708,
+          "end": 1.045
+        },
+        {
+          "w": "person!",
+          "start": 1.103,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Bored is how you feel. Boring is what you are.",
+      "file": "voice/voxel-02-bored/02.mp3",
+      "duration": 2.693515,
+      "words": [
+        {
+          "w": "Bored",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "is",
+          "start": 0.313,
+          "end": 0.372
+        },
+        {
+          "w": "how",
+          "start": 0.418,
+          "end": 0.499
+        },
+        {
+          "w": "you",
+          "start": 0.546,
+          "end": 0.627
+        },
+        {
+          "w": "feel.",
+          "start": 0.685,
+          "end": 1.068
+        },
+        {
+          "w": "Boring",
+          "start": 1.312,
+          "end": 1.672
+        },
+        {
+          "w": "is",
+          "start": 1.718,
+          "end": 1.788
+        },
+        {
+          "w": "what",
+          "start": 1.823,
+          "end": 1.939
+        },
+        {
+          "w": "you",
+          "start": 1.985,
+          "end": 2.055
+        },
+        {
+          "w": "are.",
+          "start": 2.136,
+          "end": 2.694
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: I'm bored.",
+      "file": "voice/voxel-02-bored/03.mp3",
+      "duration": 1.904036,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "w": "one:",
+          "start": 0.36,
+          "end": 0.65
+        },
+        {
+          "w": "I'm",
+          "start": 1.033,
+          "end": 1.196
+        },
+        {
+          "w": "bored.",
+          "start": 1.242,
+          "end": 1.904
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm bored!",
+      "file": "voice/voxel-02-bored/04.mp3",
+      "duration": 0.928798,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "w": "bored!",
+          "start": 0.232,
+          "end": 0.929
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: I have nothing to do.",
+      "file": "voice/voxel-02-bored/05.mp3",
+      "duration": 2.600635,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "two:",
+          "start": 0.36,
+          "end": 0.801
+        },
+        {
+          "w": "I",
+          "start": 1.312,
+          "end": 1.37
+        },
+        {
+          "w": "have",
+          "start": 1.451,
+          "end": 1.567
+        },
+        {
+          "w": "nothing",
+          "start": 1.602,
+          "end": 1.834
+        },
+        {
+          "w": "to",
+          "start": 1.881,
+          "end": 1.939
+        },
+        {
+          "w": "do.",
+          "start": 1.997,
+          "end": 2.601
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I have nothing to do!",
+      "file": "voice/voxel-02-bored/06.mp3",
+      "duration": 1.532517,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.104
+        },
+        {
+          "w": "have",
+          "start": 0.186,
+          "end": 0.348
+        },
+        {
+          "w": "nothing",
+          "start": 0.418,
+          "end": 0.766
+        },
+        {
+          "w": "to",
+          "start": 0.824,
+          "end": 0.894
+        },
+        {
+          "w": "do!",
+          "start": 0.964,
+          "end": 1.533
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: I'm bored to death!",
+      "file": "voice/voxel-02-bored/07.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "three:",
+          "start": 0.337,
+          "end": 0.778
+        },
+        {
+          "w": "I'm",
+          "start": 0.894,
+          "end": 1.057
+        },
+        {
+          "w": "bored",
+          "start": 1.103,
+          "end": 1.335
+        },
+        {
+          "w": "to",
+          "start": 1.37,
+          "end": 1.428
+        },
+        {
+          "w": "death!",
+          "start": 1.486,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "And you're... a little boring.",
+      "file": "voice/voxel-02-bored/08.mp3",
+      "duration": 2.182676,
+      "words": [
+        {
+          "w": "And",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "w": "you're...",
+          "start": 0.232,
+          "end": 0.755
+        },
+        {
+          "w": "a",
+          "start": 1.08,
+          "end": 1.161
+        },
+        {
+          "w": "little",
+          "start": 1.219,
+          "end": 1.416
+        },
+        {
+          "w": "boring.",
+          "start": 1.451,
+          "end": 2.183
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Hey! So rude!",
+      "file": "voice/voxel-02-bored/09.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "Hey!",
+          "start": 0,
+          "end": 0.279
+        },
+        {
+          "w": "So",
+          "start": 0.453,
+          "end": 0.627
+        },
+        {
+          "w": "rude!",
+          "start": 0.685,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-02-bored/10.mp3",
+      "duration": 1.996916,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "w": "one,",
+          "start": 0.441,
+          "end": 0.731
+        },
+        {
+          "w": "two,",
+          "start": 0.755,
+          "end": 1.08
+        },
+        {
+          "w": "or",
+          "start": 1.126,
+          "end": 1.242
+        },
+        {
+          "w": "three!",
+          "start": 1.3,
+          "end": 1.997
+        }
+      ]
+    }
+  ]
+}

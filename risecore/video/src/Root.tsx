@@ -14,6 +14,7 @@ import {calculateLessonMetadata, LessonVideo} from './english/LessonVideo';
 import {LESSONS} from './english/lessons';
 import {calculateCoverMetadata, LessonCover} from './english/LessonCover';
 import {calculateVoxelMetadata, VoxelCover, VoxelReel} from './voxel/VoxelReel';
+import {REELS} from './voxel/reels';
 import {calculateWordQuizCoverMetadata, calculateWordQuizMetadata, WordQuizCover, WordQuizVideo} from './english/WordQuizVideo';
 
 export const RemotionRoot: React.FC = () => (
@@ -79,16 +80,19 @@ export const RemotionRoot: React.FC = () => (
     </Folder>
     <Folder name="Voxel3D">
       {/* Dựng bằng Three.js — khi render cần --gl=angle để Chrome headless có WebGL */}
-      <Composition
-        id="Voxel-01-VeryLike"
-        component={VoxelReel}
-        width={1080}
-        height={1920}
-        fps={30}
-        durationInFrames={300}
-        defaultProps={{reelId: 'voxel-01-very-like'}}
-        calculateMetadata={calculateVoxelMetadata}
-      />
+      {REELS.map((r) => (
+        <Composition
+          key={r.id}
+          id={r.composition}
+          component={VoxelReel}
+          width={1080}
+          height={1920}
+          fps={30}
+          durationInFrames={300}
+          defaultProps={{reelId: r.id}}
+          calculateMetadata={calculateVoxelMetadata}
+        />
+      ))}
       {/* Ảnh bìa: npx remotion still Voxel-Cover out/x.jpg --props='{"reelId":"voxel-01-very-like"}' --gl=angle */}
       <Still
         id="Voxel-Cover"

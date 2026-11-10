@@ -1,0 +1,171 @@
+{
+  "id": "voxel-07-again",
+  "series": "Tiếng Anh 3D",
+  "number": 7,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Repeat again”",
+    "sub": "Nhờ nói lại sao cho tự nhiên?"
+  },
+  "caption": "Nhờ người ta nói lại mà dùng “repeat again” là thừa chữ rồi! 👂\n\n❌ repeat again — Thừa chữ “again”\n✅ Can you say that again? — Bạn nói lại được không?\n✅ Sorry? — Xin lỗi, gì cơ?\n✅ Come again? — Nói lại coi? (thân mật)\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *repeat again*",
+      "card": {
+        "kind": "wrong",
+        "text": "repeat again",
+        "sub": "Thừa chữ “again”"
+      },
+      "keywords": [
+        "repeat",
+        "again"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"repeat again\"!",
+          "vi": "Đừng nói “repeat again” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Repeat already means again!",
+          "vi": "“Repeat” đã có nghĩa là “lại” rồi!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "VÌ SAO · *re-* = lại",
+      "card": {
+        "kind": "rule",
+        "text": "repeat + again ✗",
+        "sub": "Như nói “lại lại” vậy"
+      },
+      "keywords": [
+        "again"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "It's like saying again, again.",
+          "vi": "Giống như nói “lại lại” vậy.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *say that again*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Can you say that again?",
+        "sub": "Bạn nói lại được không?"
+      },
+      "keywords": [
+        "say",
+        "again"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Can you say that again?",
+          "vi": "Bước 1: Bạn nói lại được không?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Can you say that again?",
+          "vi": "Bạn nói lại được không?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *sorry?*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Sorry?",
+        "sub": "Xin lỗi, gì cơ?"
+      },
+      "keywords": [
+        "sorry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Sorry?",
+          "vi": "Bước 2: Xin lỗi, gì cơ?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Sorry?",
+          "vi": "Xin lỗi, gì cơ?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *come again?*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Come again?",
+        "sub": "Nói lại coi? (thân mật)"
+      },
+      "keywords": [
+        "come",
+        "again"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Come again?",
+          "vi": "Bước 3: Nói lại coi?",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "I didn't hear. Come again?",
+          "vi": "Mình chưa nghe. Nói lại coi?",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "You never listen!",
+          "vi": "Bạn có bao giờ nghe đâu!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

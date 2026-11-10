@@ -1,0 +1,170 @@
+{
+  "id": "voxel-03-agree",
+  "series": "Tiếng Anh 3D",
+  "number": 3,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“I'm agree”",
+    "sub": "3 cách nói đồng ý chuẩn hơn"
+  },
+  "caption": "Bạn có hay nói “I'm agree” không? Sai mà nhiều người mắc lắm! 🙈\n\n❌ I'm agree — Thừa chữ “am”\n✅ I agree — Mình đồng ý\n✅ Totally — Chuẩn luôn\n✅ You're so right — Bạn nói quá đúng\n\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *I'm agree*",
+      "card": {
+        "kind": "wrong",
+        "text": "I'm agree",
+        "sub": "Thừa chữ “am”"
+      },
+      "keywords": [
+        "agree"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"I'm agree\"!",
+          "vi": "Đừng nói “I'm agree” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Oops! So many people say that.",
+          "vi": "Ối! Nhiều người nói vậy lắm.",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "VÌ SAO · *agree* là động từ",
+      "card": {
+        "kind": "rule",
+        "text": "I'm + agree ✗",
+        "sub": "“agree” là động từ, không cần “am”"
+      },
+      "keywords": [
+        "agree",
+        "verb"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Agree is a verb. No am needed.",
+          "vi": "“Agree” là động từ, không cần “am”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *I agree*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I agree",
+        "sub": "Mình đồng ý"
+      },
+      "keywords": [
+        "agree"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I agree.",
+          "vi": "Bước 1: Mình đồng ý.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I agree!",
+          "vi": "Mình đồng ý.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *totally*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Totally",
+        "sub": "Chuẩn luôn"
+      },
+      "keywords": [
+        "totally"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Totally!",
+          "vi": "Bước 2: Chuẩn luôn!",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Totally!",
+          "vi": "Chuẩn luôn!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *so right*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "You're so right",
+        "sub": "Bạn nói quá đúng"
+      },
+      "keywords": [
+        "right",
+        "hungry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: You're so right!",
+          "vi": "Bước 3: Bạn nói quá đúng!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "I agree... that I'm hungry!",
+          "vi": "Mình đồng ý... là mình đói rồi!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Of course you are!",
+          "vi": "Biết ngay mà!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

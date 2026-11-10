@@ -117,6 +117,9 @@ export function typingRange(s: TimedVoxelScene, fps: number): [number, number] {
   return spokenRange(first, s.scene.card.text, fps) ?? [s.from + 4, s.from + 18];
 }
 
+/** Thẻ rộng ~920px, chữ không xuống dòng: câu dài thì chữ nhỏ lại (chừa chỗ cho dấu ✓) */
+const cardFontSize = (text: string) => (text.length <= 12 ? 80 : Math.min(66, Math.floor(1300 / text.length)));
+
 const Typed: React.FC<{text: string; range: [number, number]; size: number; color: string}> = ({text, range, size, color}) => {
   const frame = useCurrentFrame();
   const n = Math.round(interpolate(frame, range, [0, text.length], clamp));
@@ -207,7 +210,7 @@ const Card: React.FC<{s: TimedVoxelScene}> = ({s}) => {
       }}
     >
       <div style={{position: 'relative', display: 'flex', alignItems: 'center', gap: 24}}>
-        <Typed text={text} range={range} size={text.length > 16 ? 66 : 80} color={kind === 'wrong' ? '#FFFFFF' : kind === 'rule' ? '#FFFFFF' : MINT} />
+        <Typed text={text} range={range} size={cardFontSize(text)} color={kind === 'wrong' ? '#FFFFFF' : kind === 'rule' ? '#FFFFFF' : MINT} />
         {kind === 'wrong' ? (
           <div
             style={{
@@ -453,7 +456,7 @@ export const VoxelCover: React.FC<VoxelProps> = ({reel, timeline}) => {
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,8,25,0.7) 0%, rgba(5,8,25,0.2) 42%, rgba(5,8,25,0) 60%)'}} />
       <div style={{position: 'absolute', top: 440, left: 40, right: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, fontFamily: FONT, fontWeight: 900}}>
         <div style={{padding: '8px 30px', borderRadius: 18, background: RED, color: '#FFFFFF', fontSize: 58, letterSpacing: 2, transform: 'rotate(-3deg)'}}>{reel.cover.kicker}</div>
-        <div style={{position: 'relative', fontSize: 104, color: YELLOW, WebkitTextStroke: '12px #0B0F2A', paintOrder: 'stroke fill', whiteSpace: 'nowrap'}}>
+        <div style={{position: 'relative', fontSize: Math.min(104, Math.floor(1700 / reel.cover.title.length)), color: YELLOW, WebkitTextStroke: '12px #0B0F2A', paintOrder: 'stroke fill', whiteSpace: 'nowrap'}}>
           {reel.cover.title}
           <div style={{position: 'absolute', left: -6, right: -6, top: '52%', height: 12, borderRadius: 6, background: RED, transform: 'rotate(-4deg)'}} />
         </div>

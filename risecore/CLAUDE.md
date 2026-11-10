@@ -137,11 +137,17 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - **Render phải có `--gl=angle`** (Chrome headless mới có WebGL): `npx remotion render Voxel-01-VeryLike out/x.mp4 --gl=angle`
   (~30 giây). Sau đó chuẩn hoá ffmpeg như bài học, rồi `loudnorm=I=-14:TP=-1.5:LRA=11` (bản thô chỉ ~−19 LUFS).
   Soi trước bằng ảnh tĩnh mỗi câu: `npx remotion still … --frame=N --gl=angle --scale=0.5` rồi ghép bằng `ffmpeg tile`.
-- Giọng ~280 ký tự/clip. Ảnh bìa: Still `Voxel-Cover` (`--props='{"reelId":"…"}' --gl=angle`), chữ lấy từ `cover`
-  trong kịch bản (kicker đỏ / tiêu đề vàng / dòng phụ), 2 nhân vật giơ tay vui. Chưa có script đóng gói: làm tay như
-  clip Đoán từ → `queue/<id>.mp4` + `.cover.jpg` + brief `.json` + `.caption.txt` → `run-next.mjs`.
+- Giọng ~280 ký tự/clip. Ảnh bìa: Still `Voxel-Cover`, chữ lấy từ `cover` trong kịch bản (kicker đỏ / tiêu đề vàng /
+  dòng phụ), 2 nhân vật giơ tay vui. Caption lấy từ trường `caption` của kịch bản.
+- Đóng gói 1 reel: thêm dòng vào `src/voxel/reels.ts`, rồi `scripts/build-voxel.sh <id> <Composition>` (giọng → render
+  → chuẩn hoá + −14 LUFS → `queue/<id>.mp4` + `.cover.jpg` + brief + caption) → `node scripts/run-next.mjs` trong risecore/.
+  Script make-voice cảnh báo câu nghe lại bị lệch: sửa câu (vd "side" bị nghe thành "site", "Want to" bị đọc thành
+  "Wanna") chứ đừng để phụ đề lệch tiếng.
 - Clip 1 (`voxel-01-very-like`: "I very like it" → really / love / obsessed, twist "milk tea") đã lên Nháp 2026-11-10
   (video_id 1667525041398015) kèm ảnh bìa, chưa hẹn giờ.
+- Clip 2–11 đã lên Nháp 2026-11-10 kèm ảnh bìa, chưa hẹn giờ: I'm boring/bored, I'm agree, open the light, make a photo,
+  go to home, repeat again, borrow me, discuss about, explain me, go to play (id trong `posted.json`). Lần tải đầu của
+  clip 9 lỗi nhưng vẫn tạo ra bản nháp trùng 885839257953416 (không có trong posted.json) — người dùng tự xoá.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
