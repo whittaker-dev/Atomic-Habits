@@ -13,6 +13,7 @@ import {Cta} from './scenes/Cta';
 import {calculateLessonMetadata, LessonVideo} from './english/LessonVideo';
 import {LESSONS} from './english/lessons';
 import {calculateCoverMetadata, LessonCover} from './english/LessonCover';
+import {calculateVoxelMetadata, VoxelCover, VoxelReel} from './voxel/VoxelReel';
 import {calculateWordQuizCoverMetadata, calculateWordQuizMetadata, WordQuizCover, WordQuizVideo} from './english/WordQuizVideo';
 
 export const RemotionRoot: React.FC = () => (
@@ -74,6 +75,28 @@ export const RemotionRoot: React.FC = () => (
         height={1920}
         defaultProps={{quizId: 'doan-tu-01-school'}}
         calculateMetadata={calculateWordQuizCoverMetadata}
+      />
+    </Folder>
+    <Folder name="Voxel3D">
+      {/* Dựng bằng Three.js — khi render cần --gl=angle để Chrome headless có WebGL */}
+      <Composition
+        id="Voxel-01-VeryLike"
+        component={VoxelReel}
+        width={1080}
+        height={1920}
+        fps={30}
+        durationInFrames={300}
+        defaultProps={{reelId: 'voxel-01-very-like'}}
+        calculateMetadata={calculateVoxelMetadata}
+      />
+      {/* Ảnh bìa: npx remotion still Voxel-Cover out/x.jpg --props='{"reelId":"voxel-01-very-like"}' --gl=angle */}
+      <Still
+        id="Voxel-Cover"
+        component={VoxelCover}
+        width={1080}
+        height={1920}
+        defaultProps={{reelId: 'voxel-01-very-like'}}
+        calculateMetadata={calculateVoxelMetadata}
       />
     </Folder>
   </>

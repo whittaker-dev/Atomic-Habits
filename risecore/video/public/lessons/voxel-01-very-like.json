@@ -1,0 +1,170 @@
+{
+  "id": "voxel-01-very-like",
+  "series": "Tiếng Anh 3D",
+  "number": 1,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“I very like it”",
+    "sub": "3 cách nói đúng & hay hơn"
+  },
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *I very like it*",
+      "card": {
+        "kind": "wrong",
+        "text": "I very like it",
+        "sub": "Sai ngữ pháp"
+      },
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"I very like it\"!",
+          "vi": "Đừng nói “I very like it” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "It's wrong! Here are three better ways.",
+          "vi": "Sai đó! Đây là 3 cách hay hơn.",
+          "shot": "wide"
+        }
+      ],
+      "keywords": [
+        "very"
+      ]
+    },
+    {
+      "chip": "VÌ SAO · *very* + động từ = sai",
+      "card": {
+        "kind": "rule",
+        "text": "very + like ✗",
+        "sub": "“very” không đứng trước động từ"
+      },
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Why? \"Very\" can't go before a verb.",
+          "vi": "Vì “very” không đứng trước động từ.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ],
+      "keywords": [
+        "very",
+        "verb"
+      ]
+    },
+    {
+      "chip": "STEP 1 · *really*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I really like it",
+        "sub": "Mình thật sự thích nó"
+      },
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I really like it.",
+          "vi": "Bước 1: Mình thật sự thích nó.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I really like it!",
+          "vi": "Mình thật sự thích nó!",
+          "shot": "close"
+        }
+      ],
+      "keywords": [
+        "really"
+      ]
+    },
+    {
+      "chip": "STEP 2 · *love*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I love it",
+        "sub": "Mình mê nó luôn"
+      },
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I love it!",
+          "vi": "Bước 2: Mình mê nó luôn!",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I love it!",
+          "vi": "Mình mê nó luôn!",
+          "shot": "close"
+        }
+      ],
+      "keywords": [
+        "love"
+      ]
+    },
+    {
+      "chip": "STEP 3 · *obsessed*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm obsessed with it",
+        "sub": "Mình nghiện nó luôn"
+      },
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I'm obsessed with it!",
+          "vi": "Bước 3: Mình nghiện nó luôn!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "I'm obsessed with... milk tea!",
+          "vi": "Mình nghiện... trà sữa!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Ha! Me too!",
+          "vi": "Haha! Mình cũng vậy!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ],
+      "keywords": [
+        "obsessed",
+        "milk",
+        "tea"
+      ]
+    },
+    {
+      "chip": "BẠN CHỌN CÂU NÀO?",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ],
+      "keywords": [
+        "one",
+        "two",
+        "three"
+      ]
+    }
+  ]
+}

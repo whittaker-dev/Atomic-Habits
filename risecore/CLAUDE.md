@@ -123,6 +123,26 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Clip 1 (Đi học: Book, Pencil, Teacher, Ruler, Eraser, Backpack, Classroom, Homework) đã lên Nháp 2026-11-04
   (video_id 1819687389162882) kèm ảnh bìa.
 
+## Series "Tiếng Anh 3D" (người dùng đã duyệt khung 2026-11-10 — **video tiếp theo làm theo dạng này**)
+- Reel ~30 giây, 1080×1920: Cơm và Mia dạng khối hộp (voxel) dựng bằng Three.js trong Remotion (`@remotion/three`),
+  sân khấu đêm có lưới phát sáng + đốm bokeh. Không phải video AI: mọi chuyển động tính từ số khung hình.
+- Nội dung: 1 mẹo/lỗi sai tiếng Anh. Hook 3 giây đầu (nêu lỗi), giải thích ngắn, Mia đọc các bước "Step one…", Cơm lặp lại,
+  có twist hài, kết bằng kêu gọi bình luận (hộp vàng + pháo giấy). Câu 3–10 từ.
+- Máy quay cắt theo từng câu (`shot`: `close` cận mặt người nói / `wide` toàn cảnh), đẩy chậm vào trong mỗi cảnh.
+  Miệng mở theo mốc từng chữ của ElevenLabs. Phụ đề EN hiện từng chữ (từ khoá vàng) + dòng tiếng Việt bên dưới.
+  Nhãn trên cùng (`chip`, phần *…* tô vàng) + vạch tiến độ các bước. Thẻ: `wrong` (gạch + dấu SAI!), `rule` (dấu ✗),
+  `phrase` (đánh chữ đúng lúc đọc + dấu ✓), `cta`. `mood`: `serious` (lông mày/mắt | |) hoặc `happy` (mắt ^ ^, giơ tay).
+- Kịch bản `video/public/lessons/voxel-NN-<chủ đề>.json`. Code: `src/voxel/` (data.ts, Voxel3D.tsx = thế giới/nhân vật/máy quay,
+  VoxelReel.tsx = chữ/thẻ/âm thanh). Composition `Voxel-NN-<Ten>` (folder `Voxel3D`).
+- **Render phải có `--gl=angle`** (Chrome headless mới có WebGL): `npx remotion render Voxel-01-VeryLike out/x.mp4 --gl=angle`
+  (~30 giây). Sau đó chuẩn hoá ffmpeg như bài học, rồi `loudnorm=I=-14:TP=-1.5:LRA=11` (bản thô chỉ ~−19 LUFS).
+  Soi trước bằng ảnh tĩnh mỗi câu: `npx remotion still … --frame=N --gl=angle --scale=0.5` rồi ghép bằng `ffmpeg tile`.
+- Giọng ~280 ký tự/clip. Ảnh bìa: Still `Voxel-Cover` (`--props='{"reelId":"…"}' --gl=angle`), chữ lấy từ `cover`
+  trong kịch bản (kicker đỏ / tiêu đề vàng / dòng phụ), 2 nhân vật giơ tay vui. Chưa có script đóng gói: làm tay như
+  clip Đoán từ → `queue/<id>.mp4` + `.cover.jpg` + brief `.json` + `.caption.txt` → `run-next.mjs`.
+- Clip 1 (`voxel-01-very-like`: "I very like it" → really / love / obsessed, twist "milk tea") đã lên Nháp 2026-11-10
+  (video_id 1667525041398015) kèm ảnh bìa, chưa hẹn giờ.
+
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
   trong `risecore/` (dùng `FB_PAGE_ID`/`FB_PAGE_TOKEN` trong `risecore/.env`). Người dùng tự bấm đăng trong
@@ -147,7 +167,8 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Nếu làm nội dung cho trẻ em: kênh/page riêng, chỉ vận động vui chơi, không tập tạ, không ăn kiêng.
 
 ## Việc tiếp theo (người dùng đã đồng ý hướng đi)
-0. Ưu tiên: series **Tiếng Anh mỗi ngày** (bài 1–21 đã lên Nháp 2026-11-03). Bài sau theo cùng khung.
+0. Ưu tiên: tiếng Anh. Bài 1–21 (khung sticker) đã lên Nháp 2026-11-03. **Từ 2026-11-10, video mới làm theo khung
+   "Tiếng Anh 3D"** (xem mục trên), không làm thêm bài theo khung sticker.
    TikTok: người dùng đã tạo app (loại "Other") và để `TIKTOK_CLIENT_KEY`/`TIKTOK_CLIENT_SECRET` trong `risecore/.env`,
    nhưng tạm gác — làm Facebook Reels trước. Khi làm: Content Posting API, quyền `video.upload` (đẩy vào nháp TikTok).
 1. (Series gym tạm dừng) Video **Ngày tập lưng** (cùng cấu trúc, cùng nhân vật).

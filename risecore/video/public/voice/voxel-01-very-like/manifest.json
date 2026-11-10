@@ -1,0 +1,401 @@
+{
+  "id": "voxel-01-very-like",
+  "provider": "elevenlabs",
+  "lines": [
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Stop saying \"I very like it\"!",
+      "file": "voice/voxel-01-very-like/00.mp3",
+      "duration": 1.950476,
+      "words": [
+        {
+          "w": "Stop",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "saying",
+          "start": 0.337,
+          "end": 0.546
+        },
+        {
+          "w": "\"I",
+          "start": 0.627,
+          "end": 0.743
+        },
+        {
+          "w": "very",
+          "start": 0.894,
+          "end": 1.149
+        },
+        {
+          "w": "like",
+          "start": 1.219,
+          "end": 1.428
+        },
+        {
+          "w": "it\"!",
+          "start": 1.474,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "It's wrong! Here are three better ways.",
+      "file": "voice/voxel-01-very-like/01.mp3",
+      "duration": 2.136236,
+      "words": [
+        {
+          "w": "It's",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "w": "wrong!",
+          "start": 0.244,
+          "end": 0.639
+        },
+        {
+          "w": "Here",
+          "start": 0.673,
+          "end": 0.824
+        },
+        {
+          "w": "are",
+          "start": 0.848,
+          "end": 0.94
+        },
+        {
+          "w": "three",
+          "start": 0.964,
+          "end": 1.138
+        },
+        {
+          "w": "better",
+          "start": 1.173,
+          "end": 1.382
+        },
+        {
+          "w": "ways.",
+          "start": 1.428,
+          "end": 2.136
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Why? \"Very\" can't go before a verb.",
+      "file": "voice/voxel-01-very-like/02.mp3",
+      "duration": 3.204354,
+      "words": [
+        {
+          "w": "Why?",
+          "start": 0,
+          "end": 0.58
+        },
+        {
+          "w": "\"Very\"",
+          "start": 1.184,
+          "end": 1.66
+        },
+        {
+          "w": "can't",
+          "start": 1.695,
+          "end": 1.916
+        },
+        {
+          "w": "go",
+          "start": 1.95,
+          "end": 2.078
+        },
+        {
+          "w": "before",
+          "start": 2.148,
+          "end": 2.426
+        },
+        {
+          "w": "a",
+          "start": 2.461,
+          "end": 2.485
+        },
+        {
+          "w": "verb.",
+          "start": 2.531,
+          "end": 3.204
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step one: I really like it.",
+      "file": "voice/voxel-01-very-like/03.mp3",
+      "duration": 2.229116,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "w": "one:",
+          "start": 0.337,
+          "end": 0.731
+        },
+        {
+          "w": "I",
+          "start": 1.057,
+          "end": 1.115
+        },
+        {
+          "w": "really",
+          "start": 1.207,
+          "end": 1.428
+        },
+        {
+          "w": "like",
+          "start": 1.474,
+          "end": 1.683
+        },
+        {
+          "w": "it.",
+          "start": 1.73,
+          "end": 2.229
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I really like it!",
+      "file": "voice/voxel-01-very-like/04.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.116
+        },
+        {
+          "w": "really",
+          "start": 0.209,
+          "end": 0.453
+        },
+        {
+          "w": "like",
+          "start": 0.511,
+          "end": 0.72
+        },
+        {
+          "w": "it!",
+          "start": 0.766,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step two: I love it!",
+      "file": "voice/voxel-01-very-like/05.mp3",
+      "duration": 1.718277,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "two:",
+          "start": 0.348,
+          "end": 0.743
+        },
+        {
+          "w": "I",
+          "start": 0.859,
+          "end": 0.917
+        },
+        {
+          "w": "love",
+          "start": 1.033,
+          "end": 1.219
+        },
+        {
+          "w": "it!",
+          "start": 1.265,
+          "end": 1.718
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I love it!",
+      "file": "voice/voxel-01-very-like/06.mp3",
+      "duration": 0.882358,
+      "words": [
+        {
+          "w": "I",
+          "start": 0,
+          "end": 0.093
+        },
+        {
+          "w": "love",
+          "start": 0.209,
+          "end": 0.418
+        },
+        {
+          "w": "it!",
+          "start": 0.464,
+          "end": 0.882
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Step three: I'm obsessed with it!",
+      "file": "voice/voxel-01-very-like/07.mp3",
+      "duration": 2.321995,
+      "words": [
+        {
+          "w": "Step",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "w": "three:",
+          "start": 0.348,
+          "end": 0.789
+        },
+        {
+          "w": "I'm",
+          "start": 1.068,
+          "end": 1.219
+        },
+        {
+          "w": "obsessed",
+          "start": 1.265,
+          "end": 1.649
+        },
+        {
+          "w": "with",
+          "start": 1.672,
+          "end": 1.8
+        },
+        {
+          "w": "it!",
+          "start": 1.858,
+          "end": 2.322
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "I'm obsessed with... milk tea!",
+      "file": "voice/voxel-01-very-like/08.mp3",
+      "duration": 2.368435,
+      "words": [
+        {
+          "w": "I'm",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "w": "obsessed",
+          "start": 0.244,
+          "end": 0.697
+        },
+        {
+          "w": "with...",
+          "start": 0.743,
+          "end": 1.115
+        },
+        {
+          "w": "milk",
+          "start": 1.44,
+          "end": 1.695
+        },
+        {
+          "w": "tea!",
+          "start": 1.753,
+          "end": 2.368
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "speaker": "mia",
+      "say": "Ha! Me too!",
+      "file": "voice/voxel-01-very-like/09.mp3",
+      "duration": 1.253878,
+      "words": [
+        {
+          "w": "Ha!",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "w": "Me",
+          "start": 0.441,
+          "end": 0.58
+        },
+        {
+          "w": "too!",
+          "start": 0.627,
+          "end": 1.254
+        }
+      ]
+    },
+    {
+      "provider": "elevenlabs",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "speaker": "com",
+      "say": "Comment one, two, or three!",
+      "file": "voice/voxel-01-very-like/10.mp3",
+      "duration": 2.275556,
+      "words": [
+        {
+          "w": "Comment",
+          "start": 0,
+          "end": 0.406
+        },
+        {
+          "w": "one,",
+          "start": 0.476,
+          "end": 0.836
+        },
+        {
+          "w": "two,",
+          "start": 0.917,
+          "end": 1.312
+        },
+        {
+          "w": "or",
+          "start": 1.358,
+          "end": 1.486
+        },
+        {
+          "w": "three!",
+          "start": 1.556,
+          "end": 2.276
+        }
+      ]
+    }
+  ]
+}
