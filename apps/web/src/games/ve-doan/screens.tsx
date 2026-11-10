@@ -62,7 +62,7 @@ function RoundLayout({
       <div className="flex flex-col gap-4 md:pt-2">
         {side}
         {bar && (
-          <div className="sticky bottom-0 -mx-4 bg-[color:var(--vd-tarp)]/95 px-4 pt-2 pb-[max(12px,env(safe-area-inset-bottom))] backdrop-blur-sm md:static md:mx-0 md:bg-transparent md:p-0 md:backdrop-blur-none">
+          <div className="sticky bottom-0 -mx-4 bg-[#1b1440]/95 px-4 pt-2 pb-[max(12px,env(safe-area-inset-bottom))] backdrop-blur-sm md:static md:mx-0 md:bg-transparent md:p-0 md:backdrop-blur-none">
             {bar}
           </div>
         )}
@@ -416,7 +416,7 @@ export function LobbyScreen({
 
       <aside
         aria-label="Cài đặt ván"
-        className="flex flex-col gap-5 rounded-2xl bg-[color:var(--vd-tarpHi)]/60 p-5 ring-1 ring-[color:var(--vd-wire)]"
+        className="flex flex-col gap-5 rounded-2xl bg-[#2b2060]/60 p-5 ring-1 ring-[color:var(--vd-wire)]"
       >
         <Choice
           label="Số lượt vẽ"
