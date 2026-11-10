@@ -821,6 +821,12 @@
       "description": "Một người vẽ từ bí mật bằng ngón tay, cả phòng gõ câu đoán. Đoán ra càng nhanh càng nhiều điểm. Mỗi người chơi trên điện thoại của mình, mời bạn qua link hoặc mã phòng.",
       "tags": ["2–8 người", "Mời bạn qua link", "Bộ từ tiếng Việt"]
     },
+    "coCaNgua": {
+      "title": "Cờ cá ngựa",
+      "genre": "Cờ cá ngựa 3D",
+      "description": "Bốn nhà, mười sáu chiến mã trên bãi chiến trường Tây Sơn. Đổ xúc xắc, chiến mã tự xuất kích, đá ngựa đối thủ về chuồng. Chơi chung một máy, đấu với máy, hoặc mời bạn vào phòng online.",
+      "tags": ["2–4 người", "Chơi chung máy hoặc online", "Có máy chơi cùng"]
+    },
     "meetCast": "Gặp dàn nhân vật",
     "castCount": "{{count}} nhân vật — mỗi người một cá tính.",
     "backToApp": "Về Atomic Habits"

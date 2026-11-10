@@ -46,4 +46,12 @@ export const GAMES: GameEntry[] = [
     // Dựng từ art-source/ve-doan/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
     banner: '/games/ve-doan/banner.jpg',
   },
+  {
+    id: 'coCaNgua',
+    href: '/games/co-ca-ngua',
+    status: 'playable',
+    cover: ['#2a3038', '#0e1013'],
+    // Dựng từ art-source/co-ca-ngua/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
+    banner: '/games/co-ca-ngua/banner.jpg',
+  },
 ];

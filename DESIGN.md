@@ -597,3 +597,18 @@ The games area deliberately leaves the app's dark editorial system (owner's deci
 - **Icons:** authored inline SVG, 2.2px rounded stroke; no emoji.
 - **Motion:** one moment: hero characters rise in with an expo ease-out, then idle-bob; disabled under `prefers-reduced-motion`.
 - **Browser surfaces:** selection in sun/ink, cast-strip scrollbar in sky, focus rings 4px sky with ground offset.
+
+### Cờ cá ngựa (`/games/co-ca-ngua`)
+
+Each game inside `/games` owns its visual world; this one is a Tây Sơn night battlefield (owner's choice) and shares no UI kit with the hub or the other games. Tokens live in `apps/web/src/games/co-ca-ngua/theme.ts` as `--cc-*` variables on the game root; the 3D scene reads the same palette.
+
+- **Ground and light:** night `#0e1013` with a faint ember radial glow at the top of the page; dark because the game is a torchlit scene and the HUD floats over a full-screen 3D canvas.
+- **Palette:** armour-plate stone `#1c2025` / `#2a3038`, iron seams `#4a525c`, ash `#9aa2ab` (secondary text), bone `#ece8e1` (primary text), ember `#ff6a1a` → `#b8420e` (primary action, fire, slash marks). House colours as war banners: Đỏ `#e5383b`, Lục `#2fbf71`, Vàng `#f6b81a`, Lam `#3a86ff`, each with a `deep` shade for stained stone. Text on Lục and Vàng is night, on Đỏ and Lam white.
+- **Type:** Anton uppercase (headings, numbers, buttons) and Barlow Semi Condensed 500–800 (body, labels), both with Vietnamese coverage, loaded from `FONT_URL`.
+- **Shape:** chamfered plates — two opposite corners cut 12px (`CHAMFER` clip-path); buttons are the same blade shape with a 4px inner bottom shade. No rounded cards, no hard offset shadows; depth is the 1px iron inset seam.
+- **Components:** `Plate` (stone panel), `Button` (ember / steel / house-coloured Đổ blade), `Banner` (swallowtail flag on an iron pole), `DieFace` (bone die, red 1 and 4 pips), `Toggle` (iron track, ember when on). Icons are authored SVG, 2px square-cap stroke.
+- **3D scene (`view3d.ts`, textures in `art.ts`):** carved stone dais on a flagstone field, track in grey stone with visible grain, start cells and home steps stained in house colour, yards as dark stone stained by the house with a house-coloured border; four braziers (additive flame sprites, flickering point lights, rising embers) and waving banners at the corners, pulled inward on portrait screens so all four stay in frame. Pieces are matte painted-iron war horses on lathed iron bases with a glowing house band. Camera is a fixed overview from the device owner's side.
+- **Motion:** the die drops from the roller's side and tumbles into the centre; horses hop tile by tile; one authored moment for a kick — sparks, a shockwave ring, a flash, a camera punch and shake, the kicked horse somersaulting home, and an "ĐÁ!" slam in the kicker's colour. Pass-the-phone uses a shield-flip card. All motion and the slam animation are disabled under `prefers-reduced-motion`.
+- **Sound (`audio.ts`):** synthesised WebAudio only — war-drum roll, die clatter, hoof per hop, kick impact, win fanfare; mute toggle remembered per device.
+- **Browser surfaces:** selection ember on night, caret ember, scrollbar iron on night.
+- **Banner:** `public/games/co-ca-ngua/banner.jpg`, rendered from `apps/web/art-source/co-ca-ngua/banner.html` (export commands in the file); no AI imagery.

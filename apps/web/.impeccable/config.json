@@ -1,7 +1,7 @@
 {
   "detector": {
     "ignoreRules": [],
-    "ignoreFiles": [],
+    "ignoreFiles": ["art-source/co-ca-ngua/banner.html"],
     "ignoreValues": [
       {
         "rule": "design-system-font",
@@ -26,6 +26,18 @@
         "value": "be vietnam pro",
         "createdAt": "2026-11-06T07:32:45.826Z",
         "reason": "Vẽ Đoán's own game body face; not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "anton",
+        "createdAt": "2026-11-10T08:36:45.380Z",
+        "reason": "Cờ cá ngựa's own display face (user-chosen Chiến mã Tây Sơn world); not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "barlow semi condensed",
+        "createdAt": "2026-11-10T08:36:45.426Z",
+        "reason": "Cờ cá ngựa's own body face; not used in app UI"
       }
     ]
   }

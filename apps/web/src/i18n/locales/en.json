@@ -821,6 +821,12 @@
       "description": "One player draws a secret word with a finger while everyone else types guesses. The faster you guess, the more points you get. Everyone plays on their own phone; invite friends by link or room code.",
       "tags": ["2–8 players", "Invite by link", "Vietnamese word packs"]
     },
+    "coCaNgua": {
+      "title": "Horse Race Ludo",
+      "genre": "3D Ludo",
+      "description": "Four houses, sixteen war horses on a Tây Sơn battlefield. Roll the die, your horse charges by itself, and kick rivals back to their stable. Pass one phone around, play against bots, or invite friends to an online room.",
+      "tags": ["2–4 players", "One phone or online", "Bots included"]
+    },
     "meetCast": "Meet the cast",
     "castCount": "{{count}} characters, each with their own style.",
     "backToApp": "Back to Atomic Habits"
