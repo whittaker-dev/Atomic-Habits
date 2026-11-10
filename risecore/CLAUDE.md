@@ -147,7 +147,7 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   (video_id 1667525041398015) kèm ảnh bìa, chưa hẹn giờ.
 - Clip 2–11 đã lên Nháp 2026-11-10 kèm ảnh bìa, chưa hẹn giờ: I'm boring/bored, I'm agree, open the light, make a photo,
   go to home, repeat again, borrow me, discuss about, explain me, go to play (id trong `posted.json`). Lần tải đầu của
-  clip 9 lỗi nhưng vẫn tạo ra bản nháp trùng 885839257953416 (không có trong posted.json) — người dùng tự xoá.
+  clip 9 lỗi nhưng vẫn tạo ra bản nháp trùng (đã xoá 2026-11-10): `run-next.mjs` báo lỗi chưa chắc là Facebook không nhận.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
