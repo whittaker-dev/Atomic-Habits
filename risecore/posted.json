@@ -37,9 +37,10 @@
   {
     "file": "queue/2026-11-03-trich-dan-01-used-to.mp4",
     "videoId": "1963505211721819",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1963505211721819/",
-    "at": "2026-11-03T04:30:30.872Z"
+    "at": "2026-11-03T04:30:30.872Z",
+    "deletedAt": "2026-11-10"
   },
   {
     "file": "queue/bai-02-thank-you.mp4",
