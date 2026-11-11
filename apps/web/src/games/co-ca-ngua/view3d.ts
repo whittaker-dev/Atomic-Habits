@@ -666,13 +666,16 @@ export function createBoardView(target: HTMLCanvasElement): BoardView {
       core.scale.set(0.8 * (1 - f * 0.06), 1.2 * (1 + f * 0.2), 1);
       glow.material.opacity = 0.75 + f * 0.15;
     }
-    for (let i = 0; i < EMBERS; i++) {
-      emberLife[i]! += dt * 0.5;
-      emberPos[i * 3 + 1]! += dt * (0.9 + (i % 5) * 0.15);
-      emberPos[i * 3]! += Math.sin(now / 400 + i) * dt * 0.3;
-      if (emberLife[i]! > 1 || emberPos[i * 3 + 1]! > 7) resetEmber(i);
+    // Giảm chuyển động: tàn lửa đứng yên (vẫn thấy đốm sáng quanh lò, không bay liên tục).
+    if (!reduce) {
+      for (let i = 0; i < EMBERS; i++) {
+        emberLife[i]! += dt * 0.5;
+        emberPos[i * 3 + 1]! += dt * (0.9 + (i % 5) * 0.15);
+        emberPos[i * 3]! += Math.sin(now / 400 + i) * dt * 0.3;
+        if (emberLife[i]! > 1 || emberPos[i * 3 + 1]! > 7) resetEmber(i);
+      }
+      emberGeo.attributes.position!.needsUpdate = true;
     }
-    emberGeo.attributes.position!.needsUpdate = true;
 
     // Cờ trận bay: sóng chạy từ cán ra mép ngoài.
     for (const fl of flags) {
@@ -780,6 +783,9 @@ export function createBoardView(target: HTMLCanvasElement): BoardView {
       }
       flash.position.copy(at).setY(at.y + 1);
       ring.position.copy(at).setY(SURFACE + 0.03);
+      // Giảm chuyển động: bỏ tia lửa, vòng lan, chớp sáng và rung; con ngựa vẫn về chuồng ngay,
+      // chữ "ĐÁ!" và dòng báo vẫn hiện.
+      if (reduce) return;
       sparkT0 = performance.now();
       punch = { at: at.clone().setY(SURFACE), t0: sparkT0 };
       shake = 0.7;

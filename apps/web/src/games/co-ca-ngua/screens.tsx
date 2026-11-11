@@ -664,17 +664,33 @@ export function GameScreen({
     }
     animating.current = true;
     setBusy(true);
-    const done = (delay = 0) =>
+    let settled = false;
+    const done = (delay = 0) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(watchdog);
       setTimeout(() => {
         animating.current = false;
         show(next);
         pump();
       }, delay);
+    };
     const ev = next.event;
+    // Chốt an toàn: hoạt cảnh chạy theo khung hình, mà trình duyệt có thể ngừng vẽ (màn bị che, máy
+    // tiết kiệm pin) dù trang vẫn "hiện". Quá thời gian dự kiến thì đặt thẳng thế cờ và đi tiếp,
+    // để màn không kẹt mãi ở "…".
+    const budget =
+      ev.kind === 'move' ? 2500 + stepsBetween(ev.from, ev.move.to).length * 250 : 3500;
+    const watchdog = setTimeout(() => {
+      v.setHorses(allHorses(next));
+      if (ev.kind === 'roll') setLastRoll(ev.value);
+      done();
+    }, budget);
     if (ev.kind === 'roll') {
       setNote(null);
       sfx.roll();
       v.rollDie(ev.value, ev.house, () => {
+        if (settled) return;
         sfx.land();
         setLastRoll(ev.value);
         if (ev.passed) {
@@ -688,6 +704,7 @@ export function GameScreen({
         ev.move.slot,
         stepsBetween(ev.from, ev.move.to),
         () => {
+          if (settled) return;
           if (ev.kicked) {
             sfx.kick();
             v.kick(ev.kicked.house, ev.kicked.slot);
