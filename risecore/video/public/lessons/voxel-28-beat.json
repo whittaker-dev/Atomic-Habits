@@ -1,0 +1,236 @@
+{
+  "id": "voxel-28-beat",
+  "series": "Tiếng Anh 3D",
+  "number": 28,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“You can't win me”",
+    "sub": "Thắng ai thì dùng chữ gì?"
+  },
+  "caption": "Thắng người ta mà nói “win me” là sai rồi — phải “beat” nha! 🏸\n\n❌ You can't win me — Thắng người: beat\n✅ You can't beat me — Bạn không thắng nổi mình đâu\n✅ I won the game — Mình thắng trận rồi\n✅ I crushed it — Mình thắng đậm\n\n🧠 Đố nhanh: You can't win me hay You can't beat me? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *You can't win me*",
+      "card": {
+        "kind": "wrong",
+        "text": "You can't win me",
+        "sub": "Thắng người: beat"
+      },
+      "keywords": [
+        "win"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"You can't win me\"!",
+          "vi": "Đừng nói “You can't win me” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "You win a game, not a person!",
+          "vi": "Win là thắng trận, không phải thắng người!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *beat* + người",
+      "card": {
+        "kind": "rule",
+        "text": "win + người ✗",
+        "sub": "win + trận · beat + người"
+      },
+      "keywords": [
+        "win",
+        "beat"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Win a game. Beat a person.",
+          "vi": "Win + trận đấu. Beat + người.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *beat*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "You can't beat me",
+        "sub": "Bạn không thắng nổi mình đâu"
+      },
+      "keywords": [
+        "beat"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: You can't beat me.",
+          "vi": "Bước 1: Bạn không thắng nổi mình đâu.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "You can't beat me!",
+          "vi": "Bạn không thắng nổi mình đâu.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *won*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I won the game",
+        "sub": "Mình thắng trận rồi"
+      },
+      "keywords": [
+        "won",
+        "game"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I won the game.",
+          "vi": "Bước 2: Mình thắng trận rồi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I won the game!",
+          "vi": "Mình thắng trận rồi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *crushed it*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I crushed it",
+        "sub": "Mình thắng đậm"
+      },
+      "keywords": [
+        "crushed",
+        "lose"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I crushed it!",
+          "vi": "Bước 3: Mình thắng đậm!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Rematch! Right now!",
+          "vi": "Đấu lại! Ngay bây giờ!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "You'll still lose!",
+          "vi": "Vẫn thua thôi!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Chơi cầu lông",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "beat",
+        "won"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "I beat you again!",
+          "vi": "Mình lại thắng bạn rồi!",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Fine. You won this time.",
+          "vi": "Thôi được. Lần này bạn thắng.",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "And next time too!",
+          "vi": "Lần sau cũng vậy!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "You can't win me",
+          "You can't beat me"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "beat"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! You can't beat me.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

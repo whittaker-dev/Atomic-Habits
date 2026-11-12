@@ -1,0 +1,238 @@
+{
+  "id": "voxel-25-money",
+  "series": "Tiếng Anh 3D",
+  "number": 25,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“many money”",
+    "sub": "Nhiều tiền nói sao?"
+  },
+  "caption": "“Many money” nghe nhiều tiền thật… nhưng sai ngữ pháp nha! 💸\n\n❌ many money — Tiền không đếm được\n✅ a lot of money — Rất nhiều tiền\n✅ much money — Không nhiều tiền\n✅ I'm broke — Mình cháy túi rồi\n\n🧠 Đố nhanh: a lot of money hay many money? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *many money*",
+      "card": {
+        "kind": "wrong",
+        "text": "many money",
+        "sub": "Tiền không đếm được"
+      },
+      "keywords": [
+        "many",
+        "money"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"many money\"!",
+          "vi": "Đừng nói “many money” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "You can't say many with money!",
+          "vi": "Không dùng “many” với tiền!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *much / a lot of*",
+      "card": {
+        "kind": "rule",
+        "text": "many money ✗",
+        "sub": "money không đếm được → much / a lot of"
+      },
+      "keywords": [
+        "much",
+        "lot"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Use much or a lot of.",
+          "vi": "Dùng “much” hoặc “a lot of”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *a lot of*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "a lot of money",
+        "sub": "Rất nhiều tiền"
+      },
+      "keywords": [
+        "lot",
+        "money"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: He has a lot of money.",
+          "vi": "Bước 1: Anh ấy có rất nhiều tiền.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "He has a lot of money!",
+          "vi": "Anh ấy có rất nhiều tiền.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *much*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "much money",
+        "sub": "Không nhiều tiền"
+      },
+      "keywords": [
+        "much",
+        "money"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I don't have much money.",
+          "vi": "Bước 2: Mình không có nhiều tiền.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I don't have much money!",
+          "vi": "Mình không có nhiều tiền.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *broke*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm broke",
+        "sub": "Mình cháy túi rồi"
+      },
+      "keywords": [
+        "broke",
+        "lunch"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I'm broke!",
+          "vi": "Bước 3: Mình cháy túi rồi!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "So you pay for lunch!",
+          "vi": "Vậy bạn trả tiền ăn trưa nha!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "I'm broke too!",
+          "vi": "Mình cũng cháy túi!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Cuối tháng",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "broke"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Let's eat out tonight!",
+          "vi": "Tối nay đi ăn ngoài đi!",
+          "shot": "wide"
+        },
+        {
+          "speaker": "mia",
+          "say": "Sorry, I'm broke.",
+          "vi": "Xin lỗi, mình cháy túi rồi.",
+          "shot": "close"
+        },
+        {
+          "speaker": "com",
+          "say": "Me too. Instant noodles?",
+          "vi": "Mình cũng vậy. Ăn mì gói nhé?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "a lot of money",
+          "many money"
+        ],
+        "answer": 0
+      },
+      "keywords": [
+        "lot",
+        "money"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "A! a lot of money.",
+          "vi": "Đáp án A!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

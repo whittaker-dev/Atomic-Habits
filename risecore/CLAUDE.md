@@ -154,7 +154,9 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   clip 9 lỗi nhưng vẫn tạo ra bản nháp trùng (đã xoá 2026-11-10): `run-next.mjs` báo lỗi chưa chắc là Facebook không nhận.
 - Clip 12–21 (bản dài) đã lên Nháp 2026-11-10 kèm ảnh bìa, chưa hẹn giờ: I have 20 years old, same same, the party was funny,
   I am understand, nice to meet you (gặp lại), informations, listen music, the price is cheap, marry with, return back.
-  ElevenLabs sau đợt này còn ~2.900 ký tự (reset 2026-12-10) — đủ ~7 clip bản dài.
+- Clip 22–28 (bản dài) đã lên Nháp 2026-11-12 kèm ảnh bìa, chưa hẹn giờ: How to say it?, by foot, take care yourself,
+  many money, make a party, I lost the bus, you can't win me. ElevenLabs còn ~100 ký tự → hết credit tới 2026-12-10 22:41.
+  Thực tế ElevenLabs trừ ~1,07× số ký tự kịch bản, và số dư trên API cập nhật trễ vài phút — đo lại sau khi tạo xong.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`

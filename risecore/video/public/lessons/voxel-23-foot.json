@@ -1,0 +1,236 @@
+{
+  "id": "voxel-23-foot",
+  "series": "Tiếng Anh 3D",
+  "number": 23,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“by foot”",
+    "sub": "Đi bộ nói sao cho chuẩn?"
+  },
+  "caption": "Đi bộ mà nói “by foot” là sai một chữ nhỏ thôi nha! 🚶\n\n❌ by foot — Đi bộ là “on foot”\n✅ I go on foot — Mình đi bộ\n✅ I walk to school — Mình đi bộ tới trường\n✅ It's walking distance — Đi bộ tới được\n\n🧠 Đố nhanh: I go by foot hay I go on foot? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *by foot*",
+      "card": {
+        "kind": "wrong",
+        "text": "by foot",
+        "sub": "Đi bộ là “on foot”"
+      },
+      "keywords": [
+        "foot"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"by foot\"!",
+          "vi": "Đừng nói “by foot” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Close! But it's on foot.",
+          "vi": "Gần đúng! Nhưng phải là “on foot”.",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *on foot*",
+      "card": {
+        "kind": "rule",
+        "text": "by foot ✗",
+        "sub": "by bus, by car… nhưng on foot"
+      },
+      "keywords": [
+        "foot",
+        "bus",
+        "car"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "By bus, by car, but on foot.",
+          "vi": "By bus, by car, nhưng là on foot.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *on foot*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I go on foot",
+        "sub": "Mình đi bộ"
+      },
+      "keywords": [
+        "foot"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I go on foot.",
+          "vi": "Bước 1: Mình đi bộ.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I go on foot!",
+          "vi": "Mình đi bộ.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *walk*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I walk to school",
+        "sub": "Mình đi bộ tới trường"
+      },
+      "keywords": [
+        "walk"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I walk to school.",
+          "vi": "Bước 2: Mình đi bộ tới trường.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I walk to school!",
+          "vi": "Mình đi bộ tới trường.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *walking distance*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "It's walking distance",
+        "sub": "Đi bộ tới được"
+      },
+      "keywords": [
+        "walking",
+        "distance",
+        "taxi"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: It's walking distance!",
+          "vi": "Bước 3: Đi bộ tới được!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Too far. I'll take a taxi!",
+          "vi": "Xa quá. Mình đi taxi!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "So lazy!",
+          "vi": "Lười ghê!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Hỏi cách đi học",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "walk"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "How do you get to school?",
+          "vi": "Bạn đi học bằng gì?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I walk. It's close.",
+          "vi": "Mình đi bộ. Gần mà.",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "Lucky you!",
+          "vi": "Sướng ghê!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "I go by foot",
+          "I go on foot"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "foot"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! I go on foot.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

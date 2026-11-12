@@ -23,4 +23,11 @@ export const REELS: {id: string; composition: string}[] = [
   {id: 'voxel-19-cheap', composition: 'Voxel-19-Cheap'},
   {id: 'voxel-20-marry', composition: 'Voxel-20-Marry'},
   {id: 'voxel-21-back', composition: 'Voxel-21-Back'},
+  {id: 'voxel-22-how-say', composition: 'Voxel-22-HowSay'},
+  {id: 'voxel-23-foot', composition: 'Voxel-23-Foot'},
+  {id: 'voxel-24-take-care', composition: 'Voxel-24-TakeCare'},
+  {id: 'voxel-25-money', composition: 'Voxel-25-Money'},
+  {id: 'voxel-26-party', composition: 'Voxel-26-Party'},
+  {id: 'voxel-27-miss', composition: 'Voxel-27-Miss'},
+  {id: 'voxel-28-beat', composition: 'Voxel-28-Beat'},
 ];

@@ -1,0 +1,240 @@
+{
+  "id": "voxel-26-party",
+  "series": "Tiếng Anh 3D",
+  "number": 26,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“make a party”",
+    "sub": "Tổ chức tiệc nói sao?"
+  },
+  "caption": "Tổ chức tiệc mà nói “make a party” là người ta tưởng bạn nướng bánh đó 🎉\n\n❌ make a party — Không ai “make” bữa tiệc\n✅ Let's have a party — Tổ chức tiệc đi\n✅ I'm throwing a party — Mình tổ chức tiệc\n✅ You're invited — Mời bạn tới nha\n\n🧠 Đố nhanh: Let's make a party hay Let's have a party? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *make a party*",
+      "card": {
+        "kind": "wrong",
+        "text": "make a party",
+        "sub": "Không ai “make” bữa tiệc"
+      },
+      "keywords": [
+        "make",
+        "party"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"make a party\"!",
+          "vi": "Đừng nói “make a party” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "A party isn't a cake!",
+          "vi": "Tiệc đâu phải bánh mà “make”!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *throw a party*",
+      "card": {
+        "kind": "rule",
+        "text": "make a party ✗",
+        "sub": "Tổ chức tiệc: have / throw a party"
+      },
+      "keywords": [
+        "have",
+        "throw",
+        "party"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Say have a party, or throw a party.",
+          "vi": "Nói “have a party” hoặc “throw a party”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *have*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Let's have a party",
+        "sub": "Tổ chức tiệc đi"
+      },
+      "keywords": [
+        "have",
+        "party"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Let's have a party.",
+          "vi": "Bước 1: Tổ chức tiệc đi.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Let's have a party!",
+          "vi": "Tổ chức tiệc đi.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *throw*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm throwing a party",
+        "sub": "Mình tổ chức tiệc"
+      },
+      "keywords": [
+        "throwing",
+        "party"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I'm throwing a party.",
+          "vi": "Bước 2: Mình tổ chức tiệc.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I'm throwing a party!",
+          "vi": "Mình tổ chức tiệc.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *invited*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "You're invited",
+        "sub": "Mời bạn tới nha"
+      },
+      "keywords": [
+        "invited",
+        "food"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: You're invited!",
+          "vi": "Bước 3: Mời bạn tới nha!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "Is there free food?",
+          "vi": "Có đồ ăn miễn phí không?",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Of course!",
+          "vi": "Tất nhiên!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Rủ bạn đi tiệc",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "throwing",
+        "party"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "I'm throwing a party tonight.",
+          "vi": "Tối nay mình tổ chức tiệc.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Cool! Can I bring friends?",
+          "vi": "Hay! Mình dẫn bạn theo được không?",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "The more, the merrier!",
+          "vi": "Càng đông càng vui!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "Let's make a party",
+          "Let's have a party"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "have",
+        "party"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! Let's have a party.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

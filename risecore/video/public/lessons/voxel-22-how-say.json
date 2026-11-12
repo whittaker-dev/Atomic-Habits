@@ -1,0 +1,241 @@
+{
+  "id": "voxel-22-how-say",
+  "series": "Tiếng Anh 3D",
+  "number": 22,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“How to say it?”",
+    "sub": "Hỏi “nói sao” cho đúng"
+  },
+  "caption": "Hỏi “How to say…?” là thiếu mất 2 chữ quan trọng đó! 🤔\n\n❌ How to say it? — Thiếu “do you”\n✅ How do you say it? — Nói cái này sao?\n✅ What's this called? — Cái này gọi là gì?\n✅ What does it mean? — Nó nghĩa là gì?\n\n🧠 Đố nhanh: How to say it? hay How do you say it?? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *How to say it?*",
+      "card": {
+        "kind": "wrong",
+        "text": "How to say it?",
+        "sub": "Thiếu “do you”"
+      },
+      "keywords": [
+        "how",
+        "say"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"How to say it?\"!",
+          "vi": "Đừng nói “How to say it?” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "That's not a full question!",
+          "vi": "Đó chưa phải câu hỏi đầy đủ!",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *How do you*",
+      "card": {
+        "kind": "rule",
+        "text": "How to say ✗",
+        "sub": "Hỏi thì cần “do you”"
+      },
+      "keywords": [
+        "do",
+        "you"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Questions need do you.",
+          "vi": "Câu hỏi cần có “do you”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *how do you say*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "How do you say it?",
+        "sub": "Nói cái này sao?"
+      },
+      "keywords": [
+        "how",
+        "do",
+        "you",
+        "say"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: How do you say it?",
+          "vi": "Bước 1: Nói cái này sao?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "How do you say it?",
+          "vi": "Nói cái này sao?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *what's this called*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "What's this called?",
+        "sub": "Cái này gọi là gì?"
+      },
+      "keywords": [
+        "called"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: What's this called?",
+          "vi": "Bước 2: Cái này gọi là gì?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "What's this called?",
+          "vi": "Cái này gọi là gì?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *what does it mean*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "What does it mean?",
+        "sub": "Nó nghĩa là gì?"
+      },
+      "keywords": [
+        "mean",
+        "hungry"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: What does it mean?",
+          "vi": "Bước 3: Nó nghĩa là gì?",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "How do you say... I'm hungry?",
+          "vi": "Nói “mình đói” sao ta?",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "You just said it!",
+          "vi": "Bạn vừa nói rồi đó!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Hỏi trong lớp",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "called",
+        "spell"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "What's this called?",
+          "vi": "Cái này gọi là gì?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "mia",
+          "say": "It's a stapler.",
+          "vi": "Là cái dập ghim.",
+          "shot": "close"
+        },
+        {
+          "speaker": "com",
+          "say": "How do you spell it?",
+          "vi": "Đánh vần sao vậy?",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "How to say it?",
+          "How do you say it?"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "how",
+        "do",
+        "you"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! How do you say it?.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

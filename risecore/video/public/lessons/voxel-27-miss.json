@@ -1,0 +1,238 @@
+{
+  "id": "voxel-27-miss",
+  "series": "Tiếng Anh 3D",
+  "number": 27,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“I lost the bus”",
+    "sub": "Lỡ xe buýt nói sao?"
+  },
+  "caption": "“I lost the bus” — xe buýt đâu có bị mất, bạn chỉ lỡ thôi! 🚌\n\n❌ I lost the bus — Xe buýt đâu có mất!\n✅ I missed the bus — Mình lỡ xe buýt\n✅ I'm running late — Mình đang trễ\n✅ I'm on my way — Mình đang tới\n\n🧠 Đố nhanh: I lost the bus hay I missed the bus? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *I lost the bus*",
+      "card": {
+        "kind": "wrong",
+        "text": "I lost the bus",
+        "sub": "Xe buýt đâu có mất!"
+      },
+      "keywords": [
+        "lost",
+        "bus"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"I lost the bus\"!",
+          "vi": "Đừng nói “I lost the bus” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Did someone steal it?",
+          "vi": "Ai trộm xe buýt hả?",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *miss* = lỡ",
+      "card": {
+        "kind": "rule",
+        "text": "lose the bus ✗",
+        "sub": "Lỡ chuyến: miss, không phải lose"
+      },
+      "keywords": [
+        "miss",
+        "lose"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "You miss a bus. You don't lose it.",
+          "vi": "Lỡ xe buýt là “miss”, không phải “lose”.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *missed*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "I missed the bus",
+        "sub": "Mình lỡ xe buýt"
+      },
+      "keywords": [
+        "missed",
+        "bus"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: I missed the bus.",
+          "vi": "Bước 1: Mình lỡ xe buýt.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I missed the bus!",
+          "vi": "Mình lỡ xe buýt.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *running late*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm running late",
+        "sub": "Mình đang trễ"
+      },
+      "keywords": [
+        "running",
+        "late"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: I'm running late.",
+          "vi": "Bước 2: Mình đang trễ.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "I'm running late!",
+          "vi": "Mình đang trễ.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *on my way*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "I'm on my way",
+        "sub": "Mình đang tới"
+      },
+      "keywords": [
+        "way",
+        "bed"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: I'm on my way!",
+          "vi": "Bước 3: Mình đang tới!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "On my way... to bed!",
+          "vi": "Đang tới... giường!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Seriously?!",
+          "vi": "Thật hả trời?!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Nhắn cho bạn",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "missed",
+        "way"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Sorry, I missed the bus.",
+          "vi": "Xin lỗi, mình lỡ xe buýt.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "mia",
+          "say": "No problem. Where are you?",
+          "vi": "Không sao. Bạn đâu rồi?",
+          "shot": "close"
+        },
+        {
+          "speaker": "com",
+          "say": "I'm on my way!",
+          "vi": "Mình đang tới!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "I lost the bus",
+          "I missed the bus"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "missed"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! I missed the bus.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}

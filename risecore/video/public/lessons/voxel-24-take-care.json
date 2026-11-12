@@ -1,0 +1,238 @@
+{
+  "id": "voxel-24-take-care",
+  "series": "Tiếng Anh 3D",
+  "number": 24,
+  "cover": {
+    "kicker": "ĐỪNG NÓI",
+    "title": "“Take care yourself”",
+    "sub": "Thiếu một chữ nhỏ"
+  },
+  "caption": "“Take care yourself” — thiếu đúng chữ “of” là sai ngữ pháp liền! 💙\n\n❌ Take care yourself — Thiếu chữ “of”\n✅ Take care — Bảo trọng nha\n✅ Take care of yourself — Giữ sức khoẻ nha\n✅ Look after yourself — Tự chăm sóc mình nha\n\n🧠 Đố nhanh: Take care yourself hay Take care of yourself? Xem tới cuối để biết đáp án!\n💬 Bạn sẽ dùng câu 1, 2 hay 3? Bình luận nha!\n📌 Follow để học thêm mẹo tiếng Anh mỗi ngày\n\n#tienganh #hoctienganh #tienganhgiaotiep #learnenglish #risecoreday\n",
+  "scenes": [
+    {
+      "chip": "LỖI SAI · *Take care yourself*",
+      "card": {
+        "kind": "wrong",
+        "text": "Take care yourself",
+        "sub": "Thiếu chữ “of”"
+      },
+      "keywords": [
+        "care",
+        "yourself"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Stop saying \"Take care yourself\"!",
+          "vi": "Đừng nói “Take care yourself” nữa!",
+          "shot": "close",
+          "mood": "serious"
+        },
+        {
+          "speaker": "mia",
+          "say": "Almost! One word is missing.",
+          "vi": "Gần đúng! Thiếu một chữ.",
+          "shot": "wide"
+        }
+      ]
+    },
+    {
+      "chip": "QUY TẮC · *take care of*",
+      "card": {
+        "kind": "rule",
+        "text": "take care ___ yourself",
+        "sub": "take care of + người"
+      },
+      "keywords": [
+        "care",
+        "of"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Take care of someone.",
+          "vi": "Take care of + người.",
+          "shot": "close",
+          "mood": "serious"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 1 · *take care*",
+      "step": 1,
+      "card": {
+        "kind": "phrase",
+        "text": "Take care",
+        "sub": "Bảo trọng nha"
+      },
+      "keywords": [
+        "care"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step one: Take care.",
+          "vi": "Bước 1: Bảo trọng nha.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Take care!",
+          "vi": "Bảo trọng nha.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 2 · *of yourself*",
+      "step": 2,
+      "card": {
+        "kind": "phrase",
+        "text": "Take care of yourself",
+        "sub": "Giữ sức khoẻ nha"
+      },
+      "keywords": [
+        "of",
+        "yourself"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step two: Take care of yourself.",
+          "vi": "Bước 2: Giữ sức khoẻ nha.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Take care of yourself!",
+          "vi": "Giữ sức khoẻ nha.",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "STEP 3 · *look after*",
+      "step": 3,
+      "card": {
+        "kind": "phrase",
+        "text": "Look after yourself",
+        "sub": "Tự chăm sóc mình nha"
+      },
+      "keywords": [
+        "look",
+        "after",
+        "cat"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Step three: Look after yourself!",
+          "vi": "Bước 3: Tự chăm sóc mình nha!",
+          "shot": "wide",
+          "mood": "happy"
+        },
+        {
+          "speaker": "com",
+          "say": "And look after my cat!",
+          "vi": "Và chăm mèo giùm mình nữa!",
+          "shot": "close",
+          "mood": "happy"
+        },
+        {
+          "speaker": "mia",
+          "say": "Not my job!",
+          "vi": "Không phải việc của mình!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    },
+    {
+      "chip": "THỰC HÀNH · *nói thử*",
+      "card": {
+        "kind": "practice",
+        "text": "Bạn bị cảm",
+        "sub": "Cơm và Mia nói thử"
+      },
+      "keywords": [
+        "care",
+        "of"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "I have a cold today.",
+          "vi": "Hôm nay mình bị cảm.",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "Oh no! Take care of yourself.",
+          "vi": "Ôi! Giữ sức khoẻ nha.",
+          "shot": "close"
+        },
+        {
+          "speaker": "mia",
+          "say": "Thanks, I will!",
+          "vi": "Cảm ơn, mình sẽ vậy!",
+          "shot": "close"
+        }
+      ]
+    },
+    {
+      "chip": "ĐỐ NHANH · *3 giây*",
+      "card": {
+        "kind": "quiz",
+        "text": "Câu nào đúng?",
+        "sub": "Đáp án sau 3 giây",
+        "options": [
+          "Take care yourself",
+          "Take care of yourself"
+        ],
+        "answer": 1
+      },
+      "keywords": [
+        "of"
+      ],
+      "lines": [
+        {
+          "speaker": "mia",
+          "say": "Quick quiz! A or B?",
+          "vi": "Đố nhanh! A hay B?",
+          "shot": "wide"
+        },
+        {
+          "speaker": "com",
+          "say": "B! Take care of yourself.",
+          "vi": "Đáp án B!",
+          "shot": "close",
+          "mood": "happy",
+          "pauseBefore": 3
+        }
+      ]
+    },
+    {
+      "chip": "BÌNH LUẬN NHA!",
+      "card": {
+        "kind": "cta",
+        "text": "1 · 2 · 3 ?",
+        "sub": "Bình luận câu bạn sẽ dùng"
+      },
+      "keywords": [
+        "one",
+        "two",
+        "three",
+        "comment"
+      ],
+      "lines": [
+        {
+          "speaker": "com",
+          "say": "Comment one, two, or three!",
+          "vi": "Bình luận 1, 2 hay 3 nhé!",
+          "shot": "wide",
+          "mood": "happy"
+        }
+      ]
+    }
+  ]
+}
