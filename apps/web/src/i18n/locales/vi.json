@@ -827,6 +827,12 @@
       "description": "Bốn nhà, mười sáu chiến mã trên bãi chiến trường Tây Sơn. Đổ xúc xắc, chiến mã tự xuất kích, đá ngựa đối thủ về chuồng. Chơi chung một máy, đấu với máy, hoặc mời bạn vào phòng online.",
       "tags": ["2–4 người", "Chơi chung máy hoặc online", "Có máy chơi cùng"]
     },
+    "coTyPhu": {
+      "title": "Cờ tỷ phú",
+      "genre": "Cờ tỷ phú 3D, địa danh Việt Nam",
+      "description": "Bàn cờ sơn mài đi từ Hà Giang tới Phú Quốc. Mua đất, xây nhà, thu tiền thuê, đấu giá và đổi đất với người khác. Chọn chơi theo số vòng, theo giờ hay tới khi chỉ còn một người. Chơi chung máy, với máy, hoặc mời bạn vào phòng online.",
+      "tags": ["2–6 người", "Chơi chung máy hoặc online", "Có máy chơi cùng"]
+    },
     "meetCast": "Gặp dàn nhân vật",
     "castCount": "{{count}} nhân vật — mỗi người một cá tính.",
     "backToApp": "Về Atomic Habits"

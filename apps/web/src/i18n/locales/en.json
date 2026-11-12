@@ -827,6 +827,12 @@
       "description": "Four houses, sixteen war horses on a Tây Sơn battlefield. Roll the die, your horse charges by itself, and kick rivals back to their stable. Pass one phone around, play against bots, or invite friends to an online room.",
       "tags": ["2–4 players", "One phone or online", "Bots included"]
     },
+    "coTyPhu": {
+      "title": "Vietnam Tycoon",
+      "genre": "3D property trading game set in Vietnam",
+      "description": "A lacquer board that runs from Hà Giang to Phú Quốc. Buy land, build houses, collect rent, run auctions and trade deeds with other players. Play a set number of rounds, against the clock, or until one player is left. Pass one phone around, play against bots, or invite friends to an online room.",
+      "tags": ["2–6 players", "One phone or online", "Bots included"]
+    },
     "meetCast": "Meet the cast",
     "castCount": "{{count}} characters, each with their own style.",
     "backToApp": "Back to Atomic Habits"

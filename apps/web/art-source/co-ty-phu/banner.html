@@ -1,0 +1,138 @@
+<!doctype html>
+<!--
+  Banner thẻ game Cờ tỷ phú ở trang /games (public/games/co-ty-phu/banner.jpg).
+  Dựng bằng chính màu, chữ và chi tiết của game (hộp sơn mài đen, son đỏ, vàng dát; mặt trời son và núi
+  vàng giữa bàn như drawBoard() trong art.ts; dải màu tám vùng; xúc xắc ngà chấm son), không dùng ảnh
+  tạo bằng AI.
+  Xuất lại sau khi sửa:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+      --window-size=1280,720 --virtual-time-budget=4000 --screenshot=banner.png banner.html
+    sips -s format jpeg -s formatOptions 88 banner.png --out ../../public/games/co-ty-phu/banner.jpg
+-->
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@800&family=Montserrat:wght@600&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; }
+      body {
+        position: relative;
+        background:
+          radial-gradient(60% 60% at 76% 62%, rgba(163, 32, 26, 0.45), transparent 70%),
+          radial-gradient(90% 70% at 15% -10%, #2a1612, #120b09 70%);
+        font-family: 'Montserrat', sans-serif;
+        color: #efe6d2;
+      }
+      /* Khung chỉ vàng quanh banner như viền nắp hộp sơn mài. */
+      body::after {
+        content: ''; position: absolute; inset: 22px; border: 2px solid rgba(212, 167, 58, 0.55);
+        border-radius: 6px; pointer-events: none;
+      }
+      .title { position: absolute; left: 80px; top: 168px; width: 560px; }
+      .coins { display: flex; gap: 12px; margin-bottom: 26px; }
+      .coins i { width: 34px; height: 34px; border-radius: 50%; box-shadow: inset 0 0 0 4px #d4a73a; }
+      h1 {
+        font: 800 128px/0.92 'Noto Serif Display', serif; color: #d4a73a;
+        text-shadow: 0 2px 0 #6e130f;
+      }
+      .rule { display: flex; align-items: center; gap: 14px; margin: 30px 0 24px; }
+      .rule i { width: 70px; height: 2px; background: #d4a73a; }
+      .rule b { width: 14px; height: 14px; transform: rotate(45deg); background: #a3201a; box-shadow: 0 0 0 2px #d4a73a; }
+      .sub { font-size: 30px; color: #a8998a; letter-spacing: 0.04em; }
+      .stage { position: absolute; right: 50px; top: 20px; width: 700px; height: 680px; perspective: 1200px; }
+      .board {
+        position: absolute; left: 120px; top: 110px; width: 470px; height: 470px;
+        transform: rotateX(56deg) rotateZ(-32deg);
+        background: #120b09; border: 10px solid #a3201a; border-radius: 6px;
+        box-shadow: 0 0 0 4px #d4a73a, 0 70px 90px -30px rgba(0, 0, 0, 0.95);
+        display: grid; grid-template-columns: 62px repeat(9, 1fr) 62px; grid-template-rows: 62px repeat(9, 1fr) 62px;
+        gap: 2px; padding: 2px;
+      }
+      .board > i { background: #1f1310; position: relative; }
+      .board { position: absolute; }
+      .board > i.band::after { content: ''; position: absolute; background: var(--c); }
+      .bottom.band::after { left: 0; right: 0; top: 0; height: 30%; }
+      .top.band::after { left: 0; right: 0; bottom: 0; height: 30%; }
+      .left.band::after { top: 0; bottom: 0; right: 0; width: 30%; }
+      .right.band::after { top: 0; bottom: 0; left: 0; width: 30%; }
+      .centre {
+        grid-column: 2 / 11; grid-row: 2 / 11; position: relative; overflow: hidden;
+        background: linear-gradient(#1f1310, #2a1612);
+      }
+      .sun { position: absolute; left: 52%; top: 22%; width: 110px; height: 110px; border-radius: 50%; background: #c0392b; }
+      .hill { position: absolute; left: -20%; right: -20%; border-radius: 50% 50% 0 0; }
+      .h1 { top: 48%; height: 70%; background: #7a4c22; }
+      .h2 { top: 58%; height: 60%; background: #b8862f; left: -40%; }
+      .h3 { top: 70%; height: 50%; background: #e2c36a; }
+      /* Quân nằm trong mặt bàn (con của .board) nên nghiêng theo bàn như đồng xu đặt trên ô. */
+      .token {
+        position: absolute; width: 40px; height: 40px; border-radius: 50%; z-index: 1;
+        box-shadow: inset 0 0 0 5px #d4a73a, 4px 6px 0 #6e130f;
+      }
+      .die {
+        position: absolute; width: 70px; height: 70px; border-radius: 12px; background: #efe6d2;
+        box-shadow: inset 0 -8px 0 rgba(60, 40, 20, 0.25), 0 20px 22px -8px rgba(0, 0, 0, 0.85);
+      }
+      .die b { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: #1a120e; }
+      .die b.red { background: #a3201a; width: 20px; height: 20px; }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <div class="coins">
+        <i style="background: #c0392b"></i><i style="background: #1f9e89"></i><i style="background: #d9a62e"></i>
+        <i style="background: #3a5bb8"></i><i style="background: #e9dfc9"></i><i style="background: #8b4bb5"></i>
+      </div>
+      <h1>Cờ tỷ phú</h1>
+      <div class="rule"><i></i><b></b><i></i></div>
+      <p class="sub">Hà Giang · Huế · Hội An · Sài Gòn</p>
+    </div>
+    <div class="stage">
+      <div class="board" id="board"></div>
+      <div class="die" style="left: 300px; top: 300px; transform: rotate(-16deg)">
+        <b style="left: 13px; top: 13px"></b><b style="left: 43px; top: 13px"></b>
+        <b style="left: 13px; top: 43px"></b><b style="left: 43px; top: 43px"></b>
+      </div>
+      <div class="die" style="left: 384px; top: 268px; transform: rotate(12deg)">
+        <b class="red" style="left: 25px; top: 25px"></b>
+      </div>
+    </div>
+    <script>
+      // Dải màu tám vùng như trên bàn (data.ts GROUPS), xếp quanh bốn cạnh.
+      const G = ['#7a4424', '#2f8f83', '#c8576b', '#d9762b', '#b3261e', '#d6a72c', '#3e7d3a', '#2b3f7a'];
+      const sides = [
+        ['bottom', [0, 0, null, 1, null, null, 1, null, 1].map((g) => g)],
+        ['left', [2, null, 2, 2, null, 3, null, 3, 3]],
+        ['top', [4, null, 4, 4, null, 5, 5, null, 5]],
+        ['right', [6, 6, null, 6, null, null, 7, null, 7]],
+      ];
+      const board = document.getElementById('board');
+      const cell = (r, c, side, g) => {
+        const i = document.createElement('i');
+        i.style.gridRow = r; i.style.gridColumn = c;
+        if (side) i.className = side + (g !== null ? ' band' : '');
+        if (g !== null && g !== undefined) i.style.setProperty('--c', G[g]);
+        board.appendChild(i);
+      };
+      [[1, 1], [1, 11], [11, 1], [11, 11]].forEach(([r, c]) => cell(r, c));
+      sides[0][1].forEach((g, k) => cell(11, 10 - k, 'bottom', g));
+      sides[1][1].forEach((g, k) => cell(10 - k, 1, 'left', g));
+      sides[2][1].forEach((g, k) => cell(1, 2 + k, 'top', g));
+      sides[3][1].forEach((g, k) => cell(2 + k, 11, 'right', g));
+      const c = document.createElement('div');
+      c.className = 'centre';
+      c.innerHTML = '<span class="sun"></span><span class="hill h1"></span><span class="hill h2"></span><span class="hill h3"></span>';
+      board.appendChild(c);
+      [['#c0392b', 412, 414], ['#1f9e89', 300, 420], ['#3a5bb8', 10, 180], ['#d9a62e', 230, 8]].forEach(([bg, x, y]) => {
+        const t = document.createElement('span');
+        t.className = 'token';
+        Object.assign(t.style, { background: bg, left: x + 'px', top: y + 'px' });
+        board.appendChild(t);
+      });
+    </script>
+  </body>
+</html>

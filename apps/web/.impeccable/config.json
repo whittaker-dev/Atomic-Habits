@@ -1,7 +1,7 @@
 {
   "detector": {
     "ignoreRules": [],
-    "ignoreFiles": ["art-source/co-ca-ngua/banner.html"],
+    "ignoreFiles": ["art-source/co-ca-ngua/banner.html", "art-source/co-ty-phu/banner.html"],
     "ignoreValues": [
       {
         "rule": "design-system-font",
@@ -38,6 +38,18 @@
         "value": "barlow semi condensed",
         "createdAt": "2026-11-10T08:36:45.426Z",
         "reason": "Cờ cá ngựa's own body face; not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "noto serif display",
+        "createdAt": "2026-11-12T07:26:25.555Z",
+        "reason": "Cờ tỷ phú's own display face (user-chosen Sơn mài vàng son world); not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "montserrat",
+        "createdAt": "2026-11-12T07:26:25.571Z",
+        "reason": "Cờ tỷ phú's own body face; not used in app UI"
       }
     ]
   }
