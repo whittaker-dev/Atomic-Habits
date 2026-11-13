@@ -287,6 +287,11 @@ export const sfx = {
     noise(1.5, 0.26, 400, 'bandpass', 0.15, 6000, fx);
     for (let i = 0; i < 6 + level * 3; i++) crackle(0.12 + Math.random() * 1.6);
   },
+  /** Hạ khí về dạng đầu: gió hút xuống, tiếng trầm lắng dần. */
+  powerDown: () => {
+    noise(0.6, 0.28, 2400, 'bandpass', 0, 260, fx);
+    tone(320, 0.7, 'triangle', 0.18, 0, 110, fx);
+  },
   /** Tia sét nổ lách tách. */
   zap: () => {
     noise(0.07, 0.18, 4000, 'highpass', 0, undefined, fx);

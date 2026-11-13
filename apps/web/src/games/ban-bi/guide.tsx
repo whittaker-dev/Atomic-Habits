@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { sfx, unlockAudio } from './audio';
+import { loadMuted, setHum, setMuted, sfx, unlockAudio } from './audio';
 import { LEVELS, SPEEDUP_HALF_LIFE } from './engine';
 import { createFighterView, type FighterView } from './fighter';
 import { FORMS, type Form } from './forms';
@@ -38,12 +38,16 @@ export function Guide({ onBack }: { onBack: () => void }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const view = useRef<FighterView | null>(null);
   const [level, setLevel] = useState(0);
+  const [muted, setMute] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
 
   // Nút mở nằm giữa màn chính: cuộn về đầu để cẩm nang mở từ tiêu đề, và đưa tiêu điểm vào đó.
+  // Rời cẩm nang thì tắt tiếng hào quang nền.
   useEffect(() => {
     window.scrollTo(0, 0);
     heading.current?.focus();
+    setMute(loadMuted());
+    return () => setHum(-1);
   }, []);
 
   useEffect(() => {
@@ -63,18 +67,23 @@ export function Guide({ onBack }: { onBack: () => void }) {
     };
   }, []);
 
+  /**
+   * Chọn một cấp: võ sĩ diễn màn gồng lên cấp đó (lùi một cấp rồi lên lại, như trong trận) kèm
+   * tiếng gồng; về cấp 1 thì tiếng hạ khí. Tiếng hào quang nền chạy theo cấp đang xem.
+   */
   const pick = (i: number) => {
-    setLevel(i);
-    view.current?.setLevel(i);
-  };
-  // Lùi một cấp rồi lên lại: cảnh 3D diễn đúng màn gồng như trong trận.
-  const replay = () => {
     const v = view.current;
-    if (!v || level === 0) return;
+    setLevel(i);
     unlockAudio();
-    v.setLevel(level - 1);
-    v.setLevel(level);
-    sfx.levelUp(level);
+    if (v && i > 0) {
+      v.setLevel(i - 1);
+      v.setLevel(i);
+      sfx.levelUp(i);
+    } else {
+      v?.setLevel(0);
+      sfx.powerDown();
+    }
+    setHum(i);
   };
 
   const form = FORMS[level]!;
@@ -149,9 +158,22 @@ export function Guide({ onBack }: { onBack: () => void }) {
               <dd className="font-semibold tabular-nums">×{1 + level * 0.25}</dd>
             </dl>
           </Glass>
-          <Button tone="ghost" onClick={replay} disabled={level === 0}>
-            Xem cảnh lên cấp {level + 1}
-          </Button>
+          <div className="grid grid-cols-[1fr_auto] gap-2">
+            <Button tone="ghost" onClick={() => pick(level)} disabled={level === 0}>
+              Xem cảnh lên cấp {level + 1}
+            </Button>
+            {/* Cùng thiết lập tắt tiếng với trong trận (lưu trên máy). */}
+            <Button
+              tone="ghost"
+              onClick={() => {
+                unlockAudio();
+                setMuted(!muted);
+                setMute(!muted);
+              }}
+            >
+              {muted ? 'Bật tiếng' : 'Tắt tiếng'}
+            </Button>
+          </div>
         </div>
       </section>
 
