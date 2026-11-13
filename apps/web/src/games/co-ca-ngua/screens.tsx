@@ -12,6 +12,7 @@ import {
   CheckIcon,
   CopyIcon,
   DoorIcon,
+  GuideIcon,
   LinkIcon,
   MuteIcon,
   PassIcon,
@@ -35,7 +36,7 @@ const Section = ({ title, children }: { title: string; children: ReactNode }) =>
   </section>
 );
 /** Vệt lửa dưới tiêu đề: một nét cam chém xiên. */
-const Slash = () => (
+export const Slash = () => (
   <span aria-hidden className="block h-1.5 w-24 -skew-x-[30deg] bg-[color:var(--cc-ember)]" />
 );
 
@@ -78,6 +79,7 @@ export function HomeScreen({
   onBots,
   onHost,
   onJoin,
+  onGuide,
   notice,
   pendingRoom,
 }: {
@@ -87,6 +89,8 @@ export function HomeScreen({
   onBots: () => void;
   onHost: () => void;
   onJoin: (code: string) => void;
+  /** Mở cẩm nang (cách chơi và bốn nhà). */
+  onGuide: () => void;
   notice: string | null;
   /** Mở bằng link mời mà chưa có tên: nhập tên xong là vào thẳng phòng này. */
   pendingRoom: string | null;
@@ -116,6 +120,10 @@ export function HomeScreen({
         <p className="text-lg text-[color:var(--cc-ash)]">
           Bốn nhà, mười sáu chiến mã. Ra quân, đá ngựa, về chuồng trước là thắng.
         </p>
+        <Button tone="steel" className="self-start text-lg" onClick={onGuide}>
+          <GuideIcon />
+          Cẩm nang · Cách chơi & các nhà
+        </Button>
       </div>
 
       {notice && (

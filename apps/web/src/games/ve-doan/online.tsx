@@ -86,7 +86,7 @@ function writeRoomSave(save: RoomSave | null) {
  * Kết nối của khách đóng có thể chỉ là F5 hay chập mạng: chủ phòng giữ ghế chừng này rồi mới tính
  * là rời, để người vẽ tải lại trang không làm mất lượt của cả phòng.
  */
-const SEAT_GRACE_MS = 15_000;
+export const SEAT_GRACE_MS = 15_000;
 /** Khách mất kết nối (vd: chủ phòng đang tải lại trang) thì thử nối lại trong chừng này. */
 const RECONNECT_MS = 30_000;
 const RETRY_MS = 1500;

@@ -16,20 +16,36 @@ export const DIFFICULTIES: { id: Difficulty; label: string }[] = [
   { id: 'hard', label: 'Khó' },
 ];
 
-/** Chân dung nhân vật (ảnh render mặt trước). `win`: ảnh nhảy nhẹ cho người thắng trên bục. */
+/** Tên game viết to, viền mực dày: dùng ở sảnh và màn loading cho hai màn liền mạch. */
+export function Title() {
+  return (
+    <h1
+      className={`${DISPLAY} text-center text-5xl leading-none text-[color:var(--bb-sun)] [-webkit-text-stroke:4px_var(--bb-ink)] [paint-order:stroke_fill] [text-shadow:0_6px_0_var(--bb-ink)] sm:text-6xl`}
+    >
+      Sơn Lãnh Địa
+    </h1>
+  );
+}
+
+/**
+ * Chân dung nhân vật (ảnh render mặt trước). `win`: ảnh nhảy nhẹ cho người thắng trên bục.
+ * `alt` để trống khi tên nhân vật đã nằm ngay cạnh ảnh.
+ */
 export function SquadImg({
   id,
   pose = 'idle',
   className = '',
+  alt = '',
 }: {
   id: string;
   pose?: 'idle' | 'win';
   className?: string;
+  alt?: string;
 }) {
   return (
     <img
       src={squadImage(id)}
-      alt=""
+      alt={alt}
       draggable={false}
       className={`pointer-events-none select-none object-contain ${pose === 'win' ? 'animate-bounce' : ''} ${className}`}
     />
@@ -78,7 +94,7 @@ export function SquadGrid({
   );
 }
 
-const PROP_COLOR: Record<Prop, string> = {
+export const PROP_COLOR: Record<Prop, string> = {
   crate: '#c98a4b',
   pillar: '#9aa3b2',
   wall: '#7d8698',
@@ -86,7 +102,7 @@ const PROP_COLOR: Record<Prop, string> = {
 };
 
 /** Ảnh nhỏ nhìn từ trên xuống của một sân: sàn gạch sáng, vật cản theo màu của nó. */
-function ArenaThumb({ arena }: { arena: Arena }) {
+export function ArenaThumb({ arena }: { arena: Arena }) {
   const ref = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const c = ref.current?.getContext('2d');

@@ -24,6 +24,8 @@ test('gần đúng khi sai một hai chữ hoặc trúng một tiếng', () => {
 
 test('sai khi khác hẳn hoặc để trống', () => {
   assert.equal(judgeGuess('nồi cơm', 'bánh chưng'), 'wrong');
+  // Ví dụ câu sai trong cẩm nang (guide.tsx).
+  assert.equal(judgeGuess('cái nón', 'bánh chưng'), 'wrong');
   assert.equal(judgeGuess('   ', 'bánh chưng'), 'wrong');
   // Một chữ cái lẻ trùng không tính là gần đúng.
   assert.equal(judgeGuess('a b', 'cái ô'), 'wrong');

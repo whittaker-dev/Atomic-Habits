@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-import { loadCharacterArt } from './art';
 import { unlockAudio } from './audio';
 import type { Difficulty } from './bot';
 import { CHARACTERS, characterById } from './characters';
@@ -25,10 +24,12 @@ import {
 import { isValidCode, NET_ERROR_TEXT, normalizeCode, type NetError } from './net';
 import { loadHostSave, OnlineRoom, type OnlineMode } from './online';
 import { CharacterGrid, MapPicker, ResultScreen, Stepper } from './screens';
+import { GuideScreen } from './guide';
+import { Splash } from './splash';
 
 // Khung chính của Bong Bóng Bùm: điều hướng giữa các màn hình và giữ cấu hình trận.
 
-type Screen = 'name' | 'home' | 'setup' | 'match' | 'result' | 'leaderboard' | 'online';
+type Screen = 'name' | 'home' | 'setup' | 'match' | 'result' | 'leaderboard' | 'online' | 'guide';
 type Mode = 'solo' | 'local2';
 
 const DIFFICULTIES: { id: Difficulty; label: string }[] = [
@@ -42,7 +43,7 @@ const DEFAULT_BOTS: Record<Mode, number> = { solo: 4, local2: 2 };
 
 const randomSeed = () => Math.floor(Math.random() * 2 ** 31);
 
-function NameScreen({ onDone }: { onDone: (name: string) => void }) {
+function NameScreen({ onDone, onGuide }: { onDone: (name: string) => void; onGuide: () => void }) {
   const [name, setName] = useState('');
   const [touched, setTouched] = useState(false);
   useEffect(() => setName(loadName()), []);
@@ -99,6 +100,10 @@ function NameScreen({ onDone }: { onDone: (name: string) => void }) {
           Vào chơi
         </button>
       </form>
+      {/* Người mới vào luôn gặp màn này trước: cho xem cẩm nang ngay, khỏi phải đặt tên. */}
+      <Btn tone="mint" className="w-full py-3 text-lg" onClick={onGuide}>
+        Cẩm nang · Cách chơi & nhân vật
+      </Btn>
     </div>
   );
 }
@@ -175,6 +180,9 @@ function HomeScreen({
           </button>
         </form>
         <div className="grid grid-cols-2 gap-3">
+          <Btn tone="mint" className="col-span-2 py-3 text-lg" onClick={() => go('guide')}>
+            Cẩm nang · Cách chơi & nhân vật
+          </Btn>
           <Btn tone="cream" onClick={() => go('leaderboard')}>
             Bảng xếp hạng
           </Btn>
@@ -429,6 +437,8 @@ function LeaderboardScreen({ onBack }: { onBack: () => void }) {
 
 export function BongBongBum() {
   const [screen, setScreen] = useState<Screen>('name');
+  /** Màn quay về khi rời cẩm nang (mở được từ màn nhập tên hay màn chính). */
+  const [guideBack, setGuideBack] = useState<Screen>('home');
   const [name, setName] = useState('');
   const [mode, setMode] = useState<Mode>('solo');
   const [config, setConfig] = useState<MatchConfig | null>(null);
@@ -436,11 +446,9 @@ export function BongBongBum() {
   const [online, setOnline] = useState<OnlineMode | null>(null);
   const [pendingRoom, setPendingRoom] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
-
-  // Tải sẵn ảnh nhân vật ngay khi mở game.
-  useEffect(() => {
-    void loadCharacterArt();
-  }, []);
+  // Màn loading lúc mới vào (splash.tsx tải trước ảnh nhân vật và font). Phòng online và trận chỉ
+  // được dựng sau khi màn này tắt: F5 giữa phòng/trận không nối mạng hay chạy giờ sau lớp che.
+  const [loaded, setLoaded] = useState(false);
 
   // Mở link mời (?room=MÃ): đã có tên lưu trên máy (vd: vừa bấm F5) thì vào thẳng phòng,
   // chưa có thì nhập tên xong mới vào.
@@ -534,7 +542,8 @@ export function BongBongBum() {
         </header>
       )}
 
-      <main className="relative z-10 px-4 py-6">
+      {!loaded && <Splash onDone={() => setLoaded(true)} />}
+      <main hidden={!loaded} className="relative z-10 px-4 py-6">
         {screen === 'name' && (
           <NameScreen
             onDone={(n) => {
@@ -542,12 +551,19 @@ export function BongBongBum() {
               if (pendingRoom) openOnline({ kind: 'join', code: pendingRoom });
               else setScreen('home');
             }}
+            onGuide={() => {
+              setGuideBack('name');
+              setScreen('guide');
+            }}
           />
         )}
         {screen === 'home' && (
           <HomeScreen
             name={name}
-            go={setScreen}
+            go={(s) => {
+              if (s === 'guide') setGuideBack('home');
+              setScreen(s);
+            }}
             notice={notice}
             onOnline={openOnline}
             onMode={(m) => {
@@ -556,7 +572,7 @@ export function BongBongBum() {
             }}
           />
         )}
-        {screen === 'online' && online && (
+        {loaded && screen === 'online' && online && (
           <OnlineRoom mode={online} name={name} charId={CHARACTERS[0]!.id} onExit={leaveOnline} />
         )}
         {screen === 'setup' && (
@@ -577,9 +593,10 @@ export function BongBongBum() {
           />
         )}
         {screen === 'leaderboard' && <LeaderboardScreen onBack={() => setScreen('home')} />}
+        {screen === 'guide' && <GuideScreen onBack={() => setScreen(guideBack)} />}
       </main>
 
-      {screen === 'match' && config && (
+      {loaded && screen === 'match' && config && (
         <MatchScreen
           key={config.seed}
           config={config}

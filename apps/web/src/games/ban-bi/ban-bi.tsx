@@ -6,6 +6,7 @@ import { loadName, saveName } from '../bong-bong-bum/name';
 import { Arena, type Finish } from './arena';
 import { LEVELS } from './engine';
 import { addScore, loadRun, newRun, saveRun, type Run } from './scores';
+import { Guide } from './guide';
 import { HomeScreen, ResultScreen } from './screens';
 import { Splash } from './splash';
 import { FONT_URL, VARS } from './theme';
@@ -33,6 +34,7 @@ const CSS = `
 
 type View =
   | { kind: 'home' }
+  | { kind: 'guide' }
   | { kind: 'play'; run: Run; key: number }
   | { kind: 'result'; level: string; finish: Finish; rank: number | null };
 
@@ -103,8 +105,10 @@ export function BanBi() {
               onLevel={setLevel}
               // Tên vừa nhập đã lưu (saveName) nhưng state `name` chưa kịp đổi: đọc lại bản lưu.
               onStart={() => start(level, loadName())}
+              onGuide={() => setView({ kind: 'guide' })}
             />
           )}
+          {view.kind === 'guide' && <Guide onBack={() => setView({ kind: 'home' })} />}
           {view.kind === 'play' && loaded && (
             <Arena
               key={view.key}
@@ -114,14 +118,16 @@ export function BanBi() {
                 setView({ kind: 'home' });
               }}
               onFinish={(finish) => {
-                const rank = finish.won
-                  ? addScore(view.run.level, {
-                      name: view.run.name,
-                      ms: Math.round(finish.ms),
-                      peak: finish.peak,
-                      at: Date.now(),
-                    })
-                  : null;
+                const rank =
+                  finish.score > 0
+                    ? addScore(view.run.level, {
+                        name: view.run.name,
+                        score: finish.score,
+                        ms: Math.round(finish.ms),
+                        peak: finish.peak,
+                        at: Date.now(),
+                      })
+                    : null;
                 setView({ kind: 'result', level: view.run.level, finish, rank });
               }}
             />
@@ -129,7 +135,7 @@ export function BanBi() {
           {view.kind === 'result' && (
             <ResultScreen
               level={view.level}
-              won={view.finish.won}
+              score={view.finish.score}
               ms={view.finish.ms}
               peak={view.finish.peak}
               rank={view.rank}

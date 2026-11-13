@@ -835,9 +835,9 @@
     },
     "banBi": {
       "title": "Bubble Overlord",
-      "genre": "Timed bubble shooter with a 3D power-up fighter",
-      "description": "Shoot so three bubbles of a colour touch and they burst; anything left hanging falls. The faster you clear, the more your fighter charges up through six transformations with aura, smoke and lightning. Clear the board fastest to top the leaderboard.",
-      "tags": ["Solo time trial", "3 fixed boards", "Leaderboard on this device"]
+      "genre": "Survival bubble shooter with a 3D power-up fighter",
+      "description": "Shoot so three bubbles of a colour touch and they burst; anything left hanging falls. The bubbles keep sliding down, faster and faster, and the game ends when one crosses the line. The faster you burst, the more your fighter charges up through six transformations, and the higher your points multiply.",
+      "tags": ["Solo, high score", "A new board every game", "Leaderboard on this device"]
     },
     "meetCast": "Meet the cast",
     "castCount": "{{count}} characters, each with their own style.",

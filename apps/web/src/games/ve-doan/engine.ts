@@ -15,6 +15,14 @@ const GUESS_MIN = 50;
 /** Điểm người vẽ khi cả phòng đoán ra; ít người đoán ra thì chia theo tỉ lệ. */
 const DRAWER_MAX = 200;
 
+/** Điểm một người đoán ra khi lượt vẽ dài `totalMs` còn `leftMs`; cẩm nang tính ví dụ bằng chính hàm này. */
+export const guessPoints = (leftMs: number, totalMs: number) =>
+  Math.round(GUESS_MIN + ((GUESS_MAX - GUESS_MIN) * leftMs) / totalMs);
+
+/** Điểm người vẽ khi `solved` trong số `guessers` người đoán ra. */
+export const drawerPoints = (solved: number, guessers: number) =>
+  guessers === 0 ? 0 : Math.round((DRAWER_MAX * solved) / guessers);
+
 export type Settings = { turns: number; drawTime: number; pack: PackId };
 export type Seat = { name: string; score: number; connected: boolean };
 export type GuessItem = { by: number; text: string; verdict: Verdict; points?: number };
@@ -154,9 +162,7 @@ export function submitGuess(g: Game, by: number, raw: string, now: number): Gues
   const verdict = judgeGuess(text, p.word);
   const item: GuessItem = { by, text, verdict };
   if (verdict === 'correct') {
-    const total = p.endsAt - p.startedAt;
-    const left = Math.max(0, p.endsAt - now);
-    const points = Math.round(GUESS_MIN + ((GUESS_MAX - GUESS_MIN) * left) / total);
+    const points = guessPoints(Math.max(0, p.endsAt - now), p.endsAt - p.startedAt);
     p.solved.push({ id: by, at: now, points });
     g.seats[by]!.score += points;
     item.points = points;
@@ -209,14 +215,11 @@ function endTurn(g: Game, now: number, drawerLeft = false) {
         : 'Chưa đoán ra';
     return { id, points: 0, why };
   });
-  const drawerPoints =
-    drawerLeft || guessers.length === 0
-      ? 0
-      : Math.round((DRAWER_MAX * p.solved.length) / guessers.length);
-  g.seats[p.drawer]!.score += drawerPoints;
+  const drawerScore = drawerLeft ? 0 : drawerPoints(p.solved.length, guessers.length);
+  g.seats[p.drawer]!.score += drawerScore;
   results.push({
     id: p.drawer,
-    points: drawerPoints,
+    points: drawerScore,
     why: drawerLeft
       ? 'Đã rời phòng'
       : `Người vẽ: ${p.solved.length}/${guessers.length} người đoán ra`,

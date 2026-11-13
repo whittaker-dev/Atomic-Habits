@@ -33,7 +33,7 @@ export function Leaderboard({ level, highlight }: { level: string; highlight?: n
   if (!rows.length)
     return (
       <p className="py-4 text-center text-sm text-[color:var(--bb-muted)]">
-        Chưa ai phá sạch màn này. Bạn là người đầu tiên?
+        Chưa ai ghi điểm ở màn này. Bạn là người đầu tiên?
       </p>
     );
   return (
@@ -62,7 +62,12 @@ export function Leaderboard({ level, highlight }: { level: string; highlight?: n
           >
             {FORMS[s.peak]!.name}
           </span>
-          <span className={`${DISPLAY} text-lg tabular-nums`}>{formatMs(s.ms)}</span>
+          <span className="hidden text-xs text-[color:var(--bb-muted)] tabular-nums sm:inline">
+            {formatMs(s.ms)}
+          </span>
+          <span className={`${DISPLAY} text-lg tabular-nums`}>
+            {s.score.toLocaleString('vi-VN')}
+          </span>
         </li>
       ))}
     </ol>
@@ -109,12 +114,14 @@ export function HomeScreen({
   level,
   onLevel,
   onStart,
+  onGuide,
 }: {
   name: string;
   onName: (n: string) => void;
   level: string;
   onLevel: (id: string) => void;
   onStart: () => void;
+  onGuide: () => void;
 }) {
   const [draft, setDraft] = useState(name);
   const [tried, setTried] = useState(false);
@@ -136,8 +143,8 @@ export function HomeScreen({
             </span>
           </h1>
           <p className="max-w-md text-lg text-[color:var(--bb-muted)]">
-            Bắn cho ba bi cùng màu chạm nhau là nổ. Phá càng lẹ, võ sĩ càng nạp khí, qua sáu cấp
-            biến hình. Phá sạch bàn nhanh nhất thì lên bảng.
+            Bắn cho ba bi cùng màu chạm nhau là nổ. Bi tự trôi xuống, càng lúc càng nhanh; chạm vạch
+            là hết ván. Phá càng lẹ, võ sĩ càng nạp khí qua sáu cấp, điểm càng nhân cao.
           </p>
         </div>
 
@@ -164,8 +171,8 @@ export function HomeScreen({
           <span className="text-sm font-semibold text-[color:var(--bb-muted)]">Màn</span>
           <LevelTabs value={level} onChange={onLevel} />
           <p className="text-sm text-[color:var(--bb-muted)]">
-            {lv.rows} hàng bi, {lv.colors} màu, cứ {lv.dropEvery} phát thêm một hàng bi từ trên. Ai
-            chơi màn này cũng gặp cùng thế bi.
+            {lv.rows} hàng bi, {lv.colors} màu. Đầu ván {lv.rowSeconds} giây trôi một hàng, nhanh
+            dần tới {lv.minRowSeconds} giây. Mỗi ván xáo thế bi mới.
           </p>
         </div>
 
@@ -180,13 +187,19 @@ export function HomeScreen({
         >
           Vào trận · Màn {lv.name}
         </Button>
+        <Button tone="ghost" className="-mt-4 w-full" onClick={onGuide}>
+          Cẩm nang · Cách chơi & 6 cấp nhân vật
+        </Button>
 
         <ol className="flex flex-col gap-2 text-sm">
           <Step n={1}>Rê chuột hay kéo ngón tay để ngắm; bi dội được vào tường hai bên.</Step>
           <Step n={2}>
             Bấm hoặc nhấc tay để bắn. Chạm vào bi nhỏ bên trái bệ (hoặc phím X) để đổi bi.
           </Step>
-          <Step n={3}>Nổ liên tục để giữ khí; ngừng lâu khí tản và võ sĩ tụt cấp.</Step>
+          <Step n={3}>
+            Nổ 1 bi được 10 điểm, bi rơi theo 20 điểm, nhân theo cấp khí. Nổ liên tục để giữ khí;
+            ngừng lâu khí tản và võ sĩ tụt cấp.
+          </Step>
         </ol>
       </div>
 
@@ -204,7 +217,7 @@ export function HomeScreen({
 
 export function ResultScreen({
   level,
-  won,
+  score,
   ms,
   peak,
   rank,
@@ -212,7 +225,7 @@ export function ResultScreen({
   onHome,
 }: {
   level: string;
-  won: boolean;
+  score: number;
   ms: number;
   peak: number;
   rank: number | null;
@@ -225,35 +238,24 @@ export function ResultScreen({
     <div className="mx-auto grid w-full max-w-4xl gap-6 md:grid-cols-2">
       <Glass className="flex flex-col gap-4 p-6">
         <p className="text-sm font-semibold tracking-[0.2em] text-[color:var(--bb-muted)] uppercase">
-          Màn {lv.name}
+          Màn {lv.name} · Bi chạm vạch
         </p>
-        {won ? (
-          <>
-            <p
-              className={`${DISPLAY} text-6xl leading-none tabular-nums text-[color:var(--bb-ki)] [text-shadow:0_0_24px_rgb(56_232_255/0.5)]`}
-            >
-              {formatMs(ms)}
-            </p>
-            <p className="text-lg font-semibold">
-              {rank
-                ? rank === 1
-                  ? 'Kỷ lục mới của máy này!'
-                  : `Hạng ${rank} trên bảng.`
-                : 'Chưa lọt top 10, thử lại nhé.'}
-            </p>
-          </>
-        ) : (
-          <>
-            <p className={`${DISPLAY} text-5xl leading-none text-[color:var(--bb-rage)]`}>
-              Bi chạm vạch
-            </p>
-            <p className="text-lg text-[color:var(--bb-muted)]">
-              Chưa phá sạch bàn nên chưa tính giờ.
-            </p>
-          </>
-        )}
+        <p
+          className={`${DISPLAY} text-6xl leading-none tabular-nums text-[color:var(--bb-ki)] [text-shadow:0_0_24px_rgb(56_232_255/0.5)]`}
+        >
+          {score.toLocaleString('vi-VN')}
+          <span className="ml-2 text-2xl text-[color:var(--bb-muted)]">điểm</span>
+        </p>
+        <p className="text-lg font-semibold">
+          {rank
+            ? rank === 1
+              ? 'Điểm cao nhất của máy này!'
+              : `Hạng ${rank} trên bảng.`
+            : 'Chưa lọt top 10, thử lại nhé.'}
+        </p>
         <p className="text-sm text-[color:var(--bb-muted)]">
-          Dạng khí cao nhất:{' '}
+          Trụ được <b className="text-[color:var(--bb-text)] tabular-nums">{formatMs(ms)}</b> · Dạng
+          khí cao nhất:{' '}
           <b style={{ color: form.aura, textShadow: `0 0 12px ${form.aura}` }}>
             Cấp {peak + 1} · {form.name}
           </b>

@@ -91,3 +91,10 @@ export const MuteIcon = (p: P) => (
     <path d="M4 9h4l5-4v14l-5-4H4zM17 9l5 6M22 9l-5 6" />
   </Icon>
 );
+
+/** Cẩm nang: cuốn binh thư mở đôi. */
+export const GuideIcon = (p: P) => (
+  <Icon {...p}>
+    <path d="M3 5h7l2 2 2-2h7v14h-7l-2 2-2-2H3zM12 7v14" />
+  </Icon>
+);

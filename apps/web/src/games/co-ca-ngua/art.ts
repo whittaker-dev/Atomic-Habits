@@ -273,6 +273,20 @@ export function drawFloor() {
   return c;
 }
 
+let floorDrawn: HTMLCanvasElement | null = null;
+
+/**
+ * Mặt bàn dùng chung cho mọi lần dựng cảnh: vẽ mặt bàn là việc nặng nhất khi dựng cảnh, nên màn
+ * loading vẽ sẵn (sau khi font về) để vào ván không khựng. Chỉ giữ lại bản vẽ khi font Anton đã sẵn
+ * sàng — số bậc về chuồng khắc bằng font này; vẽ sớm hơn thì lần gọi sau vẽ lại cho đúng chữ.
+ */
+export function boardFloor() {
+  if (floorDrawn) return floorDrawn;
+  const c = drawFloor();
+  if (document.fonts.check(`${CELL_PX * 0.58}px Anton`)) floorDrawn = c;
+  return c;
+}
+
 /** Ảnh nổi cho mặt bàn: phiến đá cao, đường ron trũng — lửa đuốc bắt mép từng phiến. */
 export function drawBoardBump() {
   const s = CELL_PX;

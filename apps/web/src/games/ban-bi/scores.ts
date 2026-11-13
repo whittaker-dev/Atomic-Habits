@@ -1,14 +1,17 @@
 import { createGame, type Game } from './engine';
 import { createPower, type Power } from './power';
 
-// Lưu trữ trên máy: bảng xếp hạng top 10 thời gian phá sạch bi của từng màn (localStorage, giữ lâu
-// dài) và ván đang chơi dở (sessionStorage, để F5 không mất ván; đóng tab thì thôi).
+// Lưu trữ trên máy: bảng xếp hạng top 10 điểm cao nhất của từng màn (localStorage, giữ lâu dài) và
+// ván đang chơi dở (sessionStorage, để F5 không mất ván; đóng tab thì thôi).
 
-export type Score = { name: string; ms: number; peak: number; at: number };
+/** Một lần chơi trên bảng: điểm, thời gian trụ được, dạng khí cao nhất. */
+export type Score = { name: string; score: number; ms: number; peak: number; at: number };
 export const TOP = 10;
-const SCORES_KEY = 'banbi.scores';
+// Bảng cũ (khoá 'banbi.scores') xếp theo giờ phá sạch, không so được với điểm: để nguyên trên máy,
+// bảng điểm dùng khoá mới.
+const SCORES_KEY = 'banbi.scores.v2';
 // Đổi khoá khi luật hay lưới bi đổi, để ván dở lưu theo luật cũ không bị nạp nhầm.
-const RUN_KEY = 'banbi.run.v2';
+const RUN_KEY = 'banbi.run.v3';
 
 function readAll(): Record<string, Score[]> {
   try {
@@ -21,10 +24,10 @@ function readAll(): Record<string, Score[]> {
 
 export const scoresOf = (level: string): Score[] => readAll()[level] ?? [];
 
-/** Ghi một lần phá sạch bi. Trả về hạng (1..TOP) nếu lọt bảng, null nếu không. */
+/** Ghi một lần chơi. Trả về hạng (1..TOP) nếu lọt bảng, null nếu không. */
 export function addScore(level: string, s: Score): number | null {
   const all = readAll();
-  const list = [...(all[level] ?? []), s].sort((a, b) => a.ms - b.ms || a.at - b.at);
+  const list = [...(all[level] ?? []), s].sort((a, b) => b.score - a.score || a.at - b.at);
   const rank = list.indexOf(s) + 1;
   all[level] = list.slice(0, TOP);
   try {
@@ -43,7 +46,14 @@ export function formatMs(ms: number) {
   return `${m}:${String(s).padStart(2, '0')}.${String(cs).padStart(2, '0')}`;
 }
 
-export type Run = { name: string; level: string; game: Game; power: Power; elapsed: number };
+export type Run = {
+  name: string;
+  level: string;
+  game: Game;
+  power: Power;
+  elapsed: number;
+  score: number;
+};
 
 export const newRun = (name: string, level: string): Run => ({
   name,
@@ -51,7 +61,12 @@ export const newRun = (name: string, level: string): Run => ({
   game: createGame(level),
   power: createPower(),
   elapsed: 0,
+  score: 0,
 });
+
+/** Điểm một phát bắn: 10 mỗi bi nổ, 20 mỗi bi rơi theo, nhân theo cấp khí (cấp 1 ×1 … cấp 6 ×2,25). */
+export const shotPoints = (popped: number, dropped: number, level: number) =>
+  Math.round((popped * 10 + dropped * 20) * (1 + level * 0.25));
 
 export function loadRun(): Run | null {
   try {

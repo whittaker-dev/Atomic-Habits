@@ -2,9 +2,9 @@ import * as THREE from 'three';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import {
+  boardFloor,
   drawBoardBump,
   drawDieFace,
-  drawFloor,
   drawGround,
   drawGroundBump,
   texture,
@@ -203,7 +203,7 @@ export function createBoardView(target: HTMLCanvasElement): BoardView {
     m.receiveShadow = true;
     scene.add(m);
   }
-  const floorTex = keep(texture(drawFloor()));
+  const floorTex = keep(texture(boardFloor()));
   const board = new THREE.Mesh(
     keep(new THREE.PlaneGeometry(N, N)),
     keep(
@@ -219,9 +219,12 @@ export function createBoardView(target: HTMLCanvasElement): BoardView {
   board.position.y = SURFACE + 0.002;
   board.receiveShadow = true;
   scene.add(board);
-  // Chữ số trên mặt bàn vẽ trước khi font kịp tải thì vẽ lại khi font sẵn sàng.
+  // Chữ số trên mặt bàn vẽ trước khi font kịp tải thì vẽ lại khi font sẵn sàng (mặt bàn màn loading
+  // đã vẽ sẵn với đúng font thì boardFloor trả lại đúng bản đó, khỏi vẽ lại).
   void document.fonts?.ready.then(() => {
-    floorTex.image = drawFloor();
+    const floor = boardFloor();
+    if (floor === floorTex.image) return;
+    floorTex.image = floor;
     floorTex.needsUpdate = true;
   });
 

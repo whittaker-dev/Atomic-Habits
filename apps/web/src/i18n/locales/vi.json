@@ -835,9 +835,9 @@
     },
     "banBi": {
       "title": "Bắn Bi Bá Khí",
-      "genre": "Bắn bi đua giờ, võ sĩ nạp khí 3D",
-      "description": "Bắn cho ba bi cùng màu chạm nhau là nổ, bi lơ lửng rơi theo. Phá càng lẹ, võ sĩ bên cạnh càng nạp khí qua sáu cấp biến hình với hào quang, khói và sét. Phá sạch bàn nhanh nhất để lên bảng xếp hạng.",
-      "tags": ["1 người, thi giờ", "3 màn cố định", "Bảng xếp hạng trên máy"]
+      "genre": "Bắn bi sinh tồn, võ sĩ nạp khí 3D",
+      "description": "Bắn cho ba bi cùng màu chạm nhau là nổ, bi lơ lửng rơi theo. Mảng bi tự trôi xuống, càng lúc càng nhanh; chạm vạch là hết ván. Phá càng lẹ, võ sĩ bên cạnh càng nạp khí qua sáu cấp biến hình, điểm càng nhân cao.",
+      "tags": ["1 người, tính điểm", "Mỗi ván một thế bi", "Bảng xếp hạng trên máy"]
     },
     "meetCast": "Gặp dàn nhân vật",
     "castCount": "{{count}} nhân vật — mỗi người một cá tính.",

@@ -1,17 +1,20 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { loadName, saveName } from '../bong-bong-bum/name';
 import { isValidCode, normalizeCode, type NetError } from '../bong-bong-bum/net';
-import { BackIcon } from './icons';
+import { Guide } from './guide';
+import { BackIcon, BookIcon } from './icons';
 import { ERROR_TEXT } from './net';
 import { loadRoomSave, OnlineRoom, type OnlineMode } from './online';
 import { HomeScreen } from './screens';
+import { Splash } from './splash';
 import { DISPLAY, FONT_URL, VARS } from './theme';
 
-// Khung của Vẽ Đoán: màn vào game (tên, tạo phòng, nhập mã) và phòng online. Vẽ đoán cần mỗi người
-// một máy nên chỉ có chơi qua mạng — không có chế độ bot hay chung máy như hai game kia.
+// Khung của Vẽ Đoán: màn loading, màn vào game (tên, tạo phòng, nhập mã), cẩm nang và phòng online.
+// Vẽ đoán cần mỗi người một máy nên chỉ có chơi qua mạng — không có chế độ bot hay chung máy như hai
+// game kia.
 
 // Hoạt ảnh và bề mặt trình duyệt (bôi chọn, con trỏ, thanh cuộn) theo màu sân khấu.
 // Đèn viền biển hiệu: hai lớp bóng xen kẽ sáng tắt như đèn hội chợ; tắt hẳn khi người dùng giảm chuyển động.
@@ -52,6 +55,13 @@ export function VeDoan() {
   const [room, setRoom] = useState<OnlineMode | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [pendingRoom, setPendingRoom] = useState<string | null>(null);
+  const [guide, setGuide] = useState(false);
+  const guideButton = useRef<HTMLButtonElement>(null);
+  // Màn loading lúc mới vào: tải trước font và phần vẽ QR. Phòng (kể cả vào lại sau F5, mở bằng link
+  // mời) chỉ mở sau khi màn này tắt, để đồng hồ và kết nối không chạy ngầm sau lớp che. Chờ vậy không
+  // mất phòng: chủ phòng mở lại mã bằng epoch mới, khách thử nối lại trong 30 giây, ghế được giữ 15
+  // giây, còn màn loading dài nhất 8 giây và gần như tắt ngay khi vào lại phòng (xem splash.tsx).
+  const [loaded, setLoaded] = useState(false);
 
   // Vừa F5 trong phòng: vào lại đúng phòng đó. Mở bằng link mời (?room=MÃ): có tên rồi thì vào thẳng
   // phòng, chưa có thì nhập tên trước.
@@ -89,6 +99,15 @@ export function VeDoan() {
     setRoom(mode);
     window.scrollTo({ top: 0 });
   };
+  const openGuide = () => {
+    setGuide(true);
+    window.scrollTo({ top: 0 });
+  };
+  const closeGuide = () => {
+    setGuide(false);
+    // Trả tiêu điểm về nút đã mở cẩm nang (sau khi màn chính hiện lại).
+    requestAnimationFrame(() => guideButton.current?.focus());
+  };
   const exit = (error?: NetError) => {
     setRoom(null);
     setNotice(error ? ERROR_TEXT[error] : null);
@@ -115,6 +134,15 @@ export function VeDoan() {
               <BackIcon className="h-4 w-4" />
               Rời phòng
             </button>
+          ) : guide ? (
+            <button
+              type="button"
+              onClick={closeGuide}
+              className="-ml-2 flex min-h-11 items-center gap-1 rounded-lg px-2 text-sm font-bold text-[color:var(--vd-mute)] hover:text-[color:var(--vd-bulb)]"
+            >
+              <BackIcon className="h-4 w-4" />
+              Màn chính
+            </button>
           ) : (
             <Link
               href="/games"
@@ -129,25 +157,45 @@ export function VeDoan() {
               Vẽ Đoán
             </span>
           )}
+          {!room && !guide && (
+            <button
+              ref={guideButton}
+              type="button"
+              onClick={openGuide}
+              className="flex min-h-11 items-center gap-2 rounded-full whitespace-nowrap bg-[color:var(--vd-tarpHi)] px-4 text-sm font-extrabold text-[color:var(--vd-gold)] ring-2 ring-[color:var(--vd-gold)] ring-inset hover:brightness-110 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[color:var(--vd-bulb)]"
+            >
+              <BookIcon className="h-[18px] w-[18px]" />
+              Cẩm nang · Cách chơi
+            </button>
+          )}
         </nav>
 
-        <main>
+        {!loaded && <Splash onDone={() => setLoaded(true)} />}
+        <main hidden={!loaded}>
           {room ? (
-            <OnlineRoom
-              key={room.kind === 'join' ? `join-${room.code}` : 'host'}
-              mode={room}
-              name={name}
-              onExit={exit}
-            />
+            loaded && (
+              <OnlineRoom
+                key={room.kind === 'join' ? `join-${room.code}` : 'host'}
+                mode={room}
+                name={name}
+                onExit={exit}
+              />
+            )
           ) : (
-            <HomeScreen
-              name={name}
-              onName={rename}
-              onCreate={() => enter({ kind: 'host' })}
-              onJoin={(code) => enter({ kind: 'join', code })}
-              notice={notice}
-              pendingRoom={pendingRoom}
-            />
+            <>
+              {/* Màn chính chỉ ẩn khi xem cẩm nang, không gỡ ra: tên và mã đang gõ dở vẫn còn khi quay lại. */}
+              <div hidden={guide}>
+                <HomeScreen
+                  name={name}
+                  onName={rename}
+                  onCreate={() => enter({ kind: 'host' })}
+                  onJoin={(code) => enter({ kind: 'join', code })}
+                  notice={notice}
+                  pendingRoom={pendingRoom}
+                />
+              </div>
+              {guide && <Guide onBack={closeGuide} />}
+            </>
           )}
         </main>
       </div>

@@ -17,6 +17,8 @@ export type Form = {
   rocks: boolean;
   /** Cột khí xuyên trời, vầng sáng sau đầu, hào quang đổi sắc cầu vồng. */
   ascended: boolean;
+  /** Tóc dài tới gót mọc ra (chỉ ở hai dạng giữa). */
+  longHair: boolean;
 };
 
 export const FORMS: Form[] = [
@@ -32,12 +34,13 @@ export const FORMS: Form[] = [
     glowEyes: false,
     rocks: false,
     ascended: false,
+    longHair: false,
   },
   {
     name: 'Phong khí',
     aura: '#38e8ff',
     core: '#d9fbff',
-    hair: '#1d2a3f',
+    hair: '#2f7fe0',
     power: 0.42,
     smoke: 0.3,
     lightning: false,
@@ -45,12 +48,13 @@ export const FORMS: Form[] = [
     glowEyes: false,
     rocks: false,
     ascended: false,
+    longHair: false,
   },
   {
     name: 'Lôi khí',
     aura: '#a46bff',
     core: '#efe3ff',
-    hair: '#3a2466',
+    hair: '#9a5cff',
     power: 0.6,
     smoke: 0.45,
     lightning: true,
@@ -58,12 +62,14 @@ export const FORMS: Form[] = [
     glowEyes: false,
     rocks: false,
     ascended: false,
+    longHair: true,
   },
   {
     name: 'Hoả khí',
     aura: '#ff3b5c',
     core: '#ffd6a8',
-    hair: '#6e1022',
+    // Tóc vàng rực như model gốc.
+    hair: '#ffc933',
     power: 0.78,
     smoke: 0.75,
     lightning: true,
@@ -71,12 +77,13 @@ export const FORMS: Form[] = [
     glowEyes: true,
     rocks: false,
     ascended: false,
+    longHair: true,
   },
   {
     name: 'Băng ngân',
     aura: '#9fd8ff',
     core: '#ffffff',
-    hair: '#dfe9f5',
+    hair: '#a9dcff',
     power: 0.9,
     smoke: 0.85,
     lightning: true,
@@ -84,12 +91,14 @@ export const FORMS: Form[] = [
     glowEyes: true,
     rocks: true,
     ascended: false,
+    longHair: false,
   },
   {
     name: 'Thiên khí',
     aura: '#ff7ad9',
     core: '#ffffff',
-    hair: '#f6f0ff',
+    // Bạc trắng.
+    hair: '#eef1f6',
     power: 1,
     smoke: 1,
     lightning: true,
@@ -97,5 +106,6 @@ export const FORMS: Form[] = [
     glowEyes: true,
     rocks: true,
     ascended: true,
+    longHair: false,
   },
 ];

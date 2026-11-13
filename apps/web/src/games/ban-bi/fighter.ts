@@ -121,19 +121,54 @@ const HERO_WIND = /* glsl */ `
 `;
 type Wind = Record<'uTime' | 'uKi' | 'uMinY' | 'uSpanY', { value: number }>;
 /** Vật liệu tô mềm cho model: viền sáng màu khí và gió khí. */
-function heroMaterial(params: THREE.MeshToonMaterialParameters, wind: Wind) {
+/** Nhuộm tóc: màu tóc hiện tại; tâm đầu (x, z trong toạ độ model) để đặt gốc tóc dài. */
+type Dye = { uHair: { value: THREE.Color }; uHeadC: { value: THREE.Vector2 } };
+
+/**
+ * Vật liệu tô mềm cho model: viền sáng màu khí, gió khí, và tóc đổi màu theo dạng. Tóc vàng nằm sẵn
+ * trong ảnh màu: nhuộm những điểm vừa ở vùng đầu (từ ngang cằm lên) vừa mang màu tóc vàng trong ảnh
+ * (xem điều kiện trong shader). Da hồng đào, mắt, miệng, răng giữ nguyên; quần vàng nằm dưới vùng đầu.
+ */
+function heroMaterial(params: THREE.MeshToonMaterialParameters, wind: Wind, dye: Dye) {
   const m = new THREE.MeshToonMaterial(params);
   m.onBeforeCompile = (s) => {
     injectRim(s);
-    // Pháp tuyến model Tripo lởm chởm nên viền sáng bắt vào cả mảng lớn: giảm còn một phần ba, kẻo
-    // khí mạnh thì cả người trắng xoá.
-    s.fragmentShader = s.fragmentShader.replace('* uRim;', '* uRim * 0.35;');
-    Object.assign(s.uniforms, wind);
+    Object.assign(s.uniforms, wind, dye);
     s.vertexShader = s.vertexShader
-      .replace('void main() {', `${HERO_WIND}\nvoid main() {`)
+      .replace(
+        'void main() {',
+        `${HERO_WIND}
+        varying float vHair;
+        void main() {`,
+      )
       .replace(
         '#include <begin_vertex>',
-        '#include <begin_vertex>\n  transformed += heroWind(position, objectNormal);',
+        `#include <begin_vertex>
+        vHair = smoothstep(0.79, 0.82, (position.y - uMinY) / uSpanY);
+        transformed += heroWind(position, objectNormal);`,
+      );
+    s.fragmentShader = s.fragmentShader
+      // Pháp tuyến model Tripo lởm chởm nên viền sáng bắt vào cả mảng lớn: giảm còn một phần ba,
+      // kẻo khí mạnh thì cả người trắng xoá.
+      .replace('* uRim;', '* uRim * 0.35;')
+      .replace('void main() {', 'uniform vec3 uHair;\nvarying float vHair;\nvoid main() {')
+      .replace(
+        '#include <map_fragment>',
+        `#include <map_fragment>
+        float hairLum = dot(diffuseColor.rgb, vec3(0.2126, 0.7152, 0.0722));
+        // Vàng đậm, nâu: rất ít xanh lam. Vàng nhạt, ánh sáng trên tóc: nhiều xanh lục mà vẫn ít
+        // xanh lam (da hồng ít xanh lục; răng, lòng trắng mắt nhiều xanh lam).
+        float br = diffuseColor.b / max(diffuseColor.r, 0.001);
+        float gr = diffuseColor.g / max(diffuseColor.r, 0.001);
+        float hairMask = vHair
+          * max(smoothstep(0.2, 0.12, br), smoothstep(0.58, 0.66, gr) * smoothstep(0.62, 0.5, br));
+        vec3 dyed = uHair * (0.3 + 1.25 * hairLum) + pow(hairLum, 3.0) * 0.35;
+        diffuseColor.rgb = mix(diffuseColor.rgb, dyed, hairMask);`,
+      )
+      .replace(
+        '#include <emissivemap_fragment>',
+        `#include <emissivemap_fragment>
+        totalEmissiveRadiance = mix(totalEmissiveRadiance, dyed * 0.22, hairMask);`,
       );
   };
   return m;
@@ -1617,6 +1652,11 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
   hero.visible = false;
   scene.add(hero);
   const heroHead = new THREE.Vector3(0, HERO_BASE + HERO_HEIGHT * HERO_HEAD, 0);
+  /** Màu tóc hiện tại (chuyển dần sang màu tóc của dạng mới). */
+  const dye: Dye = {
+    uHair: { value: new THREE.Color(FORMS[0]!.hair) },
+    uHeadC: { value: new THREE.Vector2() },
+  };
   const wind: Wind = {
     uTime: { value: 0 },
     uKi: { value: 0 },
@@ -1625,6 +1665,55 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
   };
   let heroReady = false;
   let heroLean = 0;
+
+  // Mái tóc dài tới gót (cấp 3 và 4): model có tóc ngắn đúc liền nên dựng thêm các lọn to bản gắn
+  // sau gáy, thả xuống xoè hai bên lưng; mọc dần từ gáy xuống khi vào cấp đó, thu lại khi rời.
+  // Cùng màu tóc theo dạng, tô mềm, viền nét, viền sáng màu khí, đung đưa theo khí.
+  const longHairMat = withRim(
+    new THREE.MeshToonMaterial({
+      color: FORMS[0]!.hair,
+      gradientMap: softGradient,
+      // Tự sáng nhẹ theo màu tóc để nổi trên nền hào quang, sáng ngang tóc trên đầu.
+      emissive: FORMS[0]!.hair,
+      emissiveIntensity: 0.3,
+    }),
+  );
+  const longHairOutline = outlineMaterial(0.012);
+  const longHair = new THREE.Group();
+  longHair.visible = false;
+  hero.add(longHair);
+  /** Hướng sau lưng của model (model xoay -90° rồi ngoảnh thêm 0,3 rad về phía bàn bi). */
+  const heroBack = new THREE.Vector3(Math.sin(0.3), 0, -Math.cos(0.3));
+  const heroSide = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), heroBack);
+  // Gốc tóc dài đặt sau gáy khi model tải xong (tính từ tâm đầu thật của model).
+  /** Mỗi lọn: khớp xoay (đung đưa) chứa khối lọn đã định hướng. */
+  const longLocks: { pivot: THREE.Group; mesh: THREE.Mesh; phase: number }[] = [];
+  const LONG_LOCKS = 11;
+  for (let i = 0; i < LONG_LOCKS; i++) {
+    const u = i / (LONG_LOCKS - 1) - 0.5; // -0.5 (bên trái) .. 0.5 (bên phải)
+    const len = HERO_HEIGHT * (0.86 - Math.abs(u) * 0.2);
+    const mesh = new THREE.Mesh(lockGeo(len, 0.2 - Math.abs(u) * 0.08), longHairMat);
+    mesh.castShadow = true;
+    mesh.add(new THREE.Mesh(mesh.geometry, longHairOutline));
+    // Thả xuống, xoè sang hai bên theo vị trí lọn, ngả ra sau lưng; ngọn cong ra ngoài.
+    const dir = new THREE.Vector3(0, -1, 0)
+      .addScaledVector(heroSide, u * 1.0)
+      .addScaledVector(heroBack, 0.16)
+      .normalize();
+    const out = heroBack
+      .clone()
+      .addScaledVector(heroSide, u * 1.2)
+      .normalize();
+    orient(mesh, dir, out);
+    const pivot = new THREE.Group();
+    pivot.position.copy(heroSide).multiplyScalar(u * 0.42);
+    pivot.add(mesh);
+    longHair.add(pivot);
+    longLocks.push({ pivot, mesh, phase: i * 1.7 });
+  }
+  let longGrow = 0;
+  let headMesh: THREE.Mesh | null = null;
+  let headY = 0;
   let disposed = false;
   const disposeTree = (root: THREE.Object3D) =>
     root.traverse((o) => {
@@ -1668,6 +1757,23 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
       const gb = o.geometry.boundingBox!;
       wind.uMinY.value = gb.min.y;
       wind.uSpanY.value = gb.max.y - gb.min.y;
+      // Tâm đầu: trung bình x, z của các điểm trên đỉnh tóc (10% trên cùng).
+      {
+        const pos = o.geometry.attributes.position!;
+        const top = gb.min.y + (gb.max.y - gb.min.y) * 0.9;
+        let sx = 0;
+        let sz = 0;
+        let n = 0;
+        for (let i = 0; i < pos.count; i++)
+          if (pos.getY(i) > top) {
+            sx += pos.getX(i);
+            sz += pos.getZ(i);
+            n++;
+          }
+        if (n) dye.uHeadC.value.set(sx / n, sz / n);
+        headMesh = o;
+        headY = gb.min.y + (gb.max.y - gb.min.y) * 0.87;
+      }
       o.material = heroMaterial(
         {
           map,
@@ -1679,6 +1785,7 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
           emissiveIntensity: 0.22,
         },
         wind,
+        dye,
       );
       pbr.metalnessMap?.dispose();
       pbr.dispose();
@@ -1686,6 +1793,13 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
       o.add(new THREE.Mesh(o.geometry, heroOutline));
     }
     hero.add(model);
+    // Gốc tóc dài: sau gáy, tính từ tâm đầu thật của model rồi đổi sang toạ độ của nhóm hero.
+    if (headMesh) {
+      hero.updateMatrixWorld(true);
+      const root = new THREE.Vector3(dye.uHeadC.value.x, headY, dye.uHeadC.value.y);
+      hero.worldToLocal(headMesh.localToWorld(root));
+      longHair.position.copy(root).addScaledVector(heroBack, HERO_HEIGHT * 0.045);
+    }
     hero.visible = true;
     rig.root.visible = false;
     heroReady = true;
@@ -1951,6 +2065,7 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
     coreColor.lerp(targetCore.set(form.core), ease(7));
     hairColor.lerp(targetHair.set(form.hair), ease(3));
     rig.hairMat.color.copy(hairColor);
+    dye.uHair.value.copy(hairColor);
     const surge = surgeAt ? Math.min(1, (now - surgeAt) / 1400) : 1;
     const surging = surgeAt && surge < 1;
     if (surgeAt && surge >= 1) surgeAt = 0;
@@ -2045,6 +2160,20 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
       hero.position.set(tremble * 2, pop * 0.14, tremble);
       const puff = 1 + pop * 0.04 + bump * 0.025;
       hero.scale.set(puff * (1 + breathe), puff * (1 + breathe * 0.6), puff * (1 + breathe));
+      // Tóc dài mọc ở các dạng có longHair (cấp 3 và 4), đung đưa theo khí.
+      const wantLong = mood !== 'lost' && form.longHair ? 1 : 0;
+      longGrow += (wantLong - longGrow) * ease(wantLong ? 2.2 : 4);
+      longHair.visible = longGrow > 0.01;
+      // Mỗi lọn dài ra theo chính hướng của nó (trục dọc của lọn), to dần một chút.
+      const thick = 0.6 + longGrow * 0.4;
+      // Sáng ngang tóc nhuộm trên đầu (tóc tối vẫn nổi trên nền hào quang).
+      longHairMat.color.copy(hairColor).multiplyScalar(1.05).addScalar(0.08);
+      longHairMat.emissive.copy(longHairMat.color);
+      for (const l of longLocks) {
+        const sway = reduce ? 0 : Math.sin(t * (2 + glow * 3) + l.phase) * (0.04 + glow * 0.05);
+        l.pivot.rotation.set(sway * 0.6, 0, sway);
+        l.mesh.scale.set(thick, longGrow, thick);
+      }
       hero.updateMatrixWorld();
       hero.localToWorld(headPos.copy(heroHead));
     } else {

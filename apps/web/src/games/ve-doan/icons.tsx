@@ -78,3 +78,10 @@ export const SendIcon = (p: P) => (
     <path d="M4 12h14M13 6.5l5.5 5.5-5.5 5.5" />
   </Icon>
 );
+
+export const BookIcon = (p: P) => (
+  <Icon {...p}>
+    <path d="M12 6.8C10.2 5.3 7.7 4.6 4.5 4.6v13.2c3.2 0 5.7.7 7.5 2.2 1.8-1.5 4.3-2.2 7.5-2.2V4.6c-3.2 0-5.7.7-7.5 2.2z" />
+    <path d="M12 6.8V20" />
+  </Icon>
+);

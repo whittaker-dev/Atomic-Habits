@@ -5,7 +5,7 @@ import { cleanName, NAME_MAX, nameError } from '../bong-bong-bum/name';
 import { CODE_LENGTH, normalizeCode } from '../bong-bong-bum/net';
 import { money } from './data';
 import { standings, type Game, type Seat, type SeatKind, type Settings } from './engine';
-import { BotIcon, CheckIcon, CopyIcon, DoorIcon, LinkIcon, PassIcon } from './icons';
+import { BookIcon, BotIcon, CheckIcon, CopyIcon, DoorIcon, LinkIcon, PassIcon } from './icons';
 import { Avatar, Button, Panel, Portrait, Segmented } from './kit';
 import { characterName, characterOf, ROSTER } from './roster';
 import { DISPLAY } from './theme';
@@ -13,7 +13,7 @@ import { DISPLAY } from './theme';
 // Các màn ngoài bàn cờ của Cờ tỷ phú: vào game, chuẩn bị ván trên một máy, phòng chờ online và bảng
 // xếp hạng cuối ván. Màn chơi nằm ở game.tsx.
 
-const Heading = ({ children }: { children: ReactNode }) => (
+export const Heading = ({ children }: { children: ReactNode }) => (
   <h1 className={`${DISPLAY} text-[34px] leading-none text-balance text-[color:var(--tp-gold)]`}>
     {children}
   </h1>
@@ -25,7 +25,7 @@ const Section = ({ title, children }: { title: string; children: ReactNode }) =>
   </section>
 );
 /** Đường chỉ vàng dưới tiêu đề, giữa có hạt son như nút khảm trên nắp hộp sơn mài. */
-const Rule = () => (
+export const Rule = () => (
   <span aria-hidden className="flex items-center gap-2">
     <i className="h-px w-10 bg-[color:var(--tp-gold)]" />
     <i className="h-2 w-2 rotate-45 bg-[color:var(--tp-cinnabar)] shadow-[0_0_0_1px_var(--tp-gold)]" />
@@ -164,6 +164,7 @@ export function HomeScreen({
   onBots,
   onHost,
   onJoin,
+  onGuide,
   notice,
   pendingRoom,
 }: {
@@ -176,6 +177,7 @@ export function HomeScreen({
   onBots: () => void;
   onHost: () => void;
   onJoin: (code: string) => void;
+  onGuide: () => void;
   notice: string | null;
   /** Mở bằng link mời mà chưa có tên: nhập tên xong là vào thẳng phòng này. */
   pendingRoom: string | null;
@@ -209,6 +211,10 @@ export function HomeScreen({
           Từ Hà Giang tới Phú Quốc: mua đất, xây nhà, thu tiền thuê. Ai còn trụ lại, hoặc giàu nhất
           khi hết giờ, là tỷ phú.
         </p>
+        <Button tone="ghost" className="w-full" onClick={onGuide}>
+          <BookIcon />
+          Cẩm nang · Cách chơi & nhân vật
+        </Button>
       </div>
 
       {notice && (

@@ -3,19 +3,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { loadMuted, setHum, setMuted, sfx, unlockAudio } from './audio';
 import { createBoard, type BoardView } from './board';
-import { bubbleCount, HEIGHT, levelOf, WIDTH } from './engine';
+import { advance, HEIGHT, levelOf, rowSeconds, WIDTH } from './engine';
 import { createFighterView, type FighterView } from './fighter';
 import { FORMS } from './forms';
 import { Glass, KiBar } from './kit';
 import { charge, drain, progress } from './power';
-import { formatMs, saveRun, type Run } from './scores';
+import { formatMs, saveRun, shotPoints, type Run } from './scores';
 import { DISPLAY } from './theme';
 
-// Màn đấu: bàn bắn bi và võ sĩ nạp khí đứng cạnh nhau (điện thoại: võ sĩ ở trên, bàn ở dưới), đồng
-// hồ đếm từ lúc hết đếm ngược tới khi phá sạch bi. Mỗi lần nổ bi nạp khí cho võ sĩ, khí tự tản nên
-// phải bắn lẹ mới lên cao. Rời tab thì đồng hồ dừng; ván được lưu sau mỗi phát để F5 không mất.
+// Màn đấu: bàn bắn bi và võ sĩ nạp khí đứng cạnh nhau (điện thoại: võ sĩ ở trên, bàn ở dưới). Hết
+// đếm ngược thì mảng bi bắt đầu trôi xuống (tạm ngừng khi có bi đang bay), nhanh dần; bi chạm vạch là
+// hết ván. Mỗi lần nổ bi cộng điểm (nhân theo cấp khí) và nạp khí cho võ sĩ; khí tự tản nên phải bắn
+// lẹ mới lên cao. Rời tab thì mọi thứ dừng; ván được lưu sau mỗi phát để F5 không mất.
 
-export type Finish = { won: boolean; ms: number; peak: number };
+export type Finish = { score: number; ms: number; peak: number };
 
 const TURN_STEP = (2.2 * Math.PI) / 180;
 
@@ -37,6 +38,8 @@ export function Arena({
   /** Đồng hồ: ms đã chơi, mốc lần cập nhật cuối; chạy khi `running`. */
   const clock = useRef({ elapsed: run.elapsed, last: 0, running: false });
   const doneRef = useRef(false);
+  /** Kết thúc ván (bi chạm vạch), gọi từ phát bắn hay từ lúc mảng bi trôi. */
+  const overRef = useRef<() => void>(() => undefined);
   const onFinishRef = useRef(onFinish);
   onFinishRef.current = onFinish;
 
@@ -45,10 +48,10 @@ export function Arena({
     ms: run.elapsed,
     level: run.power.level,
     prog: 0,
-    left: bubbleCount(run.game),
-    shots: run.game.shots,
+    score: run.score,
+    speed: rowSeconds(run.game),
   });
-  const [result, setResult] = useState<'won' | 'lost' | null>(null);
+  const [over, setOver] = useState(false);
   const [muted, setMute] = useState(false);
   const lv = levelOf(run.level);
 
@@ -79,6 +82,22 @@ export function Arena({
     const canvas = boardCv.current;
     if (!canvas) return;
     const save = () => saveRun({ ...runRef.current, elapsed: clock.current.elapsed });
+    overRef.current = () => {
+      if (doneRef.current) return;
+      const r = runRef.current;
+      clock.current.running = false;
+      doneRef.current = true;
+      setHum(-1);
+      fighterRef.current?.finish(false);
+      sfx.lose();
+      setOver(true);
+      saveRun(null);
+      setTimeout(
+        () =>
+          onFinishRef.current({ score: r.score, ms: clock.current.elapsed, peak: r.power.peak }),
+        1800,
+      );
+    };
     const b = createBoard(canvas, {
       onFire: () => sfx.shoot(),
       onBounce: () => sfx.bounce(),
@@ -93,26 +112,15 @@ export function Arena({
           fighterRef.current?.pulse(res.popped.length + res.dropped.length);
         } else sfx.stick();
         if (res.dropped.length) sfx.drop(res.dropped.length);
-        if (res.rowAdded) sfx.push();
         if (r.power.level !== before) {
           fighterRef.current?.setLevel(r.power.level);
           if (r.power.level > before) sfx.levelUp(r.power.level);
           setHum(r.power.level);
         }
+        // Cấp khí sau phát này nhân điểm: bắn lẹ cho võ sĩ lên cấp thì ăn điểm nhiều.
+        r.score += shotPoints(res.popped.length, res.dropped.length, r.power.level);
         if (game.status !== 'play') {
-          const won = game.status === 'won';
-          clock.current.running = false;
-          doneRef.current = true;
-          setHum(-1);
-          fighterRef.current?.finish(won);
-          if (won) sfx.win();
-          else sfx.lose();
-          setResult(game.status);
-          saveRun(null);
-          setTimeout(
-            () => onFinishRef.current({ won, ms: clock.current.elapsed, peak: r.power.peak }),
-            won ? 2200 : 1800,
-          );
+          overRef.current();
           return;
         }
         save();
@@ -173,6 +181,11 @@ export function Arena({
           fighterRef.current?.setLevel(r.power.level);
           setHum(r.power.level);
         }
+        // Mảng bi trôi xuống; bi đang bay thì chờ nó dính xong.
+        if (!boardRef.current?.busy()) {
+          advance(r.game, dt / 1000);
+          if (r.game.status !== 'play') overRef.current();
+        }
       }
       c.last = now;
       boardRef.current?.setPaused(!c.running || hidden);
@@ -183,8 +196,8 @@ export function Arena({
           ms: c.elapsed,
           level: r.power.level,
           prog: progress(r.power),
-          left: bubbleCount(r.game),
-          shots: r.game.shots,
+          score: r.score,
+          speed: rowSeconds(r.game),
         });
       }
     };
@@ -210,7 +223,6 @@ export function Arena({
   }, []);
 
   const form = FORMS[shown.level]!;
-  const untilDrop = lv.dropEvery - (shown.shots % lv.dropEvery);
 
   return (
     <div
@@ -265,11 +277,12 @@ export function Arena({
           <div className="text-center">
             <p
               className={`${DISPLAY} text-3xl leading-none tabular-nums text-[color:var(--bb-text)] md:text-4xl`}
+              aria-label={`${shown.score} điểm`}
             >
-              {formatMs(shown.ms)}
+              {shown.score.toLocaleString('vi-VN')}
             </p>
-            <p className="text-[11px] font-semibold text-[color:var(--bb-muted)]">
-              {lv.name} · còn {shown.left} bi · thêm hàng sau {untilDrop} phát
+            <p className="text-[11px] font-semibold text-[color:var(--bb-muted)] tabular-nums">
+              {lv.name} · {formatMs(shown.ms)} · {shown.speed.toFixed(1)} giây/hàng
             </p>
           </div>
           <button
@@ -308,17 +321,13 @@ export function Arena({
                 </span>
               </div>
             )}
-            {result && (
+            {over && (
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/50">
                 <Glass className="bb-pop px-6 py-5 text-center">
-                  <p
-                    className={`${DISPLAY} text-4xl ${result === 'won' ? 'text-[color:var(--bb-ki)]' : 'text-[color:var(--bb-rage)]'}`}
-                  >
-                    {result === 'won' ? 'Phá sạch!' : 'Bi chạm vạch'}
+                  <p className={`${DISPLAY} text-4xl text-[color:var(--bb-rage)]`}>Bi chạm vạch</p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums">
+                    {shown.score.toLocaleString('vi-VN')} điểm
                   </p>
-                  {result === 'won' && (
-                    <p className="mt-1 text-lg font-semibold tabular-nums">{formatMs(shown.ms)}</p>
-                  )}
                 </Glass>
               </div>
             )}
@@ -328,7 +337,7 @@ export function Arena({
           Rê chuột để ngắm, bấm để bắn · ← → xoay, Space bắn, X đổi bi
         </p>
       </div>
-      {result === null && count === null && (
+      {!over && count === null && (
         <span className="sr-only" aria-live="polite">
           Cấp {shown.level + 1}, {form.name}
         </span>

@@ -1,17 +1,20 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
+  advance,
   bubbleCount,
   cellPos,
   COLS,
   createGame,
-  DEATH_ROW,
   LAUNCH,
   LEVELS,
   levelOf,
   MAX_ANGLE,
   MIN_ANGLE,
+  rowLen,
+  rowSeconds,
   shoot,
+  SPEEDUP_HALF_LIFE,
   trace,
   type Game,
 } from './engine';
@@ -19,7 +22,7 @@ import { charge, createPower, drain, THRESHOLDS } from './power';
 
 /** Ván dựng tay: `rows` là các hàng màu (-1 trống). */
 function board(rows: number[][], current: number): Game {
-  const g = createGame('de');
+  const g = createGame('de', 1);
   g.grid = rows.map((r, i) => {
     const len = i % 2 ? COLS - 1 : COLS;
     return [...r, ...Array(len).fill(-1)].slice(0, len);
@@ -36,13 +39,14 @@ const aimAt = (g: Game, r: number, c: number) => {
   return Math.atan2(LAUNCH.y - p.y, p.x - LAUNCH.x);
 };
 
-test('cùng một màn thì ai cũng gặp cùng thế bi', () => {
+test('mỗi ván xáo thế bi mới (cùng hạt giống thì cùng thế bi)', () => {
   for (const lv of LEVELS) {
-    const a = createGame(lv.id);
-    const b = createGame(lv.id);
-    assert.deepEqual(a.grid, b.grid);
+    const a = createGame(lv.id, 42);
+    assert.deepEqual(a.grid, createGame(lv.id, 42).grid);
+    assert.notDeepEqual(a.grid, createGame(lv.id, 43).grid);
     assert.equal(a.grid.length, lv.rows);
     assert.ok(a.grid.flat().every((v) => v >= 0 && v < lv.colors));
+    assert.equal(a.incoming.length, rowLen(a, -1), 'hàng chờ đúng độ dài');
   }
 });
 
@@ -71,7 +75,9 @@ test('bi mất chỗ bám lên trần thì rơi theo', () => {
     res.dropped.map((p) => [p.r, p.c, p.color]),
     [[1, 3, 2]],
   );
-  assert.equal(g.status, 'won');
+  // Chơi vô tận: sạch bàn vẫn chơi tiếp, hàng mới vẫn trôi xuống.
+  assert.equal(bubbleCount(g), 0);
+  assert.equal(g.status, 'play');
 });
 
 test('bắn chéo thì dội tường rồi mới dính', () => {
@@ -83,39 +89,45 @@ test('bắn chéo thì dội tường rồi mới dính', () => {
   assert.deepEqual(trace(g, Math.PI), trace(g, MAX_ANGLE));
 });
 
-test('cứ vài phát thêm một hàng bi từ trên, dồn cả mảng xuống; bi chạm vạch dưới là thua', () => {
-  const g = createGame('kho');
-  const every = levelOf('kho').dropEvery;
-  // Bắn toàn bộ vào góc trái cho bi chồng xuống.
-  let res = null;
-  for (let i = 0; i < every - 1; i++) res = shoot(g, MAX_ANGLE);
-  assert.equal(res?.rowAdded, false);
-  const before = g.grid.map((row) => [...row]);
-  res = shoot(g, MAX_ANGLE);
-  assert.ok(res?.rowAdded);
-  // Hàng mới đầy bi, chỉ mang màu còn trên sân; các hàng cũ (sau phát bắn) lùi xuống một hàng.
-  const left = new Set(before.flat().filter((v) => v >= 0));
-  assert.equal(g.grid[0]!.length, g.parity === 0 ? COLS : COLS - 1);
-  assert.ok(g.grid[0]!.every((v) => left.has(v)));
-  assert.equal(g.grid[1]!.length, before[0]!.length, 'hàng cũ giữ đúng độ lệch');
-  for (let i = 0; i < 400 && g.status === 'play'; i++) shoot(g, MAX_ANGLE);
+test('mảng bi trôi xuống theo thời gian, đủ một hàng thì hàng chờ chen vào, nhanh dần', () => {
+  const g = createGame('de', 7);
+  const secs = rowSeconds(g);
+  assert.equal(secs, levelOf('de').rowSeconds);
+  const top = [...g.grid[0]!];
+  const incoming = [...g.incoming];
+  assert.equal(advance(g, secs * 0.5), 0);
+  assert.ok(Math.abs(g.offset - 0.5) < 0.01, 'trôi được nửa hàng');
+  assert.equal(advance(g, secs * 0.6), 1);
+  assert.deepEqual(g.grid[0], incoming, 'hàng chờ thành hàng 0');
+  assert.deepEqual(g.grid[1], top, 'hàng cũ lùi xuống, giữ nguyên bi và độ lệch');
+  assert.equal(g.incoming.length, rowLen(g, -1));
+  // Tốc độ gấp đôi sau mỗi SPEEDUP_HALF_LIFE giây, không nhanh quá mức của màn.
+  assert.ok(Math.abs(rowSeconds({ level: 'de', time: SPEEDUP_HALF_LIFE }) - secs / 2) < 1e-9);
+  assert.equal(rowSeconds({ level: 'de', time: 1e6 }), levelOf('de').minRowSeconds);
+});
+
+test('bi trôi chạm vạch dưới là thua, thua rồi không bắn được nữa', () => {
+  const g = createGame('kho', 3);
+  for (let i = 0; i < 1000 && g.status === 'play'; i++) advance(g, 0.5);
   assert.equal(g.status, 'lost');
+  assert.equal(advance(g, 1), 0);
   assert.equal(shoot(g, Math.PI / 2), null);
 });
 
 test('chơi ngẫu nhiên thì ván luôn kết thúc, không lỗi, bi mới luôn là màu còn trên sân', () => {
   for (const lv of LEVELS)
     for (let seed = 1; seed <= 20; seed++) {
-      const g = createGame(lv.id);
+      const g = createGame(lv.id, seed);
       let s = seed;
-      for (let i = 0; i < 800 && g.status === 'play'; i++) {
+      for (let i = 0; i < 2000 && g.status === 'play'; i++) {
         s = (s * 16807) % 2147483647;
         shoot(g, MIN_ANGLE + (s / 2147483647) * (MAX_ANGLE - MIN_ANGLE));
+        advance(g, 0.6);
         const left = new Set(g.grid.flat().filter((v) => v >= 0));
-        if (g.status === 'play') assert.ok(left.has(g.current), 'bi đang cầm có màu trên sân');
+        if (g.status === 'play' && left.size)
+          assert.ok(left.has(g.current) || !left.size, 'bi đang cầm có màu trên sân');
       }
-      assert.notEqual(g.status, 'play', `${lv.id} seed ${seed} kết thúc`);
-      if (g.status === 'lost') assert.ok(g.grid.length > DEATH_ROW - 1);
+      assert.equal(g.status, 'lost', `${lv.id} seed ${seed} kết thúc`);
     }
 });
 

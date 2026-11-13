@@ -53,6 +53,13 @@ export const LinkIcon = (p: P) => (
   </Icon>
 );
 
+/** Cẩm nang: cuốn sổ mở, hai trang. */
+export const BookIcon = (p: P) => (
+  <Icon {...p}>
+    <path d="M12 6.5C10 5 7 4.5 3 5v13c4-.5 7 0 9 1.5 2-1.5 5-2 9-1.5V5c-4-.5-7 0-9 1.5zM12 6.5v13" />
+  </Icon>
+);
+
 export const DoorIcon = (p: P) => (
   <Icon {...p}>
     <path d="M5 21V3h11v18M3 21h18M12 12h1" />

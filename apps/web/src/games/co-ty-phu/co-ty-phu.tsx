@@ -6,30 +6,41 @@ import { loadName, saveName } from '../bong-bong-bum/name';
 import { isValidCode, normalizeCode, type NetError } from '../bong-bong-bum/net';
 import { TOKENS } from './data';
 import { DEFAULT_SETTINGS, type Seat, type Settings } from './engine';
+import { GuideScreen } from './guide';
 import { BackIcon } from './icons';
 import { LocalMatch, loadLocal, newGame, saveLocal, type LocalSave } from './match';
 import { ERROR_TEXT } from './net';
 import { loadRoomSave, OnlineRoom, type OnlineMode } from './online';
 import { freeCharacter, loadCharacter, ROSTER, saveCharacter } from './roster';
 import { botName, HomeScreen, SetupScreen } from './screens';
+import { Splash } from './splash';
 import { FONT_URL, VARS } from './theme';
 
-// Khung của Cờ tỷ phú: màn vào game (tên, chọn cách chơi, nhập mã), chuẩn bị ván trên một máy, ván
-// trên một máy (match.tsx) và phòng online (online.tsx). F5 giữa ván thì vào lại đúng ván đó.
+// Khung của Cờ tỷ phú: màn loading (splash.tsx), màn vào game (tên, chọn cách chơi, nhập mã), cẩm
+// nang (guide.tsx), chuẩn bị ván trên một máy, ván trên một máy (match.tsx) và phòng online
+// (online.tsx). F5 giữa ván thì vào lại đúng ván đó.
 
-// Bề mặt trình duyệt (bôi chọn, con trỏ, thanh cuộn) và hoạt ảnh thẻ lật vào như mở nắp hộp sơn mài
-// (tắt khi người dùng giảm chuyển động). Tiêu đề của app tô màu sẵn nên trả lại màu kế thừa.
+// Bề mặt trình duyệt (bôi chọn, con trỏ, thanh cuộn), hoạt ảnh thẻ lật vào như mở nắp hộp sơn mài, quân
+// nhảy và miếng khảm được dát trên màn loading, màn chính hiện dần khi loading tắt (tất cả tắt khi
+// người dùng giảm chuyển động). Tiêu đề của app tô màu sẵn nên trả lại màu kế thừa.
 const CSS = `
 .tp-root ::selection{background:#d4a73a;color:#120b09}
 .tp-root :is(h1,h2,h3){color:inherit;letter-spacing:normal}
 .tp-root{caret-color:#d4a73a;scrollbar-color:#4a3426 #120b09}
 @keyframes tp-card{from{transform:perspective(600px) rotateX(-70deg) translateY(-12px);opacity:0}to{transform:none;opacity:1}}
 .tp-card{animation:tp-card .5s cubic-bezier(.16,1,.3,1) both}
-@media (prefers-reduced-motion:reduce){.tp-card{animation:none}}
+@keyframes tp-hop{0%,100%{transform:translateY(0) scale(1.08,.9)}45%{transform:translateY(-55%) scale(.94,1.06)}}
+.tp-hop{animation:tp-hop .5s cubic-bezier(.3,0,.4,1) infinite}
+@keyframes tp-lay{from{transform:scale(.4);filter:brightness(1.8)}to{transform:none;filter:none}}
+.tp-lay{animation:tp-lay .35s cubic-bezier(.16,1,.3,1) both}
+@keyframes tp-enter{from{opacity:0}to{opacity:1}}
+.tp-enter{animation:tp-enter .35s ease-out}
+@media (prefers-reduced-motion:reduce){.tp-card,.tp-hop,.tp-lay,.tp-enter{animation:none}}
 `;
 
 type View =
   | { kind: 'home' }
+  | { kind: 'guide' }
   | { kind: 'setup'; passAndPlay: boolean }
   | { kind: 'local'; save: LocalSave }
   | { kind: 'online'; mode: OnlineMode };
@@ -51,6 +62,9 @@ export function CoTyPhu() {
   const [pendingRoom, setPendingRoom] = useState<string | null>(null);
   const [seats, setSeats] = useState<Seat[]>([]);
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
+  // Màn loading lúc mới vào. Ván / phòng dở (F5) chỉ được gắn vào sau khi màn này tắt hẳn, để máy
+  // không đi, đồng hồ lượt và kết nối phòng không chạy khi người chơi chưa thấy bàn.
+  const [loaded, setLoaded] = useState(false);
 
   // Vừa F5: vào lại đúng ván / phòng đang dở. Mở bằng link mời (?room=MÃ): có tên rồi thì vào
   // thẳng phòng, chưa có thì nhập tên trước.
@@ -107,100 +121,109 @@ export function CoTyPhu() {
         {CSS}
       </style>
 
-      <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 pt-3 pb-10 sm:px-6">
-        <nav className="flex min-h-11 items-center">
-          {view.kind === 'home' ? (
-            <Link
-              href="/games"
-              className="-ml-2 flex min-h-11 items-center gap-1 px-2 text-sm font-bold text-[color:var(--tp-ash)] hover:text-[color:var(--tp-eggshell)]"
-            >
-              <BackIcon className="h-4 w-4" />
-              Games
-            </Link>
-          ) : (
-            <button
-              type="button"
-              onClick={() => {
-                if (view.kind === 'local') saveLocal(null);
-                home();
-              }}
-              className="-ml-2 flex min-h-11 items-center gap-1 px-2 text-sm font-bold text-[color:var(--tp-ash)] hover:text-[color:var(--tp-eggshell)]"
-            >
-              <BackIcon className="h-4 w-4" />
-              {view.kind === 'online' ? 'Rời phòng' : 'Quay lại'}
-            </button>
-          )}
-        </nav>
+      {!loaded && <Splash onDone={() => setLoaded(true)} />}
+      {loaded && (
+        <div className="tp-enter mx-auto flex max-w-6xl flex-col gap-5 px-4 pt-3 pb-10 sm:px-6">
+          <nav className="flex min-h-11 items-center">
+            {view.kind === 'home' ? (
+              <Link
+                href="/games"
+                className="-ml-2 flex min-h-11 items-center gap-1 px-2 text-sm font-bold text-[color:var(--tp-ash)] hover:text-[color:var(--tp-eggshell)]"
+              >
+                <BackIcon className="h-4 w-4" />
+                Games
+              </Link>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  if (view.kind === 'local') saveLocal(null);
+                  home();
+                }}
+                className="-ml-2 flex min-h-11 items-center gap-1 px-2 text-sm font-bold text-[color:var(--tp-ash)] hover:text-[color:var(--tp-eggshell)]"
+              >
+                <BackIcon className="h-4 w-4" />
+                {view.kind === 'online' ? 'Rời phòng' : 'Quay lại'}
+              </button>
+            )}
+          </nav>
 
-        <main>
-          {view.kind === 'home' && (
-            <HomeScreen
-              name={name}
-              onName={rename}
-              character={character}
-              onCharacter={(id) => {
-                saveCharacter(id);
-                setCharacter(id);
-              }}
-              notice={notice}
-              pendingRoom={pendingRoom}
-              onLocal={() => {
-                // Mỗi ghế một nhân vật khác nhau, ghế đầu là nhân vật bạn đã chọn.
-                const cast = [character, ...ROSTER.filter((id) => id !== character)];
-                setSeats(SEAT_IDS.map((i) => seat(i, '', i < 2 ? 'human' : 'empty', cast[i]!)));
-                go({ kind: 'setup', passAndPlay: true });
-              }}
-              onBots={() => {
-                // Máy lấy ngẫu nhiên nhân vật chưa ai dùng.
-                const taken = [character];
-                for (let i = 1; i < SEAT_IDS.length; i++) taken.push(freeCharacter(taken, true));
-                setSeats(
-                  SEAT_IDS.map((i) =>
-                    // Tên vừa nhập đã được lưu (saveName) nhưng state `name` chưa kịp đổi: đọc lại bản lưu.
-                    i === 0
-                      ? seat(0, loadName() || 'Bạn', 'human', character)
-                      : i < 4
-                        ? seat(i, botName(taken[i]!), 'bot', taken[i]!)
-                        : seat(i, '', 'empty', taken[i]!),
-                  ),
-                );
-                go({ kind: 'setup', passAndPlay: false });
-              }}
-              onHost={() => go({ kind: 'online', mode: { kind: 'host' } })}
-              onJoin={(code) => go({ kind: 'online', mode: { kind: 'join', code } })}
-            />
-          )}
-          {view.kind === 'setup' && (
-            <SetupScreen
-              seats={seats}
-              onSeats={setSeats}
-              settings={settings}
-              onSettings={setSettings}
-              onStart={() => {
-                const save: LocalSave = {
-                  game: newGame(
-                    seats.map((s) => ({ ...s, name: s.name.trim() })),
-                    settings,
-                  ),
-                  passAndPlay: view.passAndPlay,
-                };
-                saveLocal(save);
-                go({ kind: 'local', save });
-              }}
-            />
-          )}
-          {view.kind === 'local' && <LocalMatch save={view.save} onLeave={() => home()} />}
-          {view.kind === 'online' && (
-            <OnlineRoom
-              key={view.mode.kind === 'join' ? `join-${view.mode.code}` : 'host'}
-              mode={view.mode}
-              name={name}
-              character={character}
-              onExit={home}
-            />
-          )}
-        </main>
-      </div>
+          <main>
+            {view.kind === 'home' && (
+              <HomeScreen
+                name={name}
+                onName={rename}
+                character={character}
+                onCharacter={(id) => {
+                  saveCharacter(id);
+                  setCharacter(id);
+                }}
+                notice={notice}
+                pendingRoom={pendingRoom}
+                onLocal={() => {
+                  // Mỗi ghế một nhân vật khác nhau, ghế đầu là nhân vật bạn đã chọn.
+                  const cast = [character, ...ROSTER.filter((id) => id !== character)];
+                  setSeats(SEAT_IDS.map((i) => seat(i, '', i < 2 ? 'human' : 'empty', cast[i]!)));
+                  go({ kind: 'setup', passAndPlay: true });
+                }}
+                onBots={() => {
+                  // Máy lấy ngẫu nhiên nhân vật chưa ai dùng.
+                  const taken = [character];
+                  for (let i = 1; i < SEAT_IDS.length; i++) taken.push(freeCharacter(taken, true));
+                  setSeats(
+                    SEAT_IDS.map((i) =>
+                      // Tên vừa nhập đã được lưu (saveName) nhưng state `name` chưa kịp đổi: đọc lại bản lưu.
+                      i === 0
+                        ? seat(0, loadName() || 'Bạn', 'human', character)
+                        : i < 4
+                          ? seat(i, botName(taken[i]!), 'bot', taken[i]!)
+                          : seat(i, '', 'empty', taken[i]!),
+                    ),
+                  );
+                  go({ kind: 'setup', passAndPlay: false });
+                }}
+                onHost={() => go({ kind: 'online', mode: { kind: 'host' } })}
+                onJoin={(code) => go({ kind: 'online', mode: { kind: 'join', code } })}
+                // Không qua go(): mở bằng link mời mà chưa có tên thì xem xong cẩm nang vẫn còn nút vào phòng.
+                onGuide={() => {
+                  setView({ kind: 'guide' });
+                  window.scrollTo({ top: 0 });
+                }}
+              />
+            )}
+            {view.kind === 'guide' && <GuideScreen onBack={() => home()} />}
+            {view.kind === 'setup' && (
+              <SetupScreen
+                seats={seats}
+                onSeats={setSeats}
+                settings={settings}
+                onSettings={setSettings}
+                onStart={() => {
+                  const save: LocalSave = {
+                    game: newGame(
+                      seats.map((s) => ({ ...s, name: s.name.trim() })),
+                      settings,
+                    ),
+                    passAndPlay: view.passAndPlay,
+                  };
+                  saveLocal(save);
+                  go({ kind: 'local', save });
+                }}
+              />
+            )}
+            {view.kind === 'local' && <LocalMatch save={view.save} onLeave={() => home()} />}
+            {view.kind === 'online' && (
+              <OnlineRoom
+                key={view.mode.kind === 'join' ? `join-${view.mode.code}` : 'host'}
+                mode={view.mode}
+                name={name}
+                character={character}
+                onExit={home}
+              />
+            )}
+          </main>
+        </div>
+      )}
     </div>
   );
 }

@@ -17,10 +17,11 @@ import {
 import { BUBBLE_COLORS, PALETTE } from './theme';
 
 // Bàn bắn bi vẽ bằng canvas 2D: bi là viên ngọc pha lê có lõi khí sáng, đường ngắm chấm dội tường,
-// bóng mờ chỗ bi sẽ dính, bi bay có vệt sáng, nổ ra mảnh và vòng sóng, bi rơi theo trọng lực, hàng
-// bi mới trượt vào từ trên dồn cả mảng xuống.
-// Giữ một ván (engine.ts) và tự gọi shoot() khi người chơi bắn; diễn xong mới báo onShot để bên
-// ngoài nạp khí, phát tiếng, xét thắng thua.
+// bóng mờ chỗ bi sẽ dính, bi bay có vệt sáng, nổ ra mảnh và vòng sóng, bi rơi theo trọng lực; mảng bi
+// trôi xuống liên tục, hàng chờ lộ dần ở mép trên.
+// Giữ một ván (engine.ts, cùng một đối tượng với bên ngoài) và tự gọi shoot() khi người chơi bắn;
+// diễn xong mới báo onShot để bên ngoài nạp khí, tính điểm, phát tiếng. Bên ngoài cho mảng bi trôi
+// (advance) khi bàn không có bi đang bay (busy).
 
 export type BoardView = {
   setGame: (g: Game) => void;
@@ -30,6 +31,8 @@ export type BoardView = {
   /** Xoay nòng (bàn phím): cộng thêm `delta` radian. */
   turn: (delta: number) => void;
   setPaused: (p: boolean) => void;
+  /** Đang có bi bay: bên ngoài tạm ngừng cho mảng bi trôi để bi dính đúng chỗ đã ngắm. */
+  busy: () => boolean;
   resize: () => void;
   dispose: () => void;
 };
@@ -62,7 +65,7 @@ export function createBoard(
 ): BoardView {
   const g2 = canvas.getContext('2d')!;
   let game: Game | null = null;
-  /** Thế cờ đang vẽ (trong lúc bi bay vẫn vẽ thế cũ). */
+  /** Thế cờ trước phát bắn, vẽ trong lúc bi bay (ván thật đã đổi ngay khi bắn). */
   let shown: Game | null = null;
   let angle = Math.PI / 2;
   let scale = 1;
@@ -70,14 +73,11 @@ export function createBoard(
   let paused = false;
   let flight: null | {
     res: ShotResult;
-    after: Game;
     t0: number;
     lengths: number[];
     total: number;
     bounces: number;
   } = null;
-  /** Cảnh mảng bi trượt xuống một hàng khi hàng mới chen vào (mốc bắt đầu, ms). */
-  let pushAt = 0;
   /** Lúc vừa bắn (ms): hàm rồng bật mở rồi khép lại. */
   let firedAt = 0;
   let particles: Particle[] = [];
@@ -280,21 +280,19 @@ export function createBoard(
 
   const land = () => {
     if (!flight) return;
-    const { res, after } = flight;
+    const { res } = flight;
     const before = shown!;
     flight = null;
+    shown = null;
     burst(res, before);
-    if (res.rowAdded && !reduce) pushAt = performance.now();
-    shown = after;
-    handlers.onShot(res, after);
+    handlers.onShot(res, game!);
   };
 
   const api: BoardView = {
     setGame: (g) => {
       game = g;
-      shown = cloneGame(g);
+      shown = null;
       flight = null;
-      pushAt = 0;
     },
     fire: (a) => {
       if (!game || flight || paused || game.status !== 'play') return false;
@@ -308,7 +306,6 @@ export function createBoard(
         .map((p, i) => Math.hypot(p.x - res.path[i]!.x, p.y - res.path[i]!.y));
       flight = {
         res,
-        after: cloneGame(game),
         t0: performance.now(),
         lengths,
         total: lengths.reduce((s, l) => s + l, 0),
@@ -322,7 +319,6 @@ export function createBoard(
     swap: () => {
       if (!game || flight || game.status !== 'play') return;
       swap(game);
-      if (shown) swap(shown);
       handlers.onSwap();
     },
     turn: (d) => {
@@ -331,6 +327,7 @@ export function createBoard(
     setPaused: (p) => {
       paused = p;
     },
+    busy: () => flight !== null,
     resize,
     dispose: () => {
       cancelAnimationFrame(raf);
@@ -510,15 +507,8 @@ export function createBoard(
         g2.stroke();
       }
 
-    const g = shown;
+    const g = flight ? shown : game;
     if (g) {
-      // Hàng mới vừa chen vào: cả mảng trượt từ trên xuống một hàng.
-      let shift = 0;
-      if (pushAt) {
-        const k = Math.min(1, (now - pushAt) / 350);
-        shift = -((1 - k) ** 3);
-        if (k >= 1) pushAt = 0;
-      }
       // Mép trên: dải khí sáng nơi hàng bi mới chen vào.
       const lip = g2.createLinearGradient(0, 0, 0, P(R * 0.8));
       lip.addColorStop(0, `${PALETTE.ki}55`);
@@ -536,11 +526,15 @@ export function createBoard(
       g2.stroke();
       g2.setLineDash([]);
 
-      // Bi trên sân.
+      // Bi trên sân, và hàng chờ đang lộ dần ở mép trên (hàng -1).
+      g.incoming.forEach((v, c) => {
+        const p = cellPos(g, -1, c);
+        drawBubble(v, p.x, p.y);
+      });
       g.grid.forEach((row, r) =>
         row.forEach((v, c) => {
           if (v < 0) return;
-          const p = cellPos(g, r, c, shift);
+          const p = cellPos(g, r, c);
           drawBubble(v, p.x, p.y);
         }),
       );

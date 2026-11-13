@@ -11,16 +11,18 @@ import { Btn, CARD, DISPLAY, FONT_URL, HEADING, SettingsDialog } from '../bong-b
 import { ARENAS, type ArenaId } from './arenas';
 import type { Difficulty } from './bot';
 import { MATCH_TIME, MAX_AMMO, SHOT_RANGE, STUN_TIME } from './engine';
+import { GuideScreen } from './guide';
 import { MatchScreen, type MatchConfig, type MatchOutcome } from './match';
 import { isValidCode, NET_ERROR_TEXT, normalizeCode, type NetError } from '../bong-bong-bum/net';
 import { OnlineRoom, type OnlineMode } from './online';
-import { ArenaPicker, DIFFICULTIES, ResultScreen, SquadGrid, SquadImg } from './screens';
+import { ArenaPicker, DIFFICULTIES, ResultScreen, SquadGrid, SquadImg, Title } from './screens';
+import { Splash } from './splash';
 import { SQUAD, squadById } from './squad';
 
 // Khung chính của Sơn Lãnh Địa: chọn chế độ → cài trận → trận 3D → kết quả.
 // Dùng chung tên người chơi, âm thanh và bộ nút với Bomb Arena; nhân vật và sân là của riêng game này.
 
-type Screen = 'home' | 'setup' | 'match' | 'result' | 'online';
+type Screen = 'home' | 'setup' | 'match' | 'result' | 'online' | 'guide';
 type Mode = 'solo' | 'local2';
 
 const DEFAULT_BOTS: Record<Mode, number> = { solo: 3, local2: 2 };
@@ -28,21 +30,12 @@ const DEFAULT_CHARS = ['mochi', 'bin'];
 
 const randomSeed = () => Math.floor(Math.random() * 2 ** 31);
 
-function Title() {
-  return (
-    <h1
-      className={`${DISPLAY} text-center text-5xl leading-none text-[color:var(--bb-sun)] [-webkit-text-stroke:4px_var(--bb-ink)] [paint-order:stroke_fill] [text-shadow:0_6px_0_var(--bb-ink)] sm:text-6xl`}
-    >
-      Sơn Lãnh Địa
-    </h1>
-  );
-}
-
 function HomeScreen({
   name,
   onName,
   onMode,
   onOnline,
+  onGuide,
   notice,
   pendingRoom,
 }: {
@@ -50,6 +43,7 @@ function HomeScreen({
   onName: (n: string) => void;
   onMode: (m: Mode) => void;
   onOnline: (m: OnlineMode) => void;
+  onGuide: () => void;
   notice: string | null;
   /** Mở link mời khi chưa có tên: nhập tên xong là vào thẳng phòng này. */
   pendingRoom: string | null;
@@ -101,6 +95,9 @@ function HomeScreen({
               chạy, không sơn được.
             </li>
           </ul>
+          <Btn tone="mint" className="mt-3 w-full py-2 text-lg" onClick={onGuide}>
+            Cẩm nang · Cách chơi & nhân vật
+          </Btn>
         </section>
       </div>
 
@@ -381,6 +378,9 @@ export function SonLanhDia() {
   const [online, setOnline] = useState<OnlineMode | null>(null);
   const [pendingRoom, setPendingRoom] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  // Màn loading che game tới khi ảnh đội sơn và font về. Phòng online (kể cả vào thẳng bằng link mời
+  // ?room=) chỉ được dựng sau khi màn loading tắt, để không kết nối hay bắt đầu trận sau lớp che.
+  const [loaded, setLoaded] = useState(false);
 
   // Mở link mời (?room=MÃ): đã có tên lưu trên máy thì vào thẳng phòng, chưa có thì nhập tên trước.
   useEffect(() => {
@@ -450,7 +450,9 @@ export function SonLanhDia() {
         ))}
       </div>
 
-      {screen !== 'match' && (
+      {!loaded && <Splash onDone={() => setLoaded(true)} />}
+
+      {screen !== 'match' && loaded && (
         <header className="relative z-10 border-b-[3px] border-[color:var(--bb-ink)] bg-[color:var(--bb-night)] text-white">
           <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2">
             <Link href="/games" className="text-sm font-extrabold text-white/80 hover:text-white">
@@ -461,7 +463,7 @@ export function SonLanhDia() {
         </header>
       )}
 
-      <main className="relative z-10 px-4 py-6">
+      <main className="relative z-10 px-4 py-6" hidden={!loaded}>
         {screen === 'home' && (
           <HomeScreen
             name={name}
@@ -471,11 +473,13 @@ export function SonLanhDia() {
               setScreen('setup');
             }}
             onOnline={openOnline}
+            onGuide={() => setScreen('guide')}
             notice={notice}
             pendingRoom={pendingRoom}
           />
         )}
-        {screen === 'online' && online && (
+        {screen === 'guide' && <GuideScreen onBack={() => setScreen('home')} />}
+        {screen === 'online' && online && loaded && (
           <OnlineRoom mode={online} name={name} charId={SQUAD[0]!.id} onExit={leaveOnline} />
         )}
         {screen === 'setup' && (

@@ -55,23 +55,42 @@ const FILES = [...ART_IDS, ...AGENTS.filter((a) => a.back).map((a) => `${a.id}-b
 const images = new Map<string, HTMLImageElement>();
 const listeners = new Set<() => void>();
 let loading: Promise<void> | null = null;
+/** Số ảnh đã xong (tải được hay lỗi đều tính) — màn loading đếm theo số này. */
+let settled = 0;
+const progressListeners = new Set<(progress: number) => void>();
 
-export function loadCharacterArt(): Promise<void> {
+/**
+ * Tải mọi ảnh nhân vật (chỉ một lần cho cả trang). `onProgress` nhận 0..1 theo số ảnh đã xong;
+ * gọi sau khi việc tải đã bắt đầu thì nhận ngay tiến độ hiện tại.
+ */
+export function loadCharacterArt(onProgress?: (progress: number) => void): Promise<void> {
+  if (onProgress) {
+    onProgress(settled / FILES.length);
+    if (settled < FILES.length) progressListeners.add(onProgress);
+  }
   loading ??= Promise.all(
     FILES.map(
       (id) =>
         new Promise<void>((resolve) => {
           const img = new Image();
-          img.onload = () => {
-            images.set(id, img);
+          const settle = () => {
+            settled++;
+            progressListeners.forEach((f) => f(settled / FILES.length));
             resolve();
           };
+          img.onload = () => {
+            images.set(id, img);
+            settle();
+          };
           // Thiếu ảnh thì thôi, nhân vật đó vẫn có hình vẽ bằng code.
-          img.onerror = () => resolve();
+          img.onerror = settle;
           img.src = `${ART_BASE}/${id}.png`;
         }),
     ),
-  ).then(() => listeners.forEach((f) => f()));
+  ).then(() => {
+    progressListeners.clear();
+    listeners.forEach((f) => f());
+  });
   return loading;
 }
 

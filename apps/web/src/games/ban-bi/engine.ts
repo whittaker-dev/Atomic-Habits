@@ -1,8 +1,8 @@
 // Luật Bắn Bi Bá Khí, thuần dữ liệu (không đụng giao diện): lưới bi xếp lục giác, mỗi hàng 10 và 9
 // bi so le; bắn một bi lên, chạm bi khác hay trần thì dính vào ô trống gần nhất; ba bi cùng màu trở
-// lên liền nhau thì nổ, bi không còn bám được lên trần thì rơi theo. Cứ vài phát một hàng bi mới chen
-// vào từ trên, dồn cả mảng xuống; bi chạm vạch dưới là thua, phá sạch bi là thắng. Đơn vị: bán kính
-// bi = 1.
+// lên liền nhau thì nổ, bi không còn bám được lên trần thì rơi theo. Cả mảng bi tự trôi xuống liên
+// tục, hàng mới trượt vào từ mép trên, càng chơi lâu trôi càng nhanh; bi chạm vạch dưới là thua (chơi
+// vô tận, tính điểm). Mỗi ván xáo thế bi mới. Đơn vị: bán kính bi = 1; thời gian tính bằng giây.
 
 export const COLS = 10;
 export const R = 1;
@@ -25,19 +25,22 @@ export type Cell = { r: number; c: number };
 export type Level = {
   id: string;
   name: string;
-  /** Hạt giống ngẫu nhiên: cùng màn thì ai cũng gặp cùng thế bi (để so thời gian cho công bằng). */
-  seed: number;
   rows: number;
   colors: number;
-  /** Cứ chừng này phát thì một hàng bi mới chen vào từ trên. */
-  dropEvery: number;
+  /** Đầu ván: mất chừng này giây để mảng bi trôi xuống một hàng. */
+  rowSeconds: number;
+  /** Nhanh nhất về sau. */
+  minRowSeconds: number;
 };
 
 export const LEVELS: Level[] = [
-  { id: 'de', name: 'Dễ', seed: 20261113, rows: 5, colors: 4, dropEvery: 12 },
-  { id: 'vua', name: 'Vừa', seed: 7341, rows: 6, colors: 5, dropEvery: 10 },
-  { id: 'kho', name: 'Khó', seed: 99001, rows: 7, colors: 6, dropEvery: 8 },
+  { id: 'de', name: 'Dễ', rows: 5, colors: 4, rowSeconds: 5, minRowSeconds: 1.4 },
+  { id: 'vua', name: 'Vừa', rows: 6, colors: 5, rowSeconds: 4, minRowSeconds: 1.2 },
+  { id: 'kho', name: 'Khó', rows: 7, colors: 6, rowSeconds: 3, minRowSeconds: 1 },
 ];
+
+/** Cứ chơi thêm chừng này giây thì tốc độ trôi gấp đôi (cho tới mức nhanh nhất của màn). */
+export const SPEEDUP_HALF_LIFE = 120;
 
 export type Game = {
   level: string;
@@ -45,11 +48,16 @@ export type Game = {
   grid: number[][];
   /** Hàng 0 lệch nửa bi hay không (đổi mỗi khi chen hàng mới vào trên). */
   parity: 0 | 1;
+  /** Mảng bi đã trôi xuống bao nhiêu phần của một hàng (0..1); đủ một hàng thì hàng chờ chen vào. */
+  offset: number;
+  /** Hàng sắp chen vào, đang lộ dần ở mép trên (hàng -1). */
+  incoming: number[];
+  /** Số giây đã trôi (tính tốc độ nhanh dần). */
+  time: number;
   current: number;
   next: number;
-  shots: number;
   rng: number;
-  status: 'play' | 'won' | 'lost';
+  status: 'play' | 'lost';
 };
 
 /** Kết quả một phát bắn, để giao diện diễn hoạt cảnh. */
@@ -59,8 +67,6 @@ export type ShotResult = {
   color: number;
   popped: (Cell & { color: number })[];
   dropped: (Cell & { color: number })[];
-  /** Một hàng bi mới vừa chen vào từ trên sau phát này (cả mảng dồn xuống một hàng). */
-  rowAdded: boolean;
 };
 
 function rand(g: { rng: number }) {
@@ -70,14 +76,15 @@ function rand(g: { rng: number }) {
   return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
 }
 
-export const isShort = (g: Pick<Game, 'parity'>, r: number) => (r + g.parity) % 2 === 1;
+// Hàng chờ ở chỉ số -1 nên phải lấy dư dương.
+export const isShort = (g: Pick<Game, 'parity'>, r: number) => (((r + g.parity) % 2) + 2) % 2 === 1;
 export const rowLen = (g: Pick<Game, 'parity'>, r: number) => (isShort(g, r) ? COLS - 1 : COLS);
 
-/** Tâm ô (r, c) trên sân; `shift` (số hàng) để giao diện diễn cảnh mảng bi trượt xuống. */
-export function cellPos(g: Pick<Game, 'parity'>, r: number, c: number, shift = 0) {
+/** Tâm ô (r, c) trên sân, tính cả phần mảng bi đã trôi xuống. */
+export function cellPos(g: Pick<Game, 'parity' | 'offset'>, r: number, c: number) {
   return {
     x: R + c * 2 * R + (isShort(g, r) ? R : 0),
-    y: R + (r + shift) * ROW_H,
+    y: R + (r + g.offset) * ROW_H,
   };
 }
 
@@ -116,16 +123,31 @@ function pickColor(g: Game, palette: number) {
 
 export const levelOf = (id: string) => LEVELS.find((l) => l.id === id) ?? LEVELS[0]!;
 
-export function createGame(levelId: string): Game {
+/**
+ * Hàng bi mới dài `len`: lấy đủ các màu của màn (chơi vô tận nên không thu hẹp theo màu còn trên sân),
+ * hay chép màu bi bên cạnh cho ra cụm.
+ */
+function makeRow(g: Game, len: number) {
+  const colors = levelOf(g.level).colors;
+  const row: number[] = [];
+  for (let c = 0; c < len; c++)
+    row.push(c > 0 && rand(g) < 0.5 ? row[c - 1]! : Math.floor(rand(g) * colors));
+  return row;
+}
+
+/** Ván mới; mỗi ván một hạt giống ngẫu nhiên nên thế bi khác nhau (test truyền hạt giống cố định). */
+export function createGame(levelId: string, seed = Math.floor(Math.random() * 2 ** 31)): Game {
   const lv = levelOf(levelId);
   const g: Game = {
     level: lv.id,
     grid: [],
     parity: 0,
+    offset: 0,
+    incoming: [],
+    time: 0,
     current: 0,
     next: 0,
-    shots: 0,
-    rng: lv.seed | 0,
+    rng: seed | 0,
     status: 'play',
   };
   ensureRows(g, lv.rows);
@@ -137,6 +159,7 @@ export function createGame(levelId: string): Game {
       const from = near.length && rand(g) < 0.55 ? near[Math.floor(rand(g) * near.length)]! : null;
       g.grid[r]![c] = from ? at(g, from.r, from.c) : Math.floor(rand(g) * lv.colors);
     }
+  g.incoming = makeRow(g, rowLen(g, -1));
   g.current = pickColor(g, lv.colors);
   g.next = pickColor(g, lv.colors);
   return g;
@@ -153,7 +176,8 @@ export function trace(g: Game, angle: number): { path: { x: number; y: number }[
   let dx = Math.cos(a);
   const dy = -Math.sin(a);
   const path = [{ x, y }];
-  const top = R;
+  // Trần là tâm hàng 0, trôi xuống cùng mảng bi.
+  const top = R + g.offset * ROW_H;
   const STEP = 0.1;
   for (let i = 0; i < 6000; i++) {
     x += dx * STEP;
@@ -261,18 +285,37 @@ export function lowestRow(g: Game) {
   return -1;
 }
 
+/** Bi thấp nhất đã chạm vạch dưới (tâm bi qua vạch nằm giữa hàng DEATH_ROW - 1 và DEATH_ROW). */
+const overLine = (g: Game) => {
+  const low = lowestRow(g);
+  return low >= 0 && low + g.offset >= DEATH_ROW - 0.5;
+};
+
+/** Số giây để mảng bi trôi xuống một hàng lúc này (nhanh dần theo thời gian chơi). */
+export function rowSeconds(g: Pick<Game, 'level' | 'time'>) {
+  const lv = levelOf(g.level);
+  return Math.max(lv.minRowSeconds, lv.rowSeconds * 0.5 ** (g.time / SPEEDUP_HALF_LIFE));
+}
+
 /**
- * Chen một hàng bi mới vào trên cùng, dồn cả mảng xuống một hàng. Hàng mới chỉ mang màu còn trên
- * sân (để vẫn phá sạch được) và hay chép màu bi bên cạnh cho ra cụm, giống thế bi ban đầu.
+ * Cho mảng bi trôi xuống theo `dt` giây. Đủ một hàng thì hàng chờ chen vào hàng 0 và một hàng chờ mới
+ * lộ ra ở mép trên. Bi chạm vạch là thua. Trả về số hàng vừa chen vào.
  */
-function addRow(g: Game) {
-  // Mọi hàng cũ lùi xuống một chỉ số: đảo parity để hàng nào vẫn giữ đúng độ lệch của nó.
-  g.parity = g.parity === 0 ? 1 : 0;
-  const pool = colorsLeft(g);
-  const row: number[] = [];
-  for (let c = 0; c < rowLen(g, 0); c++)
-    row.push(c > 0 && rand(g) < 0.5 ? row[c - 1]! : pool[Math.floor(rand(g) * pool.length)]!);
-  g.grid.unshift(row);
+export function advance(g: Game, dt: number): number {
+  if (g.status !== 'play' || dt <= 0) return 0;
+  g.time += dt;
+  g.offset += dt / rowSeconds(g);
+  let added = 0;
+  while (g.offset >= 1) {
+    g.offset -= 1;
+    // Mọi hàng cũ lùi xuống một chỉ số: đảo parity để hàng nào vẫn giữ đúng độ lệch của nó.
+    g.parity = g.parity === 0 ? 1 : 0;
+    g.grid.unshift(g.incoming);
+    g.incoming = makeRow(g, rowLen(g, -1));
+    added++;
+  }
+  if (overLine(g)) g.status = 'lost';
+  return added;
 }
 
 /** Bắn bi đang cầm theo góc `angle`. Đổi `g` tại chỗ và trả về diễn biến; null nếu ván đã xong. */
@@ -296,23 +339,13 @@ export function shoot(g: Game, angle: number): ShotResult | null {
   // Bỏ các hàng trống cuối lưới.
   while (g.grid.length && g.grid[g.grid.length - 1]!.every((v) => v < 0)) g.grid.pop();
 
-  g.shots++;
-  let rowAdded = false;
-  if (!colorsLeft(g).length) {
-    g.status = 'won';
-  } else {
-    if (g.shots % lv.dropEvery === 0) {
-      addRow(g);
-      rowAdded = true;
-    }
-    if (lowestRow(g) >= DEATH_ROW) g.status = 'lost';
-  }
+  if (overLine(g)) g.status = 'lost';
   g.current = g.next;
   // Bi đang cầm có thể mang màu vừa bị phá hết: đổi sang màu còn trên sân.
   const left = colorsLeft(g);
   if (left.length && !left.includes(g.current)) g.current = pickColor(g, lv.colors);
   g.next = pickColor(g, lv.colors);
-  return { path, cell, color, popped, dropped, rowAdded };
+  return { path, cell, color, popped, dropped };
 }
 
 /** Đổi bi đang cầm với bi kế tiếp. */

@@ -6,19 +6,23 @@ import { loadName, saveName } from '../bong-bong-bum/name';
 import { isValidCode, normalizeCode, type NetError } from '../bong-bong-bum/net';
 import type { House } from './board';
 import { createGame, type Seat } from './engine';
+import { GuideScreen } from './guide';
 import { BackIcon } from './icons';
 import { LocalMatch, loadLocal, saveLocal, type LocalSave } from './match';
 import { ERROR_TEXT } from './net';
 import { loadRoomSave, OnlineRoom, type OnlineMode } from './online';
 import { DEFAULT_RULES, type Rules } from './rules';
 import { HomeScreen, SetupScreen } from './screens';
+import { Splash } from './splash';
 import { FONT_URL, HOUSES, VARS } from './theme';
 
-// Khung của Cờ cá ngựa: màn vào game (tên, chọn cách chơi, nhập mã), chuẩn bị ván trên một máy,
-// ván trên một máy (match.tsx) và phòng online (online.tsx). F5 giữa ván thì vào lại đúng ván đó.
+// Khung của Cờ cá ngựa: màn loading (splash.tsx), màn vào game (tên, chọn cách chơi, nhập mã), cẩm
+// nang, chuẩn bị ván trên một máy, ván trên một máy (match.tsx) và phòng online (online.tsx). F5
+// giữa ván thì vào lại đúng ván đó.
 
-// Bề mặt trình duyệt (bôi chọn, con trỏ, thanh cuộn) và hoạt ảnh màn chuyền máy lật vào như lật
-// khiên (tắt khi người dùng giảm chuyển động). Tiêu đề của app tô màu sẵn nên trả lại màu kế thừa.
+// Bề mặt trình duyệt (bôi chọn, con trỏ, thanh cuộn), hoạt ảnh màn chuyền máy lật vào như lật
+// khiên, cờ trận bay và tàn lửa của màn loading (tắt khi người dùng giảm chuyển động). Tiêu đề của
+// app tô màu sẵn nên trả lại màu kế thừa.
 const CSS = `
 .cc-root ::selection{background:#ff6a1a;color:#0e1013}
 .cc-root :is(h1,h2,h3){color:inherit;letter-spacing:normal}
@@ -27,11 +31,16 @@ const CSS = `
 .cc-flip{animation:cc-flip .55s cubic-bezier(.16,1,.3,1) both}
 @keyframes cc-slam{0%{transform:scale(2.6) rotate(-10deg);opacity:0}16%{transform:scale(.9) rotate(-5deg);opacity:1}28%{transform:scale(1.06) rotate(-6deg)}72%{transform:scale(1) rotate(-6deg);opacity:1}100%{transform:scale(1.15) rotate(-6deg);opacity:0}}
 .cc-slam{display:inline-block;animation:cc-slam 1.05s cubic-bezier(.16,1,.3,1) both}
-@media (prefers-reduced-motion:reduce){.cc-flip,.cc-slam{animation:none}}
+@keyframes cc-wave{from{transform:skewY(-5deg) scaleX(.92)}to{transform:skewY(3deg) scaleX(1)}}
+.cc-wave{transform-origin:0 50%;animation:cc-wave .8s ease-in-out infinite alternate}
+@keyframes cc-ember{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(14px,-62vh);opacity:0}}
+.cc-ember{opacity:0;animation:cc-ember 3s linear infinite}
+@media (prefers-reduced-motion:reduce){.cc-flip,.cc-slam,.cc-wave,.cc-ember{animation:none}}
 `;
 
 type View =
   | { kind: 'home' }
+  | { kind: 'guide' }
   | { kind: 'setup'; passAndPlay: boolean }
   | { kind: 'local'; save: LocalSave }
   | { kind: 'online'; mode: OnlineMode };
@@ -50,6 +59,9 @@ export function CoCaNgua() {
   const [pendingRoom, setPendingRoom] = useState<string | null>(null);
   const [seats, setSeats] = useState<Seat[]>([]);
   const [rules, setRules] = useState<Rules>(DEFAULT_RULES);
+  // Màn loading lúc mới vào: nạp font, vẽ sẵn mặt bàn. Ván dở (F5) và phòng online chỉ dựng sau khi
+  // màn này tắt, để máy không tự đổ hay nối phòng sau lưng màn loading.
+  const [loaded, setLoaded] = useState(false);
 
   // Vừa F5: vào lại đúng ván / phòng đang dở. Mở bằng link mời (?room=MÃ): có tên rồi thì vào
   // thẳng phòng, chưa có thì nhập tên trước.
@@ -94,6 +106,11 @@ export function CoCaNgua() {
     setView({ kind: 'home' });
     setNotice(error ? ERROR_TEXT[error] : null);
   };
+  // Cẩm nang đi vòng qua go()/home(): quay lại vẫn giữ thông báo và lời mời vào phòng đang chờ.
+  const guide = (open: boolean) => {
+    setView({ kind: open ? 'guide' : 'home' });
+    window.scrollTo({ top: 0 });
+  };
 
   return (
     <div
@@ -119,6 +136,7 @@ export function CoCaNgua() {
             <button
               type="button"
               onClick={() => {
+                if (view.kind === 'guide') return guide(false);
                 if (view.kind === 'local') saveLocal(null);
                 home();
               }}
@@ -130,7 +148,8 @@ export function CoCaNgua() {
           )}
         </nav>
 
-        <main>
+        {!loaded && <Splash onDone={() => setLoaded(true)} />}
+        <main hidden={!loaded}>
           {view.kind === 'home' && (
             <HomeScreen
               name={name}
@@ -154,8 +173,10 @@ export function CoCaNgua() {
               }}
               onHost={() => go({ kind: 'online', mode: { kind: 'host' } })}
               onJoin={(code) => go({ kind: 'online', mode: { kind: 'join', code } })}
+              onGuide={() => guide(true)}
             />
           )}
+          {view.kind === 'guide' && <GuideScreen onBack={() => guide(false)} />}
           {view.kind === 'setup' && (
             <SetupScreen
               seats={seats}
@@ -175,8 +196,10 @@ export function CoCaNgua() {
               }}
             />
           )}
-          {view.kind === 'local' && <LocalMatch save={view.save} onLeave={() => home()} />}
-          {view.kind === 'online' && (
+          {view.kind === 'local' && loaded && (
+            <LocalMatch save={view.save} onLeave={() => home()} />
+          )}
+          {view.kind === 'online' && loaded && (
             <OnlineRoom
               key={view.mode.kind === 'join' ? `join-${view.mode.code}` : 'host'}
               mode={view.mode}
