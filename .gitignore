@@ -10,3 +10,6 @@ build
 .DS_Store
 coverage
 .vercel
+
+# Bản gốc nặng của model Tripo (bản nhẹ dùng trong game nằm ở public/games/ban-bi)
+apps/web/art-source/ban-bi/*-original.glb

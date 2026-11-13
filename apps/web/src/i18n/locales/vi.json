@@ -833,6 +833,12 @@
       "description": "Bàn cờ sơn mài đi từ Hà Giang tới Phú Quốc. Mua đất, xây nhà, thu tiền thuê, đấu giá và đổi đất với người khác. Chọn chơi theo số vòng, theo giờ hay tới khi chỉ còn một người. Chơi chung máy, với máy, hoặc mời bạn vào phòng online.",
       "tags": ["2–6 người", "Chơi chung máy hoặc online", "Có máy chơi cùng"]
     },
+    "banBi": {
+      "title": "Bắn Bi Bá Khí",
+      "genre": "Bắn bi đua giờ, võ sĩ nạp khí 3D",
+      "description": "Bắn cho ba bi cùng màu chạm nhau là nổ, bi lơ lửng rơi theo. Phá càng lẹ, võ sĩ bên cạnh càng nạp khí qua sáu cấp biến hình với hào quang, khói và sét. Phá sạch bàn nhanh nhất để lên bảng xếp hạng.",
+      "tags": ["1 người, thi giờ", "3 màn cố định", "Bảng xếp hạng trên máy"]
+    },
     "meetCast": "Gặp dàn nhân vật",
     "castCount": "{{count}} nhân vật — mỗi người một cá tính.",
     "backToApp": "Về Atomic Habits"

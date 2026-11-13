@@ -62,4 +62,12 @@ export const GAMES: GameEntry[] = [
     // Dựng từ art-source/co-ty-phu/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
     banner: '/games/co-ty-phu/banner.jpg',
   },
+  {
+    id: 'banBi',
+    href: '/games/ban-bi',
+    status: 'playable',
+    cover: ['#3b1d6e', '#0a0814'],
+    // Dựng từ art-source/ban-bi/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
+    banner: '/games/ban-bi/banner.jpg',
+  },
 ];

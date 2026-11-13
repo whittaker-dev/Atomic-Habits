@@ -1,7 +1,11 @@
 {
   "detector": {
     "ignoreRules": [],
-    "ignoreFiles": ["art-source/co-ca-ngua/banner.html", "art-source/co-ty-phu/banner.html"],
+    "ignoreFiles": [
+      "art-source/co-ca-ngua/banner.html",
+      "art-source/co-ty-phu/banner.html",
+      "art-source/ban-bi/banner.html"
+    ],
     "ignoreValues": [
       {
         "rule": "design-system-font",
@@ -50,6 +54,18 @@
         "value": "montserrat",
         "createdAt": "2026-11-12T07:26:25.571Z",
         "reason": "Cờ tỷ phú's own body face; not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "chakra petch",
+        "createdAt": "2026-11-13T03:22:25.000Z",
+        "reason": "Bắn Bi Nộ Khí's own display face (arena scoreboard look); not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "saira",
+        "createdAt": "2026-11-13T03:22:25.000Z",
+        "reason": "Bắn Bi Nộ Khí's own body face; not used in app UI"
       }
     ]
   }

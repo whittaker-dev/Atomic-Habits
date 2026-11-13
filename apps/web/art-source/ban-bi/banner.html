@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  Banner thẻ game Bắn Bi Bá Khí ở trang /games (public/games/ban-bi/banner.jpg).
+  Dựng bằng chính màu, chữ và chi tiết của game (nền chạng vạng tím than, bi ngọc pha lê sáu màu như
+  board.ts vẽ, sáu đốt màu của sáu dạng nạp khí trong forms.ts) và ảnh võ sĩ chụp từ chính cảnh trong
+  game (banner-hero.png: trang thử /dev-fighter?lv=2 chụp bằng Chrome chạy ngầm, cắt bỏ dải trống).
+  Xuất lại sau khi sửa (cửa sổ cao hơn 720 vì Chrome chạy ngầm ăn bớt chiều cao, rồi cắt lấy 720):
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+      --window-size=1280,820 --virtual-time-budget=4000 --screenshot=banner.png banner.html
+    rồi cắt 1280×720 từ góc trên trái và lưu JPEG chất lượng 88 vào ../../public/games/ban-bi/banner.jpg
+-->
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Saira:wght@600&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; }
+      body {
+        position: relative;
+        background:
+          radial-gradient(60% 70% at 75% 110%, rgba(255, 59, 92, 0.35), transparent 70%),
+          radial-gradient(80% 60% at 85% -10%, #3b1d6e, transparent 65%),
+          linear-gradient(#0a0814, #120a24);
+        font-family: 'Saira', sans-serif;
+        color: #efeaff;
+      }
+      .ridge { position: absolute; left: 0; right: 0; bottom: 0; height: 260px;
+        background: #120b22;
+        clip-path: polygon(0 60%, 12% 40%, 22% 55%, 36% 30%, 48% 52%, 60% 35%, 72% 50%, 86% 28%, 100% 45%, 100% 100%, 0 100%); }
+      /* Võ sĩ chụp từ cảnh trong game, mép trái và đáy tan vào nền. */
+      .hero { position: absolute; right: -40px; top: 0; height: 720px;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%), linear-gradient(0deg, transparent 0, #000 12%);
+        -webkit-mask-composite: source-in; mask-composite: intersect; }
+      .spark { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px #38e8ff; }
+      /* Bi ngọc pha lê: lõi khí sáng, mép sẫm, vệt phản chiếu và tia lấp lánh. */
+      .bubble { position: absolute; width: 74px; height: 74px; border-radius: 50%;
+        box-shadow: 0 0 22px var(--c), inset 0 0 0 2px rgba(10, 8, 20, 0.6), inset 0 -10px 16px rgba(255, 255, 255, 0.28);
+        background:
+          radial-gradient(circle at 50% 58%, rgba(255, 255, 255, 0.95) 0 7%, transparent 30%),
+          radial-gradient(circle at 50% 50%, var(--c) 45%, #0a0814 100%); }
+      .bubble::after { content: ''; position: absolute; left: 18%; top: 14%; width: 34%; height: 20%;
+        border-radius: 50%; background: rgba(255, 255, 255, 0.85); transform: rotate(-32deg); filter: blur(1px); }
+      .title { position: absolute; left: 80px; top: 170px; }
+      h1 { font: 700 136px/0.86 'Chakra Petch', sans-serif; text-transform: uppercase; letter-spacing: -0.01em; }
+      h1 span { color: #38e8ff; text-shadow: 0 0 40px rgba(56, 232, 255, 0.6); }
+      .bars { display: flex; gap: 10px; margin-top: 34px; }
+      .bars i { width: 64px; height: 14px; border-radius: 3px; background: var(--c); box-shadow: 0 0 14px var(--c); }
+      .sub { margin-top: 22px; font-size: 30px; color: #9b93c4; letter-spacing: 0.02em; }
+    </style>
+  </head>
+  <body>
+    <div class="ridge"></div>
+    <img class="hero" src="banner-hero.png" alt="" />
+    <div id="bubbles"></div>
+    <div class="title">
+      <h1>Bắn bi<br /><span>Bá khí</span></h1>
+      <div class="bars">
+        <i style="--c: #cfe9ff"></i><i style="--c: #38e8ff"></i><i style="--c: #a46bff"></i>
+        <i style="--c: #ff3b5c"></i><i style="--c: #9fd8ff"></i><i style="--c: #ff7ad9"></i>
+      </div>
+      <p class="sub">Bắn lẹ · nạp khí · sáu cấp biến hình</p>
+    </div>
+    <script>
+      // Dàn bi so le ở mép trên, vài bi đang nổ bay ra hai bên võ sĩ.
+      const C = ['#ff4d5e', '#3d8bff', '#3ddc84', '#ffd23f', '#b06bff', '#2fe0d0'];
+      const root = document.getElementById('bubbles');
+      let seed = 3;
+      const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      for (let r = 0; r < 2; r++)
+        for (let c = 0; c < 9 - r; c++) {
+          const b = document.createElement('i');
+          b.className = 'bubble';
+          b.style.setProperty('--c', C[Math.floor(rnd() * 6)]);
+          b.style.left = 700 + c * 66 + (r % 2) * 33 + 'px';
+          b.style.top = -34 + r * 57 + 'px';
+          root.appendChild(b);
+        }
+      for (let i = 0; i < 6; i++) {
+        const b = document.createElement('i');
+        b.className = 'bubble';
+        b.style.setProperty('--c', C[i]);
+        b.style.width = b.style.height = 40 + rnd() * 24 + 'px';
+        b.style.left = (i % 2 ? 1140 : 700) + rnd() * 90 + 'px';
+        b.style.top = 200 + rnd() * 320 + 'px';
+        b.style.opacity = 0.75;
+        root.appendChild(b);
+      }
+      for (let i = 0; i < 40; i++) {
+        const s = document.createElement('i');
+        s.className = 'spark';
+        s.style.left = 840 + rnd() * 360 + 'px';
+        s.style.top = 160 + rnd() * 520 + 'px';
+        s.style.opacity = 0.3 + rnd() * 0.7;
+        root.appendChild(s);
+      }
+    </script>
+  </body>
+</html>
