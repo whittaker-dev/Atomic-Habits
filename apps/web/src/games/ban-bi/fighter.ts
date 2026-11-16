@@ -121,13 +121,165 @@ const HERO_WIND = /* glsl */ `
 `;
 type Wind = Record<'uTime' | 'uKi' | 'uMinY' | 'uSpanY', { value: number }>;
 /** Vật liệu tô mềm cho model: viền sáng màu khí và gió khí. */
+const hsv = (r: number, g: number, b: number): [number, number, number] => {
+  r /= 255;
+  g /= 255;
+  b /= 255;
+  const mx = Math.max(r, g, b);
+  const d = mx - Math.min(r, g, b);
+  let h = 0;
+  if (d) {
+    if (mx === r) h = ((g - b) / d) % 6;
+    else if (mx === g) h = (b - r) / d + 2;
+    else h = (r - g) / d + 4;
+    h *= 60;
+    if (h < 0) h += 360;
+  }
+  return [h, mx ? d / mx : 0, mx];
+};
+
+/**
+ * Mặt nạ tóc theo từng đỉnh của model (0..1), để nhuộm tóc mà không dính da. Màu tóc vàng cam và màu
+ * da trong ảnh của model trùng nhau một phần (đo: da 25–35°, tóc trên đỉnh 42–55°, tóc gáy vàng cam
+ * 30–39° nhưng rất đậm màu; bóng tối vẽ sẵn trên da cũng đậm), nên trước hết xếp theo mảnh ảnh màu
+ * (xem trong thân hàm); với mảnh lẫn cả hai thì xét từng điểm theo vùng trên đầu:
+ * - mặt (phía trước, dưới chân mày): vàng rõ (≥ 40°) hay vàng cam vừa đậm màu vừa sáng mới là tóc
+ *   (tóc mái, lọn hai bên má); da ít khi vàng tới vậy, còn chỗ da đậm màu là bóng tối vẽ sẵn nên tối;
+ * - hai bên thấp (tóc mai quanh tai, vành tai, cổ): như trên nhưng nới hơn một chút cho tóc mai;
+ * - còn lại (đỉnh, hai bên cao, sau gáy): vàng, vàng cam đậm, hay bóng nâu sẫm đều là tóc.
+ * Rồi làm mượt theo đỉnh kề vài lượt: chấm bóng lẻ trên da về da, chấm cam lẻ trong tóc về tóc.
+ */
+function hairWeights(
+  geo: THREE.BufferGeometry,
+  image: CanvasImageSource,
+  minY: number,
+  spanY: number,
+  headX: number,
+  headZ: number,
+) {
+  const N = 512;
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = N;
+  const ctx = cv.getContext('2d', { willReadFrequently: true })!;
+  ctx.drawImage(image, 0, 0, N, N);
+  const px = ctx.getImageData(0, 0, N, N).data;
+  const pos = geo.attributes.position!;
+  const uv = geo.attributes.uv!;
+  const n = pos.count;
+  const zone = new Float32Array(n);
+  let w = new Float32Array(n);
+  /** Phân loại màu từng đỉnh: 1 vàng rõ, 2 vàng cam đậm, 3 màu da, 0 khác (trắng, tối, xanh…). */
+  const kind = new Uint8Array(n);
+  /** Luật xét từng điểm (dùng cho mảnh lưng chừng), theo vị trí trên đầu. */
+  const vertexRule = new Uint8Array(n);
+  const idx = geo.index!.array;
+  for (let i = 0; i < n; i++) {
+    const f = (pos.getY(i) - minY) / spanY;
+    // Từ ngang cằm trở lên mới là vùng đầu (dưới là cổ áo, quần vàng).
+    zone[i] = Math.min(1, Math.max(0, (f - 0.79) / 0.02));
+    if (!zone[i]) continue;
+    const dx = pos.getX(i) - headX;
+    const dz = pos.getZ(i) - headZ;
+    const front = dx / (Math.hypot(dx, dz) || 1); // model nhìn theo +x
+    const x = Math.min(N - 1, Math.floor(uv.getX(i) * N));
+    const y = Math.min(N - 1, Math.floor(uv.getY(i) * N));
+    const k = (y * N + x) * 4;
+    const [h, sat, v] = hsv(px[k]!, px[k + 1]!, px[k + 2]!);
+    kind[i] =
+      h >= 38 && h <= 64 && sat > 0.12
+        ? 1
+        : sat >= 0.58 && h >= 15 && h < 64
+          ? 2
+          : h >= 10 && h < 38
+            ? 3
+            : 0;
+    const face = front > 0.45 && f < 0.875;
+    const side = !face && front > -0.5 && f < 0.85;
+    const hair = face
+      ? (h >= 40 && h <= 64 && sat > 0.15) || (sat >= 0.6 && v >= 0.78 && h >= 20 && h < 64)
+      : side
+        ? (h >= 38 && h <= 64 && sat > 0.12) || (sat >= 0.52 && v >= 0.65 && h >= 20 && h < 64)
+        : (h >= 36 && h <= 64 && sat > 0.12) ||
+          (sat >= 0.58 && h >= 15 && h < 64) ||
+          (v < 0.35 && h > 10 && h < 60);
+    vertexRule[i] = hair ? 1 : 0;
+  }
+  // Ảnh màu của model chia thành nhiều mảnh rời (các mảnh nối với nhau bằng tam giác là một mảnh), và
+  // tóc với da phần lớn nằm ở mảnh riêng (đo: mảnh tóc chỉ lẫn tối đa ~21% màu da ở chân tóc, mảnh
+  // mặt 57–75% màu da). Nên xếp theo cả mảnh: mảnh tóc nhuộm hết kể cả chỗ cam đậm; mảnh mặt chỉ
+  // nhuộm chỗ vàng rõ (lông mày theo màu tóc), bỏ qua bóng tối vẽ sẵn trên da; mảnh lưng chừng mới
+  // xét từng điểm.
+  const root = new Int32Array(n).map((_, i) => i);
+  const find = (q: number) => {
+    while (root[q] !== q) {
+      root[q] = root[root[q]!]!;
+      q = root[q]!;
+    }
+    return q;
+  };
+  for (let t = 0; t < idx.length; t += 3) {
+    const a = find(idx[t]!);
+    const b = find(idx[t + 1]!);
+    const c = find(idx[t + 2]!);
+    root[a] = c;
+    root[b] = c;
+  }
+  const head = new Map<number, { all: number; skin: number }>();
+  for (let i = 0; i < n; i++) {
+    if (!zone[i]) continue;
+    const r = find(i);
+    const e = head.get(r) ?? { all: 0, skin: 0 };
+    e.all++;
+    if (kind[i] === 3) e.skin++;
+    head.set(r, e);
+  }
+  for (let i = 0; i < n; i++) {
+    if (!zone[i]) continue;
+    const e = head.get(find(i))!;
+    const skin = e.skin / e.all;
+    w[i] = skin < 0.3 ? 1 : skin >= 0.45 ? (kind[i] === 1 ? 1 : 0) : vertexRule[i]!;
+  }
+  // Làm mượt theo đỉnh kề (theo các tam giác), chỉ trong vùng đầu.
+  const deg = new Uint32Array(n + 1);
+  for (let t = 0; t < idx.length; t++) deg[idx[t]! + 1]! += 2;
+  for (let i = 0; i < n; i++) deg[i + 1]! += deg[i]!;
+  const adj = new Uint32Array(deg[n]!);
+  const fill = deg.slice(0, n);
+  for (let t = 0; t < idx.length; t += 3) {
+    const a = idx[t]!;
+    const b = idx[t + 1]!;
+    const c = idx[t + 2]!;
+    adj[fill[a]!++] = b;
+    adj[fill[a]!++] = c;
+    adj[fill[b]!++] = a;
+    adj[fill[b]!++] = c;
+    adj[fill[c]!++] = a;
+    adj[fill[c]!++] = b;
+  }
+  for (let pass = 0; pass < 4; pass++) {
+    const next = new Float32Array(n);
+    for (let i = 0; i < n; i++) {
+      if (!zone[i]) continue;
+      let sum = w[i]!;
+      for (let e = deg[i]!; e < deg[i + 1]!; e++) sum += w[adj[e]!]!;
+      next[i] = sum / (deg[i + 1]! - deg[i]! + 1);
+    }
+    w = next;
+  }
+  for (let i = 0; i < n; i++) {
+    const t = Math.min(1, Math.max(0, (w[i]! - 0.35) / 0.3));
+    w[i] = t * t * (3 - 2 * t) * zone[i]!;
+  }
+  return w;
+}
+
 /** Nhuộm tóc: màu tóc hiện tại; tâm đầu (x, z trong toạ độ model) để đặt gốc tóc dài. */
 type Dye = { uHair: { value: THREE.Color }; uHeadC: { value: THREE.Vector2 } };
 
 /**
  * Vật liệu tô mềm cho model: viền sáng màu khí, gió khí, và tóc đổi màu theo dạng. Tóc vàng nằm sẵn
- * trong ảnh màu: nhuộm những điểm vừa ở vùng đầu (từ ngang cằm lên) vừa mang màu tóc vàng trong ảnh
- * (xem điều kiện trong shader). Da hồng đào, mắt, miệng, răng giữ nguyên; quần vàng nằm dưới vùng đầu.
+ * trong ảnh màu; chỗ nào là tóc do thuộc tính đỉnh `aHair` (0..1) quyết định, tính một lần lúc tải
+ * (xem hairWeights), shader chỉ nhuộm theo đó.
  */
 function heroMaterial(params: THREE.MeshToonMaterialParameters, wind: Wind, dye: Dye) {
   const m = new THREE.MeshToonMaterial(params);
@@ -138,13 +290,14 @@ function heroMaterial(params: THREE.MeshToonMaterialParameters, wind: Wind, dye:
       .replace(
         'void main() {',
         `${HERO_WIND}
+        attribute float aHair;
         varying float vHair;
         void main() {`,
       )
       .replace(
         '#include <begin_vertex>',
         `#include <begin_vertex>
-        vHair = smoothstep(0.79, 0.82, (position.y - uMinY) / uSpanY);
+        vHair = aHair;
         transformed += heroWind(position, objectNormal);`,
       );
     s.fragmentShader = s.fragmentShader
@@ -156,12 +309,7 @@ function heroMaterial(params: THREE.MeshToonMaterialParameters, wind: Wind, dye:
         '#include <map_fragment>',
         `#include <map_fragment>
         float hairLum = dot(diffuseColor.rgb, vec3(0.2126, 0.7152, 0.0722));
-        // Vàng đậm, nâu: rất ít xanh lam. Vàng nhạt, ánh sáng trên tóc: nhiều xanh lục mà vẫn ít
-        // xanh lam (da hồng ít xanh lục; răng, lòng trắng mắt nhiều xanh lam).
-        float br = diffuseColor.b / max(diffuseColor.r, 0.001);
-        float gr = diffuseColor.g / max(diffuseColor.r, 0.001);
-        float hairMask = vHair
-          * max(smoothstep(0.2, 0.12, br), smoothstep(0.58, 0.66, gr) * smoothstep(0.62, 0.5, br));
+        float hairMask = vHair;
         vec3 dyed = uHair * (0.3 + 1.25 * hairLum) + pow(hairLum, 3.0) * 0.35;
         diffuseColor.rgb = mix(diffuseColor.rgb, dyed, hairMask);`,
       )
@@ -1771,6 +1919,21 @@ export function createFighterView(canvas: HTMLCanvasElement): FighterView {
             n++;
           }
         if (n) dye.uHeadC.value.set(sx / n, sz / n);
+        if (map?.image)
+          o.geometry.setAttribute(
+            'aHair',
+            new THREE.BufferAttribute(
+              hairWeights(
+                o.geometry,
+                map.image as CanvasImageSource,
+                gb.min.y,
+                gb.max.y - gb.min.y,
+                dye.uHeadC.value.x,
+                dye.uHeadC.value.y,
+              ),
+              1,
+            ),
+          );
         headMesh = o;
         headY = gb.min.y + (gb.max.y - gb.min.y) * 0.87;
       }
