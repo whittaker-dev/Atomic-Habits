@@ -70,4 +70,20 @@ export const GAMES: GameEntry[] = [
     // Dựng từ art-source/ban-bi/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
     banner: '/games/ban-bi/banner.jpg',
   },
+  {
+    id: 'englishTraveler',
+    href: '/games/english-traveler',
+    status: 'playable',
+    cover: ['#e9f1ee', '#1d3f9e'],
+    // Dựng từ art-source/english-traveler/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
+    banner: '/games/english-traveler/banner.jpg',
+  },
+  {
+    id: 'duLichTrungHoa',
+    href: '/games/du-lich-trung-hoa',
+    status: 'playable',
+    cover: ['#f3ecdf', '#c23a22'],
+    // Dựng từ art-source/du-lich-trung-hoa/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
+    banner: '/games/du-lich-trung-hoa/banner.jpg',
+  },
 ];

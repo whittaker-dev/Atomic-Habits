@@ -841,6 +841,18 @@
     },
     "meetCast": "Meet the cast",
     "castCount": "{{count}} characters, each with their own style.",
-    "backToApp": "Back to Atomic Habits"
+    "backToApp": "Back to Atomic Habits",
+    "englishTraveler": {
+      "title": "English Traveler",
+      "genre": "Learn English: listen and write your way around the world",
+      "description": "Hear English words and sentences from airports, hotels and restaurants, then type them back. Every six answers is a flight leg and a new passport stamp; streaks score higher, and the trip ends when your hearts run out.",
+      "tags": ["1 player, high score", "12 topics, 500+ words and sentences", "Recorded voice"]
+    },
+    "duLichTrungHoa": {
+      "title": "China by Train",
+      "genre": "Learn Chinese: listen, type pinyin, ride through 8 cities",
+      "description": "Hear Mandarin words and sentences for asking the way, ordering food and shopping, then type them in pinyin, with or without tone marks. Every six answers reaches a new station and a red seal; correct tones earn bonus points.",
+      "tags": ["1 player, high score", "HSK 1–3", "Type pinyin, no Chinese keyboard needed"]
+    }
   }
 }
