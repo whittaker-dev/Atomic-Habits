@@ -67,8 +67,11 @@ export function Guide({ onBack }: { onBack: () => void }) {
             +10.
           </Rule>
           <Rule title="Tim và ga">
-            Có {HEARTS} tim; viết sai hoặc bấm “Chịu, xem đáp án” mất một tim. Mỗi {LEG} câu tới một
-            ga, được đóng dấu son và hồi một tim. Hết tim là xuống tàu, xem điểm và ôn lại câu sai.
+            Có {HEARTS} tim. Viết sai mất một tim nhưng không lộ đáp án: nghe lại rồi sửa. Bấm
+            “Chịu, xem đáp án” để xem đáp án và qua câu (mất một tim nếu câu đó chưa sai lần nào).
+            Mỗi {LEG}
+            câu tới một ga, được đóng dấu son và hồi một tim. Hết tim là xuống tàu, xem điểm và ôn
+            lại câu sai.
           </Rule>
           <Rule title="Không trùng lặp">
             Từ và câu rút từ bộ đã xáo: chưa dùng hết bộ thì không ra lại. Càng đi xa càng nhiều câu

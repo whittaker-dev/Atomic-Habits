@@ -26,8 +26,9 @@ import { preloadVoice, speak, stopSpeaking } from './speech';
 // Du lịch Trung Hoa), còn nhãn chặng và màn tới nơi do game tự vẽ.
 //
 // Một chuyến: các chặng sáu câu; máy đọc, người chơi gõ lại, Enter để chấm rồi Enter để đi tiếp (ô gõ
-// giữ tiêu điểm suốt ván để bàn phím điện thoại không bật lên tắt xuống). Sai mất một tim, tới nơi được
-// hồi một tim; hết tim là hết chuyến. Điểm chỉ sống trong ván này, tải lại trang là chơi lại từ 0.
+// giữ tiêu điểm suốt ván để bàn phím điện thoại không bật lên tắt xuống). Viết sai mất một tim nhưng
+// không lộ đáp án: nghe lại rồi sửa, hoặc bấm "Chịu" để xem đáp án. Tới nơi được hồi một tim; hết tim là
+// hết chuyến. Điểm chỉ sống trong ván này, tải lại trang là chơi lại từ 0.
 
 export type Turn = { card: Card; input: string; result: Check; gained: number };
 export type Summary = { score: number; legs: number; turns: Turn[] };
@@ -76,6 +77,8 @@ export function Run({
   const [phase, setPhase] = useState<Phase>('ask');
   const [result, setResult] = useState<Check | null>(null);
   const [hinted, setHinted] = useState(false);
+  /** Số lần đã viết sai ở câu đang hỏi. */
+  const [misses, setMisses] = useState(0);
   const [score, setScore] = useState(0);
   const [gained, setGained] = useState(0);
   const [streak, setStreak] = useState(0);
@@ -92,6 +95,7 @@ export function Run({
     setInput('');
     setResult(null);
     setHinted(false);
+    setMisses(0);
     setPhase('ask');
     requestAnimationFrame(() => field.current?.focus());
   };
@@ -116,16 +120,27 @@ export function Run({
     if (phase !== 'ask' || !input.trim()) return;
     unlockAudio();
     const c = check(input, card, lang);
-    const nextStreak = c.verdict === 'wrong' ? 0 : streak + 1;
-    const pts = points(card.kind, c, hinted, c.verdict === 'wrong' ? 0 : streak);
     setResult(c);
-    setStreak(nextStreak);
+    if (c.verdict === 'wrong') {
+      // Sai: chỉ báo sai, không lộ đáp án; giữ chữ đã gõ để sửa. Riêng lần sai làm hết tim thì hiện đáp
+      // án luôn, vì chuyến đã hết.
+      setStreak(0);
+      setMisses((m) => m + 1);
+      setHearts(hearts - 1);
+      sfx.wrong();
+      shake();
+      if (hearts - 1 > 0) return;
+      setGained(0);
+      speak(card.text, lang);
+      turns.current.push({ card, input, result: c, gained: 0 });
+      setPhase('done');
+      return;
+    }
+    const pts = points(card.kind, c, hinted, streak);
+    setStreak(streak + 1);
     setScore((s) => s + pts);
     setGained(pts);
-    if (c.verdict === 'wrong') {
-      setHearts((h) => h - 1);
-      sfx.wrong();
-    } else sfx.right();
+    sfx.right();
     // Đọc lại đáp án để nghe đối chiếu với điều mình vừa viết.
     speak(card.text, lang);
     turns.current.push({ card, input, result: c, gained: pts });
@@ -139,11 +154,21 @@ export function Run({
     setResult(c);
     setStreak(0);
     setGained(0);
-    setHearts((h) => h - 1);
+    // Câu đã viết sai thì đã mất tim rồi; chịu thua sau đó không trừ thêm.
+    if (misses === 0) setHearts((h) => h - 1);
     sfx.wrong();
     speak(card.text, lang);
-    turns.current.push({ card, input: '', result: c, gained: 0 });
+    turns.current.push({ card, input: misses > 0 ? input : '', result: c, gained: 0 });
     setPhase('done');
+  };
+
+  // Rung ô gõ mỗi lần viết sai. Gỡ rồi gắn lại lớp để lần sai thứ hai liền nhau vẫn rung.
+  const shake = () => {
+    const el = field.current;
+    if (!el) return;
+    el.classList.remove('dl-shake');
+    void el.offsetWidth;
+    el.classList.add('dl-shake');
   };
 
   const next = () => {
@@ -176,6 +201,7 @@ export function Run({
 
   const done = phase === 'done';
   const verdict = result?.verdict;
+  const missedNow = !done && verdict === 'wrong';
 
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-5">
@@ -308,7 +334,10 @@ export function Run({
           ref={field}
           id="dl-answer"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => {
+            setInput(e.target.value);
+            if (missedNow) setResult(null);
+          }}
           readOnly={done}
           autoComplete="off"
           autoCorrect="off"
@@ -323,10 +352,21 @@ export function Run({
               : verdict === 'close'
                 ? 'shadow-[inset_0_0_0_2px_var(--dl-accent)]'
                 : verdict === 'wrong'
-                  ? 'dl-shake shadow-[inset_0_0_0_2px_var(--dl-bad)]'
+                  ? 'shadow-[inset_0_0_0_2px_var(--dl-bad)]'
                   : 'shadow-[inset_0_0_0_1.5px_var(--dl-line)] focus:shadow-[inset_0_0_0_2px_var(--dl-accent)]'
           }`}
         />
+
+        {!done && misses > 0 && (
+          <p
+            key={misses}
+            role="status"
+            className="dl-rise flex items-center gap-2 rounded-[var(--dl-r)] bg-[color:var(--dl-badSoft)] px-4 py-3 font-bold text-[color:var(--dl-badInk)]"
+          >
+            <IconClose className="h-5 w-5 shrink-0" />
+            {misses === 1 ? 'Chưa đúng' : `Chưa đúng (sai ${misses} lần)`}, nghe lại rồi sửa nhé.
+          </p>
+        )}
 
         {done && result && (
           <div

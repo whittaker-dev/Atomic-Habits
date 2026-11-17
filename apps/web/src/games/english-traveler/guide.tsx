@@ -60,8 +60,10 @@ export function Guide({ onBack }: { onBack: () => void }) {
             thì vòng lại. Chặng đầu có {firstSentences} câu dài, càng bay xa càng nhiều câu dài.
           </Rule>
           <Rule title="Tim">
-            Có {HEARTS} tim. Viết sai hoặc bấm “Chịu, xem đáp án” mất một tim; mỗi lần tới nơi được
-            hồi một tim. Hết tim là hạ cánh, xem điểm và ôn lại những câu đã sai.
+            Có {HEARTS} tim. Viết sai mất một tim nhưng không lộ đáp án: nghe lại rồi sửa. Bấm
+            “Chịu, xem đáp án” để xem đáp án và qua câu (mất một tim nếu câu đó chưa sai lần nào).
+            Mỗi lần tới nơi được hồi một tim. Hết tim là hạ cánh, xem điểm và ôn lại những câu đã
+            sai.
           </Rule>
           <Rule title="Điểm">
             Một từ {word} điểm, một câu {sentence} điểm. Gõ nhầm một chữ (như “pasport”) là gần
