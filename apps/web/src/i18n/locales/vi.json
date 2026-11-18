@@ -52,13 +52,35 @@
     "home": "Trang chủ",
     "contact": "Liên hệ",
     "designSystem": "Hệ thống thiết kế",
-    "planTrip": "Kế hoạch chuyến đi"
+    "planTrip": "Kế hoạch chuyến đi",
+    "games": "Games",
+    "trendRadar": "Trend Radar"
   },
   "home": {
     "hero": {
       "eyebrow": "Hệ điều hành phát triển cá nhân",
       "title": "Gặp gỡ chuỗi streak hàng ngày.",
       "subtitle": "Theo dõi nhiệm vụ, tích lũy XP và duy trì thói quen — tiếng Anh, thể dục, lập trình và hơn thế nữa."
+    },
+    "explore": {
+      "eyebrow": "Khám phá",
+      "title": "Đi tiếp đâu đây?",
+      "subtitle": "Chơi một ván game, xem tin đang nóng hay lên kế hoạch cho chuyến đi tới.",
+      "games": {
+        "title": "Games",
+        "description": "{{count}} game chơi ngay trên trình duyệt, không cần cài: học tiếng Anh, tiếng Trung, cờ tỷ phú, bắn bi…",
+        "cta": "Vào chơi"
+      },
+      "trendRadar": {
+        "title": "Trend Radar",
+        "description": "Tin Việt Nam, tin thế giới, từ khoá Google và video YouTube đang thịnh hành, cập nhật mỗi 15 phút.",
+        "cta": "Xem tin hôm nay"
+      },
+      "planTrip": {
+        "title": "Kế hoạch chuyến đi",
+        "description": "Thành viên, di chuyển, chỗ ở và lịch trình của cả nhóm ở cùng một chỗ.",
+        "cta": "Lên kế hoạch"
+      }
     },
     "mockup": {
       "title": "Trụ sở hôm nay",

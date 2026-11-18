@@ -52,13 +52,35 @@
     "home": "Home",
     "contact": "Contact",
     "designSystem": "Design system",
-    "planTrip": "Plan a trip"
+    "planTrip": "Plan a trip",
+    "games": "Games",
+    "trendRadar": "Trend Radar"
   },
   "home": {
     "hero": {
       "eyebrow": "Personal Growth OS",
       "title": "Meet your daily streak.",
       "subtitle": "Track missions, level up with XP, and keep your habits alive — English, fitness, coding, and more."
+    },
+    "explore": {
+      "eyebrow": "Explore",
+      "title": "Where to next?",
+      "subtitle": "Play a quick game, catch what is trending, or plan your next trip.",
+      "games": {
+        "title": "Games",
+        "description": "{{count}} browser games, nothing to install: English, Chinese, a property board game, a bubble shooter…",
+        "cta": "Play"
+      },
+      "trendRadar": {
+        "title": "Trend Radar",
+        "description": "Vietnam and world news, Google search trends and trending YouTube videos, refreshed every 15 minutes.",
+        "cta": "See today’s news"
+      },
+      "planTrip": {
+        "title": "Plan a trip",
+        "description": "Members, transport, stays and the itinerary for the whole group in one place.",
+        "cta": "Start planning"
+      }
     },
     "mockup": {
       "title": "Today's HQ",

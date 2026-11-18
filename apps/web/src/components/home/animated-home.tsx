@@ -10,6 +10,7 @@ import { TopNav } from '@/components/top-nav';
 import { Button } from '@/design-system/components/button';
 import { AssistantsSection } from './assistants-section';
 import { AnimatedFeatureCard } from './animated-feature-card';
+import { ExploreSection } from './explore-section';
 import { HeroMissionsCard } from './hero-missions-card';
 import { ScrollReveal } from './scroll-reveal';
 import { ContactSection } from './contact-section';
@@ -119,6 +120,8 @@ export function AnimatedHome() {
             </div>
           </div>
         </section>
+
+        <ExploreSection />
 
         <ScrollReveal className="relative py-section">
           <div

@@ -12,6 +12,9 @@ export function TopNav() {
 
   const navLinks = [
     { href: '/', label: t('nav.home') },
+    { href: '/games', label: t('nav.games') },
+    { href: '/trend-radar', label: t('nav.trendRadar') },
+    { href: '/plan-trip', label: t('nav.planTrip') },
     { href: '/#contact', label: t('nav.contact') },
     { href: '/design-system', label: t('nav.designSystem') },
   ];
@@ -22,15 +25,16 @@ export function TopNav() {
         {t('nav.promo')} <TextLink href="/design-system">{t('nav.seeDesignSystem')}</TextLink>
       </PromoBanner>
       <header className="sticky top-0 z-50 h-nav border-b border-hairline bg-canvas/95 backdrop-blur-sm">
-        <div className="container-content flex h-full items-center justify-between">
+        <div className="container-content flex h-full items-center justify-between gap-md">
           <AppLogo size="sm" />
 
-          <nav className="hidden items-center gap-lg md:flex">
+          {/* Sáu link chỉ vừa một hàng từ lg; màn nhỏ hơn đã có các thẻ lối vào ngay dưới hero. */}
+          <nav className="hidden items-center gap-lg lg:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-sans text-body-sm text-ink-subtle hover:text-ink"
+                className="whitespace-nowrap font-sans text-body-sm text-ink-subtle hover:text-ink"
               >
                 {link.label}
               </Link>
