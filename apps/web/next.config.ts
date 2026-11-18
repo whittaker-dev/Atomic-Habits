@@ -6,6 +6,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname, '../..'),
+  images: {
+    // Ảnh tin của /trend-radar. VnExpress chỉ trả ảnh 1200px (URL có chữ ký, không đổi cỡ được),
+    // nên để Next thu nhỏ lại thay vì bắt người xem tải vài MB ảnh cho mấy ô thumbnail.
+    remotePatterns: [
+      { protocol: 'https', hostname: '*.vnecdn.net' },
+      { protocol: 'https', hostname: '*.mediacdn.vn' },
+      { protocol: 'https', hostname: 'i.ytimg.com' },
+      { protocol: 'https', hostname: '*.gstatic.com' },
+    ],
+  },
   async redirects() {
     return [
       {
