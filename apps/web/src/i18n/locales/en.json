@@ -54,7 +54,9 @@
     "designSystem": "Design system",
     "planTrip": "Plan a trip",
     "games": "Games",
-    "trendRadar": "Trend Radar"
+    "trendRadar": "Trend Radar",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
   },
   "home": {
     "hero": {

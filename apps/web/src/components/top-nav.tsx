@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { AppLogo } from '@/components/brand/app-logo';
 import { LanguageModal } from '@/components/language-modal';
+import { MobileMenu } from '@/components/mobile-menu';
 import { PromoBanner } from '@/design-system/components/badges';
 import { Button, TextLink } from '@/design-system/components/button';
 
@@ -41,16 +42,20 @@ export function TopNav() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-md">
-            <Link href="/login">
-              <Button variant="secondary" className="hidden sm:inline-flex">
-                {t('common.actions.signIn')}
-              </Button>
+          {/* Ẩn cả thẻ Link (không chỉ nút bên trong) để nó không giữ một khoảng gap; trên điện thoại hàng
+              này phải đủ chỗ cho logo, nút Bắt đầu, nút ngôn ngữ và nút ☰ trên một dòng. */}
+          <div className="flex items-center gap-sm sm:gap-md">
+            <Link href="/login" className="hidden sm:block">
+              <Button variant="secondary">{t('common.actions.signIn')}</Button>
             </Link>
             <Link href="/register">
-              <Button>{t('common.actions.getStarted')}</Button>
+              <Button className="whitespace-nowrap">{t('common.actions.getStarted')}</Button>
             </Link>
             <LanguageModal />
+            {/* Nút Đăng nhập bị ẩn dưới sm, nên menu có thêm link này. */}
+            <MobileMenu
+              links={[...navLinks, { href: '/login', label: t('common.actions.signIn') }]}
+            />
           </div>
         </div>
       </header>

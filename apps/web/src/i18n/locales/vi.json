@@ -54,7 +54,9 @@
     "designSystem": "Hệ thống thiết kế",
     "planTrip": "Kế hoạch chuyến đi",
     "games": "Games",
-    "trendRadar": "Trend Radar"
+    "trendRadar": "Trend Radar",
+    "menu": "Menu",
+    "closeMenu": "Đóng menu"
   },
   "home": {
     "hero": {
