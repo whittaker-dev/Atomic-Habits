@@ -86,4 +86,12 @@ export const GAMES: GameEntry[] = [
     // Dựng từ art-source/du-lich-trung-hoa/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
     banner: '/games/du-lich-trung-hoa/banner.jpg',
   },
+  {
+    id: 'nhaMinh',
+    href: '/games/nha-minh',
+    status: 'playable',
+    cover: ['#e6e2da', '#8c2f2b'],
+    // Dựng từ art-source/nha-minh/banner.html (HTML/CSS của chính game), không phải ảnh tạo bằng AI.
+    banner: '/games/nha-minh/banner.jpg',
+  },
 ];

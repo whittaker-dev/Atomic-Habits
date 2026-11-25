@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+  Banner thẻ game Nhà Mình ở trang /games (public/games/nha-minh/banner.jpg).
+  Nửa phải là chính cảnh 3D của game với một căn nhà mẫu dựng bằng luật thật (banner-scene.ts):
+  phòng khách lát hoa thị, phòng ngủ lát bàn cờ, Lan đang chọn sofa, Minh đang đặt tủ áo. Nửa trái
+  là tên game, câu giới thiệu và hàng gạch quỹ chung y như trong game.
+  Xuất lại sau khi sửa game hoặc banner (chạy ở apps/web). esbuild lấy sẵn trong kho pnpm, không phải
+  thư viện thêm vào dự án; cửa sổ Chrome cao hơn 720 vì chế độ chạy ngầm ăn bớt chiều cao, rồi cắt:
+    OUT=$(mktemp -d)
+    ../../node_modules/.pnpm/esbuild@*/node_modules/esbuild/bin/esbuild art-source/nha-minh/banner-scene.ts \
+      --bundle --format=iife --outfile=$OUT/banner-scene.js
+    cp art-source/nha-minh/banner.html $OUT/
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+      --use-angle=swiftshader --enable-unsafe-swiftshader --window-size=1280,820 \
+      --virtual-time-budget=6000 --screenshot=$OUT/banner.png $OUT/banner.html
+    ffmpeg -y -i $OUT/banner.png -vf crop=1280:720:0:0 -q:v 3 public/games/nha-minh/banner.jpg
+-->
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Mulish:wght@700;800;900&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; }
+      body {
+        position: relative;
+        background: radial-gradient(70% 70% at 74% 52%, #ebe7df, transparent 70%), #d9d4cb;
+        font-family: 'Mulish', sans-serif;
+        color: #26221f;
+      }
+      .band { position: absolute; left: 0; right: 0; top: 0; height: 22px; background-color: #8c2f2b; background-size: 44px 44px; background-position: 0 -11px; }
+      .tiles { position: absolute; left: 76px; top: 92px; display: flex; gap: 10px; }
+      .tiles span { width: 70px; height: 70px; border-radius: 4px; background-size: 70px 70px; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .12); }
+      .title { position: absolute; left: 70px; top: 196px; font-family: 'Josefin Sans'; font-weight: 700; font-size: 112px; line-height: .95; letter-spacing: -0.01em; white-space: nowrap; }
+      .sub { position: absolute; left: 76px; top: 326px; width: 470px; font-size: 30px; font-weight: 800; line-height: 1.25; color: #5e554c; }
+      .fund { position: absolute; left: 76px; top: 486px; width: 470px; }
+      .fund .row { display: flex; justify-content: space-between; align-items: center; font-weight: 900; font-size: 22px; }
+      .fund .who { display: flex; align-items: center; gap: 10px; }
+      .fund .av { width: 46px; height: 46px; border-radius: 50%; color: #fff; display: grid; place-items: center; font-size: 22px; }
+      .fund .money { font-family: 'Josefin Sans'; font-size: 30px; }
+      .strip { display: grid; grid-template-columns: repeat(24, 1fr); gap: 4px; margin-top: 14px; }
+      .strip i { aspect-ratio: 1; border-radius: 3px; background-size: cover; }
+      .strip i.empty { box-shadow: inset 0 0 0 2px #bfb7aa; }
+      #stage { position: absolute; left: 600px; top: 20px; width: 680px; height: 700px; }
+      .tag { position: absolute; left: 0; top: 0; visibility: hidden; padding: 9px 18px; border-radius: 999px; color: #fff; font-weight: 900; font-size: 22px; white-space: nowrap; box-shadow: 0 10px 20px -8px rgb(0 0 0 / .45); z-index: 1; }
+    </style>
+  </head>
+  <body>
+    <div class="band" id="band"></div>
+    <div class="tiles"><span data-t="hoa-thi"></span><span data-t="sao"></span><span data-t="ban-co"></span><span data-t="qua-tram"></span></div>
+    <div class="title">Nhà Mình</div>
+    <p class="sub">Hai người, một quỹ tiền, cùng xây một căn nhà.</p>
+    <div class="fund">
+      <div class="row">
+        <span class="who"><span class="av" style="background:#8c2f2b">L</span>Lan</span>
+        <span class="money" id="left"></span>
+        <span class="who">Minh<span class="av" style="background:#1f5f5b">M</span></span>
+      </div>
+      <div class="strip" id="strip"></div>
+    </div>
+
+    <div id="stage">
+      <span class="tag" id="tag-a" style="background:#8c2f2b">Lan đang chọn sofa</span>
+      <span class="tag" id="tag-b" style="background:#1f5f5b">Minh đang đặt tủ áo</span>
+    </div>
+    <script src="banner-scene.js"></script>
+  </body>
+</html>

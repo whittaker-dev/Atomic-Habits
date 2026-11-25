@@ -877,6 +877,12 @@
       "genre": "Học tiếng Trung: nghe rồi gõ pinyin, đi tàu qua 8 thành phố",
       "description": "Nghe từ và câu tiếng Trung khi hỏi đường, gọi món, mua sắm rồi gõ lại bằng pinyin, có dấu hay không đều được. Mỗi sáu câu tới một ga và được đóng một con dấu son; ghi đúng cả thanh điệu được thêm điểm.",
       "tags": ["1 người, tính điểm", "HSK 1–3", "Gõ pinyin, không cần bộ gõ"]
+    },
+    "nhaMinh": {
+      "title": "Nhà Mình",
+      "genre": "Hai người cùng xây nhà 3D, chung một quỹ tiền",
+      "description": "Hai người, mỗi người một máy, cùng xây một căn nhà gia đình: vẽ tường, trổ cửa, lát gạch bông, kê đồ đạc trong cảnh 3D xoay và phóng to được. Tiêu chung một quỹ tiền; xong mục tiêu như phòng cho bố mẹ, góc học của con thì quỹ được thưởng. Nhà lưu lại để lần sau xây tiếp.",
+      "tags": ["2 người, qua mạng", "Nhà 3D xoay được", "Lưu nhà, xây tiếp"]
     }
   }
 }

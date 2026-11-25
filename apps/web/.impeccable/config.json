@@ -66,6 +66,18 @@
         "value": "saira",
         "createdAt": "2026-11-13T03:22:25.000Z",
         "reason": "Bắn Bi Nộ Khí's own body face; not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "josefin sans",
+        "createdAt": "2026-11-19T08:55:24.118Z",
+        "reason": "Nhà Mình's own display face (user-chosen Gạch bông world); not used in app UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "mulish",
+        "createdAt": "2026-11-19T08:55:24.137Z",
+        "reason": "Nhà Mình's own body face (user-chosen Gạch bông world); not used in app UI"
       }
     ]
   }

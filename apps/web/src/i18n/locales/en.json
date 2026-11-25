@@ -877,6 +877,12 @@
       "genre": "Learn Chinese: listen, type pinyin, ride through 8 cities",
       "description": "Hear Mandarin words and sentences for asking the way, ordering food and shopping, then type them in pinyin, with or without tone marks. Every six answers reaches a new station and a red seal; correct tones earn bonus points.",
       "tags": ["1 player, high score", "HSK 1–3", "Type pinyin, no Chinese keyboard needed"]
+    },
+    "nhaMinh": {
+      "title": "Our Home",
+      "genre": "Build a 3D family home together on one shared budget",
+      "description": "Two players, each on their own phone, build one family home together: draw walls, cut doors, lay patterned cement tiles and arrange furniture in a 3D house you can rotate and zoom. You spend from one shared fund; finishing family goals such as a bedroom for the parents or a study corner for the kids pays a reward. The house is saved so you can keep building next time.",
+      "tags": ["2 players, online", "Rotatable 3D house", "Saved, keep building"]
     }
   }
 }
