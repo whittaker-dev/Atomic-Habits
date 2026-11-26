@@ -4,6 +4,7 @@
 import { GAME_TOPICS, VN_CATEGORIES, type GameTopicId, type VnCategoryId } from './categories';
 import { curatedCityName } from './destinations';
 import { parseNewsRss, parseTrendsRss, type NewsItem, type TrendItem } from './rss';
+import { parseListings, type Listing } from './wikivoyage';
 
 /** Lấy lại dữ liệu nguồn tối đa mỗi 15 phút; mọi người xem dùng chung một bản. */
 export const REFRESH_SECONDS = 900;
@@ -35,8 +36,15 @@ export type TrendRadarData = {
   travel: Feed<NewsItem>;
 };
 
+/**
+ * Chờ một nguồn tối đa bấy nhiêu mili giây. Trang chờ nguồn chậm nhất, nên không có giới hạn này thì một nguồn ì
+ * (World Bank có lúc mất 5 giây trở lên) làm cả trang đứng; quá hạn thì khối đó báo lỗi riêng, khối khác vẫn hiện.
+ */
+const SOURCE_TIMEOUT_MS = 6000;
+
 async function fetchText(url: string, revalidate = REFRESH_SECONDS): Promise<string> {
   const res = await fetch(url, {
+    signal: AbortSignal.timeout(SOURCE_TIMEOUT_MS),
     next: { revalidate },
     // Google Trends trả lỗi cho request không có User-Agent của trình duyệt.
     headers: { 'user-agent': 'Mozilla/5.0 (compatible; TrendRadar/1.0)' },
@@ -423,5 +431,253 @@ export async function loadDestination(place: Place): Promise<Destination> {
     countryNews,
     arrivalsNews,
     arrivalsByYear: byYear,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Du lịch: địa điểm nổi bật, ăn chơi ngủ kèm giá tham khảo, giá phòng khách sạn
+// ---------------------------------------------------------------------------
+
+export type Attraction = {
+  title: string;
+  description: string | null;
+  url: string;
+  thumbnail: string | null;
+};
+
+export type GuidePage = { title: string; url: string };
+
+export type HotelRate = {
+  name: string;
+  url: string;
+  image: string | null;
+  rating: number | null;
+  reviews: number | null;
+  /** Giá một đêm theo từng trang đặt phòng, rẻ nhất trước */
+  rates: { provider: string; price: number }[];
+};
+
+export type PlaceExtras = {
+  attractions: Feed<Attraction>;
+  /** Mục xem, chơi, ăn, uống, ngủ từ Wikivoyage, và các bài đã lấy */
+  guide: Feed<Listing>;
+  guidePages: GuidePage[];
+  hotels: Feed<HotelRate>;
+  /** Ngày nhận phòng của giá phòng, "YYYY-MM-DD" */
+  checkIn: string;
+  currency: string;
+};
+
+/**
+ * Wikipedia gắn toạ độ cho mọi loại bài, nên bỏ những loại không phải chỗ để đi chơi: đơn vị hành chính,
+ * trường học, công ty, sự kiện, nhà ga, sân bay, bệnh viện, đường sá.
+ */
+const NOT_ATTRACTION =
+  /(phường|quận|xã|huyện|tỉnh|thị xã|thị trấn|thành phố|đơn vị hành chính|làng|thôn|ấp|đại học|trường|học viện|cơ sở giáo dục|công ty|tập đoàn|holdings|ngân hàng|vụ |sự kiện|trận |sân bay|nhà ga|\bga |tuyến|quốc lộ|bệnh viện|đại sứ quán)/i;
+
+type WikiGeoPage = {
+  title: string;
+  description?: string;
+  thumbnail?: { source: string };
+  index?: number;
+};
+
+/** Bài Wikipedia tiếng Việt có toạ độ trong bán kính 10 km, bỏ đơn vị hành chính, bài có ảnh lên trước. */
+function attractions(place: Place): Promise<Feed<Attraction>> {
+  return load(async () => {
+    const params = new URLSearchParams({
+      action: 'query',
+      generator: 'geosearch',
+      ggscoord: `${place.latitude}|${place.longitude}`,
+      ggsradius: '10000',
+      ggslimit: '30',
+      prop: 'pageimages|description',
+      piprop: 'thumbnail',
+      pithumbsize: '400',
+      format: 'json',
+      formatversion: '2',
+    });
+    const body = JSON.parse(
+      await fetchText(`https://vi.wikipedia.org/w/api.php?${params}`, ONE_DAY),
+    ) as { query?: { pages?: WikiGeoPage[] } };
+    return (body.query?.pages ?? [])
+      .sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
+      .filter(
+        (p) => p.title !== place.name && !NOT_ATTRACTION.test(`${p.title} ${p.description ?? ''}`),
+      )
+      .sort((a, b) => Number(Boolean(b.thumbnail)) - Number(Boolean(a.thumbnail)))
+      .slice(0, 8)
+      .map((p) => ({
+        title: p.title,
+        description: p.description ?? null,
+        url: `https://vi.wikipedia.org/wiki/${encodeURIComponent(p.title.replace(/ /g, '_'))}`,
+        thumbnail: p.thumbnail?.source ?? null,
+      }));
+  }, 'địa điểm từ Wikipedia');
+}
+
+const WIKIVOYAGE = 'https://en.wikivoyage.org';
+
+/**
+ * Mục ăn chơi ngủ từ Wikivoyage tiếng Anh (bản tiếng Việt không có mục có cấu trúc). Bài gần toạ độ nhất là bài
+ * của thành phố; thành phố lớn (Tokyo, Paris…) để các mục ở bài con theo quận, nên lấy thêm 2 bài quận gần nhất.
+ */
+/** Tên bài Wikivoyage gần toạ độ nhất: bài thành phố trước, rồi tối đa 2 bài quận của nó. */
+async function wikivoyagePages(place: Place): Promise<GuidePage[]> {
+  const params = new URLSearchParams({
+    action: 'query',
+    list: 'geosearch',
+    gscoord: `${place.latitude}|${place.longitude}`,
+    gsradius: '10000',
+    gslimit: '10',
+    format: 'json',
+  });
+  const body = JSON.parse(await fetchText(`${WIKIVOYAGE}/w/api.php?${params}`, ONE_DAY)) as {
+    query?: { geosearch?: { title: string }[] };
+  };
+  const titles = (body.query?.geosearch ?? []).map((r) => r.title);
+  const main = titles.find((t) => !t.includes('/'));
+  if (!main) return [];
+  const districts = titles.filter((t) => t.startsWith(`${main}/`)).slice(0, 2);
+  return [main, ...districts].map((title) => ({
+    title,
+    url: `${WIKIVOYAGE}/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`,
+  }));
+}
+
+function guide(pages: GuidePage[]): Promise<Feed<Listing>> {
+  return load(async () => {
+    const texts = await Promise.all(
+      pages.map((p) =>
+        fetchText(
+          `${WIKIVOYAGE}/w/index.php?title=${encodeURIComponent(p.title)}&action=raw`,
+          ONE_DAY,
+        ),
+      ),
+    );
+    // Một chỗ có thể nằm ở cả bài chính lẫn bài quận; giữ lần xuất hiện đầu tiên.
+    const unique = new Map(texts.flatMap(parseListings).map((l) => [`${l.kind}|${l.name}`, l]));
+    return [...unique.values()];
+  }, 'hướng dẫn từ Wikivoyage');
+}
+
+/**
+ * Mã địa điểm TripAdvisor của nơi này, tra trên Wikidata theo hai đường: mã GeoNames, hoặc mục Wikidata của bài
+ * Wikivoyage. Cần cả hai vì không đường nào đủ: Đà Nẵng chỉ có qua bài Wikivoyage, Tokyo chỉ có qua GeoNames.
+ * null khi Wikidata không ghi mã.
+ */
+async function tripAdvisorId(
+  place: Place,
+  wikivoyageTitle: string | undefined,
+): Promise<string | null> {
+  const viaGuide = wikivoyageTitle
+    ? `UNION { <${WIKIVOYAGE}/wiki/${encodeURIComponent(wikivoyageTitle.replace(/ /g, '_'))}> schema:about ?item . }`
+    : '';
+  const query = `SELECT ?ta WHERE { { ?item wdt:P1566 "${place.id}" . } ${viaGuide} ?item wdt:P3134 ?ta . } LIMIT 1`;
+  const body = JSON.parse(
+    await fetchText(
+      `https://query.wikidata.org/sparql?${new URLSearchParams({ query, format: 'json' })}`,
+      ONE_DAY,
+    ),
+  ) as { results: { bindings: { ta: { value: string } }[] } };
+  const id = body.results.bindings[0]?.ta.value;
+  return id && /^\d+$/.test(id) ? id : null;
+}
+
+type XoteloHotel = {
+  name: string;
+  key: string;
+  url: string;
+  image?: string;
+  review_summary?: { rating?: number; count?: number };
+};
+
+/**
+ * Giá phòng một đêm của vài khách sạn được đánh giá cao, lấy qua Xotelo (dịch vụ miễn phí, không chính thức,
+ * đọc từ TripAdvisor). Có thể ngừng bất cứ lúc nào; khi đó khối này báo lỗi riêng.
+ */
+async function hotels(
+  place: Place,
+  wikivoyageTitle: string | undefined,
+  checkIn: string,
+  checkOut: string,
+): Promise<Feed<HotelRate>> {
+  let id: string | null;
+  try {
+    id = await tripAdvisorId(place, wikivoyageTitle);
+  } catch (err) {
+    console.error('[trend-radar] Wikidata', place.id, err);
+    return { items: [], error: 'Không tra được mã khách sạn của nơi này lúc này.' };
+  }
+  if (!id) return { items: [], error: `Chưa có dữ liệu giá phòng cho ${place.name}.` };
+
+  return load(async () => {
+    const list = JSON.parse(
+      await fetchText(
+        `https://data.xotelo.com/api/list?location_key=g${id}&limit=6&sort=best_value`,
+        ONE_DAY,
+      ),
+    ) as { result?: { list?: XoteloHotel[] } };
+    const found = list.result?.list ?? [];
+
+    const withRates = await Promise.all(
+      found.map(async (h): Promise<HotelRate | null> => {
+        try {
+          const params = new URLSearchParams({
+            hotel_key: h.key,
+            chk_in: checkIn,
+            chk_out: checkOut,
+          });
+          const body = JSON.parse(
+            await fetchText(`https://data.xotelo.com/api/rates?${params}`),
+          ) as { result?: { rates?: { name: string; rate: number }[] } };
+          const rates = (body.result?.rates ?? [])
+            .filter((r) => r.rate > 0)
+            .map((r) => ({ provider: r.name, price: r.rate }))
+            .sort((a, b) => a.price - b.price);
+          return {
+            name: h.name,
+            url: h.url,
+            image: h.image ?? null,
+            rating: h.review_summary?.rating ?? null,
+            reviews: h.review_summary?.count ?? null,
+            rates,
+          };
+        } catch {
+          // Một khách sạn lỗi giá thì bỏ khách sạn đó, các khách sạn khác vẫn hiện.
+          return null;
+        }
+      }),
+    );
+    return withRates.filter((h): h is HotelRate => h !== null && h.rates.length > 0);
+  }, 'giá phòng');
+}
+
+function isoDate(date: Date): string {
+  return date.toISOString().slice(0, 10);
+}
+
+export async function loadPlaceExtras(place: Place): Promise<PlaceExtras> {
+  // Giá cho đêm mai (theo giờ UTC của server), đủ để so sánh mặt bằng giá giữa các khách sạn.
+  const day = 86_400_000;
+  const checkIn = isoDate(new Date(Date.now() + day));
+  const checkOut = isoDate(new Date(Date.now() + 2 * day));
+
+  const pagesPromise = wikivoyagePages(place).catch((err: unknown) => {
+    console.error('[trend-radar] Wikivoyage', place.id, err);
+    return [] as GuidePage[];
+  });
+  const [attractionsFeed, pages] = await Promise.all([attractions(place), pagesPromise]);
+  const [guideFeed, hotelsFeed] = await Promise.all([
+    pages.length ? guide(pages) : Promise.resolve({ items: [], error: null }),
+    hotels(place, pages[0]?.title, checkIn, checkOut),
+  ]);
+  return {
+    attractions: attractionsFeed,
+    guide: guideFeed,
+    guidePages: pages,
+    hotels: hotelsFeed,
+    checkIn,
+    currency: 'USD',
   };
 }

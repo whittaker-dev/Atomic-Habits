@@ -45,3 +45,30 @@ export function videoDuration(iso: string): string {
   const ss = String(s).padStart(2, '0');
   return h ? `${h}:${String(min).padStart(2, '0')}:${ss}` : `${min}:${ss}`;
 }
+
+/** Bỏ dấu và viết thường, để gõ "gia vang" vẫn khớp "giá vàng", gõ "da lat" vẫn khớp "Đà Lạt". */
+export function foldText(text: string): string {
+  return (
+    text
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      // đ không tách dấu được bằng NFD; ð là chữ Iceland mà dữ liệu địa danh đôi khi dùng thay cho đ.
+      .replace(/[đð]/g, 'd')
+  );
+}
+
+/**
+ * Lọc theo chữ đang gõ (không phân biệt dấu) và xếp tên bắt đầu bằng chữ đó lên trước, rồi tới tên có một từ
+ * bắt đầu bằng chữ đó, cuối cùng là tên chỉ chứa chữ đó ở giữa (gõ "han" thì Hàn Quốc trước Afghanistan).
+ */
+export function filterByQuery<T>(items: T[], name: (item: T) => string, query: string): T[] {
+  const q = foldText(query.trim());
+  if (!q) return items;
+  const rank = (text: string) => (text.startsWith(q) ? 0 : text.includes(` ${q}`) ? 1 : 2);
+  return items
+    .map((item) => ({ item, text: foldText(name(item)) }))
+    .filter(({ text }) => text.includes(q))
+    .sort((a, b) => rank(a.text) - rank(b.text))
+    .map(({ item }) => item);
+}

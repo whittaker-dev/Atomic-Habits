@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '*.mediacdn.vn' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
       { protocol: 'https', hostname: '*.gstatic.com' },
+      // Ảnh địa điểm (Wikipedia) và ảnh khách sạn (TripAdvisor) ở trang Du lịch.
+      // Mỗi bên phát ảnh từ vài tên miền con (Wikipedia: upload., thumb.), nên cho cả tên miền.
+      { protocol: 'https', hostname: '**.wikimedia.org' },
+      { protocol: 'https', hostname: '**.tripadvisor.com' },
     ],
   },
   async redirects() {

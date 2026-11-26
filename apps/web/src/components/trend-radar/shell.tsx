@@ -7,7 +7,7 @@ import type { NewsItem } from '@/lib/trend-radar/rss';
 import type { TrendRadarData } from '@/lib/trend-radar/sources';
 import { cn } from '@/lib/utils';
 import { TrendRadarProvider, useTrendRadar } from './context';
-import { timeAgo } from './format';
+import { foldText, timeAgo } from './format';
 import {
   FlagVN,
   FOCUS,
@@ -62,16 +62,6 @@ const NAV = [
   { href: ROUTES.game, label: 'Game', icon: <IconGamepad /> },
   { href: ROUTES.travel, label: 'Du lịch', icon: <IconPlane /> },
 ] as const;
-
-/** Bỏ dấu để gõ "gia vang" vẫn ra "giá vàng". */
-function fold(text: string): string {
-  return text
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/đ/g, 'd')
-    .replace(/Đ/g, 'D')
-    .toLowerCase();
-}
 
 export function TrendRadarShell({ data, children }: { data: TrendRadarData; children: ReactNode }) {
   const pathname = usePathname();
@@ -290,14 +280,14 @@ function SearchResults({ query, onClear }: { query: string; onClear: () => void 
     return list.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   }, [data]);
 
-  const q = fold(query);
-  const news = allNews.filter((n) => fold(`${n.title} ${n.summary}`).includes(q)).slice(0, 30);
-  const trends = data.trends.items.filter((t) => fold(t.keyword).includes(q));
+  const q = foldText(query);
+  const news = allNews.filter((n) => foldText(`${n.title} ${n.summary}`).includes(q)).slice(0, 30);
+  const trends = data.trends.items.filter((t) => foldText(t.keyword).includes(q));
   // Một video có thể nằm ở cả hai bảng thịnh hành (chung và Gaming); gộp theo id để không hiện hai lần.
   const allVideos = [
     ...new Map([...data.videos.items, ...data.gamingVideos.items].map((v) => [v.id, v])).values(),
   ];
-  const videos = allVideos.filter((v) => fold(`${v.title} ${v.channel}`).includes(q));
+  const videos = allVideos.filter((v) => foldText(`${v.title} ${v.channel}`).includes(q));
   const total = news.length + trends.length + videos.length;
 
   return (

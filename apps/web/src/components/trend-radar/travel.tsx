@@ -9,19 +9,10 @@ import { describeWeather, type WeatherKind } from '@/lib/trend-radar/weather';
 import { cn } from '@/lib/utils';
 import { CompactNewsRow, TimeAgo } from './blocks';
 import { useTrendRadar } from './context';
-import { compactNumber } from './format';
+import { Combobox, type ComboGroup } from './combobox';
+import { compactNumber, filterByQuery } from './format';
 import { ROUTES } from './shell';
-import {
-  FOCUS,
-  IconChevronDown,
-  IconClose,
-  IconPlane,
-  IconSearch,
-  PageHeader,
-  Panel,
-  SourceNotice,
-  Tabs,
-} from './ui';
+import { FOCUS, IconPlane, PageHeader, Panel, SourceNotice, Tabs } from './ui';
 
 // Trang /trend-radar/du-lich: người xem chọn một thành phố (lưu trong URL ?noi= để gửi link cho nhau),
 // trang hiện thời tiết, lượt khách và tin du lịch của nơi đó. Dữ liệu theo nơi do server tải (page.tsx);
@@ -33,10 +24,13 @@ export function TravelPage({
   place,
   destination,
   missingPlace,
+  extras,
 }: {
   place: Place | null;
   destination: Destination | null;
   missingPlace: boolean;
+  /** Phần tải chậm (địa điểm, giá phòng, ăn chơi ngủ, tour), do page.tsx bọc trong Suspense */
+  extras?: ReactNode;
 }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
@@ -82,6 +76,7 @@ export function TravelPage({
             <PlaceNews key={place.id} place={place} destination={destination} />
             <MarketNews />
           </div>
+          {extras}
         </div>
       )}
     </>
@@ -93,9 +88,6 @@ export function TravelPage({
 // ---------------------------------------------------------------------------
 
 type Suggestion = Pick<Place, 'id' | 'name' | 'region' | 'country'>;
-
-const FIELD =
-  'h-11 w-full rounded-xl border border-[color:var(--tr-line)] bg-[color:var(--tr-ground)] text-[14.5px] text-[color:var(--tr-ink)] outline-none transition-shadow focus:border-[color:var(--tr-blue)] focus:bg-white focus:shadow-[0_0_0_3px_rgba(31,98,240,0.15)]';
 
 function PlacePicker({
   place,
@@ -109,25 +101,17 @@ function PlacePicker({
   // Nước đang chọn trong ô. Có thể khác nước của thành phố đang hiện khi người xem chọn một nước chưa có
   // thành phố gợi ý: trang giữ nguyên nơi cũ cho tới khi họ tìm và chọn một thành phố của nước mới.
   const [country, setCountry] = useState(place?.countryCode ?? 'VN');
-  const [query, setQuery] = useState('');
+  const [countryQuery, setCountryQuery] = useState('');
+  const [cityQuery, setCityQuery] = useState('');
   const [results, setResults] = useState<Suggestion[] | null>(null);
+  const [searching, setSearching] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-  // Danh sách mọi quốc gia chỉ dựng sau khi trang đã hydrate (xem allCountries); trước đó ô chỉ có các nước
+  const cityInput = useRef<HTMLInputElement>(null);
+
+  // Danh sách mọi quốc gia chỉ dựng sau khi trang đã hydrate (xem allCountries); trước đó chỉ có các nước
   // gợi ý và nước của nơi đang hiện, tên lấy từ dữ liệu server nên server và trình duyệt vẽ giống nhau.
   const [others, setOthers] = useState<Country[] | null>(null);
   useEffect(() => setOthers(allCountries()), []);
-
-  const trimmed = query.trim();
-  const cities = POPULAR_DESTINATIONS[country]?.cities ?? [];
-  const currentName =
-    POPULAR_DESTINATIONS[country]?.name ??
-    others?.find((c) => c.code === country)?.name ??
-    (country === place?.countryCode ? place.country : country);
-  // Nước gợi ý đã có ở nhóm "Hay đi" nên không lặp lại ở nhóm dưới.
-  const otherOptions: Country[] = (
-    others ?? (place ? [{ code: place.countryCode, name: place.country }] : [])
-  ).filter((c) => !POPULAR_DESTINATIONS[c.code]);
 
   // Đổi sang nơi khác (bấm link, nút lùi của trình duyệt) thì ô nước đi theo nước của nơi đó. Theo dõi mã nơi,
   // không theo đối tượng place: server có thể gửi lại cùng nơi dưới một đối tượng mới, và khi đó không được
@@ -138,165 +122,131 @@ function PlacePicker({
     if (placeCountry) setCountry(placeCountry);
   }, [placeId, placeCountry]);
 
-  // Gợi ý theo chữ đang gõ, chỉ trong nước đang chọn; chờ 300 ms sau phím cuối để không gọi nguồn ở mỗi phím.
+  const cities = POPULAR_DESTINATIONS[country]?.cities ?? [];
+  const countryLabel =
+    POPULAR_DESTINATIONS[country]?.name ??
+    others?.find((c) => c.code === country)?.name ??
+    (country === place?.countryCode ? place.country : country);
+
+  // Nước gợi ý đã có ở nhóm "Hay đi" nên không lặp lại ở nhóm dưới.
+  const otherCountries = (
+    others ?? (place ? [{ code: place.countryCode, name: place.country }] : [])
+  ).filter((c) => !POPULAR_DESTINATIONS[c.code]);
+  const countryGroups: ComboGroup[] = [
+    {
+      label: 'Hay đi',
+      options: filterByQuery(
+        Object.entries(POPULAR_DESTINATIONS),
+        ([, d]) => d.name,
+        countryQuery,
+      ).map(([code, d]) => ({ id: code, label: d.name })),
+    },
+    {
+      label: 'Tất cả quốc gia',
+      options: filterByQuery(otherCountries, (c) => c.name, countryQuery).map((c) => ({
+        id: c.code,
+        label: c.name,
+      })),
+    },
+  ];
+
+  // Thành phố gợi ý lọc ngay trên máy; từ 2 chữ trở lên thì hỏi thêm server để tìm cả nơi ngoài danh sách gợi ý,
+  // chờ 300 ms sau phím cuối để không gọi nguồn ở mỗi phím.
+  const trimmedCity = cityQuery.trim();
   useEffect(() => {
-    if (trimmed.length < 2) {
-      setResults(null);
-      setError(null);
-      return;
-    }
+    setResults(null);
+    setError(null);
+    if (trimmedCity.length < 2) return;
     const controller = new AbortController();
     const timer = setTimeout(async () => {
+      setSearching(true);
       try {
-        const params = new URLSearchParams({ q: trimmed, country });
+        const params = new URLSearchParams({ q: trimmedCity, country });
         const res = await fetch(`${ROUTES.travel}/tim?${params}`, { signal: controller.signal });
         const body = (await res.json()) as { places: Suggestion[]; error?: string };
         setResults(body.places);
         setError(body.error ?? null);
       } catch (err) {
         if ((err as Error).name !== 'AbortError') setError('Không tìm được địa điểm lúc này.');
+      } finally {
+        if (!controller.signal.aborted) setSearching(false);
       }
     }, 300);
     return () => {
       clearTimeout(timer);
       controller.abort();
+      setSearching(false);
     };
-  }, [trimmed, country]);
+  }, [trimmedCity, country]);
 
-  const pick = (id: number) => {
-    setQuery('');
-    setResults(null);
-    onPick(id);
-  };
+  const curatedIds = new Set(cities.map((c) => c.id));
+  const cityGroups: ComboGroup[] = [
+    {
+      label: `Gợi ý ở ${countryLabel}`,
+      options: filterByQuery([...cities], (c) => c.name, cityQuery).map((c) => ({
+        id: String(c.id),
+        label: c.name,
+      })),
+    },
+    {
+      label: 'Kết quả tìm',
+      options: (results ?? [])
+        .filter((r) => !curatedIds.has(r.id))
+        .map((r) => ({ id: String(r.id), label: r.name, hint: r.region ?? undefined })),
+    },
+  ];
+  const cityEmpty = error
+    ? error
+    : searching || (trimmedCity.length >= 2 && results === null)
+      ? 'Đang tìm…'
+      : trimmedCity.length >= 2
+        ? `Không tìm thấy thành phố nào tên “${trimmedCity}” ở ${countryLabel}.`
+        : `Gõ tên một thành phố ở ${countryLabel}.`;
 
   const changeCountry = (code: string) => {
     setCountry(code);
-    setQuery('');
+    setCityQuery('');
     const first = POPULAR_DESTINATIONS[code]?.cities[0];
-    // Nước có thành phố gợi ý thì mở ngay thành phố đầu tiên; nước khác thì chờ người xem tìm thành phố.
-    if (first) onPick(first.id);
-    else inputRef.current?.focus();
+    // Nước có thành phố gợi ý thì mở ngay thành phố đầu tiên; nước nào cũng chuyển tiêu điểm sang ô thành phố
+    // để chọn tiếp bằng bàn phím.
+    if (first && first.id !== place?.id) onPick(first.id);
+    cityInput.current?.focus();
   };
+
+  const cityLabel = country === place?.countryCode ? place.name : '';
 
   return (
     <div className="min-w-0 rounded-2xl border border-[color:var(--tr-line)] bg-white p-3 sm:p-4">
-      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-[minmax(0,240px)_minmax(0,1fr)]">
-        <label className="block">
-          <span className="mb-1 block text-[12.5px] font-semibold text-[color:var(--tr-ink-soft)]">
-            1. Quốc gia
-          </span>
-          <span className="relative block">
-            <select
-              value={country}
-              onChange={(e) => changeCountry(e.target.value)}
-              disabled={pending}
-              className={cn(
-                FIELD,
-                'cursor-pointer appearance-none pl-3.5 pr-9 disabled:cursor-wait',
-              )}
-            >
-              <optgroup label="Hay đi">
-                {Object.entries(POPULAR_DESTINATIONS).map(([code, d]) => (
-                  <option key={code} value={code}>
-                    {d.name}
-                  </option>
-                ))}
-              </optgroup>
-              <optgroup label="Tất cả quốc gia">
-                {otherOptions.map((c) => (
-                  <option key={c.code} value={c.code}>
-                    {c.name}
-                  </option>
-                ))}
-              </optgroup>
-            </select>
-            <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[color:var(--tr-ink-faint)]">
-              <IconChevronDown />
-            </span>
-          </span>
-        </label>
-
-        <div className="relative">
-          <label
-            htmlFor="tim-thanh-pho"
-            className="mb-1 block text-[12.5px] font-semibold text-[color:var(--tr-ink-soft)]"
-          >
-            2. Thành phố
-          </label>
-          <span className="relative block">
-            <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-[color:var(--tr-ink-faint)]">
-              <IconSearch className="h-[18px] w-[18px]" />
-            </span>
-            <input
-              id="tim-thanh-pho"
-              ref={inputRef}
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && results?.[0]) pick(results[0].id);
-                if (e.key === 'Escape') setQuery('');
-              }}
-              placeholder={`Tìm thành phố ở ${currentName}`}
-              aria-controls="ket-qua-noi"
-              className={cn(
-                FIELD,
-                'pl-10 pr-10 caret-[color:var(--tr-blue)] placeholder:text-[color:var(--tr-ink-faint)] [&::-webkit-search-cancel-button]:hidden',
-              )}
-            />
-            {query && (
-              <button
-                type="button"
-                onClick={() => setQuery('')}
-                aria-label="Xoá ô tìm thành phố"
-                className={cn(
-                  'absolute right-1.5 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-lg text-[color:var(--tr-ink-faint)] hover:bg-white hover:text-[color:var(--tr-ink)]',
-                  FOCUS,
-                )}
-              >
-                <IconClose />
-              </button>
-            )}
-          </span>
-        </div>
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-[minmax(0,260px)_minmax(0,1fr)]">
+        <Combobox
+          label="1. Quốc gia"
+          selectedLabel={countryLabel}
+          selectedId={country}
+          placeholder="Chọn quốc gia"
+          query={countryQuery}
+          onQueryChange={setCountryQuery}
+          groups={countryGroups}
+          onSelect={(o) => changeCountry(o.id)}
+          emptyText={`Không có quốc gia nào tên “${countryQuery.trim()}”.`}
+        />
+        <Combobox
+          label="2. Thành phố"
+          inputRef={cityInput}
+          selectedLabel={cityLabel}
+          selectedId={place ? String(place.id) : undefined}
+          placeholder={`Chọn thành phố ở ${countryLabel}`}
+          query={cityQuery}
+          onQueryChange={setCityQuery}
+          groups={cityGroups}
+          onSelect={(o) => onPick(Number(o.id))}
+          emptyText={cityEmpty}
+        />
       </div>
 
-      {trimmed.length >= 2 && (results || error) && (
-        <ul id="ket-qua-noi" aria-live="polite" className="mt-2 flex flex-col">
-          {error && (
-            <li className="px-3 py-2 text-[13.5px] text-[color:var(--tr-ink-soft)]">{error}</li>
-          )}
-          {!error && results?.length === 0 && (
-            <li className="px-3 py-2 text-[13.5px] text-[color:var(--tr-ink-soft)]">
-              Không tìm thấy thành phố nào tên “{trimmed}” ở {currentName}.
-            </li>
-          )}
-          {results?.map((r) => (
-            <li key={r.id}>
-              <button
-                type="button"
-                onClick={() => pick(r.id)}
-                className={cn(
-                  'flex w-full items-baseline gap-2 rounded-lg px-3 py-2 text-left transition-colors hover:bg-[color:var(--tr-blue-wash)]',
-                  FOCUS,
-                )}
-              >
-                <span className="text-[14.5px] font-medium text-[color:var(--tr-ink)]">
-                  {r.name}
-                </span>
-                <span className="truncate text-[13px] text-[color:var(--tr-ink-faint)]">
-                  {[r.region, r.country].filter(Boolean).join(', ')}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {cities.length > 0 ? (
+      {cities.length > 0 && (
         <div
           className="mt-3 flex flex-wrap gap-1.5"
-          aria-label={`Thành phố gợi ý ở ${currentName}`}
+          aria-label={`Thành phố gợi ý ở ${countryLabel}`}
         >
           {cities.map((c) => {
             const active = c.id === place?.id;
@@ -304,7 +254,7 @@ function PlacePicker({
               <button
                 key={c.id}
                 type="button"
-                onClick={() => pick(c.id)}
+                onClick={() => onPick(c.id)}
                 aria-pressed={active}
                 disabled={pending && !active}
                 className={cn(
@@ -320,12 +270,6 @@ function PlacePicker({
             );
           })}
         </div>
-      ) : (
-        country !== place?.countryCode && (
-          <p className="mt-3 text-[13px] text-[color:var(--tr-ink-soft)]">
-            Gõ tên một thành phố ở {currentName} để xem thời tiết và tin du lịch.
-          </p>
-        )
       )}
     </div>
   );
