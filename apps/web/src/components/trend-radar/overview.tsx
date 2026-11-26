@@ -29,6 +29,7 @@ import {
   FOCUS,
   IconArrow,
   IconGamepad,
+  IconPlane,
   IconGlobe,
   IconTrend,
   IconVideo,
@@ -55,6 +56,7 @@ export function Overview() {
         <YouTubeBlock />
       </div>
       <GameBlock />
+      <TravelBlock />
     </div>
   );
 }
@@ -308,6 +310,32 @@ function GameBlock() {
           )}
         </div>
       </div>
+    </Panel>
+  );
+}
+
+function TravelBlock() {
+  const { data } = useTrendRadar();
+  const items = data.travel.items.slice(0, 4);
+
+  return (
+    <Panel
+      id="du-lich"
+      title="Du lịch"
+      icon={<IconPlane />}
+      action={<SeeAllLink href={ROUTES.travel} label="Xem thời tiết và tin du lịch theo nơi" />}
+    >
+      {data.travel.error || items.length === 0 ? (
+        <SourceNotice>
+          {data.travel.error ?? 'Chưa có tin du lịch.'} {RETRY}
+        </SourceNotice>
+      ) : (
+        <ul className="-mx-2 grid md:grid-cols-2 md:gap-x-4">
+          {items.map((item) => (
+            <CompactNewsRow key={item.id} item={item} />
+          ))}
+        </ul>
+      )}
     </Panel>
   );
 }

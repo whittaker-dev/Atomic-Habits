@@ -13,6 +13,7 @@ import {
   FOCUS,
   IconBack,
   IconGamepad,
+  IconPlane,
   IconBulb,
   IconClose,
   IconGlobe,
@@ -49,6 +50,7 @@ export const ROUTES = {
   trends: '/trend-radar/google-trends',
   youtube: '/trend-radar/youtube',
   game: '/trend-radar/game',
+  travel: '/trend-radar/du-lich',
 } as const;
 
 const NAV = [
@@ -58,6 +60,7 @@ const NAV = [
   { href: ROUTES.trends, label: 'Google Trends', icon: <IconTrend className="h-5 w-5" /> },
   { href: ROUTES.youtube, label: 'YouTube thịnh hành', icon: <IconVideo /> },
   { href: ROUTES.game, label: 'Game', icon: <IconGamepad /> },
+  { href: ROUTES.travel, label: 'Du lịch', icon: <IconPlane /> },
 ] as const;
 
 /** Bỏ dấu để gõ "gia vang" vẫn ra "giá vàng". */
@@ -130,8 +133,9 @@ function SourcesNote() {
         <IconBulb />
       </span>
       <p>
-        Tin lấy từ RSS VnExpress và GameK, tin từng game từ Google News, từ khoá từ Google Trends
-        Việt Nam, video từ YouTube. Dữ liệu làm mới mỗi 15 phút.
+        Tin lấy từ RSS VnExpress và GameK, tin theo game và theo nơi từ Google News, từ khoá từ
+        Google Trends Việt Nam, video từ YouTube, thời tiết từ Open-Meteo, lượt khách theo năm từ
+        World Bank. Dữ liệu làm mới mỗi 15 phút.
       </p>
       <p className="mt-2">
         TikTok, Facebook và Instagram chưa có vì các nền tảng này không mở dữ liệu xu hướng.
@@ -272,7 +276,12 @@ function SearchResults({ query, onClear }: { query: string; onClear: () => void 
   const allNews = useMemo(() => {
     const seen = new Set<string>();
     const list: NewsItem[] = [];
-    const feeds = [...Object.values(data.vietnam), data.world, ...Object.values(data.games)];
+    const feeds = [
+      ...Object.values(data.vietnam),
+      data.world,
+      ...Object.values(data.games),
+      data.travel,
+    ];
     for (const item of feeds.flatMap((f) => f.items)) {
       if (seen.has(item.url)) continue;
       seen.add(item.url);

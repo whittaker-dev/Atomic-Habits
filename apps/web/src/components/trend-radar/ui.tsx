@@ -52,6 +52,11 @@ export const IconClose = () => (
     <path d="M6 6l12 12M18 6 6 18" />
   </Stroke>
 );
+export const IconChevronDown = () => (
+  <Stroke className="h-4 w-4">
+    <path d="m6 9 6 6 6-6" />
+  </Stroke>
+);
 export const IconArrow = () => (
   <Stroke className="h-4 w-4">
     <path d="M5 12h14M13 6l6 6-6 6" />
@@ -66,6 +71,11 @@ export const IconClock = () => (
 export const IconBack = () => (
   <Stroke>
     <path d="M10 6 4 12l6 6M4 12h16" />
+  </Stroke>
+);
+export const IconPlane = () => (
+  <Stroke>
+    <path d="M10.5 13.5 3 11l1.5-1.5 8 1 4-4.5a2 2 0 0 1 3 2.6L15 13l1 8-1.5 1.5-2.5-7.5-3.5 3.5V21l-1.5 1.5-1-4-4-1L3.5 16H6z" />
   </Stroke>
 );
 export const IconGamepad = () => (
