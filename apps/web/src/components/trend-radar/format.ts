@@ -65,10 +65,18 @@ export function foldText(text: string): string {
 export function filterByQuery<T>(items: T[], name: (item: T) => string, query: string): T[] {
   const q = foldText(query.trim());
   if (!q) return items;
-  const rank = (text: string) => (text.startsWith(q) ? 0 : text.includes(` ${q}`) ? 1 : 2);
+  // So thêm một dạng "lỏng": bỏ hết dấu cách (người gõ hay viết liền "hoian") và coi y như i (Lý/Lí; người gõ
+  // "daili" để tìm Đại Lý, tên bính âm cũng là "Dali").
+  const loose = (text: string) => text.replace(/\s+/g, '').replace(/y/g, 'i');
+  const qCompact = loose(q);
+  const rank = (text: string, compact: string) =>
+    text.startsWith(q) || compact.startsWith(qCompact) ? 0 : text.includes(` ${q}`) ? 1 : 2;
   return items
-    .map((item) => ({ item, text: foldText(name(item)) }))
-    .filter(({ text }) => text.includes(q))
-    .sort((a, b) => rank(a.text) - rank(b.text))
+    .map((item) => {
+      const text = foldText(name(item));
+      return { item, text, compact: loose(text) };
+    })
+    .filter(({ text, compact }) => text.includes(q) || compact.includes(qCompact))
+    .sort((a, b) => rank(a.text, a.compact) - rank(b.text, b.compact))
     .map(({ item }) => item);
 }

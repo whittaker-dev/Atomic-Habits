@@ -89,6 +89,8 @@ export function TravelPage({
 
 type Suggestion = Pick<Place, 'id' | 'name' | 'region' | 'country'>;
 
+const MAX_CHIPS = 12;
+
 function PlacePicker({
   place,
   onPick,
@@ -215,6 +217,12 @@ function PlacePicker({
 
   const cityLabel = country === place?.countryCode ? place.name : '';
 
+  // Nút gợi ý chỉ hiện vài nơi đầu để không chật màn hình điện thoại (danh sách thả xuống vẫn có đủ); nơi đang
+  // xem mà nằm sau thì vẫn hiện nút của nó, để người xem thấy mình đang ở đâu.
+  const chipCities = cities.slice(0, MAX_CHIPS);
+  const current = cities.find((c) => c.id === place?.id);
+  if (current && !chipCities.includes(current)) chipCities.push(current);
+
   return (
     <div className="min-w-0 rounded-2xl border border-[color:var(--tr-line)] bg-white p-3 sm:p-4">
       <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-[minmax(0,260px)_minmax(0,1fr)]">
@@ -248,7 +256,7 @@ function PlacePicker({
           className="mt-3 flex flex-wrap gap-1.5"
           aria-label={`Thành phố gợi ý ở ${countryLabel}`}
         >
-          {cities.map((c) => {
+          {chipCities.map((c) => {
             const active = c.id === place?.id;
             return (
               <button

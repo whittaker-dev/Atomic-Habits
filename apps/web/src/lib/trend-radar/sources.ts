@@ -42,14 +42,21 @@ export type TrendRadarData = {
  */
 const SOURCE_TIMEOUT_MS = 6000;
 
+// Google Trends trả lỗi cho request không có User-Agent kiểu trình duyệt. Wikimedia (Wikipedia, Wikivoyage,
+// Wikidata) thì ngược lại: chính sách của họ đòi User-Agent nói rõ ứng dụng, và siết chặt chuỗi giả trình duyệt.
+// https://meta.wikimedia.org/wiki/User-Agent_policy
+const BROWSER_LIKE_AGENT = 'Mozilla/5.0 (compatible; TrendRadar/1.0)';
+const WIKIMEDIA_AGENT = 'TrendRadarVN/1.0 (personal news and travel dashboard)';
+const WIKIMEDIA_HOST = /(^|\.)(wikipedia|wikivoyage|wikidata)\.org$/;
+
 async function fetchText(url: string, revalidate = REFRESH_SECONDS): Promise<string> {
+  const host = new URL(url).hostname;
   const res = await fetch(url, {
     signal: AbortSignal.timeout(SOURCE_TIMEOUT_MS),
     next: { revalidate },
-    // Google Trends trả lỗi cho request không có User-Agent của trình duyệt.
-    headers: { 'user-agent': 'Mozilla/5.0 (compatible; TrendRadar/1.0)' },
+    headers: { 'user-agent': WIKIMEDIA_HOST.test(host) ? WIKIMEDIA_AGENT : BROWSER_LIKE_AGENT },
   });
-  if (!res.ok) throw new Error(`${new URL(url).hostname} trả về ${res.status}`);
+  if (!res.ok) throw new Error(`${host} trả về ${res.status}`);
   return res.text();
 }
 
@@ -270,6 +277,7 @@ type GeoResult = {
   country_code?: string;
   country?: string;
   admin1?: string;
+  population?: number;
 };
 
 /** GeoNames ghi vài địa danh Việt bằng chữ Ð/ð của tiếng Iceland (ví dụ "Ðà Lạt"); đổi về Đ/đ tiếng Việt. */
@@ -302,8 +310,10 @@ export async function searchPlaces(query: string, countryCode?: string): Promise
   const body = JSON.parse(await fetchText(`${GEOCODING}/search?${params}`, ONE_DAY)) as {
     results?: GeoResult[];
   };
+  // Nguồn xếp theo độ giống tên, nên làng nhỏ trùng tên có thể đứng trước thành phố; đưa nơi đông dân lên trước.
   return (body.results ?? [])
     .filter((r) => r.feature_code?.startsWith('PPL'))
+    .sort((a, b) => (b.population ?? 0) - (a.population ?? 0))
     .slice(0, 6)
     .map(toPlace);
 }
@@ -393,7 +403,8 @@ function arrivalsByYear(countryCode: string): Promise<Feed<YearValue>> {
 
 /** Tên dùng để tìm tin: báo Việt viết "Kyoto" chứ không viết "Kyōto", nên tên nước ngoài được bỏ dấu phụ. */
 function newsName(place: Place): string {
-  return place.countryCode === 'VN'
+  // Tên gợi ý có sẵn (kể cả tên Hán Việt như "Bắc Kinh", "Đại Lý") đã là cách báo Việt viết, giữ nguyên dấu.
+  return place.countryCode === 'VN' || curatedCityName(place.id)
     ? place.name
     : place.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
@@ -483,12 +494,14 @@ type WikiGeoPage = {
 };
 
 /** Bài Wikipedia tiếng Việt có toạ độ trong bán kính 10 km, bỏ đơn vị hành chính, bài có ảnh lên trước. */
-function attractions(place: Place): Promise<Feed<Attraction>> {
+/** `center`: tâm để tìm, mặc định toạ độ của nơi; dùng toạ độ bài Wikivoyage khi có, vì đó là khu du lịch. */
+function attractions(place: Place, center: Coordinates | null): Promise<Feed<Attraction>> {
+  const { lat, lon } = center ?? { lat: place.latitude, lon: place.longitude };
   return load(async () => {
     const params = new URLSearchParams({
       action: 'query',
       generator: 'geosearch',
-      ggscoord: `${place.latitude}|${place.longitude}`,
+      ggscoord: `${lat}|${lon}`,
       ggsradius: '10000',
       ggslimit: '30',
       prop: 'pageimages|description',
@@ -523,7 +536,30 @@ const WIKIVOYAGE = 'https://en.wikivoyage.org';
  * của thành phố; thành phố lớn (Tokyo, Paris…) để các mục ở bài con theo quận, nên lấy thêm 2 bài quận gần nhất.
  */
 /** Tên bài Wikivoyage gần toạ độ nhất: bài thành phố trước, rồi tối đa 2 bài quận của nó. */
-async function wikivoyagePages(place: Place): Promise<GuidePage[]> {
+type Coordinates = { lat: number; lon: number };
+
+function guidePage(title: string): GuidePage {
+  return { title, url: `${WIKIVOYAGE}/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}` };
+}
+
+/** Tên tiếng Anh của địa điểm (ví dụ "Dali" cho Đại Lý), thường trùng tên bài Wikivoyage. */
+async function englishName(place: Place): Promise<string | null> {
+  const params = new URLSearchParams({ id: String(place.id), language: 'en' });
+  const r = JSON.parse(
+    await fetchText(`${GEOCODING}/get?${params}`, ONE_DAY),
+  ) as Partial<GeoResult>;
+  return r.name ? r.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '') : null;
+}
+
+/**
+ * Bài Wikivoyage của nơi này: bài thành phố trước, rồi tối đa 2 bài quận của nó; kèm toạ độ của bài.
+ * Tìm theo toạ độ trước (bán kính tối đa 10 km). Không ra thì tìm theo tên tiếng Anh, vì toạ độ trong nguồn địa
+ * danh có khi là trung tâm hành chính xa khu du lịch: "Đại Lý" là thành phố mới Hạ Quan, còn bài "Dali" đặt ở
+ * cổ trấn cách đó khoảng 14 km.
+ */
+async function wikivoyagePages(
+  place: Place,
+): Promise<{ pages: GuidePage[]; center: Coordinates | null }> {
   const params = new URLSearchParams({
     action: 'query',
     list: 'geosearch',
@@ -533,16 +569,53 @@ async function wikivoyagePages(place: Place): Promise<GuidePage[]> {
     format: 'json',
   });
   const body = JSON.parse(await fetchText(`${WIKIVOYAGE}/w/api.php?${params}`, ONE_DAY)) as {
-    query?: { geosearch?: { title: string }[] };
+    query?: { geosearch?: { title: string; lat: number; lon: number }[] };
   };
-  const titles = (body.query?.geosearch ?? []).map((r) => r.title);
-  const main = titles.find((t) => !t.includes('/'));
-  if (!main) return [];
-  const districts = titles.filter((t) => t.startsWith(`${main}/`)).slice(0, 2);
-  return [main, ...districts].map((title) => ({
-    title,
-    url: `${WIKIVOYAGE}/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`,
-  }));
+  const nearby = body.query?.geosearch ?? [];
+  const main = nearby.find((r) => !r.title.includes('/'));
+  if (main) {
+    const districts = nearby.filter((r) => r.title.startsWith(`${main.title}/`)).slice(0, 2);
+    return {
+      pages: [main, ...districts].map((r) => guidePage(r.title)),
+      center: { lat: main.lat, lon: main.lon },
+    };
+  }
+
+  const name = await englishName(place);
+  if (!name) return { pages: [], center: null };
+  const byTitle = new URLSearchParams({
+    action: 'query',
+    titles: name,
+    redirects: '1',
+    prop: 'coordinates',
+    format: 'json',
+    formatversion: '2',
+  });
+  const found = JSON.parse(await fetchText(`${WIKIVOYAGE}/w/api.php?${byTitle}`, ONE_DAY)) as {
+    query?: { pages?: { title: string; missing?: boolean; coordinates?: Coordinates[] }[] };
+  };
+  const page = found.query?.pages?.[0];
+  const coords = page?.coordinates?.[0];
+  // Cùng tên có thể là nơi khác hẳn (Paris ở Texas); chỉ nhận bài cách toạ độ của nơi đang xem dưới 50 km.
+  if (
+    !page ||
+    page.missing ||
+    !coords ||
+    distanceKm(coords, { lat: place.latitude, lon: place.longitude }) > 50
+  ) {
+    return { pages: [], center: null };
+  }
+  return { pages: [guidePage(page.title)], center: coords };
+}
+
+function distanceKm(a: Coordinates, b: Coordinates): number {
+  const rad = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * rad;
+  const dLon = (b.lon - a.lon) * rad;
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLon / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
 }
 
 function guide(pages: GuidePage[]): Promise<Feed<Listing>> {
@@ -663,12 +736,12 @@ export async function loadPlaceExtras(place: Place): Promise<PlaceExtras> {
   const checkIn = isoDate(new Date(Date.now() + day));
   const checkOut = isoDate(new Date(Date.now() + 2 * day));
 
-  const pagesPromise = wikivoyagePages(place).catch((err: unknown) => {
+  const { pages, center } = await wikivoyagePages(place).catch((err: unknown) => {
     console.error('[trend-radar] Wikivoyage', place.id, err);
-    return [] as GuidePage[];
+    return { pages: [] as GuidePage[], center: null };
   });
-  const [attractionsFeed, pages] = await Promise.all([attractions(place), pagesPromise]);
-  const [guideFeed, hotelsFeed] = await Promise.all([
+  const [attractionsFeed, guideFeed, hotelsFeed] = await Promise.all([
+    attractions(place, center),
     pages.length ? guide(pages) : Promise.resolve({ items: [], error: null }),
     hotels(place, pages[0]?.title, checkIn, checkOut),
   ]);

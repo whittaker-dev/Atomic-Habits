@@ -24,4 +24,17 @@ test('lọc theo chữ gõ: tên bắt đầu bằng chữ đó đứng trước
     names,
     'chưa gõ gì thì giữ nguyên',
   );
+  assert.deepEqual(
+    filterByQuery(['Đại Lý', 'Lệ Giang', 'Hội An'], (n) => n, 'daili'),
+    ['Đại Lý'],
+    'gõ liền, và i thay cho y, vẫn khớp',
+  );
+  assert.deepEqual(
+    filterByQuery(['Đại Lý'], (n) => n, 'dai ly'),
+    ['Đại Lý'],
+  );
+  assert.deepEqual(
+    filterByQuery(['Hội An'], (n) => n, 'hoi an'),
+    ['Hội An'],
+  );
 });
