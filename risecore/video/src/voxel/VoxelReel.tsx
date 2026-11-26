@@ -466,7 +466,54 @@ const Confetti: React.FC<{from: number}> = ({from}) => {
   );
 };
 
-export const VoxelReel: React.FC<VoxelProps> = ({timeline}) => {
+// Câu hook tiếng Việt: hiện đầy đủ ngay khung hình 0 (khung Facebook dùng khi tự phát/lướt qua),
+// giữ HOOK_HOLD rồi thu nhỏ biến mất. Nằm giữa thẻ lỗi sai và đầu nhân vật.
+const HOOK_TOP = 590;
+const HOOK_HOLD = 78;
+const HOOK_OUT = 10;
+
+const HookBanner: React.FC<{text: string}> = ({text}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  if (frame > HOOK_HOLD + HOOK_OUT) return null;
+  // Bắt đầu ở 0.92 chứ không phải 0, để khung hình đầu tiên đã đọc được chữ
+  const pop = 0.92 + 0.08 * spring({frame, fps, config: {damping: 10, stiffness: 200}});
+  const out = interpolate(frame, [HOOK_HOLD, HOOK_HOLD + HOOK_OUT], [0, 1], clamp);
+  const wobble = Math.sin(frame / 7) * 1.2;
+  return (
+    <div style={{position: 'absolute', top: HOOK_TOP, left: 70, right: 70, display: 'flex', justifyContent: 'center'}}>
+      <div
+        style={{
+          transform: `scale(${pop * (1 - 0.3 * out)}) rotate(${-2.5 + wobble * (1 - out)}deg)`,
+          opacity: 1 - out,
+          padding: '22px 40px 26px',
+          borderRadius: 26,
+          background: YELLOW,
+          border: '5px solid #0B0F2A',
+          boxShadow: '0 14px 0 #0B0F2A, 0 24px 50px rgba(0,0,0,0.45)',
+          fontFamily: FONT,
+          fontWeight: 900,
+          fontSize: 70,
+          lineHeight: 1.18,
+          color: '#0B0F2A',
+          textAlign: 'center',
+        }}
+      >
+        {text.split(/(\*[^*]+\*)/).map((part, i) =>
+          part.startsWith('*') ? (
+            <span key={i} style={{color: RED}}>
+              {part.slice(1, -1)}
+            </span>
+          ) : (
+            <span key={i}>{part}</span>
+          ),
+        )}
+      </div>
+    </div>
+  );
+};
+
+export const VoxelReel: React.FC<VoxelProps> = ({reel, timeline}) => {
   const frame = useCurrentFrame();
   const {width, height, fps, durationInFrames} = useVideoConfig();
   if (!timeline) throw new Error('Thiếu timeline — calculateVoxelMetadata chưa chạy');
@@ -490,6 +537,7 @@ export const VoxelReel: React.FC<VoxelProps> = ({timeline}) => {
       {cta ? <Confetti from={cta.lines[0].from} /> : null}
       <Captions timeline={timeline} />
       <Vietnamese timeline={timeline} />
+      {reel?.hook ? <HookBanner text={reel.hook} /> : null}
 
       {lines.map((l) => (
         <Sequence key={l.file} name={`Voice ${l.speaker}`} from={l.from} durationInFrames={l.dur}>

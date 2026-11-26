@@ -157,6 +157,19 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Clip 22–28 (bản dài) đã lên Nháp 2026-11-12 kèm ảnh bìa, chưa hẹn giờ: How to say it?, by foot, take care yourself,
   many money, make a party, I lost the bus, you can't win me. ElevenLabs còn ~100 ký tự → hết credit tới 2026-12-10 22:41.
   Thực tế ElevenLabs trừ ~1,07× số ký tự kịch bản, và số dư trên API cập nhật trễ vài phút — đo lại sau khi tạo xong.
+- **Lịch đăng (hẹn 2026-11-25, 07:00 VN):** voxel-01 4/12, voxel-02 5/12, doan-tu-01 6/12, voxel-03 7/12, voxel-04 9/12,
+  voxel-05 11/12, voxel-06 12/12, voxel-07 13/12, voxel-08 14/12, voxel-09 16/12, voxel-10 18/12, voxel-11 19/12,
+  voxel-12 20/12, voxel-13 21/12, voxel-14 23/12. **voxel-15…28 vẫn ở Nháp** vì quá giới hạn 29 ngày — từ 14/12 hẹn được:
+  voxel-15=2026-12-25 16=12-26 17=12-27 18=12-28 19=12-30 20=2027-01-01 21=01-02 22=01-03 23=01-04 24=01-06 25=01-08
+  26=01-09 27=01-10 28=01-11. `posted.json` không ghi lịch hẹn — xem trạng thái thật bằng Graph `GET /{id}?fields=status`.
+- **Hook chữ Việt (2026-11-25):** view rất thấp (16 Reel đầu: 0–10 view, 0 like), nên mỗi kịch bản có thêm `hook` —
+  1 câu tiếng Việt riêng (≤ ~8 chữ, *…* tô đỏ, KHÔNG emoji, không số liệu bịa) hiện trong khung vàng ngay khung hình 0,
+  giữ ~2,6 giây (`HookBanner` trong VoxelReel.tsx). Clip mới nhớ viết `hook`.
+  28 clip đã render lại, tải lên thành `queue/voxel-NN-…-v2` (id trong `posted.json`); bản -v2 1–14 hẹn lại đúng ngày cũ,
+  15–28 ở Nháp. Bản cũ đã xoá trên Facebook (`state: DELETED`, `replacedBy`). Lịch hẹn 15–28 ở trên áp cho bản `-v2`
+  (`node scripts/schedule-draft.mjs voxel-15-understand-v2=2026-12-25 …` — phải ghi đủ tên -v2, vì tiền tố ngắn khớp bản cũ trước).
+  Render lại không cần make-voice (giọng có sẵn, khỏi tốn credit); khi chạy vòng lặp shell nhớ `< /dev/null` hoặc đọc
+  danh sách qua fd khác, vì `npx remotion` ăn stdin. Tải ~28 video + xoá liên tục dễ dính giới hạn Graph `(#4)`: chờ rồi chạy tiếp.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`

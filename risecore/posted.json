@@ -192,197 +192,449 @@
   {
     "file": "queue/voxel-01-very-like.mp4",
     "videoId": "1667525041398015",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1667525041398015/",
-    "at": "2026-11-10T03:41:51.320Z"
+    "at": "2026-11-10T03:41:51.320Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "904550486016612"
   },
   {
     "file": "queue/voxel-02-bored.mp4",
     "videoId": "1159111009806119",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1159111009806119/",
-    "at": "2026-11-10T04:00:00.958Z"
+    "at": "2026-11-10T04:00:00.958Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1880590299785087"
   },
   {
     "file": "queue/voxel-03-agree.mp4",
     "videoId": "3285964268270302",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/3285964268270302/",
-    "at": "2026-11-10T04:00:14.591Z"
+    "at": "2026-11-10T04:00:14.591Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1337084651825736"
   },
   {
     "file": "queue/voxel-04-light.mp4",
     "videoId": "2646240865829765",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/2646240865829765/",
-    "at": "2026-11-10T04:00:26.503Z"
+    "at": "2026-11-10T04:00:26.503Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1866456844510869"
   },
   {
     "file": "queue/voxel-05-photo.mp4",
     "videoId": "2335916247162793",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/2335916247162793/",
-    "at": "2026-11-10T04:00:39.645Z"
+    "at": "2026-11-10T04:00:39.645Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1616297249817054"
   },
   {
     "file": "queue/voxel-06-home.mp4",
     "videoId": "2748146142284006",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/2748146142284006/",
-    "at": "2026-11-10T04:00:52.581Z"
+    "at": "2026-11-10T04:00:52.581Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1175163098351522"
   },
   {
     "file": "queue/voxel-07-again.mp4",
     "videoId": "1607112300575376",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1607112300575376/",
-    "at": "2026-11-10T04:01:06.781Z"
+    "at": "2026-11-10T04:01:06.781Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1906708050524907"
   },
   {
     "file": "queue/voxel-08-lend.mp4",
     "videoId": "2393699157830536",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/2393699157830536/",
-    "at": "2026-11-10T04:01:19.670Z"
+    "at": "2026-11-10T04:01:19.670Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1161375116428050"
   },
   {
     "file": "queue/voxel-09-discuss.mp4",
     "videoId": "4906639186236659",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/4906639186236659/",
-    "at": "2026-11-10T04:01:44.547Z"
+    "at": "2026-11-10T04:01:44.547Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "2182277882397522"
   },
   {
     "file": "queue/voxel-10-explain.mp4",
     "videoId": "1656405589554890",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1656405589554890/",
-    "at": "2026-11-10T04:01:59.875Z"
+    "at": "2026-11-10T04:01:59.875Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "4676203915929384"
   },
   {
     "file": "queue/voxel-11-hangout.mp4",
     "videoId": "1188841190140412",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1188841190140412/",
-    "at": "2026-11-10T04:02:22.651Z"
+    "at": "2026-11-10T04:02:22.651Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "2231946547357405"
   },
   {
     "file": "queue/voxel-12-age.mp4",
     "videoId": "1622295819336302",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1622295819336302/",
-    "at": "2026-11-10T06:43:51.247Z"
+    "at": "2026-11-10T06:43:51.247Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1476405621088892"
   },
   {
     "file": "queue/voxel-13-same.mp4",
     "videoId": "1466987585355614",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1466987585355614/",
-    "at": "2026-11-10T06:44:04.867Z"
+    "at": "2026-11-10T06:44:04.867Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "3070532909956004"
   },
   {
     "file": "queue/voxel-14-fun.mp4",
     "videoId": "1864391134741374",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1864391134741374/",
-    "at": "2026-11-10T06:44:20.428Z"
+    "at": "2026-11-10T06:44:20.428Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "2122631138384038"
   },
   {
     "file": "queue/voxel-15-understand.mp4",
     "videoId": "1835193897483149",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1835193897483149/",
-    "at": "2026-11-10T06:44:35.456Z"
+    "at": "2026-11-10T06:44:35.456Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1165122359406573"
   },
   {
     "file": "queue/voxel-16-see.mp4",
     "videoId": "1849927046194433",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1849927046194433/",
-    "at": "2026-11-10T06:44:49.760Z"
+    "at": "2026-11-10T06:44:49.760Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1191227803240839"
   },
   {
     "file": "queue/voxel-17-info.mp4",
     "videoId": "922169914193477",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/922169914193477/",
-    "at": "2026-11-10T06:45:02.975Z"
+    "at": "2026-11-10T06:45:02.975Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "2432867610881448"
   },
   {
     "file": "queue/voxel-18-listen.mp4",
     "videoId": "1125245207019915",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1125245207019915/",
-    "at": "2026-11-10T06:45:15.182Z"
+    "at": "2026-11-10T06:45:15.182Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1615859463198808"
   },
   {
     "file": "queue/voxel-19-cheap.mp4",
     "videoId": "1841221307008425",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1841221307008425/",
-    "at": "2026-11-10T06:45:31.882Z"
+    "at": "2026-11-10T06:45:31.882Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1865344694654353"
   },
   {
     "file": "queue/voxel-20-marry.mp4",
     "videoId": "1136725512408886",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1136725512408886/",
-    "at": "2026-11-10T06:45:47.584Z"
+    "at": "2026-11-10T06:45:47.584Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1500910436438604"
   },
   {
     "file": "queue/voxel-21-back.mp4",
     "videoId": "4829712177300845",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/4829712177300845/",
-    "at": "2026-11-10T06:46:02.176Z"
+    "at": "2026-11-10T06:46:02.176Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1644621400792570"
   },
   {
     "file": "queue/voxel-22-how-say.mp4",
     "videoId": "2649708842136292",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/2649708842136292/",
-    "at": "2026-11-12T04:09:37.304Z"
+    "at": "2026-11-12T04:09:37.304Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1141221722096684"
   },
   {
     "file": "queue/voxel-23-foot.mp4",
     "videoId": "908358115601387",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/908358115601387/",
-    "at": "2026-11-12T04:09:52.264Z"
+    "at": "2026-11-12T04:09:52.264Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1140394068707351"
   },
   {
     "file": "queue/voxel-24-take-care.mp4",
     "videoId": "1508336318014994",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1508336318014994/",
-    "at": "2026-11-12T04:10:05.859Z"
+    "at": "2026-11-12T04:10:05.859Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1825737914988291"
   },
   {
     "file": "queue/voxel-25-money.mp4",
     "videoId": "2809674749501098",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/2809674749501098/",
-    "at": "2026-11-12T04:10:23.012Z"
+    "at": "2026-11-12T04:10:23.012Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1776707563419484"
   },
   {
     "file": "queue/voxel-26-party.mp4",
     "videoId": "992680209968890",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/992680209968890/",
-    "at": "2026-11-12T04:10:41.477Z"
+    "at": "2026-11-12T04:10:41.477Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1097292496621721"
   },
   {
     "file": "queue/voxel-27-miss.mp4",
     "videoId": "2540625243128574",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/2540625243128574/",
-    "at": "2026-11-12T04:10:58.211Z"
+    "at": "2026-11-12T04:10:58.211Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1159638666537285"
   },
   {
     "file": "queue/voxel-28-beat.mp4",
     "videoId": "1474036851332766",
-    "state": "DRAFT",
+    "state": "DELETED",
     "link": "https://www.facebook.com/reel/1474036851332766/",
-    "at": "2026-11-12T04:11:15.292Z"
+    "at": "2026-11-12T04:11:15.292Z",
+    "deletedAt": "2026-11-25",
+    "replacedBy": "1648280856247206"
+  },
+  {
+    "file": "queue/voxel-01-very-like-v2.mp4",
+    "videoId": "904550486016612",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/904550486016612/",
+    "at": "2026-11-25T09:07:14.597Z"
+  },
+  {
+    "file": "queue/voxel-02-bored-v2.mp4",
+    "videoId": "1880590299785087",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1880590299785087/",
+    "at": "2026-11-25T09:07:51.338Z"
+  },
+  {
+    "file": "queue/voxel-03-agree-v2.mp4",
+    "videoId": "1337084651825736",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1337084651825736/",
+    "at": "2026-11-25T09:08:04.057Z"
+  },
+  {
+    "file": "queue/voxel-04-light-v2.mp4",
+    "videoId": "1866456844510869",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1866456844510869/",
+    "at": "2026-11-25T09:08:18.324Z"
+  },
+  {
+    "file": "queue/voxel-05-photo-v2.mp4",
+    "videoId": "1616297249817054",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1616297249817054/",
+    "at": "2026-11-25T09:08:30.716Z"
+  },
+  {
+    "file": "queue/voxel-06-home-v2.mp4",
+    "videoId": "1175163098351522",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1175163098351522/",
+    "at": "2026-11-25T09:08:44.500Z"
+  },
+  {
+    "file": "queue/voxel-07-again-v2.mp4",
+    "videoId": "1906708050524907",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1906708050524907/",
+    "at": "2026-11-25T09:08:58.468Z"
+  },
+  {
+    "file": "queue/voxel-08-lend-v2.mp4",
+    "videoId": "1161375116428050",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1161375116428050/",
+    "at": "2026-11-25T09:09:13.071Z"
+  },
+  {
+    "file": "queue/voxel-09-discuss-v2.mp4",
+    "videoId": "2182277882397522",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/2182277882397522/",
+    "at": "2026-11-25T09:09:27.669Z"
+  },
+  {
+    "file": "queue/voxel-10-explain-v2.mp4",
+    "videoId": "4676203915929384",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/4676203915929384/",
+    "at": "2026-11-25T09:09:40.851Z"
+  },
+  {
+    "file": "queue/voxel-11-hangout-v2.mp4",
+    "videoId": "2231946547357405",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/2231946547357405/",
+    "at": "2026-11-25T09:09:53.458Z"
+  },
+  {
+    "file": "queue/voxel-12-age-v2.mp4",
+    "videoId": "1476405621088892",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1476405621088892/",
+    "at": "2026-11-25T09:10:05.091Z"
+  },
+  {
+    "file": "queue/voxel-13-same-v2.mp4",
+    "videoId": "3070532909956004",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/3070532909956004/",
+    "at": "2026-11-25T09:10:20.552Z"
+  },
+  {
+    "file": "queue/voxel-14-fun-v2.mp4",
+    "videoId": "2122631138384038",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/2122631138384038/",
+    "at": "2026-11-25T09:10:33.798Z"
+  },
+  {
+    "file": "queue/voxel-15-understand-v2.mp4",
+    "videoId": "1165122359406573",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1165122359406573/",
+    "at": "2026-11-25T09:10:48.826Z"
+  },
+  {
+    "file": "queue/voxel-16-see-v2.mp4",
+    "videoId": "1191227803240839",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1191227803240839/",
+    "at": "2026-11-25T09:11:02.949Z"
+  },
+  {
+    "file": "queue/voxel-17-info-v2.mp4",
+    "videoId": "2432867610881448",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/2432867610881448/",
+    "at": "2026-11-25T09:11:18.307Z"
+  },
+  {
+    "file": "queue/voxel-18-listen-v2.mp4",
+    "videoId": "1615859463198808",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1615859463198808/",
+    "at": "2026-11-25T09:11:31.825Z"
+  },
+  {
+    "file": "queue/voxel-19-cheap-v2.mp4",
+    "videoId": "1865344694654353",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1865344694654353/",
+    "at": "2026-11-25T09:11:42.679Z"
+  },
+  {
+    "file": "queue/voxel-20-marry-v2.mp4",
+    "videoId": "1500910436438604",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1500910436438604/",
+    "at": "2026-11-25T09:11:57.501Z"
+  },
+  {
+    "file": "queue/voxel-21-back-v2.mp4",
+    "videoId": "1644621400792570",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1644621400792570/",
+    "at": "2026-11-25T09:12:11.733Z"
+  },
+  {
+    "file": "queue/voxel-22-how-say-v2.mp4",
+    "videoId": "1141221722096684",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1141221722096684/",
+    "at": "2026-11-25T09:12:25.672Z"
+  },
+  {
+    "file": "queue/voxel-23-foot-v2.mp4",
+    "videoId": "1140394068707351",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1140394068707351/",
+    "at": "2026-11-25T09:12:37.687Z"
+  },
+  {
+    "file": "queue/voxel-24-take-care-v2.mp4",
+    "videoId": "1825737914988291",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1825737914988291/",
+    "at": "2026-11-25T09:12:50.889Z"
+  },
+  {
+    "file": "queue/voxel-25-money-v2.mp4",
+    "videoId": "1776707563419484",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1776707563419484/",
+    "at": "2026-11-25T09:13:04.381Z"
+  },
+  {
+    "file": "queue/voxel-26-party-v2.mp4",
+    "videoId": "1097292496621721",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1097292496621721/",
+    "at": "2026-11-25T09:13:17.815Z"
+  },
+  {
+    "file": "queue/voxel-27-miss-v2.mp4",
+    "videoId": "1159638666537285",
+    "state": "DRAFT",
+    "link": "https://www.facebook.com/reel/1159638666537285/",
+    "at": "2026-11-25T09:13:31.925Z"
+  },
+  {
+    "file": "queue/voxel-28-beat-v2.mp4",
+    "videoId": "1648280856247206",
+    "state": "DRAFT",
+    "link": "(xem trong Meta Business Suite)",
+    "at": "2026-11-25T09:16:05.874Z"
   }
 ]

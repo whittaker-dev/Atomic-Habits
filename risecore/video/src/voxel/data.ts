@@ -15,8 +15,18 @@ export type VoxelScene = {
   keywords: string[];
   lines: VoxelLine[];
 };
-/** `cover`: chữ trên ảnh bìa — `kicker` (nhãn đỏ), `title` (to, vàng), `sub` */
-export type VoxelReelData = {id: string; series: string; number: number; cover: {kicker: string; title: string; sub: string}; scenes: VoxelScene[]};
+/**
+ * `cover`: chữ trên ảnh bìa — `kicker` (nhãn đỏ), `title` (to, vàng), `sub`.
+ * `hook`: câu tiếng Việt to hiện ngay khung hình đầu (~2,6 giây) cho người chưa nghe kịp câu tiếng Anh; *…* tô đỏ.
+ */
+export type VoxelReelData = {
+  id: string;
+  series: string;
+  number: number;
+  cover: {kicker: string; title: string; sub: string};
+  hook?: string;
+  scenes: VoxelScene[];
+};
 
 export type VoxelTimedLine = TimedLine & {shot: 'close' | 'wide'; mood?: 'serious' | 'happy'};
 export type VoxelTimeline = Timeline<VoxelScene> & {lines: VoxelTimedLine[]};
