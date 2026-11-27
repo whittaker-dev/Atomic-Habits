@@ -157,11 +157,15 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
 - Clip 22–28 (bản dài) đã lên Nháp 2026-11-12 kèm ảnh bìa, chưa hẹn giờ: How to say it?, by foot, take care yourself,
   many money, make a party, I lost the bus, you can't win me. ElevenLabs còn ~100 ký tự → hết credit tới 2026-12-10 22:41.
   Thực tế ElevenLabs trừ ~1,07× số ký tự kịch bản, và số dư trên API cập nhật trễ vài phút — đo lại sau khi tạo xong.
-- **Lịch đăng (hẹn 2026-11-25, 07:00 VN):** voxel-01 4/12, voxel-02 5/12, doan-tu-01 6/12, voxel-03 7/12, voxel-04 9/12,
-  voxel-05 11/12, voxel-06 12/12, voxel-07 13/12, voxel-08 14/12, voxel-09 16/12, voxel-10 18/12, voxel-11 19/12,
-  voxel-12 20/12, voxel-13 21/12, voxel-14 23/12. **voxel-15…28 vẫn ở Nháp** vì quá giới hạn 29 ngày — từ 14/12 hẹn được:
-  voxel-15=2026-12-25 16=12-26 17=12-27 18=12-28 19=12-30 20=2027-01-01 21=01-02 22=01-03 23=01-04 24=01-06 25=01-08
-  26=01-09 27=01-10 28=01-11. `posted.json` không ghi lịch hẹn — xem trạng thái thật bằng Graph `GET /{id}?fields=status`.
+- **Lịch đăng (từ 2026-11-27): 9 video/tuần** — mỗi ngày 07:00 VN, riêng T6 và T7 thêm 11:00 (vẫn chỉ buổi sáng).
+  Thứ tự: bài 18–21, rồi xen kẽ "Sự thật kỳ lạ" và "Tiếng Anh 3D" (bản -v2), clip đố từ chen vào 8/12.
+  38 video đã hẹn 28/11 → 26/12. 15 video còn ở Nháp, hẹn được từ 11/12 (có lời nhắc):
+  `node scripts/schedule-draft.mjs voxel-17-info-v2=2026-12-27 su-that-18-lightning=2026-12-28 voxel-18-listen-v2=2026-12-29
+  su-that-19-dolphins=2026-12-30 voxel-19-cheap-v2=2026-12-31 su-that-20-trees=2027-01-01 voxel-20-marry-v2=2027-01-01T11:00
+  voxel-21-back-v2=2027-01-02 voxel-22-how-say-v2=2027-01-02T11:00 voxel-23-foot-v2=2027-01-03 voxel-24-take-care-v2=2027-01-04
+  voxel-25-money-v2=2027-01-05 voxel-26-party-v2=2027-01-06 voxel-27-miss-v2=2027-01-07 voxel-28-beat-v2=2027-01-08`
+  (`schedule-draft.mjs`: ngày = 07:00 VN, thêm `THH:MM` cho giờ khác; bỏ qua bản đã xoá.) Lệnh chạy trong zsh: truyền tham số
+  qua `xargs` nếu gom vào biến, vì zsh không tự tách chuỗi. `posted.json` không ghi lịch hẹn — xem bằng Graph `GET /{id}?fields=status`.
 - **Hook chữ Việt (2026-11-25):** view rất thấp (16 Reel đầu: 0–10 view, 0 like), nên mỗi kịch bản có thêm `hook` —
   1 câu tiếng Việt riêng (≤ ~8 chữ, *…* tô đỏ, KHÔNG emoji, không số liệu bịa) hiện trong khung vàng ngay khung hình 0,
   giữ ~2,6 giây (`HookBanner` trong VoxelReel.tsx). Clip mới nhớ viết `hook`.
@@ -170,6 +174,19 @@ Tên file đặt theo ngày (`2026-11-05-ngay-tap-lung.mp4`) vì hàng đợi đ
   (`node scripts/schedule-draft.mjs voxel-15-understand-v2=2026-12-25 …` — phải ghi đủ tên -v2, vì tiền tố ngắn khớp bản cũ trước).
   Render lại không cần make-voice (giọng có sẵn, khỏi tốn credit); khi chạy vòng lặp shell nhớ `< /dev/null` hoặc đọc
   danh sách qua fd khác, vì `npx remotion` ăn stdin. Tải ~28 video + xoá liên tục dễ dính giới hạn Graph `(#4)`: chờ rồi chạy tiếp.
+
+## Series "Sự thật kỳ lạ" (bắt đầu 2026-11-26)
+- Reel ~1 phút, 1080×1920: sự thật khoa học/động vật thú vị, **đọc tiếng Anh** (Kokoro `af_heart`, chạy trên máy, miễn phí)
+  + phụ đề karaoke tiếng Anh và dòng tiếng Việt bên dưới. Dựng bằng **HyperFrames** (HTML/GSAP), không phải Remotion.
+- Project nằm NGOÀI repo này: `~/TrySomeThign/OpenMontage/projects/su-that-ky-la/` — `scripts.py` (kịch bản: hook/stat/
+  compare/chips/hero/outro), `captions.py`, `engine/build.py` (giọng + mốc chữ Whisper + HTML; chạy bằng
+  `~/TrySomeThign/OpenMontage/.venv/bin/python`), `review.py` (chụp soát từng cảnh), `publish.sh` (render → −14 LUFS
+  → `risecore/queue/su-that-NN-*.mp4` + ảnh bìa + brief + caption). Sau đó `node scripts/run-next.mjs` để lên Nháp.
+- Hình minh hoạ: emoji Noto Color (SIL OFL), bạch tuộc vẽ tay, SVG riêng cho gấu nước và sao Kim.
+  Nhạc nền Pixabay Content License (không cần ghi nguồn).
+- Đợt 1 (01–20) đã lên Nháp 2026-11-26, chưa hẹn giờ: bạch tuộc, mật ong, chuối, cá voi xanh, gấu nước, sao Kim, kiến,
+  cá mập, bò, ốc sên, sứa bất tử, hươu cao cổ, ánh sáng Mặt Trời, tôm tít, chim cánh cụt, rái cá, bộ não, tia sét,
+  cá heo, cây và nấm. Người dùng dặn: khi nói "tạo tiếp" thì tự chọn chủ đề hút người xem, làm và đẩy Nháp như vậy.
 
 ## Flow đăng Facebook (đã xong)
 - **Làm xong video là tải lên mục Nháp ngay từ máy**: bỏ mp4 + brief vào `queue/` rồi chạy `node scripts/run-next.mjs`
